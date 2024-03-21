@@ -127,7 +127,7 @@ const Main = () => {
   }, []);
 
   return (
-    <div className="main">
+    <div className="main" id="main">
       <div className="secTitle">
         <h3 data-aos="fade-right" className="title">
           Most visited destinations

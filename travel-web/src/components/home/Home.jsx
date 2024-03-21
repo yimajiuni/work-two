@@ -20,9 +20,17 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="home">
+    <div className="home" id="home">
       <div className="overlay-notinuse"></div>
-      <video src={video} muted autoPlay loop type="video2/mp4"></video>
+      <video
+        src={video}
+        muted
+        autoPlay
+        loop
+        type="video2/mp4"
+        controls={false}
+        controlsList="nodownload"
+      ></video>
       <div className="homeContent container">
         <div className="textDiv">
           <span data-aos="fade-up" className="smallText">

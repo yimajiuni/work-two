@@ -19,7 +19,8 @@
     --whiteColorDeam: hsl(0, 0%, 93%);
     --grayText: rgb(240, 240, 246);
     --inputColor:rgb(239, 239, 239);
-    --bodyColor: hsl(220, 10%, 94%);
+    --bodyColor: rgb(231, 222, 207);
+    --cardBG: rgb(225,225,225);
     --headlineColor: rgb(244, 3, 160);
 }
 
@@ -74,5 +75,5 @@ input{
     font-size: 100%;
 }
 body{
-    background: var(--gradientColor);
+   background: rgb(231, 222, 207);
 }

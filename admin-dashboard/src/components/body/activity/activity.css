@@ -47,8 +47,7 @@
 .activitySection .secContainer .singleCustomer img {
   width: 40px;
   height: 40px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 50%;
   box-shadow: 0 2px 4px var(--itemCardColor);
   margin-right: 1rem;
@@ -77,4 +76,6 @@
   .activitySection {
     width: 100%;
   }
-}/*# sourceMappingURL=activity.css.map */
+}
+
+/*# sourceMappingURL=activity.css.map */

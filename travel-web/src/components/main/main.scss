@@ -8,10 +8,9 @@
     --whiteColorDeam: hsl(0, 0%, 93%);
     --grayText: rgb(240, 240, 246);
     --inputColor:rgb(239, 239, 239);
-    --bodyColor: hsl(220, 10%, 94%);
+    --bodyColor: rgb(231, 222, 207);
     --cardBG: rgb(225,225,225);
     --headlineColor: rgb(244, 3, 160);
-
 }
 .main{
     width: 100%;
@@ -33,7 +32,9 @@
                 right: 0;
                 width: 120px;
                 bottom: 5px;
+                transform: translateY(8px);
                 z-index: -1;
+                transform: trans;
             }
         }
     }
@@ -53,7 +54,7 @@
             padding: -1rem;
 
             &:hover{
-                background: var(--cardHover);
+                background: var(--whiteColor);
                 box-shadow: 1 4px 4px rgba(140, 140, 141, 0.549);
                 transition: .3 ease;
             }
@@ -142,18 +143,30 @@
     }
 }
 
+
 @media screen and (min-width: 500px){
-    .title{
-        font-size: 1.5rem;
-        &::after{
-            width: 155px !important;
+    .main{
+        .title{
+            font-size: 1.5rem;
+            &::after{
+                width: 155px !important;
+            }
         }
-    }
-    .secContent{
-        grid-template-columns: repeat(2,1fr); /*2grid in a screen*/
-        .singleDestination{
-            height: auto;
+        .secTitle{
+            .title{
+
+                &::after{
+                    bottom: 11px;
+                }
+            }
         }
+        .secContent{
+            grid-template-columns: repeat(2,1fr); /*2grid in a screen*/
+            .singleDestination{
+                height: auto;
+            }
+        }
+
     }
 }
 

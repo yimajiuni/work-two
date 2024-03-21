@@ -18,7 +18,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <div className="footer">
+    <div className="footer" id="footer">
       <div className="colorDiv">
         <div className="videoDiv">
           <div className="video-container">

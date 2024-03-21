@@ -4,13 +4,13 @@ const About = () => {
   return (
     <div className="z-10 min-h-screen flex flex-col lg:flex-row justify-center text-center items-center">
       <div className=" lg:pt-14">
-        <div className="text-center justify-center items-center my-60 mb-20">
+        <div className="text-center justify-center items-center my-60 mb-20 px-7">
           <h1 className="text-5xl font-hedding font-semibold">
             Why Choose Us?
           </h1>
         </div>
         <div className="min-h-screen flex flex-col justify-center lg:px-32 px-5 bg-[url('./assets/img/about.jpg')] bg-cover bg-no-repeat">
-          <div className=" bg-backgroundColor py-20 px-20 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] opacity-85">
+          <div className="my-20 bg-backgroundColor py-20 px-20 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] opacity-85">
             <div className="flex flex-row-reverse"></div>
             <h1 className="font-hedding font-semibold text-xl opacity-100 pb-10">
               THIS IS US.

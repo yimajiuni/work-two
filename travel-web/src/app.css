@@ -20,8 +20,9 @@
     --whiteColorDeam: hsl(0, 0%, 93%);
     --grayText: rgb(240, 240, 246);
     --inputColor:rgb(239, 239, 239);
-    --bodyColor: hsl(220, 10%, 94%);
+    --bodyColor: rgb(231, 222, 207);
     --cardBG: rgb(225,225,225);
+    --headlineColor: rgb(244, 3, 160);
 }
 html{
     scroll-behavior: smooth;
@@ -29,6 +30,7 @@ html{
 
 a{   
     text-decoration: none;
+    cursor: pointer;
 }
 li{
     list-style: none;
@@ -79,7 +81,7 @@ input{
     font-size: 100%;
 }
 body{
-    background: var(--bodyColor);
+    background: rgb(231, 222, 207);
 }
 
 /*media queries for responsive*/

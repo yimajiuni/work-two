@@ -8,7 +8,7 @@ const Report = () => {
     <div className="reportSection flex">
       <div className="heading">
         <h1>Report</h1>
-        <ReportChart />
+        <ReportChart className="reportChart" />
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 {
-  "name": "travel-ux",
+  "name": "travel-web",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +11,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
     "react-scripts": "5.0.1",
+    "react-scroll": "^1.9.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -39,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "node-sass": "^7.0.3",
     "sass": "^1.71.1"
   }

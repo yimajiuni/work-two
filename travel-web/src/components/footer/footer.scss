@@ -5,7 +5,7 @@
     --whiteColor: hsl(0, 0%, 100%);
     --blackColor: hsl(0, 0%, 18%);
     --textColor: hsl(240, 4%, 36%);
-    --whiteColorDeam: hsl(0, 0%, 93%);
+    --whiteColorDeam:rgb(231, 222, 207);
     --grayText: rgb(240, 240, 246);
     --inputColor:rgb(239, 239, 239);
     --bodyColor: hsl(220, 10%, 94%);
@@ -130,7 +130,7 @@
             padding: 2rem 2rem 4rem;
             gap: 2rem;
             border-radius: 1rem;
-            background: var(--bodyColor);
+            background: var(--whiteColor);
             width: 100%;
             justify-content: center;
             flex-direction: column;

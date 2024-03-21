@@ -7,18 +7,13 @@ const Home = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Check the scroll position
       const scrollPosition = window.scrollY;
-      // Define the threshold at which you want to hide the content
-      const threshold = 500; // Adjust this value as needed
-      // Update state based on scroll position
+      const threshold = 500;
       setShowContent(scrollPosition < threshold);
     };
 
-    // Add event listener to window scroll
     window.addEventListener("scroll", handleScroll);
 
-    // Clean up event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -26,11 +21,10 @@ const Home = () => {
 
   return (
     <div className="z-10 min-h-screen flex flex-row justify-between lg:px-32 px-5 bg-[url('./assets/img/hero1.jpg')] bg-cover bg-no-repeat">
-      <div className="w-full space-y-5">
-        {/* Conditionally render based on showContent state */}
+      <div className="w-full space-y-5 ">
         {showContent && (
           <div className="flex justify-center">
-            <div className="bottom-40 fixed py-10 px-10 backdrop-blur-md shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] rounded-lg">
+            <div className="bottom-40 sm:bottom-5 fixed py-10 px-10 backdrop-blur-md shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] rounded-lg">
               <h1 className="text-backgroundColor font-semibold text-6xl">
                 Elevate Your Inner Foodie with Every Bite
               </h1>

@@ -5,14 +5,13 @@
     --whiteColor: hsl(0, 0%, 100%);
     --blackColor: hsl(0, 0%, 18%);
     --textColor: hsl(240, 4%, 36%);
-    --whiteColorDeam:rgb(231, 222, 207);
+    --whiteColorDeam: hsl(0, 0%, 93%);
     --grayText: rgb(240, 240, 246);
     --inputColor:rgb(239, 239, 239);
-    --bodyColor: hsl(220, 10%, 94%);
+    --bodyColor: rgb(231, 222, 207);
     --cardBG: rgb(225,225,225);
     --headlineColor: rgb(244, 3, 160);
 }
-
 
 .home{
     width: 100%;
@@ -92,7 +91,7 @@
             .input{
                 height: 40px;
                 padding: 0 1rem;
-                background: var(--inputColor);
+                background: var(--bodyColor);
                 border-radius: 3rem;
 
                 input{

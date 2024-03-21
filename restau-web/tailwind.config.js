@@ -8,6 +8,9 @@ module.exports = {
         backgroundColor: "#b7bca9",
         lightText: "#959595",
       },
+      screens: {
+        sm: "375px", // 上書き
+      },
     },
   },
   plugins: [],

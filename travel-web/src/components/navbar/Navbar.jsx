@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./navbar.scss";
+import { Link } from "react-scroll";
 
 import { MdOutlineTravelExplore } from "react-icons/md";
 import { AiFillCloseCircle } from "react-icons/ai";
@@ -31,24 +32,50 @@ const Navbar = () => {
         <div className={active}>
           <ul className="navLists flex">
             <li className="navItem">
-              <a href="/" className="navLink">
+              <Link
+                className="navLink"
+                to="main"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
+              >
                 Packages
-              </a>
+              </Link>
             </li>
             <li className="navItem">
-              <a href="/" className="navLink">
-                Shop
-              </a>
-            </li>
-            <li className="navItem">
-              <a href="/" className="navLink">
+              <Link
+                className="navLink"
+                to="home"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
                 About
-              </a>
+              </Link>
             </li>
             <li className="navItem">
-              <a href="/" className="navLink">
+              <Link
+                className="navLink"
+                to="home"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                Shop
+              </Link>
+            </li>
+
+            <li className="navItem">
+              <Link
+                className="navLink"
+                to="footer"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
                 Contact
-              </a>
+              </Link>
             </li>
             <button className="btn">
               <a href="/">BOOK NOW</a>

@@ -20,3 +20,8 @@ body{
     writing-mode: vertical-rl;
     text-orientation: upright; 
   }
+
+
+.smp{
+    bottom: 20px;
+ }
