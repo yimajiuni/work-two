@@ -1,0 +1,30 @@
+.categoryList{
+    margin-top: 35px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.categoryItem{
+    padding: 10px 25px;
+    font-size: 14px;
+    border-radius: 10px;
+}
+.categoryItem.trend{
+    background-color: #08537b31;
+}
+.categoryItem.tech{
+    background-color: #39899390;
+}
+.categoryItem.food{
+    background-color: #1d70c27e;
+}
+.categoryItem.create{
+    background-color: #04b8f459;
+}
+.categoryItem.travel{
+    background-color: #57c4fe60;
+}
+.categoryItem.culture{
+    background-color: #47bdbf50;
+}

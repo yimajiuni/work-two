@@ -1,0 +1,14 @@
+.container{
+    margin-top: 30px;
+}
+.delButton{
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 1px solid var(--textColor);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }

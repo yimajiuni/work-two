@@ -1,0 +1,89 @@
+:root{
+    --PrimaryColor: hsl(94, 59%, 35%);
+    --HoverColor: #bdf095;
+    --paleGreen: hsl(94, 75%, 89%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --textColor: hsl(240, 1%, 48%);
+    --bgColor: hsl(220, 10%, 94%);
+    --grayText: rgb(190, 190, 190);
+    --inputColor:hsl(330, 12%, 97%);
+    --itemCardColor: hsl(120, 5%, 88%);
+    --itemCardHover: hsl(120, 27%, 87%);
+
+--biggestFontSize:2.5rem;
+--h1FontSize:1.5rem;
+--h2FontSize:1.25rem;
+--h3FontSize:1rem;
+--normalFontsize:.938;
+--smallFontSize:.313rem;
+--smallestFontSize:.75rem;
+}
+
+.activitySection{
+    flex-basis: 50%;
+
+    .heading{
+        width: 100%;
+        justify-content: space-between;
+
+        h1{
+            font-style: var(--h2FontSize);
+            counter-reset: var(--blackColor);
+            font-weight: 700;
+        }
+
+        .btn{
+            border: 1px solid var;
+        }
+
+        .btn:hover{
+            border: 1px solid var(--PrimaryColor);
+        }
+    }
+    .secContainer{
+        margin-top: 1rem;
+
+        .singleCustomer{
+            align-items: flex-start;
+            justify-content: space-between;
+
+            img{
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+                border-radius: 50%;
+                box-shadow: 0 2px 4px var(--itemCardColor) ;
+                margin-right: 1rem;
+            }
+            .customerDetails{
+                flex: 1;
+                .name{
+                    font-style: var(--h3FontSize);
+                    font-weight: 600;
+                    display: block;
+                    counter-reset: var(--blackColor);
+                }
+                small{
+                    font-weight: 500;
+                    color: var(--textColor);
+                    font-size: small;
+                }
+            }
+            .duration{
+                color: var(--textColor);
+                font-weight: 500;
+                font-size: var(--smallestFontSize);
+            }
+
+        }
+    }
+}
+
+//media queries for responsive
+
+@media screen and (max-width:990px){
+    .activitySection{
+        width: 100%;
+    }
+}

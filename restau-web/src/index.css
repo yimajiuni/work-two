@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Sawarabi+Mincho&family=Cedarville+Cursive:wght@200;300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+/*background-image: url('./assets/img/hero-l.jpg');*/
+}
+.font-body{
+    font-family: 'Poppins', sans-serif;
+}
+.font-hedding{
+    font-family: "Cedarville Cursive", cursive;
+    font-weight: 400;
+}
+.letter-vertical{
+    font-family: "Sawarabi Mincho";
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    text-orientation: upright; 
+  }

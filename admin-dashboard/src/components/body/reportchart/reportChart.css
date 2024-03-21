@@ -1,0 +1,68 @@
+:root {
+  --PrimaryColor: hsl(94, 59%, 35%);
+  --HoverColor: #bdf095;
+  --paleGreen: hsl(94, 75%, 89%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --textColor: hsl(240, 1%, 48%);
+  --bgColor: hsl(220, 10%, 94%);
+  --grayText: rgb(190, 190, 190);
+  --inputColor:hsl(330, 12%, 97%);
+  --itemCardColor: hsl(120%, 5%, 88%);
+  --itemCardHover: hsl(120%, 27%, 87%);
+  --biggestFontSize:2.5rem;
+  --h1FontSize:1.5rem;
+  --h2FontSize:1.25rem;
+  --h3FontSize:1rem;
+  --normalFontsize:.938;
+  --smallFontSize:.313rem;
+  --smallestFontSize:75rem;
+}
+
+.chartSection {
+  flex-basis: 70%;
+}
+.chartSection .heading {
+  width: 100%;
+  justify-content: space-between;
+}
+.chartSection .heading h1 {
+  font-size: var(--h2FontSize);
+  font-weight: 700;
+  color: var(--blackColor);
+}
+.chartSection .heading .btn {
+  border: 1px solid transparent;
+}
+.chartSection .heading .btn:hover {
+  border: 1px solid var(--PrimaryColor);
+}
+.chartSection .secContainer {
+  width: 100%;
+  margin: 1rem 0;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 990px) {
+  .chartSection .sellers .card {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 918px) {
+  .chartSection .singleItem {
+    width: 220px !important;
+  }
+}
+@media screen and (max-width: 490px) {
+  .chartSection .sellers {
+    flex-direction: column;
+  }
+  .chartSection .sellers .card {
+    flex-direction: row;
+  }
+}
+::-webkit-scrollbar {
+  display: none;
+}/*# sourceMappingURL=listing.css.map */

@@ -1,0 +1,35 @@
+/*# sourceMappingURL=listing.scss.map */
+:root {
+	--primarycolor: hsl(94, 59%, 35%);
+	--hovercolor: #bdf095;
+	--palegreen: hsl(94, 75%, 89%);
+	--whitecolor: hsl(0, 0%, 100%);
+	--blackcolor: hsl(0, 0%, 18%);
+	--textcolor: hsl(240, 1%, 48%);
+	--bgcolor: hsl(220, 10%, 94%);
+	--graytext: rgb(190, 190, 190);
+	--inputcolor: hsl(330, 12%, 97%);
+	--itemcardcolor: hsl(120%, 5%, 88%);
+	--itemcardhover: hsl(120%, 27%, 87%);
+	--biggestfontsize: 2.5rem;
+	--h1fontsize: 1.5rem;
+	--h2fontsize: 1.25rem;
+	--h3fontsize: 1rem;
+	--normalfontsize: .938;
+	--smallfontsize: .313rem;
+	--smallestfontsize: 0.75rem;
+}
+.reportSection {
+	flex-basis: 70%;
+    margin-top: 2rem;
+	.heading {
+		width: 100%;
+		justify-content: space-between;
+		h1 {
+			font-size: var(--h2FontSize);
+			font-weight: 700;
+      color: var(--blackColor);
+		}
+		
+	}
+}
