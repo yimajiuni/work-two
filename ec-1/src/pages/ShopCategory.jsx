@@ -9,11 +9,13 @@ const ShopCategory = (props) => {
   const { all_product } = useContext(ShopContext);
   return (
     <div className="shop-category">
-      <div className="shopcategory-banner">
-        <img src={props.banner} alt="" />
-        <div className="content">
-          <h2>FLAT 50% OFF SALE</h2>
-          <h2>IS, NOW.</h2>
+      <div className="main">
+        <div className="shopcategory-banner">
+          <img src={props.banner} alt="" />
+          <div className="content">
+            <h2>FLAT 50% OFF SALE</h2>
+            <h2>IS, NOW.</h2>
+          </div>
         </div>
       </div>
       <div className="shopcategory-indexSort">

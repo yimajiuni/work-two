@@ -12,7 +12,7 @@ const About = () => {
         <div className="min-h-screen flex flex-col justify-center lg:px-32 px-5 bg-[url('./assets/img/about.jpg')] bg-cover bg-no-repeat">
           <div className="my-20 bg-backgroundColor py-20 px-20 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] opacity-85">
             <div className="flex flex-row-reverse"></div>
-            <h1 className="font-hedding font-semibold text-xl opacity-100 pb-10">
+            <h1 className="font-hedding font-bold text-xl opacity-100 pb-10">
               THIS IS US.
             </h1>
             <p className="opacity-100  pb-5">

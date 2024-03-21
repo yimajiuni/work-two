@@ -9,7 +9,7 @@ module.exports = {
         lightText: "#959595",
       },
       screens: {
-        sm: "375px", // 上書き
+        sm: "375px",
       },
     },
   },

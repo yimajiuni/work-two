@@ -1,13 +1,29 @@
-.shopcategory{
-    margin:auto;
+.shop-category{
+    margin: auto;
 }
-.shopcategory-banner img{
-    position: relative;
-    display: block;
-    margin: 80px auto;
-    width: 85%;
+.main{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95vw;
+    height: 45vh;
+    position:relative;
+    overflow: hidden;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
-.shopcategory-banner .content{    
+ .main .shopcategory-banner{
+    inset: 0 0 0 0;
+    display: flex;
+    position: absolute;
+
+}
+.main .shopcategory-banner img{
+    width: 100%;
+    object-fit: cover;
+}
+.main .shopcategory-banner .content{    
     position: absolute;
     max-width: 80%;
     top: 25%;
@@ -15,14 +31,14 @@
     transform: translateX(-50%);
     box-sizing: border-box;
 }
-.shopcategory-banner .content h2{
+.main .shopcategory-banner .content h2{
     font-size: 4.5rem;
     color: #fff;
     font-weight: bold;
     text-shadow: 0 5px 3px #0004;
 }
 
-.shopcategory-indexSort{
+ .shopcategory-indexSort{
     display: flex;
     margin: 0px 170px;
     justify-content: space-between;
@@ -61,8 +77,8 @@
 
 @media(max-width: 1280px){
     .shopcategory-banner{
-        margin: 100px auto;
         white-space: nowrap;
+        margin: 20px auto;
     }
     .shopcategory-banner .content{    
         top: 23%;
@@ -100,64 +116,56 @@
 }
 
 @media(max-width: 1024px){
+    .main{
+        height:35vh;
+        }
     .shopcategory-banner{
-        width: 90%;
+        width: 100%;
     }
     .shopcategory-banner .content{    
-        top: 20%;
+        top: 30%;
+        left: 40%;
     }
-    .shopcategory-banner .content h2{
+    .main .shopcategory-banner .content h2{
         font-size: 3rem;
     }
 }
 
 
 @media(max-width: 800px){
-    .shopcategory-banner{
-        margin: 10px auto;
-        margin-top: 150px;
-        width: 95%;
+    .shop-category{
+        margin-top: 100px;
     }
-    .shopcategory-banner .content{    
-        top: 28%;
+    .shop-category .main{
+
+        margin-bottom: 10px;
+        margin: auto;
     }
-    .shopcategory-banner .content h2{
-        font-size: 2.5rem;
+    .shop-category .main .shopcategory-banner img{
+        position: absolute;
+        width: 100%;
     }
-    
-    .shopcategory-products{
-        width: 95%;
+
+    .main .shopcategory-banner .content{  
+        top: 20%;  
     }
-    
-    .shopcategory-loadmore{
-        margin: 60px auto;
-        width: 150px;
-        height: 40px;
-        font-size: 13px;
+    .shop-category .main .shopcategory-banner .content h2{
+        font-size: 2.8rem;
     }
 }
 
 @media(max-width: 500px){
-    .shopcategory-products{
-        grid-template-columns: 1fr 1fr;
+    .main{
+        width: 90%;
     }
-    .shopcategory-banner .content{    
-        top: 40%;
+    .main .shopcategory-banner .content{    
     }
-    .shopcategory-banner .content h2{
-        font-size: 2rem;
+    .main .shopcategory-banner .content h2{
+        font-size: 1.5rem;
     }
-    
 }
 @media(max-width: 378px){
-    .shopcategory-products{
-        grid-template-columns: 1fr 1fr;
+    .main .shopcategory-banner .content h2{
+        font-size: 1.2rem;
     }
-    .shopcategory-banner .content{    
-        top: 35%;
-    }
-    .shopcategory-banner .content h2{
-        font-size: 2rem;
-    }
-    
 }

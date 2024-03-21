@@ -1,20 +1,30 @@
 .offers{
-    margin: 45px;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 95vw;
+    height: 45vh;
     position:relative;
-    border-radius:1rem;
     overflow: hidden;
-
+    border-radius:1rem;
+    box-shadow:2px 2px 8px  #7a7a7a;
+    margin-top: 50px;
+    margin-bottom: 80px;
 }
-.offers img{
-    object-fit: contain;
-    width: 100%;
-}
-.offers .content{
+.offers .offers-banner{
+    inset: 0 0 0 0;
     position: absolute;
+    display: flex;
+}
+.offers .offers-banner img{
+    width: 100%;
+    object-fit: cover;
+}
+.offers .offers-banner .content{
+    position: absolute;
+    top: 10%;
+    left: 30%;
     padding: 1rem;
     max-width: 80%;
     transform: translateX(-50%);
@@ -22,18 +32,18 @@
     float: left;
 
 }
-.offers .content h1{
+.offers .offers-banner .content h1{
     font-size: 4rem;
     color: #fff;
     font-weight: bold;
     text-shadow: 0 5px 3px #0004;
 }
-.offers .content p{
+.offers .offers-banner .content p{
     color:  #ff4141;
     font-weight: bold;
     margin-top: 7px;
 }
-.offers .content button{
+.offers .offers-banner .content button{
     width: 282px;
     height: 70px;
     border-radius: 35px;
@@ -56,16 +66,35 @@
         padding: 0px 80px;
         margin-bottom: 70px;
         width: 90vw;
+        height: 35vh;
+    }
+    .offers .offers-banner .content{
+        top: 0%;
+    
+    }
+    .offers .offers-banner .content h1{
+        font-size: 3.5rem;
+    }
+    .offers .offers-banner .content button{
+        width: 225px;
+        height: 50px;
+        border-radius: 30px;
+        font-size: 20px;
     }
    
 }
 @media(max-width: 1024px){
     .offers{
         padding: 0px 80px;
+        height: 30vh;
     }
-    .offers img{
+    .offers .offers-banner img{
         width: 130%;
-        }
+    }
+    
+    .offers .offers-banner .content{
+        padding: 10px;
+    }
     .offers .content h1{
         font-size: 3rem;
     }
@@ -82,8 +111,6 @@
         padding-left: 20px;
         padding-right: 20px;
     }
-    .offers content{
-    }
     .offers .content h1{
         font-size: 2rem;
     }
@@ -96,7 +123,19 @@
 
 @media(max-width: 500px){
     .offers{
-        margin-top: 100px;
+        margin-top: 80px;
         margin-bottom: 50px;
     }
+    .offers .offers-banner .content{
+        margin: 5px;
+        padding: 20px;
+    }
+    .offers .offers-banner .content h1{
+        font-size: 1.8rem;
+    }
+    .offers .offers-banner .content button{
+        width: 205px;
+        height: 45px;
+    }
+   
 }
