@@ -3,8 +3,9 @@ a{
 }
 /* carousel */
 .carousel{
+    margin: auto;
     z-index: 1;
-    height: 90vh;
+    height: 105vh;
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -284,16 +285,19 @@ a{
     .carousel .list .item .content .title{
         font-size: 30px;
     }
-    .carousel .list .item img{
-        zoom: 1.2;
-
-    }
 }
 
 @media(max-width: 500px){
-    .carousel {
-        zoom: 1.1;
-
+    .carousel .list .item{
+        margin: auto;
     }
+ }
    
+@media(max-width: 375px){
+    .carousel .list .item .buttons{
+        display: none;
+    }
+    .carousel .list .item .des{
+        display: none;
+    }
 }

@@ -22,7 +22,15 @@ const Footer = () => {
       <div className="colorDiv">
         <div className="videoDiv">
           <div className="video-container">
-            <video src={video} loop autoPlay muted type="video/mp4"></video>
+            <video
+              src={video}
+              loop
+              autoPlay
+              muted
+              type="video/mp4"
+              controls={false}
+              controlsList="nodownload"
+            ></video>
           </div>
         </div>
         <div className="secContent container">

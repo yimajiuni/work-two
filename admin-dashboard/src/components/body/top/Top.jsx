@@ -44,7 +44,14 @@ const Top = () => {
             <button className="btn transparent lettercolor">Top Sellers</button>
           </div>
           <div className="videoDiv">
-            <video src={video} autoPlay loop muted></video>
+            <video
+              src={video}
+              autoPlay
+              loop
+              muted
+              controls={false}
+              controlsList="nodownload"
+            ></video>
           </div>
         </div>
 

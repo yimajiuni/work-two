@@ -156,16 +156,23 @@
 
 @media(max-width: 500px){
     .main{
-        width: 90%;
+        width: 95%;
     }
-    .main .shopcategory-banner .content{    
+    .shop-category .main .shopcategory-banner img{   
+        width: 105%;
+        height: 80%;
     }
-    .main .shopcategory-banner .content h2{
-        font-size: 1.5rem;
+    .shop-category .main .shopcategory-banner .content h2{
+        font-size: 1.8rem;
+    }
+    .shopcategory-products{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
 }
 @media(max-width: 378px){
-    .main .shopcategory-banner .content h2{
-        font-size: 1.2rem;
+    .shop-category .main .shopcategory-banner .content h2{
+        font-size: 1.5rem;
     }
 }

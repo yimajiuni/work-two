@@ -134,8 +134,9 @@
         font-size: 1.8rem;
     }
     .offers .offers-banner .content button{
-        width: 205px;
-        height: 45px;
+        width: 185px;
+        height: 35px;
+        font-size: 16px;
     }
    
 }
