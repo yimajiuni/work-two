@@ -2,7 +2,8 @@ import React from "react";
 import { useState, Suspense, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import Loader from "../components/Loader";
-import Island from "../models/Island";
+/*import Island from "../models/Island";*/
+import Hand from "../models/Hand";
 import Sky from "../models/Sky";
 import Bird from "../models/Bird";
 import Plane from "../models/Plane";
@@ -72,16 +73,15 @@ function Home() {
       >
         <Suspense fallback={<Loader />}>
           <directionalLight position={[1, 1, 1]} intensity={5} />
-          <ambientLight intensity={0.5} />
+          <ambientLight intensity={1.4} />
           <hemisphereLight
-            skyColor="#ble1ff"
-            groundColor="#000000"
+            skyColor="#ffffff"
+            groundColor="#fa07a1"
             intensity={1}
           />
-
-          {<Bird />}
-          <Sky isRotating={isRotating} />
-          <Island
+          {/*<Bird />*/}
+          {<Sky isRotating={isRotating} />}
+          <Hand
             position={islandPosition}
             scale={islandScale}
             rotation={islandRotation}
@@ -89,12 +89,20 @@ function Home() {
             setIsRotating={setIsRotating}
             setCurrentStage={setCurrentStage}
           />
-          <Plane
+          {/*<Island
+            position={islandPosition}
+            scale={islandScale}
+            rotation={islandRotation}
+            isRotating={isRotating}
+            setIsRotating={setIsRotating}
+            setCurrentStage={setCurrentStage}
+          />*/}
+          {/*<Plane
             isRotating={isRotating}
             scale={planeScale}
             position={planePosition}
             rotation={[0, 20, 0]}
-          />
+          />*/}
         </Suspense>
       </Canvas>
       <div className="absolute bottom-2 left-2">
