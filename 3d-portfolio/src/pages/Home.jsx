@@ -66,7 +66,7 @@ function Home() {
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
       <Canvas
-        className={`w-full h-screen bg-transparent ${
+        className={`opacity-80 w-full h-screen bg-transparent ${
           isRotating ? "cursor-grabbing" : "cursor-grab"
         }`}
         camera={{ near: 0.1, far: 1000 }}
@@ -106,12 +106,12 @@ function Home() {
         </Suspense>
       </Canvas>
       <div className="absolute bottom-2 left-2">
-        <img
+        {/*<img
           src={!isPlayingMusic ? soundoff : soundon}
           alt="sound"
           className="w-10 h-10 cursor pointer object-contain"
           onClick={() => setIsPlayingMusic(!isPlayingMusic)}
-        />
+        />*/}
       </div>
     </section>
   );

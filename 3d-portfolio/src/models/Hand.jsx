@@ -144,7 +144,7 @@ const Hand = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
         receiveShadow
         geometry={nodes.Object_5001.geometry}
         material={materials["Material_46.002"]}
-        position={[-100.95, 15.583, -30.898]}
+        position={[-100.95, 15.583, -40.898]}
         rotation={[-3.2, -99.5, 2.236]}
       />
       <mesh
@@ -152,7 +152,7 @@ const Hand = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
         receiveShadow
         geometry={nodes.Object_5.geometry}
         material={materials.Material_46}
-        position={[-115.948, -1.023, -8.28]}
+        position={[-115.948, -1.023, -18.28]}
         rotation={[-0.9, -19.4, -1.5]}
         scale={-1}
       />
