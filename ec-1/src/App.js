@@ -36,7 +36,6 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<LoginSignUp />} />
           <Route path="*" element={<NotFoundPage />} />{" "}
-          {/* Catch-all route for 404 errors */}
         </Routes>
         <Footer />
       </BrowserRouter>
