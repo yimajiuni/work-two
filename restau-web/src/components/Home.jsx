@@ -23,7 +23,7 @@ const Home = () => {
     <div className="z-10 min-h-screen flex flex-row justify-between lg:px-32 px-5 bg-[url('./assets/img/hero1.jpg')] bg-cover bg-no-repeat">
       <div className="w-full space-y-5 ">
         {showContent && (
-          <div className="flex justify-center ">
+          <div className="flex justify-center">
             <div className="sm:pt-30 sm:w-100 lg:h-1/3 sm:h-4/5 sm:bottom-0 md:bottom-20 lg:bottom-40 fixed py-10 px-10 backdrop-blur-md shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] rounded-lg ">
               <h1 className="text-backgroundColor font-semibold text-6xl sm:text-5xl">
                 Elevate Your Inner Foodie with Every Bite

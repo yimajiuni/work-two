@@ -133,6 +133,9 @@
 
 
 @media(max-width: 800px){
+    .shopcategory-banner{
+        width: 95%;
+    }
     .shop-category{
         margin-top: 100px;
     }
@@ -172,8 +175,25 @@
         gap: 20px;
     }
 }
-@media(max-width: 378px){
+
+@media screen and (max-width:378px){
+    /* img{
+        max-width: 100%;
+        display: block;
+        
+    }*/
+    .shopcategory-products{
+        max-width: 100%;
+        grid-template-columns: 1fr 1fr;
+        display: grid;
+        gap: 20px;
+        zoom: 90%;
+
+    }
+
     .shop-category .main .shopcategory-banner .content h2{
         font-size: 1.5rem;
     }
 }
+
+   
