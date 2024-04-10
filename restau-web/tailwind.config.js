@@ -9,7 +9,8 @@ module.exports = {
         lightText: "#959595",
       },
       screens: {
-        sm: "375px",
+        sm: "500px",
+        sx: "378px",
       },
     },
   },
