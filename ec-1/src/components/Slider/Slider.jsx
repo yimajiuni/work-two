@@ -6,17 +6,23 @@ import test3_img from "../Assets/test7.jpg";
 import test4_img from "../Assets/test8.jpg";
 
 const Slider = () => {
-  const nextRef = useRef(null);
-  const prevRef = useRef(null);
-  const carouselRef = useRef(null);
-  const sliderRef = useRef(null);
-  const thumbnailBorderRef = useRef(null);
+  //Functionality Variables: These variables are used to handle the timing and state changes in the slider.
 
-  const [timeRunning] = useState(3000);
-  const [timeAutoNext] = useState(7000);
+  // Refs: These refs are used to access DOM elements and handle interactions.
+
+  const nextRef = useRef(null); //Ref for the next button
+  const prevRef = useRef(null); //Ref for the previous button.
+  const carouselRef = useRef(null); //Ref for the main carousel container.
+  const sliderRef = useRef(null); // Ref for the slider container.
+  const thumbnailBorderRef = useRef(null); //Ref for the thumbnail container.
+
+  const [timeRunning] = useState(3000); //Represents the duration (in milliseconds) between each slide transition.
+  /*const [timeAutoNext] = useState(7000);// Represents the duration (in milliseconds) for automatically moving to the next slide.*/
   let runTimeOut;
-  let runNextAuto;
+  /*let runNextAuto;*/
 
+  // event listeners handle the click events for the "Next" and "Previous" buttons.
+  // useEffect: This hook runs after the component is mounted. It adds event listeners to the "Next" and "Previous" buttons.
   useEffect(() => {
     nextRef.current.addEventListener("click", () => showSlider("next"));
     prevRef.current.addEventListener("click", () => showSlider("prev"));
@@ -24,7 +30,7 @@ const Slider = () => {
     thumbnailBorderRef.current.appendChild(
       thumbnailBorderRef.current.children[0]
     );
-
+    /*
     runNextAuto = setTimeout(() => {
       nextRef.current.click();
     }, timeAutoNext);
@@ -32,9 +38,9 @@ const Slider = () => {
     return () => {
       clearTimeout(runTimeOut);
       clearTimeout(runNextAuto);
-    };
+    };*/
   }, []);
-
+  //This function is called when the "Next" or "Previous" button is clicked. It moves the slider to the next or previous slide.
   const showSlider = (type) => {
     const sliderItems = sliderRef.current.querySelectorAll(".item");
     const thumbnailItems = thumbnailBorderRef.current.querySelectorAll(".item");
@@ -56,11 +62,11 @@ const Slider = () => {
       carouselRef.current.classList.remove("next");
       carouselRef.current.classList.remove("prev");
     }, timeRunning);
-
+    /*
     clearTimeout(runNextAuto);
     runNextAuto = setTimeout(() => {
       nextRef.current.click();
-    }, timeAutoNext);
+    }, timeAutoNext);*/
   };
 
   return (
