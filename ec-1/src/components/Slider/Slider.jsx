@@ -6,36 +6,41 @@ import test3_img from "../Assets/test7.jpg";
 import test4_img from "../Assets/test8.jpg";
 
 const Slider = () => {
-  //Functionality Variables: These variables are used to handle the timing and state changes in the slider.
-  // Refs: These refs are used to access DOM elements and handle interactions.
-  const nextRef = useRef(null); //Ref for the next button
-  const prevRef = useRef(null); //Ref for the previous button.
-  const carouselRef = useRef(null); //Ref for the main carousel container.
-  const sliderRef = useRef(null); // Ref for the slider container.
-  const thumbnailBorderRef = useRef(null); //Ref for the thumbnail container.
+  // Refs access DOM elements and handle interactions.
+  const nextRef = useRef(null); //e.g. Refs for the next button that access and interacts with the button DOM element
+  const prevRef = useRef(null);
+  const carouselRef = useRef(null);
+  const sliderRef = useRef(null);
+  const thumbnailBorderRef = useRef(null);
 
   const [timeRunning] = useState(3000); //Represents the duration (in milliseconds) between each slide transition.
   /*const [timeAutoNext] = useState(7000);// Represents the duration (in milliseconds) for automatically moving to the next slide.*/
   let runTimeOut;
   /*let runNextAuto;*/
-  //This function is called when the "Next" or "Previous" button is clicked. It moves the slider to the next or previous slide.
 
+  //This function is called when the "Next" or "Previous" button is clicked. It moves the slider to the next or previous slide.
   const showSlider = (type) => {
+    //select all slide items and thumbnail items
     const sliderItems = sliderRef.current.querySelectorAll(".item");
     const thumbnailItems = thumbnailBorderRef.current.querySelectorAll(".item");
 
     if (type === "next") {
+      // If the type is "next", move the first slider item to the end and the first thumbnail
+      // item to the end, and add the "next" class to trigger the slide animation.
       sliderRef.current.appendChild(sliderItems[0]);
       thumbnailBorderRef.current.appendChild(thumbnailItems[0]);
       carouselRef.current.classList.add("next");
     } else {
+      // If the type is "prev", move the last slider item to the beginning and the last thumbnail item to the beginning,
+      //and add the "prev" class to trigger the slide animation.
+
       sliderRef.current.prepend(sliderItems[sliderItems.length - 1]);
       thumbnailBorderRef.current.prepend(
         thumbnailItems[thumbnailItems.length - 1]
       );
       carouselRef.current.classList.add("prev");
     }
-
+    // Clear the timeout to prevent multiple animations and set a new timeout to remove the "next" or "prev" class after the animation duration.
     clearTimeout(runTimeOut);
     runTimeOut = setTimeout(() => {
       carouselRef.current.classList.remove("next");
@@ -49,10 +54,15 @@ const Slider = () => {
   };
   // event listeners handle the click events for the "Next" and "Previous" buttons.
   // useEffect: This hook runs after the component is mounted. It adds event listeners to the "Next" and "Previous" buttons.
+
+  // useEffect hook to add event listeners for the Next and Previous buttons when the component mounts.
   useEffect(() => {
+    // Add event listeners to the Next and Previous buttons to call the showSlider function with the appropriate type.
+
     nextRef.current.addEventListener("click", () => showSlider("next"));
     prevRef.current.addEventListener("click", () => showSlider("prev"));
 
+    // Move the first thumbnail item to the end to create a loop effect.
     thumbnailBorderRef.current.appendChild(
       thumbnailBorderRef.current.children[0]
     );
@@ -61,6 +71,7 @@ const Slider = () => {
       nextRef.current.click();
     }, timeAutoNext);*/
 
+    // Clean up function to remove event listeners when the component unmounts.
     return () => {
       clearTimeout(runTimeOut);
       /*clearTimeout(runNextAuto);*/
