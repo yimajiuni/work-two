@@ -7,9 +7,7 @@ import test4_img from "../Assets/test8.jpg";
 
 const Slider = () => {
   //Functionality Variables: These variables are used to handle the timing and state changes in the slider.
-
   // Refs: These refs are used to access DOM elements and handle interactions.
-
   const nextRef = useRef(null); //Ref for the next button
   const prevRef = useRef(null); //Ref for the previous button.
   const carouselRef = useRef(null); //Ref for the main carousel container.
@@ -20,27 +18,8 @@ const Slider = () => {
   /*const [timeAutoNext] = useState(7000);// Represents the duration (in milliseconds) for automatically moving to the next slide.*/
   let runTimeOut;
   /*let runNextAuto;*/
-
-  // event listeners handle the click events for the "Next" and "Previous" buttons.
-  // useEffect: This hook runs after the component is mounted. It adds event listeners to the "Next" and "Previous" buttons.
-  useEffect(() => {
-    nextRef.current.addEventListener("click", () => showSlider("next"));
-    prevRef.current.addEventListener("click", () => showSlider("prev"));
-
-    thumbnailBorderRef.current.appendChild(
-      thumbnailBorderRef.current.children[0]
-    );
-    /*
-    runNextAuto = setTimeout(() => {
-      nextRef.current.click();
-    }, timeAutoNext);
-
-    return () => {
-      clearTimeout(runTimeOut);
-      clearTimeout(runNextAuto);
-    };*/
-  }, []);
   //This function is called when the "Next" or "Previous" button is clicked. It moves the slider to the next or previous slide.
+
   const showSlider = (type) => {
     const sliderItems = sliderRef.current.querySelectorAll(".item");
     const thumbnailItems = thumbnailBorderRef.current.querySelectorAll(".item");
@@ -68,6 +47,25 @@ const Slider = () => {
       nextRef.current.click();
     }, timeAutoNext);*/
   };
+  // event listeners handle the click events for the "Next" and "Previous" buttons.
+  // useEffect: This hook runs after the component is mounted. It adds event listeners to the "Next" and "Previous" buttons.
+  useEffect(() => {
+    nextRef.current.addEventListener("click", () => showSlider("next"));
+    prevRef.current.addEventListener("click", () => showSlider("prev"));
+
+    thumbnailBorderRef.current.appendChild(
+      thumbnailBorderRef.current.children[0]
+    );
+    /*
+    runNextAuto = setTimeout(() => {
+      nextRef.current.click();
+    }, timeAutoNext);*/
+
+    return () => {
+      clearTimeout(runTimeOut);
+      /*clearTimeout(runNextAuto);*/
+    };
+  }, [showSlider]);
 
   return (
     <div className="container">
