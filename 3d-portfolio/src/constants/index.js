@@ -82,36 +82,38 @@ export const skills = [
 export const experiences = [
   {
     title: "Graphic Designer/Illustrator",
-    company_name: "Starbucks",
+    company_name: "Business Partners",
     icon: starbucks,
     iconBg: "#accbe1",
-    date: "March 2020 - April 2021",
+    date: "April 2009 - Aug 2014",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
+      "Web production management for amusement companies, event posters, inserts, POP and store, and design of event posters, inserts, POPs, store signs, panels, packaging, job postings, newspaper articles, free newspapers, and proofreading.",
+      "design, and proofreading of text. Designing portraits for clients, layouts and designs of seating cards, catalogs, guides, and notepads for art exhibitions, etc.",
+      "layout, design, etc. for art exhibitions. Other clients include furniture trading companies, construction and renovation companies.",
       "Participating in code reviews and providing constructive feedback to other developers.",
+      "Other work includes cutting and other processing, enclosure, shipping arrangements, and all other related work. Printing of data created by outside designers,",
+      "large Printing of data created by outside designers, and printing operations using large commercial printers.",
     ],
   },
   {
     title: "Graphic Designer/Apparel Assistant Designer",
-    company_name: "Tesla",
+    company_name: "Alpen",
     icon: tesla,
     iconBg: "#fbc3bc",
-    date: "Jan 2021 - Feb 2022",
+    date: "Aug 2014 - Oct -2017",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Input apparel sewing specifications and other fabric orders, revise design drawings, create new packaging, Designing, adding colors, and revising sportswear patterns, editing and proofreading instruction manuals, etc.",
+      "Creation of comparison charts with other companies' products and planning presentation materials in support of merchandisers.",
+      "also I was in charge of designing sportswear patterns, adding colors, revising, editing and proofreading instruction manuals. yoga wear and sports casual wear products (athleisure fashion) that break down the barriers between daily life and sports.",
+      "yoga wear and sports casual products (athleisure fashion) that remove the boundary between daily life and sports.",
     ],
   },
   {
     title: "Graphic Designer for Product Promotion",
-    company_name: "Shopify",
+    company_name: "W Cosmetics",
     icon: shopify,
     iconBg: "#b7e4c7",
-    date: "Jan 2022 - Jan 2023",
+    date: "Feb 2018 - Feb 2019",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -121,15 +123,15 @@ export const experiences = [
   },
   {
     title: "Web & Graphic Designer",
-    company_name: "Meta",
+    company_name: "Nextel",
     icon: meta,
     iconBg: "#a2d2ff",
-    date: "Jan 2021 - Present",
+    date: "June 2020 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "As a graphic designer for website , i was in charge of updating the Rakuten Ichiba online store and designing sales promotions during sales.",
+      "and sales promotion design for the company's official e-commerce site. HTML and CSS coding for the company's official e-commerce site.",
+      "and updating of the company's official e-commerce site using HTML and CSS, as well as the production and distribution of e-mail magazines. I used HTML and CSS as markup languages.",
+      "In addition to HTML and CSS, I used Javascript as a programming language without any framework. For graphic design work, I mainly used adobe photoshop and Illustrator.",
     ],
   },
 ];
@@ -143,12 +145,12 @@ export const socialLinks = [
   {
     name: "GitHub",
     iconUrl: github,
-    link: "https://github.com/YourGitHubUsername",
+    link: "https://github.com/yimajiuni",
   },
   {
     name: "LinkedIn",
     iconUrl: linkedin,
-    link: "https://www.linkedin.com/in/YourLinkedInUsername",
+    link: "https://www.linkedin.com/",
   },
 ];
 
