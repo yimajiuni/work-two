@@ -17,13 +17,12 @@
     position: fixed;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     background:  rgb(231, 222, 207);
     width: 100%;
     padding: 1rem;
     z-index: 1000;
     box-shadow:0 2px 4px rgba(2, 15, 19, 0.240);
-
 
     .logo{
         color: var(--blackColor);
