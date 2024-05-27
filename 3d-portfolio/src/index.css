@@ -184,5 +184,5 @@ body:has(.card[data-color="green"]:hover) {
 }
 .language-selector{
   background:#2b77e7;
-  color: #fbdced;
+  color: #fff;
 }
