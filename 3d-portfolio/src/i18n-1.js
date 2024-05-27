@@ -41,8 +41,18 @@ i18n
       en: {
         translation: {
           greeting: "hello, Welcome back",
-          CTA: {},
-          homeInfo: {},
+          CTA: {
+            line1: `Have a project in mind?
+            Let's build something together!`,
+          },
+          homeInfo: {
+            line1: "Hi, I'm",
+            line2: "A Frontend Engineer Graphic Designer from japan",
+            line3: ` Led multiple projects to success over the years.
+            Curious about the impact?`,
+            line4: ` Need a project done or looking for a dev?
+             I'm just a few keystrokes away`,
+          },
           projectDesc: {
             line1: `  I've embarked on numerous projects throughout the years, but these are
             the ones i hold closest to my heart. feel free to explore my github and
@@ -126,14 +136,14 @@ i18n
               iconBg: "#b7e4c7",
               date: "Feb 2018 - Feb 2019",
               points: [
-                `Developing and maintaining web applications using React.js and other related technologies.
-                Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.
-                Implementing responsive design and ensuring cross-browser compatibility.
-                Participating in code reviews and providing constructive feedback to other developers.`,
+                `Wholesale cosmetics company based in Brisbane, Australia, where I was in charge of product planning for beauty cosmetics, production of sales promotion tools, and printing operators.
+                Graphic designer of sales promotion tools such as POP and banners, printing, and localization of product descriptions, catch copy, and instruction manuals for packaging.
+                Localization of product descriptions, catch copy, and instruction manuals. Software used includes Adobe photoshop and Illustrator.
+                Design and production from a feminine and realistic point of view while focusing on functionality and cost.`,
               ],
             },
             {
-              title: "Web & Graphic Designer",
+              title: "Web & Graphic Designer and Coder",
               company_name: "Nextel",
               icon: meta,
               iconBg: "#a2d2ff",
@@ -151,8 +161,18 @@ i18n
       jp: {
         translation: {
           greeting: "こんにちは、おかえりなさい。",
-          CTA: {},
-          homeInfo: {},
+          CTA: {
+            line1: "プロジェクトを考え中ですか？一緒に何か作りましょう！",
+          },
+          homeInfo: {
+            line1: "こんにちは！私は",
+            line2:
+              "日本出身のフロントエンドエンジニア兼グラフィックデザイナーです。",
+            line3:
+              "この数年でいくつものプロジェクトを仕上げました。どれほどの規模や影響を与えられるかが気になりますか?",
+            line4:
+              "プロジェクトを仕上げるディベロッパーが必要ですか?キーボードをちょっと叩いてご連絡下さい！",
+          },
           projectDesc: {
             line1: `開発を初めてしばらく経ちますが、ここで紹介するプロジェクトは、中でも自分の開発してきた中で上で思い入れのある作品です。
             `,
@@ -232,9 +252,10 @@ i18n
               iconBg: "#b7e4c7",
               date: "Feb 2018 - Feb 2019",
               points: [
-                `西オーストラリア・パースで夜間語学学校就業中に清掃業と国内クラウドソーシングオンラインサイトで
-                のフリーランスでグラフィックデザイナーとして就業。イラストレーター、フォトショップ等のソフトでのロゴ、
-                チラシ、パッケージ、バナー等提案、制作のデザイン、パッケージデザイン、チラシ制作、WEBサイトのワイヤーデザイン等の個人業務。
+                `オーストラリアブリスベンを拠点に持ち英語環境の化粧品の卸売業にて美容化粧品の商
+                品企画、販売促進ツールの制作、印刷オペレーター等を担当。POPやバナー等の販促ツール制作、印刷のグラフィックデザイナー業やパッケージの商
+                品説明、キャッチコピー、取扱説明書の文言決めからローカライゼーション業務。ソフトウェアはAdobe photoshop とillustrator を使用。
+                機能やコストを重視しつつも女性的でリアルな目線に立ったデザイン制作。
                 `,
               ],
             },
