@@ -1,29 +1,20 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import LanguageSelector from "../components/LanguageSelector";
-
 import { Link } from "react-router-dom";
-import CTA from "../components/CTA";
-import { projects } from "../constants";
-import { arrow } from "../assets/icons";
+import CTA from "../components/CTA.jsx";
+import { projects } from "../i18n-1.js";
+import { arrow } from "../assets/icons/index.js";
 
-function TestTranslated() {
+function TranslatedProjects() {
   const { t } = useTranslation();
-  {
-    /*
-    const { line1, line2 } = t("description", {
-      channel: "You Call Yuko",
-    });
-    console.log(line1);
-*/
-  }
+
+  // Get translated projects descriptions
+  const translatedProjects = t("projects", { returnObjects: true });
+  console.log(translatedProjects); // Add this line to check the output
 
   return (
     <div className="max-container">
-      <LanguageSelector />
-
       <h1>{t("greeting")}</h1>
-
       <section className="max-container">
         <h1 className="head-text">
           My{" "}
@@ -38,14 +29,14 @@ function TestTranslated() {
         </p>
 
         <div className="flex flex-wrap my-20 gap-16">
-          {projects.map((project) => (
-            <div className="lg:w-[400px] w-full" key={project.name}>
+          {translatedProjects.map((project, index) => (
+            <div className="lg:w-[400px] w-full" key={index}>
               <div className="block-container w-12 h-12">
                 <div className={`btn-back rounded-xl ${project.theme}`} />
                 <div className="btn-front rounded-xl flex justify-center items-center">
                   <img
                     src={project.iconUrl}
-                    alt="threads"
+                    alt={project.name}
                     className="w-1/2 h-1/2 object-contain"
                   />
                 </div>
@@ -55,9 +46,7 @@ function TestTranslated() {
                 <h4 className="text-2xl font-poppins font-semibold">
                   {project.name}
                 </h4>
-                <p className="mt-2 text-slate-500">
-                  {t("projectDesc.projectDescOne")}
-                </p>
+                <p className="mt-2 text-slate-500">{project.description}</p>
                 <div className="mt-5 flex items-center gap-2 font-poppins">
                   <Link
                     to={project.link}
@@ -82,17 +71,8 @@ function TestTranslated() {
 
         <CTA />
       </section>
-      {/*<Trans
-        //i18nKey={"description.line1"}
-        i18nKey={line1}
-        values={{
-          title: "You Call Yuko",
-        }}
-        components={{ 1: <b /> }}
-      />
-      {/*<p>{line1}</p>
-      <span>{line2}</span>*/}
     </div>
   );
 }
-export default TestTranslated;
+
+export default TranslatedProjects;

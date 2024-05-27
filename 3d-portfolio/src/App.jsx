@@ -1,6 +1,13 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import { Home, About, Projects, Contact, TestTranslated } from "./pages";
+import {
+  Home,
+  About,
+  Projects,
+  Contact,
+  TranslatedProjects,
+  TranslatedAbout,
+} from "./pages";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -9,9 +16,10 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/projects" element={<TestTranslated />} />
+          <Route path="/projects" element={<TranslatedProjects />} />
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<TranslatedAbout />} />
+          {/*<Route path="/about" element={<About />} />*/}
           {/*<Route path="/projects" element={<Projects />} />*/}
           <Route path="/contact" element={<Contact />} />
         </Routes>

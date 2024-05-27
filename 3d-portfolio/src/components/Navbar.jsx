@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import LanguageSelector from "../components/LanguageSelector";
 
 const Navbar = () => {
   return (
@@ -26,6 +27,22 @@ const Navbar = () => {
           }
         >
           projects
+        </NavLink>
+
+        <NavLink className="text-blue-500">
+          <div>language</div>
+          <div className="active">
+            <ul className="navLists flex">
+              <LanguageSelector />
+              {/*
+            <li className="navItem">
+                English
+            </li>
+            <li className="navItem">
+                日本語
+            </li>*/}
+            </ul>
+          </div>
         </NavLink>
       </nav>
     </header>

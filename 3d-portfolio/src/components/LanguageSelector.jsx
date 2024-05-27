@@ -3,34 +3,36 @@ import { useTranslation } from "react-i18next";
 
 const languages = [
   { code: "en", lang: "English" },
-  { code: "jp", lang: "Japanese" },
+  { code: "jp", lang: "日本語" },
 ];
 
 const LanguageSelector = () => {
   const { i18n } = useTranslation();
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
+  const changeLanguage = (event) => {
+    i18n.changeLanguage(event.target.value);
   };
+
   useEffect(() => {
     console.log(i18n.dir());
     document.body.dir = i18n.dir();
   }, [i18n, i18n.language]);
 
   return (
-    <div className="btn-container">
-      {languages.map((lng) => {
-        return (
-          <button
-            className={lng.code === i18n.language ? "selected" : ""}
-            key={lng.code}
-            onClick={() => changeLanguage(lng.code)}
-          >
+    <div>
+      <select
+        value={i18n.language}
+        onChange={changeLanguage}
+        className="language-selector"
+      >
+        {languages.map((lng) => (
+          <option key={lng.code} value={lng.code}>
             {lng.lang}
-          </button>
-        );
-      })}
+          </option>
+        ))}
+      </select>
     </div>
   );
 };
+
 export default LanguageSelector;

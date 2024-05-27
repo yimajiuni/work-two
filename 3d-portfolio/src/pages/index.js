@@ -2,6 +2,7 @@ import Home from "./Home";
 import About from "./About";
 import Projects from "./Projects";
 import Contact from "./Contact";
-import TestTranslated from "./TestTranslated";
+import TranslatedProjects from "./TranslatedProjects";
+import TranslatedAbout from "./TranslatedAbout";
 
-export { Home, About, Projects, Contact, TestTranslated };
+export { Home, About, Projects, Contact, TranslatedProjects, TranslatedAbout };
