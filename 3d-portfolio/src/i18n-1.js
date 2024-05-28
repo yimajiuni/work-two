@@ -52,8 +52,8 @@ i18n
           },
           homeInfo: {
             line1: "Hi, I'm",
-            line2: "A Frontend Engineer and",
-            line3: "Graphic Designer from japan",
+            line2: "A Frontend Engineer and Graphic Designer from japan",
+            line3: "",
             line4:
               "Worked with many companies  and picked up many skills along the way",
             more: "Learn more",
@@ -183,7 +183,7 @@ i18n
             line5:
               "この数年でいくつものプロジェクトを仕上げました。どれほどの規模や影響を与えられるかが気になりますか?",
             visit: "ポートフォリオを見る",
-            line6: `プロジェクトを仕上げるディベロッパーが必要ですか?キーボードをちょっと叩いてご連絡下さい！"`,
+            line6: `プロジェクトを仕上げるディベロッパーが必要ですか?キーボードをちょっと叩いてご連絡下さい！`,
             contact: "連絡する",
           },
           projectDesc: {
