@@ -83,11 +83,11 @@ function TranslatedAbout() {
                     {experience.company_name}
                   </p>
                 </div>
-                <div className="my-5 list-discc ml-5 space-y-2">
-                  <p className="text-black-500/50 font-normal pl-1 text-sm">
+                <ul className="my-5 list-discc ml-5 space-y-2">
+                  <li className="text-black-500/50 font-normal pl-1 text-sm">
                     {experience.points}
-                  </p>
-                </div>
+                  </li>
+                </ul>
               </VerticalTimelineElement>
             ))}
           </VerticalTimeline>

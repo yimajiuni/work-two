@@ -28,6 +28,11 @@ import {
   mui,
   threads,
   typescript,
+  figma,
+  illustrator,
+  photoshop,
+  bootstrap,
+  jquery,
 } from "./assets/icons";
 
 i18n
@@ -47,11 +52,16 @@ i18n
           },
           homeInfo: {
             line1: "Hi, I'm",
-            line2: "A Frontend Engineer Graphic Designer from japan",
-            line3: ` Led multiple projects to success over the years.
-            Curious about the impact?`,
-            line4: ` Need a project done or looking for a dev?
+            line2: "A Frontend Engineer and",
+            line3: "Graphic Designer from japan",
+            line4:
+              "Worked with many companies  and picked up many skills along the way",
+            more: "もっと見る",
+            line5: ` Led multiple projects to success over the years. Curious about the impact?`,
+            visit: "ポートフォリオを見る",
+            line6: ` Need a project done or looking for a dev?
              I'm just a few keystrokes away`,
+            contact: "連絡する",
           },
           projectDesc: {
             line1: `  I've embarked on numerous projects throughout the years, but these are
@@ -166,12 +176,15 @@ i18n
           },
           homeInfo: {
             line1: "こんにちは！私は",
-            line2:
-              "日本出身のフロントエンドエンジニア兼グラフィックデザイナーです。",
-            line3:
+            line2: "日本出身のフロントエンドエンジニア兼、",
+            line3: "グラフィックデザイナーです。",
+            line4: "たくさんの企業と働くうちに色々なスキルを身に着けました。",
+            more: "もっと見る",
+            line5:
               "この数年でいくつものプロジェクトを仕上げました。どれほどの規模や影響を与えられるかが気になりますか?",
-            line4:
-              "プロジェクトを仕上げるディベロッパーが必要ですか?キーボードをちょっと叩いてご連絡下さい！",
+            visit: "ポートフォリオを見る",
+            line6: `プロジェクトを仕上げるディベロッパーが必要ですか?キーボードをちょっと叩いてご連絡下さい！"`,
+            contact: "連絡する",
           },
           projectDesc: {
             line1: `開発を初めてしばらく経ちますが、ここで紹介するプロジェクトは、中でも自分の開発してきた中で上で思い入れのある作品です。
@@ -328,6 +341,31 @@ export const skills = [
     imageUrl: tailwindcss,
     name: "Tailwind CSS",
     type: "Frontend",
+  },
+  {
+    imageUrl: bootstrap,
+    name: "Bootstrap",
+    type: "Frontend",
+  },
+  {
+    imageUrl: jquery,
+    name: "JQuery",
+    type: "Frontend",
+  },
+  {
+    imageUrl: illustrator,
+    name: "Illustrator",
+    type: "Design",
+  },
+  {
+    imageUrl: photoshop,
+    name: "Photoshop",
+    type: "Design",
+  },
+  {
+    imageUrl: figma,
+    name: "Figma",
+    type: "Design",
   },
 ];
 
