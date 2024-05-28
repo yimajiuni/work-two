@@ -56,12 +56,12 @@ i18n
             line3: "Graphic Designer from japan",
             line4:
               "Worked with many companies  and picked up many skills along the way",
-            more: "もっと見る",
+            more: "Learn more",
             line5: ` Led multiple projects to success over the years. Curious about the impact?`,
-            visit: "ポートフォリオを見る",
+            visit: "Visit Portfolio",
             line6: ` Need a project done or looking for a dev?
              I'm just a few keystrokes away`,
-            contact: "連絡する",
+            contact: "Let's Talk",
           },
           projectDesc: {
             line1: `  I've embarked on numerous projects throughout the years, but these are
