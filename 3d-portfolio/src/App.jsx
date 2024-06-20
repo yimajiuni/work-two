@@ -7,6 +7,7 @@ import {
   Contact,
   TranslatedProjects,
   TranslatedAbout,
+  Designs,
 } from "./pages";
 import Navbar from "./components/Navbar";
 
@@ -16,11 +17,12 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/projects" element={<TranslatedProjects />} />
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<TranslatedAbout />} />
           {/*<Route path="/about" element={<About />} />*/}
+          <Route path="/projects" element={<TranslatedProjects />} />
           {/*<Route path="/projects" element={<Projects />} />*/}
+          <Route path="/designs" element={<Designs />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
