@@ -33,6 +33,29 @@ names.filter(() => {
 });
 
 //**Async await, promise and fetch
+const event = new Promise((resolve, reject) => {
+  var name = "jock";
+  if (name == "jock") {
+    resolve("the name is resolved");
+  } else {
+    reject("the name is rejected");
+  }
+});
+//if rejected then call xx or if resolved then call
+event.then().catch();
+
+const axios = require("axios");
+const fetchData = async () => {
+  try {
+    const data = await axios.get("https://cat-fact.herokuapp.com/facts");
+    console.log(data);
+  } catch (err) {
+    console.log(err);
+  } finally {
+    console.log("promise resolved");
+  }
+};
+fetchData();
 
 //**Arrow function or function
 const ReactJs1 = () => {

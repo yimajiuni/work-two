@@ -24,7 +24,6 @@ const App = () => {
           <ContextTutorial />
           <MemoTutorial />
           <CallbackTutorial />
-          <ReactJs1 />
         </div>
         <div id="dishes"></div>
       </main>

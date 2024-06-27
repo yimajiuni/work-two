@@ -9,19 +9,27 @@ const StateTutorial = () => {
     const increment =()=>{
       counter = counter +1;
     }
+    //become
      const [counter, setCounter] = useState(0);
 
   const increment = () => {
-    setCounter(+1);
+    setCounter( counter +1);　//simulate the logic in () everytime click button
   };
-    */
+  //with same return hook
+  return (
+    <div>
+      {counter}
+      <button onClick={onClick} >increment..</button>
+    </div>
+  );
+   */
   }
 
   const [inputValue, setInputValue] = useState("です");
 
   let onChange = (event) => {
     const newValue = event.target.value;
-    setInputValue(newValue);
+    setInputValue(newValue); //change the state of value
   };
 
   return (

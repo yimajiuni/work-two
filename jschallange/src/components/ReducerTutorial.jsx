@@ -1,10 +1,11 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
+
 //useReducer essensial example
 const reducer = (state, action) => {
   switch (action.type) {
-    case "INCREMENT":
+    case "INCREMENT": //action
       return { count: state.count + 1, showText: state.showText };
-    case "toggleShowText":
+    case "toggleShowText": //action
       return { count: state.count, showText: !state.showText };
     default:
       return state;
@@ -12,10 +13,22 @@ const reducer = (state, action) => {
 };
 
 const ReducerTutorial = () => {
+  const [count, setCount] = useState(0);
+  const [showText, setShowText] = useState(true);
+
   const [state, dispatch] = useReducer(reducer, { count: 0, showText: true });
 
   return (
     <div>
+      <h1>{count}</h1>
+      <button
+        onClick={() => {
+          setCount(count + 1);
+          setShowText(!showText);
+        }}
+      >
+        Click here.
+      </button>
       <h1>{state.count}</h1>
       <button
         onClick={() => {
