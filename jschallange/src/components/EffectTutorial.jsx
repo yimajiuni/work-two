@@ -22,9 +22,6 @@ const EffectTutorial = () => {
     <div>
       hello world {data}
       {error && <div>{error}</div>}
-      <div className="kumo up"></div>
-      <p className="kumo middle">こんなかんじになるよ</p>
-      <div className="kumo down"></div>
     </div>
   );
 };
