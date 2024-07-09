@@ -2,7 +2,23 @@ import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 
-import { meta, shopify, starbucks, tesla } from "./assets/images";
+import {
+  meta,
+  shopify,
+  starbucks,
+  tesla,
+  eqbo,
+  eqch,
+  eqcu,
+  eqgr1,
+  eqgr2,
+  eqgr3,
+  eqgr4,
+  eqhe,
+  eqwh,
+  eqbofull,
+} from "./assets/images";
+
 import {
   css,
   git,
@@ -166,6 +182,94 @@ i18n
               ],
             },
           ],
+          //追加3
+
+          promoDesigns: [
+            {
+              preview: eqbo,
+              name: "Promotion for rain boots",
+              description: "Created a mobile first Dashboard model",
+              link: "https://yimajiuni.com/promotions/eq-bo.jpg",
+              imgs: eqbofull,
+            },
+            {
+              preview: eqch,
+              name: "Sales promotion of horse riding chaps",
+              description:
+                "Sophisticated, easy-to-read promotion inspired by fashion magazines. Add cuts of model images as needed.",
+              link: "https://yimajiuni.com/promotions/eq-ch.jpg",
+            },
+            {
+              preview: eqcu,
+              name: "Sales promotion for riding culottes",
+              description:
+                "Showcase price, catch copy, product images and effectively organize description and functionality display to express overall brand color and promote sales targeting a wide range of ages for the domestic market.",
+              link: "https://yimajiuni.com/promotions/eq-cujpg",
+            },
+            {
+              preview: eqgr1,
+              name: "Sales promotion of riding gloves 1",
+              description:
+                "Promotion of riding gloves with special fabric for winter moisture retention and warmth.",
+              link: "https://yimajiuni.com/promotions/eq-gr1.jpg",
+            },
+            {
+              preview: eqgr2,
+              name: "Sales promotion of synthetic leather gloves for horse riding 2",
+              description:
+                "Promotion of well-fitting synthetic leather gloves for riding. Design to match the product emphasizing sportiness and functional aspects.",
+              link: "https://yimajiuni.com/promotions/eq-gr2.jpg",
+            },
+            {
+              preview: eqgr3,
+              name: "Sales promotion of riding glove accessories",
+              description:
+                ":Promotion that expresses friendliness and elegance, targeting all generations.",
+              link: "https://yimajiuni.com/promotions/eq-gr3.jpg",
+            },
+            {
+              preview: eqgr4,
+              name: "Sales promotion for horse riding glove 3",
+              description:
+                "Promotion of silicone grip glove with cost-effective with sophisticated visual.",
+              link: "https://yimajiuni.com/promotions/eq-gr4.jpg",
+            },
+            {
+              preview: eqhe,
+              name: "Sales promotion of horse riding helmets",
+              description:
+                "Easy to read and sophisticated promotion inspired by magazines",
+              link: "https://yimajiuni.com/promotions/eq-he.jpg",
+            },
+            {
+              preview: eqwh,
+              name: "Sales promotion for a horse riding whip",
+              description:
+                "Sales promotion with expressions that accentuate 'harmony' and 'monogram' to match the distinctive product Functional display is easy to read and aethethically appealing.",
+              link: "https://yimajiuni.com/promotions/eq-wh.jpg",
+            },
+          ],
+          //追加4
+          appDesigns: [
+            {
+              iconUrl: threads,
+              name: "Dashboard App",
+              description: "Created a mobile first Dashboard model",
+              link: "https://dashboard-model.yimajiuni.com/",
+            },
+            {
+              iconUrl: threads,
+              name: "Dashboard App",
+              description: "Created a mobile first Dashboard model",
+              link: "https://dashboard-model.yimajiuni.com/",
+            },
+            {
+              iconUrl: threads,
+              name: "Dashboard App",
+              description: "Created a mobile first Dashboard model",
+              link: "https://dashboard-model.yimajiuni.com/",
+            },
+          ],
         },
       },
       jp: {
@@ -229,7 +333,7 @@ i18n
           aboutDesc: {
             line1: `日本を拠点とするソフトウェア開発者。実践的な学習とアプリの構築を通して、技術とデザインに特化しています。
             `,
-            line2: `あらゆる種類の会社と仕事をし、自分のスキルを高め、あらゆる種類の人々とチームを組んできました。：
+            line2: `あらゆる種類の会社と仕事をし、自分のスキルを高め、あらゆる種類の人々とチームを組んできました。
             `,
           },
           experiences: [
@@ -284,6 +388,93 @@ i18n
                 自社公式ECサイトの制作にはHTMLとCSSを使ったコーディング、更新作業とメールマガジン制作配信を行いました。使用言語はマークアップとしてHTMLとCSSに加えプログラミング言語はフレームワークなしのJavascriptを使用しました。
                 グラフィックデザインの仕事には主にadobe photoshop とillustratorを使用。`,
               ],
+            },
+          ],
+          //追加3
+          promoDesigns: [
+            {
+              preview: eqbo,
+              name: "レインブーツの販売促進",
+              description:
+                "ポラロイド風のデザインやSNS文化を取り入れたヤング世代から他の幅広い世代迄使用される目的で作成。",
+              link: "https://yimajiuni.com/promotions/eq-bo.jpg",
+            },
+            {
+              preview: eqch,
+              name: "乗馬用チャップスの販売促進",
+              description:
+                "ファッション誌からインスパイアされた読みやすく洗練されたプロモーション。必要に応じてモデル画像のカットを追加。",
+              link: "https://yimajiuni.com/promotions/eq-ch.jpg",
+            },
+            {
+              preview: eqcu,
+              name: "乗馬用キュロットの販売促進",
+              description:
+                "値段、キャッチコピー、商品画像のショーケースと説明文と機能表示を効果的に整理しブランド色を全体に表現し、国内向けの幅広い年代をターゲットとした販売促進画像。",
+              link: "https://yimajiuni.com/promotions/eq-cujpg",
+            },
+            {
+              preview: eqgr1,
+              name: "乗馬用グローブの販売促進1",
+              description:
+                "冬用保湿保温特殊生地採用の乗馬用グローブのプロモーション。",
+              link: "https://yimajiuni.com/promotions/eq-gr1.jpg",
+            },
+            {
+              preview: eqgr2,
+              name: "乗馬用合皮グローブの販売促進2",
+              description:
+                "フィット感の高い乗馬用合皮グローブのプロモーション。スポーティさと機能面を強調した製品に合わせたデザイン。",
+              link: "https://yimajiuni.com/promotions/eq-gr2.jpg",
+            },
+            {
+              preview: eqgr3,
+              name: "乗馬用グローブアクセサリーの販売促進",
+              description:
+                "すべての世代をターゲットにした親しみやすさと上品さが表現されたプロモーション",
+              link: "https://yimajiuni.com/promotions/eq-gr3.jpg",
+            },
+            {
+              preview: eqgr4,
+              name: "乗馬用グローブの販売促進3",
+              description:
+                "コストパフォーマンスに優れかつ洗練されたイメージのシリコングリップグローブのプロモーション。",
+              link: "https://yimajiuni.com/promotions/eq-gr4.jpg",
+            },
+            {
+              preview: eqhe,
+              name: "乗馬用ヘルメットの販売促進",
+              description:
+                "ファッション誌からインスパイアされた読みやすく洗練されたプロモーション。",
+              link: "https://yimajiuni.com/promotions/eq-he.jpg",
+            },
+            {
+              preview: eqwh,
+              name: "乗馬用ムチの販売促進",
+              description:
+                "特徴ある製品に合わせ「和」「モノグラム」を引き立たせる表現の販売促進機能表示は見やすくかつファッション性を加味。",
+              link: "https://yimajiuni.com/promotions/eq-wh.jpg",
+            },
+          ],
+          //追加4
+          appDesigns: [
+            {
+              iconUrl: threads,
+              name: "Dashboard App",
+              description: "Created a mobile first Dashboard model",
+              link: "https://dashboard-model.yimajiuni.com/",
+            },
+            {
+              iconUrl: threads,
+              name: "Dashboard App",
+              description: "Created a mobile first Dashboard model",
+              link: "https://dashboard-model.yimajiuni.com/",
+            },
+            {
+              iconUrl: threads,
+              name: "Dashboard App",
+              description: "Created a mobile first Dashboard model",
+              link: "https://dashboard-model.yimajiuni.com/",
             },
           ],
         },
@@ -426,24 +617,6 @@ export const experiences = [
   },
 ];
 
-export const socialLinks = [
-  {
-    name: "Contact",
-    iconUrl: contact,
-    link: "/contact",
-  },
-  {
-    name: "GitHub",
-    iconUrl: github,
-    link: "https://github.com/yimajiuni",
-  },
-  {
-    name: "LinkedIn",
-    iconUrl: linkedin,
-    link: "https://www.linkedin.com/",
-  },
-];
-
 export const projects = [
   {
     iconUrl: pricewise,
@@ -491,4 +664,65 @@ export const projects = [
       "App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.",
     link: "https://github.com/adrianhajdin/project_ai_summarizer",
   },*/
+];
+
+//追加1
+export const promoDesigns = [
+  {
+    iconUrl: pricewise,
+    theme: "btn-back-red",
+    name: "E-Commerce Website",
+    description: "Developed a e-commerce website with purchasing system. ",
+    link: "https://e-commerce.yimajiuni.com/",
+  },
+  {
+    iconUrl: pricewise,
+    theme: "btn-back-red",
+    name: "E-Commerce Website",
+    description: "Developed a e-commerce website with purchasing system. ",
+    link: "https://e-commerce.yimajiuni.com/",
+  },
+  {
+    iconUrl: pricewise,
+    theme: "btn-back-red",
+    name: "E-Commerce Website",
+    description: "Developed a e-commerce website with purchasing system. ",
+    link: "https://e-commerce.yimajiuni.com/",
+  },
+  {
+    iconUrl: pricewise,
+    theme: "btn-back-red",
+    name: "E-Commerce Website",
+    description: "Developed a e-commerce website with purchasing system. ",
+    link: "https://e-commerce.yimajiuni.com/",
+  },
+];
+
+//追加2
+export const appDesigns = [
+  {
+    iconUrl: pricewise,
+    theme: "btn-back-red",
+    name: "E-Commerce Website",
+    description: "Developed a e-commerce website with purchasing system. ",
+    link: "https://e-commerce.yimajiuni.com/",
+  },
+];
+
+export const socialLinks = [
+  {
+    name: "Contact",
+    iconUrl: contact,
+    link: "/contact",
+  },
+  {
+    name: "GitHub",
+    iconUrl: github,
+    link: "https://github.com/yimajiuni",
+  },
+  {
+    name: "LinkedIn",
+    iconUrl: linkedin,
+    link: "https://www.linkedin.com/",
+  },
 ];

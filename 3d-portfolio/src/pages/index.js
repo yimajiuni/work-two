@@ -5,6 +5,7 @@ import Contact from "./Contact";
 import TranslatedProjects from "./TranslatedProjects";
 import TranslatedAbout from "./TranslatedAbout";
 import Designs from "./Designs";
+import TranslatedDesigns from "./TranslatedDesigns";
 
 export {
   Home,
@@ -14,4 +15,5 @@ export {
   Designs,
   TranslatedProjects,
   TranslatedAbout,
+  TranslatedDesigns,
 };

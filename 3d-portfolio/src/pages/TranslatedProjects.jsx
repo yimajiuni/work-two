@@ -19,7 +19,7 @@ function TranslatedProjects() {
         <h1 className="head-text">
           My{" "}
           <span className="blue-gradient_text drop-shadow font-semibold">
-            Projects
+            Developments
           </span>
         </h1>
 

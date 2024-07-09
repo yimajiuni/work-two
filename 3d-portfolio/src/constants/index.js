@@ -136,24 +136,6 @@ export const experiences = [
   },
 ];
 
-export const socialLinks = [
-  {
-    name: "Contact",
-    iconUrl: contact,
-    link: "/contact",
-  },
-  {
-    name: "GitHub",
-    iconUrl: github,
-    link: "https://github.com/yimajiuni",
-  },
-  {
-    name: "LinkedIn",
-    iconUrl: linkedin,
-    link: "https://www.linkedin.com/",
-  },
-];
-
 export const projects = [
   {
     iconUrl: pricewise,
@@ -201,4 +183,22 @@ export const projects = [
       "App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.",
     link: "https://github.com/adrianhajdin/project_ai_summarizer",
   },*/
+];
+
+export const socialLinks = [
+  {
+    name: "Contact",
+    iconUrl: contact,
+    link: "/contact",
+  },
+  {
+    name: "GitHub",
+    iconUrl: github,
+    link: "https://github.com/yimajiuni",
+  },
+  {
+    name: "LinkedIn",
+    iconUrl: linkedin,
+    link: "https://www.linkedin.com/",
+  },
 ];
