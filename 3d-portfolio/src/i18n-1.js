@@ -190,7 +190,8 @@ i18n
             {
               preview: eqbo,
               name: "Promotion for rain boots",
-              description: "Created a mobile first Dashboard model",
+              description:
+                "The sales promotion,which is with a polaroid-like style design and inspired by the background of SNS culture that is to be used by young people and a wide range of other generations.",
               link: "https://yimajiuni.com/promotions/eq-bo.jpg",
             },
             {
@@ -402,7 +403,7 @@ i18n
               preview: eqbo,
               name: "レインブーツの販売促進",
               description:
-                "ポラロイド風のデザインやSNS文化を取り入れたヤング世代から他の幅広い世代迄使用される目的で作成。",
+                "ポラロイド風のデザインやSNS文化を彷彿させるデザインを取り入れたヤング世代から他の幅広い世代迄をターゲットとして作成。",
               link: "https://yimajiuni.com/promotions/eq-bo.jpg",
             },
             {
@@ -476,7 +477,7 @@ i18n
               theme: "btn-back-blue",
               name: "フィットネスショップアプリ",
               description:
-                "ログイン画面で各トレイニングメニューUXを魅力的にスライダー化したアプリをFigmaで設計した",
+                "ログイン画面で各トレイニングメニューUXを魅力的にスライダー化したアプリをFigmaで設計。",
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=328-136&t=AMryIaIjpqI2Y7cZ-1&starting-point-node-id=327%3A190",
             },
             {
@@ -484,7 +485,7 @@ i18n
               theme: "btn-back-red",
               name: "銀行ネットバンキングアプリ",
               description:
-                "預金額の月間比較グラフや投資セクション購入履歴機能を設計したモバイル銀行アプリ",
+                "預金額の月間比較グラフや投資セクション購入履歴機能を設計したモバイル銀行アプリ。",
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=298-558&t=8uCbvN2drsBtXyv6-1&starting-point-node-id=299%3A681",
             },
           ],
