@@ -417,7 +417,7 @@ i18n
               name: "乗馬用キュロットの販売促進",
               description:
                 "値段、キャッチコピー、商品画像のショーケースと説明文と機能表示を効果的に整理しブランド色を全体に表現し、国内向けの幅広い年代をターゲットとした販売促進画像。",
-              link: "https://yimajiuni.com/promotions/eq-cujpg",
+              link: "https://yimajiuni.com/promotions/eq-cu.jpg",
             },
             {
               preview: eqgr1,
