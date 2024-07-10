@@ -20,7 +20,9 @@ const style = {
   maxHeight: "90vh", // To ensure the modal is not too tall
   overflowY: "auto", // Enable vertical scroll
 };
-
+{
+  /*以下cssにまとめる*/
+}
 const imageStyle = {
   display: "block",
   margin: "0 auto 0 0", // Aligns the image to the left
@@ -56,6 +58,7 @@ function TranslatedDesigns() {
         <div className="flex flex-wrap my-10 gap-16">
           {translatedPromos.map((design, index) => (
             <div className="lg:w-[400px] w-full" key={index}>
+              {/*以下クラス要修正*/}
               <div className="thumbnail">
                 <div className={`btn-back rounded-xl ${design.theme}`} />
                 <div
@@ -137,13 +140,15 @@ function TranslatedDesigns() {
       <div className="flex flex-wrap my-20 gap-16">
         {translatedApps.map((design, index) => (
           <div className="lg:w-[400px] w-full" key={index}>
-            <div className="block-container w-12 h-12">
+            {/*以下クラス要修正*/}
+            <div className="thumbnail">
               <div className={`btn-back rounded-xl ${design.theme}`} />
               <div className="btn-front rounded-xl flex justify-center items-center">
                 <img
-                  src={design.iconUrl}
+                  src={design.preview}
                   alt={design.name}
-                  className="w-1/2 h-1/2 object-contain"
+                  className="w-2/3 h-2/3 object-contain"
+                  style={imageStyle}
                 />
               </div>
             </div>

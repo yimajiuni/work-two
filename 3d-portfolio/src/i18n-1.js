@@ -16,7 +16,9 @@ import {
   eqgr4,
   eqhe,
   eqwh,
-  eqbofull,
+  app1,
+  app2,
+  app3,
 } from "./assets/images";
 
 import {
@@ -190,7 +192,6 @@ i18n
               name: "Promotion for rain boots",
               description: "Created a mobile first Dashboard model",
               link: "https://yimajiuni.com/promotions/eq-bo.jpg",
-              imgs: eqbofull,
             },
             {
               preview: eqch,
@@ -224,7 +225,7 @@ i18n
               preview: eqgr3,
               name: "Sales promotion of riding glove accessories",
               description:
-                ":Promotion that expresses friendliness and elegance, targeting all generations.",
+                "Promotion that expresses friendliness and elegance, targeting all generations.",
               link: "https://yimajiuni.com/promotions/eq-gr3.jpg",
             },
             {
@@ -252,22 +253,28 @@ i18n
           //追加4
           appDesigns: [
             {
-              iconUrl: threads,
-              name: "Dashboard App",
-              description: "Created a mobile first Dashboard model",
-              link: "https://dashboard-model.yimajiuni.com/",
+              preview: app1,
+              theme: "btn-back-pink",
+              name: "EC App UX Design by Figma",
+              description:
+                "UX of shopping application from adding favorites and cart to purchase was designed by Figma.",
+              link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=233-88&t=TGbd5tplvGsffkfO-1&starting-point-node-id=236%3A233",
             },
             {
-              iconUrl: threads,
-              name: "Dashboard App",
-              description: "Created a mobile first Dashboard model",
-              link: "https://dashboard-model.yimajiuni.com/",
+              preview: app2,
+              theme: "btn-back-blue",
+              name: "Fitness App UX Design by Figma",
+              description:
+                "Designed an app with an attractive slider for each training menu UX on the login screen by Figma.",
+              link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=328-136&t=AMryIaIjpqI2Y7cZ-1&starting-point-node-id=327%3A190",
             },
             {
-              iconUrl: threads,
-              name: "Dashboard App",
-              description: "Created a mobile first Dashboard model",
-              link: "https://dashboard-model.yimajiuni.com/",
+              preview: app3,
+              theme: "btn-back-red",
+              name: "Banking App UX Design by Figma",
+              description:
+                "Mobile Banking App designed with monthly expense comparison graph of deposits, an investment section and purchase history feature.",
+              link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=298-558&t=8uCbvN2drsBtXyv6-1&starting-point-node-id=299%3A681",
             },
           ],
         },
@@ -390,7 +397,6 @@ i18n
               ],
             },
           ],
-          //追加3
           promoDesigns: [
             {
               preview: eqbo,
@@ -456,25 +462,30 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-wh.jpg",
             },
           ],
-          //追加4
           appDesigns: [
             {
-              iconUrl: threads,
-              name: "Dashboard App",
-              description: "Created a mobile first Dashboard model",
-              link: "https://dashboard-model.yimajiuni.com/",
+              preview: app1,
+              theme: "btn-back-pink",
+              name: "ECショッピングアプリ",
+              description:
+                "お気に入り追加、カート追加機能から購入迄ショッピングアプリのUXをFigmaで設計しました。",
+              link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=233-88&t=TGbd5tplvGsffkfO-1&starting-point-node-id=236%3A233",
             },
             {
-              iconUrl: threads,
-              name: "Dashboard App",
-              description: "Created a mobile first Dashboard model",
-              link: "https://dashboard-model.yimajiuni.com/",
+              preview: app2,
+              theme: "btn-back-blue",
+              name: "フィットネスショップアプリ",
+              description:
+                "ログイン画面で各トレイニングメニューUXを魅力的にスライダー化したアプリをFigmaで設計した",
+              link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=328-136&t=AMryIaIjpqI2Y7cZ-1&starting-point-node-id=327%3A190",
             },
             {
-              iconUrl: threads,
-              name: "Dashboard App",
-              description: "Created a mobile first Dashboard model",
-              link: "https://dashboard-model.yimajiuni.com/",
+              preview: app3,
+              theme: "btn-back-red",
+              name: "銀行ネットバンキングアプリ",
+              description:
+                "預金額の月間比較グラフや投資セクション購入履歴機能を設計したモバイル銀行アプリ",
+              link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=298-558&t=8uCbvN2drsBtXyv6-1&starting-point-node-id=299%3A681",
             },
           ],
         },
@@ -666,29 +677,7 @@ export const projects = [
   },*/
 ];
 
-//追加1
 export const promoDesigns = [
-  {
-    iconUrl: pricewise,
-    theme: "btn-back-red",
-    name: "E-Commerce Website",
-    description: "Developed a e-commerce website with purchasing system. ",
-    link: "https://e-commerce.yimajiuni.com/",
-  },
-  {
-    iconUrl: pricewise,
-    theme: "btn-back-red",
-    name: "E-Commerce Website",
-    description: "Developed a e-commerce website with purchasing system. ",
-    link: "https://e-commerce.yimajiuni.com/",
-  },
-  {
-    iconUrl: pricewise,
-    theme: "btn-back-red",
-    name: "E-Commerce Website",
-    description: "Developed a e-commerce website with purchasing system. ",
-    link: "https://e-commerce.yimajiuni.com/",
-  },
   {
     iconUrl: pricewise,
     theme: "btn-back-red",
@@ -698,7 +687,6 @@ export const promoDesigns = [
   },
 ];
 
-//追加2
 export const appDesigns = [
   {
     iconUrl: pricewise,

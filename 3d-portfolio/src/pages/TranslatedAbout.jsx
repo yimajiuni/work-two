@@ -15,9 +15,10 @@ function TranslatedAbout() {
 
   return (
     <section className="max-container">
+      <h1>{t("greeting")}</h1>
       <h1 className="head-text">
-        hello I'm{" "}
-        <span className="blue-gradient_tex font-semibold drop-shadow">
+        Hello I'm{" "}
+        <span className="blue-gradient_text drop-shadow font-semibold">
           Yuko
         </span>
       </h1>
