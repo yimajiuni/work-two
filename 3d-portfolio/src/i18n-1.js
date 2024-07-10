@@ -205,7 +205,7 @@ i18n
               name: "Sales promotion for riding culottes",
               description:
                 "Showcase price, catch copy, product images and effectively organize description and functionality display to express overall brand color and promote sales targeting a wide range of ages for the domestic market.",
-              link: "https://yimajiuni.com/promotions/eq-cujpg",
+              link: "https://yimajiuni.com/promotions/eq-cu.jpg",
             },
             {
               preview: eqgr1,
