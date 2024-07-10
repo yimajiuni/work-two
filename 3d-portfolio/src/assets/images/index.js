@@ -13,7 +13,9 @@ import eqgr3 from "./eqgr3.jpg";
 import eqgr4 from "./eqgr4.jpg";
 import eqhe from "./eqhe.jpg";
 import eqwh from "./eqwh.jpg";
-import eqbofull from "./eqbofull.jpg";
+import app1 from "./app1.jpg";
+import app2 from "./app2.jpg";
+import app3 from "./app3.jpg";
 
 export {
   hero,
@@ -31,5 +33,7 @@ export {
   eqgr4,
   eqhe,
   eqwh,
-  eqbofull,
+  app1,
+  app2,
+  app3,
 };
