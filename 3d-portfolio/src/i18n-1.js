@@ -63,7 +63,7 @@ i18n
     resources: {
       en: {
         translation: {
-          greeting: "hello, Welcome back",
+          greeting: "Welcome back",
           CTA: {
             line1: `Have a project in mind?
             Let's build something together!`,
