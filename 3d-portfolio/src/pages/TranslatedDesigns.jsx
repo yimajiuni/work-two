@@ -17,15 +17,15 @@ const style = {
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
-  maxHeight: "90vh", // To ensure the modal is not too tall
-  overflowY: "auto", // Enable vertical scroll
+  maxHeight: "90vh",
+  overflowY: "auto",
 };
 {
   /*以下cssにまとめる*/
 }
 const imageStyle = {
   display: "block",
-  margin: "0 auto 0 0", // Aligns the image to the left
+  margin: "0 auto 0 0",
 };
 
 function TranslatedDesigns() {
