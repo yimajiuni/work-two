@@ -331,40 +331,52 @@ i18n
               iconUrl: pricewise,
               theme: "btn-back-red",
               name: "E-Commerce Website",
-              description: `購入と買い物カート追加機能を用いたECサイトをReactのContextAPIを用いて制作しました。
-                制作期間：2週間(45h)
-                担当領域：機能設計、UX/UIデザイン、コーディング、デバグ、実装
-                ペルソナ：健康でファストファッションに対し購買意欲が高い幅広い世代の幅広い人種や年代が対象 `,
+              description:
+                "購入と買い物カート追加システムによるECサイトをReactのContextAPIを用いて制作しました。",
+              persona:
+                "健康でファストファッションに対し購買意欲が高い幅広い世代の幅広い人種や年代が対象。",
+              duration: "制作期間：2週間",
+              responsibility:
+                "担当領域：機能設計、UX/UIデザイン、コーディング、デバグ、実装",
               link: "https://e-commerce.yimajiuni.com/",
             },
             {
               iconUrl: threads,
               theme: "btn-back-green",
               name: "Dashboard App",
-              description: `モバイルファーストのCMSタイプのダッシュボードモデルを最適化されたトレンド感のあるUIを用いて制作しました。
-                制作期間：:4日間(16h)
-                担当領域：設計・UX/UIデザイン・コーディング・実装
-                ペルソナ：観葉植物の販売や在庫管理を担当する店舗経営者やスタッフ`,
+              description:
+                "モバイルファーストのCMSタイプのダッシュボードモデルを最適化されたトレンド感のあるUIを用いて制作しました。",
+              persona:
+                "ペルソナ：観葉植物の販売や在庫管理を担当する店舗経営者やスタッフ。",
+              duration: "制作期間：:4日間",
+              responsibility:
+                "担当領域：機能設計、UX/UIデザイン、コーディング、デバグ、実装",
               link: "https://dashboard-model.yimajiuni.com/",
             },
             {
               iconUrl: car,
               theme: "btn-back-blue",
               name: "Travel App",
-              description: `旅行のパッケージ検索用のアプリのフロントエンド機能をデザイン・実装しました。
-                制作期間：4日間(16h)
-                担当領域：設計・UX/UIデザイン・コーディング・実装
-                ペルソナ：国内外の旅行客をターゲットに経済力に余裕がある特に日本国内インバウンド旅行客を中心とした健康な若年層社会人から中高年齢層。`,
+              description:
+                "旅行のパッケージ検索用のアプリのフロントエンド機能をデザイン・実装しました。",
+              persona:
+                " ペルソナ：国内外の旅行客をターゲットに経済力に余裕がある特に日本国内インバウンド旅行客を中心とした健康な若年層社会人から中高年齢層。",
+              duration: "制作期間：4日間",
+              responsibility:
+                "担当領域：機能設計、UX/UIデザイン、コーディング、デバグ、実装",
               link: "https://travel-web.yimajiuni.com/",
             },
             {
               iconUrl: snapgram,
               theme: "btn-back-pink",
               name: "Restraunt Website",
-              description: `レスポンシブのレストランのウェブサイトをフロントエンド設計・作成しました。
-                制作期間：5日間 (20h)
-                担当領域：設計・UX/UIデザイン・コーディング・実装
-                ペルソナ：地元の住民や観光客で、美味しい食事と快適なダイニング体験を求める幅広い年齢層`,
+              description:
+                "レスポンシブのレストランのウェブサイトをフロントエンド設計・作成しました。",
+              persona:
+                "ペルソナ：地元の住民や観光客で、美味しい食事と快適なダイニング体験を求める幅広い年齢層",
+              responsibility:
+                "担当領域：機能設計、UX/UIデザイン、コーディング、デバグ、実装",
+              duration: "制作期間：4日間",
               link: "https://restau-web.yimajiuni.com/",
             },
           ],

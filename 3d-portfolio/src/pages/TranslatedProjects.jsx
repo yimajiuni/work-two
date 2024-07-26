@@ -45,6 +45,9 @@ function TranslatedProjects() {
                 {project.name}
               </h4>
               <p className="mt-2 text-slate-500">{project.description}</p>
+              <p className="mt-2 text-slate-500">{project.persona}</p>
+              <p className="mt-2 text-slate-500">{project.responsibility}</p>
+              <p className="mt-2 text-slate-500">{project.duration}</p>
               <div className="mt-5 flex items-center gap-2 font-poppins">
                 <Link
                   to={project.link}
