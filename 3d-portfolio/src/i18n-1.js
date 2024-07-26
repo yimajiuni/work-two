@@ -68,6 +68,12 @@ i18n
             line1: `Have a project in mind?
             Let's build something together!`,
           },
+          Contact: {
+            line1: "Get in Touch.",
+            line2: "Your Name",
+            line3: "Your E-mail",
+            line4: "Your Message",
+          },
           homeInfo: {
             line1: "Hi, I'm",
             line2: "A Frontend Engineer and Graphic Designer from japan",
@@ -95,30 +101,40 @@ i18n
               iconUrl: pricewise,
               theme: "btn-back-red",
               name: "E-Commerce Website",
-              description:
-                "Developed a e-commerce website with purchasing system. ",
+              description: `Developed a e-commerce website with purchasing system. 
+                Production Period: 2 weeks(45h)
+                Areas of work: Functional design, UX/UI design, coding, debugging, deployment
+                Persona:A wide range of people of all ages and ethnicities who are healthy and have high desires to buy fast fashion.`,
               link: "https://e-commerce.yimajiuni.com/",
             },
             {
               iconUrl: threads,
               theme: "btn-back-green",
               name: "Dashboard App",
-              description: "Created a mobile first Dashboard model",
+              description: `Created a mobile first Dashboard model.
+              Production Period:4 days (16h)
+              Areas of work: Functional design, UX/UI design, coding, debugging, deployment
+              Persona: Store managers and staff in charge of sales and inventory control of houseplants`,
               link: "https://dashboard-model.yimajiuni.com/",
             },
             {
               iconUrl: car,
               theme: "btn-back-blue",
               name: "Travel App",
-              description:
-                "Designed and built a mobile app for finding traveling packages",
+              description: `Designed and built a mobile app for finding traveling packages.
+                Production Period:: 5 days (20h)
+                Areas of work: Functional design, UX/UI design, coding, debugging, deployment
+                Personas: Local residents and tourists of all ages, looking for good food and a comfortable dining experience.`,
               link: "https://travel-web.yimajiuni.com/",
             },
             {
               iconUrl: snapgram,
               theme: "btn-back-pink",
-              name: "Restraunt Website",
-              description: "Built a fully responsive restaurant Website.",
+              name: "Restaurant Website",
+              description: `Built a fully responsive restaurant Website.
+                Production Period: 5 days (20h)
+                Areas of work: Functional design, UX/UI design, coding, debugging, deployment
+                Personas: Local residents and tourists of all ages, looking for good food and a comfortable dining experience.`,
               link: "https://restau-web.yimajiuni.com/",
             },
           ],
@@ -180,7 +196,7 @@ i18n
                 "As a graphic designer for website , i was in charge of updating the Rakuten Ichiba online store and designing sales promotions during sales.",
                 "and sales promotion design for the company's official e-commerce site. HTML and CSS coding for the company's official e-commerce site.",
                 "and updating of the company's official e-commerce site using HTML and CSS, as well as the production and distribution of e-mail magazines. I used HTML and CSS as markup languages.",
-                "In addition to HTML and CSS, I used Javascript as a programming language without any framework. For graphic design work, I mainly used adobe photoshop and Illustrator.",
+                "In addition to HTML and CSS, I used Javascript as a programming language without any framework. For graphic design work, I mainly used adobe photoshop and Illustrator for design and editing, then Figma for wire.",
               ],
             },
           ],
@@ -282,9 +298,15 @@ i18n
       },
       jp: {
         translation: {
-          greeting: "こんにちは、おかえりなさい。",
+          greeting: "おかえりなさい。",
           CTA: {
             line1: "プロジェクトを考え中ですか？一緒に何か作りましょう！",
+          },
+          Contact: {
+            line1: "連絡する",
+            line2: "お名前",
+            line3: "メールアドレス",
+            line4: "メッセージ内容",
           },
           homeInfo: {
             line1: "こんにちは！私は",
@@ -309,32 +331,40 @@ i18n
               iconUrl: pricewise,
               theme: "btn-back-red",
               name: "E-Commerce Website",
-              description:
-                "購入と買い物カート追加機能を用いたECサイトをReactのContextAPIを用いて制作しました。 ",
+              description: `購入と買い物カート追加機能を用いたECサイトをReactのContextAPIを用いて制作しました。
+                制作期間：2週間(45h)
+                担当領域：機能設計、UX/UIデザイン、コーディング、デバグ、実装
+                ペルソナ：健康でファストファッションに対し購買意欲が高い幅広い世代の幅広い人種や年代が対象 `,
               link: "https://e-commerce.yimajiuni.com/",
             },
             {
               iconUrl: threads,
               theme: "btn-back-green",
               name: "Dashboard App",
-              description:
-                "モバイルファーストのCMSタイプのダッシュボードモデルを最適化されたトレンド感のあるUIを用いて制作しました。",
+              description: `モバイルファーストのCMSタイプのダッシュボードモデルを最適化されたトレンド感のあるUIを用いて制作しました。
+                制作期間：:4日間(16h)
+                担当領域：設計・UX/UIデザイン・コーディング・実装
+                ペルソナ：観葉植物の販売や在庫管理を担当する店舗経営者やスタッフ`,
               link: "https://dashboard-model.yimajiuni.com/",
             },
             {
               iconUrl: car,
               theme: "btn-back-blue",
               name: "Travel App",
-              description:
-                "旅行のパッケージ検索用のアプリのフロントエンド機能をデザイン・実装しました。",
+              description: `旅行のパッケージ検索用のアプリのフロントエンド機能をデザイン・実装しました。
+                制作期間：4日間(16h)
+                担当領域：設計・UX/UIデザイン・コーディング・実装
+                ペルソナ：国内外の旅行客をターゲットに経済力に余裕がある特に日本国内インバウンド旅行客を中心とした健康な若年層社会人から中高年齢層。`,
               link: "https://travel-web.yimajiuni.com/",
             },
             {
               iconUrl: snapgram,
               theme: "btn-back-pink",
               name: "Restraunt Website",
-              description:
-                "レスポンシブのレストランのウェブサイトをフロントエンド設計・作成しました。",
+              description: `レスポンシブのレストランのウェブサイトをフロントエンド設計・作成しました。
+                制作期間：5日間 (20h)
+                担当領域：設計・UX/UIデザイン・コーディング・実装
+                ペルソナ：地元の住民や観光客で、美味しい食事と快適なダイニング体験を求める幅広い年齢層`,
               link: "https://restau-web.yimajiuni.com/",
             },
           ],
@@ -394,7 +424,7 @@ i18n
                 `
                 Webグラフィックデザイナーとして直属の楽天市場のオンラインストア更新業務、セール、キャンペーン時の販促ページデザインを担当。
                 自社公式ECサイトの制作にはHTMLとCSSを使ったコーディング、更新作業とメールマガジン制作配信を行いました。使用言語はマークアップとしてHTMLとCSSに加えプログラミング言語はフレームワークなしのJavascriptを使用しました。
-                グラフィックデザインの仕事には主にadobe photoshop とillustratorを使用。`,
+                グラフィックデザインの仕事には主にadobe photoshop とillustratorを細部のデザイン制作に、figmaをワイヤーフレームと全体像のデザインに使用。`,
               ],
             },
           ],
