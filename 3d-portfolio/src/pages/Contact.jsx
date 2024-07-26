@@ -1,6 +1,7 @@
 import React, { Suspense, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
+import { useTranslation } from "react-i18next";
 
 import Loader from "../components/Loader";
 import Fox from "../models/Fox";
@@ -8,6 +9,7 @@ import Alert from "../components/Alert";
 import useAlert from "../hooks/useAlert";
 
 const Contact = () => {
+  const { t } = useTranslation();
   const formRef = useRef();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const { alert, showAlert, hideAlert } = useAlert();
@@ -77,7 +79,7 @@ const Contact = () => {
       {alert.show && <Alert {...alert} />}
 
       <div className="flex-1 min-w-[50%] flex flex-col">
-        <h1 className="head-text">Get in Touch</h1>
+        <h1 className="head-text">{t("Contact.line1")}</h1>
 
         <form
           ref={formRef}
@@ -85,7 +87,7 @@ const Contact = () => {
           className="w-full flex flex-col gap-7 mt-14"
         >
           <label className="text-black-500 font-semibold">
-            Name
+            {t("Contact.line2")}
             <input
               type="text"
               name="name"
@@ -99,7 +101,7 @@ const Contact = () => {
             />
           </label>
           <label className="text-black-500 font-semibold">
-            Email
+            {t("Contact.line3")}
             <input
               type="email"
               name="email"
@@ -113,7 +115,7 @@ const Contact = () => {
             />
           </label>
           <label className="text-black-500 font-semibold">
-            Your Message
+            {t("Contact.line4")}
             <textarea
               name="message"
               rows={4}
