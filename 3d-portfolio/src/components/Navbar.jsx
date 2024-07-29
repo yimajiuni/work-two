@@ -42,13 +42,6 @@ const Navbar = () => {
           <div className="active">
             <ul className="navLists flex">
               <LanguageSelector />
-              {/*
-            <li className="navItem">
-                English
-            </li>
-            <li className="navItem">
-                日本語
-            </li>*/}
             </ul>
           </div>
         </NavLink>

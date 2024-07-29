@@ -19,6 +19,10 @@ import {
   app1,
   app2,
   app3,
+  web1,
+  web2,
+  web3,
+  web4,
 } from "./assets/images";
 
 import {
@@ -98,7 +102,7 @@ i18n
 
           projects: [
             {
-              iconUrl: pricewise,
+              preview: web4,
               theme: "btn-back-red",
               name: "E-Commerce Website",
               description: `Developed a e-commerce website with purchasing system. 
@@ -108,7 +112,7 @@ i18n
               link: "https://e-commerce.yimajiuni.com/",
             },
             {
-              iconUrl: threads,
+              preview: web4,
               theme: "btn-back-green",
               name: "Dashboard App",
               description: `Created a mobile first Dashboard model.
@@ -118,7 +122,7 @@ i18n
               link: "https://dashboard-model.yimajiuni.com/",
             },
             {
-              iconUrl: car,
+              preview: web4,
               theme: "btn-back-blue",
               name: "Travel App",
               description: `Designed and built a mobile app for finding traveling packages.
@@ -128,7 +132,7 @@ i18n
               link: "https://travel-web.yimajiuni.com/",
             },
             {
-              iconUrl: snapgram,
+              preview: web4,
               theme: "btn-back-pink",
               name: "Restaurant Website",
               description: `Built a fully responsive restaurant Website.
@@ -328,7 +332,7 @@ i18n
           },
           projects: [
             {
-              iconUrl: pricewise,
+              preview: web1,
               theme: "btn-back-red",
               name: "E-Commerce Website",
               description:
@@ -341,7 +345,7 @@ i18n
               link: "https://e-commerce.yimajiuni.com/",
             },
             {
-              iconUrl: threads,
+              preview: web2,
               theme: "btn-back-green",
               name: "Dashboard App",
               description:
@@ -354,7 +358,7 @@ i18n
               link: "https://dashboard-model.yimajiuni.com/",
             },
             {
-              iconUrl: car,
+              preview: web3,
               theme: "btn-back-blue",
               name: "Travel App",
               description:
@@ -367,7 +371,7 @@ i18n
               link: "https://travel-web.yimajiuni.com/",
             },
             {
-              iconUrl: snapgram,
+              preview: web4,
               theme: "btn-back-pink",
               name: "Restraunt Website",
               description:

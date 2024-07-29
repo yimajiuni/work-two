@@ -5,6 +5,10 @@ import CTA from "../components/CTA.jsx";
 import { projects } from "../i18n-1.js";
 import { arrow } from "../assets/icons/index.js";
 
+const imageStyle = {
+  display: "block",
+  margin: "0 auto 0 0",
+};
 function TranslatedProjects() {
   const { t } = useTranslation();
 
@@ -29,13 +33,14 @@ function TranslatedProjects() {
       <div className="flex flex-wrap my-20 gap-16">
         {translatedProjects.map((project, index) => (
           <div className="lg:w-[400px] w-full" key={index}>
-            <div className="block-container w-12 h-12">
+            <div className="">
               <div className={`btn-back rounded-xl ${project.theme}`} />
               <div className="btn-front rounded-xl flex justify-center items-center">
                 <img
-                  src={project.iconUrl}
+                  src={project.preview}
                   alt={project.name}
-                  className="w-1/2 h-1/2 object-contain"
+                  className="w-2/3 h-2/3 object-contain"
+                  style={imageStyle}
                 />
               </div>
             </div>
