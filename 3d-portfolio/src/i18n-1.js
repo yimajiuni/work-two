@@ -105,14 +105,17 @@ i18n
               preview: web4,
               theme: "btn-back-red",
               name: "E-Commerce Website",
-              description: `Developed a e-commerce website with purchasing system. 
-                Production Period: 2 weeks(45h)
-                Areas of work: Functional design, UX/UI design, coding, debugging, deployment
-                Persona:A wide range of people of all ages and ethnicities who are healthy and have high desires to buy fast fashion.`,
+              description:
+                "Developed a e-commerce website with purchasing system.",
+              persona:
+                "Persona:A wide range of people of all ages and ethnicities who are healthy and have high desires to buy fast fashion.",
+              duration: "Production Period: 2 weeks(45h)",
+              responsibility:
+                "Areas of work: Functional design, UX/UI design, coding, debugging, deployment",
               link: "https://e-commerce.yimajiuni.com/",
             },
             {
-              preview: web4,
+              preview: web1,
               theme: "btn-back-green",
               name: "Dashboard App",
               description: `Created a mobile first Dashboard model.
@@ -122,7 +125,7 @@ i18n
               link: "https://dashboard-model.yimajiuni.com/",
             },
             {
-              preview: web4,
+              preview: web2,
               theme: "btn-back-blue",
               name: "Travel App",
               description: `Designed and built a mobile app for finding traveling packages.
@@ -132,7 +135,7 @@ i18n
               link: "https://travel-web.yimajiuni.com/",
             },
             {
-              preview: web4,
+              preview: web3,
               theme: "btn-back-pink",
               name: "Restaurant Website",
               description: `Built a fully responsive restaurant Website.
