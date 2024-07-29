@@ -16,6 +16,10 @@ import eqwh from "./eqwh.jpg";
 import app1 from "./app1.jpg";
 import app2 from "./app2.jpg";
 import app3 from "./app3.jpg";
+import web1 from "./web1.jpg";
+import web2 from "./web2.jpg";
+import web3 from "./web3.jpg";
+import web4 from "./web4.jpg";
 
 export {
   hero,
@@ -36,4 +40,8 @@ export {
   app1,
   app2,
   app3,
+  web1,
+  web2,
+  web3,
+  web4,
 };
