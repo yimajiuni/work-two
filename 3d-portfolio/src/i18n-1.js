@@ -102,7 +102,7 @@ i18n
 
           projects: [
             {
-              preview: web4,
+              preview: web1,
               theme: "btn-back-red",
               name: "E-Commerce Website",
               description:
@@ -115,17 +115,19 @@ i18n
               link: "https://e-commerce.yimajiuni.com/",
             },
             {
-              preview: web1,
+              preview: web2,
               theme: "btn-back-green",
               name: "Dashboard App",
-              description: `Created a mobile first Dashboard model.
-              Production Period:4 days (16h)
-              Areas of work: Functional design, UX/UI design, coding, debugging, deployment
-              Persona: Store managers and staff in charge of sales and inventory control of houseplants`,
+              description: "Created a mobile first Dashboard model.",
+              duration: "Production Period:4 days (16h)",
+              responsibility:
+                "Areas of work: Functional design, UX/UI design, coding, debugging, deployment",
+              persona:
+                "Persona: Store managers and staff in charge of sales and inventory control of houseplants",
               link: "https://dashboard-model.yimajiuni.com/",
             },
             {
-              preview: web2,
+              preview: web3,
               theme: "btn-back-blue",
               name: "Travel App",
               description: `Designed and built a mobile app for finding traveling packages.
@@ -135,7 +137,7 @@ i18n
               link: "https://travel-web.yimajiuni.com/",
             },
             {
-              preview: web3,
+              preview: web4,
               theme: "btn-back-pink",
               name: "Restaurant Website",
               description: `Built a fully responsive restaurant Website.

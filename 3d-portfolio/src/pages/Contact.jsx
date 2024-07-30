@@ -7,6 +7,7 @@ import Loader from "../components/Loader";
 import Fox from "../models/Fox";
 import Alert from "../components/Alert";
 import useAlert from "../hooks/useAlert";
+import Footer from "../components/Footer";
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -75,7 +76,10 @@ const Contact = () => {
   };
 
   return (
-    <section className="relative flex lg:flex-row flex-col max-container">
+    <section
+      className="footer-space relative flex lg:flex-row flex-col max-container"
+      id="contact"
+    >
       {alert.show && <Alert {...alert} />}
 
       <div className="flex-1 min-w-[50%] flex flex-col">
@@ -169,6 +173,8 @@ const Contact = () => {
           </Suspense>
         </Canvas>
       </div>
+
+      <Footer />
     </section>
   );
 };

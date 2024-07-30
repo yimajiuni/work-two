@@ -44,7 +44,7 @@ function TranslatedDesigns() {
   const translatedApps = t("appDesigns", { returnObjects: true });
 
   return (
-    <section className="max-container">
+    <section className="max-container" id="designs">
       <h1 className="head-text">
         Promo & UX{" "}
         <span className="blue-gradient_text font-semibold drop-shadow">
