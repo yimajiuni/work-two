@@ -37,25 +37,17 @@ const NavbarJump = () => {
         {location !== "contact" ? (
           location === "home" ? ( //homeの時
             <>
-              <NavLink to="/about" activeClass="active">
-                About
-              </NavLink>
-              <NavLink to="/projects" activeClass="active">
-                Projects
-              </NavLink>
-              <NavLink to="/designs" activeClass="active">
-                Designs
-              </NavLink>
-              <NavLink to="/contact" activeClass="active">
-                Contact
-              </NavLink>
+              <NavLink to="/about">About</NavLink>
+              <NavLink to="/projects">Projects</NavLink>
+              <NavLink to="/designs">Designs</NavLink>
+              <NavLink to="/contact">Contact</NavLink>
             </>
           ) : (
             //contactでもhomeでもない時
             <>
               <ScrollLink
                 className="cursor-pointer"
-                activeClass="active"
+                activeclass="active"
                 to="/"
                 spy={true}
                 smooth={true}
@@ -67,7 +59,7 @@ const NavbarJump = () => {
               <ScrollLink
                 onClick={() => goToPageAndScroll("projects")}
                 className="cursor-pointer"
-                activeClass="active"
+                activeclass="active"
                 to="projects"
                 spy={true}
                 smooth={true}
@@ -79,7 +71,7 @@ const NavbarJump = () => {
               <ScrollLink
                 onClick={() => goToPageAndScroll("designs")}
                 className="cursor-pointer"
-                activeClass="active"
+                activeclass="active"
                 to="designs"
                 spy={true}
                 smooth={true}
@@ -92,7 +84,7 @@ const NavbarJump = () => {
                 to="/contact"
                 onClick={() => goToPageAndScroll("contact")}
                 className="ncursor-pointer"
-                activeClass="active"
+                activeclass="active"
                 spy={true}
               >
                 Contact
@@ -104,7 +96,7 @@ const NavbarJump = () => {
           <>
             <NavLink
               className="cursor-pointer"
-              activeClass="active"
+              activeclass="active"
               to="/"
               spy={true}
               smooth={true}
@@ -115,7 +107,7 @@ const NavbarJump = () => {
             </NavLink>
             <NavLink
               className="cursor-pointer"
-              activeClass="active"
+              activeclass="active"
               to="projects"
               spy={true}
               smooth={true}
@@ -124,9 +116,7 @@ const NavbarJump = () => {
             >
               Projects
             </NavLink>
-            <NavLink to="/designs" activeClass="active">
-              Designs
-            </NavLink>
+            <NavLink to="/designs">Designs</NavLink>
             <NavLink
               to="/contact"
               className={({ isActive }) =>
