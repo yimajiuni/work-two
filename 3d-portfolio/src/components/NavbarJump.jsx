@@ -3,6 +3,7 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import LanguageSelector from "../components/LanguageSelector";
 import { Link as ScrollLink } from "react-scroll";
 import * as Scroll from "react-scroll";
+import { FaGlobe } from "react-icons/fa";
 
 const NavbarJump = () => {
   const path = useLocation().pathname;
@@ -26,7 +27,7 @@ const NavbarJump = () => {
   return (
     <header className="header" id="navigation">
       <NavLink
-        to="/"
+        to="/details"
         onClick={scrollToTop}
         className="w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md"
       >

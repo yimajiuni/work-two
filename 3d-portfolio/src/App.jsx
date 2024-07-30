@@ -6,6 +6,7 @@ import {
   TranslatedAbout,
   TranslatedDesigns,
   Contact,
+  WorkDetails,
 } from "./pages";
 import Content from "./components/Content";
 {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/designs" element={<TranslatedDesigns />} />
           <Route path="*" element={<Content />} />
           <Route path="/contact" element={<Contact />} />
+          {/*<Route path="/details" element={<WorkDetails />} />*/}
         </Routes>
       </Router>
 

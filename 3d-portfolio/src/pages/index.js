@@ -3,6 +3,7 @@ import Contact from "./Contact";
 import TranslatedProjects from "./TranslatedProjects";
 import TranslatedAbout from "./TranslatedAbout";
 import TranslatedDesigns from "./TranslatedDesigns";
+import WorkDetails from "./WorkDetails";
 
 export {
   Home,
@@ -10,4 +11,5 @@ export {
   TranslatedProjects,
   TranslatedAbout,
   TranslatedDesigns,
+  WorkDetails,
 };
