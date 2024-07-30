@@ -14,7 +14,7 @@ function TranslatedAbout() {
   const translatedExperiences = t("experiences", { returnObjects: true });
 
   return (
-    <section className="max-container">
+    <section className="max-container" id="/">
       {/*<h1>{t("greeting")}</h1>*/}
       <h1 className="head-text">
         Hello I'm{" "}
@@ -94,9 +94,10 @@ function TranslatedAbout() {
           </VerticalTimeline>
         </div>
       </div>
-
+      {/*
       <hr className="border-slate-200" />
-      <CTA />
+
+      <CTA />*/}
     </section>
   );
 }

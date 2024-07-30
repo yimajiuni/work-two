@@ -14,6 +14,12 @@ export default {
         blue: {
           500: "#2b77e7",
         },
+        pink: {
+          200: "#FBDAEB",
+        },
+        shady: {
+          900: "#f8019928",
+        },
       },
       fontFamily: {
         worksans: ["Work Sans", "sans-serif"],

@@ -17,7 +17,7 @@ function TranslatedProjects() {
   console.log(translatedProjects); // Add this line to check the output
 
   return (
-    <section className="max-container">
+    <section className="max-container" id="projects">
       <h1 className="head-text">
         My{" "}
         <span className="blue-gradient_text drop-shadow font-semibold">
@@ -72,10 +72,10 @@ function TranslatedProjects() {
           </div>
         ))}
       </div>
-
+      {/*
       <hr className="border-slate-200" />
 
-      <CTA />
+      <CTA />*/}
     </section>
   );
 }

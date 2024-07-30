@@ -4,12 +4,12 @@ import { socialLinks } from "../constants";
 
 const Footer = () => {
   return (
-    <footer className="footer font-poppins">
+    <footer className="footer">
       <hr className="border-slate-200" />
 
-      <div className="footer-container">
+      <div className="footer-container text-blue-500">
         <p>
-          © 2024 <strong>Yuko Imai</strong>. All rights reserved.
+          © 2024 <strong>yimajiuni</strong>
         </p>
 
         <div className="flex gap-3 justify-center items-center">
