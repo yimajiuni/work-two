@@ -27,7 +27,7 @@ const NavbarJump = () => {
   return (
     <header className="header" id="navigation">
       <NavLink
-        to="/details"
+        to="/"
         onClick={scrollToTop}
         className="w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md"
       >
@@ -127,7 +127,7 @@ const NavbarJump = () => {
             </NavLink>
           </>
         )}
-        <div className="text-blue-500">
+        <div className="text-blue-500 cursor-pointer">
           <div>language</div>
           <div className="active">
             <ul className="navLists flex">
