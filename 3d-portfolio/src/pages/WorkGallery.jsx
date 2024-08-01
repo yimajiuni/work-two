@@ -111,12 +111,18 @@ function WorkGallery() {
                   onClick={() => handleOpen(index, "paper")}
                   style={{ cursor: "pointer" }}
                 >
-                  <img
-                    src={design.preview}
-                    alt={design.name}
-                    className="w-2/3 h-2/3 object-contain"
-                    style={imageStyle}
-                  />
+                  <Link
+                    to="details"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-blue-600"
+                  >
+                    <img
+                      src={design.preview}
+                      alt={design.name}
+                      className="w-2/3 h-2/3 object-contain"
+                      style={imageStyle}
+                    />
+                  </Link>
                 </div>
               </div>
 
