@@ -58,18 +58,23 @@ function TranslatedProjects() {
       <div className="flex flex-wrap my-20 gap-16">
         {translatedProjects.map((project, index) => (
           <div className="lg:w-[400px] w-full" key={index}>
-            <div className="">
-              <div className={`btn-back rounded-xl ${project.theme}`} />
+            <div>
               <div className="btn-front rounded-xl flex justify-center items-center">
-                <img
-                  src={project.preview}
-                  alt={project.name}
-                  className="w-2/3 h-2/3 object-contain"
-                  style={imageStyle}
-                />
+                <Link
+                  to="details"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-blue-600"
+                >
+                  <img
+                    src={project.preview}
+                    alt={project.name}
+                    className="w-2/3 h-2/3 object-contain"
+                    style={imageStyle}
+                  />
+                </Link>
               </div>
             </div>
-
             <div className="mt-5 flex flex-col">
               <h4 className="text-2xl font-poppins font-semibold">
                 {project.name}

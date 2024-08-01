@@ -26,7 +26,7 @@ const NavbarJump = () => {
   return (
     <header className="header" id="navigation">
       <NavLink
-        to="/details"
+        to="/"
         activeclass="active"
         onClick={scrollToTop}
         className="w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md shadow-pink-400/30"
