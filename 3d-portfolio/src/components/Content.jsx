@@ -10,8 +10,8 @@ import Footer from "../components/Footer";
 function Content() {
   return (
     <div>
-      <TranslatedAbout />
       <TranslatedWorks />
+      <TranslatedAbout />
       {/*
       <TranslatedProjects id="projects" />
       <TranslatedDesigns id="designs" />*/}

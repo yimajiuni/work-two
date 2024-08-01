@@ -38,7 +38,7 @@ const NavbarJump = () => {
           // about,works(,project,design)の時
           <>
             <ScrollLink
-              onClick={() => goToPageAndScroll("about")}
+              onClick={() => goToPageAndScroll("works")}
               className="cursor-pointer"
               activeclass="active"
               to="/"
@@ -47,19 +47,19 @@ const NavbarJump = () => {
               offset={10}
               duration={500}
             >
-              About
+              Works
             </ScrollLink>
             <ScrollLink
-              onClick={() => goToPageAndScroll("works")}
+              onClick={() => goToPageAndScroll("about")}
               className="cursor-pointer"
               activeclass="active"
-              to="works"
+              to="about"
               spy={true}
               smooth={true}
               offset={10}
               duration={500}
             >
-              Works
+              About
             </ScrollLink>
             {/*
               <ScrollLink
@@ -100,19 +100,6 @@ const NavbarJump = () => {
           //contactの時
           <>
             <NavLink
-              onClick={() => goToPageAndScroll("about")}
-              className="cursor-pointer"
-              activeclass="active"
-              to="about"
-              spy={true}
-              smooth={true}
-              offset={10}
-              duration={500}
-            >
-              About
-            </NavLink>
-
-            <NavLink
               onClick={() => goToPageAndScroll("works")}
               className="cursor-pointer"
               activeclass="active"
@@ -123,6 +110,18 @@ const NavbarJump = () => {
               duration={500}
             >
               Works
+            </NavLink>
+            <NavLink
+              onClick={() => goToPageAndScroll("about")}
+              className="cursor-pointer"
+              activeclass="active"
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={10}
+              duration={500}
+            >
+              About
             </NavLink>
             {/*
             <NavLink
