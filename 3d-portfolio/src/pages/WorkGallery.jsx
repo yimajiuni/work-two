@@ -6,42 +6,6 @@ import ListSubheader from "@mui/material/ListSubheader";
 import IconButton from "@mui/material/IconButton";
 import InfoIcon from "@mui/icons-material/Info";
 
-function WorkGallery() {
-  return (
-    <div className=" max-container">
-      <ImageList sx={{ width: 1000, height: 700 }}>
-        <ImageListItem key="Subheader" cols={2}>
-          <ListSubheader component="div">December</ListSubheader>
-        </ImageListItem>
-        {itemData.map((item) => (
-          <ImageListItem key={item.img}>
-            <img
-              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-              src={`${item.img}?w=248&fit=crop&auto=format`}
-              alt={item.title}
-              loading="lazy"
-            />
-            <ImageListItemBar
-              title={item.title}
-              subtitle={item.author}
-              actionIcon={
-                <IconButton
-                  sx={{ color: "rgba(255, 255, 255, 0.54)" }}
-                  aria-label={`info about ${item.title}`}
-                >
-                  <InfoIcon />
-                </IconButton>
-              }
-            />
-          </ImageListItem>
-        ))}
-      </ImageList>
-    </div>
-  );
-}
-
-export default WorkGallery;
-
 const itemData = [
   {
     img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
@@ -115,3 +79,39 @@ const itemData = [
     cols: 2,
   },
 ];
+
+function WorkGallery() {
+  return (
+    <div className=" max-container">
+      <ImageList sx={{ width: 1000, height: 700 }}>
+        <ImageListItem key="Subheader" cols={2}>
+          <ListSubheader component="div">December</ListSubheader>
+        </ImageListItem>
+        {itemData.map((item) => (
+          <ImageListItem key={item.img}>
+            <img
+              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+              src={`${item.img}?w=248&fit=crop&auto=format`}
+              alt={item.title}
+              loading="lazy"
+            />
+            <ImageListItemBar
+              title={item.title}
+              subtitle={item.author}
+              actionIcon={
+                <IconButton
+                  sx={{ color: "rgba(255, 255, 255, 0.54)" }}
+                  aria-label={`info about ${item.title}`}
+                >
+                  <InfoIcon />
+                </IconButton>
+              }
+            />
+          </ImageListItem>
+        ))}
+      </ImageList>
+    </div>
+  );
+}
+
+export default WorkGallery;

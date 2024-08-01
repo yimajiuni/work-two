@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import CTA from "../components/CTA.jsx";
@@ -14,20 +14,25 @@ const modalStyle = {
   transform: "translate(-50%, -50%)",
   width: 400,
   bgcolor: "white",
+  border: "2px solid #000",
   boxShadow: 24,
   p: 4,
   maxHeight: "90vh",
   overflowY: "auto",
 };
+
 const imageStyle = {
   display: "block",
   margin: "0 auto 0 0",
   boxShadow: "20px 12px 30px rgb(248 1 153 / 0.10)",
 };
+function TranslatedProjects() {
+  const { t } = useTranslation();
 
-function TranslatedDesigns() {
-  const [open, setOpen] = useState(null);
-  const [scroll, setScroll] = useState("paper");
+  // Get translated projects descriptions
+  const translatedProjects = t("projects", { returnObjects: true });
+  const translatedPromos = t("promoDesigns", { returnObjects: true });
+  const translatedApps = t("appDesigns", { returnObjects: true });
 
   const handleOpen = (index, scrollType) => {
     setOpen(index);
@@ -36,12 +41,62 @@ function TranslatedDesigns() {
 
   const handleClose = () => setOpen(null);
 
-  const { t } = useTranslation();
-  const translatedPromos = t("promoDesigns", { returnObjects: true });
-  const translatedApps = t("appDesigns", { returnObjects: true });
-
   return (
-    <section className="max-container" id="designs">
+    <section className="max-container" id="works">
+      <h1 className="head-text">
+        My{" "}
+        <span className="blue-gradient_text drop-shadow font-semibold">
+          Works
+        </span>
+      </h1>
+
+      <p className="text-slate-500 mt-2 leading-relaxed">
+        {t("projectDesc.line1")}
+        {t("projectDesc.line2")}
+      </p>
+
+      <div className="flex flex-wrap my-20 gap-16">
+        {translatedProjects.map((project, index) => (
+          <div className="lg:w-[400px] w-full" key={index}>
+            <div className="">
+              <div className={`btn-back rounded-xl ${project.theme}`} />
+              <div className="btn-front rounded-xl flex justify-center items-center">
+                <img
+                  src={project.preview}
+                  alt={project.name}
+                  className="w-2/3 h-2/3 object-contain"
+                  style={imageStyle}
+                />
+              </div>
+            </div>
+
+            <div className="mt-5 flex flex-col">
+              <h4 className="text-2xl font-poppins font-semibold">
+                {project.name}
+              </h4>
+              <p className="mt-2 text-slate-500">{project.description}</p>
+              <p className="mt-2 text-slate-500">{project.persona}</p>
+              <p className="mt-2 text-slate-500">{project.responsibility}</p>
+              <p className="mt-2 text-slate-500">{project.duration}</p>
+              <div className="mt-5 flex items-center gap-2 font-poppins">
+                <Link
+                  to={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-blue-600"
+                >
+                  Live Link
+                </Link>
+                <img
+                  src={arrow}
+                  alt="arrow"
+                  className="w-4 h-4 object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
       <h1 className="head-text">
         Promo & UX{" "}
         <span className="blue-gradient_text font-semibold drop-shadow">
@@ -136,7 +191,7 @@ function TranslatedDesigns() {
       <div className="flex flex-wrap my-20 gap-16">
         {translatedApps.map((design, index) => (
           <div className="lg:w-[400px] w-full" key={index}>
-            <div className>
+            <div className="thumbnail">
               <div className={`btn-back rounded-xl ${design.theme}`} />
               <div className="btn-front rounded-xl flex justify-center items-center">
                 <img
@@ -179,4 +234,4 @@ function TranslatedDesigns() {
   );
 }
 
-export default TranslatedDesigns;
+export default TranslatedProjects;

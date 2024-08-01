@@ -8,6 +8,7 @@ import { arrow } from "../assets/icons/index.js";
 const imageStyle = {
   display: "block",
   margin: "0 auto 0 0",
+  boxShadow: "20px 12px 30px rgb(248 1 153 / 0.10)",
 };
 function TranslatedProjects() {
   const { t } = useTranslation();

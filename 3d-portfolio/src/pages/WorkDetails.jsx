@@ -24,6 +24,7 @@ const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
   textAlign: "center",
   color: theme.palette.text.secondary,
+  boxShadow: "0px 4px 6px rgb(248 1 153 / 0.15)",
 }));
 const Image = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -31,6 +32,7 @@ const Image = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(12),
   textAlign: "center",
   color: theme.palette.text.secondary,
+  boxShadow: "0px 4px 6px rgb(248 1 153 / 0.15)",
 }));
 const Summary = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -38,6 +40,7 @@ const Summary = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(5),
   textAlign: "center",
   color: theme.palette.text.secondary,
+  boxShadow: "0px 4px 6px rgb(248 1 153 / 0.15)",
 }));
 
 const GoTo = styled(Paper)(({ theme }) => ({
@@ -46,8 +49,9 @@ const GoTo = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
   textAlign: "center",
   color: "#fff",
-  fontSize: "1.2rem", // Change the font size as desired
-  fontWeight: "bold", // Make the font bold
+  fontSize: "1.2rem",
+  fontWeight: "bold",
+  boxShadow: "none", // Delete the default shadow
 }));
 
 function WorkDetails() {
