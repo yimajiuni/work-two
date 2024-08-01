@@ -19,7 +19,10 @@ const message = `Truncation should be conditionally applicable on this long line
 
 //styling
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  backgroundColor:
+    theme.palette.mode === "dark"
+      ? "rgba(26, 32, 39, 0.3)"
+      : "rgba(255, 255, 255, 0.3)",
   ...theme.typography.body2,
   padding: theme.spacing(1),
   textAlign: "center",
@@ -35,7 +38,10 @@ const Image = styled(Paper)(({ theme }) => ({
   boxShadow: "0px 4px 6px rgb(248 1 153 / 0.15)",
 }));
 const Summary = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  backgroundColor:
+    theme.palette.mode === "dark"
+      ? "rgba(26, 32, 39, 0.3)"
+      : "rgba(255, 255, 255, 0.3)",
   ...theme.typography.body2,
   padding: theme.spacing(5),
   textAlign: "center",

@@ -26,10 +26,10 @@ const NavbarJump = () => {
   return (
     <header className="header" id="navigation">
       <NavLink
-        to="/"
+        to="/details"
         activeclass="active"
         onClick={scrollToTop}
-        className="w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md"
+        className="w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md shadow-pink-400/30"
       >
         <p className="blue-gradient_text">今</p>
       </NavLink>
