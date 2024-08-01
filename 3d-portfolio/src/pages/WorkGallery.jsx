@@ -24,7 +24,8 @@ const modalStyle = {
 const imageStyle = {
   display: "block",
   margin: "0 auto 0 0",
-  boxShadow: "20px 12px 30px rgb(248 1 153 / 0.10)",
+  boxShadow: "20px -12px 30px rgb(248 1 153 / 0.10)",
+  borderRadius: "10px",
 };
 function WorkGallery() {
   const { t } = useTranslation();
@@ -61,9 +62,9 @@ function WorkGallery() {
         {t("projectDesc.line2")}
       </p>
 
-      <div className="grid grid-cols-3 gap-2 my-20">
+      <div className="grid grid-cols-3 gap-5 my-20">
         {combinedWorks.map((work, index) => (
-          <div className="lg:w-[400px] w-full" key={index}>
+          <div className="lg:w-[350px] w-full" key={index}>
             <div>
               <div className="btn-front rounded-xl flex justify-center items-center">
                 <Link
