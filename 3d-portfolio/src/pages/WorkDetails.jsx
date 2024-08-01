@@ -135,7 +135,7 @@ function WorkDetails() {
               ))}
             </Grid>
           </Grid>*/}
-
+          {/*
           <VerticalTimelineCustom lineColor="rgba(255, 255, 255, 0.3)">
             {translatedExperiences.map((experience, index) => (
               <VerticalTimelineElement
@@ -180,8 +180,63 @@ function WorkDetails() {
                 </ul>
               </VerticalTimelineElement>
             ))}
+          </VerticalTimelineCustom>*/}
+          <VerticalTimelineCustom lineColor="rgba(255, 255, 255, 0.3)">
+            <VerticalTimelineElement>
+              <div>
+                <h3 className="text-black text-xl font-poppins font-semibold">
+                  コンセプト
+                </h3>
+                <p
+                  className="text-black-500 font-medium font-base"
+                  style={{ margin: 0 }}
+                >
+                  タイトル
+                </p>
+              </div>
+              <ul className="my-5 list-discc ml-5 space-y-2">
+                <li className="text-black-500/50 font-normal pl-1 text-sm">
+                  タイトル
+                </li>
+              </ul>
+            </VerticalTimelineElement>
+            <VerticalTimelineElement>
+              <div>
+                <h3 className="text-black text-xl font-poppins font-semibold">
+                  ペルソナ
+                </h3>
+                <p
+                  className="text-black-500 font-medium font-base"
+                  style={{ margin: 0 }}
+                >
+                  タイトル
+                </p>
+              </div>
+              <ul className="my-5 list-discc ml-5 space-y-2">
+                <li className="text-black-500/50 font-normal pl-1 text-sm">
+                  タイトル
+                </li>
+              </ul>
+            </VerticalTimelineElement>
+            <VerticalTimelineElement>
+              <div>
+                <h3 className="text-black text-xl font-poppins font-semibold">
+                  ワイヤ画像
+                </h3>
+                <p
+                  className="text-black-500 font-medium font-base"
+                  style={{ margin: 0 }}
+                >
+                  タイトル
+                </p>
+              </div>
+              <ul className="my-5 list-discc ml-5 space-y-2">
+                <li className="text-black-500/50 font-normal pl-1 text-sm">
+                  タイトル
+                </li>
+              </ul>
+            </VerticalTimelineElement>
           </VerticalTimelineCustom>
-
           <Grid item xs={12}>
             <GoTo>作品へのリンク</GoTo>
           </Grid>
