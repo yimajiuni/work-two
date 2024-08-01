@@ -80,6 +80,7 @@ const Contact = () => {
       className="footer-space relative flex lg:flex-row flex-col max-container"
       id="contact"
     >
+      <div></div>
       {alert.show && <Alert {...alert} />}
 
       <div className="flex-1 min-w-[50%] flex flex-col">
