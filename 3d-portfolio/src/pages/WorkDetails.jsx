@@ -1,117 +1,171 @@
-import * as React from "react";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import ImageListItemBar from "@mui/material/ImageListItemBar";
-import ListSubheader from "@mui/material/ListSubheader";
-import IconButton from "@mui/material/IconButton";
-import InfoIcon from "@mui/icons-material/Info";
+import React from "react";
+import { styled } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Grid";
+import Avatar from "@mui/material/Avatar";
+import Typography from "@mui/material/Typography";
+
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import { useTranslation } from "react-i18next";
+import { skills, experiences } from "../i18n-1.js";
+import CTA from "../components/CTA";
+
+const message = `Truncation should be conditionally applicable on this long line of text
+ as this is a much longer line than what the container can support. `;
+
+//styling
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
+const Image = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  ...theme.typography.body2,
+  padding: theme.spacing(12),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
+const Summary = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  ...theme.typography.body2,
+  padding: theme.spacing(5),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
+
+const GoTo = styled(Paper)(({ theme }) => ({
+  background: "linear-gradient(to right, #00c6ff 0%, " + "#0072ff 70%)",
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: "#fff",
+  fontSize: "1.2rem", // Change the font size as desired
+  fontWeight: "bold", // Make the font bold
+}));
 
 function WorkDetails() {
+  //i18n translation
+  const { t } = useTranslation();
+  const translatedExperiences = t("experiences", { returnObjects: true });
+  const [spacing, setSpacing] = React.useState(2);
+  const handleChange = (event) => {
+    setSpacing(Number(event.target.value));
+  };
+
+  const jsx = `<Grid container spacing={${spacing}}>`;
+
   return (
-    <div className=" max-container">
-      <ImageList sx={{ width: 1000, height: 700 }}>
-        <ImageListItem key="Subheader" cols={2}>
-          <ListSubheader component="div">December</ListSubheader>
-        </ImageListItem>
-        {itemData.map((item) => (
-          <ImageListItem key={item.img}>
-            <img
-              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-              src={`${item.img}?w=248&fit=crop&auto=format`}
-              alt={item.title}
-              loading="lazy"
-            />
-            <ImageListItemBar
-              title={item.title}
-              subtitle={item.author}
-              actionIcon={
-                <IconButton
-                  sx={{ color: "rgba(255, 255, 255, 0.54)" }}
-                  aria-label={`info about ${item.title}`}
+    <div className="max-container">
+      <h1 className="head-text">
+        Work{" "}
+        <span className="blue-gradient_text drop-shadow font-semibold">
+          Title
+        </span>
+      </h1>
+      {/*BasicGrid*/}
+      <Box sx={{ width: "100%" }}>
+        <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+          <Grid item xs={8}>
+            <Image>画像</Image>
+          </Grid>
+          <Grid item xs={4}>
+            <Grid container justifyContent="center" spacing={spacing}>
+              <Grid item container direction="column">
+                <Item>形態</Item>
+              </Grid>
+              <Grid item container direction="column">
+                <Item>期間</Item>
+              </Grid>
+              <Grid item container direction="column">
+                <Item>担当範囲</Item>
+              </Grid>
+              <Grid item container direction="column">
+                <Item>使用技術</Item>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item xs={12}>
+            <Summary>概要・ポイント</Summary>
+          </Grid>
+          {/*spacing
+          <Grid item xs={4}>
+            <Grid container justifyContent="center" spacing={spacing}>
+              {[0, 1, 2].map((value) => (
+                <Grid
+                  key={value}
+                  item
+                  container
+                  direction="column"
+                  justifyContent="center"
+                  alignItems="flex-end"
                 >
-                  <InfoIcon />
-                </IconButton>
-              }
-            />
-          </ImageListItem>
-        ))}
-      </ImageList>
+                  <Paper
+                    sx={{
+                      height: 140,
+                      width: 165,
+                    }}
+                  />
+                </Grid>
+              ))}
+            </Grid>
+          </Grid>*/}
+
+          <VerticalTimeline>
+            {translatedExperiences.map((experience, index) => (
+              <VerticalTimelineElement
+                key={index}
+                date={experience.date}
+                icon={
+                  <div className="flex justify-center items-center w-full h-full">
+                    <img
+                      src={experience.icon}
+                      alt={experience.company_name}
+                      className="w-[60%] h-[60%] object-contain"
+                    />
+                  </div>
+                }
+                iconStyle={{ background: experience.iconBg }}
+                contentStyle={{
+                  borderBottom: "8px",
+                  borderStyle: "solid",
+                  borderBottomColor: experience.iconBg,
+                  boxShadow: "none",
+                }}
+              >
+                <div>
+                  <h3 className="text-black text-xl font-poppins font-semibold">
+                    {experience.title}
+                  </h3>
+                  <p
+                    className="text-black-500 font-medium font-base"
+                    style={{ margin: 0 }}
+                  >
+                    {experience.company_name}
+                  </p>
+                </div>
+                <ul className="my-5 list-discc ml-5 space-y-2">
+                  <li className="text-black-500/50 font-normal pl-1 text-sm">
+                    {experience.points}
+                  </li>
+                </ul>
+              </VerticalTimelineElement>
+            ))}
+          </VerticalTimeline>
+
+          <Grid item xs={12}>
+            <GoTo>作品へのリンク</GoTo>
+          </Grid>
+        </Grid>
+      </Box>
+      <CTA />
     </div>
   );
 }
-
 export default WorkDetails;
-
-const itemData = [
-  {
-    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-    title: "Breakfast",
-    author: "@bkristastucchio",
-    rows: 2,
-    cols: 2,
-    featured: true,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
-    title: "Burger",
-    author: "@rollelflex_graphy726",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-    title: "Camera",
-    author: "@helloimnik",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
-    title: "Coffee",
-    author: "@nolanissac",
-    cols: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
-    title: "Hats",
-    author: "@hjrc33",
-    cols: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
-    title: "Honey",
-    author: "@arwinneil",
-    rows: 2,
-    cols: 2,
-    featured: true,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
-    title: "Basketball",
-    author: "@tjdragotta",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
-    title: "Fern",
-    author: "@katie_wasserman",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1597645587822-e99fa5d45d25",
-    title: "Mushrooms",
-    author: "@silverdalex",
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1567306301408-9b74779a11af",
-    title: "Tomato basil",
-    author: "@shelleypauls",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1",
-    title: "Sea star",
-    author: "@peterlaster",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6",
-    title: "Bike",
-    author: "@southside_customs",
-    cols: 2,
-  },
-];
