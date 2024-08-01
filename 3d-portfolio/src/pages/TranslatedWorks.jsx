@@ -26,10 +26,10 @@ const imageStyle = {
   margin: "0 auto 0 0",
   boxShadow: "20px 12px 30px rgb(248 1 153 / 0.10)",
 };
-function TranslatedProjects() {
+function TranslatedWorks() {
   const { t } = useTranslation();
 
-  // Get translated projects descriptions
+  // Get translated objects from i118n-1.js
   const translatedProjects = t("projects", { returnObjects: true });
   const translatedPromos = t("promoDesigns", { returnObjects: true });
   const translatedApps = t("appDesigns", { returnObjects: true });
@@ -62,7 +62,6 @@ function TranslatedProjects() {
               <div className="btn-front rounded-xl flex justify-center items-center">
                 <Link
                   to="details"
-                  target="_blank"
                   rel="noopener noreferrer"
                   className="font-semibold text-blue-600"
                 >
@@ -240,4 +239,4 @@ function TranslatedProjects() {
   );
 }
 
-export default TranslatedProjects;
+export default TranslatedWorks;

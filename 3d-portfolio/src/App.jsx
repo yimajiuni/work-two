@@ -6,6 +6,7 @@ import {
   TranslatedProjects,
   TranslatedDesigns,
   TranslatedWorks,
+  WorkGallery,
   WorkDetails,
   Contact,
 } from "./pages";
