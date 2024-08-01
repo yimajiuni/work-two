@@ -10,6 +10,8 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+
 import { useTranslation } from "react-i18next";
 import { skills, experiences } from "../i18n-1.js";
 import CTA from "../components/CTA";
@@ -59,6 +61,13 @@ const GoTo = styled(Paper)(({ theme }) => ({
   fontWeight: "bold",
   boxShadow: "none", // Delete the default shadow
 }));
+
+const VerticalTimelineCustom = styled(VerticalTimeline)`
+  &::before {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 4px 6px rgb(248 1 153 / 0.15);
+  }
+`;
 
 function WorkDetails() {
   //i18n translation
@@ -127,7 +136,7 @@ function WorkDetails() {
             </Grid>
           </Grid>*/}
 
-          <VerticalTimeline>
+          <VerticalTimelineCustom lineColor="rgba(255, 255, 255, 0.3)">
             {translatedExperiences.map((experience, index) => (
               <VerticalTimelineElement
                 key={index}
@@ -143,10 +152,14 @@ function WorkDetails() {
                 }
                 iconStyle={{ background: experience.iconBg }}
                 contentStyle={{
+                  background: "rgba(255, 255, 255, 0.3)", // Set the background with transparency
                   borderBottom: "8px",
                   borderStyle: "solid",
                   borderBottomColor: experience.iconBg,
                   boxShadow: "none",
+                }}
+                contentArrowStyle={{
+                  borderRight: "7px solid rgba(255, 255, 255, 0.3)", // Set the arrow color with transparency
                 }}
               >
                 <div>
@@ -167,7 +180,7 @@ function WorkDetails() {
                 </ul>
               </VerticalTimelineElement>
             ))}
-          </VerticalTimeline>
+          </VerticalTimelineCustom>
 
           <Grid item xs={12}>
             <GoTo>作品へのリンク</GoTo>
