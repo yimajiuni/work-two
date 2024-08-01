@@ -14,19 +14,18 @@ function TranslatedAbout() {
   const translatedExperiences = t("experiences", { returnObjects: true });
 
   return (
-    <section className="max-container" id="about">
+    <section className="section-container" id="about">
       {/*<h1>{t("greeting")}</h1>*/}
       <h1 className="head-text">
-        Hello I'm{" "}
-        <span className="blue-gradient_text drop-shadow font-semibold">
-          Yuko
-        </span>
+        About{" "}
+        <span className="blue-gradient_text drop-shadow font-semibold">Me</span>
       </h1>
+      {/**/}
       <div className="mt-5 flex flex-col gap-3 text-slate-500">
         <p>{t("aboutDesc.line1")}</p>
       </div>
       <div className="py-10 flex flex-col">
-        <h3 className="subhead-text">My skills</h3>
+        <h3 className="subhead-text">My Skills</h3>
 
         <div className="mt-16 flex flex-wrap gap-12">
           {skills.map((skill) => (
@@ -95,7 +94,6 @@ function TranslatedAbout() {
         </div>
       </div>
       {/**/}
-      <hr className="border-slate-200" />
 
       <CTA />
     </section>

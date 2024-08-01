@@ -219,63 +219,63 @@ i18n
           promoDesigns: [
             {
               preview: eqbo,
-              name: "Promotion for rain boots",
+              name: "Ad for rain boots",
               description:
                 "The sales promotion,which is with a polaroid-like style design and inspired by the background of SNS culture that is to be used by young people and a wide range of other generations.",
               link: "https://yimajiuni.com/promotions/eq-bo.jpg",
             },
             {
               preview: eqch,
-              name: "Sales promotion of horse riding chaps",
+              name: "Ad for horse riding chaps",
               description:
                 "Sophisticated, easy-to-read promotion inspired by fashion magazines. Add cuts of model images as needed.",
               link: "https://yimajiuni.com/promotions/eq-ch.jpg",
             },
             {
               preview: eqcu,
-              name: "Sales promotion for riding culottes",
+              name: "Ad for riding culottes",
               description:
                 "Showcase price, catch copy, product images and effectively organize description and functionality display to express overall brand color and promote sales targeting a wide range of ages for the domestic market.",
               link: "https://yimajiuni.com/promotions/eq-cu.jpg",
             },
             {
               preview: eqgr1,
-              name: "Sales promotion of riding gloves 1",
+              name: "Ad for riding gloves 1",
               description:
                 "Promotion of riding gloves with special fabric for winter moisture retention and warmth.",
               link: "https://yimajiuni.com/promotions/eq-gr1.jpg",
             },
             {
               preview: eqgr2,
-              name: "Sales promotion of synthetic leather gloves for horse riding 2",
+              name: "Ad for horse riding leather gloves",
               description:
                 "Promotion of well-fitting synthetic leather gloves for riding. Design to match the product emphasizing sportiness and functional aspects.",
               link: "https://yimajiuni.com/promotions/eq-gr2.jpg",
             },
             {
               preview: eqgr3,
-              name: "Sales promotion of riding glove accessories",
+              name: "Ad for horseriding accessories",
               description:
                 "Promotion that expresses friendliness and elegance, targeting all generations.",
               link: "https://yimajiuni.com/promotions/eq-gr3.jpg",
             },
             {
               preview: eqgr4,
-              name: "Sales promotion for horse riding glove 3",
+              name: "Ad for horse riding gloves 3",
               description:
                 "Promotion of silicone grip glove with cost-effective with sophisticated visual.",
               link: "https://yimajiuni.com/promotions/eq-gr4.jpg",
             },
             {
               preview: eqhe,
-              name: "Sales promotion of horse riding helmets",
+              name: "Ad of horse riding helmets",
               description:
                 "Easy to read and sophisticated promotion inspired by magazines",
               link: "https://yimajiuni.com/promotions/eq-he.jpg",
             },
             {
               preview: eqwh,
-              name: "Sales promotion for a horse riding whip",
+              name: "Ad for a horse riding whip",
               description:
                 "Sales promotion with expressions that accentuate 'harmony' and 'monogram' to match the distinctive product Functional display is easy to read and aethethically appealing.",
               link: "https://yimajiuni.com/promotions/eq-wh.jpg",
@@ -293,7 +293,7 @@ i18n
             {
               preview: app1,
               theme: "btn-back-pink",
-              name: "EC App UX Design by Figma",
+              name: "EC App UX Design",
               description:
                 "UX of shopping application from adding favorites and cart to purchase was designed by Figma.",
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=233-88&t=TGbd5tplvGsffkfO-1&starting-point-node-id=236%3A233",
@@ -301,7 +301,7 @@ i18n
             {
               preview: app2,
               theme: "btn-back-blue",
-              name: "Fitness App UX Design by Figma",
+              name: "Fitness App UX Design",
               description:
                 "Designed an app with an attractive slider for each training menu UX on the login screen by Figma.",
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=328-136&t=AMryIaIjpqI2Y7cZ-1&starting-point-node-id=327%3A190",
@@ -309,7 +309,7 @@ i18n
             {
               preview: app3,
               theme: "btn-back-red",
-              name: "Banking App UX Design by Figma",
+              name: "Banking App UX Design",
               description:
                 "Mobile Banking App designed with monthly expense comparison graph of deposits, an investment section and purchase history feature.",
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=298-558&t=8uCbvN2drsBtXyv6-1&starting-point-node-id=299%3A681",

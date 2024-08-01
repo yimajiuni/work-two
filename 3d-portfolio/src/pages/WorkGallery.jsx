@@ -29,11 +29,17 @@ const imageStyle = {
 function WorkGallery() {
   const { t } = useTranslation();
 
-  // Get translated projects descriptions
+  // Get translated objects
   const translatedProjects = t("projects", { returnObjects: true });
   const translatedPromos = t("promoDesigns", { returnObjects: true });
   const translatedApps = t("appDesigns", { returnObjects: true });
 
+  // Combine all translated items into a single array
+  const combinedWorks = [
+    ...translatedProjects.map((item) => ({ ...item, type: "project" })),
+    ...translatedPromos.map((item) => ({ ...item, type: "promo" })),
+    ...translatedApps.map((item) => ({ ...item, type: "app" })),
+  ];
   const handleOpen = (index, scrollType) => {
     setOpen(index);
     setScroll(scrollType);
@@ -42,21 +48,21 @@ function WorkGallery() {
   const handleClose = () => setOpen(null);
 
   return (
-    <section className="max-container" id="works">
+    <section className="max-container bg-fixed" id="works">
       <h1 className="head-text">
         My{" "}
         <span className="blue-gradient_text drop-shadow font-semibold">
           Works
         </span>
       </h1>
-      {/*}
+      {/**/}
       <p className="text-slate-500 mt-2 leading-relaxed">
         {t("projectDesc.line1")}
         {t("projectDesc.line2")}
-      </p>*/}
+      </p>
 
-      <div className="flex flex-wrap my-20 gap-16">
-        {translatedProjects.map((project, index) => (
+      <div className="grid grid-cols-3 gap-2 my-20">
+        {combinedWorks.map((work, index) => (
           <div className="lg:w-[400px] w-full" key={index}>
             <div>
               <div className="btn-front rounded-xl flex justify-center items-center">
@@ -66,8 +72,8 @@ function WorkGallery() {
                   className="font-semibold text-blue-600"
                 >
                   <img
-                    src={project.preview}
-                    alt={project.name}
+                    src={work.preview}
+                    alt={work.name}
                     className="w-2/3 h-2/3 object-contain"
                     style={imageStyle}
                   />
@@ -75,11 +81,12 @@ function WorkGallery() {
               </div>
             </div>
             <div className="mt-5 flex flex-col">
-              <h4 className="text-2xl font-poppins font-semibold">
-                {project.name}
+              {/**/}
+              <h4 className="text-xl font-poppins font-semibold">
+                {work.name}
               </h4>
               <Link
-                to={project.link}
+                to={work.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-blue-600"
@@ -87,139 +94,6 @@ function WorkGallery() {
                 Live Link
               </Link>
               <img src={arrow} alt="arrow" className="w-4 h-4 object-contain" />
-            </div>
-          </div>
-        ))}
-      </div>
-      <h1 className="head-text">
-        Promo & UX{" "}
-        <span className="blue-gradient_text font-semibold drop-shadow">
-          Designs
-        </span>
-      </h1>
-      {/*}
-      <div className="mt-5 flex flex-col gap-3 text-slate-500">
-        <p>{t("aboutDesc.line1")}</p>
-      </div>*/}
-      <div className="py-10 flex flex-col">
-        <div className="flex flex-wrap my-10 gap-16">
-          {translatedPromos.map((design, index) => (
-            <div className="lg:w-[400px] w-full" key={index}>
-              <div>
-                <div
-                  className="btn-front rounded-xl flex justify-center items-center"
-                  onClick={() => handleOpen(index, "paper")}
-                  style={{ cursor: "pointer" }}
-                >
-                  <Link
-                    to="details"
-                    rel="noopener noreferrer"
-                    className="font-semibold text-blue-600"
-                  >
-                    <img
-                      src={design.preview}
-                      alt={design.name}
-                      className="w-2/3 h-2/3 object-contain"
-                      style={imageStyle}
-                    />
-                  </Link>
-                </div>
-              </div>
-
-              <div className="mt-5 flex flex-col">
-                <h4 className="text-2xl font-poppins font-semibold">
-                  {design.name}
-                </h4>
-                <div className="mt-5 flex items-center gap-2 font-poppins">
-                  <Link
-                    to={design.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-semibold text-blue-600"
-                  >
-                    Live Link
-                  </Link>
-                  <img
-                    src={arrow}
-                    alt="arrow"
-                    className="w-4 h-4 object-contain"
-                  />
-                </div>
-              </div>
-
-              <Modal
-                open={open === index}
-                onClose={handleClose}
-                scroll={scroll}
-                aria-labelledby={`modal-title-${index}`}
-                aria-describedby={`modal-description-${index}`}
-              >
-                <Box sx={modalStyle}>
-                  <Typography
-                    id={`modal-title-${index}`}
-                    variant="h6"
-                    component="h2"
-                  >
-                    {design.name}
-                  </Typography>
-                  <Typography id={`modal-description-${index}`} sx={{ mt: 2 }}>
-                    {design.description}
-                  </Typography>
-                  <div className="mt-5 flex items-center gap-2 font-poppins">
-                    <Link
-                      to={design.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-semibold text-blue-600"
-                    >
-                      Live Link
-                    </Link>
-                    <img
-                      src={arrow}
-                      alt="arrow"
-                      className="w-4 h-4 object-contain"
-                    />
-                  </div>
-                </Box>
-              </Modal>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="flex flex-wrap my-20 gap-16">
-        {translatedApps.map((app, index) => (
-          <div className="lg:w-[400px] w-full" key={index}>
-            <div className="thumbnail">
-              <div className="btn-front rounded-xl flex justify-center items-center">
-                <img
-                  src={app.preview}
-                  alt={app.name}
-                  className="w-2/3 h-2/3 object-contain"
-                  style={imageStyle}
-                />
-              </div>
-            </div>
-
-            <div className="mt-5 flex flex-col">
-              <h4 className="text-2xl font-poppins font-semibold">
-                {app.name}
-              </h4>
-              <div className="mt-5 flex items-center gap-2 font-poppins">
-                <Link
-                  to={app.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold text-blue-600"
-                >
-                  Live Link
-                </Link>
-                <img
-                  src={arrow}
-                  alt="arrow"
-                  className="w-4 h-4 object-contain"
-                />
-              </div>
             </div>
           </div>
         ))}
@@ -243,119 +117,5 @@ import ImageListItemBar from "@mui/material/ImageListItemBar";
 import ListSubheader from "@mui/material/ListSubheader";
 import IconButton from "@mui/material/IconButton";
 import InfoIcon from "@mui/icons-material/Info";
-
-
-
-
-
-const itemData = [
-  {
-    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-    title: "Breakfast",
-    author: "@bkristastucchio",
-    rows: 2,
-    cols: 2,
-    featured: true,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
-    title: "Burger",
-    author: "@rollelflex_graphy726",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-    title: "Camera",
-    author: "@helloimnik",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
-    title: "Coffee",
-    author: "@nolanissac",
-    cols: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
-    title: "Hats",
-    author: "@hjrc33",
-    cols: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
-    title: "Honey",
-    author: "@arwinneil",
-    rows: 2,
-    cols: 2,
-    featured: true,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
-    title: "Basketball",
-    author: "@tjdragotta",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
-    title: "Fern",
-    author: "@katie_wasserman",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1597645587822-e99fa5d45d25",
-    title: "Mushrooms",
-    author: "@silverdalex",
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1567306301408-9b74779a11af",
-    title: "Tomato basil",
-    author: "@shelleypauls",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1",
-    title: "Sea star",
-    author: "@peterlaster",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6",
-    title: "Bike",
-    author: "@southside_customs",
-    cols: 2,
-  },
-];
-
-function WorkGallery() {
-  return (
-    <div className=" max-container">
-      <ImageList sx={{ width: 1000, height: 700 }}>
-        <ImageListItem key="Subheader" cols={2}>
-          <ListSubheader component="div">December</ListSubheader>
-        </ImageListItem>
-        {itemData.map((item) => (
-          <ImageListItem key={item.img}>
-            <img
-              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-              src={`${item.img}?w=248&fit=crop&auto=format`}
-              alt={item.title}
-              loading="lazy"
-            />
-            <ImageListItemBar
-              title={item.title}
-              subtitle={item.author}
-              actionIcon={
-                <IconButton
-                  sx={{ color: "rgba(255, 255, 255, 0.54)" }}
-                  aria-label={`info about ${item.title}`}
-                >
-                  <InfoIcon />
-                </IconButton>
-              }
-            />
-          </ImageListItem>
-        ))}
-      </ImageList>
-    </div>
-  );
-}
-
-export default WorkGallery;
 */
 }
