@@ -182,7 +182,15 @@ function WorkDetails() {
             ))}
           </VerticalTimelineCustom>*/}
           <VerticalTimelineCustom lineColor="rgba(255, 255, 255, 0.3)">
-            <VerticalTimelineElement>
+            <VerticalTimelineElement
+              contentStyle={{
+                background: "rgba(255, 255, 255, 0.3)", // Set the background with transparency
+                boxShadow: "0px 4px 6px rgb(248 1 153 / 0.15)",
+              }}
+              contentArrowStyle={{
+                borderRight: "7px solid rgba(255, 255, 255, 0.3)", // Set the arrow color with transparency
+              }}
+            >
               <div>
                 <h3 className="text-black text-xl font-poppins font-semibold">
                   コンセプト
@@ -200,7 +208,15 @@ function WorkDetails() {
                 </li>
               </ul>
             </VerticalTimelineElement>
-            <VerticalTimelineElement>
+            <VerticalTimelineElement
+              contentStyle={{
+                background: "rgba(255, 255, 255, 0.3)", // Set the background with transparency
+                boxShadow: "0px 4px 6px rgb(248 1 153 / 0.15)",
+              }}
+              contentArrowStyle={{
+                borderRight: "7px solid rgba(255, 255, 255, 0.3)", // Set the arrow color with transparency
+              }}
+            >
               <div>
                 <h3 className="text-black text-xl font-poppins font-semibold">
                   ペルソナ
@@ -218,21 +234,25 @@ function WorkDetails() {
                 </li>
               </ul>
             </VerticalTimelineElement>
-            <VerticalTimelineElement>
+            <VerticalTimelineElement
+              contentStyle={{
+                background: "rgba(255, 255, 255, 0.3)", // Set the background with transparency
+                boxShadow: "0px 4px 6px rgb(248 1 153 / 0.15)",
+              }}
+              contentArrowStyle={{
+                borderRight: "7px solid rgba(255, 255, 255, 0.3)", // Set the arrow color with transparency
+              }}
+            >
               <div>
-                <h3 className="text-black text-xl font-poppins font-semibold">
-                  ワイヤ画像
-                </h3>
+                <h3 className="text-black text-xl font-poppins font-semibold"></h3>
                 <p
                   className="text-black-500 font-medium font-base"
                   style={{ margin: 0 }}
-                >
-                  タイトル
-                </p>
+                ></p>
               </div>
               <ul className="my-5 list-discc ml-5 space-y-2">
                 <li className="text-black-500/50 font-normal pl-1 text-sm">
-                  タイトル
+                  ワイヤ画像
                 </li>
               </ul>
             </VerticalTimelineElement>
