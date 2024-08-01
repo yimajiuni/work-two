@@ -2,11 +2,12 @@ import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import {
   Home,
-  TranslatedProjects,
   TranslatedAbout,
+  TranslatedProjects,
   TranslatedDesigns,
-  Contact,
+  TranslatedWorks,
   WorkDetails,
+  Contact,
 } from "./pages";
 import Content from "./components/Content";
 {
@@ -21,13 +22,16 @@ function App() {
         {/*<Navbar />*/}
         <NavbarJump />
         <Routes>
-          {/*<Route path="/home" element={<Home />} />
-           */}
+          {/*<Route path="/home" element={<Home />} />*/}
+          {/*
+           
           <Route path="/about" element={<TranslatedAbout />} />
-          <Route path="/projects" element={<TranslatedProjects />} />
-          <Route path="/designs" element={<TranslatedDesigns />} />
+          <Route path="/works" element={<TranslatedWorks />} />*/}
+          {/*<Route path="/projects" element={<TranslatedProjects />} />
+          <Route path="/designs" element={<TranslatedDesigns />} />*/}
           <Route path="*" element={<Content />} />
           <Route path="/contact" element={<Contact />} />
+          {/**/}
           <Route path="/details" element={<WorkDetails />} />
         </Routes>
       </Router>

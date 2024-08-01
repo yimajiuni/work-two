@@ -26,7 +26,8 @@ const NavbarJump = () => {
   return (
     <header className="header" id="navigation">
       <NavLink
-        to="/details"
+        to="/"
+        activeclass="active"
         onClick={scrollToTop}
         className="w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md"
       >
@@ -34,27 +35,33 @@ const NavbarJump = () => {
       </NavLink>
       <nav className="flex text-lg gap-7 font-medium text-white">
         {location !== "contact" ? (
-          location === "home" ? ( //homeの時
-            <>
-              <NavLink to="/about">About</NavLink>
-              <NavLink to="/projects">Projects</NavLink>
-              <NavLink to="/designs">Designs</NavLink>
-              <NavLink to="/contact">Contact</NavLink>
-            </>
-          ) : (
-            //contactでもhomeでもない時
-            <>
-              <ScrollLink
-                className="cursor-pointer"
-                activeclass="active"
-                to="/"
-                spy={true}
-                smooth={true}
-                offset={10}
-                duration={500}
-              >
-                About
-              </ScrollLink>
+          // about,works(,project,design)の時
+          <>
+            <ScrollLink
+              onClick={() => goToPageAndScroll("about")}
+              className="cursor-pointer"
+              activeclass="active"
+              to="/"
+              spy={true}
+              smooth={true}
+              offset={10}
+              duration={500}
+            >
+              About
+            </ScrollLink>
+            <ScrollLink
+              onClick={() => goToPageAndScroll("works")}
+              className="cursor-pointer"
+              activeclass="active"
+              to="works"
+              spy={true}
+              smooth={true}
+              offset={10}
+              duration={500}
+            >
+              Works
+            </ScrollLink>
+            {/*
               <ScrollLink
                 onClick={() => goToPageAndScroll("projects")}
                 className="cursor-pointer"
@@ -79,24 +86,24 @@ const NavbarJump = () => {
               >
                 Designs
               </ScrollLink>
-              <NavLink
-                to="/contact"
-                onClick={() => goToPageAndScroll("contact")}
-                className="ncursor-pointer"
-                activeclass="active"
-                spy={true}
-              >
-                Contact
-              </NavLink>
-            </>
-          )
+              */}
+            <NavLink
+              to="/contact"
+              onClick={() => goToPageAndScroll("contact")}
+              className="cursor-pointer"
+              spy={true}
+            >
+              Contact
+            </NavLink>
+          </>
         ) : (
           //contactの時
           <>
             <NavLink
+              onClick={() => goToPageAndScroll("about")}
               className="cursor-pointer"
               activeclass="active"
-              to="/"
+              to="about"
               spy={true}
               smooth={true}
               offset={10}
@@ -104,6 +111,20 @@ const NavbarJump = () => {
             >
               About
             </NavLink>
+
+            <NavLink
+              onClick={() => goToPageAndScroll("works")}
+              className="cursor-pointer"
+              activeclass="active"
+              to="works"
+              spy={true}
+              smooth={true}
+              offset={10}
+              duration={500}
+            >
+              Works
+            </NavLink>
+            {/*
             <NavLink
               className="cursor-pointer"
               activeclass="active"
@@ -115,7 +136,7 @@ const NavbarJump = () => {
             >
               Projects
             </NavLink>
-            <NavLink to="/designs">Designs</NavLink>
+            <NavLink to="/designs">Designs</NavLink>*/}
             <NavLink
               to="/contact"
               className={({ isActive }) =>
