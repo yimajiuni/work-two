@@ -39,7 +39,7 @@ const NavbarJump = () => {
           <>
             <ScrollLink
               onClick={() => goToPageAndScroll("works")}
-              className="cursor-pointer"
+              className="cursor-pointer hidden sm:block"
               activeclass="active"
               to="/"
               spy={true}
@@ -101,7 +101,7 @@ const NavbarJump = () => {
           <>
             <NavLink
               onClick={() => goToPageAndScroll("works")}
-              className="cursor-pointer"
+              className="cursor-pointer hidden sm:block"
               activeclass="active"
               to="works"
               spy={true}

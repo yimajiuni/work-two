@@ -49,7 +49,7 @@ function WorkGallery() {
   const handleClose = () => setOpen(null);
 
   return (
-    <section className="max-container bg-fixed" id="works">
+    <section className="max-container" id="works">
       <h1 className="head-text">
         My{" "}
         <span className="blue-gradient_text drop-shadow font-semibold">
@@ -62,7 +62,7 @@ function WorkGallery() {
         {t("projectDesc.line2")}
       </p>
 
-      <div className="grid grid-cols-3 gap-5 my-20">
+      <div className="grid lg:grid-cols-3 gap-5 my-20">
         {combinedWorks.map((work, index) => (
           <div className="lg:w-[350px] w-full" key={index}>
             <div>
