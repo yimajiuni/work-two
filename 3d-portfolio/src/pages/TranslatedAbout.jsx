@@ -14,7 +14,7 @@ function TranslatedAbout() {
   const translatedExperiences = t("experiences", { returnObjects: true });
 
   return (
-    <section className="section-container" id="about">
+    <section className="max-container" id="about">
       {/*<h1>{t("greeting")}</h1>*/}
       <h1 className="head-text">
         About{" "}

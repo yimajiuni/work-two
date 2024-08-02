@@ -3,6 +3,7 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import LanguageSelector from "../components/LanguageSelector";
 import { Link as ScrollLink } from "react-scroll";
 import * as Scroll from "react-scroll";
+import { FaGlobe } from "react-icons/fa";
 
 const NavbarJump = () => {
   const path = useLocation().pathname;
@@ -39,7 +40,7 @@ const NavbarJump = () => {
           <>
             <ScrollLink
               onClick={() => goToPageAndScroll("works")}
-              className="cursor-pointer hidden sm:block"
+              className="cursor-pointer xl:block lg:block md:block sm:block sx:hidden"
               activeclass="active"
               to="/"
               spy={true}
@@ -101,7 +102,7 @@ const NavbarJump = () => {
           <>
             <NavLink
               onClick={() => goToPageAndScroll("works")}
-              className="cursor-pointer hidden sm:block"
+              className="cursor-pointer xl:block lg:block md:block sm:block sx:hidden"
               activeclass="active"
               to="works"
               spy={true}
