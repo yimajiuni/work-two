@@ -64,9 +64,9 @@ function WorkGallery() {
           const workId = workData ? workData.id : null;
 
           return (
-            <div className="lg:w-[350px] w-full" key={index}>
+            <div className="lg:w-[350px] w-full block-container" key={index}>
               <div>
-                <div className="btn-front rounded-xl flex justify-center items-center">
+                <div className="rounded-xl flex justify-center items-center">
                   <Link
                     to={workId ? `/details/${workId}` : "#"}
                     rel="noopener noreferrer"
