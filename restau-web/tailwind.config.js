@@ -9,8 +9,8 @@ export default {
         lightText: "#959595",
       },
       screens: {
-        sm: "500px",
-        sx: "378px",
+        sm: "400px",
+        sx: "375px",
       },
     },
   },

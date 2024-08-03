@@ -6,6 +6,7 @@ import { arrow } from "../assets/icons/index.js";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import { workDatas } from "../i18n-1.js";
 
 const modalStyle = {
   position: "absolute",
@@ -26,7 +27,9 @@ const imageStyle = {
   margin: "0 auto 0 0",
   boxShadow: "20px -12px 30px rgb(248 1 153 / 0.10)",
   borderRadius: "10px",
+  opacity: 0.9,
 };
+
 function WorkGallery() {
   const { t } = useTranslation();
 
@@ -41,12 +44,6 @@ function WorkGallery() {
     ...translatedPromos.map((item) => ({ ...item, type: "promo" })),
     ...translatedApps.map((item) => ({ ...item, type: "app" })),
   ];
-  const handleOpen = (index, scrollType) => {
-    setOpen(index);
-    setScroll(scrollType);
-  };
-
-  const handleClose = () => setOpen(null);
 
   return (
     <section className="max-container" id="works">
@@ -56,67 +53,59 @@ function WorkGallery() {
           Works
         </span>
       </h1>
-      {/**/}
       <p className="text-slate-500 mt-2 leading-relaxed">
         {t("projectDesc.line1")}
         {t("projectDesc.line2")}
       </p>
 
       <div className="grid lg:grid-cols-3 gap-5 my-20">
-        {combinedWorks.map((work, index) => (
-          <div className="lg:w-[350px] w-full" key={index}>
-            <div>
-              <div className="btn-front rounded-xl flex justify-center items-center">
+        {combinedWorks.map((work, index) => {
+          const workData = workDatas.find((data) => data.id === work.id);
+          const workId = workData ? workData.id : null;
+
+          return (
+            <div className="lg:w-[350px] w-full" key={index}>
+              <div>
+                <div className="btn-front rounded-xl flex justify-center items-center">
+                  <Link
+                    to={workId ? `/details/${workId}` : "#"}
+                    rel="noopener noreferrer"
+                    className="font-semibold text-blue-600"
+                  >
+                    <img
+                      src={work.preview}
+                      alt={work.name}
+                      className="w-2/3 h-2/3 object-contain"
+                      style={imageStyle}
+                    />
+                  </Link>
+                </div>
+              </div>
+              <div className="mt-5 flex flex-col">
+                <h4 className="text-xl lg:w-60 font-poppins font-semibold break-words">
+                  {work.name}
+                </h4>
                 <Link
-                  to="details"
+                  to={work.link}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="font-semibold text-blue-600"
                 >
-                  <img
-                    src={work.preview}
-                    alt={work.name}
-                    className="w-2/3 h-2/3 object-contain"
-                    style={imageStyle}
-                  />
+                  Live Link
                 </Link>
+                <img
+                  src={arrow}
+                  alt="arrow"
+                  className="w-4 h-4 object-contain"
+                />
               </div>
             </div>
-            <div className="mt-5 flex flex-col">
-              {/**/}
-              <h4 className="text-xl font-poppins font-semibold">
-                {work.name}
-              </h4>
-              <Link
-                to={work.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-blue-600"
-              >
-                Live Link
-              </Link>
-              <img src={arrow} alt="arrow" className="w-4 h-4 object-contain" />
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
-      {/*}
-      <hr className="border-slate-200" />
-
-      <CTA />*/}
+      <CTA />
     </section>
   );
 }
 
 export default WorkGallery;
-
-{
-  /*}
-import * as React from "react";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import ImageListItemBar from "@mui/material/ImageListItemBar";
-import ListSubheader from "@mui/material/ListSubheader";
-import IconButton from "@mui/material/IconButton";
-import InfoIcon from "@mui/icons-material/Info";
-*/
-}
