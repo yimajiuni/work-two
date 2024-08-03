@@ -91,62 +91,6 @@ i18n
              I'm just a few keystrokes away`,
             contact: "Let's Talk",
           },
-          projectDesc: {
-            line1: `  I've embarked on numerous projects throughout the years, but these are
-            the ones i hold closest to my heart. feel free to explore my github and
-            i hope it contributes to further your ideas. And your collaborations are
-            highly valued
-            `,
-            line2: "!",
-          },
-          //web
-          projects: [
-            {
-              preview: web1,
-              theme: "btn-back-red",
-              name: "E-Commerce Website",
-              description:
-                "Developed a e-commerce website with purchasing system.",
-              persona:
-                "Persona:A wide range of people of all ages and ethnicities who are healthy and have high desires to buy fast fashion.",
-              duration: "Production Period: 2 weeks(45h)",
-              responsibility:
-                "Areas of work: Functional design, UX/UI design, coding, debugging, deployment",
-              link: "https://e-commerce.yimajiuni.com/",
-            },
-            {
-              preview: web2,
-              theme: "btn-back-green",
-              name: "Dashboard App",
-              description: "Created a mobile first Dashboard model.",
-              duration: "Production Period:4 days (16h)",
-              responsibility:
-                "Areas of work: Functional design, UX/UI design, coding, debugging, deployment",
-              persona:
-                "Persona: Store managers and staff in charge of sales and inventory control of houseplants",
-              link: "https://dashboard-model.yimajiuni.com/",
-            },
-            {
-              preview: web3,
-              theme: "btn-back-blue",
-              name: "Travel App",
-              description: `Designed and built a mobile app for finding traveling packages.
-                Production Period:: 5 days (20h)
-                Areas of work: Functional design, UX/UI design, coding, debugging, deployment
-                Personas: Local residents and tourists of all ages, looking for good food and a comfortable dining experience.`,
-              link: "https://travel-web.yimajiuni.com/",
-            },
-            {
-              preview: web4,
-              theme: "btn-back-pink",
-              name: "Restaurant Website",
-              description: `Built a fully responsive restaurant Website.
-                Production Period: 5 days (20h)
-                Areas of work: Functional design, UX/UI design, coding, debugging, deployment
-                Personas: Local residents and tourists of all ages, looking for good food and a comfortable dining experience.`,
-              link: "https://restau-web.yimajiuni.com/",
-            },
-          ],
           aboutDesc: {
             line1: `software developer based in Japan Specialized in technology and designs through hands-on learning and building apps.
             `,
@@ -209,76 +153,64 @@ i18n
               ],
             },
           ],
-          designDesc: {
-            line1: `日本を拠点とするソフトウェア開発者。実践的な学習とアプリの構築を通して、技術とデザインに特化しています。
+          projectDesc: {
+            line1: `  I've embarked on numerous projects throughout the years, but these are
+            the ones i hold closest to my heart. feel free to explore my github and
+            i hope it contributes to further your ideas. And your collaborations are
+            highly valued
             `,
-            line2: `あらゆる種類の会社と仕事をし、自分のスキルを高め、あらゆる種類の人々とチームを組んできました。
-            `,
+            line2: "!",
           },
-          //banner
-          promoDesigns: [
+          //web
+          projects: [
             {
-              preview: eqbo,
-              name: "Ad for rain boots",
+              id: 1,
+              preview: web1,
+              theme: "btn-back-red",
+              name: "E-Commerce Website",
               description:
-                "The sales promotion,which is with a polaroid-like style design and inspired by the background of SNS culture that is to be used by young people and a wide range of other generations.",
-              link: "https://yimajiuni.com/promotions/eq-bo.jpg",
+                "Developed a e-commerce website with purchasing system.",
+              persona:
+                "Persona:A wide range of people of all ages and ethnicities who are healthy and have high desires to buy fast fashion.",
+              duration: "Production Period: 2 weeks(45h)",
+              responsibility:
+                "Areas of work: Functional design, UX/UI design, coding, debugging, deployment",
+              link: "https://e-commerce.yimajiuni.com/",
             },
             {
-              preview: eqch,
-              name: "Ad for horse riding chaps",
-              description:
-                "Sophisticated, easy-to-read promotion inspired by fashion magazines. Add cuts of model images as needed.",
-              link: "https://yimajiuni.com/promotions/eq-ch.jpg",
+              id: 2,
+              preview: web2,
+              theme: "btn-back-green",
+              name: "Dashboard App",
+              description: "Created a mobile first Dashboard model.",
+              duration: "Production Period:4 days (16h)",
+              responsibility:
+                "Areas of work: Functional design, UX/UI design, coding, debugging, deployment",
+              persona:
+                "Persona: Store managers and staff in charge of sales and inventory control of houseplants",
+              link: "https://dashboard-model.yimajiuni.com/",
             },
             {
-              preview: eqcu,
-              name: "Ad for riding culottes",
-              description:
-                "Showcase price, catch copy, product images and effectively organize description and functionality display to express overall brand color and promote sales targeting a wide range of ages for the domestic market.",
-              link: "https://yimajiuni.com/promotions/eq-cu.jpg",
+              id: 3,
+              preview: web3,
+              theme: "btn-back-blue",
+              name: "Travel App",
+              description: `Designed and built a mobile app for finding traveling packages.
+                Production Period:: 5 days (20h)
+                Areas of work: Functional design, UX/UI design, coding, debugging, deployment
+                Personas: Local residents and tourists of all ages, looking for good food and a comfortable dining experience.`,
+              link: "https://travel-web.yimajiuni.com/",
             },
             {
-              preview: eqgr1,
-              name: "Ad for riding gloves 1",
-              description:
-                "Promotion of riding gloves with special fabric for winter moisture retention and warmth.",
-              link: "https://yimajiuni.com/promotions/eq-gr1.jpg",
-            },
-            {
-              preview: eqgr2,
-              name: "Ad for horse riding leather gloves",
-              description:
-                "Promotion of well-fitting synthetic leather gloves for riding. Design to match the product emphasizing sportiness and functional aspects.",
-              link: "https://yimajiuni.com/promotions/eq-gr2.jpg",
-            },
-            {
-              preview: eqgr3,
-              name: "Ad for horseriding accessories",
-              description:
-                "Promotion that expresses friendliness and elegance, targeting all generations.",
-              link: "https://yimajiuni.com/promotions/eq-gr3.jpg",
-            },
-            {
-              preview: eqgr4,
-              name: "Ad for horse riding gloves 3",
-              description:
-                "Promotion of silicone grip glove with cost-effective with sophisticated visual.",
-              link: "https://yimajiuni.com/promotions/eq-gr4.jpg",
-            },
-            {
-              preview: eqhe,
-              name: "Ad of horse riding helmets",
-              description:
-                "Easy to read and sophisticated promotion inspired by magazines",
-              link: "https://yimajiuni.com/promotions/eq-he.jpg",
-            },
-            {
-              preview: eqwh,
-              name: "Ad for a horse riding whip",
-              description:
-                "Sales promotion with expressions that accentuate 'harmony' and 'monogram' to match the distinctive product Functional display is easy to read and aethethically appealing.",
-              link: "https://yimajiuni.com/promotions/eq-wh.jpg",
+              id: 4,
+              preview: web4,
+              theme: "btn-back-pink",
+              name: "Restaurant Website",
+              description: `Built a fully responsive restaurant Website.
+                Production Period: 5 days (20h)
+                Areas of work: Functional design, UX/UI design, coding, debugging, deployment
+                Personas: Local residents and tourists of all ages, looking for good food and a comfortable dining experience.`,
+              link: "https://restau-web.yimajiuni.com/",
             },
           ],
           //要修正
@@ -288,9 +220,86 @@ i18n
             line2: `あらゆる種類の会社と仕事をし、自分のスキルを高め、あらゆる種類の人々とチームを組んできました。
             `,
           },
+          //banner
+          promoDesigns: [
+            {
+              id: 5,
+              preview: eqbo,
+              name: "Ad for rain boots",
+              description:
+                "The sales promotion,which is with a polaroid-like style design and inspired by the background of SNS culture that is to be used by young people and a wide range of other generations.",
+              link: "https://yimajiuni.com/promotions/eq-bo.jpg",
+            },
+            {
+              id: 6,
+              preview: eqch,
+              name: "Ad for horse riding chaps",
+              description:
+                "Sophisticated, easy-to-read promotion inspired by fashion magazines. Add cuts of model images as needed.",
+              link: "https://yimajiuni.com/promotions/eq-ch.jpg",
+            },
+            {
+              id: 7,
+              preview: eqcu,
+              name: "Ad for riding culottes",
+              description:
+                "Showcase price, catch copy, product images and effectively organize description and functionality display to express overall brand color and promote sales targeting a wide range of ages for the domestic market.",
+              link: "https://yimajiuni.com/promotions/eq-cu.jpg",
+            },
+            {
+              id: 8,
+              preview: eqgr1,
+              name: "Ad for riding gloves 1",
+              description:
+                "Promotion of riding gloves with special fabric for winter moisture retention and warmth.",
+              link: "https://yimajiuni.com/promotions/eq-gr1.jpg",
+            },
+            {
+              id: 9,
+              preview: eqgr2,
+              name: "Ad for horse riding leather gloves",
+              description:
+                "Promotion of well-fitting synthetic leather gloves for riding. Design to match the product emphasizing sportiness and functional aspects.",
+              link: "https://yimajiuni.com/promotions/eq-gr2.jpg",
+            },
+            {
+              id: 10,
+              preview: eqgr3,
+              name: "Ad for horseriding accessories",
+              description:
+                "Promotion that expresses friendliness and elegance, targeting all generations.",
+              link: "https://yimajiuni.com/promotions/eq-gr3.jpg",
+            },
+            {
+              id: 11,
+              preview: eqgr4,
+              name: "Ad for horse riding gloves 3",
+              description:
+                "Promotion of silicone grip glove with cost-effective with sophisticated visual.",
+              link: "https://yimajiuni.com/promotions/eq-gr4.jpg",
+            },
+            {
+              id: 12,
+              preview: eqhe,
+              name: "Ad of horse riding helmets",
+              description:
+                "Easy to read and sophisticated promotion inspired by magazines",
+              link: "https://yimajiuni.com/promotions/eq-he.jpg",
+            },
+            {
+              id: 13,
+              preview: eqwh,
+              name: "Ad for a horse riding whip",
+              description:
+                "Sales promotion with expressions that accentuate 'harmony' and 'monogram' to match the distinctive product Functional display is easy to read and aethethically appealing.",
+              link: "https://yimajiuni.com/promotions/eq-wh.jpg",
+            },
+          ],
+
           //app
           appDesigns: [
             {
+              id: 14,
               preview: app1,
               theme: "btn-back-pink",
               name: "EC App UX Design",
@@ -299,6 +308,7 @@ i18n
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=233-88&t=TGbd5tplvGsffkfO-1&starting-point-node-id=236%3A233",
             },
             {
+              id: 15,
               preview: app2,
               theme: "btn-back-blue",
               name: "Fitness App UX Design",
@@ -307,6 +317,7 @@ i18n
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=328-136&t=AMryIaIjpqI2Y7cZ-1&starting-point-node-id=327%3A190",
             },
             {
+              id: 16,
               preview: app3,
               theme: "btn-back-red",
               name: "Banking App UX Design",
@@ -341,67 +352,7 @@ i18n
             line6: `プロジェクトを仕上げるディベロッパーが必要ですか?キーボードをちょっと叩いてご連絡下さい！`,
             contact: "連絡する",
           },
-          projectDesc: {
-            line1: `開発を初めてしばらく経ちますが、ここで紹介するプロジェクトは、中でも自分の開発してきた中で上で思い入れのある作品です。
-            `,
-            line2:
-              "Githubのレポジトリ内では個人プロジェクトが現在も進行中です。よろしければご覧になっていってください。チームで協力したプロジェクトは随時募集中です。",
-          },
-          //web
-          projects: [
-            {
-              preview: web1,
-              theme: "btn-back-red",
-              name: "E-Commerce Website",
-              description:
-                "購入と買い物カート追加システムによるECサイトをReactのContextAPIを用いて制作しました。",
-              persona:
-                "健康でファストファッションに対し購買意欲が高い幅広い世代の幅広い人種や年代が対象。",
-              duration: "制作期間：2週間",
-              responsibility:
-                "担当領域：機能設計、UX/UIデザイン、コーディング、デバグ、実装",
-              link: "https://e-commerce.yimajiuni.com/",
-            },
-            {
-              preview: web2,
-              theme: "btn-back-green",
-              name: "Dashboard App",
-              description:
-                "モバイルファーストのCMSタイプのダッシュボードモデルを最適化されたトレンド感のあるUIを用いて制作しました。",
-              persona:
-                "ペルソナ：観葉植物の販売や在庫管理を担当する店舗経営者やスタッフ。",
-              duration: "制作期間：:4日間",
-              responsibility:
-                "担当領域：機能設計、UX/UIデザイン、コーディング、デバグ、実装",
-              link: "https://dashboard-model.yimajiuni.com/",
-            },
-            {
-              preview: web3,
-              theme: "btn-back-blue",
-              name: "Travel App",
-              description:
-                "旅行のパッケージ検索用のアプリのフロントエンド機能をデザイン・実装しました。",
-              persona:
-                " ペルソナ：国内外の旅行客をターゲットに経済力に余裕がある特に日本国内インバウンド旅行客を中心とした健康な若年層社会人から中高年齢層。",
-              duration: "制作期間：4日間",
-              responsibility:
-                "担当領域：機能設計、UX/UIデザイン、コーディング、デバグ、実装",
-              link: "https://travel-web.yimajiuni.com/",
-            },
-            {
-              preview: web4,
-              theme: "btn-back-pink",
-              name: "Restraunt Website",
-              description:
-                "レスポンシブのレストランのウェブサイトをフロントエンド設計・作成しました。",
-              persona:
-                "ペルソナ：地元の住民や観光客で、美味しい食事と快適なダイニング体験を求める幅広い年齢層",
-              responsibility:
-                "担当領域：機能設計、UX/UIデザイン、コーディング、デバグ、実装",
-              duration: "制作期間：4日間",
-              link: "https://restau-web.yimajiuni.com/",
-            },
-          ],
+
           aboutDesc: {
             line1: `日本を拠点とするソフトウェア開発者。実践的な学習とアプリの構築を通して、技術とデザインに特化しています。
             `,
@@ -462,6 +413,71 @@ i18n
               ],
             },
           ],
+          projectDesc: {
+            line1: `開発を初めてしばらく経ちますが、ここで紹介するプロジェクトは、中でも自分の開発してきた中で上で思い入れのある作品です。
+            `,
+            line2:
+              "Githubのレポジトリ内では個人プロジェクトが現在も進行中です。よろしければご覧になっていってください。チームで協力したプロジェクトは随時募集中です。",
+          },
+          //web
+          projects: [
+            {
+              id: 1,
+              preview: web1,
+              theme: "btn-back-red",
+              name: "E-Commerce Website",
+              description:
+                "購入と買い物カート追加システムによるECサイトをReactのContextAPIを用いて制作しました。",
+              persona:
+                "健康でファストファッションに対し購買意欲が高い幅広い世代の幅広い人種や年代が対象。",
+              duration: "制作期間：2週間",
+              responsibility:
+                "担当領域：機能設計、UX/UIデザイン、コーディング、デバグ、実装",
+              link: "https://e-commerce.yimajiuni.com/",
+            },
+            {
+              id: 2,
+              preview: web2,
+              theme: "btn-back-green",
+              name: "Dashboard App",
+              description:
+                "モバイルファーストのCMSタイプのダッシュボードモデルを最適化されたトレンド感のあるUIを用いて制作しました。",
+              persona:
+                "ペルソナ：観葉植物の販売や在庫管理を担当する店舗経営者やスタッフ。",
+              duration: "制作期間：:4日間",
+              responsibility:
+                "担当領域：機能設計、UX/UIデザイン、コーディング、デバグ、実装",
+              link: "https://dashboard-model.yimajiuni.com/",
+            },
+            {
+              id: 2,
+              preview: web3,
+              theme: "btn-back-blue",
+              name: "Travel App",
+              description:
+                "旅行のパッケージ検索用のアプリのフロントエンド機能をデザイン・実装しました。",
+              persona:
+                " ペルソナ：国内外の旅行客をターゲットに経済力に余裕がある特に日本国内インバウンド旅行客を中心とした健康な若年層社会人から中高年齢層。",
+              duration: "制作期間：4日間",
+              responsibility:
+                "担当領域：機能設計、UX/UIデザイン、コーディング、デバグ、実装",
+              link: "https://travel-web.yimajiuni.com/",
+            },
+            {
+              id: 4,
+              preview: web4,
+              theme: "btn-back-pink",
+              name: "Restraunt Website",
+              description:
+                "レスポンシブのレストランのウェブサイトをフロントエンド設計・作成しました。",
+              persona:
+                "ペルソナ：地元の住民や観光客で、美味しい食事と快適なダイニング体験を求める幅広い年齢層",
+              responsibility:
+                "担当領域：機能設計、UX/UIデザイン、コーディング、デバグ、実装",
+              duration: "制作期間：4日間",
+              link: "https://restau-web.yimajiuni.com/",
+            },
+          ],
           //要修正
           designDesc: {
             line1: `日本を拠点とするソフトウェア開発者。実践的な学習とアプリの構築を通して、技術とデザインに特化しています。
@@ -472,6 +488,7 @@ i18n
           //banner
           promoDesigns: [
             {
+              id: 5,
               preview: eqbo,
               name: "レインブーツの販売促進",
               description:
@@ -479,6 +496,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-bo.jpg",
             },
             {
+              id: 6,
               preview: eqch,
               name: "乗馬用チャップスの販売促進",
               description:
@@ -486,6 +504,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-ch.jpg",
             },
             {
+              id: 7,
               preview: eqcu,
               name: "乗馬用キュロットの販売促進",
               description:
@@ -493,6 +512,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-cu.jpg",
             },
             {
+              id: 8,
               preview: eqgr1,
               name: "乗馬用グローブの販売促進1",
               description:
@@ -500,6 +520,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-gr1.jpg",
             },
             {
+              id: 9,
               preview: eqgr2,
               name: "乗馬用合皮グローブの販売促進2",
               description:
@@ -507,6 +528,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-gr2.jpg",
             },
             {
+              id: 10,
               preview: eqgr3,
               name: "乗馬用グローブアクセサリーの販売促進",
               description:
@@ -514,6 +536,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-gr3.jpg",
             },
             {
+              id: 11,
               preview: eqgr4,
               name: "乗馬用グローブの販売促進3",
               description:
@@ -521,6 +544,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-gr4.jpg",
             },
             {
+              id: 12,
               preview: eqhe,
               name: "乗馬用ヘルメットの販売促進",
               description:
@@ -528,6 +552,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-he.jpg",
             },
             {
+              id: 13,
               preview: eqwh,
               name: "乗馬用ムチの販売促進",
               description:
@@ -538,6 +563,7 @@ i18n
           //app
           appDesigns: [
             {
+              id: 14,
               preview: app1,
               theme: "btn-back-pink",
               name: "ECショッピングアプリ",
@@ -546,6 +572,7 @@ i18n
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=233-88&t=TGbd5tplvGsffkfO-1&starting-point-node-id=236%3A233",
             },
             {
+              id: 15,
               preview: app2,
               theme: "btn-back-blue",
               name: "フィットネスショップアプリ",
@@ -554,6 +581,7 @@ i18n
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=328-136&t=AMryIaIjpqI2Y7cZ-1&starting-point-node-id=327%3A190",
             },
             {
+              id: 16,
               preview: app3,
               theme: "btn-back-red",
               name: "銀行ネットバンキングアプリ",
@@ -562,21 +590,134 @@ i18n
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=298-558&t=8uCbvN2drsBtXyv6-1&starting-point-node-id=299%3A681",
             },
           ],
-          //WorkDetails
+          //要修正
           workDesc: {
             line1: `日本を拠点とするソフトウェア開発者。実践的な学習とアプリの構築を通して、技術とデザインに特化しています。
             `,
             line2: `あらゆる種類の会社と仕事をし、自分のスキルを高め、あらゆる種類の人々とチームを組んできました。
             `,
           },
-          workDetails: [
+          //追加
+          workDatas: [
             {
-              preview: app3,
-              theme: "btn-back-red",
-              name: "銀行ネットバンキングアプリ",
-              description:
-                "預金額の月間比較グラフや投資セクション購入履歴機能を設計したモバイル銀行アプリ。",
-              link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=298-558&t=8uCbvN2drsBtXyv6-1&starting-point-node-id=299%3A681",
+              id: 1,
+              titleBk: "ECアパレル",
+              titleBl: "ウェブサイト",
+              image: app3,
+              medium: "website",
+              period: "約2週間",
+              range: "設計・UX/UIデザイン・コーディング・実装",
+              skills: "React, Javascript, CSS",
+              summary:
+                "購入と買い物カート追加システムによるECサイトをReactのContextAPIを用いて制作しました。",
+              concept: `デザイン時に気をつけたこと：ユーザーが快適に商品を閲覧し購入できるよう、視覚的に魅力的で直感的なデザインを心掛けました。特に、カラーパレットはブランドイメージに合った色を使用し、重要な情報やボタンは視認性を高めるために強調しました。また、プロダクトイメージを引き立てるために高品質な画像を使用し、ページの一貫性と美しさを保つために統一されたフォントとアイコンセットを選びました。ユーザーエクスペリエンスを向上させるため、ナビゲーションの簡素化やフィルター機能の最適化にも注力しました。
+              トンマナ策定時に気をつけたこと：広々とした印象とスタイリッシュで見やすい普遍的なデザインを保つため整列されたレイアウトで情報毎にメリハリある文字の大きさを使い分け、使用色はサンプル商品（シーズン）の色調にマッチし、かつアクティブで見やすい印象にするためバナー等には彩度の高い色の商品画像を使用。
+              実装時に気をつけたこと：APIからのデータ取得を効率的に行い、ページの読み込み速度を最適化し、特に画像のローディングとキャッシングに注力しました。`,
+              target: "Developed an e-commerce website with purchasing system.",
+              needs: "Developed an e-commerce website with purchasing system.",
+              function:
+                "Developed an e-commerce website with purchasing system.",
+              eva: "Developed an e-commerce website with purchasing system.",
+              persona:
+                "健康でファストファッションに対し購買意欲が高い幅広い世代の幅広い人種や年代が対象",
+              basic: "Developed an e-commerce website with purchasing system.",
+              tendency:
+                "Developed an e-commerce website with purchasing system.",
+              preference:
+                "Developed an e-commerce website with purchasing system.",
+              wireframe: `WF作成時に気をつけたこと：全体のレイアウトと直感的な使用感、構造の論理的な流れを確保するため、既存のモデルとなるECサイトをリサーチし最適化し、ユーザーインタラクション、コンテンツ階層、応答性などの重要な要素に対し、一貫性があり分かりやすい仕様を目指した。`,
+              process: `アウトプットまでのプロセス: UX/UIデザインのための詳細なワイヤーフレームを作成し、Viteプロジェクトをセットアップ、React Jsを使用して再利用可能なコンポーネントベースの機能を実装し、スライダーやその他の動的パーツを追加し、レスポンシブデザインを実装し、ユーザビリティをテストして修正し、Viteアプリを構築してホスティングサービスにデプロイしました。`,
+              url: "https://e-commerce.yimajiuni.com/",
+              link: "https://e-commerce.yimajiuni.com/",
+
+              icon: tesla,
+              iconBg: "#fbc3bc",
+            },
+            {
+              id: 2,
+              titleBk: "ダッシュボード",
+              titleBl: "アプリ",
+              image: app3,
+              medium: "website",
+              period: "４日間",
+              range: "設計・UX/UIデザイン・コーディング・実装",
+              skills: "React, Javascript",
+              summary:
+                "モバイルファーストのCMSタイプのダッシュボードモデルを最適化されたトレンド感のあるUIを用いて制作しました。",
+              concept: `デザイン時に気をつけたこと：観葉植物の販売サイトを管理するCMSという設定で作成したので、緑色と癒しを彷彿させるキーヴィジュアルを挿入。
+              トンマナ策定時に気をつけたこと：プロフェッショナルでありながらも安心・信頼感を与えるデザインにするため、色は落ち着いた緑を基調とし、シンプルで分かりやすいアイコンやグラフを使用しました。
+              実装時に気をつけたこと：パフォーマンスを最適化し、データの表示が速やかに行われるようにし、特にグラフの描画に注力しました。`,
+              target: "Developed a CMS for managing a plant sale website.",
+              needs: "Developed a CMS for managing a plant sale website.",
+              function: "Developed a CMS for managing a plant sale website.",
+              eva: "Developed a CMS for managing a plant sale website.",
+              persona: "観葉植物の販売や在庫管理を担当する店舗経営者やスタッフ",
+              basic: "Developed a CMS for managing a plant sale website.",
+              tendency: "Developed a CMS for managing a plant sale website.",
+              preference: "Developed a CMS for managing a plant sale website.",
+              wireframe: `WF作成時に気をつけたこと：全体のレイアウトと構造に論理的な流れと直感的なナビゲーションを確保するため、ユーザーインタラクション、コンテンツ階層、応答性などの重要な要素に対し、一貫性があり分かりやすい仕様を目指した。`,
+              process: `アウトプットまでのプロセス: ワイヤーフレームを作成し、Viteプロジェクトをセットアップし、Reactを使用して再利用可能なコンポーネントベースの機能を実装し、スライダーやその他の動的パーツを追加し、レスポンシブデザインを実装し、ユーザビリティをテストして修正し、Viteアプリをビルトしてホスティングサービスにデプロイしました。`,
+              url: "https://dashboard-model.yimajiuni.com/",
+              link: "https://dashboard-model.yimajiuni.com/",
+              icon: tesla,
+            },
+            {
+              id: 3,
+              titleBk: "旅行予約",
+              titleBl: "ウェブサイト",
+              image: app3,
+              medium: "website",
+              period: "4日間",
+              range: "設計・UX/UIデザイン・コーディング・実装",
+              skills: "React, Javascript",
+              summary:
+                " 旅行のパッケージ検索用のアプリのフロントエンド機能をデザイン・実装しました。",
+              concept: `デザイン時に気をつけたこと：旅行の楽しさと期待感をユーザーに伝えるため、大胆なビジュアルとシンプルなナビゲーションを組み合わせ、ユーザーの関心を引きつけるデザインを作成しました。
+              トンマナ策定時に気をつけたこと：旅行先の魅力を最大限に伝えるため、鮮やかな色彩と大きな写真を使用し、ユーザーが直感的に操作できるデザインを心掛けました。
+              実装時に気をつけたこと：画像サイズや不要ファイルを最適化し、機能面でのエラーを修正した。`,
+              target: "Developed a travel booking website.",
+              needs: "Developed a travel booking website.",
+              function: "Developed a travel booking website.",
+              eva: "Developed a travel booking website.",
+              persona:
+                "国内外の旅行客をターゲットに経済力に余裕がある健康な社会人から中高年齢層で特に日本国内インバウンド旅行客を中心とした。",
+              basic: "Developed a travel booking website.",
+              tendency: "Developed a travel booking website.",
+              preference: "Developed a travel booking website.",
+              wireframe: `WF作成時に気をつけたこと：モバイルファーストでデザインし、タッチ操作のしやすさを重視したボタンやレスポンシブデザインを優先しました。`,
+              process: `アウトプットまでのプロセス: モバイルファーストのアプローチを採用しワイヤーフレームを作成して全体のレイアウトとユーザーインターフェースを設計。次に、Viteプロジェクトをセットアップし、Reactを使用して再利用可能なコンポーネントを開発しました。地図や検索機能などの必要なライブラリをインポートし、レスポンシブデザインを実装しました。サイト全体の使用性とパフォーマンスをテストし、フィードバックを基に修正を加えました。最終的に、Viteアプリをビルドし、ホスティングサービスにデプロイして公開しました。`,
+              url: "https://travel-web.yimajiuni.com/",
+              link: "https://travel-web.yimajiuni.com/",
+              icon: tesla,
+            },
+            {
+              id: 4,
+              titleBk: "レストラン",
+              titleBl: "ウェブサイト",
+              image: app3,
+              medium: "website",
+              period: "制作期間:5日間",
+              range: "担当範囲:設計・UX/UIデザイン・コーディング・実装",
+              skills: "React, Javascript",
+              summary:
+                "レスポンシブのレストランのウェブサイトをフロントエンド設計・作成しました。",
+              concept: `デザイン時に気をつけたこと：店舗の雰囲気や料理の魅力を最大限に伝えるため、プロフェッショナルな写真を多用し、視覚的に印象的なデザインを作成しました。
+              トンマナ策定時に気をつけたこと：高級感と居心地の良さを両立するため、温かみのある色彩と洗練されたレイアウトを使用し、料理の美しさを引き立てるデザインを心掛けました。
+              実装時に気をつけたこと：ページの読み込み速度を最適化し、ユーザーが快適にサイトを利用できるように、画像の圧縮とキャッシング戦略を取り入れました。`,
+              target: "Developed a restaurant website.",
+              needs: "Developed a restaurant website.",
+              function: "Developed a restaurant website.",
+              eva: "Developed a restaurant website.",
+              persona:
+                "地元の住民や観光客で、美味しい食事と快適なダイニング体験を求める幅広い年齢層",
+              basic: "Developed a restaurant website.",
+              tendency: "Developed a restaurant website.",
+              preference: "Developed a restaurant website.",
+              wireframe: `WF作成時に気をつけたこと：メニューや予約情報が見やすく、ユーザーが簡単に必要な情報にアクセスできるようにレイアウトを工夫し、直感的なナビゲーションを重視しました。`,
+              process: `アウトプットまでのプロセス: ワイヤーフレームを作成して全体のレイアウトとユーザーインターフェースを設計しました。その後、Viteプロジェクトをセットアップし、Reactを使用して再利用可能なコンポーネントを開発しました。メニューや予約システムなどの主要な機能を実装し、レスポンシブデザインを取り入れました。サイト全体の使用性とパフォーマンスをテストし、必要に応じて修正を加えました。最後に、Viteアプリをビルドし、ホスティングサービスにデプロイして公開しました。`,
+              url: "https://restau-web.yimajiuni.com/",
+              link: "https://restau-web.yimajiuni.com/",
+              icon: tesla,
             },
           ],
         },
@@ -787,7 +928,146 @@ export const appDesigns = [
     link: "https://e-commerce.yimajiuni.com/",
   },
 ];
-
+export const workDatas = [
+  {
+    id: 1,
+    titleBk: "ECアパレル",
+    titleBl: "ウェブサイト",
+    image: web1,
+    medium: "website",
+    period: "約2週間",
+    range: "設計・UX/UIデザイン・コーディング・実装",
+    skills: "React, Javascript, CSS",
+    summary:
+      "購入と買い物カート追加システムによるECサイトをReactのContextAPIを用いて制作しました。",
+    concept_target: `デザイン時に気をつけたこと：ユーザーが快適に商品を閲覧し購入できるよう、視覚的に魅力的で直感的なデザインを心掛けました。特に、カラーパレットはブランドイメージに合った色を使用し、重要な情報やボタンは視認性を高めるために強調しました。また、プロダクトイメージを引き立てるために高品質な画像を使用し、ページの一貫性と美しさを保つために統一されたフォントとアイコンセットを選びました。ユーザーエクスペリエンスを向上させるため、ナビゲーションの簡素化やフィルター機能の最適化にも注力しました。
+    トンマナ策定時に気をつけたこと：広々とした印象とスタイリッシュで見やすい普遍的なデザインを保つため整列されたレイアウトで情報毎にメリハリある文字の大きさを使い分け、使用色はサンプル商品（シーズン）の色調にマッチし、かつアクティブで見やすい印象にするためバナー等には彩度の高い色の商品画像を使用。
+    実装時に気をつけたこと：APIからのデータ取得を効率的に行い、ページの読み込み速度を最適化し、特に画像のローディングとキャッシングに注力しました。`,
+    concept_needs:
+      "ニーズ:Developed a e-commerce website with purchasing system. ",
+    conceptt_function:
+      "機能:Developed a e-commerce website with purchasing system. ",
+    concept_eva:
+      "付加価値:Developed a e-commerce website with purchasing system. ",
+    persona:
+      "健康でファストファッションに対し購買意欲が高い幅広い世代の幅広い人種や年代が対象",
+    persona_basic:
+      "基本情報:Developed a e-commerce website with purchasing system. ",
+    Persona_preference:
+      "内面志向:Developed a e-commerce website with purchasing system. ",
+    persona_tendency:
+      "行動傾向:Developed a e-commerce website with purchasing system. ",
+    wireframe: `WF作成時に気をつけたこと：全体のレイアウトと直感的な使用感、構造の論理的な流れを確保するため、既存のモデルとなるECサイトをリサーチし最適化し、ユーザーインタラクション、コンテンツ階層、応答性などの重要な要素に対し、一貫性があり分かりやすい仕様を目指した。
+    アウトプットまでのプロセス: UX/UIデザインのための詳細なワイヤーフレームを作成し、Viteプロジェクトをセットアップ、React Jsを使用して再利用可能なコンポーネントベースの機能を実装し、スライダーやその他の動的パーツを追加し、レスポンシブデザインを実装し、ユーザビリティをテストして修正し、Viteアプリを構築してホスティングサービスにデプロイしました。`,
+    url: "https://e-commerce.yimajiuni.com/",
+    link: "https://e-commerce.yimajiuni.com/",
+    icon: tesla,
+  },
+  {
+    id: 2,
+    titleBk: "ダッシュボード",
+    titleBl: "アプリ",
+    image: web2,
+    medium: "website",
+    period: "４日間",
+    range: "設計・UX/UIデザイン・コーディング・実装",
+    skills: "React, Javascript",
+    summary:
+      "モバイルファーストのCMSタイプのダッシュボードモデルを最適化されたトレンド感のあるUIを用いて制作しました。",
+    concept_target: `デザイン時に気をつけたこと：観葉植物の販売サイトを管理するCMSという設定で作成したので、緑色と癒しを彷彿させるキーヴィジュアルを挿入。
+    トンマナ策定時に気をつけたこと：プロフェッショナルでありながらも安心・信頼感を与えるデザインにするため、色は落ち着いた緑を基調とし、シンプルで分かりやすいアイコンやグラフを使用しました。
+    実装時に気をつけたこと：パフォーマンスを最適化し、データの表示が速やかに行われるようにし、特にグラフの描画に注力しました。`,
+    concept_needs: "ニーズ:Developed a cms dashboard model. ",
+    conceptt_function: "機能:Developed a cms dashboard model. ",
+    concept_eva: "付加価値:Developed a cms dashboard model. ",
+    persona: "観葉植物の販売や在庫管理を担当する店舗経営者やスタッフ",
+    persona_basic: "基本情報:Developed a cms dashboard model. ",
+    Persona_preference: "内面志向:Developed a cms dashboard model. ",
+    persona_tendency: "行動傾向:Developed a cms dashboard model. ",
+    wireframe: `WF作成時に気をつけたこと：全体のレイアウトと構造に論理的な流れと直感的なナビゲーションを確保するため、ユーザーインタラクション、コンテンツ階層、応答性などの重要な要素に対し、一貫性があり分かりやすい仕様を目指した。
+    アウトプットまでのプロセス: ワイヤーフレームを作成し、Viteプロジェクトをセットアップし、Reactを使用して再利用可能なコンポーネントベースの機能を実装し、スライダーやその他の動的パーツを追加し、レスポンシブデザインを実装し、ユーザビリティをテストして修正し、Viteアプリをビルトしてホスティングサービスにデプロイしました。`,
+    url: "https://dashboard-model.yimajiuni.com/",
+    link: "https://dashboard-model.yimajiuni.com/",
+    icon: tesla,
+  },
+  {
+    id: 3,
+    titleBk: "旅行予約",
+    titleBl: "ウェブサイト",
+    image: web3,
+    medium: "website",
+    period: "4日間",
+    range: "設計・UX/UIデザイン・コーディング・実装",
+    skills: "React, Javascript",
+    summary:
+      "旅行のパッケージ検索用のアプリのフロントエンド機能をデザイン・実装しました。",
+    concept: `デザイン時に気をつけたこと：旅行の楽しさと期待感をユーザーに伝えるため、大胆なビジュアルとシンプルなナビゲーションを組み合わせ、ユーザーの関心を引きつけるデザインを作成しました。
+    トンマナ策定時に気をつけたこと：旅行先の魅力を最大限に伝えるため、鮮やかな色彩と大きな写真を使用し、ユーザーが直感的に操作できるデザインを心掛けました。
+    実装時に気をつけたこと：画像サイズや不要ファイルを最適化し、機能面でのエラーを修正した。`,
+    concept_target: "Developed a travel booking website.",
+    concept_needs: "Developed a travel booking website.",
+    concept_function: "Developed a travel booking website.",
+    concept_eva: "Developed a travel booking website.",
+    persona:
+      "国内外の旅行客をターゲットに経済力に余裕がある健康な社会人から中高年齢層で特に日本国内インバウンド旅行客を中心とした。",
+    persona_basic: "基本情報:Developed a travel booking website. ",
+    Persona_preference: "内面志向:Developed a travel booking website. ",
+    persona_tendency: "行動傾向:Developed a travel booking website. ",
+    wireframe: `WF作成時に気をつけたこと：モバイルファーストでデザインし、タッチ操作のしやすさを重視したボタンやレスポンシブデザインを優先しました。
+    アウトプットまでのプロセス: モバイルファーストのアプローチを採用しワイヤーフレームを作成して全体のレイアウトとユーザーインターフェースを設計。次に、
+    Viteプロジェクトをセットアップし、Reactを使用して再利用可能なコンポーネントを開発しました。地図や検索機能などの必要なライブラリをインポートし、レスポンシブデザインを実装しました。サイト全体の使用性とパフォーマンスをテストし、フィードバックを基に修正を加えました。最終的に、Viteアプリをビルドし、ホスティングサービスにデプロイして公開しました。`,
+    url: "https://travel-web.yimajiuni.com/",
+    link: "https://travel-web.yimajiuni.com/",
+    icon: tesla,
+  },
+  {
+    id: 4,
+    titleBk: "レストラン",
+    titleBl: "ウェブサイト",
+    image: web4,
+    medium: "website",
+    period: "制作期間:5日間",
+    range: "担当範囲:設計・UX/UIデザイン・コーディング・実装",
+    skills: "React, Javascript",
+    summary:
+      "レスポンシブのレストランのウェブサイトをフロントエンド設計・作成しました。",
+    concept_target: `ターゲット:デザイン時に気をつけたこと：店舗の雰囲気や料理の魅力を最大限に伝えるため、プロフェッショナルな写真を多用し、視覚的に印象的なデザインを作成しました。
+    トンマナ策定時に気をつけたこと：高級感と居心地の良さを両立するため、温かみのある色彩と洗練されたレイアウトを使用し、料理の美しさを引き立てるデザインを心掛けました。
+    実装時に気をつけたこと：ページの読み込み速度を最適化し、ユーザーが快適にサイトを利用できるように、画像の圧縮とキャッシング戦略を取り入れました。`,
+    concept_needs:
+      "ニーズ:Developed a e-commerce website with purchasing system. ",
+    conceptt_function:
+      "機能:Developed a e-commerce website with purchasing system. ",
+    concept_eva:
+      "付加価値:Developed a e-commerce website with purchasing system. ",
+    persona:
+      "地元の住民や観光客で、美味しい食事と快適なダイニング体験を求める幅広い年齢層",
+    persona_basic: "基本情報:Developed a restaurant website. ",
+    Persona_preference: "内面志向:Developed a restaurant website. ",
+    persona_tendency: "行動傾向:Developed a restaurant website. ",
+    wireframe: `WF作成時に気をつけたこと：メニューや予約情報が見やすく、ユーザーが簡単に必要な情報にアクセスできるようにレイアウトを工夫し、直感的なナビゲーションを重視しました。
+     アウトプットまでのプロセス: ワイヤーフレームを作成して全体のレイアウトとユーザーインターフェースを設計しました。その後、Viteプロジェクトをセットアップし、Reactを使用して再利用可能なコンポーネントを開発しました。
+     メニューや予約システムなどの主要な機能を実装し、レスポンシブデザインを取り入れました。サイト全体の使用性とパフォーマンスをテストし、必要に応じて修正を加えました。最後に、Viteアプリをビルドし、ホスティングサービスにデプロイして公開しました。`,
+    url: "https://restau-web.yimajiuni.com/",
+    link: "https://restau-web.yimajiuni.com/",
+    icon: tesla,
+  },
+  {
+    /*under construction
+  { id: 5 },
+  { id: 6 },
+  { id: 7 },
+  { id: 8 },
+  { id: 9 },
+  { id: 10 },
+  { id: 11 },
+  { id: 12 },
+  { id: 13 },
+  { id: 14 },
+  { id: 15 },
+  { id: 16 },*/
+  },
+];
 export const socialLinks = [
   {
     name: "Contact",
