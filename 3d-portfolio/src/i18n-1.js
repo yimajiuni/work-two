@@ -994,7 +994,7 @@ export const workDatas = [
     summary:
       "旅行のパッケージ検索用のアプリのフロントエンド機能をデザイン・実装しました。",
     concept_target:
-      "国内外の旅行客をターゲットに経済力に余裕がある健康な社会人から中高年齢層で特に日本国内インバウンド旅行客中心の利用者をコンセプトに制作。",
+      "国内外の経済力に余裕がある健康な社会人から中高年齢層で特に日本国内インバウンド旅行中心の利用者",
     concept_needs: "Developed a travel booking website.",
     concept_function: "Developed a travel booking website.",
     concept_eva: "Developed a travel booking website.",

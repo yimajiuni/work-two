@@ -174,7 +174,7 @@ function WorkDetails() {
                   <div>
                     <h3 className="text-black text-xl font-poppins font-semibold">
                       コンセプト
-                      <p>{selectedWork.concept_target}</p>
+                      <p>{selectedWork.concept_target}をターゲットとする。</p>
                     </h3>
                   </div>
                   <ul className="my-5 list-discc ml-5 space-y-2">
