@@ -26,10 +26,7 @@ const Img = styled("img")({
   maxWidth: "100%",
   maxHeight: "100%",
   width: "100%", // Ensure the image takes full width of the parent container
-  height: "100%", // Ensure the image takes full height of the parent container
   objectFit: "cover",
-  boxShadow: "0px 4px 6px rgb(248 1 153 / 0.15)",
-  borderRadius: "10px",
   opacity: 0.9,
   height: "210px",
 });
@@ -78,6 +75,7 @@ const GoTo = styled(Paper)(({ theme }) => ({
   color: "#fff",
   fontSize: "1.2rem",
   fontWeight: "bold",
+  borderRadius: "10px",
   boxShadow: "none", // Delete the default shadow
 }));
 
@@ -216,7 +214,7 @@ function WorkDetails() {
                     </h3>
                     <ul className="my-5 list-discc ml-5 space-y-2">
                       <li className="text-black-500/50 font-normal pl-1 text-sm">
-                        <p>{selectedWork.persona_preference}</p>
+                        <p>基本情報 : {selectedWork.persona_basic}</p>
                       </li>
                     </ul>
 
@@ -224,12 +222,12 @@ function WorkDetails() {
                       className="text-black-500 font-medium font-base"
                       style={{ margin: 0 }}
                     >
-                      {selectedWork.persona_basic}
+                      内面志向 : {selectedWork.persona_preference}
                     </p>
                   </div>
                   <ul className="my-5 list-discc ml-5 space-y-2">
                     <li className="text-black-500/50 font-normal pl-1 text-sm">
-                      {selectedWork.persona_orientation}
+                      行動傾向 : {selectedWork.persona_orientation}
                     </li>
                   </ul>
                 </VerticalTimelineElement>
