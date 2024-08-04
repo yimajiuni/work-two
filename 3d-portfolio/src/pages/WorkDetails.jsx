@@ -145,7 +145,11 @@ function WorkDetails() {
                 </Grid>
               </Grid>
               <Grid item xs={12}>
-                <Summary>{selectedWork.summary}</Summary>
+                <Summary>
+                  <h3 className="text-black text-xl font-poppins font-semibold">
+                    {selectedWork.summary}
+                  </h3>
+                </Summary>
               </Grid>
 
               <VerticalTimelineCustom lineColor="rgba(255, 255, 255, 0.3)">
@@ -267,15 +271,13 @@ function WorkDetails() {
                 </VerticalTimelineElement>
               </VerticalTimelineCustom>
               <Grid item xs={12}>
-                <GoTo>
-                  <Link
-                    to={selectedWork.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Direct Link
-                  </Link>{" "}
-                </GoTo>
+                <Link
+                  to={selectedWork.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <GoTo>Direct Link</GoTo>
+                </Link>
               </Grid>
             </Grid>
           </Box>
