@@ -275,8 +275,7 @@ function WorkDetails() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {selectedWork.link}
-                    をチェック
+                    Direct Link
                   </Link>{" "}
                 </GoTo>
               </Grid>
