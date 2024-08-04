@@ -14,6 +14,7 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { useTranslation } from "react-i18next";
 import CTA from "../components/CTA";
+import { Link } from "react-router-dom";
 
 const message = `Truncation should be conditionally applicable on this long line of text
  as this is a much longer line than what the container can support. `;
@@ -24,20 +25,27 @@ const Img = styled("img")({
   display: "block",
   maxWidth: "100%",
   maxHeight: "100%",
-  width: "400px",
-  height: "210px",
+  width: "100%", // Ensure the image takes full width of the parent container
+  height: "100%", // Ensure the image takes full height of the parent container
   objectFit: "cover",
   boxShadow: "0px 4px 6px rgb(248 1 153 / 0.15)",
   borderRadius: "10px",
   opacity: 0.9,
+  height: "210px",
 });
 const Image = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
-  padding: theme.spacing(12),
   textAlign: "center",
   color: theme.palette.text.secondary,
   boxShadow: "0px 4px 6px rgb(248 1 153 / 0.15)",
+  borderRadius: "10px",
+  overflow: "hidden", // Ensure the content is clipped if it overflows
+  // Specific height for the image container
+  // Responsive height adjustments
+  [theme.breakpoints.down("sm")]: {
+    height: "325px", // Height for small screens
+  },
 }));
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor:
@@ -110,22 +118,31 @@ function WorkDetails() {
               columnSpacing={{ xs: 1, sm: 2, md: 3 }}
             >
               <Grid item xs={8}>
-                {/*<Image>画像</Image>*/}
-                <Img src={selectedWork.image} />
+                <Image>
+                  <Img src={selectedWork.image} />
+                </Image>
               </Grid>
               <Grid item xs={4}>
                 <Grid container justifyContent="center" spacing={spacing}>
                   <Grid item container direction="column">
-                    <Item>{selectedWork.medium}</Item>
+                    <Item style={{ textAlign: "left" }}>
+                      形式 : {selectedWork.medium}
+                    </Item>
                   </Grid>
                   <Grid item container direction="column">
-                    <Item>{selectedWork.period}</Item>
+                    <Item style={{ textAlign: "left" }}>
+                      制作期間 : {selectedWork.period}
+                    </Item>
                   </Grid>
                   <Grid item container direction="column">
-                    <Item>{selectedWork.range}</Item>
+                    <Item style={{ textAlign: "left" }}>
+                      担当 : {selectedWork.range}
+                    </Item>
                   </Grid>
                   <Grid item container direction="column">
-                    <Item>{selectedWork.skills}</Item>
+                    <Item style={{ textAlign: "left" }}>
+                      使用技術 : {selectedWork.skills}
+                    </Item>
                   </Grid>
                 </Grid>
               </Grid>
@@ -135,6 +152,7 @@ function WorkDetails() {
 
               <VerticalTimelineCustom lineColor="rgba(255, 255, 255, 0.3)">
                 <VerticalTimelineElement
+                  date={" "}
                   contentStyle={{
                     background: "rgba(255, 255, 255, 0.3)", // Set the background with transparency
                     boxShadow: "0px 4px 6px rgb(248 1 153 / 0.15)",
@@ -142,7 +160,6 @@ function WorkDetails() {
                   contentArrowStyle={{
                     borderRight: "7px solid rgba(255, 255, 255, 0.3)", // Set the arrow color with transparency
                   }}
-                  date={selectedWork.period}
                   icon={
                     <div className="flex justify-center items-center w-full h-full">
                       <img
@@ -157,17 +174,20 @@ function WorkDetails() {
                   <div>
                     <h3 className="text-black text-xl font-poppins font-semibold">
                       コンセプト
+                      <p>{selectedWork.concept_target}</p>
                     </h3>
-                    <p
-                      className="text-black-500 font-medium font-base"
-                      style={{ margin: 0 }}
-                    >
-                      タイトル
-                    </p>
                   </div>
                   <ul className="my-5 list-discc ml-5 space-y-2">
                     <li className="text-black-500/50 font-normal pl-1 text-sm">
-                      {selectedWork.concept_target}
+                      <p>{selectedWork.concept_function}</p>
+                      <p
+                        className="text-black-500 font-medium font-base"
+                        style={{ margin: 0 }}
+                      >
+                        {" "}
+                        {selectedWork.concept_needs}
+                      </p>
+                      {selectedWork.concept_eva}
                     </li>
                   </ul>
                 </VerticalTimelineElement>
@@ -179,7 +199,6 @@ function WorkDetails() {
                   contentArrowStyle={{
                     borderRight: "7px solid rgba(255, 255, 255, 0.3)", // Set the arrow color with transparency
                   }}
-                  date={selectedWork.period}
                   icon={
                     <div className="flex justify-center items-center w-full h-full">
                       <img
@@ -195,16 +214,22 @@ function WorkDetails() {
                     <h3 className="text-black text-xl font-poppins font-semibold">
                       ペルソナ
                     </h3>
+                    <ul className="my-5 list-discc ml-5 space-y-2">
+                      <li className="text-black-500/50 font-normal pl-1 text-sm">
+                        <p>{selectedWork.persona_preference}</p>
+                      </li>
+                    </ul>
+
                     <p
                       className="text-black-500 font-medium font-base"
                       style={{ margin: 0 }}
                     >
-                      タイトル
+                      {selectedWork.persona_basic}
                     </p>
                   </div>
                   <ul className="my-5 list-discc ml-5 space-y-2">
                     <li className="text-black-500/50 font-normal pl-1 text-sm">
-                      {selectedWork.persona}
+                      {selectedWork.persona_orientation}
                     </li>
                   </ul>
                 </VerticalTimelineElement>
@@ -216,7 +241,6 @@ function WorkDetails() {
                   contentArrowStyle={{
                     borderRight: "7px solid rgba(255, 255, 255, 0.3)", // Set the arrow color with transparency
                   }}
-                  date={selectedWork.period}
                   icon={
                     <div className="flex justify-center items-center w-full h-full">
                       <img
@@ -229,7 +253,9 @@ function WorkDetails() {
                   iconStyle={{ background: "#fff" }}
                 >
                   <div>
-                    <h3 className="text-black text-xl font-poppins font-semibold"></h3>
+                    <h3 className="text-black text-xl font-poppins font-semibold">
+                      設計
+                    </h3>
                     <p
                       className="text-black-500 font-medium font-base"
                       style={{ margin: 0 }}
@@ -238,13 +264,21 @@ function WorkDetails() {
                   <ul className="my-5 list-discc ml-5 space-y-2">
                     <li className="text-black-500/50 font-normal pl-1 text-sm">
                       {selectedWork.wireframe}
-                      ワイヤ画像
                     </li>
                   </ul>
                 </VerticalTimelineElement>
               </VerticalTimelineCustom>
               <Grid item xs={12}>
-                <GoTo>作品へのリンク</GoTo>
+                <GoTo>
+                  <Link
+                    to={selectedWork.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {selectedWork.link}
+                    をチェック
+                  </Link>{" "}
+                </GoTo>
               </Grid>
             </Grid>
           </Box>
