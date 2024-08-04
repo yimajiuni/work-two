@@ -430,9 +430,9 @@ i18n
                 "購入と買い物カート追加システムによるECサイトをReactのContextAPIを用いて制作しました。",
               persona:
                 "健康でファストファッションに対し購買意欲が高い幅広い世代の幅広い人種や年代が対象。",
-              duration: "制作期間：2週間",
+              duration: "2週間",
               responsibility:
-                "担当領域：機能設計、UX/UIデザイン、コーディング、デバグ、実装",
+                "機能設計、UX/UIデザイン、コーディング、デバグ、実装",
               link: "https://e-commerce.yimajiuni.com/",
             },
             {
@@ -444,13 +444,13 @@ i18n
                 "モバイルファーストのCMSタイプのダッシュボードモデルを最適化されたトレンド感のあるUIを用いて制作しました。",
               persona:
                 "ペルソナ：観葉植物の販売や在庫管理を担当する店舗経営者やスタッフ。",
-              duration: "制作期間：:4日間",
+              duration: ":4日間",
               responsibility:
-                "担当領域：機能設計、UX/UIデザイン、コーディング、デバグ、実装",
+                "機能設計、UX/UIデザイン、コーディング、デバグ、実装",
               link: "https://dashboard-model.yimajiuni.com/",
             },
             {
-              id: 2,
+              id: 3,
               preview: web3,
               theme: "btn-back-blue",
               name: "Travel App",
@@ -458,9 +458,9 @@ i18n
                 "旅行のパッケージ検索用のアプリのフロントエンド機能をデザイン・実装しました。",
               persona:
                 " ペルソナ：国内外の旅行客をターゲットに経済力に余裕がある特に日本国内インバウンド旅行客を中心とした健康な若年層社会人から中高年齢層。",
-              duration: "制作期間：4日間",
+              duration: "4日間",
               responsibility:
-                "担当領域：機能設計、UX/UIデザイン、コーディング、デバグ、実装",
+                "機能設計、UX/UIデザイン、コーディング、デバグ、実装",
               link: "https://travel-web.yimajiuni.com/",
             },
             {
@@ -473,8 +473,8 @@ i18n
               persona:
                 "ペルソナ：地元の住民や観光客で、美味しい食事と快適なダイニング体験を求める幅広い年齢層",
               responsibility:
-                "担当領域：機能設計、UX/UIデザイン、コーディング、デバグ、実装",
-              duration: "制作期間：4日間",
+                "機能設計、UX/UIデザイン、コーディング、デバグ、実装",
+              duration: "4日間",
               link: "https://restau-web.yimajiuni.com/",
             },
           ],
@@ -621,13 +621,12 @@ i18n
               persona:
                 "健康でファストファッションに対し購買意欲が高い幅広い世代の幅広い人種や年代が対象",
               basic: "Developed an e-commerce website with purchasing system.",
-              tendency:
+              orientation:
                 "Developed an e-commerce website with purchasing system.",
               preference:
                 "Developed an e-commerce website with purchasing system.",
-              wireframe: `WF作成時に気をつけたこと：全体のレイアウトと直感的な使用感、構造の論理的な流れを確保するため、既存のモデルとなるECサイトをリサーチし最適化し、ユーザーインタラクション、コンテンツ階層、応答性などの重要な要素に対し、一貫性があり分かりやすい仕様を目指した。`,
-              process: `アウトプットまでのプロセス: UX/UIデザインのための詳細なワイヤーフレームを作成し、Viteプロジェクトをセットアップ、React Jsを使用して再利用可能なコンポーネントベースの機能を実装し、スライダーやその他の動的パーツを追加し、レスポンシブデザインを実装し、ユーザビリティをテストして修正し、Viteアプリを構築してホスティングサービスにデプロイしました。`,
-              url: "https://e-commerce.yimajiuni.com/",
+              wireframe: `全体のレイアウトと直感的な使用感、構造の論理的な流れを確保するため、既存のモデルとなるECサイトをリサーチし最適化し、ユーザーインタラクション、コンテンツ階層、応答性などの重要な要素に対し、一貫性があり分かりやすい仕様を目指した。`,
+              process: `アウトプットまでのプロセス: UX/UIデザインのための詳細なワイヤーフレームを作成し、Viteプロジェクトをセットアップ、React Jsを使用して再利用可能なコンポーネントベースの機能を実装し、スライダーやその他の動的パーツを追加し、レスポンシブデザインを実装し、ユーザビリティをテストして修正。`,
               link: "https://e-commerce.yimajiuni.com/",
 
               icon: tesla,
@@ -653,11 +652,10 @@ i18n
               eva: "Developed a CMS for managing a plant sale website.",
               persona: "観葉植物の販売や在庫管理を担当する店舗経営者やスタッフ",
               basic: "Developed a CMS for managing a plant sale website.",
-              tendency: "Developed a CMS for managing a plant sale website.",
+              orientation: "Developed a CMS for managing a plant sale website.",
               preference: "Developed a CMS for managing a plant sale website.",
-              wireframe: `WF作成時に気をつけたこと：全体のレイアウトと構造に論理的な流れと直感的なナビゲーションを確保するため、ユーザーインタラクション、コンテンツ階層、応答性などの重要な要素に対し、一貫性があり分かりやすい仕様を目指した。`,
-              process: `アウトプットまでのプロセス: ワイヤーフレームを作成し、Viteプロジェクトをセットアップし、Reactを使用して再利用可能なコンポーネントベースの機能を実装し、スライダーやその他の動的パーツを追加し、レスポンシブデザインを実装し、ユーザビリティをテストして修正し、Viteアプリをビルトしてホスティングサービスにデプロイしました。`,
-              url: "https://dashboard-model.yimajiuni.com/",
+              wireframe: `全体のレイアウトと構造に論理的な流れと直感的なナビゲーションを確保するため、ユーザーインタラクション、コンテンツ階層、応答性などの重要な要素に対し、一貫性があり分かりやすい仕様を目指した。`,
+              process: `アウトプットまでのプロセス: ワイヤーフレームを作成し、Viteプロジェクトをセットアップし、Reactを使用して再利用可能なコンポーネントベースの機能を実装し、スライダーやその他の動的パーツを追加し、レスポンシブデザインを実装し、ユーザビリティをテストして修正。`,
               link: "https://dashboard-model.yimajiuni.com/",
               icon: tesla,
             },
@@ -682,11 +680,10 @@ i18n
               persona:
                 "国内外の旅行客をターゲットに経済力に余裕がある健康な社会人から中高年齢層で特に日本国内インバウンド旅行客を中心とした。",
               basic: "Developed a travel booking website.",
-              tendency: "Developed a travel booking website.",
+              orientation: "Developed a travel booking website.",
               preference: "Developed a travel booking website.",
-              wireframe: `WF作成時に気をつけたこと：モバイルファーストでデザインし、タッチ操作のしやすさを重視したボタンやレスポンシブデザインを優先しました。`,
-              process: `アウトプットまでのプロセス: モバイルファーストのアプローチを採用しワイヤーフレームを作成して全体のレイアウトとユーザーインターフェースを設計。次に、Viteプロジェクトをセットアップし、Reactを使用して再利用可能なコンポーネントを開発しました。地図や検索機能などの必要なライブラリをインポートし、レスポンシブデザインを実装しました。サイト全体の使用性とパフォーマンスをテストし、フィードバックを基に修正を加えました。最終的に、Viteアプリをビルドし、ホスティングサービスにデプロイして公開しました。`,
-              url: "https://travel-web.yimajiuni.com/",
+              wireframe: `モバイルファーストでデザインし、タッチ操作のしやすさを重視したボタンやレスポンシブデザインを優先しました。`,
+              process: `アウトプットまでのプロセス: モバイルファーストのアプローチを採用しワイヤーフレームを作成して全体のレイアウトとユーザーインターフェースを設計。次に、Viteプロジェクトをセットアップし、Reactを使用して再利用可能なコンポーネントを開発しました。地図や検索機能などの必要なライブラリをインポートし、レスポンシブデザインを実装しました。サイト全体の使用性とパフォーマンスをテストし、フィードバックを基に修正。`,
               link: "https://travel-web.yimajiuni.com/",
               icon: tesla,
             },
@@ -696,8 +693,8 @@ i18n
               titleBl: "ウェブサイト",
               image: app3,
               medium: "website",
-              period: "制作期間:5日間",
-              range: "担当範囲:設計・UX/UIデザイン・コーディング・実装",
+              period: "5日間",
+              range: "設計・UX/UIデザイン・コーディング・実装",
               skills: "React, Javascript",
               summary:
                 "レスポンシブのレストランのウェブサイトをフロントエンド設計・作成しました。",
@@ -711,11 +708,10 @@ i18n
               persona:
                 "地元の住民や観光客で、美味しい食事と快適なダイニング体験を求める幅広い年齢層",
               basic: "Developed a restaurant website.",
-              tendency: "Developed a restaurant website.",
+              orientation: "Developed a restaurant website.",
               preference: "Developed a restaurant website.",
-              wireframe: `WF作成時に気をつけたこと：メニューや予約情報が見やすく、ユーザーが簡単に必要な情報にアクセスできるようにレイアウトを工夫し、直感的なナビゲーションを重視しました。`,
-              process: `アウトプットまでのプロセス: ワイヤーフレームを作成して全体のレイアウトとユーザーインターフェースを設計しました。その後、Viteプロジェクトをセットアップし、Reactを使用して再利用可能なコンポーネントを開発しました。メニューや予約システムなどの主要な機能を実装し、レスポンシブデザインを取り入れました。サイト全体の使用性とパフォーマンスをテストし、必要に応じて修正を加えました。最後に、Viteアプリをビルドし、ホスティングサービスにデプロイして公開しました。`,
-              url: "https://restau-web.yimajiuni.com/",
+              wireframe: `メニューや予約情報が見やすく、ユーザーが簡単に必要な情報にアクセスできるようにレイアウトを工夫し、直感的なナビゲーションを重視しました。`,
+              process: `アウトプットまでのプロセス: ワイヤーフレームを作成して全体のレイアウトとユーザーインターフェースを設計しました。その後、Viteプロジェクトをセットアップし、Reactを使用して再利用可能なコンポーネントを開発しました。メニューや予約システムなどの主要な機能を実装し、レスポンシブデザインを取り入れました。サイト全体の使用性とパフォーマンスをテストし、必要に応じて修正を加えました。`,
               link: "https://restau-web.yimajiuni.com/",
               icon: tesla,
             },
@@ -936,30 +932,25 @@ export const workDatas = [
     image: web1,
     medium: "website",
     period: "約2週間",
-    range: "設計・UX/UIデザイン・コーディング・実装",
+    range: "デザイン・コーディング・実装",
     skills: "React, Javascript, CSS",
     summary:
       "購入と買い物カート追加システムによるECサイトをReactのContextAPIを用いて制作しました。",
-    concept_target: `デザイン時に気をつけたこと：ユーザーが快適に商品を閲覧し購入できるよう、視覚的に魅力的で直感的なデザインを心掛けました。特に、カラーパレットはブランドイメージに合った色を使用し、重要な情報やボタンは視認性を高めるために強調しました。また、プロダクトイメージを引き立てるために高品質な画像を使用し、ページの一貫性と美しさを保つために統一されたフォントとアイコンセットを選びました。ユーザーエクスペリエンスを向上させるため、ナビゲーションの簡素化やフィルター機能の最適化にも注力しました。
-    トンマナ策定時に気をつけたこと：広々とした印象とスタイリッシュで見やすい普遍的なデザインを保つため整列されたレイアウトで情報毎にメリハリある文字の大きさを使い分け、使用色はサンプル商品（シーズン）の色調にマッチし、かつアクティブで見やすい印象にするためバナー等には彩度の高い色の商品画像を使用。
-    実装時に気をつけたこと：APIからのデータ取得を効率的に行い、ページの読み込み速度を最適化し、特に画像のローディングとキャッシングに注力しました。`,
+    concept_target: `健康でファストファッションに対し購買意欲が高い幅広い世代の幅広い人種や
+年代が対象`,
     concept_needs:
-      "ニーズ:Developed a e-commerce website with purchasing system. ",
-    conceptt_function:
-      "機能:Developed a e-commerce website with purchasing system. ",
+      "広々とした印象とスタイリッシュで見やすい普遍的なデザインを保つため整列されたレイアウトで情報毎にメリハリある文字の大きさを使い分け、使用色はサンプル商品（シーズン）の色調にマッチし、かつアクティブな印象で見やすくページの一貫性と美しさを保つための統一されたフォントとアイコンセットをセレクト。",
+    concept_function:
+      "ユーザーが快適に商品を閲覧し購入できるよう、視覚的に魅力的で直感的なデザインを心掛けました。特に、カラーパレットはブランドイメージに合った色を使用し、重要な情報やボタンは視認性を高めるために強調。APIからのデータ取得を効率的に行い、ページの読み込み速度を最適化し、特に画像のローディングとキャッシングに注力。",
     concept_eva:
-      "付加価値:Developed a e-commerce website with purchasing system. ",
+      "ユニバーサルな視点でのスタイル、健康的な美しさ、姿の在り方、世界の広域を対応地域、 SDGsといった新しい世代の購買システム用にカスタマイズされたデザイン。",
     persona:
       "健康でファストファッションに対し購買意欲が高い幅広い世代の幅広い人種や年代が対象",
-    persona_basic:
-      "基本情報:Developed a e-commerce website with purchasing system. ",
-    Persona_preference:
-      "内面志向:Developed a e-commerce website with purchasing system. ",
-    persona_tendency:
-      "行動傾向:Developed a e-commerce website with purchasing system. ",
-    wireframe: `WF作成時に気をつけたこと：全体のレイアウトと直感的な使用感、構造の論理的な流れを確保するため、既存のモデルとなるECサイトをリサーチし最適化し、ユーザーインタラクション、コンテンツ階層、応答性などの重要な要素に対し、一貫性があり分かりやすい仕様を目指した。
-    アウトプットまでのプロセス: UX/UIデザインのための詳細なワイヤーフレームを作成し、Viteプロジェクトをセットアップ、React Jsを使用して再利用可能なコンポーネントベースの機能を実装し、スライダーやその他の動的パーツを追加し、レスポンシブデザインを実装し、ユーザビリティをテストして修正し、Viteアプリを構築してホスティングサービスにデプロイしました。`,
-    url: "https://e-commerce.yimajiuni.com/",
+    persona_basic: "基本情報:性別:男女他+ 年代:キッズ〜シニア。",
+    persona_preference: "内面志向: ",
+    persona_orientation: "行動傾向: ",
+    wireframe: `全体のレイアウトと直感的な使用感、構造の論理的な流れを確保するため、既存のモデルとなるECサイトをリサーチし最適化し、ユーザーインタラクション、コンテンツ階層、応答性などの重要な要素に対し、一貫性があり分かりやすい仕様を目指した。
+    アウトプットまでのプロセス: UX/UIデザインのための詳細なワイヤーフレームを作成し、Viteプロジェクトをセットアップ、React Jsを使用して再利用可能なコンポーネントベースの機能を実装し、スライダーやその他の動的パーツを追加し、レスポンシブデザインを実装し、ユーザビリティをテストして修正。`,
     link: "https://e-commerce.yimajiuni.com/",
     icon: tesla,
   },
@@ -970,23 +961,24 @@ export const workDatas = [
     image: web2,
     medium: "website",
     period: "４日間",
-    range: "設計・UX/UIデザイン・コーディング・実装",
+    range: "デザイン・コーディング・実装",
     skills: "React, Javascript",
     summary:
       "モバイルファーストのCMSタイプのダッシュボードモデルを最適化されたトレンド感のあるUIを用いて制作しました。",
-    concept_target: `デザイン時に気をつけたこと：観葉植物の販売サイトを管理するCMSという設定で作成したので、緑色と癒しを彷彿させるキーヴィジュアルを挿入。
-    トンマナ策定時に気をつけたこと：プロフェッショナルでありながらも安心・信頼感を与えるデザインにするため、色は落ち着いた緑を基調とし、シンプルで分かりやすいアイコンやグラフを使用しました。
-    実装時に気をつけたこと：パフォーマンスを最適化し、データの表示が速やかに行われるようにし、特にグラフの描画に注力しました。`,
-    concept_needs: "ニーズ:Developed a cms dashboard model. ",
-    conceptt_function: "機能:Developed a cms dashboard model. ",
-    concept_eva: "付加価値:Developed a cms dashboard model. ",
+    concept_target: `観葉植物の販売や在庫管理を担当する店舗経営者やスタッフ`,
+    concept_needs:
+      "観葉植物の販売サイトを管理するシステム用ダッシュボード。緑色と癒しをキーワードにしたアクティビティを彷彿させるキーヴィジュアルを挿入。 ",
+    concept_function:
+      "癒しの雰囲気を保ちながらもプロフェッショナルで安定した動作性を叶える為パフォーマンスを最適化し、特にグラフの描画に注力。軽量化されたシステムとシンプルな汎用されるモダンなダッシュボードタイプで分かりやすいアイコンやグラフを使用。",
+    concept_eva:
+      "一人時間を癒しに、楽しく、を交換交流。”をテーマに観葉植物だけでなくあらゆる癒しをテーマとする商品の物販に向いたデザイン。",
     persona: "観葉植物の販売や在庫管理を担当する店舗経営者やスタッフ",
-    persona_basic: "基本情報:Developed a cms dashboard model. ",
-    Persona_preference: "内面志向:Developed a cms dashboard model. ",
-    persona_tendency: "行動傾向:Developed a cms dashboard model. ",
-    wireframe: `WF作成時に気をつけたこと：全体のレイアウトと構造に論理的な流れと直感的なナビゲーションを確保するため、ユーザーインタラクション、コンテンツ階層、応答性などの重要な要素に対し、一貫性があり分かりやすい仕様を目指した。
-    アウトプットまでのプロセス: ワイヤーフレームを作成し、Viteプロジェクトをセットアップし、Reactを使用して再利用可能なコンポーネントベースの機能を実装し、スライダーやその他の動的パーツを追加し、レスポンシブデザインを実装し、ユーザビリティをテストして修正し、Viteアプリをビルトしてホスティングサービスにデプロイしました。`,
-    url: "https://dashboard-model.yimajiuni.com/",
+    persona_basic:
+      "基本情報:女性性を意識・重視した男女他＋ 年代:30代一人暮らし世代 ",
+    persona_preference: "内面志向: ",
+    persona_orientation: "行動傾向: ",
+    wireframe: `全体のレイアウトと構造に論理的な流れと直感的なナビゲーションを確保するため、ユーザーインタラクション、コンテンツ階層、応答性などの重要な要素に対し、一貫性があり分かりやすい仕様を目指した。
+    アウトプットまでのプロセス: ワイヤーフレームを作成し、Viteプロジェクトをセットアップし、Reactを使用して再利用可能なコンポーネントベースの機能を実装し、スライダーやその他の動的パーツを追加し、レスポンシブデザインを実装し、ユーザビリティをテストして修正。`,
     link: "https://dashboard-model.yimajiuni.com/",
     icon: tesla,
   },
@@ -997,26 +989,21 @@ export const workDatas = [
     image: web3,
     medium: "website",
     period: "4日間",
-    range: "設計・UX/UIデザイン・コーディング・実装",
+    range: "デザイン・コーディング・実装",
     skills: "React, Javascript",
     summary:
       "旅行のパッケージ検索用のアプリのフロントエンド機能をデザイン・実装しました。",
-    concept: `デザイン時に気をつけたこと：旅行の楽しさと期待感をユーザーに伝えるため、大胆なビジュアルとシンプルなナビゲーションを組み合わせ、ユーザーの関心を引きつけるデザインを作成しました。
-    トンマナ策定時に気をつけたこと：旅行先の魅力を最大限に伝えるため、鮮やかな色彩と大きな写真を使用し、ユーザーが直感的に操作できるデザインを心掛けました。
-    実装時に気をつけたこと：画像サイズや不要ファイルを最適化し、機能面でのエラーを修正した。`,
-    concept_target: "Developed a travel booking website.",
+    concept_target:
+      "国内外の旅行客をターゲットに経済力に余裕がある健康な社会人から中高年齢層で特に日本国内インバウンド旅行客中心の利用者をコンセプトに制作。",
     concept_needs: "Developed a travel booking website.",
     concept_function: "Developed a travel booking website.",
     concept_eva: "Developed a travel booking website.",
-    persona:
-      "国内外の旅行客をターゲットに経済力に余裕がある健康な社会人から中高年齢層で特に日本国内インバウンド旅行客を中心とした。",
-    persona_basic: "基本情報:Developed a travel booking website. ",
-    Persona_preference: "内面志向:Developed a travel booking website. ",
-    persona_tendency: "行動傾向:Developed a travel booking website. ",
-    wireframe: `WF作成時に気をつけたこと：モバイルファーストでデザインし、タッチ操作のしやすさを重視したボタンやレスポンシブデザインを優先しました。
+    persona_basic: "基本情報: ",
+    persona_preference: "内面志向: ",
+    persona_orientation: "行動傾向: ",
+    wireframe: `モバイルファーストでデザインし、タッチ操作のしやすさを重視したボタンやレスポンシブデザインを優先しました。
     アウトプットまでのプロセス: モバイルファーストのアプローチを採用しワイヤーフレームを作成して全体のレイアウトとユーザーインターフェースを設計。次に、
-    Viteプロジェクトをセットアップし、Reactを使用して再利用可能なコンポーネントを開発しました。地図や検索機能などの必要なライブラリをインポートし、レスポンシブデザインを実装しました。サイト全体の使用性とパフォーマンスをテストし、フィードバックを基に修正を加えました。最終的に、Viteアプリをビルドし、ホスティングサービスにデプロイして公開しました。`,
-    url: "https://travel-web.yimajiuni.com/",
+    Viteプロジェクトをセットアップし、Reactを使用して再利用可能なコンポーネントを開発しました。地図や検索機能などの必要なライブラリをインポートし、レスポンシブデザインを実装しました。サイト全体の使用性とパフォーマンスをテストし、フィードバックを基に修正を加えました。`,
     link: "https://travel-web.yimajiuni.com/",
     icon: tesla,
   },
@@ -1026,29 +1013,21 @@ export const workDatas = [
     titleBl: "ウェブサイト",
     image: web4,
     medium: "website",
-    period: "制作期間:5日間",
-    range: "担当範囲:設計・UX/UIデザイン・コーディング・実装",
+    period: "5日間",
+    range: "デザイン・コーディング・実装",
     skills: "React, Javascript",
     summary:
       "レスポンシブのレストランのウェブサイトをフロントエンド設計・作成しました。",
-    concept_target: `ターゲット:デザイン時に気をつけたこと：店舗の雰囲気や料理の魅力を最大限に伝えるため、プロフェッショナルな写真を多用し、視覚的に印象的なデザインを作成しました。
-    トンマナ策定時に気をつけたこと：高級感と居心地の良さを両立するため、温かみのある色彩と洗練されたレイアウトを使用し、料理の美しさを引き立てるデザインを心掛けました。
-    実装時に気をつけたこと：ページの読み込み速度を最適化し、ユーザーが快適にサイトを利用できるように、画像の圧縮とキャッシング戦略を取り入れました。`,
-    concept_needs:
-      "ニーズ:Developed a e-commerce website with purchasing system. ",
-    conceptt_function:
-      "機能:Developed a e-commerce website with purchasing system. ",
-    concept_eva:
-      "付加価値:Developed a e-commerce website with purchasing system. ",
-    persona:
-      "地元の住民や観光客で、美味しい食事と快適なダイニング体験を求める幅広い年齢層",
-    persona_basic: "基本情報:Developed a restaurant website. ",
-    Persona_preference: "内面志向:Developed a restaurant website. ",
-    persona_tendency: "行動傾向:Developed a restaurant website. ",
-    wireframe: `WF作成時に気をつけたこと：メニューや予約情報が見やすく、ユーザーが簡単に必要な情報にアクセスできるようにレイアウトを工夫し、直感的なナビゲーションを重視しました。
+    concept_target: `地元の住民や観光客で、美味しい食事と快適なダイニング体験を求める幅広い年齢層`,
+    concept_needs: "Developed a e-commerce website with purchasing system. ",
+    concept_function: "Developed a e-commerce website with purchasing system. ",
+    concept_eva: "Developed a e-commerce website with purchasing system. ",
+    persona_basic: "基本情報:",
+    persona_preference: "内面志向: ",
+    persona_orientation: "行動傾向: ",
+    wireframe: `メニューや予約情報が見やすく、ユーザーが簡単に必要な情報にアクセスできるようにレイアウトを工夫し、直感的なナビゲーションを重視しました。
      アウトプットまでのプロセス: ワイヤーフレームを作成して全体のレイアウトとユーザーインターフェースを設計しました。その後、Viteプロジェクトをセットアップし、Reactを使用して再利用可能なコンポーネントを開発しました。
-     メニューや予約システムなどの主要な機能を実装し、レスポンシブデザインを取り入れました。サイト全体の使用性とパフォーマンスをテストし、必要に応じて修正を加えました。最後に、Viteアプリをビルドし、ホスティングサービスにデプロイして公開しました。`,
-    url: "https://restau-web.yimajiuni.com/",
+     メニューや予約システムなどの主要な機能を実装し、レスポンシブデザインを取り入れました。サイト全体の使用性とパフォーマンスをテストし、必要に応じて修正。`,
     link: "https://restau-web.yimajiuni.com/",
     icon: tesla,
   },
