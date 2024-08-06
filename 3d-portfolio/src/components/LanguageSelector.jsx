@@ -14,7 +14,6 @@ const LanguageSelector = () => {
   };
 
   useEffect(() => {
-    console.log(i18n.dir());
     document.body.dir = i18n.dir();
   }, [i18n, i18n.language]);
 
