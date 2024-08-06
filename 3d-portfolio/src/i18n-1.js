@@ -1040,20 +1040,26 @@ export const workDatas = [
     link: "https://restau-web.yimajiuni.com/",
     icon: tesla,
   },
+  { id: 5, link: "https://yimajiuni.com/promotions/eq-bo.jpg" },
+  { id: 6, link: "https://yimajiuni.com/promotions/eq-ch.jpg" },
+  { id: 7, link: "https://yimajiuni.com/promotions/eq-cu.jpg" },
+  { id: 8, link: "https://yimajiuni.com/promotions/eq-gr1.jpg" },
+  { id: 9, link: "https://yimajiuni.com/promotions/eq-gr2.jpg" },
+  { id: 10, link: "https://yimajiuni.com/promotions/eq-gr3.jpg" },
+  { id: 11, link: "https://yimajiuni.com/promotions/eq-gr4.jpg" },
+  { id: 12, link: "https://yimajiuni.com/promotions/eq-wh.jpg" },
+  { id: 13, link: "https://yimajiuni.com/promotions/eq-wh.jpg" },
   {
-    /*under construction
-  { id: 5 },
-  { id: 6 },
-  { id: 7 },
-  { id: 8 },
-  { id: 9 },
-  { id: 10 },
-  { id: 11 },
-  { id: 12 },
-  { id: 13 },
-  { id: 14 },
-  { id: 15 },
-  { id: 16 },*/
+    id: 14,
+    link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=233-88&t=TGbd5tplvGsffkfO-1&starting-point-node-id=236%3A233",
+  },
+  {
+    id: 15,
+    link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=328-136&t=AMryIaIjpqI2Y7cZ-1&starting-point-node-id=327%3A190",
+  },
+  {
+    id: 16,
+    link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=298-558&t=8uCbvN2drsBtXyv6-1&starting-point-node-id=299%3A681",
   },
 ];
 export const socialLinks = [

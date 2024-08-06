@@ -60,7 +60,13 @@ function WorkGallery() {
               <div>
                 <div className="rounded-xl flex justify-center items-center">
                   <Link
-                    to={workId ? `/details/${workId}` : "#"}
+                    to={
+                      workId >= 1 && workId <= 4
+                        ? `/details/${workId}`
+                        : workId >= 5 && workId <= 16
+                          ? work.link
+                          : "#"
+                    }
                     rel="noopener noreferrer"
                     className="block-container relative inline-block group font-semibold text-blue-600"
                   >
