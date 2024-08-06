@@ -10,7 +10,7 @@
 }
 
 body {
-  font-family: "Crimson Pro", sans-serif;
+  font-family: "Crimson Pro", YuGothic, '游ゴシック', sans-serif;
 }
 
 body:has(.card[data-color="blue"]:hover) {
@@ -147,20 +147,25 @@ body:has(.card[data-color="green"]:hover) {
 .block-container:hover > .btn-front {
   transform: translateZ(80px) translateY(-5px) rotateX(15deg) rotateY(15deg);
 }
-/*ズームと動き
-.block-container .gallery-front {
+/*ズームと動き*/
 
+.block-container .gallery-img {
+ display: "block";
+ margin: "0 auto 0 0";
+ overflow:hidden;
+ opacity: 0.9;
+ box-shadow: 16px 0 40px #f8019928;
+ border-radius: 10px;
 }
-.block-container .gallery-back {
-
+.block-container:hover > .gallery-img {
+  box-shadow: 50px 20px 100px #f8019928;
+  transition: 250ms;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  transform-style: preserve-3d;
+  transform-origin: bottom right;
+  transform: rotateZ(5deg);
 }
-.block-container:hover > .gallery-back {
-  transform: translateZ(20px) rotateZ(15deg) rotateX(-20deg) rotateY(-20deg);
-}
-
-.block-container:hover > .gallery-back {
-  transform: translateZ(80px) translateY(-5px) rotateX(15deg) rotateY(15deg);
-}*/
 
 .block-container .btn-back-red {
   background: linear-gradient(135deg, #ff4b1f -20%, #ff9068 120%);
