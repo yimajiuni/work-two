@@ -22,14 +22,6 @@ const modalStyle = {
   overflowY: "auto",
 };
 
-const imageStyle = {
-  display: "block",
-  margin: "0 auto 0 0",
-  boxShadow: "20px -12px 30px rgb(248 1 153 / 0.10)",
-  borderRadius: "10px",
-  opacity: 0.9,
-};
-
 function WorkGallery() {
   const { t } = useTranslation();
 
@@ -70,13 +62,12 @@ function WorkGallery() {
                   <Link
                     to={workId ? `/details/${workId}` : "#"}
                     rel="noopener noreferrer"
-                    className="font-semibold text-blue-600"
+                    className="block-container relative inline-block group font-semibold text-blue-600"
                   >
                     <img
                       src={work.preview}
                       alt={work.name}
-                      className="w-2/3 h-2/3 object-contain"
-                      style={imageStyle}
+                      className="w-2/3 h-2/3 object-contain gallery-img"
                     />
                   </Link>
                 </div>
@@ -86,18 +77,17 @@ function WorkGallery() {
                   {work.name}
                 </h4>
                 <Link
-                  to={work.link}
-                  target="_blank"
+                  to={workId ? `/details/${workId}` : "#"}
                   rel="noopener noreferrer"
-                  className="font-semibold text-blue-600"
+                  className="items-center inline-flex font-semibold text-blue-600"
                 >
-                  Live Link
+                  <img
+                    src={arrow}
+                    alt="arrow"
+                    className="mr-2 w-4 h-4 object-contain"
+                  />
+                  Go to Details
                 </Link>
-                <img
-                  src={arrow}
-                  alt="arrow"
-                  className="w-4 h-4 object-contain"
-                />
               </div>
             </div>
           );

@@ -92,10 +92,12 @@ i18n
             contact: "Let's Talk",
           },
           aboutDesc: {
-            line1: `software developer based in Japan Specialized in technology and designs through hands-on learning and building apps.
+            line1: `software developer based in Japan Specialized in technology and designs through the experience working at mainly in advertising agency and the design planning departments of manufacturer and retailer
+             as a graphic designer for packaging, sales promotion advertisements, and Web designer for ECommerse in the apparel sector and hands-on learning and building apps.
+            I've worked with all sorts of companies, leveling up my skills and teaming up with all sort of people.
             `,
-            line2: `I've worked with all sorts of companies, leveling up my skills and teaming up with all sort of people. here' the rundown :
-            `,
+            line2: `Currently, I am accepting work ranging from web production to illustrations and logos. Please feel free to contact me. 
+            I am available for both Japanese and English communication. here' the rundown. `,
           },
           experiences: [
             {
@@ -354,9 +356,12 @@ i18n
           },
 
           aboutDesc: {
-            line1: `日本を拠点とするソフトウェア開発者。実践的な学習とアプリの構築を通して、技術とデザインに特化しています。
+            line1: `日本を拠点とするソフトウェア開発者。主に広告代理店やメーカーのデザイン企画部に所属しパッケージや販促広告、アパレル部門のECのグラフィックデザイナーを経験し、
+            実践的な学習とアプリの構築を通して、技術とデザインに特化しています。
+            あらゆる種類の会社と仕事をし、自分のスキルを高め、あらゆる種類の人々とチームを組んできました。
             `,
-            line2: `あらゆる種類の会社と仕事をし、自分のスキルを高め、あらゆる種類の人々とチームを組んできました。
+            line2: `
+            現在Web制作からイラスト、ロゴ中心にお仕事を受け付けております。お気軽にお問い合わせください。日本語/英語コミュニケーションに対応しております。
             `,
           },
           experiences: [
@@ -425,7 +430,7 @@ i18n
               id: 1,
               preview: web1,
               theme: "btn-back-red",
-              name: "E-Commerce Website",
+              name: "ECアパレルウェブサイト",
               description:
                 "購入と買い物カート追加システムによるECサイトをReactのContextAPIを用いて制作しました。",
               persona:
@@ -439,7 +444,7 @@ i18n
               id: 2,
               preview: web2,
               theme: "btn-back-green",
-              name: "Dashboard App",
+              name: "ダッシュボードアプリ",
               description:
                 "モバイルファーストのCMSタイプのダッシュボードモデルを最適化されたトレンド感のあるUIを用いて制作しました。",
               persona:
@@ -453,7 +458,7 @@ i18n
               id: 3,
               preview: web3,
               theme: "btn-back-blue",
-              name: "Travel App",
+              name: "トラベルブッキングWEB",
               description:
                 "旅行のパッケージ検索用のアプリのフロントエンド機能をデザイン・実装しました。",
               persona:
@@ -467,7 +472,7 @@ i18n
               id: 4,
               preview: web4,
               theme: "btn-back-pink",
-              name: "Restraunt Website",
+              name: "レストランウェブサイト",
               description:
                 "レスポンシブのレストランのウェブサイトをフロントエンド設計・作成しました。",
               persona:
