@@ -23,7 +23,6 @@ function TranslatedAbout() {
       {/**/}
       <div className="mt-5 flex flex-col gap-3 text-slate-500">
         <p>{t("aboutDesc.line1")}</p>
-        <p>{t("aboutDesc.line2")}</p>
       </div>
       <div className="py-10 flex flex-col">
         <h3 className="subhead-text">My Skills</h3>
