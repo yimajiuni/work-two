@@ -20,6 +20,7 @@ import web1 from "./web1.jpg";
 import web2 from "./web2.jpg";
 import web3 from "./web3.jpg";
 import web4 from "./web4.jpg";
+import circlarrow from "./circlarrow.png";
 
 export {
   hero,
@@ -44,4 +45,5 @@ export {
   web2,
   web3,
   web4,
+  circlarrow,
 };

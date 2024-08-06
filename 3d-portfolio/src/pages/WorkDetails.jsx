@@ -14,13 +14,15 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { useTranslation } from "react-i18next";
 import CTA from "../components/CTA";
+import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
+import { circlarrow } from "../assets/images";
 
 const message = `Truncation should be conditionally applicable on this long line of text
  as this is a much longer line than what the container can support. `;
 
 // Styling
-const Img = styled("img")({
+const Img = styled("img")(({ theme }) => ({
   margin: "auto",
   display: "block",
   maxWidth: "100%",
@@ -29,7 +31,11 @@ const Img = styled("img")({
   objectFit: "cover",
   opacity: 0.9,
   height: "210px",
-});
+  [theme.breakpoints.down("sm")]: {
+    width: "100%",
+    height: "100%",
+  },
+}));
 const Image = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
@@ -109,7 +115,8 @@ function WorkDetails() {
               {selectedWork.titleBl}
             </span>
           </h1>
-          <Box sx={{ width: "100%" }}>
+
+          <Box sx={{ width: "100%" }} className="z-10">
             <Grid
               container
               rowSpacing={2}
@@ -146,7 +153,7 @@ function WorkDetails() {
               </Grid>
               <Grid item xs={12}>
                 <Summary>
-                  <h3 className="text-black text-xl font-poppins font-semibold">
+                  <h3 className="text-black text-xl font-poppins font-semibold text-left">
                     {selectedWork.summary}
                   </h3>
                 </Summary>
@@ -176,20 +183,14 @@ function WorkDetails() {
                   <div>
                     <h3 className="text-black text-xl font-poppins font-semibold">
                       コンセプト
-                      <p>{selectedWork.concept_target}をターゲットとする。</p>
                     </h3>
                   </div>
                   <ul className="my-5 list-discc ml-5 space-y-2">
-                    <li className="text-black-500/50 font-normal pl-1 text-sm">
-                      <p>{selectedWork.concept_function}</p>
-                      <p
-                        className="text-black-500 font-medium font-base"
-                        style={{ margin: 0 }}
-                      >
-                        {" "}
-                        {selectedWork.concept_needs}
-                      </p>
-                      {selectedWork.concept_eva}
+                    <li className="text-black-500 font-normal pl-1 text-sm">
+                      <p>{selectedWork.concept_eva}</p>
+                      <p>{""}</p>
+                      機能面では、{selectedWork.concept_function}
+                      ユーザーニーズに合わせ、{selectedWork.concept_needs}
                     </li>
                   </ul>
                 </VerticalTimelineElement>
@@ -217,21 +218,20 @@ function WorkDetails() {
                       ペルソナ
                     </h3>
                     <ul className="my-5 list-discc ml-5 space-y-2">
-                      <li className="text-black-500/50 font-normal pl-1 text-sm">
-                        <p>基本情報 : {selectedWork.persona_basic}</p>
+                      <li className="text-black-500 font-semibold pl-1 text-sm">
+                        <p>{selectedWork.concept_target}</p>
                       </li>
                     </ul>
-
-                    <p
-                      className="text-black-500 font-medium font-base"
-                      style={{ margin: 0 }}
-                    >
-                      内面志向 : {selectedWork.persona_preference}
-                    </p>
                   </div>
                   <ul className="my-5 list-discc ml-5 space-y-2">
-                    <li className="text-black-500/50 font-normal pl-1 text-sm">
-                      行動傾向 : {selectedWork.persona_orientation}
+                    <li className="text-black-500 font-normal pl-1 text-sm">
+                      <p> 基本情報 : {selectedWork.persona_basic}</p>
+                    </li>
+                    <li className="text-black-500 font-normal pl-1 text-sm">
+                      <p>内面志向 : {selectedWork.persona_preference}</p>
+                    </li>
+                    <li className="text-black-500 font-normal pl-1 text-sm">
+                      <p>行動傾向 : {selectedWork.persona_orientation}</p>
                     </li>
                   </ul>
                 </VerticalTimelineElement>
@@ -264,13 +264,13 @@ function WorkDetails() {
                     ></p>
                   </div>
                   <ul className="my-5 list-discc ml-5 space-y-2">
-                    <li className="text-black-500/50 font-normal pl-1 text-sm">
+                    <li className="text-black-500 font-normal pl-1 text-sm">
                       {selectedWork.wireframe}
                     </li>
                   </ul>
                 </VerticalTimelineElement>
               </VerticalTimelineCustom>
-              <Grid item xs={12}>
+              <Grid item xs={12} className="z-10">
                 <Link
                   to={selectedWork.link}
                   target="_blank"
@@ -286,6 +286,17 @@ function WorkDetails() {
         <p>wipping!</p>
       )}
       <CTA />
+      <Footer />
+      <img
+        src={circlarrow}
+        className="absolute w-96 right-10 opacity-50 rotate-180 -z-10 lg:block md:block sm:hidden"
+        style={{ top: "500px", left: "650px" }}
+      />
+      <img
+        src={circlarrow}
+        className="absolute w-96 right-10 opacity-50  scale-x-[-1] bgimg -z-10 lg:block md:block sm:hidden"
+        style={{ top: "1120px", left: "500px" }}
+      />
     </div>
   );
 }

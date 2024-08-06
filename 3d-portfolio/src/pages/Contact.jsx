@@ -11,6 +11,7 @@ import Footer from "../components/Footer";
 
 const Contact = () => {
   const { t } = useTranslation();
+
   const formRef = useRef();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const { alert, showAlert, hideAlert } = useAlert();

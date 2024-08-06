@@ -21,7 +21,7 @@ body:has(.card[data-color="green"]:hover) {
   background-color: rgb(var(--green-rgb) / 25%);
 }
 .footer-space {
-  min-height: 120vh;
+  min-height: 18vh;
 }
 #navigation a:hover {
   color: #2b77e7;
@@ -166,7 +166,11 @@ body:has(.card[data-color="green"]:hover) {
   transform-origin: bottom right;
   transform: rotateZ(5deg);
 }
-
+.bgimg{
+  --tw-rotate: -130deg;
+  /*background-image:url(../src/assets/images/circlarrow.png);
+  background-repeat: no-repeat;*/
+}
 .block-container .btn-back-red {
   background: linear-gradient(135deg, #ff4b1f -20%, #ff9068 120%);
 }
