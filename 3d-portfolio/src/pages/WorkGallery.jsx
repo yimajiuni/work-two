@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import CTA from "../components/CTA.jsx";
@@ -7,6 +7,9 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { workDatas } from "../i18n-1.js";
+import { Canvas } from "@react-three/fiber";
+import Loader from "../components/Loader";
+import Fox from "../models/Fox";
 
 const modalStyle = {
   position: "absolute",
@@ -24,6 +27,7 @@ const modalStyle = {
 
 function WorkGallery() {
   const { t } = useTranslation();
+  const [currentAnimation, setCurrentAnimation] = useState("idle");
 
   // Get translated objects
   const translatedProjects = t("projects", { returnObjects: true });
@@ -69,6 +73,7 @@ function WorkGallery() {
                     }
                     rel="noopener noreferrer"
                     className="block-container relative inline-block group font-semibold text-blue-600"
+                    target={workId >= 5 && workId <= 16 ? "_blank" : undefined}
                   >
                     <img
                       src={work.preview}
@@ -83,9 +88,16 @@ function WorkGallery() {
                   {work.name}
                 </h4>
                 <Link
-                  to={workId ? `/details/${workId}` : "#"}
+                  to={
+                    workId >= 1 && workId <= 4
+                      ? `/details/${workId}`
+                      : workId >= 5 && workId <= 16
+                        ? work.link
+                        : "#"
+                  }
                   rel="noopener noreferrer"
                   className="items-center inline-flex font-semibold text-blue-600"
+                  target={workId >= 5 && workId <= 16 ? "_blank" : undefined}
                 >
                   <img
                     src={arrow}
@@ -98,8 +110,37 @@ function WorkGallery() {
             </div>
           );
         })}
+        {/*
+        <div className="lg:w-2/3 w-full lg:h-auto md:h-[550px] h-[350px]">
+          <Canvas
+            camera={{
+              position: [0, 0, 5],
+              fov: 75,
+              near: 0.1,
+              far: 1000,
+            }}
+          >
+            <directionalLight position={[0, 0, 1]} intensity={2.5} />
+            <ambientLight intensity={1} />
+            <pointLight position={[5, 10, 0]} intensity={2} />
+            <spotLight
+              position={[10, 10, 10]}
+              angle={0.15}
+              penumbra={1}
+              intensity={2}
+            />
+
+            <Suspense fallback={<Loader />}>
+              <Fox
+                currentAnimation={currentAnimation}
+                position={[0.5, 0.35, 0]}
+                rotation={[12.629, -0.6, 0]}
+                scale={[0.5, 0.5, 0.5]}
+              />
+            </Suspense>
+          </Canvas>
+        </div>*/}
       </div>
-      <CTA />
     </section>
   );
 }

@@ -624,7 +624,7 @@ i18n
                 "Developed an e-commerce website with purchasing system.",
               eva: "Developed an e-commerce website with purchasing system.",
               persona:
-                "健康でファストファッションに対し購買意欲が高い幅広い世代の幅広い人種や年代が対象",
+                "健康でファストファッションに対し購買意欲が高い幅広い年代が対象",
               basic: "Developed an e-commerce website with purchasing system.",
               orientation:
                 "Developed an e-commerce website with purchasing system.",
@@ -941,14 +941,13 @@ export const workDatas = [
     skills: "React, Javascript, CSS",
     summary:
       "スライダーによるアイキャッチと、購入と買い物カート追加システムを搭載したECサイトをReactのContextAPIを用いて制作。",
-    concept_target: `健康でファストファッションに対し購買意欲が高い幅広い世代の幅広い人種や
-年代が対象`,
+    concept_target: `健康でファストファッションに対し購買意欲が高い幅広い年代が対象`,
     concept_needs:
       "広々とした印象とスタイリッシュで見やすい普遍的なデザインを保つため整列されたレイアウト、かつアクティブな印象で見やすくページの一貫性と美しさを保つためデザインを統一。",
     concept_function:
       "ユーザーが快適に商品を閲覧し購入できるよう、重要な情報やボタンは視認性を高めるために強調。APIからのデータ取得を最適化。",
     concept_eva:
-      "ユニバーサルな視点でのスタイル、健康的な美しさ、姿の在り方、世界の広域を対応地域、 SDGsといった新しい世代の購買システム用にカスタマイズされたデザイン。",
+      "ユニバーサルな視点でのスタイル、健康的な美しさ、姿の在り方、世界の広域を対応地域、 SDGsといった新しい世代の購買キーワードを元にカスタマイズされたデザイン。",
     persona:
       "健康でファストファッションに対し購買意欲が高い幅広い世代の幅広い人種や年代が対象",
     persona_basic: "性別:男女他+ 年代:キッズ〜シニア。",
@@ -999,7 +998,7 @@ export const workDatas = [
     concept_target:
       "国内外の経済力に余裕がある健康な社会人から中高年齢層で特に日本国内インバウンド旅行中心の利用者",
     concept_needs:
-      "旅行の楽しさと期待感をユーザーに伝えるため、リッチで大胆なビジュアルとシンプルなナビゲーションを組み合わせ旅行先の魅力を最大限に伝えるため、鮮やかな色彩と高画質な写真を使用。",
+      "リッチで大胆なビジュアルとシンプルなナビゲーションを組み合わせ旅行先の魅力を最大限に伝え、鮮やかな色彩と高画質な写真を使用し旅行の楽しさと期待を引き出します。",
     concept_function:
       "ビジュアルに注力しながらもユーザーが直感的に操作できるデザインを心掛け、遊び心ある操作性でユーザーの関心を惹きつけます。また画像サイズや不要ファイルを最大限に省き機能面でのエラーを修正し機能を最適化。",
     concept_eva:

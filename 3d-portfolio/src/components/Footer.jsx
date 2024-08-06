@@ -4,7 +4,7 @@ import { socialLinks } from "../constants";
 
 const Footer = () => {
   return (
-    <footer className="footer pt-10">
+    <footer className="footer footer-space pt-10">
       <hr className="border-pink-300/55" />
 
       <div className="footer-container text-blue-500">
