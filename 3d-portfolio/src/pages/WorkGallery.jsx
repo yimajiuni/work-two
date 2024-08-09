@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
 import CTA from "../components/CTA.jsx";
 import { arrow } from "../assets/icons/index.js";
 import { workDatas } from "../i18n-1.js";
@@ -22,9 +23,11 @@ const modalStyle = {
   overflowY: "auto",
 };
 
-const tabStyle = {
-  bgcolor: "red",
-};
+const TabCustom = styled(Tab)({
+  fontWeight: "bold",
+  color: "#6474b",
+  opacity: 0.8,
+});
 
 function WorkGallery() {
   const { t } = useTranslation();
@@ -50,10 +53,12 @@ function WorkGallery() {
     const workData = workDatas.find((data) => data.id === work.id);
     const workId = workData ? workData.id : null;
     if (activeTab === 0) {
-      return workId >= 1 && workId <= 4;
+      return workId >= 1 && workId <= 16;
     } else if (activeTab === 1) {
-      return workId >= 5 && workId <= 12;
+      return workId >= 1 && workId <= 4;
     } else if (activeTab === 2) {
+      return workId >= 5 && workId <= 12;
+    } else if (activeTab === 3) {
       return workId >= 13 && workId <= 16;
     }
     return false;
@@ -72,11 +77,12 @@ function WorkGallery() {
         {t("projectDesc.line2")}
       </p>
       {/*tabs*/}
-      <Box sx={{ width: "100%" }}>
-        <Tabs value={activeTab} onChange={handleTabChange} style={tabStyle}>
-          <Tab label="Websites" />
-          <Tab label="Promotions" />
-          <Tab label="Apps" />
+      <Box sx={{ width: "100%", fontWeight: "bold" }}>
+        <Tabs value={activeTab} onChange={handleTabChange}>
+          <TabCustom label="All" />
+          <TabCustom label="Websites" />
+          <TabCustom label="Promotions" />
+          <TabCustom label="Apps" />
         </Tabs>
       </Box>
 
