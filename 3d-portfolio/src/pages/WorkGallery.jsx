@@ -1,15 +1,12 @@
-import React, { Suspense, useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Box from "@mui/material/Box";
 import CTA from "../components/CTA.jsx";
 import { arrow } from "../assets/icons/index.js";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
 import { workDatas } from "../i18n-1.js";
-import { Canvas } from "@react-three/fiber";
-import Loader from "../components/Loader";
-import Fox from "../models/Fox";
 
 const modalStyle = {
   position: "absolute",
@@ -25,9 +22,13 @@ const modalStyle = {
   overflowY: "auto",
 };
 
+const tabStyle = {
+  bgcolor: "red",
+};
+
 function WorkGallery() {
   const { t } = useTranslation();
-  const [currentAnimation, setCurrentAnimation] = useState("idle");
+  const [activeTab, setActiveTab] = useState(0);
 
   // Get translated objects
   const translatedProjects = t("projects", { returnObjects: true });
@@ -40,6 +41,23 @@ function WorkGallery() {
     ...translatedPromos.map((item) => ({ ...item, type: "promo" })),
     ...translatedApps.map((item) => ({ ...item, type: "app" })),
   ];
+  //Changing tabs
+  const handleTabChange = (event, newValue) => {
+    setActiveTab(newValue);
+  };
+  //Filter and devide by tabs
+  const filteredWorks = combinedWorks.filter((work) => {
+    const workData = workDatas.find((data) => data.id === work.id);
+    const workId = workData ? workData.id : null;
+    if (activeTab === 0) {
+      return workId >= 1 && workId <= 4;
+    } else if (activeTab === 1) {
+      return workId >= 5 && workId <= 12;
+    } else if (activeTab === 2) {
+      return workId >= 13 && workId <= 16;
+    }
+    return false;
+  });
 
   return (
     <section className="max-container" id="works">
@@ -49,13 +67,21 @@ function WorkGallery() {
           Works
         </span>
       </h1>
-      <p className="text-slate-500 mt-2 leading-relaxed">
+      <p className="text-slate-500 mt-2 leading-relaxed pb-5">
         {t("projectDesc.line1")}
         {t("projectDesc.line2")}
       </p>
+      {/*tabs*/}
+      <Box sx={{ width: "100%" }}>
+        <Tabs value={activeTab} onChange={handleTabChange} style={tabStyle}>
+          <Tab label="Websites" />
+          <Tab label="Promotions" />
+          <Tab label="Apps" />
+        </Tabs>
+      </Box>
 
       <div className="grid lg:grid-cols-3 gap-5 my-20">
-        {combinedWorks.map((work, index) => {
+        {filteredWorks.map((work, index) => {
           const workData = workDatas.find((data) => data.id === work.id);
           const workId = workData ? workData.id : null;
 
@@ -110,37 +136,8 @@ function WorkGallery() {
             </div>
           );
         })}
-        {/*
-        <div className="lg:w-2/3 w-full lg:h-auto md:h-[550px] h-[350px]">
-          <Canvas
-            camera={{
-              position: [0, 0, 5],
-              fov: 75,
-              near: 0.1,
-              far: 1000,
-            }}
-          >
-            <directionalLight position={[0, 0, 1]} intensity={2.5} />
-            <ambientLight intensity={1} />
-            <pointLight position={[5, 10, 0]} intensity={2} />
-            <spotLight
-              position={[10, 10, 10]}
-              angle={0.15}
-              penumbra={1}
-              intensity={2}
-            />
-
-            <Suspense fallback={<Loader />}>
-              <Fox
-                currentAnimation={currentAnimation}
-                position={[0.5, 0.35, 0]}
-                rotation={[12.629, -0.6, 0]}
-                scale={[0.5, 0.5, 0.5]}
-              />
-            </Suspense>
-          </Canvas>
-        </div>*/}
       </div>
+      <CTA />
     </section>
   );
 }
