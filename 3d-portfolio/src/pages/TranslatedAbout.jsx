@@ -7,7 +7,26 @@ import "react-vertical-timeline-component/style.min.css";
 import { useTranslation } from "react-i18next";
 import { skills, experiences } from "../i18n-1.js";
 import CTA from "../components/CTA";
+{
+  /*import SkillsChart from "../pages/SkillsChart";*/
+}
+import { styled } from "@mui/material/styles";
+import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 
+const CustomTooltip = styled(({ className, ...props }) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))({
+  [`& .${tooltipClasses.tooltip}`]: {
+    maxWidth: 300,
+    backgroundColor: "#fff",
+    textAlign: "left",
+    color: "#000",
+    fontSize: "14px",
+  },
+  [`& .${tooltipClasses.arrow}`]: {
+    color: "#fff", // Color of the tooltip arrow
+  },
+});
 function TranslatedAbout() {
   const { t } = useTranslation();
   // Get translated projects descriptions
@@ -26,18 +45,43 @@ function TranslatedAbout() {
       </div>
       <div className="py-10 flex flex-col">
         <h3 className="subhead-text">My Skills</h3>
-
-        <div className="mt-16 flex flex-wrap gap-12">
+        <div className="lg:block md:block sm:hidden sx:hidden">
+          {/*
+          <SkillsChart />*/}
+        </div>
+        <div className="mt-16 flex flex-wrap gap-12 cursor-pointer">
           {skills.map((skill) => (
             <div className="block-container w-20 h-20">
               <div className="btn-back rounded-xl" />
-              <div className="btn-front rounded-xl flex justify-center items-enter">
-                <img
-                  src={skill.imageUrl}
-                  alt={skill.name}
-                  className="w-1/2 h-1/2 object-contain"
-                />
-              </div>
+              <CustomTooltip
+                title={
+                  <React.Fragment>
+                    <div>{skill.name}</div>
+                    <div>工程:{skill.type}</div>
+                    <div>使用歴:{skill.years}年</div>
+                  </React.Fragment>
+                }
+                arrow // Enable arrow on the tooltip
+                placement="bottom" // Adjust the placement of the tooltip
+                PopperProps={{
+                  modifiers: [
+                    {
+                      name: "offset",
+                      options: {
+                        offset: [-0, -40], // [skid, distance] - Adjust these values
+                      },
+                    },
+                  ],
+                }}
+                className="cursor-pointer"
+              >
+                <div className="btn-front rounded-xl flex justify-center items-enter">
+                  <img
+                    src={skill.imageUrl}
+                    className="w-1/2 h-1/2 object-contain"
+                  />
+                </div>
+              </CustomTooltip>
             </div>
           ))}
         </div>

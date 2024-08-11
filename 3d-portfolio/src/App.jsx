@@ -9,6 +9,7 @@ import {
   WorkGallery,
   WorkDetails,
   Contact,
+  SkillsChart,
 } from "./pages";
 import Content from "./components/Content";
 {

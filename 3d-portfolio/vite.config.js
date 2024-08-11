@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   assetsInclude: ["**/*.glb"],
   optimizeDeps: {
-    exclude: ["@react-three_drei.js"],
+    exclude: ["@react-three/drei.js"],
   },
 });
