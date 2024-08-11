@@ -6,6 +6,7 @@ import TranslatedWorks from "./TranslatedWorks";
 import WorkDetails from "./WorkDetails";
 import WorkGallery from "./WorkGallery";
 import Contact from "./Contact";
+import SkillsChart from "./SkillsChart";
 
 export {
   Home,
@@ -16,4 +17,5 @@ export {
   WorkDetails,
   WorkGallery,
   Contact,
+  SkillsChart,
 };

@@ -27,6 +27,7 @@ const TabCustom = styled(Tab)({
   fontWeight: "bold",
   color: "#6474b",
   opacity: 0.8,
+  fontFamily: "Poppins, YuGothic, '游ゴシック', sans-serif",
 });
 
 function WorkGallery() {
@@ -57,9 +58,9 @@ function WorkGallery() {
     } else if (activeTab === 1) {
       return workId >= 1 && workId <= 4;
     } else if (activeTab === 2) {
-      return workId >= 5 && workId <= 12;
+      return workId >= 5 && workId <= 13;
     } else if (activeTab === 3) {
-      return workId >= 13 && workId <= 16;
+      return workId >= 14 && workId <= 16;
     }
     return false;
   });
@@ -79,7 +80,7 @@ function WorkGallery() {
       {/*tabs*/}
       <Box sx={{ width: "100%", fontWeight: "bold" }}>
         <Tabs value={activeTab} onChange={handleTabChange}>
-          <TabCustom label="All" />
+          <TabCustom label="全て" />
           <TabCustom label="Websites" />
           <TabCustom label="Promotions" />
           <TabCustom label="Apps" />

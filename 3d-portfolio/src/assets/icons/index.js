@@ -31,7 +31,8 @@ import jquery from "./jquery.svg";
 import illustrator from "./illustrator.svg";
 import photoshop from "./photoshop.svg";
 import figma from "./figma.svg";
-
+import procreate from "./procreate.svg";
+import vue from "./vue.svg";
 export {
   css,
   express,
@@ -66,4 +67,6 @@ export {
   photoshop,
   bootstrap,
   jquery,
+  vue,
+  procreate,
 };

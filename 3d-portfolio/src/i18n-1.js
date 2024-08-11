@@ -55,6 +55,8 @@ import {
   photoshop,
   bootstrap,
   jquery,
+  vue,
+  procreate,
 } from "./assets/icons";
 
 i18n
@@ -92,7 +94,7 @@ i18n
             contact: "Let's Talk",
           },
           aboutDesc: {
-            line1: `software developer based in Japan Specialized in technology and designs through the experience working at mainly in advertising agency and the design planning departments of manufacturer and retailer
+            line1: `A designer and developer based in Japan Specialized in technology and designs through the experience working at mainly in advertising agency and the design planning departments of manufacturer and retailer
              as a graphic designer for packaging, sales promotion advertisements, and Web designer for ECommerse in the apparel sector and hands-on learning and building apps.
             I've worked with all sorts of companies, leveling up my skills and teaming up with all sort of people.
             `,
@@ -356,7 +358,7 @@ i18n
           },
 
           aboutDesc: {
-            line1: `日本を拠点とするソフトウェア開発者。主に広告代理店やメーカーのデザイン企画部に所属しパッケージや販促広告、アパレル部門のECのグラフィックデザイナーを経験し、
+            line1: `日本を拠点とするデザイナー兼開発者。主に広告代理店やメーカーのデザイン企画部に所属しパッケージや販促広告、アパレル部門のECのグラフィックデザイナーを経験し、
             実践的な学習とアプリの構築を通して、技術とデザインに特化しています。
             あらゆる種類の会社と仕事をし、自分のスキルを高め、あらゆる種類の人々とチームを組んできました。
             `,
@@ -728,79 +730,106 @@ i18n
 
 export const skills = [
   {
-    imageUrl: css,
-    name: "CSS",
-    type: "Frontend",
-  },
-  {
     imageUrl: git,
     name: "Git",
     type: "Version Control",
+    years: "1",
   },
   {
     imageUrl: github,
     name: "GitHub",
     type: "Version Control",
+    years: "1",
   },
   {
     imageUrl: html,
     name: "HTML",
     type: "Frontend",
+    years: "6",
+  },
+  {
+    imageUrl: css,
+    name: "CSS",
+    type: "Frontend",
+    years: "6",
   },
   {
     imageUrl: javascript,
     name: "JavaScript",
     type: "Frontend",
-  },
-  {
-    imageUrl: mongodb,
-    name: "MongoDB",
-    type: "Database",
-  },
-  {
-    imageUrl: nodejs,
-    name: "Node.js",
-    type: "Backend",
+    years: "3",
   },
   {
     imageUrl: react,
     name: "React",
     type: "Frontend",
+    years: "1",
+  },
+  {
+    imageUrl: vue,
+    name: "Vue",
+    type: "Frontend",
+    years: "1",
+  },
+  {
+    imageUrl: mongodb,
+    name: "MongoDB",
+    type: "Database",
+    years: "1",
+  },
+  {
+    imageUrl: nodejs,
+    name: "Node.js",
+    type: "Backend",
+    years: "1",
   },
   {
     imageUrl: sass,
     name: "Sass",
     type: "Frontend",
+    years: "1",
   },
   {
     imageUrl: tailwindcss,
     name: "Tailwind CSS",
     type: "Frontend",
+    years: "1",
   },
   {
     imageUrl: bootstrap,
     name: "Bootstrap",
     type: "Frontend",
+    years: "2",
   },
   {
     imageUrl: jquery,
     name: "JQuery",
     type: "Frontend",
+    years: "2",
   },
   {
     imageUrl: illustrator,
     name: "Illustrator",
     type: "Design",
+    years: "10",
   },
   {
     imageUrl: photoshop,
     name: "Photoshop",
     type: "Design",
+    years: "10",
   },
   {
     imageUrl: figma,
     name: "Figma",
     type: "Design",
+    years: "1",
+  },
+  {
+    imageUrl: procreate,
+    name: "Procreate",
+    type: "Illustration",
+    years: "4",
   },
 ];
 

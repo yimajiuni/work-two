@@ -219,3 +219,22 @@ body:has(.card[data-color="green"]:hover) {
   background:#2b77e7;
   color: #fff;
 }
+.progress {
+  position: relative;
+  display: flex;
+}
+.progress-track {
+  position: absolute;
+  top: 5px;
+  width: 100%;
+  height: 5px;
+  background-color: #ff0f7b;
+  z-index: -1;
+}
+.progress-step {
+  position: relative;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+
+}
