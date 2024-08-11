@@ -79,8 +79,9 @@ const GoTo = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
   textAlign: "center",
   color: "#fff",
-  fontSize: "1.2rem",
+  fontSize: "1rem",
   fontWeight: "bold",
+  fontFamily: "Crimson Pro, YuGothic, '游ゴシック', sans-serif",
   borderRadius: "10px",
   boxShadow: "none", // Delete the default shadow
 }));
