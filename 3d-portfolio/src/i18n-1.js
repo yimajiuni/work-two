@@ -820,16 +820,16 @@ export const skills = [
     years: "10",
   },
   {
-    imageUrl: figma,
-    name: "Figma",
-    type: "Design",
-    years: "1",
-  },
-  {
     imageUrl: procreate,
     name: "Procreate",
     type: "Illustration",
     years: "4",
+  },
+  {
+    imageUrl: figma,
+    name: "Figma",
+    type: "Design",
+    years: "1",
   },
 ];
 

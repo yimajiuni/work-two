@@ -78,7 +78,10 @@ function WorkGallery() {
         {t("projectDesc.line2")}
       </p>
       {/*tabs*/}
-      <Box sx={{ width: "100%", fontWeight: "bold" }}>
+      <Box
+        sx={{ width: "100%", fontWeight: "bold" }}
+        className="overflow-x-auto"
+      >
         <Tabs value={activeTab} onChange={handleTabChange}>
           <TabCustom label="全て" />
           <TabCustom label="Websites" />

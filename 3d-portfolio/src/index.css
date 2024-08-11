@@ -219,22 +219,47 @@ body:has(.card[data-color="green"]:hover) {
   background:#2b77e7;
   color: #fff;
 }
-.progress {
+.tooltip {
   position: relative;
-  display: flex;
+  cursor: pointer;
+  z-index: 100;
 }
-.progress-track {
-  position: absolute;
-  top: 5px;
-  width: 100%;
-  height: 5px;
-  background-color: #ff0f7b;
-  z-index: -1;
-}
-.progress-step {
-  position: relative;
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
 
+.csstooltip {
+  display: none;
+  position: absolute;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 1.6em;
+  color: #000;
+  border-radius: 5px;
+  background: #fff;
+  width: auto;
+  white-space: nowrap;
+  top: 120%;
+  left: 0;
+  transform: translateX(-30%);
+  z-index: 100;
 }
+
+.csstooltip:before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+	left: 40%;
+  transform: rotate(180deg);
+  border: 10px solid transparent;
+  border-top: 15px solid #fff;
+  z-index: 100;
+}
+
+.tooltip:hover .csstooltip,
+.tooltip:focus .csstooltip {
+  position: absolute;
+  display: inline-block;
+  top: 40px;
+  left: 20px;
+  z-index: 100;
+}
+
+
