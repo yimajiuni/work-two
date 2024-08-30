@@ -20,6 +20,9 @@ import web1 from "./web1.jpg";
 import web2 from "./web2.jpg";
 import web3 from "./web3.jpg";
 import web4 from "./web4.jpg";
+import webjt1 from "./webjt1.jpg";
+import webjt2 from "./webjt2.jpg";
+import dtp1 from "./dtp1.jpg";
 import circlarrow from "./circlarrow.png";
 
 export {
@@ -29,6 +32,7 @@ export {
   starbucks,
   tesla,
   logo,
+  circlarrow,
   eqbo,
   eqch,
   eqcu,
@@ -45,5 +49,7 @@ export {
   web2,
   web3,
   web4,
-  circlarrow,
+  webjt1,
+  webjt2,
+  dtp1,
 };

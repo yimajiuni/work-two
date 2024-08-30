@@ -86,6 +86,14 @@ body:has(.card[data-color="green"]:hover) {
   .cta-text {
     @apply text-black-500 font-extrabold flex-1 text-3xl max-md:text-center;
   }
+  .hidden-scrollbar {
+    -ms-overflow-style: none; /* IE, Edge 対応 */
+    scrollbar-width: none; /* Firefox 対応 */
+  }
+  .hidden-scrollbar::-webkit-scrollbar {
+    /* Chrome, Safari 対応 */
+    display: none;
+  }
 }
 
 .glassmorphism {
@@ -148,7 +156,6 @@ body:has(.card[data-color="green"]:hover) {
   transform: translateZ(80px) translateY(-5px) rotateX(15deg) rotateY(15deg);
 }
 /*ズームと動き*/
-
 .block-container .gallery-img {
  display: "block";
  margin: "0 auto 0 0";
@@ -166,11 +173,7 @@ body:has(.card[data-color="green"]:hover) {
   transform-origin: bottom right;
   transform: rotateZ(5deg);
 }
-.bgimg{
-  --tw-rotate: -130deg;
-  /*background-image:url(../src/assets/images/circlarrow.png);
-  background-repeat: no-repeat;*/
-}
+
 .block-container .btn-back-red {
   background: linear-gradient(135deg, #ff4b1f -20%, #ff9068 120%);
 }
@@ -222,7 +225,6 @@ body:has(.card[data-color="green"]:hover) {
 .tooltip {
   position: relative;
   cursor: pointer;
-  z-index: 100;
 }
 
 .csstooltip {
@@ -262,4 +264,162 @@ body:has(.card[data-color="green"]:hover) {
   z-index: 100;
 }
 
+.bgimg{
+  --tw-rotate: -130deg;
+  /*background-image:url(../src/assets/images/circlarrow.png);
+  background-repeat: no-repeat;*/
+}
 
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 40px;
+  position: absolute;
+}
+
+.card{
+  position: relative;
+  width: 100px;
+  height: 600px;
+  margin: 30px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow:inset 0 20px 40px #f8019928;
+  inset: 0 -15px 0 40px #f8019928,
+  0 45px 0 #000000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transform: rotate(-90deg);
+}
+.icon{
+  position: relative;
+  width: 50px;
+  height: 400px;
+  background: #fddbee;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  box-shadow: 0 15px 40px #f8019928;
+  inset: 0 -15px 0 rgba(0,0,0,0.1),
+  0 45px 40px #f8019928;
+  z-index: 1;
+}
+.icon::before{
+  content:'';
+  position: absolute;
+  top: 0;
+  left: -50px;
+  height:50px;
+  width: 50px;
+  background: transparent;
+  border-top-right-radius: 30px;
+  box-shadow:15px -15px 0 15px #fddbee;
+}
+.icon::after{
+  content:'';
+  position: absolute;
+  top: 0;
+  right: -50px;
+  height:50px;
+  width: 50px;
+  background: transparent;
+  border-top-left-radius: 30px;
+  box-shadow: -15px -15px 0 15px #fddbee;
+}
+.icon-bottom{
+  position: relative;
+  width: 50px;
+  height: 300px;
+  background: #fddbee;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  box-shadow: 0 15px 40px #f8019928;
+  inset: 0 -15px 0 rgba(0,0,0,0.1),
+  0 45px 40px #f8019928;
+  transform: rotateZ(180deg);
+  bottom: -30px;
+}
+.card2{
+  position: relative;
+  width: 50px;
+  height: 400px;
+  margin: 30px;
+  border-radius: 30px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow:inset 0 20px 80px #f801993b;/*darker color for adjusting to the shadow above*/
+  inset: 0 -15px 0 40px #f8019928,
+  0 45px 0 #000000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transform: rotate(-90deg);
+  align-items: flex-end;
+  margin-top: -455px;
+}
+/*
+.unka-long {
+  border-radius: 50px 0px 0px 50px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  overflow: hidden;
+  opacity: 0.9;
+  box-shadow:inset 16px 0 40px #f8019928;
+  width: 600px;
+  height: 150px;
+}
+
+.in-between-right {
+  border-radius: 50px 0px 0px 50px;
+  overflow: hidden;
+  opacity: 0.9;
+  box-shadow:16px 0 40px #f8019928;
+  width: 260px;
+  height: 50px;
+  position: absolute;
+  right: 96px;
+}
+
+.in-between-left {
+  border-radius: 0px 50px 50px 0px;
+  overflow: hidden;
+  opacity: 0.9;
+  box-shadow:16px 0 40px #f8019928;
+  width: 300px;
+  height: 50px;
+  z-index: 1;
+}
+.in-between-left::before {
+  content:'';
+  top: 30px;
+  left: 250px;
+  height:50px;
+  width: 50px;
+  background: transparent;
+  border-bottom-left-radius: 30px;
+  box-shadow:-15px -15px 0 15px #e336e0;
+}
+.in-between-left::after {
+  content:'';
+  top: -100px;
+  left: 250px;
+  height:50px;
+  width: 50px;
+  background: transparent;
+  border-top-left-radius: 30px;
+  box-shadow:15px 15px 0 15px  #b60f66;
+}
+.unka-short {
+  border-radius: 50px 50px 50px 50px;
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+  opacity: 0.9;
+  box-shadow: 16px 0 40px #f8019928;
+  width: 300px;
+  height: 50px;
+}*/
