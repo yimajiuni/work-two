@@ -23,6 +23,9 @@ import {
   web2,
   web3,
   web4,
+  webjt1,
+  webjt2,
+  dtp1,
 } from "./assets/images";
 
 import {
@@ -57,6 +60,9 @@ import {
   jquery,
   vue,
   procreate,
+  fiverr,
+  instagram,
+  soundcloud,
 } from "./assets/icons";
 
 i18n
@@ -216,8 +222,30 @@ i18n
                 Personas: Local residents and tourists of all ages, looking for good food and a comfortable dining experience.`,
               link: "https://restau-web.yimajiuni.com/",
             },
+            //修正
+            {
+              id: 5,
+              preview: webjt1,
+              theme: "btn-back-pink",
+              name: "Sale LP for horseriding products1",
+              description: `Built a fully responsive restaurant Website.
+                Production Period: 5 days (20h)
+                Areas of work: Functional design, UX/UI design, coding, debugging, deployment
+                Personas: Local residents and tourists of all ages, looking for good food and a comfortable dining experience.`,
+              link: "https://yimajiuni.com/jt-lp-coupon/",
+            },
+            {
+              id: 6,
+              preview: webjt2,
+              theme: "btn-back-pink",
+              name: "Promo Campaign LP for horseriding products2",
+              description: `Built a fully responsive restaurant Website.
+                Production Period: 5 days (20h)
+                Areas of work: Functional design, UX/UI design, coding, debugging, deployment
+                Personas: Local residents and tourists of all ages, looking for good food and a comfortable dining experience.`,
+              link: "https://yimajiuni.com/jt-lp-slider/",
+            },
           ],
-          //要修正
           designDesc: {
             line1: `日本を拠点とするソフトウェア開発者。実践的な学習とアプリの構築を通して、技術とデザインに特化しています。
             `,
@@ -227,7 +255,7 @@ i18n
           //banner
           promoDesigns: [
             {
-              id: 5,
+              id: 7,
               preview: eqbo,
               name: "Ad for rain boots",
               description:
@@ -235,7 +263,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-bo.jpg",
             },
             {
-              id: 6,
+              id: 8,
               preview: eqch,
               name: "Ad for horse riding chaps",
               description:
@@ -243,7 +271,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-ch.jpg",
             },
             {
-              id: 7,
+              id: 9,
               preview: eqcu,
               name: "Ad for riding culottes",
               description:
@@ -251,7 +279,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-cu.jpg",
             },
             {
-              id: 8,
+              id: 10,
               preview: eqgr1,
               name: "Ad for riding gloves 1",
               description:
@@ -259,7 +287,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-gr1.jpg",
             },
             {
-              id: 9,
+              id: 11,
               preview: eqgr2,
               name: "Ad for horse riding leather gloves",
               description:
@@ -267,7 +295,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-gr2.jpg",
             },
             {
-              id: 10,
+              id: 12,
               preview: eqgr3,
               name: "Ad for horseriding accessories",
               description:
@@ -275,7 +303,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-gr3.jpg",
             },
             {
-              id: 11,
+              id: 13,
               preview: eqgr4,
               name: "Ad for horse riding gloves 3",
               description:
@@ -283,7 +311,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-gr4.jpg",
             },
             {
-              id: 12,
+              id: 14,
               preview: eqhe,
               name: "Ad of horse riding helmets",
               description:
@@ -291,7 +319,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-he.jpg",
             },
             {
-              id: 13,
+              id: 15,
               preview: eqwh,
               name: "Ad for a horse riding whip",
               description:
@@ -303,7 +331,7 @@ i18n
           //app
           appDesigns: [
             {
-              id: 14,
+              id: 16,
               preview: app1,
               theme: "btn-back-pink",
               name: "EC App UX Design",
@@ -312,7 +340,7 @@ i18n
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=233-88&t=TGbd5tplvGsffkfO-1&starting-point-node-id=236%3A233",
             },
             {
-              id: 15,
+              id: 17,
               preview: app2,
               theme: "btn-back-blue",
               name: "Fitness App UX Design",
@@ -321,13 +349,25 @@ i18n
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=328-136&t=AMryIaIjpqI2Y7cZ-1&starting-point-node-id=327%3A190",
             },
             {
-              id: 16,
+              id: 18,
               preview: app3,
               theme: "btn-back-red",
               name: "Banking App UX Design",
               description:
                 "Mobile Banking App designed with monthly expense comparison graph of deposits, an investment section and purchase history feature.",
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=298-558&t=8uCbvN2drsBtXyv6-1&starting-point-node-id=299%3A681",
+            },
+          ],
+          //dtp
+          dtpDesigns: [
+            {
+              id: 19,
+              preview: dtp1,
+              theme: "btn-back-pink",
+              name: "DTP and Packages 2017",
+              description:
+                "desktop publishing data for paper based Advertisements such as flyers and POPs, and packages for products.",
+              link: "https://drive.google.com/file/d/10KFtBSxKIXyZ_KZDmBV6knn206NmSv2r/view",
             },
           ],
         },
@@ -484,6 +524,29 @@ i18n
               duration: "4日間",
               link: "https://restau-web.yimajiuni.com/",
             },
+            //修正
+            {
+              id: 5,
+              preview: webjt1,
+              theme: "btn-back-pink",
+              name: "Sale LP for horseriding products1",
+              description: `Built a fully responsive restaurant Website.
+                Production Period: 5 days (20h)
+                Areas of work: Functional design, UX/UI design, coding, debugging, deployment
+                Personas: Local residents and tourists of all ages, looking for good food and a comfortable dining experience.`,
+              link: "https://yimajiuni.com/jt-lp-coupon/",
+            },
+            {
+              id: 6,
+              preview: webjt2,
+              theme: "btn-back-pink",
+              name: "Promo Campaign LP for horseriding products2",
+              description: `Built a fully responsive restaurant Website.
+                Production Period: 5 days (20h)
+                Areas of work: Functional design, UX/UI design, coding, debugging, deployment
+                Personas: Local residents and tourists of all ages, looking for good food and a comfortable dining experience.`,
+              link: "https://yimajiuni.com/jt-lp-slider/",
+            },
           ],
           //要修正
           designDesc: {
@@ -495,7 +558,7 @@ i18n
           //banner
           promoDesigns: [
             {
-              id: 5,
+              id: 7,
               preview: eqbo,
               name: "レインブーツの販売促進",
               description:
@@ -503,7 +566,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-bo.jpg",
             },
             {
-              id: 6,
+              id: 8,
               preview: eqch,
               name: "乗馬用チャップスの販売促進",
               description:
@@ -511,7 +574,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-ch.jpg",
             },
             {
-              id: 7,
+              id: 9,
               preview: eqcu,
               name: "乗馬用キュロットの販売促進",
               description:
@@ -519,7 +582,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-cu.jpg",
             },
             {
-              id: 8,
+              id: 10,
               preview: eqgr1,
               name: "乗馬用グローブの販売促進1",
               description:
@@ -527,7 +590,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-gr1.jpg",
             },
             {
-              id: 9,
+              id: 11,
               preview: eqgr2,
               name: "乗馬用合皮グローブの販売促進2",
               description:
@@ -535,7 +598,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-gr2.jpg",
             },
             {
-              id: 10,
+              id: 12,
               preview: eqgr3,
               name: "乗馬用グローブアクセサリーの販売促進",
               description:
@@ -543,7 +606,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-gr3.jpg",
             },
             {
-              id: 11,
+              id: 13,
               preview: eqgr4,
               name: "乗馬用グローブの販売促進3",
               description:
@@ -551,7 +614,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-gr4.jpg",
             },
             {
-              id: 12,
+              id: 14,
               preview: eqhe,
               name: "乗馬用ヘルメットの販売促進",
               description:
@@ -559,7 +622,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-he.jpg",
             },
             {
-              id: 13,
+              id: 15,
               preview: eqwh,
               name: "乗馬用ムチの販売促進",
               description:
@@ -570,7 +633,7 @@ i18n
           //app
           appDesigns: [
             {
-              id: 14,
+              id: 16,
               preview: app1,
               theme: "btn-back-pink",
               name: "ECショッピングアプリ",
@@ -579,7 +642,7 @@ i18n
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=233-88&t=TGbd5tplvGsffkfO-1&starting-point-node-id=236%3A233",
             },
             {
-              id: 15,
+              id: 17,
               preview: app2,
               theme: "btn-back-blue",
               name: "フィットネスショップアプリ",
@@ -588,7 +651,7 @@ i18n
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=328-136&t=AMryIaIjpqI2Y7cZ-1&starting-point-node-id=327%3A190",
             },
             {
-              id: 16,
+              id: 18,
               preview: app3,
               theme: "btn-back-red",
               name: "銀行ネットバンキングアプリ",
@@ -597,7 +660,18 @@ i18n
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=298-558&t=8uCbvN2drsBtXyv6-1&starting-point-node-id=299%3A681",
             },
           ],
-          //要修正
+          //dtp
+          dtpDesigns: [
+            {
+              id: 19,
+              preview: dtp1,
+              theme: "btn-back-pink",
+              name: "DTP and Packages 2017",
+              description:
+                "desktop publishing data for paper based Advertisements such as flyers and POPs, and packages for products.",
+              link: "https://drive.google.com/file/d/10KFtBSxKIXyZ_KZDmBV6knn206NmSv2r/view",
+            },
+          ],
           workDesc: {
             line1: `日本を拠点とするソフトウェア開発者。実践的な学習とアプリの構築を通して、技術とデザインに特化しています。
             `,
@@ -1068,26 +1142,88 @@ export const workDatas = [
     link: "https://restau-web.yimajiuni.com/",
     icon: tesla,
   },
-  { id: 5, link: "https://yimajiuni.com/promotions/eq-bo.jpg" },
-  { id: 6, link: "https://yimajiuni.com/promotions/eq-ch.jpg" },
-  { id: 7, link: "https://yimajiuni.com/promotions/eq-cu.jpg" },
-  { id: 8, link: "https://yimajiuni.com/promotions/eq-gr1.jpg" },
-  { id: 9, link: "https://yimajiuni.com/promotions/eq-gr2.jpg" },
-  { id: 10, link: "https://yimajiuni.com/promotions/eq-gr3.jpg" },
-  { id: 11, link: "https://yimajiuni.com/promotions/eq-gr4.jpg" },
-  { id: 12, link: "https://yimajiuni.com/promotions/eq-wh.jpg" },
-  { id: 13, link: "https://yimajiuni.com/promotions/eq-wh.jpg" },
   {
-    id: 14,
+    id: 5,
+    titleBk: "レストラン",
+    titleBl: "ウェブサイト",
+    image: web4,
+    medium: "website",
+    period: "5日間",
+    range: "デザイン・コーディング・実装",
+    skills: "React,Javascript",
+    summary:
+      "視覚的にも料理の魅力が伝わりやすい。レスポンシブのレストランのウェブサイトをフロントエンド設計・作成しました。",
+    concept_target: `地元の住民や観光客で、美味しい食事と快適なダイニング体験を求める幅広い年齢層`,
+    concept_needs:
+      "店舗の雰囲気と料理の美味しさが伝わる、温かみのある色彩とフォントを使用しながら、合理的なレイアウトで視覚的にも写真を引き立てるデザイン。 ",
+    concept_function:
+      "ページの読み込み速度を最適化し、ユーザーが快適にサイトを利用できるように、画像の圧縮とキャッシング戦略を取り入れました。",
+    concept_eva:
+      "限られたリソースでリッチな体験を実現し、嗜好に沿ってカスタマイズ可能な軽量でシンプルなレストランウェブサイト。",
+    persona_basic:
+      "性別:男女他+ 年代:キッズ、プライム年代、シニア全て。男女＋年代:健康な全年齢",
+    persona_preference:
+      "#ホームレシピ #地域のコミュニティ #一家団欒の食事で家族の絆 ",
+    persona_orientation:
+      "古い下町風情の密なコミュニティ形成、古風な家族＆人間関係。週末は親しい仲で揃って食事 ",
+    wireframe: `再利用可能なコンポーネントをReactで実装。メニューや予約情報は見やすく、ユーザーが簡単に必要な情報にアクセスできるレイアウト、直感的なナビゲーションを重視。
+     メニューや予約システムなどの主要な機能は一枚のページでアクセスしやすく、様々なデバイスからアクセス出来るレスポンシブデザインを導入。サイト全体の使用性とパフォーマンスをテストし、必要に応じて修正。`,
+    link: "https://restau-web.yimajiuni.com/",
+    icon: tesla,
+  },
+  {
+    id: 6,
+    titleBk: "レストラン",
+    titleBl: "ウェブサイト",
+    image: web4,
+    medium: "website",
+    period: "5日間",
+    range: "デザイン・コーディング・実装",
+    skills: "React,Javascript",
+    summary:
+      "視覚的にも料理の魅力が伝わりやすい。レスポンシブのレストランのウェブサイトをフロントエンド設計・作成しました。",
+    concept_target: `地元の住民や観光客で、美味しい食事と快適なダイニング体験を求める幅広い年齢層`,
+    concept_needs:
+      "店舗の雰囲気と料理の美味しさが伝わる、温かみのある色彩とフォントを使用しながら、合理的なレイアウトで視覚的にも写真を引き立てるデザイン。 ",
+    concept_function:
+      "ページの読み込み速度を最適化し、ユーザーが快適にサイトを利用できるように、画像の圧縮とキャッシング戦略を取り入れました。",
+    concept_eva:
+      "限られたリソースでリッチな体験を実現し、嗜好に沿ってカスタマイズ可能な軽量でシンプルなレストランウェブサイト。",
+    persona_basic:
+      "性別:男女他+ 年代:キッズ、プライム年代、シニア全て。男女＋年代:健康な全年齢",
+    persona_preference:
+      "#ホームレシピ #地域のコミュニティ #一家団欒の食事で家族の絆 ",
+    persona_orientation:
+      "古い下町風情の密なコミュニティ形成、古風な家族＆人間関係。週末は親しい仲で揃って食事 ",
+    wireframe: `再利用可能なコンポーネントをReactで実装。メニューや予約情報は見やすく、ユーザーが簡単に必要な情報にアクセスできるレイアウト、直感的なナビゲーションを重視。
+     メニューや予約システムなどの主要な機能は一枚のページでアクセスしやすく、様々なデバイスからアクセス出来るレスポンシブデザインを導入。サイト全体の使用性とパフォーマンスをテストし、必要に応じて修正。`,
+    link: "https://restau-web.yimajiuni.com/",
+    icon: tesla,
+  },
+  { id: 7, link: "https://yimajiuni.com/promotions/eq-bo.jpg" },
+  { id: 8, link: "https://yimajiuni.com/promotions/eq-ch.jpg" },
+  { id: 9, link: "https://yimajiuni.com/promotions/eq-cu.jpg" },
+  { id: 10, link: "https://yimajiuni.com/promotions/eq-gr1.jpg" },
+  { id: 11, link: "https://yimajiuni.com/promotions/eq-gr2.jpg" },
+  { id: 12, link: "https://yimajiuni.com/promotions/eq-gr3.jpg" },
+  { id: 13, link: "https://yimajiuni.com/promotions/eq-gr4.jpg" },
+  { id: 14, link: "https://yimajiuni.com/promotions/eq-wh.jpg" },
+  { id: 15, link: "https://yimajiuni.com/promotions/eq-wh.jpg" },
+  {
+    id: 16,
     link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=233-88&t=TGbd5tplvGsffkfO-1&starting-point-node-id=236%3A233",
   },
   {
-    id: 15,
+    id: 17,
     link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=328-136&t=AMryIaIjpqI2Y7cZ-1&starting-point-node-id=327%3A190",
   },
   {
-    id: 16,
+    id: 18,
     link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=298-558&t=8uCbvN2drsBtXyv6-1&starting-point-node-id=299%3A681",
+  },
+  {
+    id: 19,
+    link: "https://drive.google.com/drive/u/0/folders/1cQ6KOvMrdjx7I5DNH6urfuN8QPlRsbpS",
   },
 ];
 export const socialLinks = [
@@ -1105,5 +1241,20 @@ export const socialLinks = [
     name: "LinkedIn",
     iconUrl: linkedin,
     link: "https://www.linkedin.com/",
+  },
+  {
+    name: "LinkedIn",
+    iconUrl: fiverr,
+    link: "https://www.fiverr.com/",
+  },
+  {
+    name: "LinkedIn",
+    iconUrl: instagram,
+    link: "https://www.instagram.com/pichgnard/",
+  },
+  {
+    name: "LinkedIn",
+    iconUrl: soundcloud,
+    link: "https://soundcloud.com/sheltre/",
   },
 ];

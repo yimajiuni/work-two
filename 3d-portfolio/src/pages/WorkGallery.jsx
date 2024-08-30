@@ -38,12 +38,14 @@ function WorkGallery() {
   const translatedProjects = t("projects", { returnObjects: true });
   const translatedPromos = t("promoDesigns", { returnObjects: true });
   const translatedApps = t("appDesigns", { returnObjects: true });
+  const translatedDtps = t("dtpDesigns", { returnObjects: true });
 
   // Combine all translated items into a single array
   const combinedWorks = [
     ...translatedProjects.map((item) => ({ ...item, type: "project" })),
     ...translatedPromos.map((item) => ({ ...item, type: "promo" })),
     ...translatedApps.map((item) => ({ ...item, type: "app" })),
+    ...translatedDtps.map((item) => ({ ...item, type: "dtp" })),
   ];
   //Changing tabs
   const handleTabChange = (event, newValue) => {
@@ -56,17 +58,19 @@ function WorkGallery() {
     if (activeTab === 0) {
       return workId >= 1 && workId <= 16;
     } else if (activeTab === 1) {
-      return workId >= 1 && workId <= 4;
+      return workId >= 1 && workId <= 6;
     } else if (activeTab === 2) {
-      return workId >= 5 && workId <= 13;
+      return workId >= 7 && workId <= 15;
     } else if (activeTab === 3) {
-      return workId >= 14 && workId <= 16;
+      return workId >= 16 && workId <= 18;
+    } else if (activeTab === 4) {
+      return workId >= 19;
     }
     return false;
   });
 
   return (
-    <section className="max-container" id="works">
+    <section className=" max-container" id="works">
       <h1 className="head-text">
         My{" "}
         <span className="blue-gradient_text drop-shadow font-semibold">
@@ -80,13 +84,19 @@ function WorkGallery() {
       {/*tabs*/}
       <Box
         sx={{ width: "100%", fontWeight: "bold" }}
-        className="overflow-x-auto"
+        className="overflow-x-auto hidden-scrollbar"
       >
-        <Tabs value={activeTab} onChange={handleTabChange}>
+        <Tabs
+          value={activeTab}
+          onChange={handleTabChange}
+          className="overflow-x-auto hidden-scrollbar"
+          sx={{ minWidth: "max-content" }}
+        >
           <TabCustom label="全て" />
           <TabCustom label="Websites" />
           <TabCustom label="Promotions" />
           <TabCustom label="Apps" />
+          <TabCustom label="DTP" />
         </Tabs>
       </Box>
 
@@ -101,9 +111,9 @@ function WorkGallery() {
                 <div className="rounded-xl flex justify-center items-center">
                   <Link
                     to={
-                      workId >= 1 && workId <= 4
+                      workId >= 1 && workId <= 6
                         ? `/details/${workId}`
-                        : workId >= 5 && workId <= 16
+                        : workId >= 7 && workId <= 19
                           ? work.link
                           : "#"
                     }
@@ -147,6 +157,20 @@ function WorkGallery() {
           );
         })}
       </div>
+      {/*
+      <div>
+        <div className="z-10 container">
+          <div className="card">
+            <div className="icon"></div>
+            <div className="icon-bottom"></div>
+          </div>
+          <div className="card2"></div>
+        </div>
+        <div className="unka-long">
+          <div className="in-between-left"></div>
+          <div className="in-between-right"></div>
+        </div>
+      </div>*/}
       <CTA />
     </section>
   );

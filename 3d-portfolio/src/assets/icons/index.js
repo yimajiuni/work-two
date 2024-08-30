@@ -33,6 +33,9 @@ import photoshop from "./photoshop.svg";
 import figma from "./figma.svg";
 import procreate from "./procreate.svg";
 import vue from "./vue.svg";
+import fiverr from "./fiverr.svg";
+import instagram from "./instagram.svg";
+import soundcloud from "./soundcloud.svg";
 export {
   css,
   express,
@@ -69,4 +72,7 @@ export {
   jquery,
   vue,
   procreate,
+  fiverr,
+  instagram,
+  soundcloud,
 };
