@@ -58,9 +58,9 @@ function WorkGallery() {
     if (activeTab === 0) {
       return workId >= 1 && workId <= 16;
     } else if (activeTab === 1) {
-      return workId >= 1 && workId <= 6;
+      return workId >= 1 && workId <= 4;
     } else if (activeTab === 2) {
-      return workId >= 7 && workId <= 15;
+      return workId >= 5 && workId <= 15;
     } else if (activeTab === 3) {
       return workId >= 16 && workId <= 18;
     } else if (activeTab === 4) {
@@ -94,7 +94,7 @@ function WorkGallery() {
         >
           <TabCustom label="全て" />
           <TabCustom label="Websites" />
-          <TabCustom label="Promotions" />
+          <TabCustom label="Jothes" />
           <TabCustom label="Apps" />
           <TabCustom label="DTP" />
         </Tabs>
@@ -111,9 +111,9 @@ function WorkGallery() {
                 <div className="rounded-xl flex justify-center items-center">
                   <Link
                     to={
-                      workId >= 1 && workId <= 6
+                      workId >= 1 && workId <= 4
                         ? `/details/${workId}`
-                        : workId >= 7 && workId <= 19
+                        : workId >= 5 && workId <= 19
                           ? work.link
                           : "#"
                     }
