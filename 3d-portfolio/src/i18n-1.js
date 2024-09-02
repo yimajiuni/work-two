@@ -227,7 +227,7 @@ i18n
               id: 5,
               preview: webjt1,
               theme: "btn-back-pink",
-              name: "Sale LP for horseriding products1",
+              name: "Sales LP for horseriding products1",
               description: `Built a fully responsive restaurant Website.
                 Production Period: 5 days (20h)
                 Areas of work: Functional design, UX/UI design, coding, debugging, deployment
@@ -367,7 +367,7 @@ i18n
               name: "DTP and Packages 2017",
               description:
                 "desktop publishing data for paper based Advertisements such as flyers and POPs, and packages for products.",
-              link: "https://drive.google.com/file/d/10KFtBSxKIXyZ_KZDmBV6knn206NmSv2r/view",
+              link: "https://yimajiuni.com/dtp/portfolio-yuko.pdf",
             },
           ],
         },
@@ -529,7 +529,7 @@ i18n
               id: 5,
               preview: webjt1,
               theme: "btn-back-pink",
-              name: "Sale LP for horseriding products1",
+              name: "Sales LP for horseriding products1",
               description: `Built a fully responsive restaurant Website.
                 Production Period: 5 days (20h)
                 Areas of work: Functional design, UX/UI design, coding, debugging, deployment
@@ -669,7 +669,7 @@ i18n
               name: "DTP and Packages 2017",
               description:
                 "desktop publishing data for paper based Advertisements such as flyers and POPs, and packages for products.",
-              link: "https://drive.google.com/file/d/10KFtBSxKIXyZ_KZDmBV6knn206NmSv2r/view",
+              link: "https://yimajiuni.com/dtp/portfolio-yuko.pdf",
             },
           ],
           workDesc: {
@@ -1142,11 +1142,12 @@ export const workDatas = [
     link: "https://restau-web.yimajiuni.com/",
     icon: tesla,
   },
+  //要修正
   {
     id: 5,
     titleBk: "レストラン",
     titleBl: "ウェブサイト",
-    image: web4,
+    image: webjt1,
     medium: "website",
     period: "5日間",
     range: "デザイン・コーディング・実装",
@@ -1168,14 +1169,14 @@ export const workDatas = [
       "古い下町風情の密なコミュニティ形成、古風な家族＆人間関係。週末は親しい仲で揃って食事 ",
     wireframe: `再利用可能なコンポーネントをReactで実装。メニューや予約情報は見やすく、ユーザーが簡単に必要な情報にアクセスできるレイアウト、直感的なナビゲーションを重視。
      メニューや予約システムなどの主要な機能は一枚のページでアクセスしやすく、様々なデバイスからアクセス出来るレスポンシブデザインを導入。サイト全体の使用性とパフォーマンスをテストし、必要に応じて修正。`,
-    link: "https://restau-web.yimajiuni.com/",
+    link: "https://yimajiuni.com/jt-lp-coupon/",
     icon: tesla,
   },
   {
     id: 6,
     titleBk: "レストラン",
     titleBl: "ウェブサイト",
-    image: web4,
+    image: webjt2,
     medium: "website",
     period: "5日間",
     range: "デザイン・コーディング・実装",
@@ -1197,7 +1198,7 @@ export const workDatas = [
       "古い下町風情の密なコミュニティ形成、古風な家族＆人間関係。週末は親しい仲で揃って食事 ",
     wireframe: `再利用可能なコンポーネントをReactで実装。メニューや予約情報は見やすく、ユーザーが簡単に必要な情報にアクセスできるレイアウト、直感的なナビゲーションを重視。
      メニューや予約システムなどの主要な機能は一枚のページでアクセスしやすく、様々なデバイスからアクセス出来るレスポンシブデザインを導入。サイト全体の使用性とパフォーマンスをテストし、必要に応じて修正。`,
-    link: "https://restau-web.yimajiuni.com/",
+    link: "https://yimajiuni.com/jt-lp-slider/",
     icon: tesla,
   },
   { id: 7, link: "https://yimajiuni.com/promotions/eq-bo.jpg" },
@@ -1223,7 +1224,7 @@ export const workDatas = [
   },
   {
     id: 19,
-    link: "https://drive.google.com/drive/u/0/folders/1cQ6KOvMrdjx7I5DNH6urfuN8QPlRsbpS",
+    link: "https://yimajiuni.com/dtp/portfolio-yuko.pdf",
   },
 ];
 export const socialLinks = [
