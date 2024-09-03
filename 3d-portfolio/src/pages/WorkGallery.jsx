@@ -119,7 +119,7 @@ function WorkGallery() {
                     }
                     rel="noopener noreferrer"
                     className="block-container relative inline-block group font-semibold text-blue-600"
-                    target={workId >= 5 && workId <= 16 ? "_blank" : undefined}
+                    target={workId >= 5 && workId <= 19 ? "_blank" : undefined}
                   >
                     <img
                       src={work.preview}
@@ -137,13 +137,13 @@ function WorkGallery() {
                   to={
                     workId >= 1 && workId <= 4
                       ? `/details/${workId}`
-                      : workId >= 5 && workId <= 16
+                      : workId >= 5 && workId <= 19
                         ? work.link
                         : "#"
                   }
                   rel="noopener noreferrer"
                   className="items-center inline-flex font-semibold text-blue-600"
-                  target={workId >= 5 && workId <= 16 ? "_blank" : undefined}
+                  target={workId >= 5 && workId <= 19 ? "_blank" : undefined}
                 >
                   <img
                     src={arrow}
