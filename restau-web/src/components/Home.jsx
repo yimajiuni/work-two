@@ -24,7 +24,7 @@ const Home = () => {
       <div className="w-full space-y-5 ">
         {showContent && (
           <div className="flex justify-center">
-            <div className="sm:pt-30 sx:bottom-0 sm:bottom-20 md:bottom-20 lg:bottom-40 fixed py-10 px-10 backdrop-blur-md shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] rounded-lg ">
+            <div className="sm:pt-20 sx:bottom-20 sm:bottom-20 md:bottom-20 lg:bottom-40 fixed py-10 px-10 backdrop-blur-md shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] rounded-lg ">
               {/*lg:h-1/3 md:h-1/2 sm:h-2/4 sx:h-6/7 */}
               <h1 className="text-backgroundColor font-semibold text-6xl sm:text-5xl">
                 <br />
