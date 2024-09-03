@@ -238,7 +238,7 @@ i18n
               id: 6,
               preview: webjt2,
               theme: "btn-back-pink",
-              name: "Promo Campaign LP for horseriding products2",
+              name: "Campaign LP for horseriding products2",
               description: `Built a fully responsive restaurant Website.
                 Production Period: 5 days (20h)
                 Areas of work: Functional design, UX/UI design, coding, debugging, deployment
@@ -529,7 +529,7 @@ i18n
               id: 5,
               preview: webjt1,
               theme: "btn-back-pink",
-              name: "Sales LP for horseriding products1",
+              name: "乗馬用品専門店のモール用セールLP",
               description: `Built a fully responsive restaurant Website.
                 Production Period: 5 days (20h)
                 Areas of work: Functional design, UX/UI design, coding, debugging, deployment
@@ -540,7 +540,7 @@ i18n
               id: 6,
               preview: webjt2,
               theme: "btn-back-pink",
-              name: "Promo Campaign LP for horseriding products2",
+              name: "乗馬用品専門店のモール用キャンペーンLP",
               description: `Built a fully responsive restaurant Website.
                 Production Period: 5 days (20h)
                 Areas of work: Functional design, UX/UI design, coding, debugging, deployment
@@ -666,7 +666,7 @@ i18n
               id: 19,
               preview: dtp1,
               theme: "btn-back-pink",
-              name: "DTP and Packages 2017",
+              name: "DTPとパッケージ 2017",
               description:
                 "desktop publishing data for paper based Advertisements such as flyers and POPs, and packages for products.",
               link: "https://yimajiuni.com/dtp/portfolio-yuko.pdf",
