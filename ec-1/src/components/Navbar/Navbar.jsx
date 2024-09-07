@@ -14,9 +14,10 @@ const Navbar = () => {
     useContext(ShopContext); /*カート商品数アイコン*/
   const menuRef = useRef();
 
+  /*クリックでメニューを開きnavbarを表示*/
   const dropdown_toggle = (e) => {
-    menuRef.current.classList.toggle("nav-menu-visible");
-    e.target.classList.toggle("open");
+    menuRef.current.classList.toggle("nav-menu-invisible");
+    e.target.classList.toggle("close");
   };
   return (
     <div className="navbar">
@@ -38,7 +39,7 @@ const Navbar = () => {
         onClick={dropdown_toggle}
       />
 
-      <ul ref={menuRef} className="nav-menu">
+      <ul ref={menuRef} className="nav-menu nav-menu-visible">
         <li
           onClick={() => {
             setMenu("shop");
