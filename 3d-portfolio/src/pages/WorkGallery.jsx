@@ -56,7 +56,7 @@ function WorkGallery() {
     const workData = workDatas.find((data) => data.id === work.id);
     const workId = workData ? workData.id : null;
     if (activeTab === 0) {
-      return workId >= 1 && workId <= 16;
+      return workId >= 1 && workId <= 19;
     } else if (activeTab === 1) {
       return workId >= 1 && workId <= 4;
     } else if (activeTab === 2) {

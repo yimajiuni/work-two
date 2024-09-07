@@ -183,7 +183,13 @@
     .nav-dropdown.open{
         transform: rotate(90deg);
     }
-
+    /*画面ロード時に開いたままにする場合*/
+    .nav-menu-invisible{
+        display: none;
+    }
+    .nav-dropdown.close{
+        transform: rotate(-90deg);
+    }
     .searchbar{
         display: none;
     }
