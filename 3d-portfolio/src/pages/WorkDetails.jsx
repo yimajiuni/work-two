@@ -37,17 +37,26 @@ const Img = styled("img")(({ theme }) => ({
   },
 }));
 const Image = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  backgroundColor:
+    theme.palette.mode === "dark"
+      ? "rgba(26, 32, 39, 0.0)"
+      : "rgba(255, 255, 255, 0.0)", //background transparency 0.0
   ...theme.typography.body2,
   textAlign: "center",
   color: theme.palette.text.secondary,
-  boxShadow: "0px 4px 6px rgb(248 1 153 / 0.15)",
+  boxShadow: "0px 4px 6px rgb(248 1 153 / 0.0)", //boxshadow transparency 0.0
   borderRadius: "10px",
   overflow: "hidden", // Ensure the content is clipped if it overflows
   // Specific height for the image container
   // Responsive height adjustments
   [theme.breakpoints.down("sm")]: {
     height: "325px", // Height for small screens
+    width: "245px",
+    // Target the img element inside the component
+    img: {
+      objectFit: "cover", // Make the image cover the container
+      objectPosition: "88% 100%", // Align the image to the right
+    },
   },
 }));
 const Item = styled(Paper)(({ theme }) => ({
