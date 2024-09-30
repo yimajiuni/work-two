@@ -24,6 +24,10 @@ import webjt1 from "./webjt1.jpg";
 import webjt2 from "./webjt2.jpg";
 import dtp1 from "./dtp1.jpg";
 import circlarrow from "./circlarrow.png";
+import webmock1 from "./webmock1.png";
+import webmock2 from "./webmock2.png";
+import webmock3 from "./webmock3.png";
+import webmock4 from "./webmock4.png";
 
 export {
   hero,
@@ -52,4 +56,8 @@ export {
   webjt1,
   webjt2,
   dtp1,
+  webmock1,
+  webmock2,
+  webmock3,
+  webmock4,
 };

@@ -1,4 +1,4 @@
-import Button from "../layouts/Button";
+import OrderButton from "../layouts/OrderButton";
 
 const About = () => {
   return (
@@ -30,7 +30,7 @@ const About = () => {
               feugait nulla facilisi.
             </p>
             <div className="flex justify-center pt-10">
-              <Button title="Learn More" />
+              <OrderButton title="Learn More" />
             </div>
           </div>
         </div>
