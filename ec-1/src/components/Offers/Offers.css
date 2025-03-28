@@ -1,16 +1,39 @@
-.offers{
+.offers {
+    margin: auto;
+    width: 100%;
+    height: 67vh;
+    position:relative;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+.offers h1 {
+    color: #171717;
+    font-size: 50px;
+    font-weight: 600;
+}
+.offers hr{
+    width: 180px;
+    height: 6px;
+    border-radius: 10px;
+    margin: 20px 0 60px 0;
+    background: #252525;
+}
+.offers .offers-banner-container{
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 95vw;
-    height: 45vh;
+    height: 48vh;
     position:relative;
     overflow: hidden;
     border-radius:1rem;
     box-shadow:2px 2px 8px  #7a7a7a;
-    margin-top: 50px;
-    margin-bottom: 80px;
 }
 .offers .offers-banner{
     inset: 0 0 0 0;
@@ -63,10 +86,15 @@
 
 @media(max-width: 1280px){
     .offers{
-        padding: 0px 80px;
         margin-bottom: 70px;
-        width: 90vw;
-        height: 35vh;
+        width: 100vw;
+        height: 45vh;
+    }
+    .offers h1 {
+        font-size: 40px;
+    }
+    .offers hr{
+        width: 180px;
     }
     .offers .offers-banner .content{
         top: 0%;
@@ -85,8 +113,13 @@
 }
 @media(max-width: 1024px){
     .offers{
-        padding: 0px 80px;
         height: 30vh;
+    }
+    .offers h1 {
+        font-size: 30px;
+    }
+    .offers hr{
+        width: 160px;
     }
     .offers .offers-banner img{
         width: 130%;
@@ -107,9 +140,13 @@
 
 @media(max-width: 800px){
     .offers{
-        width: 95vw;
-        padding-left: 20px;
-        padding-right: 20px;
+        width: 93vw;
+    }
+    .offers h1 {
+        font-size: 20px;
+    }
+    .offers hr{
+        width: 120px;
     }
     .offers .content h1{
         font-size: 2rem;
@@ -123,8 +160,10 @@
 
 @media(max-width: 500px){
     .offers{
-        margin-top: 120px;
-        margin-bottom: 80px;
+        margin-bottom:80px ;
+    }
+    .offers hr{
+        margin: 5px 0 20px 0;
     }
     .offers .offers-banner .content{
         margin: 5px;

@@ -51,11 +51,10 @@ const Image = styled(Paper)(({ theme }) => ({
   // Responsive height adjustments
   [theme.breakpoints.down("sm")]: {
     height: "325px", // Height for small screens
-    width: "245px",
     // Target the img element inside the component
     img: {
       objectFit: "cover", // Make the image cover the container
-      objectPosition: "88% 100%", // Align the image to the right
+      objectPosition: "90% 100%", // Align the image to the right
     },
   },
 }));
@@ -163,7 +162,7 @@ function WorkDetails() {
               </Grid>
               <Grid item xs={12}>
                 <Summary>
-                  <h3 className="text-black text-xl font-poppins font-semibold text-left">
+                  <h3 className="text-black text-xl font-semibold text-left">
                     {selectedWork.summary}
                   </h3>
                 </Summary>
@@ -191,7 +190,7 @@ function WorkDetails() {
                   iconStyle={{ background: "#fff" }}
                 >
                   <div>
-                    <h3 className="text-black text-xl font-poppins font-semibold">
+                    <h3 className="text-black text-xl font-semibold">
                       コンセプト
                     </h3>
                   </div>
@@ -224,7 +223,7 @@ function WorkDetails() {
                   iconStyle={{ background: "#fff" }}
                 >
                   <div>
-                    <h3 className="text-black text-xl font-poppins font-semibold">
+                    <h3 className="text-black text-xl font-semibold">
                       ペルソナ
                     </h3>
                     <ul className="my-5 list-discc ml-5 space-y-2">
@@ -265,9 +264,7 @@ function WorkDetails() {
                   iconStyle={{ background: "#fff" }}
                 >
                   <div>
-                    <h3 className="text-black text-xl font-poppins font-semibold">
-                      設計
-                    </h3>
+                    <h3 className="text-black text-xl font-semibold">設計</h3>
                     <p
                       className="text-black-500 font-medium font-base"
                       style={{ margin: 0 }}

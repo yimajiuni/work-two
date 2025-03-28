@@ -22,6 +22,8 @@
 .main .shopcategory-banner img{
     width: 100%;
     object-fit: cover;
+    display: flex;
+    align-items: center;
 }
 .main .shopcategory-banner .content{    
     position: absolute;
@@ -80,6 +82,9 @@
         white-space: nowrap;
         margin: 20px auto;
     }
+    main .shopcategory-banner img {
+        height: 70%;
+    }
     .shopcategory-banner .content{    
         top: 23%;
     }
@@ -99,9 +104,7 @@
         font-size: 12px;
     }
     .shopcategory-products{
-        width: 90%;
         margin: 10px auto;
-        row-gap: 40px;
     }
     .shopcategory-products .item{
         margin: auto;     
@@ -134,7 +137,7 @@
 
 @media(max-width: 800px){
     .shopcategory-banner{
-        width: 95%;
+        width: 100%;
     }
     .shop-category{
         margin-top: 100px;
@@ -159,12 +162,12 @@
 
 @media(max-width: 500px){
     .main{
-        width: 95%;
+        width: 100%;
     }
     .shop-category .main .shopcategory-banner img{   
-        width: 105%;
+        width: 110%;
         height: 80%;
-        margin-left: 20px;
+        left: -25;
     }
     .shop-category .main .shopcategory-banner .content h2{
         font-size: 1.8rem;
