@@ -113,7 +113,7 @@ function WorkGallery() {
                     to={
                       workId >= 1 && workId <= 4
                         ? `/details/${workId}`
-                        : workId >= 6 && workId <= 20
+                        : workId >= 5 && workId <= 20
                           ? work.link
                           : "#"
                     }
