@@ -98,7 +98,7 @@
 }
 @media(max-width:1280px){
     .cartitems{
-        margin: 140px 50px;
+        margin: 140px 50 0 0px;
     }
     .cartitems-format-main{
         grid-template-columns: 0.5fr 3fr 0.5fr 0.5fr 0.5fr 0.5fr;
@@ -122,7 +122,7 @@
         margin: 0;
     }
     .cartitems-total{
-        max-width: 200px;
+        max-width: 300px;
         height: 45px;
         font-size: 13px;
     }
@@ -139,7 +139,6 @@
 }
 @media(max-width:500px){
     .cartitems{
-        margin: 140px 50px;
         padding: 30px;
     }
     .cartitems-format-main{

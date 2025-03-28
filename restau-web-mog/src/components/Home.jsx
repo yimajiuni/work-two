@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import OrderButton from "../layouts/OrderButton";
-import { Link } from "react-scroll";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import img1 from "../assets/img/momo-mog.png";
 
 const Home = () => {
-  const [showContent, setShowContent] = useState(true);
+  const [, setShowContent] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,35 +20,21 @@ const Home = () => {
     };
   }, []);
 
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
-    <div className=" z-10 min-h-screen flex flex-row justify-between lg:px-32 px-5 bg-[url('./assets/img/hero1.jpg')] bg-cover bg-no-repeat">
-      <div className="w-full space-y-5 ">
-        {showContent && (
-          <div className="flex justify-center">
-            <div className="sm:pt-10 sx:bottom-20 sm:bottom-20 md:bottom-20 lg:bottom-40 fixed py-10 px-10 backdrop-blur-md shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] rounded-lg ">
-              {/*lg:h-1/3 md:h-1/2 sm:h-2/4 sx:h-6/7 */}
-              <h1 className="head-text text-backgroundColor font-semibold text-6xl sm:text-5xl">
-                <br />
-                Elevate Your Inner Foodie with Every Bite
-              </h1>
-              <p className="font-hedding py-4 text-backgroundColor text-2xl">
-                waking up at 7am with warm air unlocks 3hrs of delicious time in
-                the morning.
-              </p>
-              <div className="">
-                <Link
-                  to="menu"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  className=" hover:text-brightColor transition-all cursor-pointer"
-                >
-                  <OrderButton title="Order Now" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        )}
+    <div className="z-10 min-h-screen flex flex-col lg:flex-row justify-center text-center items-center">
+      <div data-aos="fade-left" className="pt-20">
+        <img src={img1} />
+      </div>
+      <div className="py-10">
+        <div data-aos="fade-up" className="">
+          <h3 className="py-10 zen-kurenaido-regular text-xl">
+            ようこそ。食べ歩きころMOGへ
+          </h3>
+        </div>
       </div>
     </div>
   );

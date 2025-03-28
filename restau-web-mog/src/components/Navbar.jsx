@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-scroll";
-import { BiChevronDown, BiRestaurant } from "react-icons/bi";
+import { BiChevronDown } from "react-icons/bi";
 import Button from "../layouts/Button";
 import { AiOutlineClose } from "react-icons/ai";
 import { CiMenuBurger } from "react-icons/ci";
+import img1 from "../assets/img/koromog-beads.png";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -20,10 +21,7 @@ const Navbar = () => {
       <div>
         <div className="flex flex-row justify-between p-5 lg:px-32 md:px-25 px-5 bg-white shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
           <div className=" py-5 flex flex-row items-center cursor-pointer">
-            <span>
-              <BiRestaurant size={32} />
-            </span>
-            <h1 className=" pr-10 text-3xl font-semibold">FoodieWeb</h1>
+            <img src={img1} className="w-33 h-14" />
           </div>
           <nav className=" hidden md:pr-1 md:flex flex-row items-center text-2xl font-medium gap-8">
             <Link

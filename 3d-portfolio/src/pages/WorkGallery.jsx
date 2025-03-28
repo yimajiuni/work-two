@@ -56,15 +56,15 @@ function WorkGallery() {
     const workData = workDatas.find((data) => data.id === work.id);
     const workId = workData ? workData.id : null;
     if (activeTab === 0) {
-      return workId >= 1 && workId <= 19;
+      return workId >= 1 && workId <= 20;
     } else if (activeTab === 1) {
-      return workId >= 1 && workId <= 4;
+      return workId >= 1 && workId <= 5;
     } else if (activeTab === 2) {
-      return workId >= 5 && workId <= 15;
+      return workId >= 6 && workId <= 16;
     } else if (activeTab === 3) {
-      return workId >= 16 && workId <= 18;
+      return workId >= 17 && workId <= 19;
     } else if (activeTab === 4) {
-      return workId >= 19;
+      return workId >= 20;
     }
     return false;
   });
@@ -113,13 +113,13 @@ function WorkGallery() {
                     to={
                       workId >= 1 && workId <= 4
                         ? `/details/${workId}`
-                        : workId >= 5 && workId <= 19
+                        : workId >= 6 && workId <= 20
                           ? work.link
                           : "#"
                     }
                     rel="noopener noreferrer"
                     className="block-container relative inline-block group font-semibold text-blue-600"
-                    target={workId >= 5 && workId <= 19 ? "_blank" : undefined}
+                    target={workId >= 5 && workId <= 20 ? "_blank" : undefined}
                   >
                     <img
                       src={work.preview}
@@ -130,20 +130,20 @@ function WorkGallery() {
                 </div>
               </div>
               <div className="mt-5 flex flex-col">
-                <h4 className="text-xl lg:w-60 font-poppins font-semibold break-words">
+                <h4 className="text-xl lg:w-60  font-semibold break-words">
                   {work.name}
                 </h4>
                 <Link
                   to={
                     workId >= 1 && workId <= 4
                       ? `/details/${workId}`
-                      : workId >= 5 && workId <= 19
+                      : workId >= 5 && workId <= 20
                         ? work.link
                         : "#"
                   }
                   rel="noopener noreferrer"
                   className="items-center inline-flex font-semibold text-blue-600"
-                  target={workId >= 5 && workId <= 19 ? "_blank" : undefined}
+                  target={workId >= 5 && workId <= 20 ? "_blank" : undefined}
                 >
                   <img
                     src={arrow}

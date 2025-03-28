@@ -2,15 +2,13 @@
     justify-content: center;
     align-items: center;
     display: flex;
-    width: 48vw;
     height: 580px;
     background: #fce3fe;
     border-radius: 25px;
-    margin: 95px 0 30px;
-    padding: 40px 50px 40px;
+    margin: 95px 0 80px;
 }
 .loginsignup-container{
-    width: 40vw;
+    width: 35vw;
     height:500px;
     background: white;
     margin: auto;
@@ -69,10 +67,11 @@
 }
 @media(max-width:1280px){
     .loginsignup{
-        height: 68vh;
+        width: 500px;
+        transform: translateX(70px);
     }
     .loginsignup-container{
-        height: 55vh;
+        width: 450px;
     }
     .loginsignup-container h1{
         margin: 10px 0px;
@@ -98,12 +97,11 @@
 }
 @media(max-width:1024px){
     .loginsignup{
-        height: 68vh;
-        width: 475px;
-        margin-left: 55px;
+        width: 500px;
+        transform: translateX(50px);
     }
     .loginsignup-container{
-        width: 380px;
+        width: 450px;
     }
     .loginsignup-container h1{
         font-size: 24px;
@@ -126,6 +124,7 @@
         width: 350px;
         height: 500px;
         margin-left: 30px;
+        transform: translateX(0px);
     }
     .loginsignup-container{
         width: 285px;
@@ -151,15 +150,16 @@
 }
 @media(max-width:512px){
     .loginsignup{
-        margin:85px 0 30px 0;
+        margin: 120px 0 30px 0;
         padding: 30px 30px ;
         width: 300px;
-        height: 85vh;
+        height: 65vh;
         margin-left: 30px;
+        transform: translateX(0px);
     }
     .loginsignup-container{
         width: 240px;
-        height: 75vh;
+        height: 55vh;
     }
     .loginsignup-container h1{
         font-size: 24px;
@@ -175,6 +175,10 @@
         height: 50px;
         font-size: 16px;
     }
+
+    .loginsignup-agree{
+        margin-bottom: 50px;
+    }
 }
 
 @media(max-width:375px){
@@ -184,6 +188,7 @@
         align-items: center;
         display: flex;
         width: 300px;
+        transform: translateX(0px);
     }
     .loginsignup-container{
         padding: 20px 30px;
@@ -202,5 +207,8 @@
     .loginsignup-container button{
         height: 50px;
         font-size: 16px;
+    }
+    .loginsignup-agree{
+        margin-bottom: 50px;
     }
 }
