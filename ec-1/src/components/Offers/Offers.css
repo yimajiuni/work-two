@@ -1,14 +1,13 @@
 .offers {
-    margin: auto;
-    width: 100%;
-    height: 67vh;
-    position:relative;
-    overflow: hidden;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    display: flex;
-    margin-top: 50px;
-    margin-bottom: 80px;
+    gap: 10px;
+    height: 70vh;
+    margin: 2rem 1.25rem;
+    position: relative;
+    height: auto;
+
 }
 
 .offers h1 {
@@ -16,166 +15,137 @@
     font-size: 50px;
     font-weight: 600;
 }
-.offers hr{
+
+.offers hr {
     width: 180px;
     height: 6px;
     border-radius: 10px;
-    margin: 20px 0 60px 0;
     background: #252525;
+    margin-bottom: 20px;
 }
-.offers .offers-banner-container{
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 95vw;
-    height: 48vh;
-    position:relative;
-    overflow: hidden;
-    border-radius:1rem;
-    box-shadow:2px 2px 8px  #7a7a7a;
-}
-.offers .offers-banner{
-    inset: 0 0 0 0;
-    position: absolute;
-    display: flex;
-}
-.offers .offers-banner img{
+
+.offers-banner {
+    position: relative;
+    max-width: 1080px;
     width: 100%;
+    overflow: hidden;
+}
+
+.offers-banner img {
+    width: 100%;
+    min-height: 200px;
     object-fit: cover;
+    display: block;
 }
-.offers .offers-banner .content{
+
+.offers-item {
     position: absolute;
-    top: 10%;
-    left: 30%;
-    padding: 1rem;
-    max-width: 80%;
-    transform: translateX(-50%);
+    top: 0;
+    left: 0;
+    padding: 0 40px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
     box-sizing: border-box;
-    float: left;
-
-}
-.offers .offers-banner .content h1{
-    font-size: 4rem;
-    color: #fff;
-    font-weight: bold;
-    text-shadow: 0 5px 3px #0004;
-}
-.offers .offers-banner .content p{
-    color:  #ff4141;
-    font-weight: bold;
-    margin-top: 7px;
-}
-.offers .offers-banner .content button{
-    width: 282px;
-    height: 70px;
-    border-radius: 35px;
-    background: #ff4141;
-    border: none;
     color: white;
-    font-size: 22px;
-    font-weight: 500;
-    margin-top: 10px;
+    font-weight: 700;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* Optional: Style the button */
+.offers-item button {
+    padding: 20px 10px;
+    max-width: 200px;
+    width: 100%;
+    background-color: #fd4229;
+    color: white;
+    border: none;
+    border-radius: 50px;
     cursor: pointer;
+    font-weight: bold;
 }
-.offers .content button:hover{
-    color: #ff4141;
-    background: white;
+
+.offers-item h1 {
+    color: #fd4229;
 }
 
 
-@media(max-width: 1280px){
-    .offers{
-        margin-bottom: 70px;
-        width: 100vw;
-        height: 45vh;
+
+@media (max-width: 1280px) {
+    .offers {
+        padding-left: 0px;
     }
+
     .offers h1 {
         font-size: 40px;
     }
-    .offers hr{
+
+    .offers hr {
         width: 180px;
+        height: 4px;
     }
-    .offers .offers-banner .content{
-        top: 0%;
-    
+
+    .offers-item {
+        gap: 20px;
+        margin-top: 30px;
     }
-    .offers .offers-banner .content h1{
-        font-size: 3.5rem;
-    }
-    .offers .offers-banner .content button{
-        width: 225px;
-        height: 50px;
-        border-radius: 30px;
-        font-size: 20px;
-    }
-   
 }
-@media(max-width: 1024px){
-    .offers{
-        height: 30vh;
-    }
+
+@media (max-width: 1024px) {
+
     .offers h1 {
         font-size: 30px;
     }
-    .offers hr{
+
+    .offers hr {
         width: 160px;
+        height: 4px;
     }
-    .offers .offers-banner img{
-        width: 130%;
-    }
-    
-    .offers .offers-banner .content{
-        padding: 10px;
-    }
-    .offers .content h1{
-        font-size: 3rem;
-    }
-    .offers .content button{
-        width: 200px;
-        height: 50px;
-        border-radius: 35px;
+
+    .offers-item {
+        gap: 15px;
+        /*add gap product page later as well*/
+        margin-top: 20px;
     }
 }
 
-@media(max-width: 800px){
-    .offers{
-        width: 93vw;
-    }
+@media (max-width: 800px) {
+
+
     .offers h1 {
         font-size: 20px;
     }
-    .offers hr{
+
+    .offers hr {
         width: 120px;
     }
-    .offers .content h1{
-        font-size: 2rem;
-    }
-    .offers .content button{
-        width: 150px;
-        height: 40px;
-       font-size: 18px;
+
+    .offers-item {
+        gap: 5px;
     }
 }
 
-@media(max-width: 500px){
-    .offers{
-        margin-bottom:80px ;
+@media (max-width: 500px) {
+    .offers {
+        /*
+        margin-top: 80px;
+        margin-bottom: 150px;*/
     }
-    .offers hr{
-        margin: 5px 0 20px 0;
+
+    .offers-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 0 10px;
+
+
     }
-    .offers .offers-banner .content{
-        margin: 5px;
-        padding: 20px;
-    }
-    .offers .offers-banner .content h1{
-        font-size: 1.8rem;
-    }
-    .offers .offers-banner .content button{
-        width: 185px;
-        height: 35px;
-        font-size: 16px;
-    }
-   
 }

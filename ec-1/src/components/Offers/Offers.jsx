@@ -10,10 +10,12 @@ const Offers = () => {
       <div className="offers-banner-container">
         <div className="offers-banner">
           <img src={exclusive_image} alt="" />
-          <div className="content">
-            <h1>Exclusive</h1>
-            <h1>Offers For You</h1>
-            <p>ONLY BEST SELLERS PRODUCTS</p>
+          <div className="offers-item">
+            <div className="text-content">
+              <h1>Exclusive</h1>
+              <h1>Offers For You</h1>
+              <p>ONLY BEST SELLERS PRODUCTS</p>
+            </div>
             <button>CHECK NOW</button>
           </div>
         </div>

@@ -87,7 +87,7 @@ const Slider = () => {
             <div className="content">
               <div className="author">UNDER THE SUN</div>
               <div className="title">MORE SHINE,</div>
-              <div className="topic">DEVINE</div>
+              <div className="topic">DIVINE</div>
               <div className="des">
                 Shimmer, shine, glow, glare, something provocating,
               </div>
