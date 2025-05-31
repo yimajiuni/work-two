@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./singlePage.module.css";
+import styles from './single-page.module.css';
 import Image from "next/image";
 import Comments from "@/components/comments/Comments";
 import Menu from "@/components/menu/Menu";
@@ -7,9 +7,9 @@ import Menu from "@/components/menu/Menu";
 const getData = async (slug) => {
   const res = await fetch(
     //DO MAKE SURE THE ENDPOINT IS CORRECT
-    `http://localhost:3000/api/posts/${slug}`,{
-      cache: "no-store",
-    }
+    `http://localhost:3000/api/posts/${slug}`, {
+    cache: "no-store",
+  }
   );
 
   if (!res.ok) {
@@ -38,12 +38,12 @@ const SinglePage = async ({ params }) => {
         </div>
         {data.img && (
           <div className={styles.imageContainer}>
-            <Image 
-              src={data.img} 
-              alt={data.title} 
-              fill 
+            <Image
+              src={data.img}
+              alt={data.title}
+              fill
               className={styles.image}
-              priority 
+              priority
             />
           </div>
         )}
@@ -53,7 +53,7 @@ const SinglePage = async ({ params }) => {
           <div className={styles.desc} dangerouslySetInnerHTML={{ __html: data?.desc || "" }} />
 
           <div className={styles.comment}>
-            <Comments postSlug={slug}/>
+            <Comments postSlug={slug} />
           </div>
         </div>
         <Menu />

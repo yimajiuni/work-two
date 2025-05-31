@@ -1,11 +1,12 @@
 'use client'
 
+import React from 'react'
 import Image from 'next/image'
-import styles from './writePage.module.css'
+import styles from './write-page.module.css'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useSession } from 'next-auth/react'
-import dynamic from 'next/dynamic' // Add this import
+import dynamic from 'next/dynamic'
 
 import {
   getStorage,
@@ -15,16 +16,10 @@ import {
 } from 'firebase/storage'
 import { app } from '@/utils/firebase'
 
-// Move the CSS import to the component level
-const ReactQuill = dynamic(() => import('react-quill').then((mod) => {
-  // Import Quill stylesheet when component is loaded
-  import('react-quill/dist/quill.bubble.css');
-  return mod;
-}), {
+const ReactQuill = dynamic(() => import('react-quill'), {
   ssr: false,
   loading: () => <p>Loading editor...</p>,
 });
-
 
 const WritePage = () => {
   const { status } = useSession()
@@ -60,7 +55,7 @@ const WritePage = () => {
               break
           }
         },
-        (error) => {},
+        (error) => { },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setMedia(downloadURL)
@@ -161,6 +156,7 @@ const WritePage = () => {
             value={value}
             onChange={setValue}
             placeholder='Tell your story...'
+            className={styles.quill}
           />
         </div>
       </div>

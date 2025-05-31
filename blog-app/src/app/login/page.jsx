@@ -1,7 +1,8 @@
 "use client";
+import React from 'react'
 import { useState } from "react";
 import { signIn, useSession } from "next-auth/react";
-import styles from "./loginPage.module.css";
+import styles from './login-page.module.css'
 
 const LoginPage = () => {
   const { status } = useSession();
@@ -15,7 +16,7 @@ const LoginPage = () => {
     setRedirecting(true);
     return <div className={styles.loading}>Redirecting...</div>;
   }
-  
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>

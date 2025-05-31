@@ -1,37 +1,37 @@
 import React from 'react'
-import styles from './categoryList.module.css'
+import styles from './category-list.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 
 /*fetch actual data*/
 const getData = async () => {
   try {
-  const res = await fetch('http://localhost:3000/api/categories', {
-    cache: 'no-store',
-  })
+    const res = await fetch('http://localhost:3000/api/categories', {
+      cache: 'no-store',
+    })
 
-  if (!res.ok) {
-    throw new Error(`Failed to fetch categories: ${res.status}`);
+    if (!res.ok) {
+      throw new Error(`Failed to fetch categories: ${res.status}`);
+    }
+
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching categories:", error);
+    return []; // Return empty array as fallback
   }
 
-  const data = await res.json();
-  return data;
-} catch (error) {
-  console.error("Error fetching categories:", error);
-  return []; // Return empty array as fallback
-}
- 
 }
 
 
 const CategoryList = async () => {
   const data = await getData()
-    
+
   // Add safety check
   if (!data || data.length === 0) {
     return <div>No categories found</div>
   }
-  
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Popular Categories</h1>
