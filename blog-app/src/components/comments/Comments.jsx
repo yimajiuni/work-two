@@ -1,5 +1,5 @@
 "use client";
-
+import React from "react";
 import Link from "next/link";
 import styles from "./comments.module.css";
 import Image from "next/image";
@@ -41,7 +41,7 @@ const Comments = ({ postSlug }) => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Comments</h1>
-      {status === "authenticated" ? (
+        {status === "authenticated" ? (
         <div className={styles.write}>
           <textarea
             placeholder="write a comment..."
@@ -58,8 +58,9 @@ const Comments = ({ postSlug }) => {
       <div className={styles.comments}>
         {isLoading
           ? "loading"
-          : data?.map((item) => (
-              <div className={styles.comment} key={item._id}>
+          : data?.map((item,comment) => (
+              <div className={styles.comment} 
+                   key={comment._id || comment.id}>
                 <div className={styles.user}>
                   {item?.user?.image && (
                     <Image

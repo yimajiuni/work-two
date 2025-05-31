@@ -11,39 +11,38 @@ export const GET = async (req) => {
 
   const query = {
     take: POST_PER_PAGE,
-    skip: POST_PER_PAGE * (page - 1),
+    skip: POST_PER_PAGE * (parseInt(page) - 1),
     where: {
       ...(cat && { catSlug:cat }),
     },
+    orderBy: {
+      createdAt: 'desc'
+    }
   };
 
-
-  
   try {
     const [posts, count] = await prisma.$transaction([
       prisma.post.findMany(query),
       prisma.post.count({ where: query.where }),
     ]);
-    return new NextResponse(JSON.stringify({ posts, count }, { status: 200 }));
+    return NextResponse.json({ posts, count });
   } catch (err) {
     console.log(err);
-    return new NextResponse(
-      JSON.stringify({ message: "Something went wrong!" }, { status: 500 })
+    return NextResponse.json(
+      { message: "Something went wrong!" }, 
+      { status: 500 }
     );
   }
 };
 
-
-
-
-
 // CREATE A POST
 export const POST = async (req) => {
-  const session = await getAuthSession();
+  const session = /** @type {import('@/types/auth').AuthSession} */ (await getAuthSession());
 
-  if (!session) {
-    return new NextResponse(
-      JSON.stringify({ message: "Not Authenticated!" }, { status: 401 })
+  if (!session?.user?.email) {
+    return NextResponse.json(
+      { message: "Not Authenticated!" }, 
+      { status: 401 }
     );
   }
 
@@ -53,11 +52,12 @@ export const POST = async (req) => {
       data: { ...body, userEmail: session.user.email },
     });
 
-    return new NextResponse(JSON.stringify(post, { status: 200 }));
+    return NextResponse.json(post);
   } catch (err) {
     console.log(err);
-    return new NextResponse(
-      JSON.stringify({ message: "Something went wrong!" }, { status: 500 })
+    return NextResponse.json(
+      { message: "Something went wrong!" }, 
+      { status: 500 }
     );
   }
 };

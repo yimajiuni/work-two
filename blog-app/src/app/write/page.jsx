@@ -3,9 +3,10 @@
 import Image from 'next/image'
 import styles from './writePage.module.css'
 import { useEffect, useState } from 'react'
-import 'react-quill/dist/quill.bubble.css'
 import { useRouter } from 'next/navigation'
 import { useSession } from 'next-auth/react'
+import dynamic from 'next/dynamic' // Add this import
+
 import {
   getStorage,
   ref,
@@ -13,7 +14,17 @@ import {
   getDownloadURL,
 } from 'firebase/storage'
 import { app } from '@/utils/firebase'
-import ReactQuill from 'react-quill'
+
+// Move the CSS import to the component level
+const ReactQuill = dynamic(() => import('react-quill').then((mod) => {
+  // Import Quill stylesheet when component is loaded
+  import('react-quill/dist/quill.bubble.css');
+  return mod;
+}), {
+  ssr: false,
+  loading: () => <p>Loading editor...</p>,
+});
+
 
 const WritePage = () => {
   const { status } = useSession()
@@ -144,13 +155,14 @@ const WritePage = () => {
             </button>
           </div>
         )}
-        <ReactQuill
-          className={styles.textArea}
-          theme='bubble'
-          value={value}
-          onChange={setValue}
-          placeholder='Tell your story...'
-        />
+        <div className={styles.textArea}>
+          <ReactQuill
+            theme='bubble'
+            value={value}
+            onChange={setValue}
+            placeholder='Tell your story...'
+          />
+        </div>
       </div>
       <button className={styles.publish} onClick={handleSubmit}>
         Publish
