@@ -1,16 +1,16 @@
 import React from 'react'
-import styles from './menuposts.module.css'
+import styles from './menu-posts.module.css'
 import Link from "next/link"
 import Image from "next/image"
 
 const menuPosts = (withImage) => {
   return (
     <div className={styles.items}>
-        <Link href="/" className={styles.item}>
-        {withImage&& (
-        <div className={styles.imageContainer}>
-          <Image src="/p1.jpeg" alt="" fill className={styles.image} />
-        </div>
+      <Link href="/" className={styles.item}>
+        {withImage && (
+          <div className={styles.imageContainer}>
+            <Image src="/p1.jpeg" alt="" fill className={styles.image} />
+          </div>
         )}
         <div className={styles.textContainer}>
           <span className={`${styles.category} ${styles.travel}`}>
@@ -22,12 +22,12 @@ const menuPosts = (withImage) => {
             <span className={styles.date}> - 02.02.2024</span>
           </div>
         </div>
-        </Link>
-        <Link href="/" className={styles.item}>
-        {withImage&& (
-        <div className={styles.imageContainer}>
-          <Image src="/p1.jpeg" alt="" fill className={styles.image} />
-        </div>
+      </Link>
+      <Link href="/" className={styles.item}>
+        {withImage && (
+          <div className={styles.imageContainer}>
+            <Image src="/p1.jpeg" alt="" fill className={styles.image} />
+          </div>
         )}
         <div className={styles.textContainer}>
           <span className={`${styles.category} ${styles.culture}`}>
@@ -39,12 +39,12 @@ const menuPosts = (withImage) => {
             <span className={styles.date}> - 02.02.2024</span>
           </div>
         </div>
-        </Link>
-        <Link href="/" className={styles.item}>
-        {withImage&& (
-        <div className={styles.imageContainer}>
-          <Image src="/p1.jpeg" alt="" fill className={styles.image} />
-        </div>
+      </Link>
+      <Link href="/" className={styles.item}>
+        {withImage && (
+          <div className={styles.imageContainer}>
+            <Image src="/p1.jpeg" alt="" fill className={styles.image} />
+          </div>
         )}
         <div className={styles.textContainer}>
           <span className={`${styles.category} ${styles.food}`}>
@@ -56,8 +56,8 @@ const menuPosts = (withImage) => {
             <span className={styles.date}> - 02.02.2024</span>
           </div>
         </div>
-        </Link>
-    </div> 
+      </Link>
+    </div>
   )
 }
 

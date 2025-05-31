@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./cardList.module.css";
+import styles from './card-list.module.css'
 import Pagination from "../pagenation/Pagenation";
 import Card from "../card/Card";
 

@@ -6,7 +6,7 @@ import Link from 'next/link'
 // Modify getData to accept category parameter
 const getData = async (category) => {
   // If we're on the home page (no category), fetch latest post overall
-  const url = category 
+  const url = category
     ? `http://localhost:3000/api/posts?page=1&limit=1&cat=${category}`
     : `http://localhost:3000/api/posts?page=1&limit=1&sort=desc`;
 
@@ -21,7 +21,7 @@ const getData = async (category) => {
   return res.json();
 };
 
-const Featured = async ({ category }) => {
+const Featured = async ({ category = undefined }) => {
   const { posts } = await getData(category); // Destructure to get posts array
   const featuredPost = posts?.[0]; // Get the first post as featured
 
@@ -29,7 +29,7 @@ const Featured = async ({ category }) => {
     <div className={styles.container}>
       <h1 className={styles.title}>
         <b className={styles.bold}>
-          {category 
+          {category
             ? `Latest in ${category.charAt(0).toUpperCase() + category.slice(1)}`
             : "Discover my stories, creative ideas!"}
         </b>
@@ -40,15 +40,15 @@ const Featured = async ({ category }) => {
       {featuredPost ? (
         <div className={styles.post}>
           <div className={styles.imgContainer}>
-            <Image 
-              src={featuredPost.img || '/p1.jpeg'} 
-              alt={featuredPost.title} 
-              fill 
-              className={styles.image} 
+            <Image
+              src={featuredPost.img || '/p1.jpeg'}
+              alt={featuredPost.title}
+              fill
+              className={styles.image}
             />
           </div>
           <div className={styles.textContainer}>
-           <div className={styles.postInfo}>
+            <div className={styles.postInfo}>
               <span className={styles.category}>{featuredPost.catSlug}</span>
               <span className={styles.date}>
                 {new Date(featuredPost.createdAt).toLocaleDateString()}
@@ -57,7 +57,7 @@ const Featured = async ({ category }) => {
             <h1 className={styles.postTitle}>{featuredPost.title}</h1>
             <p className={styles.postDesc}>
               {featuredPost.desc && (
-                <div dangerouslySetInnerHTML={{ 
+                <div dangerouslySetInnerHTML={{
                   __html: featuredPost.desc.substring(0, 300) + "..."
                 }} />
               )}

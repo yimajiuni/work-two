@@ -1,4 +1,5 @@
-import styles from "../app/homepage.module.css";
+import React from 'react'
+import styles from './home-page.module.css';
 import Featured from "../components/featured/Featured";
 import CategoryList from "../components/categorylist/CategoryList";
 import CardList from "../components/cardlist/CardList";
@@ -12,7 +13,7 @@ export default function Home({ searchParams }) {
       <Featured />
       <CategoryList />
       <div className={styles.content}>
-        <CardList page={page}/>
+        <CardList page={page} cat="" />
         <Menu />
       </div>
     </div>
