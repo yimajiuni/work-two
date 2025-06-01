@@ -7,8 +7,8 @@ import Link from 'next/link'
 const getData = async (category) => {
   // If we're on the home page (no category), fetch latest post overall
   const url = category
-    ? `http://localhost:3000/api/posts?page=1&limit=1&cat=${category}`
-    : `http://localhost:3000/api/posts?page=1&limit=1&sort=desc`;
+    ? `${process.env.NEXT_PUBLIC_API_URL}/api/posts?page=1&limit=1&cat=${category}`
+    : `${process.env.NEXT_PUBLIC_API_URL}/api/posts?page=1&limit=1&sort=desc`;
 
   const res = await fetch(url, {
     cache: "no-store",

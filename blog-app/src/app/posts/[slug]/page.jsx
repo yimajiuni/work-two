@@ -6,8 +6,7 @@ import Menu from "@/components/menu/Menu";
 
 const getData = async (slug) => {
   const res = await fetch(
-    //DO MAKE SURE THE ENDPOINT IS CORRECT
-    `http://localhost:3000/api/posts/${slug}`, {
+    `${process.env.NEXT_PUBLIC_API_URL}/api/posts/${slug}`, {
     cache: "no-store",
   }
   );
