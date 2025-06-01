@@ -2,12 +2,13 @@ import React from "react";
 import styles from './card-list.module.css'
 import Pagination from "../pagenation/Pagenation";
 import Card from "../card/Card";
-
+import { getBaseUrl } from "@/utils/getBaseUrl";
 
 /*fetch actual data*/
 const getData = async (page, cat) => {
+  const baseUrl = getBaseUrl();
   const res = await fetch(
-    `/api/posts?page=${page}&cat=${cat || ""}`,
+    `${baseUrl}/api/posts?page=${page}&cat=${cat || ""}`,
     {
       cache: "no-store",
     }

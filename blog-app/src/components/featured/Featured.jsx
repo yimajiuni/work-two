@@ -2,13 +2,15 @@ import React from 'react'
 import styles from './featured.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
+import { getBaseUrl } from "@/utils/getBaseUrl";
 
 // Modify getData to accept category parameter
 const getData = async (category) => {
+  const baseUrl = getBaseUrl();
   // If we're on the home page (no category), fetch latest post overall
   const url = category
-    ? `${process.env.NEXT_PUBLIC_API_URL}/api/posts?page=1&limit=1&cat=${category}`
-    : `${process.env.NEXT_PUBLIC_API_URL}/api/posts?page=1&limit=1&sort=desc`;
+    ? `${baseUrl}/api/posts?page=1&limit=1&cat=${category}`
+    : `${baseUrl}/api/posts?page=1&limit=1&sort=desc`;
 
   const res = await fetch(url, {
     cache: "no-store",
