@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const getData = async (index) => {
   const res = await fetch(
-    `http://localhost:3000/api/posts?page=${index}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/api/posts?page=${index}`,
     {
       cache: "no-store",
     }
@@ -25,7 +25,7 @@ const Deletion = ({ index }) => {
     try {
       const posts = await getData(index);
       const postIdToDelete = posts[index]?.id; // Assuming each post has an 'id' field
-      const deleteUrl = `http://localhost:3000/posts/${postIdToDelete}`;
+      const deleteUrl = `${process.env.NEXT_PUBLIC_API_URL}/posts/${postIdToDelete}`;
 
       const response = await fetch(deleteUrl, {
         method: 'DELETE',
@@ -46,7 +46,7 @@ const Deletion = ({ index }) => {
     <div className={styles.container}>
       <button className={styles.delButton} onClick={handleDelete}>
         <Image src="/minus.png" alt="" width={16} height={16} />
-        </button>
+      </button>
     </div>
   );
 };
