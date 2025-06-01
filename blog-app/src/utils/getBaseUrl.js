@@ -1,18 +1,19 @@
 export function getBaseUrl() {
-    if (typeof window !== 'undefined') {
-        // Browser should use relative path
-        return '';
+    // For custom domain (highest priority)
+    if (process.env.NEXT_PUBLIC_API_URL) {
+        const url = `https://${process.env.NEXT_PUBLIC_API_URL}`;
+        console.log('Using custom domain:', url);
+        return url;
     }
 
+    // In production, use the Vercel URL (automatically set by Vercel)
     if (process.env.VERCEL_URL) {
-        // Reference: https://vercel.com/docs/concepts/projects/environment-variables
-        return `https://${process.env.VERCEL_URL}`;
+        const url = `https://${process.env.VERCEL_URL}`;
+        console.log('Using Vercel URL:', url);
+        return url;
     }
 
-    if (process.env.NEXT_PUBLIC_VERCEL_URL) {
-        return `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
-    }
-
-    // Assume localhost
-    return `http://localhost:${process.env.PORT ?? 3000}`;
+    // For localhost
+    console.log('Using localhost URL');
+    return 'http://localhost:3000';
 } 
