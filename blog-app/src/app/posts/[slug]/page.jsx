@@ -3,10 +3,12 @@ import styles from './single-page.module.css';
 import Image from "next/image";
 import Comments from "@/components/comments/Comments";
 import Menu from "@/components/menu/Menu";
+import { getBaseUrl } from "@/utils/getBaseUrl";
 
 const getData = async (slug) => {
+  const baseUrl = getBaseUrl();
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/posts/${slug}`, {
+    `${baseUrl}/api/posts/${slug}`, {
     cache: "no-store",
   }
   );
