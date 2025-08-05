@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useShopifyAuth } from '@/context/shopifyAuthContext';
 
@@ -146,4 +146,12 @@ const VerifyEmailPage = () => {
     );
 };
 
-export default VerifyEmailPage; 
+const VerifyEmailPageWrapper = () => {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <VerifyEmailPage />
+        </Suspense>
+    );
+};
+
+export default VerifyEmailPageWrapper; 

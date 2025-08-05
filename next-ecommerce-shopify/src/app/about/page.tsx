@@ -7,20 +7,20 @@ const AboutPage = () => {
     return (
         <div className="min-h-screen px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
             {/* TITLE */}
-            <div className="flex items-center justify-center pt-12 pb-2 text-center z-20">
-                <div className="w-2/3">
+            <div className="flex items-center justify-center pt-12 pb-5 text-center z-20">
+                <div className="w-2/3 z-20">
                     <h1 className="text-2xl font-bodoni">
                         About the Brand
                     </h1>
                     <p className="mt-2 text-xs font-inter text-thin leading-6">
-                        Get in touch with our support team.
+                        Introducing the brand slogan.
                     </p>
                 </div>
 
             </div>
             <div className="max-w-5xl mx-auto">
                 {/* Top Row */}
-                <div className="grid grid-cols-5 -mt-20 md:mt-0">
+                <div className="grid grid-cols-5 -mt-20 sm:mt-0">
                     {/* Animated white square that bounces around */}
                     <div className="absolute inset-0 overflow-hidden z-10">
                         <div className="absolute w-48 h-64 bg-white animate-bounce-corners"></div>
@@ -116,21 +116,39 @@ const AboutPage = () => {
                             </div>
 
                             {/* Bottom Row - Text with border and scroll */}
-                            <div className="border border-black rounded-lg overflow-x-auto about-scrollbar max-h-[210px] z-20">
-                                <div className="w-[500px]">
-                                    <p className="text-sm font-bold mb-4 uppercase ">
-                                        Return to nature now. With trust and manifesto.
-                                    </p>
-                                    <p className="text-sm font-thin leading-relaxed">
-                                        We aim our product to achieve the concept.
-                                        Yima is more than an apparel brand — it's a call to reconnect.
-                                        Born from the belief that nature is not something we visit,
-                                        but something we are, Yima weaves this philosophy into every thread.
-                                        We create clothing that honors simplicity, earth-conscious
-                                        design into infinite avant-garde that cultivated
-                                        and inspired by our day to day, quiet strength of intentional living.
-                                        Every piece reflects our manifesto; To walk gently and to choose consciously.
-                                    </p>
+                            <div className="border border-black rounded-lg overflow-hidden about-scrollbar max-h-[210px] z-20 group">
+                                <div className="flex animate-scroll group-hover:pause">
+                                    <div className="w-[500px] z-20 flex-shrink-0">
+                                        <p className="text-sm font-bold mb-4 uppercase ">
+                                            Return to nature now. With trust and manifesto.
+                                        </p>
+                                        <p className="text-sm font-thin leading-relaxed">
+                                            We aim our product to achieve the concept.
+                                            Yima is more than an apparel brand — it&apos;s a call to reconnect.
+                                            Born from the belief that nature is not something we visit,
+                                            but something we are, Yima weaves this philosophy into every thread.
+                                            We create clothing that honors simplicity, earth-conscious
+                                            design into infinite avant-garde that cultivated
+                                            and inspired by our day to day, quiet strength of intentional living.
+                                            Every piece reflects our manifesto; To walk gently and to choose consciously.
+                                        </p>
+                                    </div>
+                                    {/* Duplicate content for seamless loop */}
+                                    <div className="w-[500px] z-20 flex-shrink-0">
+                                        <p className="text-sm font-bold mb-4 uppercase ">
+                                            Return to nature now. With trust and manifesto.
+                                        </p>
+                                        <p className="text-sm font-thin leading-relaxed">
+                                            We aim our product to achieve the concept.
+                                            Yima is more than an apparel brand — it&apos;s a call to reconnect.
+                                            Born from the belief that nature is not something we visit,
+                                            but something we are, Yima weaves this philosophy into every thread.
+                                            We create clothing that honors simplicity, earth-conscious
+                                            design into infinite avant-garde that cultivated
+                                            and inspired by our day to day, quiet strength of intentional living.
+                                            Every piece reflects our manifesto; To walk gently and to choose consciously.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -140,9 +158,23 @@ const AboutPage = () => {
                 {/* Bottom Row */}
                 <div className="grid grid-cols-5 gap-1">
                     {/* Left Column - History Text */}
-                    <div className="col-span-3 border border-black rounded-md overflow-x-auto about-scrollbar h-[350px] md:h-[380px]">
-                        <div className="w-[800px]">
-                            <div>
+                    <div className="col-span-3 border border-black rounded-md overflow-hidden about-scrollbar h-[350px] md:h-[380px] z-20 group">
+                        <div className="flex animate-scroll group-hover:pause">
+                            <div className="w-[800px] flex-shrink-0">
+                                <h2 className="text-sm font-bold mb-4 uppercase">Our History</h2>
+                                <p className="text-sm font-thin leading-relaxed mb-4">
+                                    Yima was born in the early days of quiet reflection.
+                                    In 2020, amidst a world caught in noise and speed, a small circle of artists, designers, and thinkers stepped away. They left the cities behind — not to escape, but to listen. In the rhythm of the wild, the silence of mountains, and the warmth of hand-woven fabrics, they rediscovered something essential: the beauty of living simply, slowly, and truthfully.
+                                </p>
+                                <h2 className="text-sm font-bold mb-4 uppercase">
+                                    Universality and its endless revolve</h2>
+                                <p className="text-sm font-thin leading-relaxed mb-4">
+                                    What started as a personal manifesto turned into wearable philosophy. Yima began with just a few pieces: hand-dyed garments made from natural fibers, shaped by minimal design and maximum intention. Each item was an act of respect — for the earth, for the maker, and for the wearer. Over time, YIMA grew into a quiet movement. Not fast fashion, but found fashion — designed to last, to soften with time, and to tell your story.<br />
+                                    Today, Yima stands as a reminder: We are not separate from nature. We are part of it. And every return is a beginning.
+                                </p>
+                            </div>
+                            {/* Duplicate content for seamless loop */}
+                            <div className="w-[800px] flex-shrink-0">
                                 <h2 className="text-sm font-bold mb-4 uppercase">Our History</h2>
                                 <p className="text-sm font-thin leading-relaxed mb-4">
                                     Yima was born in the early days of quiet reflection.

@@ -34,7 +34,7 @@ const Footer = () => {
             <Newsletter />
 
             {/* TOP */}
-            <div className="font-inter text-thin text-xs mx-auto max-w-4xl w-full flex flex-col gap-4">
+            <div className="font-inter text-thin text-xs mx-auto max-w-4xl w-full flex flex-col gap-4 mb-10 sm:mb-0">
 
                 {/* Top row with menus and region */}
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">

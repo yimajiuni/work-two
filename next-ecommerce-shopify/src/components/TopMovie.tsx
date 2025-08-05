@@ -1,9 +1,10 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 
 const TopMovie = () => {
     const [isHovered, setIsHovered] = useState(false);
+    const [videoLoaded, setVideoLoaded] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
 
     const handleMouseEnter = () => {
@@ -20,6 +21,23 @@ const TopMovie = () => {
         }
     };
 
+    const handleVideoLoad = () => {
+        setVideoLoaded(true);
+    };
+
+
+
+    // Auto-play video on mobile when it&apos;s loaded (if possible)
+    useEffect(() => {
+        if (videoRef.current && videoLoaded) {
+            // Try to play the video (will be muted due to browser restrictions)
+            videoRef.current.play().catch(() => {
+                // If autoplay fails, that's okay - poster image will show
+                console.log('Video autoplay not supported');
+            });
+        }
+    }, [videoLoaded]);
+
     return (
         <Link href="/collections/swimsuits" className="block">
             <div
@@ -35,9 +53,9 @@ const TopMovie = () => {
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover"
                     style={{ objectPosition: 'center 40%' }}
+                    onLoadedData={handleVideoLoad}
                 >
                     <source src="/movie.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
                 </video>
 
                 {/* Overlay for better text readability */}

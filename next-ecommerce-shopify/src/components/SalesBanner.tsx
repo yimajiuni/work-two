@@ -38,7 +38,7 @@ const SalesBanner = () => {
     if (isClosed) return null;
 
     return (
-        <div className={`fixed bottom-10 left-2 md:bottom-6 md:left-6 z-50 transition-all duration-500 ease-in-out ${isVisible
+        <div className={`fixed bottom-10 left-2 md:bottom-6 md:left-6 z-20 transition-all duration-500 ease-in-out ${isVisible
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 translate-y-4 pointer-events-none'
             }`}>

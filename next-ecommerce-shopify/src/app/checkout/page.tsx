@@ -18,6 +18,7 @@ const CheckoutPage = () => {
     } = useShopifyCart();
 
     const [isRedirecting, setIsRedirecting] = useState(false);
+    const checkoutText = 'Proceed to Checkout';
 
     useEffect(() => {
         loadCart();
@@ -198,12 +199,12 @@ const CheckoutPage = () => {
                                         Redirecting...
                                     </div>
                                 ) : (
-                                    'Proceed to Checkout'
+                                    checkoutText
                                 )}
                             </button>
 
                             <p className="text-xs text-gray-500 mt-3 text-center">
-                                You will be redirected to Shopify's secure checkout
+                                You will be redirected to Shopify&apos;s secure checkout
                             </p>
                         </div>
                     </div>

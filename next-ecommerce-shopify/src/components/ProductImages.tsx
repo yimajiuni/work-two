@@ -85,6 +85,8 @@ const ProductImages = forwardRef<ProductImagesRef, ProductImagesProps>(({ items 
             */}
         </div>
     )
-})
+});
+
+ProductImages.displayName = 'ProductImages';
 
 export default ProductImages;

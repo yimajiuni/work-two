@@ -54,7 +54,7 @@ const Newsletter = () => {
     };
 
     return (
-        <div className="py-16 px-4">
+        <div className="py-10 sm:py-16 px-4">
             <div className="max-w-lg mx-auto">
                 {/* Logo */}
                 <div className="flex justify-center mb-4">

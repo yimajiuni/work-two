@@ -65,7 +65,7 @@ const CollectionContent = ({ collectionHandle, searchParams, limit }: Collection
         if (contentHeight < 70) {
             baseSpacer = 'mb-[20px] sm:mb-8'; // Small content = less spacing needed
         } else if (contentHeight > 100) {
-            baseSpacer = 'mb-[100px] sm:mb-10'; // Large content = more spacing needed
+            baseSpacer = 'mb-[100px] sm:mb-14'; // Large content = more spacing needed
         }
 
         // STEP 2: Adjust based on filter height

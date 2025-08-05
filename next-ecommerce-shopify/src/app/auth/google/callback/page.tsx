@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { handleGoogleAuthCallback } from '@/lib/shopifyAuth';
 
@@ -84,4 +84,12 @@ const GoogleCallbackPage = () => {
     return null;
 };
 
-export default GoogleCallbackPage; 
+const GoogleCallbackPageWrapper = () => {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <GoogleCallbackPage />
+        </Suspense>
+    );
+};
+
+export default GoogleCallbackPageWrapper; 

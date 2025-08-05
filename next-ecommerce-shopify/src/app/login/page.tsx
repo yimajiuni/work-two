@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import {
     registerCustomer,
     loginCustomer,
@@ -149,7 +149,8 @@ const LoginPage = () => {
     };
 
     return (
-        <div className="font-inter text-thin h-[calc(100vh)] px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 flex items-center justify-center">
+        <div className={`font-inter text-thin px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 flex items-center justify-center ${mode === MODE.LOGIN ? 'h-[calc(100vh-120px)]' : 'h-[calc(100vh)]'
+            }`}>
             <div className="w-full max-w-sm">
                 <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
                     <h1 className="text-2xl font-times-new-roman-italic text-center">{formTitle}</h1>
@@ -256,7 +257,7 @@ const LoginPage = () => {
                             className="text-xs underline cursor-pointer w-fit"
                             onClick={() => setMode(MODE.REGISTER)}
                         >
-                            Don't have an account?
+                            Don&apos;t have an account?
                         </div>
                     )}
                     {mode === MODE.REGISTER && (
@@ -281,4 +282,12 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+const LoginPageWrapper = () => {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <LoginPage />
+        </Suspense>
+    );
+};
+
+export default LoginPageWrapper;

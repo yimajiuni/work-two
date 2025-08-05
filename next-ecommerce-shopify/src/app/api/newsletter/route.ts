@@ -38,7 +38,9 @@ export async function POST(request: NextRequest) {
             serviceId,
             templateId,
             templateParams,
-            publicKey
+            {
+                publicKey: publicKey
+            }
         );
 
         // Store subscriber in database (optional)

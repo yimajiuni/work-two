@@ -112,12 +112,14 @@ const CartPage = () => {
                             <p className="font-times-new-roman-italic text-gray-900 mb-6">Pleasure to be your first purchase</p>
                             <button
                                 onClick={handleContinueShopping}
-                                className="font-inter text-thin text-sm min-w-[250px] bg-black text-white px-6 py-3 hover:bg-gray-800 transition-colors"
+                                className="bg-black min-w-[250px] md:w-1/3 mx-auto text-white font-inter text-thin text-xs uppercase px-6 py-3 transition-colors border border-black hover:border hover:border-black hover:text-black overflow-hidden group relative"
                             >
-                                Start Shopping
+                                <div className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white hover:bg-white hover:text-black" style={{ backgroundImage: 'url(/wa-ptn-ec.svg)' }}></div>
+                                <div className="relative z-10 uppercase group-hover:text-shadow-white-opaque">
+                                    Continue Shopping
+                                </div>
                             </button>
                         </div>
-
                         {/* Recently Checked Products and Category List */}
                         <div className="relative mx-4">
                             <RecentlyChecked limit={4} />
@@ -155,11 +157,11 @@ const CartPage = () => {
                                                             <div className="flex-1 min-w-0">
                                                                 <Link
                                                                     href={`/products/${item.productHandle}`}
-                                                                    className="uppercase text-m truncate hover:text-gray-600 transition-colors cursor-pointer"
+                                                                    className="uppercase text-sm break-words hover:text-gray-600 transition-colors cursor-pointer line-clamp-2"
                                                                 >
                                                                     {item.title}
                                                                 </Link>
-                                                                <p className="text-sm text-gray-600 mt-1">
+                                                                <p className="text-sm mt-1">
                                                                     {formatYen(item.price)}
                                                                 </p>
                                                             </div>
@@ -219,11 +221,11 @@ const CartPage = () => {
                                                                 </button>
                                                             </div>
 
-                                                            <div className="text-right">
+                                                            {/* <div className="text-right">
                                                                 <p className="text-lg font-semibold text-gray-900">
                                                                     {formatYen(parseFloat(item.price) * item.quantity)}
                                                                 </p>
-                                                            </div>
+                                                            </div>*/}
                                                         </div>
                                                     </div>
                                                 </div>

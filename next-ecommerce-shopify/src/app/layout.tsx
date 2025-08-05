@@ -11,6 +11,7 @@ import { CartProvider } from "@/context/cartContext";
 import { LoginProvider } from "@/context/loginContext";
 import { ShopifyAuthProvider } from "@/context/shopifyAuthContext";
 import { WishlistProvider } from "@/context/wishlistContext";
+import { HamburgerProvider } from "@/context/hamburgerContext";
 import CartModal from "@/components/CartModal";
 import LoginModal from "@/components/LoginModal";
 
@@ -47,12 +48,14 @@ export default function RootLayout({
             <WishlistProvider>
               <CartProvider>
                 <LoginProvider>
-                  <Navbar />
-                  {children}
-                  <Footer />
-                  <AIChatAssistant />
-                  <CartModal />
-                  <LoginModal />
+                  <HamburgerProvider>
+                    <Navbar />
+                    {children}
+                    <Footer />
+                    <AIChatAssistant />
+                    <CartModal />
+                    <LoginModal />
+                  </HamburgerProvider>
                 </LoginProvider>
               </CartProvider>
             </WishlistProvider>

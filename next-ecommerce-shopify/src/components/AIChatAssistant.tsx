@@ -130,7 +130,7 @@ const AIChatAssistant = () => {
     return (
         <>
             {/* Chat Toggle Button */}
-            <div className={`fixed bottom-14 right-2 md:bottom-12 z-50 transition-all duration-500 ease-in-out ${isVisible
+            <div className={`fixed bottom-14 right-2 md:bottom-12 z-20 transition-all duration-500 ease-in-out ${isVisible
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-4 pointer-events-none'
                 }`}>
@@ -179,7 +179,7 @@ const AIChatAssistant = () => {
             </div>
 
             {/* Chat Window */}
-            <div className={`fixed bottom-6 right-6 w-96 h-96 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl border border-gray-200 flex flex-col z-50 transition-all duration-500 ease-in-out transform ${isOpen
+            <div className={`fixed bottom-0 sm:bottom-6 right-0 sm:right-6 w-96 h-96 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl border border-gray-200 flex flex-col z-40 transition-all duration-500 ease-in-out transform ${isOpen
                 ? 'opacity-100 translate-y-0 scale-100'
                 : 'opacity-0 translate-y-4 scale-95 pointer-events-none'
                 }`}>

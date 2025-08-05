@@ -11,7 +11,7 @@ const SeasonalSection = () => {
                 <div className="space-y-6 mx-16 sm:mx-16 lg:mx-32">
 
                     <h2 className="lg:mt-0 mt-24 font-finches text-4xl md:text-5xl lg:text-4xl leading-tight text-black group-hover:text-gray-700 transition-colors duration-300">
-                        Yima's Summer Maneuver
+                        Yima&apos;s Summer Maneuver
                     </h2>
 
                     <div className="mt-6 font-inter text-thin font-thin text-base md:text-md leading-relaxed text-black space-y-4">

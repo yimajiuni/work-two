@@ -8,7 +8,11 @@ import { useShopifyCart } from "@/hooks/useShopifyCart";
 import { useCart } from "@/context/cartContext";
 import { useLoginModal } from "@/context/loginContext";
 
-const NavIcons = () => {
+interface NavIconsProps {
+    onNavigate?: () => void;
+}
+
+const NavIcons = ({ onNavigate }: NavIconsProps) => {
     const [isLoading, setIsLoading] = useState(false);
 
     const router = useRouter();
@@ -27,6 +31,7 @@ const NavIcons = () => {
             openLoginModal();
         } else {
             router.push('/profile');
+            onNavigate?.();
         }
     };
 
@@ -35,6 +40,7 @@ const NavIcons = () => {
         logout();
         setIsLoading(false);
         router.push('/');
+        onNavigate?.();
     };
 
     const { getCartCount, loadCart } = useShopifyCart();
@@ -64,6 +70,7 @@ const NavIcons = () => {
                         openLoginModal();
                     } else {
                         router.push('/wishlist');
+                        onNavigate?.();
                     }
                 }}
             >

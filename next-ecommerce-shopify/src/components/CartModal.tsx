@@ -4,10 +4,12 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useShopifyCart } from "@/hooks/useShopifyCart";
 import { useCart } from "@/context/cartContext";
+import { useHamburger } from "@/context/hamburgerContext";
 import { formatYen, extractColorFromVariant, extractSizeFromVariant, getColorCode } from '@/lib/Utils';
 
 const CartModal = () => {
     const { isCartOpen, closeCart } = useCart();
+    const { closeHamburger } = useHamburger();
     const {
         items,
         isLoading,
@@ -96,7 +98,7 @@ const CartModal = () => {
 
                 {/* Content */}
                 <div className="flex flex-col p-6">
-                    <div className="flex-1 overflow-y-auto p-6 min-h-[calc(100vh-320px)] max-h-[calc(100vh-320px)]">
+                    <div className="flex-1 overflow-y-auto p-6 max-h-[calc(100vh-320px)] min-h-[calc(100vh-320px)] ">
                         {!items.length ? (
                             <div className="text-center py-12 text-gray-900 font-times-new-roman-italic">
                                 <div className="w-6 h-6 mx-auto mb-4 flex items-center justify-center group cursor-pointer" onClick={() => { closeCart(); window.location.href = '/collections/all'; }}>
@@ -244,11 +246,16 @@ const CartModal = () => {
                         <div className="border-t border-gray-200 p-6">
                             <Link href="/collections/all">
                                 <button
-                                    className="w-full bg-black text-white py-3 px-4 hover:bg-white hover:text-black hover:border-black hover:border text-xs relative overflow-hidden group"
-                                    onClick={closeCart}
+                                    className="uppercase border border-black w-full bg-black text-white py-3 px-4 hover:bg-black hover:text-black hover:border-black hover:border text-xs relative overflow-hidden group"
+                                    onClick={() => {
+                                        closeCart();
+                                        closeHamburger();
+                                    }}
                                 >
-                                    <div className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundImage: 'url(/wa-ptn-ec.png)' }}></div>
-                                    <div className="relative z-10">Start Shopping</div>
+                                    {/* SVG Background Layer with Blend Effect */}
+                                    <div className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white hover:bg-white hover:text-black" style={{ backgroundImage: 'url(/wa-ptn-ec.svg)' }}></div>
+                                    {/* Button Text Layer */}
+                                    <div className="relative z-10 group-hover:text-shadow-white-opaque">Start Shopping</div>
                                 </button>
                             </Link>
                         </div>

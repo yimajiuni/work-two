@@ -56,7 +56,7 @@ const DebugCollectionsPage = async () => {
                 <div className="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
                     <h3 className="font-semibold mb-2 text-yellow-800">Troubleshooting:</h3>
                     <ul className="text-sm text-yellow-700 space-y-1">
-                        <li>• If you don't see your updated collection, wait 30 seconds and refresh this page</li>
+                        <li>• If you don&apos;t see your updated collection, wait 30 seconds and refresh this page</li>
                         <li>• Check that the collection is published in your Shopify admin</li>
                         <li>• Verify the collection handle in Shopify matches what you expect</li>
                         <li>• Clear your browser cache if needed</li>

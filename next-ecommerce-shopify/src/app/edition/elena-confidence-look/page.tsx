@@ -62,7 +62,7 @@ const ElenaConfidenceLookPage = () => {
                         {/* Right Column - Example Sentence */}
                         <div className="flex items-center justify-center text-center md:text-left">
                             <p className="font-thin w-2/3 md:w-full text-sm line-clamp-4 md:line-clamp-none md:text-base text-white leading-relaxed max-w-sm">
-                                The interwinded resilience and transience is reflected in Yima's SS 2025 collection, which combines durable fabrics that are recycled with our dedicated production process with elements of lightness and flexibility, resulting in maneuverous experiment that highlights the connections between form and function, past and present, the natural environment and the human heart.
+                                The interwinded resilience and transience is reflected in Yima&apos;s SS 2025 collection, which combines durable fabrics that are recycled with our dedicated production process with elements of lightness and flexibility, resulting in maneuverous experiment that highlights the connections between form and function, past and present, the natural environment and the human heart.
                                 This edition exibits how it is worn by our muse philanthropist Elena confidently in her busy life.                            </p>
                         </div>
                     </div>

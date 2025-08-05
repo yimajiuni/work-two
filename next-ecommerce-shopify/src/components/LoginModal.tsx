@@ -2,9 +2,11 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useLoginModal } from "@/context/loginContext";
+import { useHamburger } from "@/context/hamburgerContext";
 
 const LoginModal = () => {
     const { isLoginModalOpen, closeLoginModal } = useLoginModal();
+    const { closeHamburger } = useHamburger();
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
 
@@ -26,6 +28,7 @@ const LoginModal = () => {
     const handleLogin = () => {
         setIsLoading(true);
         closeLoginModal();
+        closeHamburger();
         router.push('/login');
         // Reset loading state after navigation
         setTimeout(() => setIsLoading(false), 100);
@@ -34,6 +37,7 @@ const LoginModal = () => {
     const handleSignup = () => {
         setIsLoading(true);
         closeLoginModal();
+        closeHamburger();
         router.push('/login?mode=signup');
         // Reset loading state after navigation
         setTimeout(() => setIsLoading(false), 100);
@@ -66,7 +70,7 @@ const LoginModal = () => {
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col p-6 max-h-[calc(100vh-300px)]">
+                <div className="flex flex-col p-6 min-h-[calc(100vh-320px)] max-h-[calc(100vh-300px)]">
                     <div className="flex-1 py-12">
                         <div className="p-6 text-gray-900 text-m font-times-new-roman-italic text-center">
                             <div className="w-6 h-6 mx-auto mb-4 flex items-center justify-center group cursor-pointer" onClick={handleLogin}>

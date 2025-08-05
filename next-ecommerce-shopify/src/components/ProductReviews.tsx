@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { useShopifyCart } from "@/hooks/useShopifyCart";
+import { useShopifyAuth } from "@/context/shopifyAuthContext";
+import { useLoginModal } from "@/context/loginContext";
 
 interface Review {
     id: string;
@@ -42,9 +44,11 @@ const ReviewTabs = ({ productId, productTitle }: ReviewTabsProps) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [formError, setFormError] = useState("");
 
-    // For now, we'll assume user is logged in if they have a cart
+    // Use proper authentication context instead of cart existence
     const { cartId } = useShopifyCart();
-    const isLoggedIn = !!cartId;
+    const { isAuthenticated, customer } = useShopifyAuth();
+    const { openLoginModal } = useLoginModal();
+    const isLoggedIn = isAuthenticated;
 
     const fetchReviews = async () => {
         try {
@@ -73,6 +77,13 @@ const ReviewTabs = ({ productId, productTitle }: ReviewTabsProps) => {
             fetchReviews();
         }
     }, [productId, isOpen]);
+
+    // Pre-fill customer name when user is authenticated
+    useEffect(() => {
+        if (isAuthenticated && customer?.firstName) {
+            setCustomerName(customer.firstName);
+        }
+    }, [isAuthenticated, customer]);
 
     const handleReviewSubmitSuccess = () => {
         setShowReviewForm(false);
@@ -138,7 +149,7 @@ const ReviewTabs = ({ productId, productTitle }: ReviewTabsProps) => {
                     productId,
                     rating,
                     review: review.trim(),
-                    customerId: cartId,
+                    customerId: customer?.id || cartId, // Use customer ID from auth context if available
                     customerName: customerName.trim()
                 }),
             });
@@ -220,7 +231,10 @@ const ReviewTabs = ({ productId, productTitle }: ReviewTabsProps) => {
                 <div className="bg-gray-50 px-6">
                     <h4 className="text-lg font-normal text-gray-900 mb-2">Write a Review</h4>
                     <p className="text-gray-600 mb-4">Please log in to write a review for this product.</p>
-                    <button className="bg-black text-white px-4 py-2 text-sm hover:bg-gray-800 transition-colors relative overflow-hidden group">
+                    <button
+                        onClick={openLoginModal}
+                        className="bg-black text-white px-4 py-2 text-sm hover:bg-gray-800 transition-colors relative overflow-hidden group"
+                    >
                         <div className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white hover:bg-white hover:text-black" style={{ backgroundImage: 'url(/wa-ptn-ec.svg)' }}></div>
                         <div className="relative z-10 uppercase group-hover:text-shadow-white-opaque">
                             Sign In to Review
@@ -402,12 +416,12 @@ const ReviewTabs = ({ productId, productTitle }: ReviewTabsProps) => {
                             <p>Leave the first to review this product.</p>
                             <p>Let our community knows</p>
                             <p className="mb-4">how you feel about this product.</p>
-                            {isLoggedIn && !showReviewForm && (
+                            {!showReviewForm && (
                                 <button
-                                    onClick={() => setShowReviewForm(true)}
+                                    onClick={isLoggedIn ? () => setShowReviewForm(true) : openLoginModal}
                                     className="font-inter text-thin text-xs uppercase bg-black border border-black text-white px-4 py-4 hover:bg-white hover:text-black  transition-colors"
                                 >
-                                    Write the First Review
+                                    {isLoggedIn ? "Write the First Review" : "Sign In to Review"}
                                 </button>
                             )}
                         </div>
