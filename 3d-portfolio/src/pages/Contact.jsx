@@ -77,7 +77,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="relative max-container" id="contact">
+    <section className="relative max-container mt-14 sm:mt-0" id="contact">
       <div className="flex lg:flex-row flex-col">
         {alert.show && <Alert {...alert} />}
 
