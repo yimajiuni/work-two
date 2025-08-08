@@ -12,19 +12,23 @@ const AboutPage = () => {
                     <h1 className="text-2xl font-bodoni">
                         About the Brand
                     </h1>
-                    <p className="mt-2 text-xs font-inter text-thin leading-6">
+                    <p className="mt-2 text-xs font-inter text-thin bg-white w-fit mx-auto leading-6">
                         Introducing the brand slogan.
                     </p>
                 </div>
-
             </div>
+
             <div className="max-w-5xl mx-auto">
                 {/* Top Row */}
                 <div className="grid grid-cols-5 -mt-20 sm:mt-0">
                     {/* Animated white square that bounces around */}
                     <div className="absolute inset-0 overflow-hidden z-10">
-                        <div className="absolute w-48 h-64 bg-white animate-bounce-corners"></div>
+                        <div className="absolute w-48 h-64 bg-white animate-bounce-corners">
+
+                        </div>
                     </div>
+                    {/* Gradient circle  
+                    <div className="gradient-circle-red"></div>*/}
 
                     {/* Left Quarter - 3 columns */}
                     {/* Far Left Column - Single */}
@@ -116,7 +120,7 @@ const AboutPage = () => {
                             </div>
 
                             {/* Bottom Row - Text with border and scroll */}
-                            <div className="border border-black rounded-lg overflow-hidden about-scrollbar max-h-[210px] z-20 group">
+                            <div className="bg-white border border-black rounded-lg overflow-hidden about-scrollbar max-h-[210px] z-20 group">
                                 <div className="flex animate-scroll group-hover:pause">
                                     <div className="w-[500px] z-20 flex-shrink-0">
                                         <p className="text-sm font-bold mb-4 uppercase ">
@@ -174,7 +178,7 @@ const AboutPage = () => {
                                 </p>
                             </div>
                             {/* Duplicate content for seamless loop */}
-                            <div className="w-[800px] flex-shrink-0">
+                            <div className="bg-white w-[800px] flex-shrink-0">
                                 <h2 className="text-sm font-bold mb-4 uppercase">Our History</h2>
                                 <p className="text-sm font-thin leading-relaxed mb-4">
                                     Yima was born in the early days of quiet reflection.

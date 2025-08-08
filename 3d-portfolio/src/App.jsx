@@ -1,15 +1,16 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import {
-  Home,
-  TranslatedAbout,
+  /*Home,
   TranslatedProjects,
   TranslatedDesigns,
   TranslatedWorks,
+  SkillsChart,*/
+  TranslatedAbout,
   WorkGallery,
   WorkDetails,
   Contact,
-  SkillsChart,
+  Service,
 } from "./pages";
 import Content from "./components/Content";
 {
@@ -19,7 +20,7 @@ import NavbarJump from "./components/NavbarJump";
 
 function App() {
   return (
-    <div className="bg-pink-300/40 h-full">
+    <div className="bg-pink-300/40 h-full mt-14 sm:mt-0">
       <Router>
         {/*<Navbar />*/}
         <NavbarJump />
@@ -33,6 +34,7 @@ function App() {
           <Route path="/designs" element={<TranslatedDesigns />} />*/}
           <Route path="*" element={<Content />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/service" element={<Service />} />
           <Route path="/details/:id" element={<WorkDetails />} />
         </Routes>
       </Router>

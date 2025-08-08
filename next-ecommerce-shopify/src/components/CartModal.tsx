@@ -98,7 +98,7 @@ const CartModal = () => {
 
                 {/* Content */}
                 <div className="flex flex-col p-6">
-                    <div className="flex-1 overflow-y-auto p-6 max-h-[calc(100vh-320px)] min-h-[calc(100vh-320px)] ">
+                    <div className="flex-1 overflow-y-auto p-6 max-h-[calc(100vh-400px)] sm:max-h-[calc(100vh-320px)] min-h-[calc(100vh-400px)] sm:min-h-[calc(100vh-320px)] ">
                         {!items.length ? (
                             <div className="text-center py-12 text-gray-900 font-times-new-roman-italic">
                                 <div className="w-6 h-6 mx-auto mb-4 flex items-center justify-center group cursor-pointer" onClick={() => { closeCart(); window.location.href = '/collections/all'; }}>

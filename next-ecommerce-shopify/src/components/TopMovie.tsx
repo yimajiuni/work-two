@@ -25,12 +25,12 @@ const TopMovie = () => {
         setVideoLoaded(true);
     };
 
-
-
     // Auto-play video on mobile when it&apos;s loaded (if possible)
     useEffect(() => {
         if (videoRef.current && videoLoaded) {
-            // Try to play the video (will be muted due to browser restrictions)
+            // Explicitly mute the video before trying to play (required on iOS)
+            videoRef.current.muted = true;
+
             videoRef.current.play().catch(() => {
                 // If autoplay fails, that's okay - poster image will show
                 console.log('Video autoplay not supported');
@@ -49,8 +49,11 @@ const TopMovie = () => {
                 <video
                     ref={videoRef}
                     muted
+                    autoPlay
                     loop
                     playsInline
+                    preload="auto"
+                    poster="/movie.jpg"
                     className="absolute inset-0 w-full h-full object-cover"
                     style={{ objectPosition: 'center 40%' }}
                     onLoadedData={handleVideoLoad}
@@ -59,7 +62,8 @@ const TopMovie = () => {
                 </video>
 
                 {/* Overlay for better text readability */}
-                <div className="absolute inset-0 bg-black/20"></div>
+                <div className="absolute inset-0 bg-black/20 sm:bg-black/10 md:bg-transparent"></div>
+
 
                 {/* Content Container - Left Bottom */}
                 <div className="relative z-10 h-full flex flex-col justify-end items-start px-4 sm:px-6 lg:px-8 sm:pb-12 lg:pb-16">

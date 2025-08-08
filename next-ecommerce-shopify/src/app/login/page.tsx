@@ -149,7 +149,7 @@ const LoginPage = () => {
     };
 
     return (
-        <div className={`font-inter text-thin px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 flex items-center justify-center ${mode === MODE.LOGIN ? 'h-[calc(100vh-120px)]' : 'h-[calc(100vh)]'
+        <div className={`font-inter text-thin px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 flex items-center justify-center ${mode === MODE.LOGIN ? 'h-[calc(100vh-120px)]' : 'h-[calc(100vh+20px)]'
             }`}>
             <div className="w-full max-w-sm">
                 <form className="flex flex-col gap-8" onSubmit={handleSubmit}>

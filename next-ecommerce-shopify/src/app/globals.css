@@ -108,7 +108,7 @@
 
     87.5% {
         top: 40%;
-        left: 40%;
+        left: 10%;
     }
 
     100% {
@@ -345,7 +345,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     appearance: none;
 }
 
-/* Remove default styling for checkbox and radio inputs */
+/* Remove default styling for checkbox and radio inputs 
 input[type="checkbox"],
 input[type="radio"] {
     -webkit-appearance: none;
@@ -354,7 +354,7 @@ input[type="radio"] {
     border-radius: 0 !important;
     -webkit-border-radius: 0 !important;
     -moz-border-radius: 0 !important;
-}
+}*/
 
 /* Remove default styling for file inputs */
 input[type="file"] {
@@ -613,4 +613,27 @@ select::-ms-expand {
         /* Right edge shadow */
         -2px 0px 0px #000 !important;
     /* Left edge shadow */
+}
+
+/* Gradient circle for about page */
+.gradient-circle-red {
+    width: 70px;
+    height: 70px;
+    /* Current: Linear gradient */
+    /**/
+    background: linear-gradient(135deg, #f75456 0%, #e60012 5%, #FF0707 10%, #270a8e 75%, #01014d 100%);
+
+    /* Alternative: Radial gradient (uncomment to use) */
+    /**
+    background: radial-gradient(circle, #f75456 0%, #FF0707 30%, #e60012 50%, #03f0fd 55%, #0ca6c5 75%, #0186a1 100%);/
+
+    /* Alternative: Conic gradient (uncomment to use) */
+    /* background: conic-gradient(from 0deg, #f75456, #FF0707, #e60012, #03f0fd, #0ca6c5, #0186a1, #f75456); */
+
+    border-radius: 50%;
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    transform: translate(-10%, -50%);
+    z-index: 15;
 }

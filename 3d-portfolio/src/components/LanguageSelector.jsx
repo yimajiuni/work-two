@@ -22,10 +22,10 @@ const LanguageSelector = () => {
       <select
         value={i18n.language}
         onChange={changeLanguage}
-        className="language-selector"
+        className="language-selector bg-transparent border-none outline-none text-white text-sm font-medium cursor-pointer"
       >
         {languages.map((lng) => (
-          <option key={lng.code} value={lng.code}>
+          <option key={lng.code} value={lng.code} className="bg-blue-500 text-white">
             {lng.lang}
           </option>
         ))}

@@ -71,7 +71,7 @@ const LoginModal = () => {
 
                 {/* Content */}
                 <div className="flex flex-col p-6 min-h-[calc(100vh-320px)] max-h-[calc(100vh-300px)]">
-                    <div className="flex-1 py-12">
+                    <div className="flex-1 py-0 sm:py-12">
                         <div className="p-6 text-gray-900 text-m font-times-new-roman-italic text-center">
                             <div className="w-6 h-6 mx-auto mb-4 flex items-center justify-center group cursor-pointer" onClick={handleLogin}>
                                 <svg className="w-6 h-6 text-gray-900 group-hover:fill-black transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">

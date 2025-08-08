@@ -388,6 +388,78 @@ i18n
               link: "https://yimajiuni.com/dtp/portfolio-yuko.pdf",
             },
           ],
+          // Service page translations
+          service: {
+            section1: {
+              title: "Transform Your Business with",
+              titleHighlight: "Next.js & Shopify",
+              description: "We specialize in creating high-performance e-commerce solutions that drive results. From custom web applications to seamless shopping experiences, we bring your vision to life.",
+              cta: "Get Your Free Quote"
+            },
+            section2: {
+              title: "Introducing Our Flagship Product",
+              description: "Experience the power of modern e-commerce with our Next.js x Shopify solution. Built for performance, scalability, and user experience, this platform delivers exceptional results for businesses of all sizes.",
+              features: {
+                title: "Key Features",
+                items: [
+                  "Lightning-fast performance with Next.js",
+                  "Seamless Shopify integration",
+                  "Mobile-first responsive design",
+                  "Advanced SEO optimization",
+                  "Custom branding and design"
+                ]
+              },
+              demo: {
+                title: "Live Demo",
+                description: "See our Next.js x Shopify solution in action",
+                button: "Visit Demo Site"
+              }
+            },
+            section3: {
+              title: "The Power of Yimajiuni Technology",
+              description: "We combine cutting-edge technologies to deliver exceptional results. Our Next.js x Shopify x Branding approach ensures your business stands out in the digital landscape.",
+              technologies: {
+                nextjs: {
+                  title: "Next.js Technology",
+                  description: "Server-side rendering, static generation, and optimized performance for lightning-fast user experiences."
+                },
+                shopify: {
+                  title: "Shopify Integration",
+                  description: "Seamless e-commerce functionality with powerful inventory management and payment processing."
+                },
+                branding: {
+                  title: "Branding Excellence",
+                  description: "Custom design and branding that reflects your unique identity and resonates with your audience."
+                }
+              },
+              performance: {
+                title: "Performance Metrics",
+                subtitle: "Real Numbers from Our Projects",
+                metrics: [
+                  "95% faster page load times",
+                  "40% increase in conversion rates",
+                  "99.9% uptime reliability",
+                  "60% improvement in SEO rankings"
+                ],
+                button: "View Detailed Performance Report"
+              }
+            },
+            section4: {
+              title: "Get Your Custom Quote",
+              description: "Answer a few questions to get a personalized quote for your project. Our interactive form helps us understand your needs and provide the most accurate estimate.",
+              calculator: {
+                title: "Interactive Quote Calculator",
+                description: "Select your requirements, project scale, and preferences to receive a detailed quote.",
+                button: "Start Quote Calculator"
+              }
+            },
+            navigation: {
+              main: "Main",
+              product: "Product",
+              services: "Services",
+              quote: "Quote"
+            }
+          },
         },
       },
       jp: {
@@ -707,125 +779,78 @@ i18n
             line2: `あらゆる種類の会社と仕事をし、自分のスキルを高め、あらゆる種類の人々とチームを組んできました。
             `,
           },
-          //追加
-          workDatas: [
-            {
-              id: 1,
-              titleBk: "ECアパレル",
-              titleBl: "ウェブサイト",
-              image: app3,
-              medium: "website",
-              period: "約2週間",
-              range: "設計・UX/UIデザイン・コーディング・実装",
-              skills: "React, Javascript, CSS",
-              summary:
-                "スライダーによるアイキャッチと、購入と買い物カート追加システムを搭載したECサイトをReactのContextAPIを用いて制作。",
-              concept: `ユーザーが快適に商品を閲覧し購入できるよう、視覚的に魅力的で直感的なデザインを心掛けました。特に、カラーパレットはブランドイメージに合った色を使用し、重要な情報やボタンは視認性を高めるために強調しました。また、プロダクトイメージを引き立てるために高品質な画像を使用し、ページの一貫性と美しさを保つために統一されたフォントとアイコンセットを選びました。ユーザーエクスペリエンスを向上させるため、ナビゲーションの簡素化やフィルター機能の最適化にも注力しました。
-              トンマナ策定時に気をつけたこと：広々とした印象とスタイリッシュで見やすい普遍的なデザインを保つため整列されたレイアウトで情報毎にメリハリある文字の大きさを使い分け、使用色はサンプル商品（シーズン）の色調にマッチし、かつアクティブで見やすい印象にするためバナー等には彩度の高い色の商品画像を使用。
-              APIからのデータ取得を効率的に行い、ページの読み込み速度を最適化し、特に画像のローディングとキャッシングに注力しました。`,
-              target: "Developed an e-commerce website with purchasing system.",
-              needs: "Developed an e-commerce website with purchasing system.",
-              function:
-                "Developed an e-commerce website with purchasing system.",
-              eva: "Developed an e-commerce website with purchasing system.",
-              persona:
-                "健康でファストファッションに対し購買意欲が高い幅広い年代が対象",
-              basic: "Developed an e-commerce website with purchasing system.",
-              orientation:
-                "Developed an e-commerce website with purchasing system.",
-              preference:
-                "Developed an e-commerce website with purchasing system.",
-              wireframe: `全体のレイアウトと直感的な使用感、構造の論理的な流れを確保するため、既存のモデルとなるECサイトをリサーチし最適化し、ユーザーインタラクション、コンテンツ階層、応答性などの重要な要素に対し、一貫性があり分かりやすい仕様を目指した。
-               UX/UIデザインのための詳細なワイヤーフレームを作成し、Viteプロジェクトをセットアップ、React Jsを使用して再利用可能なコンポーネントベースの機能を実装し、スライダーやその他の動的パーツを追加し、レスポンシブデザインを実装し、ユーザビリティをテストして修正。`,
-              link: "https://e-commerce.yimajiuni.com/",
-
-              icon: tesla,
-              iconBg: "#fbc3bc",
+          // Service page translations (Japanese)
+          service: {
+            section1: {
+              title: "ビジネスを変革する",
+              titleHighlight: "Next.js & Shopify",
+              description: "私たちは、結果を生み出す高性能なeコマースソリューションの作成を専門としています。カスタムWebアプリケーションからシームレスなショッピング体験まで、あなたのビジョンを実現します。",
+              cta: "無料見積もりを取得"
             },
-            {
-              id: 2,
-              titleBk: "ダッシュボード",
-              titleBl: "アプリ",
-              image: app3,
-              medium: "website",
-              period: "４日間",
-              range: "設計・UX/UIデザイン・コーディング・実装",
-              skills: "React, Javascript",
-              summary:
-                "モバイルファーストのCMSタイプのダッシュボードモデルを最適化されたトレンド感のあるUIを用いて制作しました。",
-              concept: `デザイン時に気をつけたこと：観葉植物の販売サイトを管理するCMSという設定で作成したので、緑色と癒しを彷彿させるキーヴィジュアルを挿入。
-              トンマナ策定時に気をつけたこと：プロフェッショナルでありながらも安心・信頼感を与えるデザインにするため、色は落ち着いた緑を基調とし、シンプルで分かりやすいアイコンやグラフを使用しました。
-              実装時に気をつけたこと：パフォーマンスを最適化し、データの表示が速やかに行われるようにし、特にグラフの描画に注力しました。`,
-              target: "Developed a CMS for managing a plant sale website.",
-              needs: "Developed a CMS for managing a plant sale website.",
-              function: "Developed a CMS for managing a plant sale website.",
-              eva: "Developed a CMS for managing a plant sale website.",
-              persona: "観葉植物の販売や在庫管理を担当する店舗経営者やスタッフ",
-              basic: "Developed a CMS for managing a plant sale website.",
-              orientation: "Developed a CMS for managing a plant sale website.",
-              preference: "Developed a CMS for managing a plant sale website.",
-              wireframe: `全体のレイアウトと構造に論理的な流れと直感的なナビゲーションを確保するため、ユーザーインタラクション、コンテンツ階層、応答性などの重要な要素に対し、一貫性があり分かりやすい仕様を目指した。
-              ワイヤーフレームを作成し、Viteプロジェクトをセットアップし、Reactを使用して再利用可能なコンポーネントベースの機能を実装し、スライダーやその他の動的パーツを追加し、レスポンシブデザインを実装し、ユーザビリティをテストして修正。`,
-              link: "https://dashboard-model.yimajiuni.com/",
-              icon: tesla,
+            section2: {
+              title: "私たちの主力製品をご紹介",
+              description: "Next.js x Shopifyソリューションでモダンなeコマースの力を体験してください。パフォーマンス、スケーラビリティ、ユーザーエクスペリエンスのために構築されたこのプラットフォームは、あらゆる規模のビジネスに卓越した結果をもたらします。",
+              features: {
+                title: "主要機能",
+                items: [
+                  "Next.jsによる高速パフォーマンス",
+                  "シームレスなShopify統合",
+                  "モバイルファーストのレスポンシブデザイン",
+                  "高度なSEO最適化",
+                  "カスタムブランディングとデザイン"
+                ]
+              },
+              demo: {
+                title: "ライブデモ",
+                description: "Next.js x Shopifyソリューションの実際の動作をご覧ください",
+                button: "デモサイトを訪問"
+              }
             },
-            {
-              id: 3,
-              titleBk: "旅行予約",
-              titleBl: "ウェブサイト",
-              image: app3,
-              medium: "website",
-              period: "4日間",
-              range: "設計・UX/UIデザイン・コーディング・実装",
-              skills: "React, Javascript",
-              summary:
-                " 旅行のパッケージ検索用のアプリのフロントエンド機能をデザイン・実装しました。",
-              concept: `デザイン時に気をつけたこと：旅行の楽しさと期待感をユーザーに伝えるため、大胆なビジュアルとシンプルなナビゲーションを組み合わせ、ユーザーの関心を引きつけるデザインを作成しました。
-              トンマナ策定時に気をつけたこと：旅行先の魅力を最大限に伝えるため、鮮やかな色彩と大きな写真を使用し、ユーザーが直感的に操作できるデザインを心掛けました。
-              実装時に気をつけたこと：画像サイズや不要ファイルを最適化し、機能面でのエラーを修正した。`,
-              target: "Developed a travel booking website.",
-              needs: "Developed a travel booking website.",
-              function: "Developed a travel booking website.",
-              eva: "Developed a travel booking website.",
-              persona:
-                "国内外の旅行客をターゲットに経済力に余裕がある健康な社会人から中高年齢層で特に日本国内インバウンド旅行客を中心とした。",
-              basic: "Developed a travel booking website.",
-              orientation: "Developed a travel booking website.",
-              preference: "Developed a travel booking website.",
-              wireframe: `モバイルファーストでデザインし、タッチ操作のしやすさを重視したボタンやレスポンシブデザインを優先しました。
-              モバイルファーストのアプローチを採用しワイヤーフレームを作成して全体のレイアウトとユーザーインターフェースを設計。次に、Viteプロジェクトをセットアップし、Reactを使用して再利用可能なコンポーネントを開発しました。地図や検索機能などの必要なライブラリをインポートし、レスポンシブデザインを実装しました。サイト全体の使用性とパフォーマンスをテストし、フィードバックを基に修正。`,
-              link: "https://travel-web.yimajiuni.com/",
-              icon: tesla,
+            section3: {
+              title: "Yimajiuniテクノロジーの力",
+              description: "私たちは最先端のテクノロジーを組み合わせて卓越した結果を提供します。Next.js x Shopify x ブランディングアプローチにより、あなたのビジネスがデジタルランドスケープで際立つことを保証します。",
+              technologies: {
+                nextjs: {
+                  title: "Next.jsテクノロジー",
+                  description: "サーバーサイドレンダリング、静的生成、最適化されたパフォーマンスにより、高速なユーザーエクスペリエンスを実現。"
+                },
+                shopify: {
+                  title: "Shopify統合",
+                  description: "強力な在庫管理と決済処理を備えたシームレスなeコマース機能。"
+                },
+                branding: {
+                  title: "ブランディングの卓越性",
+                  description: "あなたの独自のアイデンティティを反映し、オーディエンスと共鳴するカスタムデザインとブランディング。"
+                }
+              },
+              performance: {
+                title: "パフォーマンス指標",
+                subtitle: "プロジェクトからの実際の数値",
+                metrics: [
+                  "ページ読み込み時間95%向上",
+                  "コンバージョン率40%向上",
+                  "99.9%の稼働率",
+                  "SEOランキング60%向上"
+                ],
+                button: "詳細なパフォーマンスレポートを見る"
+              }
             },
-            {
-              id: 4,
-              titleBk: "レストラン",
-              titleBl: "ウェブサイト",
-              image: app3,
-              medium: "website",
-              period: "5日間",
-              range: "設計・UX/UIデザイン・コーディング・実装",
-              skills: "React, Javascript",
-              summary:
-                "レスポンシブのレストランのウェブサイトをフロントエンド設計・作成しました。",
-              concept: `デザイン時に気をつけたこと：店舗の雰囲気や料理の魅力を最大限に伝えるため、プロフェッショナルな写真を多用し、視覚的に印象的なデザインを作成しました。
-              トンマナ策定時に気をつけたこと：高級感と居心地の良さを両立するため、温かみのある色彩と洗練されたレイアウトを使用し、写真を引き立てるデザインを心掛けました。
-              実装時に気をつけたこと：ページの読み込み速度を最適化し、ユーザーが快適にサイトを利用できるように、画像の圧縮とキャッシング戦略を取り入れました。`,
-              target: "Developed a restaurant website.",
-              needs: "Developed a restaurant website.",
-              function: "Developed a restaurant website.",
-              eva: "Developed a restaurant website.",
-              persona:
-                "地元の住民や観光客で、美味しい食事と快適なダイニング体験を求める幅広い年齢層",
-              basic: "Developed a restaurant website.",
-              orientation: "Developed a restaurant website.",
-              preference: "Developed a restaurant website.",
-              wireframe: `メニューや予約情報が見やすく、ユーザーが簡単に必要な情報にアクセスできるようにレイアウトを工夫し、直感的なナビゲーションを重視しました。
-              ワイヤーフレームを作成して全体のレイアウトとユーザーインターフェースを設計しました。その後、Viteプロジェクトをセットアップし、Reactを使用して再利用可能なコンポーネントを開発しました。メニューや予約システムなどの主要な機能を実装し、レスポンシブデザインを取り入れました。サイト全体の使用性とパフォーマンスをテストし、必要に応じて修正を加えました。`,
-              link: "https://restau-web.yimajiuni.com/",
-              icon: tesla,
+            section4: {
+              title: "カスタム見積もりを取得",
+              description: "プロジェクトのパーソナライズされた見積もりを取得するために、いくつかの質問にお答えください。私たちのインタラクティブフォームは、あなたのニーズを理解し、最も正確な見積もりを提供するのに役立ちます。",
+              calculator: {
+                title: "インタラクティブ見積もり計算機",
+                description: "要件、プロジェクト規模、好みを選択して詳細な見積もりを受け取ります。",
+                button: "見積もり計算機を開始"
+              }
             },
-          ],
+            navigation: {
+              main: "メイン",
+              product: "製品",
+              services: "サービス",
+              quote: "見積もり"
+            }
+          },
         },
       },
     },
@@ -1107,7 +1132,7 @@ export const workDatas = [
     concept_function:
       "瞑想的な雰囲気を保ちながらもプロフェッショナルで安定した動作性を叶える為パフォーマンスを最適化。軽量化されたシステムと汎用性のあるシンプルなダッシュボード。",
     concept_eva:
-      "一人時間を癒しに、楽しく、を交換交流。”をテーマに観葉植物だけでなくあらゆる癒しをテーマとする商品の物販に向いたデザイン。",
+      "一人時間を癒しに、楽しく、を交換交流。\"をテーマに観葉植物だけでなくあらゆる癒しをテーマとする商品の物販に向いたデザイン。",
     persona: "観葉植物の販売や在庫管理を担当する店舗経営者やスタッフ",
     persona_basic: "女性性を意識・重視した男女他＋ 年代:30代一人暮らし世代 ",
     persona_preference: "#想い出、#こだわり、#自分らしく ",

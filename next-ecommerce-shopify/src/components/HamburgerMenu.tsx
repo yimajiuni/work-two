@@ -42,7 +42,7 @@ const Menu = () => {
             title: "Swim & intimates",
             items: [
                 { name: "Swimsuits", href: "/collections/swimsuits" },
-                { name: "Intimate wears", href: "/collections/intimates" },
+                { name: "Intimates", href: "/collections/intimates" },
                 { name: "Resort", href: "/collections/resort" }
             ]
         }

@@ -70,7 +70,7 @@ function WorkGallery() {
   });
 
   return (
-    <section className=" max-container" id="works">
+    <section className="max-container" id="works">
       <h1 className="head-text">
         My{" "}
         <span className="blue-gradient_text drop-shadow font-semibold">
