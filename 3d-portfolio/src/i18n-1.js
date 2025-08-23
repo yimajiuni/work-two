@@ -400,7 +400,7 @@ i18n
               cta: "Book a Video Consultation with us"
             },
             section2: {
-              title: "For attractive products, abstract experiences and convenience.",
+              title: "For attractive products, sophisticated experiences and convenience like reality.",
               titleHighlight: "In other words, high-speed and dynamic EC sites are optimal.",
               description: "Experience the power of modern e-commerce with our Next.js x Shopify solution. Built for performance, scalability, and user experience, this platform delivers exceptional results for businesses of all sizes.",
               features: {
@@ -1184,7 +1184,7 @@ i18n
               cta: "ビデオ相談を予約する"
             },
             section2: {
-              title: "魅力的な商品には、抽象的な体験と便利さ。",
+              title: "魅力的な商品には、洗練された体験と便利さ。",
               titleHighlight: "すなわち、高スピードとダイナミックなECサイトが最適です。",
               description: "Next.js x Shopifyソリューションでモダンなeコマースの力を体験してください。パフォーマンス、スケーラビリティ、ユーザーエクスペリエンスのために構築されたこのプラットフォームは、あらゆる規模のビジネスに卓越した結果をもたらします。",
               features: {
