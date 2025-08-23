@@ -450,11 +450,11 @@ const Service = () => {
                             <span className="text-left text-[26px] font-bold sm:text-4xl blue-gradient_text block mb-3">
                                 {t('service.section2.titleHighlight')}
                             </span>
-                            <div className="w-full rounded-lg mb-6 overflow-hidden">
+                            <div className="w-full rounded-lg mb-6 ">
                                 <img
                                     src={nextEcomShopify}
                                     alt="Next.js E-commerce Shopify Demo Site"
-                                    className="shadow-lg w-full h-96 sm:h-max object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+                                    className="w-full h-96 sm:h-max object-cover rounded-lg hover:scale-105 hover:shadow-pink-400/30 transition-transform duration-300"
                                 />
                             </div>
 
