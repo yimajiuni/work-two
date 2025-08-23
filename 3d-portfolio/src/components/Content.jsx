@@ -12,8 +12,8 @@ import WorkGallery from "../pages/WorkGallery";
 function Content() {
   return (
     <div>
-      <TranslatedAbout />
-      <WorkGallery />
+      <TranslatedAbout id="about" />
+      <WorkGallery id="works" />
       {/*
       <TranslatedWorks />
       <TranslatedProjects id="projects" />

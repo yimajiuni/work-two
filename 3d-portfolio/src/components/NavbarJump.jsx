@@ -13,13 +13,52 @@ const NavbarJump = () => {
   const scroller = Scroll.scroller;
 
   const goToPageAndScroll = async (selector) => {
-    await navigate("/");
-    await scroller.scrollTo(selector, {
-      duration: 500,
-      smooth: true,
-      offset: 10,
-      spy: true,
-    });
+    try {
+      // If we're already on the home page, just scroll to the section
+      if (path === "/" || path === "") {
+        // Wait a bit for elements to be rendered
+        setTimeout(async () => {
+          try {
+            const targetElement = document.getElementById(selector);
+            if (targetElement) {
+              await scroller.scrollTo(selector, {
+                duration: 500,
+                smooth: true,
+                offset: 10,
+                spy: true,
+              });
+            } else {
+              console.warn(`Target element with id "${selector}" not found`);
+            }
+          } catch (scrollError) {
+            console.warn(`Scroll error for selector "${selector}":`, scrollError);
+          }
+        }, 100);
+      } else {
+        // Navigate to home page first, then scroll
+        await navigate("/");
+        // Wait for navigation and rendering
+        setTimeout(async () => {
+          try {
+            const targetElement = document.getElementById(selector);
+            if (targetElement) {
+              await scroller.scrollTo(selector, {
+                duration: 500,
+                smooth: true,
+                offset: 10,
+                spy: true,
+              });
+            } else {
+              console.warn(`Target element with id "${selector}" not found`);
+            }
+          } catch (scrollError) {
+            console.warn(`Scroll error for selector "${selector}":`, scrollError);
+          }
+        }, 300);
+      }
+    } catch (navError) {
+      console.warn(`Navigation error:`, navError);
+    }
   };
 
   const scrollToTop = () => {
@@ -40,7 +79,7 @@ const NavbarJump = () => {
         {/* 今 button - always visible, links to service on desktop/tablet, hamburger on mobile */}
         <NavLink
           to="/service"
-          className="hidden sm:flex w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md shadow-pink-400/30 hover:shadow-lg transition-shadow"
+          className="hidden sm:flex w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md shadow-pink-400/30 hover:shadow-lg hover:shadow-pink-400/30 transition-shadow"
         >
           <p className="blue-gradient_text">今</p>
         </NavLink>
@@ -48,7 +87,7 @@ const NavbarJump = () => {
         {/* Mobile: 今 button as hamburger */}
         <button
           onClick={toggleMenu}
-          className="sm:hidden w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md shadow-pink-400/30 hover:shadow-lg transition-shadow"
+          className="sm:hidden w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md shadow-pink-400/30 hover:shadow-lg hover:shadow-pink-400/30 transition-shadow"
         >
           <p className="blue-gradient_text">今</p>
         </button>
@@ -60,7 +99,7 @@ const NavbarJump = () => {
               <ScrollLink
                 onClick={() => goToPageAndScroll("about")}
                 className="cursor-pointer hover:text-blue-400 transition-colors"
-                activeclass="active"
+                activeClass="active"
                 to="about"
                 spy={true}
                 smooth={true}
@@ -72,7 +111,7 @@ const NavbarJump = () => {
               <ScrollLink
                 onClick={() => goToPageAndScroll("works")}
                 className="cursor-pointer hover:text-blue-400 transition-colors"
-                activeclass="active"
+                activeClass="active"
                 to="works"
                 spy={true}
                 smooth={true}
@@ -86,7 +125,6 @@ const NavbarJump = () => {
                 to="/contact"
                 onClick={() => goToPageAndScroll("contact")}
                 className="cursor-pointer hover:text-blue-400 transition-colors"
-                spy={true}
               >
                 Contact
               </NavLink>
@@ -96,24 +134,14 @@ const NavbarJump = () => {
               <NavLink
                 onClick={() => goToPageAndScroll("about")}
                 className="cursor-pointer hover:text-blue-400 transition-colors"
-                activeclass="active"
                 to="about"
-                spy={true}
-                smooth={true}
-                offset={10}
-                duration={500}
               >
                 About
               </NavLink>
               <NavLink
                 onClick={() => goToPageAndScroll("works")}
                 className="cursor-pointer hover:text-blue-400 transition-colors"
-                activeclass="active"
                 to="works"
-                spy={true}
-                smooth={true}
-                offset={10}
-                duration={500}
               >
                 Works
               </NavLink>
@@ -138,32 +166,25 @@ const NavbarJump = () => {
 
       {/* Mobile dropdown menu - only on mobile */}
       {isMenuOpen && (
-        <div className="w-max mx-auto sm:hidden absolute top-full left-0 right-0 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg mt-2 p-4 z-50 shadow-lg">
+        <div className="w-max mx-auto sm:hidden absolute top-full left-0 right-0 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg mt-2 p-4 z-50 shadow-lg shadow-pink-400/30">
           <nav className="flex justify-between gap-4 text-lg font-medium text-white">
-            {location !== "contact" ? (
+            {location !== "contact" && location !== "service" ? (
               <>
-                <ScrollLink
-                  onClick={() => {
-                    goToPageAndScroll("works");
-                    closeMenu();
-                  }}
+                <NavLink
+                  to="/service"
+                  onClick={closeMenu}
                   className="cursor-pointer hover:text-blue-400 transition-colors py-2"
-                  activeclass="active"
-                  to="/"
-                  spy={true}
-                  smooth={true}
-                  offset={10}
-                  duration={500}
                 >
-                  Works
-                </ScrollLink>
+                  Services
+                </NavLink>
+
                 <ScrollLink
                   onClick={() => {
                     goToPageAndScroll("about");
                     closeMenu();
                   }}
                   className="cursor-pointer hover:text-blue-400 transition-colors py-2"
-                  activeclass="active"
+                  activeClass="active"
                   to="about"
                   spy={true}
                   smooth={true}
@@ -171,6 +192,21 @@ const NavbarJump = () => {
                   duration={500}
                 >
                   About
+                </ScrollLink>
+                <ScrollLink
+                  onClick={() => {
+                    goToPageAndScroll("works");
+                    closeMenu();
+                  }}
+                  className="cursor-pointer hover:text-blue-400 transition-colors py-2"
+                  activeClass="active"
+                  to="works"
+                  spy={true}
+                  smooth={true}
+                  offset={10}
+                  duration={500}
+                >
+                  Works
                 </ScrollLink>
                 <NavLink
                   to="/contact"
@@ -179,34 +215,19 @@ const NavbarJump = () => {
                     closeMenu();
                   }}
                   className="cursor-pointer hover:text-blue-400 transition-colors py-2"
-                  spy={true}
                 >
                   Contact
                 </NavLink>
+
+              </>
+            ) : (
+              <>
                 <NavLink
                   to="/service"
                   onClick={closeMenu}
                   className="cursor-pointer hover:text-blue-400 transition-colors py-2"
                 >
                   Services
-                </NavLink>
-              </>
-            ) : (
-              <>
-                <NavLink
-                  onClick={() => {
-                    goToPageAndScroll("works");
-                    closeMenu();
-                  }}
-                  className="cursor-pointer hover:text-blue-400 transition-colors py-2"
-                  activeclass="active"
-                  to="works"
-                  spy={true}
-                  smooth={true}
-                  offset={10}
-                  duration={500}
-                >
-                  Works
                 </NavLink>
                 <NavLink
                   onClick={() => {
@@ -214,30 +235,28 @@ const NavbarJump = () => {
                     closeMenu();
                   }}
                   className="cursor-pointer hover:text-blue-400 transition-colors py-2"
-                  activeclass="active"
                   to="about"
-                  spy={true}
-                  smooth={true}
-                  offset={10}
-                  duration={500}
                 >
                   About
                 </NavLink>
                 <NavLink
+                  onClick={() => {
+                    goToPageAndScroll("works");
+                    closeMenu();
+                  }}
+                  className="cursor-pointer hover:text-blue-400 transition-colors py-2"
+                  to="works"
+                >
+                  Works
+                </NavLink>
+                <NavLink
                   to="/contact"
                   className={({ isActive }) =>
-                    isActive ? "text-blue-500 py-2" : "text-white hover:text-blue-400 transition-colors"
+                    isActive ? "text-blue-500 py-2" : "text-white hover:text-blue-400 transition-colors py-2"
                   }
                   onClick={closeMenu}
                 >
                   Contact
-                </NavLink>
-                <NavLink
-                  to="/service"
-                  onClick={closeMenu}
-                  className="cursor-pointer hover:text-blue-400 transition-colors py-2"
-                >
-                  Services
                 </NavLink>
               </>
             )}

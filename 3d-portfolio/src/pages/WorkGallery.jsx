@@ -94,7 +94,7 @@ function WorkGallery() {
         >
           <TabCustom label="全て" />
           <TabCustom label="Websites" />
-          <TabCustom label="Jothes" />
+          <TabCustom label="E-Commerce" />
           <TabCustom label="Apps" />
           <TabCustom label="DTP" />
         </Tabs>

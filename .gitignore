@@ -1,2 +1,17 @@
-node_modules
+# Environment files
+.env
+.env*.local
+.env.local
+.env.local.backup
+
+# Node modules
+node_modules/
+
+# Log files
+*.log
+
+# Build outputs
+.next/
+dist/
+out/
 .DS_Store

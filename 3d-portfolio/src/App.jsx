@@ -20,7 +20,7 @@ import NavbarJump from "./components/NavbarJump";
 
 function App() {
   return (
-    <div className="bg-pink-300/40 h-full mt-14 sm:mt-0">
+    <div className="bg-pink-300/40 h-full">
       <Router>
         {/*<Navbar />*/}
         <NavbarJump />

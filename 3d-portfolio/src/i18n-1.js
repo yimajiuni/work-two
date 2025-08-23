@@ -80,6 +80,9 @@ i18n
     resources: {
       en: {
         translation: {
+          common: {
+            close: "Close"
+          },
           greeting: "Welcome back",
           CTA: {
             line1: `Have a project in mind?
@@ -393,11 +396,12 @@ i18n
             section1: {
               title: "Transform Your Business with",
               titleHighlight: "Next.js & Shopify",
-              description: "We specialize in creating high-performance e-commerce solutions that drive results. From custom web applications to seamless shopping experiences, we bring your vision to life.",
-              cta: "Get Your Free Quote"
+              description: "Powerful architecture that builds and polishes. Achieve 30%+ sales increase through branding and high-speed loading. The functional things that are made of dazzling and twinkle things. Make the act of 'buying' as enjoyable as possible.",
+              cta: "Book a Video Consultation with us"
             },
             section2: {
-              title: "Introducing Our Flagship Product",
+              title: "For attractive products, abstract experiences and convenience.",
+              titleHighlight: "In other words, high-speed and dynamic EC sites are optimal.",
               description: "Experience the power of modern e-commerce with our Next.js x Shopify solution. Built for performance, scalability, and user experience, this platform delivers exceptional results for businesses of all sizes.",
               features: {
                 title: "Key Features",
@@ -416,8 +420,8 @@ i18n
               }
             },
             section3: {
-              title: "The Power of Yimajiuni Technology",
-              description: "We combine cutting-edge technologies to deliver exceptional results. Our Next.js x Shopify x Branding approach ensures your business stands out in the digital landscape.",
+              title: "Yimajiuni's Technology",
+              description: "Next.js x Shopify x Branding achieves 30%+ sales increase through high-speed loading. Maximize your attractive products' EC business opportunities.",
               technologies: {
                 nextjs: {
                   title: "Next.js Technology",
@@ -428,12 +432,12 @@ i18n
                   description: "Seamless e-commerce functionality with powerful inventory management and payment processing."
                 },
                 branding: {
-                  title: "Branding Excellence",
-                  description: "Custom design and branding that reflects your unique identity and resonates with your audience."
+                  title: "Branding power that shapes project-specific purposes and feelings",
+                  description: "Provide branding that resonates with your audience through maximized efficiency and constantly refined technology."
                 }
               },
               performance: {
-                title: "Performance Metrics",
+                title: "Next.js EC Site Performance Metrics",
                 subtitle: "Real Numbers from Our Projects",
                 metrics: [
                   "95% faster page load times",
@@ -442,28 +446,418 @@ i18n
                   "60% improvement in SEO rankings"
                 ],
                 button: "View Detailed Performance Report"
+              },
+              aboutme: {
+                link: "/about",
+                button: "Learn about Yimajiuni's Technical History"
+              },
+              performanceReport: {
+                title: "Next.js EC Site Performance Report",
+                content: {
+                  section1: {
+                    title: "The Future of E-commerce, Now in Your Hands",
+                    description: "This service builds e-commerce sites using a 'headless commerce' approach that integrates Next.js, the cutting-edge web development framework, with Shopify, a reliable e-commerce platform. This fundamentally solves the challenges of display speed and design constraints that traditional e-commerce sites face, providing users (site visitors) with the best purchasing experience and creating digital stores that directly contribute to increased sales."
+                  },
+                  section2: {
+                    title: "Fast, Beautiful, Profitable",
+                    description: "The greatest advantages of the e-commerce sites provided by this service can be summarized in three key points:",
+                    benefits: {
+                      speed: {
+                        title: "Exceptional Display Speed",
+                        description: "Pages load instantly, so customers never have to wait. Site acceleration dramatically reduces bounce rates and directly contributes to increased sales."
+                      },
+                      design: {
+                        title: "Completely Custom Design",
+                        description: "You can fully express your brand's worldview. Without being constrained by template limitations, you can realize your ideal online store."
+                      },
+                      stability: {
+                        title: "Stable Store Operations",
+                        description: "The backend of your e-commerce site (inventory management and payment systems) is handled by the trusted Shopify platform used worldwide, allowing you to focus on your business with peace of mind."
+                      }
+                    }
+                  },
+                  section3: {
+                    title: "Are You Facing These Challenges?",
+                    problems: [
+                      "Worried that customers are leaving because the site is slow...",
+                      "Feeling limited by existing platform designs and unable to fully express your brand image",
+                      "Site modifications take too much time and cost",
+                      "The site feels difficult to use for smartphone users"
+                    ],
+                    explanation1: "Traditional e-commerce sites have the challenge of being difficult to modify because design (frontend) and systems (backend) are integrated, meaning even small design changes affect the entire system.",
+                    explanation2: "As examples, global companies like sports brand 'Nike' and cosmetics brand 'Lancôme' have also migrated to headless commerce seeking flexibility and high performance. This approach allows them to quickly respond to market changes and provide unique online experiences tailored to their customers."
+                  },
+                  section4: {
+                    title: "Dynamic Experience and Performance Directly Drive Sales",
+                    description: "Website performance has a direct impact on sales.",
+                    benefits: {
+                      conversion: {
+                        title: "Improved Conversion Rates",
+                        description: "Studies show that over 50% of users abandon a site if pages take more than 3 seconds to load. Conversely, improving display speed alone can lead to improved conversion rates."
+                      },
+                      performance: {
+                        title: "Highest Level Performance Scores",
+                        description: "We aim to achieve high scores on Google's website evaluation tool 'Lighthouse'. This is an objective indicator that the site is comfortable for users and advantageous for SEO."
+                      }
+                    }
+                  },
+                  section5: {
+                    title: "Overwhelming Display Speed Creates Truly Joyful Customer Purchase Experiences",
+                    description: "The core strength of sites built with this service is 'overwhelming display speed'. This speed is achieved through Next.js's 'Static Site Generation (SSG)' technology.",
+                    ssg: {
+                      title: "What is Static Site Generation (SSG)?",
+                      description: "This is a technology that pre-creates website pages. Unlike traditional methods that generate pages each time users access them, completed pages can be displayed instantly, enabling extremely fast responses. This speed reduces user stress and provides a comfortable shopping experience, preventing site abandonment and leading to purchases."
+                    }
+                  },
+                  section6: {
+                    title: "Checklist",
+                    description: "If even one of the following checklist items applies to you, our service might be the solution.",
+                    items: [
+                      "Homepage takes more than 3 seconds to display",
+                      "When viewed on smartphones, there are display issues or difficult-to-use parts",
+                      "You've had to give up on desired expressions due to design template constraints",
+                      "You struggle with site update work for every sale or campaign",
+                      "SEO rankings don't improve easily, and you feel challenged with customer acquisition",
+                      "You're considering future product sales through apps or new devices"
+                    ]
+                  },
+                  section7: {
+                    title: "The 'Freedom' Realized by Headless Commerce",
+                    description1: "This service adopts an architecture called 'headless commerce'. This is a concept that separates the 'frontend (= head)' that customers interact with from the 'backend (product management and payment systems)' that runs behind the scenes.",
+                    description2: "What are the benefits of this separation?",
+                    benefits: {
+                      design: {
+                        title: "Complete Design Freedom",
+                        description: "You can freely design and develop the frontend without being affected by Shopify's backend functionality. This makes it possible to create unique customer experiences that belong exclusively to your brand, unlike anywhere else."
+                      },
+                      marketing: {
+                        title: "Rapid Marketing Initiatives",
+                        description: "You can quickly and flexibly perform frontend modifications such as urgent campaigns or adding new content. Since you don't need to worry about backend constraints, you can respond quickly to market trends."
+                      }
+                    }
+                  },
+                  section8: {
+                    title: "Future-Oriented Technical Advantages",
+                    description: "From a more technical perspective, adopting Next.js provides technical advantages essential for business growth.",
+                    benefits: {
+                      seo: {
+                        title: "SEO Contribution",
+                        description: "Next.js's strengths in SSG (Static Site Generation) and SSR (Server-Side Rendering) make it easier for search engines to understand site content, greatly contributing to improved SEO evaluation."
+                      },
+                      scalability: {
+                        title: "Extensibility and Scalability",
+                        description: "Because frontend and backend are independent, even if your business expands in the future and access increases rapidly, you can scale each independently. For example, expansion to future new devices like smartwatches or VR becomes easier."
+                      },
+                      efficiency: {
+                        title: "Improved Development Efficiency",
+                        description: "Next.js, based on React, is suitable for modern development methods and enables efficient, high-quality site construction."
+                      }
+                    }
+                  },
+                  section9: {
+                    title: "Designing the Ultimate 'Purchase' Experience",
+                    description: "Ultimately, profit comes from customers (end users) who visit your site. This service aims to maximize end users' purchasing motivation.",
+                    benefits: {
+                      stressfree: {
+                        title: "Stress-Free Experience",
+                        description: "Instantly loading pages and intuitive, easy-to-understand usability give users the satisfaction that 'this site is easy to use' and smooth the process to purchase."
+                      },
+                      immersion: {
+                        title: "Brand Immersion",
+                        description: "Design that pays attention to every detail, which templates cannot fully express, conveys your brand's worldview and captures customers' hearts. This creates motivation (fan engagement) for customers to want to 'buy from this brand', not just buy products."
+                      },
+                      trust: {
+                        title: "Trust and Security",
+                        description: "Professional and sophisticated sites give customers a sense of security and lower psychological barriers to entering personal information and payment details."
+                      }
+                    }
+                  },
+                  section10: {
+                    title: "Don't Miss Purchase Opportunities for Attractive Products. E-commerce Sites That Lead to Long-term Sales",
+                    description1: "Many customers actually give up right before buying because the site is slow. The sites we create are extremely 'fast', so you don't have to worry about that.",
+                    description2: "Plus, instead of typical template designs, we can create cool and user-friendly designs that bring out 100% of your brand's appeal.",
+                    description3: "The complex backend product management and payments are handled by Shopify, which has trust and proven results, so you can feel secure.",
+                    description4: "In other words, it's the best of both worlds: 'the best appearance and speed' combined with 'world-standard secure systems'. This becomes a powerful weapon for your business."
+                  }
+                }
               }
             },
             section4: {
-              title: "Get Your Custom Quote",
+              title: "Get Ready with Your Custom Quote",
               description: "Answer a few questions to get a personalized quote for your project. Our interactive form helps us understand your needs and provide the most accurate estimate.",
               calculator: {
-                title: "Interactive Quote Calculator",
+                title: "Interactive Quote Requester",
                 description: "Select your requirements, project scale, and preferences to receive a detailed quote.",
-                button: "Start Quote Calculator"
+                button: "Start Quote Requester"
               }
             },
             navigation: {
               main: "Main",
               product: "Product",
               services: "Services",
-              quote: "Quote"
+              quote: "Ask Quote"
+            },
+            qaForm: {
+              title: "Project Quote Request",
+              close: "×",
+              progress: "Step {{current}} of {{total}}",
+              progressPercent: "{{percent}}%",
+              required: "*",
+              previous: "Previous",
+              next: "Next",
+              submit: "Submit Request",
+              submitting: "Submitting...",
+              validation: {
+                answerRequired: "Please answer: {{question}}",
+                allQuestionsRequired: "Please answer all questions before submitting. Missing: {{question}}"
+              },
+              questions: {
+                projectType: {
+                  question: "What type of project do you need?",
+                  options: {
+                    ecommerce: "E-commerce Website",
+                    corporate: "Corporate Website",
+                    portfolio: "Portfolio/Blog",
+                    landingpage: "Landing Page",
+                    webapp: "Web Application",
+                    other: "Other"
+                  }
+                },
+                projectScale: {
+                  question: "What is the scale of your project?",
+                  options: {
+                    small: "Small (1-5 pages)",
+                    medium: "Medium (5-30 pages)",
+                    large: "Large (30-50 pages)",
+                    enterprise: "Enterprise Level"
+                  }
+                },
+                budget: {
+                  question: "What is your budget range?",
+                  options: {
+                    under1k: "Under $1,000",
+                    "1k-5k": "$1,000 - $5,000",
+                    "5k-10k": "$5,000 - $10,000",
+                    "10k+": "$10,000+"
+                  }
+                },
+                timeline: {
+                  question: "What is your timeline?",
+                  options: {
+                    asap: "ASAP (1-2 weeks)",
+                    "1months-3months": "1 month - 3 months",
+                    "3months-6months": "3 months - 6 months",
+                    flexible: "Flexible"
+                  }
+                },
+                features: {
+                  question: "What features do you need? (Select all that apply)",
+                  options: {
+                    responsive: "Responsive Design",
+                    transformation: "Next.js Migration & Integration",
+                    payment: "Ecom Payment Integration with Shopify, Wix, etc.",
+                    cms: "Content Management System (CMS)",
+                    seo: "SEO Optimization",
+                    analytics: "Analytics & Tracking",
+                    multilingual: "Multi-language Support"
+                  }
+                },
+                brandingDepth: {
+                  question: "Does your project require detailed branding or prefer simple and basic?",
+                  options: {
+                    detailed: "Detailed Branding",
+                    simple: "Simple & Basic"
+                  }
+                },
+                brandVision: {
+                  question: "What vision does your brand want to achieve?",
+                  placeholder: "Describe the future world your brand envisions..."
+                },
+                brandMission: {
+                  question: "What role should your brand play in achieving this vision?",
+                  placeholder: "Describe the mission and purpose of your brand..."
+                },
+                targetAudience: {
+                  question: "Who is your primary target audience?",
+                  placeholder: "Describe your ideal customers, their demographics, lifestyle, and needs..."
+                },
+                brandPersonality: {
+                  question: "How should your brand be perceived by customers?",
+                  options: {
+                    professional: "Professional & Corporate",
+                    friendly: "Friendly & Approachable",
+                    luxury: "Luxury & Premium",
+                    innovative: "Innovative & Cutting-edge",
+                    trustworthy: "Trustworthy & Reliable"
+                  }
+                },
+                designStyle: {
+                  question: "What design style do you prefer?",
+                  options: {
+                    modern: "Modern & Contemporary",
+                    minimalist: "Minimalist & Clean",
+                    casual: "Casual & Relaxed",
+                    elegant: "Elegant & Sophisticated",
+                    professional: "Professional & Business-like"
+                  }
+                },
+                colorScheme: {
+                  question: "What color scheme do you prefer?",
+                  options: {
+                    blue: "Blue & Cool Tones",
+                    green: "Green & Natural",
+                    purple: "Purple & Creative",
+                    neutral: "Neutral & Subtle",
+                    warm: "Warm & Inviting"
+                  }
+                },
+                targetDemographics: {
+                  question: "Describe your target demographics",
+                  placeholder: "Age groups, gender, lifestyle, occupation, etc..."
+                },
+                visualStyle: {
+                  question: "What visual style or tone and manner do you want to depict for your project?",
+                  instruction: "Please select the keywords from below that best represent your desired visual style:",
+                  priorityOrder: "Priority Order (click to reorder)",
+                  maxLimitReached: "Maximum of 5 visual styles can be selected. Please deselect one to add another.",
+                  options: {
+                    // Column 1
+                    masculine: "Masculine",
+                    fun: "Fun",
+                    premium: "Premium",
+                    linear: "Linear",
+                    formal: "Formal",
+                    intellectual: "Intellectual",
+                    delicate: "Delicate",
+                    monotone: "Monotone",
+
+                    // Column 2
+                    feminine: "Feminine",
+                    interesting: "Interesting",
+                    warm: "Warm",
+                    curved: "Curved",
+                    mystical: "Mystical",
+                    premium2: "Premium",
+                    chic: "Chic",
+                    pop: "Pop",
+
+                    // Column 3
+                    childlike: "Childlike",
+                    powerful: "Powerful",
+                    decadence: "Decadence",
+                    rhythmic: "Rhythmic",
+                    trustworthy: "Trustworthy",
+                    lively: "Lively",
+                    stylish: "Stylish",
+                    pastel: "Pastel",
+
+                    // Column 4
+                    cute: "Cute",
+                    serious: "Serious",
+                    business: "Business",
+                    natural: "Natural",
+                    traditional: "Traditional",
+                    refreshing: "Refreshing",
+                    metallic: "Metallic",
+                    anime: "Anime",
+
+                    // Column 5
+                    cool: "Cool",
+                    elegant: "Elegant",
+                    homey: "Homey",
+                    craft: "Craft",
+                    modern: "Modern",
+                    flashy: "Flashy",
+                    complex: "Complex",
+                    japanese: "Japanese",
+
+                    // Column 6
+                    friendly: "Friendly",
+                    luxury: "Luxury",
+                    bright: "Bright",
+                    unique: "Unique",
+                    futuristic: "Futuristic",
+                    subdued: "Subdued",
+                    simple: "Simple",
+                    western: "Western",
+
+                    // Column 7
+                    gentle: "Gentle",
+                    elegant2: "Elegant",
+                    dark: "Dark",
+                    casual: "Casual",
+                    retro: "Retro",
+                    cool2: "Cool",
+                    colorful: "Colorful"
+                  }
+                },
+
+                communicationPreference: {
+                  question: "What is your preferred communication method?",
+                  options: {
+                    video: "Video consultation meeting",
+                    email: "Email communication",
+                    chat: "Chat application"
+                  }
+                },
+                chatDetails: {
+                  question: "Which chat application do you prefer?",
+                  options: {
+                    chatwork: "Chatwork",
+                    slack: "Slack",
+                    discord: "Discord",
+                    other: "Other platform"
+                  }
+                },
+                otherChatPlatform: {
+                  question: "Please specify the other chat platform:",
+                  placeholder: "Please specify the platform name..."
+                },
+                companyInfo: {
+                  question: "Tell us about your hope and sentiment for your company/project",
+                  placeholder: "Describe your business, goals, and any specific requirements..."
+                },
+                contactInfo: {
+                  question: "Your contact information",
+                  fields: {
+                    name: "Full Name",
+                    email: "Email",
+                    phone: "Phone (optional)",
+                    company: "Company (optional)"
+                  }
+                }
+              },
+              success: {
+                title: "Thank You!",
+                message: "Your project quote request has been submitted. We'll get back to you within 24 working hours!",
+                otherChatMessage: "💬 We will contact you via the specified chat platform within 24 working hours.",
+                refreshMessage: "💡To start quote again, please refresh the browser.",
+                downloadPDF: "Download PDF",
+                close: "Close"
+              },
+              pdf: {
+                title: "Project Quote Request",
+                generatedOn: "Generated on",
+                filename: "project-quote-request"
+              },
+              labels: {
+                contactInfo: "Contact Information",
+                projectType: "Project Type",
+                projectScale: "Project Scale",
+                budget: "Budget",
+                timeline: "Timeline",
+                features: "Features",
+                companyInfo: "Company Information"
+              }
             }
           },
         },
       },
       jp: {
         translation: {
+          common: {
+            close: "閉じる"
+          },
           greeting: "おかえりなさい。",
           CTA: {
             line1: "プロジェクトを考え中ですか？一緒に何か作りましょう！",
@@ -493,7 +887,7 @@ i18n
             あらゆる種類の会社と仕事をし、自分のスキルを高め、あらゆる種類の人々とチームを組んできました。
             `,
             line2: `
-            現在Web制作からイラスト、ロゴ中心にお仕事を受け付けております。お気軽にお問い合わせください。日本語/英語コミュニケーションに対応しております。
+            現在ECサイト開発からデザイン、イラスト等中心にお仕事を受け付けております。お気軽にお問い合わせください。日本語/英語コミュニケーションに対応しております。
             `,
           },
           experiences: [
@@ -782,13 +1176,16 @@ i18n
           // Service page translations (Japanese)
           service: {
             section1: {
-              title: "ビジネスを変革する",
+              title: "ECサイトのBespokeブランド",
               titleHighlight: "Next.js & Shopify",
-              description: "私たちは、結果を生み出す高性能なeコマースソリューションの作成を専門としています。カスタムWebアプリケーションからシームレスなショッピング体験まで、あなたのビジョンを実現します。",
-              cta: "無料見積もりを取得"
+              description: "パワフルなアーキテクト上で重ねる、磨く。ブランディングと高速読み込みで売り上げ30%+増を実現。The functional things that are made of dazzling and twinkle things。「買う」という行為を最大限に楽しく。",
+              /*
+              description: "私たちは、結果を生み出す高性能なeコマースソリューションの作成を専門としています。カスタムWebアプリケーションからシームレスなショッピング体験まで、あなたのビジョンを実現します。",*/
+              cta: "ビデオ相談を予約する"
             },
             section2: {
-              title: "私たちの主力製品をご紹介",
+              title: "魅力的な商品には、抽象的な体験と便利さ。",
+              titleHighlight: "すなわち、高スピードとダイナミックなECサイトが最適です。",
               description: "Next.js x Shopifyソリューションでモダンなeコマースの力を体験してください。パフォーマンス、スケーラビリティ、ユーザーエクスペリエンスのために構築されたこのプラットフォームは、あらゆる規模のビジネスに卓越した結果をもたらします。",
               features: {
                 title: "主要機能",
@@ -802,13 +1199,14 @@ i18n
               },
               demo: {
                 title: "ライブデモ",
-                description: "Next.js x Shopifyソリューションの実際の動作をご覧ください",
+                description: "Next.js x Shopifyソリューションの実際の動作をご覧ください。",
                 button: "デモサイトを訪問"
               }
             },
             section3: {
-              title: "Yimajiuniテクノロジーの力",
-              description: "私たちは最先端のテクノロジーを組み合わせて卓越した結果を提供します。Next.js x Shopify x ブランディングアプローチにより、あなたのビジネスがデジタルランドスケープで際立つことを保証します。",
+              title: "いまじゆうにの技術",
+              description: `Next.js x Shopify x ブランディングにより、高速読み込みで売り上げ30%+増を実現。
+              貴社の魅力的な商品のECビジネスチャンスを最大化します。`,
               technologies: {
                 nextjs: {
                   title: "Next.jsテクノロジー",
@@ -819,12 +1217,12 @@ i18n
                   description: "強力な在庫管理と決済処理を備えたシームレスなeコマース機能。"
                 },
                 branding: {
-                  title: "ブランディングの卓越性",
-                  description: "あなたの独自のアイデンティティを反映し、オーディエンスと共鳴するカスタムデザインとブランディング。"
+                  title: "プロジェクト固有の目的とキモチを形にする、ブランディング力",
+                  description: "最大化された効率と常に磨かれる技術でオーディエンスと共鳴するブランディングを提供。"
                 }
               },
               performance: {
-                title: "パフォーマンス指標",
+                title: "Next.js ECサイトのパフォーマンス指標",
                 subtitle: "プロジェクトからの実際の数値",
                 metrics: [
                   "ページ読み込み時間95%向上",
@@ -833,28 +1231,416 @@ i18n
                   "SEOランキング60%向上"
                 ],
                 button: "詳細なパフォーマンスレポートを見る"
+              },
+              aboutme: {
+                link: "/about",
+                button: "いまじゆうにの技術歴史を知る"
+              },
+              performanceReport: {
+                title: "Next.js ECサイトのパフォーマンス指標",
+                content: {
+                  section1: {
+                    title: "未来のECサイトを、今あなたの手に",
+                    description: "本サービスは、最先端のウェブ開発フレームワーク「Next.js」と、信頼性の高いECプラットフォーム「Shopify」を連携させた「ヘッドレスコマース」という手法でECサイトを構築します。これにより、従来のECサイトが抱える表示速度やデザインの制約といった課題を根本から解決。ユーザー（サイト訪問者）に最高の購入体験を提供し、売上向上に直結するデジタル店舗を実現します。"
+                  },
+                  section2: {
+                    title: "速い、美しい、売れる",
+                    description: "このサービスが提供するECサイトの最大の利点は、次の3つに集約されます。",
+                    benefits: {
+                      speed: {
+                        title: "驚異的な表示速度",
+                        description: "ページが瞬時に表示されるため、お客様を待たせません。サイトの高速化は離脱率を劇的に低下させ、売上向上に直接貢献します。"
+                      },
+                      design: {
+                        title: "完全オーダーメイドのデザイン",
+                        description: "ブランドの世界観を余すところなく表現できます。テンプレートの制約に縛られることなく、理想のオンラインストアを実現します。"
+                      },
+                      stability: {
+                        title: "安定した店舗運営",
+                        description: "商品の在庫管理や決済システムといったECサイトの裏側（バックエンド）は、世界中で利用されている信頼のShopifyが担うため、安心してビジネスに集中できます。"
+                      }
+                    }
+                  },
+                  section3: {
+                    title: "こんなお悩みに直面していませんか",
+                    problems: [
+                      "「サイトが重くて、お客様が離脱していないか心配…」",
+                      "「既存のプラットフォームのデザインに限界を感じ、ブランドイメージを十分に表現できない」",
+                      "「サイトの改修に時間とコストがかかりすぎる」",
+                      "「スマートフォンユーザーにとって、サイトが使いにくいと感じる」"
+                    ],
+                    explanation1: "従来のECサイトは、デザイン（フロントエンド）とシステム（バックエンド）が一体化しているため、少しデザインを変えるだけでもシステム全体に影響が及び、改修が難しいという課題がありました。",
+                    explanation2: "事例として、スポーツブランドの「ナイキ」や化粧品ブランドの「ランコム」といった世界的企業も、柔軟性と高いパフォーマンスを求めてヘッドレスコマースへ移行しています。このアプローチにより、彼らは市場の変化に迅速に対応し、顧客に合わせたユニークなオンライン体験を提供しています。"
+                  },
+                  section4: {
+                    title: "ダイナミックな体験とパフォーマンスが売上に直結",
+                    description: "ウェブサイトのパフォーマンスは、売上に直接的な影響を与えます。",
+                    benefits: {
+                      conversion: {
+                        title: "コンバージョン率の向上",
+                        description: "ある調査では、ページの読み込みに3秒以上かかると50%以上のユーザーが離脱するという結果が出ています。逆に言えば、表示速度を改善するだけでコンバージョン率の向上が期待できます。"
+                      },
+                      performance: {
+                        title: "最高レベルのパフォーマンススコア",
+                        description: "Googleが提供するウェブサイト評価ツール「Lighthouse」において、高スコアの達成を目指します。これは、サイトがユーザーにとって快適であり、SEOにも有利であることを示す客観的な指標です。"
+                      }
+                    }
+                  },
+                  section5: {
+                    title: "圧倒的な表示速度がもたらす真に喜びにつながる顧客購入体験",
+                    description: "本サービスで構築するサイトの核となる強みは「圧倒的な表示速度」です。この速さは、Next.jsの「静的サイト生成（SSG）」という技術によって実現されます。",
+                    ssg: {
+                      title: "静的サイト生成（SSG）とは？",
+                      description: "ウェブサイトのページを事前に作成しておく技術です。ユーザーがアクセスするたびにページを生成する従来の方法とは異なり、完成済みのページを瞬時に表示できるため、極めて高速なレスポンスが可能となります。この速度は、ユーザーのストレスを軽減し、快適なショッピング体験を提供することで、サイトからの離脱を防ぎ、購入へと繋げます。"
+                    }
+                  },
+                  section6: {
+                    title: "チェックリスト",
+                    description: "以下のチェックリストに一つでも当てはまれば、私たちのサービスが解決策になるかもしれません。",
+                    items: [
+                      "サイトのトップページ表示に3秒以上かかっている",
+                      "スマートフォンで見たとき、表示が崩れたり、操作しにくい部分がある",
+                      "デザインのテンプレートに縛られ、実現したい表現を諦めたことがある",
+                      "セールやキャンペーンのたびに、サイトの更新作業に手間取っている",
+                      "SEOの順位がなかなか上がらず、集客に課題を感じている",
+                      "将来的にアプリや新しいデバイスでの商品販売も考えている"
+                    ]
+                  },
+                  section7: {
+                    title: "ヘッドレスコマースが実現する「自由」",
+                    description1: "本サービスは「ヘッドレスコマース」というアーキテクチャを採用しています。これは、お客様が触れる「フロントエンド（＝ヘッド、頭）」と、お店の裏側である「バックエンド（商品管理・決済システム）」を分離する考え方です。",
+                    description2: "分離すると、何が良いのでしょうか？",
+                    benefits: {
+                      design: {
+                        title: "デザインの完全な自由",
+                        description: "バックエンドであるShopifyの機能に影響されることなく、フロントエンドを自由に設計・開発できます。これにより、他のどこにもない、あなたのブランドだけのユニークな顧客体験を創造することが可能です。"
+                      },
+                      marketing: {
+                        title: "迅速なマーケティング施策",
+                        description: "急なキャンペーンや新しいコンテンツの追加など、フロントエンドの改修を迅速かつ柔軟に行えます。バックエンドの制約を気にする必要がないため、市場のトレンドに素早く対応できます。"
+                      }
+                    }
+                  },
+                  section8: {
+                    title: "未来を見据えた技術的優位性",
+                    description: "より専門的な視点から見ると、Next.jsの採用はビジネスの成長に不可欠な技術的優位性をもたらします。",
+                    benefits: {
+                      seo: {
+                        title: "SEOへの貢献",
+                        description: "Next.jsが得意とするSSG（静的サイト生成）やSSR（サーバーサイドレンダリング）は、検索エンジンがサイトの内容を理解しやすくするため、SEO評価の向上に大きく貢献します。"
+                      },
+                      scalability: {
+                        title: "拡張性とスケーラビリティ",
+                        description: "フロントエンドとバックエンドが独立しているため、将来的にビジネスが拡大し、アクセスが急増しても、それぞれを独立してスケールさせることが可能です。例えば、スマートウォッチやVRなど、未来の新しいデバイスへの展開も容易になります。"
+                      },
+                      efficiency: {
+                        title: "開発効率の向上",
+                        description: "ReactをベースとしたNext.jsは、現代的な開発手法に適しており、効率的で高品質なサイト構築を可能にします。"
+                      }
+                    }
+                  },
+                  section9: {
+                    title: "最高の「買う」をデザインする",
+                    description: "最終的に利益をもたらすのは、サイトを訪れるお客様（エンドユーザー）です。このサービスは、エンドユーザーの購買意欲を最大限に引き出すことを目的としています。",
+                    benefits: {
+                      stressfree: {
+                        title: "ストレスフリーな体験",
+                        description: "瞬時に表示されるページ、直感的でわかりやすい操作性。これらはユーザーに「このサイトは使いやすい」という満足感を与え、購入までのプロセスをスムーズにします。"
+                      },
+                      immersion: {
+                        title: "ブランドへの没入感",
+                        description: "テンプレートでは表現しきれない、細部にまでこだわったデザインは、ブランドの世界観を伝え、お客様の心を掴みます。ただ商品を買うだけでなく、「このブランドで買いたい」という動機（ファン化）を創出します。"
+                      },
+                      trust: {
+                        title: "信頼と安心感",
+                        description: "プロフェッショナルで洗練されたサイトは、お客様に安心感を与え、個人情報や決済情報の入力に対する心理的なハードルを下げます。"
+                      }
+                    }
+                  },
+                  section10: {
+                    title: "魅力的な商品の購買チャンスを逃さない。長期的な売上につながるECサイト",
+                    description1: "サイトが重いせいで、買う直前でやめてしまうお客様、結構多いんです。私たちの作るサイトはとにかく「速い」ので、その心配がありません。",
+                    description2: "それに、よくあるテンプレート通りのデザインじゃなくて、あなたのブランドの魅力を100%引き出す、かっこよくて使いやすいデザインにできます。",
+                    description3: "裏側の難しい商品管理や決済は、信頼と実績のあるShopifyにお任せするので安心です。",
+                    description4: "つまり、「最高の見た目と速さ」と「世界標準の安心なシステム」の、いいとこ取り。これが、あなたのビジネスの強力な武器になります。"
+                  }
+                }
               }
             },
             section4: {
-              title: "カスタム見積もりを取得",
+              title: "あなたに合った御見積を準備",
               description: "プロジェクトのパーソナライズされた見積もりを取得するために、いくつかの質問にお答えください。私たちのインタラクティブフォームは、あなたのニーズを理解し、最も正確な見積もりを提供するのに役立ちます。",
               calculator: {
-                title: "インタラクティブ見積もり計算機",
+                title: "見積依頼フォーム",
                 description: "要件、プロジェクト規模、好みを選択して詳細な見積もりを受け取ります。",
-                button: "見積もり計算機を開始"
+                button: "作成を開始"
               }
             },
             navigation: {
               main: "メイン",
               product: "製品",
               services: "サービス",
-              quote: "見積もり"
+              quote: "見積依頼"
+            },
+            qaForm: {
+              title: "プロジェクト見積もり依頼",
+              close: "×",
+              progress: "ステップ {{current}} / {{total}}",
+              progressPercent: "{{percent}}%",
+              required: "*",
+              previous: "前へ",
+              next: "次へ",
+              submit: "依頼を送信",
+              submitting: "送信中...",
+              validation: {
+                answerRequired: "回答してください: {{question}}",
+                allQuestionsRequired: "送信前にすべての質問に回答してください。不足: {{question}}"
+              },
+              questions: {
+                projectType: {
+                  question: "どのようなプロジェクトが必要ですか？",
+                  options: {
+                    ecommerce: "ECサイト",
+                    corporate: "コーポレートサイト",
+                    portfolio: "ポートフォリオ/ブログ",
+                    landingpage: "ランディングページ",
+                    webapp: "Webアプリケーション",
+                    other: "その他"
+                  }
+                },
+                projectScale: {
+                  question: "プロジェクトの規模はどの程度ですか？",
+                  options: {
+                    small: "小規模 (1-5ページ)",
+                    medium: "中規模 (5-30ページ)",
+                    large: "大規模 (30-50ページ)",
+                    enterprise: "エンタープライズレベル"
+                  }
+                },
+                budget: {
+                  question: "予算の範囲はどの程度ですか？",
+                  options: {
+                    under1k: "10万円未満",
+                    "1k-5k": "10万円〜50万円",
+                    "5k-10k": "50万円〜100万円",
+                    "10k+": "100万円以上"
+                  }
+                },
+                timeline: {
+                  question: "スケジュールはどの程度ですか？",
+                  options: {
+                    asap: "至急 (1-2週間)",
+                    "1months-3months": "1ヶ月〜3ヶ月",
+                    "3months-6months": "3ヶ月〜6ヶ月",
+                    flexible: "柔軟"
+                  }
+                },
+                features: {
+                  question: "どのような機能が必要ですか？（該当するものをすべて選択）",
+                  options: {
+                    responsive: "レスポンシブデザイン",
+                    transformation: "Next.jsへの移行・統合",
+                    payment: "Shopify、Wix等のEC決済システム",
+                    cms: "WordPress等のコンテンツ管理システム（CMS）",
+                    seo: "SEO最適化",
+                    analytics: "分析・追跡",
+                    multilingual: "多言語対応",
+                  }
+                },
+                brandingDepth: {
+                  question: "プロジェクトには詳細なブランディングが必要ですか、それともシンプルで基本的なものをお好みですか？",
+                  options: {
+                    detailed: "詳細なブランディング",
+                    simple: "シンプル＆ベーシック"
+                  }
+                },
+                brandVision: {
+                  question: "ブランドが実現したい世界は？",
+                  placeholder: "ブランドが目指す未来の世界について説明してください..."
+                },
+                brandMission: {
+                  question: "このビジョンを達成する際に、ブランドが担うべき使命、役割は？",
+                  placeholder: "ブランドのミッションと目的について説明してください..."
+                },
+                targetAudience: {
+                  question: "主要なターゲットオーディエンスは誰ですか？",
+                  placeholder: "理想的な顧客、その人口統計、ライフスタイル、ニーズについて説明してください..."
+                },
+                brandPersonality: {
+                  question: "顧客にブランドをどのように認識してほしいですか？",
+                  options: {
+                    professional: "プロフェッショナル＆企業的",
+                    friendly: "フレンドリー＆親しみやすい",
+                    luxury: "ラグジュアリー＆プレミアム",
+                    innovative: "革新的＆最先端",
+                    trustworthy: "信頼できる＆頼りになる"
+                  }
+                },
+                designStyle: {
+                  question: "どのようなデザインスタイルをお好みですか？",
+                  options: {
+                    modern: "モダン＆コンテンポラリー",
+                    minimalist: "ミニマリスト＆クリーン",
+                    casual: "カジュアル＆リラックス",
+                    elegant: "エレガント＆洗練された",
+                    professional: "プロフェッショナル＆ビジネスライク"
+                  }
+                },
+                colorScheme: {
+                  question: "どのようなカラースキームをお好みですか？",
+                  options: {
+                    blue: "ブルー＆クールトーン",
+                    green: "グリーン＆ナチュラル",
+                    purple: "パープル＆クリエイティブ",
+                    neutral: "ニュートラル＆シンプル",
+                    warm: "ウォーム＆居心地の良い"
+                  }
+                },
+                targetDemographics: {
+                  question: "ターゲット像について説明してください",
+                  placeholder: "年齢層、性別、ライフスタイル、職業など..."
+                },
+                visualStyle: {
+                  question: "プロジェクトで表現したいビジュアルスタイルやトーン＆マナーは何ですか？",
+                  instruction: "下記から希望するビジュアルスタイルを表すキーワードを選択してください：",
+                  priorityOrder: "優先順位（クリックで並び替え）",
+                  maxLimitReached: "最大5つのビジュアルスタイルまで選択できます。新しいものを追加するには、既存の選択を解除してください。",
+                  options: {
+                    // Column 1
+                    masculine: "男性的",
+                    fun: "楽しい",
+                    premium: "重厚感",
+                    linear: "直線的",
+                    formal: "フォーマル",
+                    intellectual: "知的",
+                    delicate: "繊細",
+                    monotone: "モノトーン",
+
+                    // Column 2
+                    feminine: "女性的",
+                    interesting: "面白い",
+                    warm: "暖かい",
+                    curved: "曲線的",
+                    mystical: "幻想・神秘的",
+                    premium2: "アバンギャルド",
+                    chic: "シック",
+                    pop: "ポップ",
+
+                    // Column 3
+                    childlike: "子供らしい",
+                    powerful: "力強い",
+                    decadence: "退廃的",
+                    rhythmic: "リズミカル",
+                    trustworthy: "信頼・誠実",
+                    lively: "にぎやか",
+                    stylish: "スタイリッシュ",
+                    pastel: "パステル",
+
+                    // Column 4
+                    cute: "かわいらしい",
+                    serious: "真面目",
+                    business: "ビジネス",
+                    natural: "ナチュラル",
+                    traditional: "伝統的",
+                    refreshing: "爽やか",
+                    metallic: "メタリック",
+                    anime: "アニメ",
+
+                    // Column 5
+                    cool: "かっこいい",
+                    elegant: "上品",
+                    homey: "アットホーム",
+                    craft: "クラフト",
+                    modern: "現代的",
+                    flashy: "派手",
+                    complex: "複雑",
+                    japanese: "和風",
+
+                    // Column 6
+                    friendly: "親しみやすい",
+                    luxury: "高級感",
+                    bright: "明るい",
+                    unique: "個性的",
+                    futuristic: "未来的",
+                    subdued: "渋い",
+                    simple: "シンプル",
+                    western: "西洋風",
+
+                    // Column 7
+                    gentle: "優しい",
+                    elegant2: "エレガント",
+                    dark: "暗い",
+                    casual: "カジュアル",
+                    retro: "レトロ",
+                    cool2: "クール",
+                    colorful: "カラフル"
+                  }
+                },
+
+                communicationPreference: {
+                  question: "どのようなコミュニケーション方法をご希望ですか？",
+                  options: {
+                    video: "ビデオ相談ミーティング",
+                    email: "メールでのやり取り",
+                    chat: "チャットアプリでのやり取り"
+                  }
+                },
+                chatDetails: {
+                  question: "どのチャットアプリをご希望ですか？",
+                  options: {
+                    chatwork: "Chatwork",
+                    slack: "Slack",
+                    discord: "Discord",
+                    other: "その他のプラットフォーム"
+                  }
+                },
+                otherChatPlatform: {
+                  question: "その他のチャットプラットフォームを指定してください：",
+                  placeholder: "プラットフォーム名を入力..."
+                },
+                companyInfo: {
+                  question: "会社とプロジェクトについての想いを教えてください",
+                  placeholder: "ビジネス、目標、特定の要件について説明してください..."
+                },
+                contactInfo: {
+                  question: "連絡先情報",
+                  fields: {
+                    name: "氏名",
+                    email: "メールアドレス",
+                    phone: "電話番号（任意）",
+                    company: "会社名（任意）"
+                  }
+                }
+              },
+              success: {
+                title: "ありがとうございます！",
+                message: "プロジェクト見積依頼が送信されました。24営業時間以内にご連絡いたします！",
+                refreshMessage: "※見積を再度開始するには、ブラウザを更新してください。",
+                downloadPDF: "PDFをダウンロード",
+                close: "閉じる"
+              },
+              pdf: {
+                title: "プロジェクト見積もり依頼",
+                generatedOn: "生成日時",
+                filename: "プロジェクト見積もり依頼"
+              },
+              labels: {
+                contactInfo: "連絡先情報",
+                projectType: "プロジェクトタイプ",
+                projectScale: "プロジェクト規模",
+                budget: "予算",
+                timeline: "スケジュール",
+                features: "機能",
+                companyInfo: "会社情報"
+              }
             }
-          },
-        },
-      },
-    },
+          }
+        }
+      }
+    }
   });
+
+export default i18n;
 
 export const skills = [
   {
@@ -885,11 +1671,23 @@ export const skills = [
     imageUrl: javascript,
     name: "JavaScript",
     type: "Frontend",
-    years: "3",
+    years: "5",
+  },
+  {
+    imageUrl: typescript,
+    name: "Typescript",
+    type: "Frontend",
+    years: "1",
   },
   {
     imageUrl: react,
     name: "React",
+    type: "Frontend",
+    years: "3",
+  },
+  {
+    imageUrl: nextjs,
+    name: "Next.js",
     type: "Frontend",
     years: "1",
   },
@@ -957,7 +1755,7 @@ export const skills = [
     imageUrl: figma,
     name: "Figma",
     type: "Design",
-    years: "1",
+    years: "2",
   },
 ];
 

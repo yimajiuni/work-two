@@ -26,8 +26,8 @@ function TranslatedAbout() {
         <h3 className="subhead-text">My Skills</h3>
         <div className="lg:block md:block sm:hidden sx:hidden"></div>
         <div className="mt-16 flex flex-wrap gap-12 cursor-pointer">
-          {skills.map((skill) => (
-            <div className="block-container w-20 h-20 tooltip">
+          {skills.map((skill, index) => (
+            <div className="block-container w-20 h-20 tooltip" key={index}>
               <div className="btn-back rounded-xl" />
               <div className="btn-front rounded-xl flex justify-center items-enter">
                 <img
