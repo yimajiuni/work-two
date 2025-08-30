@@ -37,8 +37,8 @@ function TranslatedAbout() {
               </div>
               <div className="csstooltip">
                 <div>{skill.name}</div>
-                <div>工程:{skill.type}</div>
-                <div>使用歴:{skill.years}年</div>
+                <div>{t('skillTooltip.flow')}: {skill.type}</div>
+                <div>{t('skillTooltip.experience')}: {skill.years}{t('skillTooltip.years')}</div>
               </div>
             </div>
           ))}

@@ -5,6 +5,109 @@ import { Document, Page, Text, View, StyleSheet, pdf, Font } from '@react-pdf/re
 import { I18nextProvider } from 'react-i18next';
 import emailjs from '@emailjs/browser';
 
+// Consolidated Tailwind classes for better performance
+const classes = {
+    // Modal overlay
+    modalOverlay: "fixed inset-0 bg-white/10 backdrop-blur-sm z-50 flex items-center justify-center p-4",
+
+    // Main container
+    mainContainer: "bg-white/20 backdrop-blur-sm rounded-lg p-8 border border-gray-500 max-w-2xl w-full max-h-[90vh] overflow-y-auto",
+
+    // Header
+    header: "flex justify-between items-center mb-6",
+    headerTitle: "text-2xl font-bold text-gray-500",
+    closeButton: "text-white hover:text-gray-500 text-2xl pt-5",
+
+    // Progress bar
+    progressContainer: "mb-6",
+    progressText: "flex justify-between text-sm text-gray-500 mb-2",
+    progressBar: "w-full bg-white/20 rounded-full h-2",
+    progressFill: "bg-blue-500 h-2 rounded-full transition-all duration-300",
+
+    // Question completion dots
+    dotsContainer: "flex gap-2 mt-3",
+    dot: "w-3 h-3 rounded-full transition-all duration-300",
+    dotCurrent: "bg-blue-400 scale-125",
+    dotAnswered: "bg-pink-300",
+    dotUnanswered: "bg-white/60",
+
+    // Form elements
+    form: "mb-8",
+    questionTitle: "text-xl font-semibold text-gray-500 mb-4",
+    required: "text-red-400 ml-2",
+
+    // Input styles
+    input: "w-full p-3 rounded-lg bg-white/10 border border-white/20 text-gray-500 placeholder-gray-500 focus:outline-none focus:border-gray-500",
+    inputContact: "w-full p-3 rounded-lg bg-white/10 border border-white/20 text-gray-500 placeholder-gray-500 focus:outline-none focus:border-blue-400",
+    textarea: "w-full p-3 rounded-lg bg-white/10 border border-white/20 text-gray-500 placeholder-gray-500 focus:outline-none focus:border-gray-500",
+
+    // Radio and checkbox styles
+    radioContainer: "space-y-3",
+    radioItem: "flex items-center space-x-3 cursor-pointer",
+    radioInput: "w-4 h-4 text-blue-600",
+    radioLabel: "text-gray-500",
+
+    // Grid styles
+    gridContainer: "space-y-4",
+    gridInstruction: "text-gray-500 text-sm mb-4",
+    grid: "grid grid-cols-4 sm:grid-cols-7 gap-3",
+    gridButton: "p-2 sm:p-3 rounded-lg border-2 transition-all duration-200 cursor-pointer hover:scale-105 relative min-h-[60px] sm:min-h-[80px] flex items-center justify-center",
+    gridButtonSelected: "bg-pink-300/50 border-white/50 text-gray-500 hover:bg-white/20 hover:border-white/40",
+    gridButtonUnselected: "bg-pink-300/50 border-white/50 text-gray-500 hover:bg-white/20 hover:border-white/40",
+    gridButtonText: "text-xs text-center leading-tight font-medium break-words hyphens-auto max-w-full",
+    gridPriority: "absolute -top-2 -right-2 w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center text-xs font-bold",
+
+    // Priority colors
+    priorityColors: {
+        red: "bg-red-500/80 border-red-400 text-white shadow-lg",
+        pink: "bg-pink-500/80 border-pink-400 text-white shadow-lg",
+        fuchsia: "bg-fuchsia-500/80 border-fuchsia-400 text-white shadow-lg",
+        violet: "bg-violet-500/80 border-violet-400 text-white shadow-lg",
+        purple: "bg-purple-500/80 border-purple-400 text-white shadow-lg"
+    },
+    priorityBadgeColors: {
+        red: "bg-red-600 text-white",
+        pink: "bg-pink-600 text-white",
+        fuchsia: "bg-fuchsia-600 text-white",
+        violet: "bg-violet-600 text-white",
+        purple: "bg-purple-600 text-white"
+    },
+
+    // Priority order display
+    priorityOrder: "mt-4 p-3 bg-white/10 rounded-lg border border-white/20",
+    priorityOrderText: "text-gray-500 text-sm mb-2",
+    priorityOrderList: "flex flex-wrap gap-2",
+    priorityBadge: "px-3 py-1 rounded-full text-xs font-medium text-white",
+
+    // Contact form
+    contactContainer: "space-y-4",
+    contactField: "block text-white mb-2",
+    contactError: "text-red-400 text-sm",
+
+    // Validation error
+    validationError: "mt-4 p-3 bg-red-500/20 border border-red-400/30 rounded-lg",
+    validationErrorText: "text-red-400 text-sm",
+
+    // Navigation buttons
+    navContainer: "flex justify-between",
+    button: "px-6 py-3 rounded-lg font-semibold transition-colors",
+    buttonDisabled: "bg-pink-300/40 text-white/60 cursor-not-allowed",
+    buttonPrevious: "bg-pink-300/80 text-white",
+    buttonNext: "bg-blue-500 text-white hover:bg-blue-600",
+    buttonSubmit: "bg-blue-500 text-white hover:bg-blue-600",
+    buttonSubmitting: "bg-pink-300/40 text-white cursor-not-allowed",
+
+    // Success modal
+    successOverlay: "fixed inset-0 bg-white/50 backdrop-blur-sm z-50 flex items-center justify-center p-4",
+    successContainer: "border border-gray-500 bg-pink-300/50 backdrop-blur-sm rounded-lg p-8 border border-white/20 max-w-md w-full text-center",
+    successTitle: "text-2xl font-bold text-gray-500 mb-4",
+    successMessage: "text-gray-500 mb-6",
+    successSubMessage: "text-gray-500 text-sm mb-6",
+    successButtons: "flex gap-3 justify-center",
+    successButtonPrimary: "px-6 py-3 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600 transition-colors",
+    successButtonSecondary: "px-6 py-3 bg-pink-300/40 text-white rounded-lg font-semibold hover:bg-white/30 transition-colors"
+};
+
 // PDF Styles
 const pdfStyles = StyleSheet.create({
     page: {

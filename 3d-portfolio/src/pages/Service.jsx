@@ -2,10 +2,98 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SEO from "../components/SEO";
+import AnimatedMetric from "../components/AnimatedMetric";
+import i18n from "i18next";
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 import QAQuote from "../components/QAQuote";
 import PerformanceReport from "../components/PerformanceReport";
 import yimajiuniPark from '../assets/images/yimajiuni-park.png';
 import nextEcomShopify from '../assets/images/next-ecom-shopify.png';
+import waPtnDia from '../assets/images/wa-ptn-dia.svg';
+import waPtnWave from '../assets/images/wa-ptn-wave.svg';
+import Footer from "../components/Footer";
+
+// Consolidated Tailwind classes for better performance
+const classes = {
+    // Main container
+    mainContainer: "max-container pt-8 -mt-32 sm:-mt-24",
+
+    // Section base styles
+    section: "rounded-[20px] bg-pink-300/80 pt-10 mt-10 mb-20 flex items-center py-20",
+    section1: "rounded-[20px] bg-pink-300/80 pt-10 mt-0 sm:mt-10 mb-20 flex items-center justify-center pb-20 px-4",
+    section4: "rounded-[20px] bg-pink-300/80 pt-10 mt-10 mb-10 flex items-center py-20",
+
+    // Section content
+    sectionContent: "mx-8 max-w-6xl",
+    sectionContent4: "mx-8 max-w-4xl w-full",
+    sectionTextCenter: "text-center",
+    sectionTextLeft: "text-left",
+
+    // Typography
+    title: "text-4xl sm:text-6xl font-bold text-white mb-4 sm:mb-6",
+    titleHighlight: "blue-gradient_text text-[36px] sm:text-6xl drop-shadow block",
+    subtitle: "text-[28px] sm:text-4xl font-bold text-white mb-6",
+    subtitleHighlight: "text-[26px] font-bold sm:text-4xl blue-gradient_text drop-shadow block mb-3",
+    sectionTitle: "text-4xl font-bold text-white mb-6",
+    description: "text-lg text-white/80 max-w-3xl mx-auto",
+    descriptionLarge: "text-xl text-white/80 mb-4 sm:mb-6 max-w-2xl mx-auto",
+
+    // Images
+    image: "mx-auto w-[100%] sm:w-full h-60 sm:h-[80%] object-fit rounded-lg transition-transform duration-300",
+    imageHover: "w-full h-96 h-[100%] sm:h-max object-cover sm:object-fit rounded-lg hover:scale-105 hover:shadow-pink-400/30 transition-transform duration-300",
+
+    // Buttons
+    ctaButton: "inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105",
+    demoButton: "inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105",
+    performanceButton: "inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105",
+    quoteButton: "bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105",
+
+    // Cards and containers
+    card: "bg-white/10 backdrop-blur-sm rounded-lg p-8 border border-white/20",
+    cardFlex: "flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-8 border border-white/20",
+    cardCircular: "bg-white/10 backdrop-blur-sm rounded-full p-8 border border-white/20 aspect-square flex flex-col items-center justify-center text-center",
+
+    // Technology cards
+    techCard: "bg-white/10 backdrop-blur-sm p-8 border border-white/20 rounded-lg flex flex-col items-center justify-center text-center",
+    techTitle: "text-xl font-semibold text-white mb-4",
+    techDescription: "text-white/80",
+
+    // Performance section
+    performanceContainer: "bg-white/10 backdrop-blur-sm rounded-lg p-8 border border-white/20",
+    performanceTitle: "text-2xl font-bold text-white mb-1 text-center",
+    performanceSubtitle: "text-md font-bold text-white/80 mb-6 text-center",
+    performanceGrid: "grid md:grid-cols-3 gap-8 mb-6",
+    performanceButtonContainer: "text-center",
+
+    // Quote section
+    quoteContainer: "bg-white/10 backdrop-blur-sm rounded-lg p-8 border border-white/20",
+    quoteTitle: "text-2xl font-bold text-white mb-4",
+    quoteButtonContainer: "text-center",
+
+    // Navigation
+    navigation: "fixed bottom-0 left-0 right-0 flex justify-center items-center h-[90px] sm:h-24 bg-white/10 backdrop-blur-sm border-t border-white/20 z-50",
+    navigationContent: "h-full flex items-center justify-center",
+    navigationNav: "flex gap-4 sm:gap-8 text-xs sm:text-base",
+    navigationButton: "sm:px-6 sm:py-3 px-2 py-4 rounded-lg font-semibold transition-all duration-300",
+    navigationButtonActive: "bg-blue-500 text-white shadow-lg",
+    navigationButtonInactive: "bg-white/20 border border-white/20 text-blue-500 hover:bg-white/30",
+    navigationReset: "px-6 py-3 rounded-lg font-semibold transition-all duration-300 bg-white/20 border border-white/20 text-blue-500 hover:bg-white/30",
+
+    // Decorative elements
+    decorativeLeft: "fixed left-0 sm:left-6 top-[60%] sm:top-[55%] transform -translate-y-1/2 w-16 sm:w-40 lg:w-60 h-16 rounded-lg backdrop-blur-sm border border-white/20 p-6 z-40",
+    decorativeRight: "fixed right-0 sm:right-6 top-[60%] sm:top-[55%] transform -translate-y-1/2 w-16 sm:w-40 lg:w-60 h-16 rounded-lg backdrop-blur-sm border border-white/20 p-6 z-40",
+
+    // Spacing
+    mb12: "mb-12",
+    mb16: "mb-16",
+    mb6: "mb-6",
+    mb4: "mb-4",
+    mb3: "mb-3"
+};
 
 const Service = () => {
     const [activeSection, setActiveSection] = useState(1);
@@ -20,6 +108,10 @@ const Service = () => {
     const section2Ref = useRef(null); // Reference to section 2 (animated)
     const section3Ref = useRef(null); // Reference to section 3 (animated)
     const section4Ref = useRef(null); // Reference to section 4 (animated)
+    const performanceSectionRef = useRef(null); // Reference to performance section for animation trigger
+    const [isPerformanceSectionVisible, setIsPerformanceSectionVisible] = useState(false); // Track performance section visibility
+
+
 
 
 
@@ -58,9 +150,9 @@ const Service = () => {
         // ✨ STEP 1: Add glow effect to selected section
         const targetSection = document.getElementById(`section-${sectionNumber}`);
         tl.to(targetSection, {
-            boxShadow: "0 0 30px rgba(59, 130, 246, 0.3)",
+            boxShadow: "0 0 30px rgba(4, 206, 251, 0.51)",
             borderRadius: "20px", // equivalent to rounded-lg
-            duration: 0.3,
+            duration: 0.9,
             ease: "power2.out"
         });
 
@@ -161,7 +253,7 @@ const Service = () => {
             const section2Element = document.getElementById('section-2');
             if (section2Element) {
                 const elementTop = section2Element.offsetTop;
-                const offset = 0; // Adjust this value to control how far from top (higher = more space from top)
+                const offset = 50; // Adjust this value to control how far from top (higher = more space from top)
                 window.scrollTo({
                     top: elementTop - offset,
                     behavior: "smooth"
@@ -318,39 +410,55 @@ const Service = () => {
 
     // 📱 SCROLL DETECTION: Automatically updates active section while scrolling
     useEffect(() => {
+        let timeoutId;
+
         const handleScroll = () => {
-            const scrollPosition = window.scrollY + window.innerHeight / 2; // Calculate middle of viewport
+            // Debounce scroll events for better performance
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                const scrollPosition = window.scrollY + window.innerHeight / 2; // Calculate middle of viewport
 
-            // 🔍 Find which section is currently in the middle of the screen
-            // 💡 Use current visual order and account for GSAP transforms
-            for (let i = sectionOrder.length - 1; i >= 0; i--) {
-                const section = document.getElementById(`section-${sectionOrder[i]}`);
-                if (section) {
-                    // Get the actual visual position considering GSAP transforms
-                    const rect = section.getBoundingClientRect();
-                    const sectionTop = rect.top + window.scrollY;
-                    const sectionHeight = rect.height;
+                // 🔍 Find which section is currently in the middle of the screen
+                // 💡 Use current visual order and account for GSAP transforms
+                for (let i = sectionOrder.length - 1; i >= 0; i--) {
+                    const section = document.getElementById(`section-${sectionOrder[i]}`);
+                    if (section) {
+                        // Get the actual visual position considering GSAP transforms
+                        const rect = section.getBoundingClientRect();
+                        const sectionTop = rect.top + window.scrollY;
+                        const sectionHeight = rect.height;
 
-                    // 📍 Check if current scroll position is within this section
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                        // 💡 Don't auto-update active section during shuffling animations
-                        // This prevents conflicts with manual navigation selection
-                        if (!gsap.isTweening(section2Ref.current) &&
-                            !gsap.isTweening(section3Ref.current) &&
-                            !gsap.isTweening(section4Ref.current)) {
+                        // 📍 Check if current scroll position is within this section
+                        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                            // 💡 Don't auto-update active section during shuffling animations
+                            // This prevents conflicts with manual navigation selection
+                            if (!gsap.isTweening(section2Ref.current) &&
+                                !gsap.isTweening(section3Ref.current) &&
+                                !gsap.isTweening(section4Ref.current)) {
 
-                            setActiveSection(sectionOrder[i]); // Update active section based on visual order
+                                setActiveSection(sectionOrder[i]); // Update active section based on visual order
+                            }
+                            break;
                         }
-                        break;
                     }
                 }
-            }
+            }, 16); // ~60fps debounce
         };
 
         // 🎧 Add scroll listener and clean it up when component unmounts
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            clearTimeout(timeoutId);
+        };
     }, [sectionOrder]); // Re-run effect when section order changes
+
+
+
+    // 📜 SCROLL TO TOP: Always scroll to top when Service component loads
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
 
     // 🚀 INITIALIZATION: Set up GSAP animations when component first loads
     useEffect(() => {
@@ -374,9 +482,12 @@ const Service = () => {
                 duration: 0.8, // Animation duration in seconds
                 stagger: 0.2, // Delay between each section (0.2s between each)
                 ease: "power2.out", // Animation curve: starts fast, ends slow
-                delay: 0.5 // Wait 0.5 seconds after page load before starting
+                delay: 0.5, // Wait 0.5 seconds after page load before starting
+
             }
         );
+
+
 
         // 🧹 CLEANUP: Stop all animations when component unmounts (prevents memory leaks)
         return () => {
@@ -386,79 +497,122 @@ const Service = () => {
 
     // 📱 RESPONSIVE SPACING: Handle screen size changes for consistent spacing
     useEffect(() => {
+        let resizeTimeout;
+
         const handleResize = () => {
-            // Reset all sections to original positions when screen size changes
-            resetAllSections();
+            // Debounce resize events for better performance
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                // Reset all sections to original positions when screen size changes
+                resetAllSections();
+            }, 250); // 250ms debounce
         };
 
         // Add resize listener
-        window.addEventListener('resize', handleResize);
+        window.addEventListener('resize', handleResize, { passive: true });
 
-        // Initial call to set correct spacing
-        handleResize();
-
-        // Reset all sections when component mounts
+        // Initial call to set correct spacing (only once on mount)
         resetAllSections();
 
         // Cleanup
-        return () => window.removeEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            clearTimeout(resizeTimeout);
+        };
+    }, []); // Remove resetAllSections from dependencies to prevent infinite loops
+
+    // 🎯 PERFORMANCE SECTION VISIBILITY: Track when performance section is in view
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsPerformanceSectionVisible(entry.isIntersecting);
+            },
+            { threshold: 0.3 } // Trigger when 30% of the section is visible
+        );
+
+        if (performanceSectionRef.current) {
+            observer.observe(performanceSectionRef.current);
+        }
+
+        return () => {
+            if (performanceSectionRef.current) {
+                observer.unobserve(performanceSectionRef.current);
+            }
+        };
     }, []);
 
     return (
-        <div className="max-container pt-8 -mt-0 sm:-mt-14">
-            {/* Section 1: Main Visual + Copy and CTA */}
-            <section id="section-1" ref={section1Ref} className="rounded-[20px] bg-pink-300/80 pt-10 mt-0 sm:mt-10 mb-20 flex items-center justify-center pb-20 px-4">
-                <div className="text-center max-w-4xl">
-                    <h1 className="text-5xl sm:text-6xl font-bold text-white mb-8">
-                        {t('service.section1.title')}
-                        <span className="blue-gradient_text block">{t('service.section1.titleHighlight')}</span>
-                    </h1>
-                    <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
-                        {t('service.section1.description')}
-                    </p>
+        <>
+            <SEO
+                title="Services & Portfolio"
+                description="Explore my professional services including web development, graphic design, and creative solutions. View my portfolio of projects and get in touch for collaboration."
+                keywords="web development services, graphic design, portfolio, react development, japan designer"
+                url="https://your-domain.com/service"
+            />
+            <div className={classes.mainContainer}>
+                {/* Section 1: Main Visual + Copy and CTA */}
+                <section id="section-1" ref={section1Ref} className={classes.section1}>
+                    <div className="text-center max-w-4xl">
 
-                    {/* Main Image */}
-                    <div className="w-full rounded-lg mb-12 overflow-hidden">
-                        <img
-                            src={yimajiuniPark}
-                            alt="Yimajiuni Park - Creative Workspace"
-                            className="shadow-lg w-full h-64 sm:h-80 object-cover rounded-lg hover:scale-105 transition-transform duration-300"
-                        />
+                        <h1 className={classes.title}>
+                            {t('service.section1.title')}
+                            <span className={classes.titleHighlight}>{t('service.section1.titleHighlight')}</span>
+                        </h1>
+
+                        {/* Main Image */}
+                        <div className="w-full rounded-lg mb-6">
+                            <img
+                                src={yimajiuniPark}
+                                alt="Yimajiuni Park - Creative Workspace"
+                                className={classes.image}
+                            />
+                        </div>
+
+
+                        <p className={classes.descriptionLarge}>
+                            {t('service.section1.description')}
+                        </p>
+
+                        <ScrollLink
+                            to="section-4"
+                            spy={true}
+                            smooth={true}
+                            offset={-100}
+                            duration={500}
+                            className={classes.ctaButton}
+                        >
+                            {t('service.section1.cta')}
+                        </ScrollLink>
                     </div>
+                </section>
 
-                    <ScrollLink
-                        to="section-4"
-                        spy={true}
-                        smooth={true}
-                        offset={-100}
-                        duration={500}
-                        className="inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105"
-                    >
-                        {t('service.section1.cta')}
-                    </ScrollLink>
-                </div>
-            </section>
+                {/* Section 2: Product Introduction */}
+                <section id="section-2" ref={section2Ref} className={classes.section}>
+                    <div className={classes.sectionContent}>
+                        <div className={classes.sectionTextCenter}>
+                            <div>
+                                <h2
 
-            {/* Section 2: Product Introduction */}
-            <section id="section-2" ref={section2Ref} className="rounded-[20px] bg-pink-300/80 pt-10 mt-10 mb-20 flex items-center py-20">
-                <div className="mx-8 max-w-6xl">
-                    <div className="text-center">
-                        <div>
-                            <h2 className="text-left text-[28px] sm:text-4xl font-bold text-white mb-6">
-                                {t('service.section2.title')}
-                            </h2>
-                            <span className="text-left text-[26px] font-bold sm:text-4xl blue-gradient_text block mb-3">
-                                {t('service.section2.titleHighlight')}
-                            </span>
-                            <div className="w-full rounded-lg mb-6 ">
-                                <img
-                                    src={nextEcomShopify}
-                                    alt="Next.js E-commerce Shopify Demo Site"
-                                    className="w-full h-96 sm:h-max object-cover rounded-lg hover:scale-105 hover:shadow-pink-400/30 transition-transform duration-300"
-                                />
-                            </div>
+                                    className={classes.subtitle}
+                                >
+                                    {t('service.section2.title')}
+                                </h2>
+                                <span
 
-                            {/*}
+                                    className={classes.subtitleHighlight}
+                                >
+                                    {t('service.section2.titleHighlight')}
+                                </span>
+                                <div className="w-full rounded-lg mb-6 ">
+                                    <img
+
+                                        src={nextEcomShopify}
+                                        alt="Next.js E-commerce Shopify Demo Site"
+                                        className={classes.imageHover}
+                                    />
+                                </div>
+
+                                {/*}
                             <p className="text-lg text-white/80 mb-8">
                                 {t('service.section2.description')}
                             </p>
@@ -470,163 +624,254 @@ const Service = () => {
                                     ))}
                                 </ul>
                             </div>*/}
-                            <div className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-8 border border-white/20">
-                                <h3 className="text-2xl font-bold text-white mb-4">{t('service.section2.demo.description')}</h3>
+                                <div
 
-                                <a
-                                    href="https://next-shopify.yimajiuni.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105"
+                                    className={classes.cardFlex}
                                 >
-                                    {t('service.section2.demo.button')}
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                                    <h3 className="text-2xl font-bold text-white mb-4">{t('service.section2.demo.description')}</h3>
 
-            {/* Section 3: Service Details */}
-            <section id="section-3" ref={section3Ref} className="rounded-[20px] bg-pink-300/80 pt-10 mt-10 mb-20 flex items-center py-20">
-                <div className="mx-8 max-w-6xl">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl font-bold text-white mb-6">
-                            {t('service.section3.title')}
-                        </h2>
-                        <p className="text-lg text-white/80 max-w-3xl mx-auto">
-                            {t('service.section3.description')}
-                        </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-3 gap-8 mb-12">
-                        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                            <h3 className="text-xl font-semibold text-white mb-4">{t('service.section3.technologies.nextjs.title')}</h3>
-                            <p className="text-white/80">
-                                {t('service.section3.technologies.nextjs.description')}
-                            </p>
-                        </div>
-                        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                            <h3 className="text-xl font-semibold text-white mb-4">{t('service.section3.technologies.shopify.title')}</h3>
-                            <p className="text-white/80">
-                                {t('service.section3.technologies.shopify.description')}
-                            </p>
-                        </div>
-                        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                            <h3 className="text-xl font-semibold text-white mb-4">{t('service.section3.technologies.branding.title')}</h3>
-                            <p className="text-white/80">
-                                {t('service.section3.technologies.branding.description')}
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 border border-white/20">
-                        <h3 className="text-2xl font-bold text-white mb-6 text-center">{t('service.section3.performance.title')}</h3>
-                        <div className="grid md:grid-cols-2 gap-8">
-                            <div>
-                                <h4 className="text-lg font-semibold text-white mb-4">{t('service.section3.performance.subtitle')}</h4>
-                                <ul className="text-white/80 space-y-2">
-                                    {t('service.section3.performance.metrics', { returnObjects: true }).map((metric, index) => (
-                                        <li key={index}>• {metric}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="items-left grid grid-rows-2 text-left gap-4">
-                                <div>
-                                    <button
-                                        onClick={() => setIsPerformanceReportOpen(true)}
-                                        className="inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105"
-                                    >
-                                        {t('service.section3.performance.button')}
-                                    </button>
-                                </div>
-                                <div>
                                     <a
-                                        href="/about"
+                                        href="https://next-shopify.yimajiuni.com"
+                                        target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105"
+                                        className={classes.demoButton}
                                     >
-                                        {t('service.section3.aboutme.button')}
+                                        {t('service.section2.demo.button')}
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            {/* Section 4: Quotation App */}
-            <section id="section-4" ref={section4Ref} className="rounded-[20px] bg-pink-300/80 pt-10 mt-10 mb-10 flex items-center py-20">
-                <div className="mx-8 max-w-4xl w-full">
-                    <div className="text-center mb-12">
-                        <h2 className="text-4xl font-bold text-white mb-6">
-                            {t('service.section4.title')}
-                        </h2>
-                        <p className="text-lg text-white/80">
-                            {t('service.section4.description')}
-                        </p>
-                    </div>
+                {/* Section 3: Service Details */}
+                <section id="section-3" ref={section3Ref} className={classes.section}>
+                    <div className={classes.sectionContent}>
+                        <div className={classes.sectionTextCenter}>
+                            <h2
 
-                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 border border-white/20">
-                        <div className="text-center">
-                            <h3 className="text-2xl font-bold text-white mb-4">{t('service.section4.calculator.title')}</h3>
-                            <p className="text-white/80 mb-8">
-                                {t('service.section4.calculator.description')}
-                            </p>
-                            <button
-                                onClick={() => setIsQAQuoteOpen(true)}
-                                className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105"
+                                className={classes.sectionTitle}
                             >
-                                {t('service.section4.calculator.button')}
-                            </button>
+                                {t('service.section3.title')}
+                            </h2>
+                            <p
+
+                                className={classes.description}
+                            >
+                                {t('service.section3.description')}
+                            </p>
+                        </div>
+
+                        <div className="grid md:grid-cols-3 gap-8 mb-12">
+                            <div
+                                className={classes.techCard}
+                            >
+                                <h3 className={classes.techTitle}>{t('service.section3.technologies.nextjs.title')}</h3>
+                                <p className={classes.techDescription}>
+                                    {t('service.section3.technologies.nextjs.description')}
+                                </p>
+                            </div>
+                            <div
+                                className={classes.techCard}
+                            >
+                                <h3 className={classes.techTitle}>{t('service.section3.technologies.shopify.title')}</h3>
+                                <p className={classes.techDescription}>
+                                    {t('service.section3.technologies.shopify.description')}
+                                </p>
+                            </div>
+                            <div
+                                className={classes.techCard}
+                            >
+                                <h3 className={classes.techTitle}>{t('service.section3.technologies.branding.title')}</h3>
+                                <p className={classes.techDescription}>
+                                    {t('service.section3.technologies.branding.description')}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            ref={performanceSectionRef}
+                            className={classes.performanceContainer}
+                        >
+                            <h3 className={classes.performanceTitle}>{t('service.section3.performance.title')}</h3>
+                            <h4 className={classes.performanceSubtitle}>{t('service.section3.performance.subtitle')}</h4>
+                            <div className={classes.performanceGrid}>
+                                <AnimatedMetric
+                                    label={t('service.section3.performance.labels.imageSpeed')}
+                                    labelKey="imageSpeed"
+                                    startValue="1.2sec"
+                                    endValue="0.5sec"
+                                    duration={4000}
+                                    delay={0}
+                                    shouldStart={isPerformanceSectionVisible}
+                                />
+                                <AnimatedMetric
+                                    label={t('service.section3.performance.labels.conversionRate')}
+                                    labelKey="conversionRate"
+                                    startValue="1.9%"
+                                    endValue="1.3%"
+                                    duration={4000}
+                                    delay={300}
+                                    shouldStart={isPerformanceSectionVisible}
+                                />
+                                <AnimatedMetric
+                                    label={t('service.section3.performance.labels.mobileBounce')}
+                                    labelKey="mobileBounce"
+                                    startValue="65%"
+                                    endValue="20%"
+                                    duration={4000}
+                                    delay={600}
+                                    shouldStart={isPerformanceSectionVisible}
+                                />
+                            </div>
+                            <div className={classes.performanceGrid}>
+                                <AnimatedMetric
+                                    label={t('service.section3.performance.labels.organicTraffic')}
+                                    labelKey="organicTraffic"
+                                    startValue="rank 22"
+                                    endValue="rank 12"
+                                    duration={4000}
+                                    delay={900}
+                                    shouldStart={isPerformanceSectionVisible}
+                                />
+                                <AnimatedMetric
+                                    label={t('service.section3.performance.labels.operationHours')}
+                                    labelKey="operationHours"
+                                    startValue="25 hours"
+                                    endValue="15 hours"
+                                    duration={4000}
+                                    delay={1200}
+                                    shouldStart={isPerformanceSectionVisible}
+                                />
+                                <AnimatedMetric
+                                    label={t('service.section3.performance.labels.serverCost')}
+                                    labelKey="serverCost"
+                                    startValue={i18n.language === 'jp' ? "43万円" : "$4500"}
+                                    endValue={i18n.language === 'jp' ? "20万円" : "$1800"}
+                                    duration={4000}
+                                    delay={1500}
+                                    shouldStart={isPerformanceSectionVisible}
+                                />
+                            </div>
+
+                            <div className={classes.performanceButtonContainer}>
+                                <button
+                                    onClick={() => setIsPerformanceReportOpen(true)}
+                                    className={classes.performanceButton}
+                                >
+                                    {t('service.section3.performance.button')}
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </section >
+
+                {/* Section 4: Quotation App */}
+                < section id="section-4" ref={section4Ref} className={classes.section4} >
+                    <div className={classes.sectionContent4}>
+                        <div className={classes.sectionTextCenter}>
+                            <h2
+
+                                className={classes.sectionTitle}
+                            >
+                                {t('service.section4.title')}
+                            </h2>
+                            <p
+
+                                className={classes.description}
+                            >
+                                {t('service.section4.description')}
+                            </p>
+                        </div>
+
+                        <div
+
+                            className={classes.quoteContainer}
+                        >
+                            <div className={classes.quoteButtonContainer}>
+                                <h3 className={classes.quoteTitle}>{t('service.section4.calculator.title')}</h3>
+
+                                <button
+                                    onClick={() => setIsQAQuoteOpen(true)}
+                                    className={classes.quoteButton}
+                                >
+                                    {t('service.section4.calculator.button')}
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section >
+                {/*
+            <section className="mb-10">
+                <Footer />
+            </section>*/}
 
-            {/* Section 5: Bottom Navigation */}
-            <section id="section-5" className="fixed bottom-0 left-0 right-0 flex justify-center items-center h-[90px] sm:h-24 bg-white/10 backdrop-blur-sm border-t border-white/20 z-50">
-                <div className="h-full flex items-center justify-center">
-                    <nav className="flex gap-4 sm:gap-8 text-xs sm:text-base">
-                        {[1, 2, 3, 4].map((section) => (
+                {/* Section 5: Bottom Navigation */}
+                <section id="section-5" className={classes.navigation}>
+                    <div className={classes.navigationContent}>
+                        <nav className={classes.navigationNav}>
+                            {[1, 2, 3, 4].map((section) => (
+                                <button
+                                    key={section}
+                                    onClick={() => scrollToSection(section)}
+                                    className={`${classes.navigationButton} ${activeSection === section
+                                        ? classes.navigationButtonActive
+                                        : classes.navigationButtonInactive
+                                        }`}
+                                >
+                                    {section === 1 && t('service.navigation.main')}
+                                    {section === 2 && t('service.navigation.product')}
+                                    {section === 3 && t('service.navigation.services')}
+                                    {section === 4 && t('service.navigation.quote')}
+                                </button>
+                            ))}
+                            {/* 🔄 RESET BUTTON: Click to reset all sections back to original positions */}
+                            {/* 💡 This is useful for testing or if you want to reset the layout */}
                             <button
-                                key={section}
-                                onClick={() => scrollToSection(section)}
-                                className={`sm:px-6 sm:py-3 px-2 py-4 rounded-lg font-semibold transition-all duration-300 ${activeSection === section
-                                    ? "bg-blue-500 text-white shadow-lg"
-                                    : "bg-white/20 text-white hover:bg-white/30"
-                                    }`}
-                            >
-                                {section === 1 && t('service.navigation.main')}
-                                {section === 2 && t('service.navigation.product')}
-                                {section === 3 && t('service.navigation.services')}
-                                {section === 4 && t('service.navigation.quote')}
+                                onClick={resetAllSections}
+                                className={classes.navigationReset}
+                                title="Reset all sections to original positions"
+                            >▩
                             </button>
-                        ))}
-                        {/* 🔄 RESET BUTTON: Click to reset all sections back to original positions */}
-                        {/* 💡 This is useful for testing or if you want to reset the layout */}
-                        <button
-                            onClick={resetAllSections}
-                            className="px-6 py-3 rounded-lg font-semibold transition-all duration-300 bg-white/20 text-blue-500 hover:bg-white/30"
-                            title="Reset all sections to original positions"
-                        >▩
-                        </button>
-                    </nav>
-                </div>
-            </section>
+                        </nav>
+                    </div>
+                </section>
 
-            {/* Q&A Form Popup */}
-            <QAQuote
-                isOpen={isQAQuoteOpen}
-                onClose={() => setIsQAQuoteOpen(false)}
-            />
+                {/* Q&A Form Popup */}
+                <QAQuote
+                    isOpen={isQAQuoteOpen}
+                    onClose={() => setIsQAQuoteOpen(false)}
+                />
 
-            {/* Performance Report Popup */}
-            <PerformanceReport
-                isOpen={isPerformanceReportOpen}
-                onClose={() => setIsPerformanceReportOpen(false)}
-            />
-        </div>
+                {/* Performance Report Popup */}
+                <PerformanceReport
+                    isOpen={isPerformanceReportOpen}
+                    onClose={() => setIsPerformanceReportOpen(false)}
+                />
+
+                {/* Fixed Decorative Buttons */}
+                <div
+                    className={classes.decorativeLeft}
+                    style={{
+                        backgroundImage: `url(${waPtnDia})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat'
+                    }}
+                />
+
+                <div
+                    className={classes.decorativeRight}
+                    style={{
+                        backgroundImage: `url(${waPtnWave})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat'
+                    }}
+                />
+            </div >
+        </>
     );
 };
 

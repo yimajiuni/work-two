@@ -1,0 +1,10 @@
+# Allow all bots to crawl the entire site. * Applies to all search engine bots
+User-agent: *
+#Tells bots they are allowed to crawl everything
+Allow: /
+
+# adding both domain Clearly tell bots where your sitemap files are located 
+# Main site sitemap
+Sitemap: https://yimajiuni.com/sitemap.xml
+
+Sitemap: https://yimajiuni.com/wp/sitemap_index.xml

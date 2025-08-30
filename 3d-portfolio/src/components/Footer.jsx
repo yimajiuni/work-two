@@ -12,7 +12,7 @@ const Footer = () => {
           © 2025 <strong>yimajiuni</strong>
         </p>
 
-        <div className="flex gap-3 justify-center items-center">
+        <div className="flex gap-3 text-center justify-center items-center">
           {socialLinks.map((link) => (
             <Link
               key={link.name}

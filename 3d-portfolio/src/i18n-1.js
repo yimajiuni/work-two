@@ -112,8 +112,13 @@ i18n
              as a graphic designer for packaging, sales promotion advertisements, and Web designer for ECommerse in the apparel sector and hands-on learning and building apps.
             I've worked with all sorts of companies, leveling up my skills and teaming up with all sort of people.
             `,
-            line2: `Currently, I am accepting work ranging from web production to illustrations and logos. Please feel free to contact me. 
+            line2: `Currently, I am accepting from E-commerce website development to illustrations and designs. Please feel free to contact me. 
             I am available for both Japanese and English communication. here' the rundown. `,
+          },
+          skillTooltip: {
+            flow: "Flow",
+            experience: "Experience",
+            years: "years"
           },
           experiences: [
             {
@@ -394,13 +399,13 @@ i18n
           // Service page translations
           service: {
             section1: {
-              title: "Transform Your Business with",
-              titleHighlight: "Next.js & Shopify",
-              description: "Powerful architecture that builds and polishes. Achieve 30%+ sales increase through branding and high-speed loading. The functional things that are made of dazzling and twinkle things. Make the act of 'buying' as enjoyable as possible.",
-              cta: "Book a Video Consultation with us"
+              title: "Bespoke Ecommerce websites",
+              titleHighlight: "with Next.js & Shopify",
+              description: "Builds and polishes on Powerful architecture that achieves 30%+ sales increase through branding and high-speed loading. The functional things that are made of dazzling and twinkle things. To make the actions of 'buying' as enjoyable as possible.",
+              cta: "Book a video consultation"
             },
             section2: {
-              title: "For attractive products, sophisticated experiences and convenience like reality.",
+              title: "For attractive products, a website with sophisticated experience and convenience is crucial.",
               titleHighlight: "In other words, high-speed and dynamic EC sites are optimal.",
               description: "Experience the power of modern e-commerce with our Next.js x Shopify solution. Built for performance, scalability, and user experience, this platform delivers exceptional results for businesses of all sizes.",
               features: {
@@ -416,11 +421,11 @@ i18n
               demo: {
                 title: "Live Demo",
                 description: "See our Next.js x Shopify solution in action",
-                button: "Visit Demo Site"
+                button: "Visit a Demo"
               }
             },
             section3: {
-              title: "Yimajiuni's Technology",
+              title: "Next.js and Branding",
               description: "Next.js x Shopify x Branding achieves 30%+ sales increase through high-speed loading. Maximize your attractive products' EC business opportunities.",
               technologies: {
                 nextjs: {
@@ -432,24 +437,32 @@ i18n
                   description: "Seamless e-commerce functionality with powerful inventory management and payment processing."
                 },
                 branding: {
-                  title: "Branding power that shapes project-specific purposes and feelings",
-                  description: "Provide branding that resonates with your audience through maximized efficiency and constantly refined technology."
+                  title: "Branding power",
+                  description: "By our dedicated listening shapes project-specific purposes and feelings Provide branding that resonates with your audience through maximized efficiency and constantly refined technology."
                 }
               },
               performance: {
                 title: "Next.js EC Site Performance Metrics",
-                subtitle: "Real Numbers from Our Projects",
+                subtitle: "(middle size project)",
+                labels: {
+                  imageSpeed: "Image Loading Speed",
+                  conversionRate: "Conversion Rate",
+                  mobileBounce: "Mobile Bounce Rate",
+
+                  organicTraffic: "Organic Traffic",
+                  operationHours: "Operation & SEO Work Hours",
+                  serverCost: "Server Cost (Monthly)",
+                },
                 metrics: [
-                  "95% faster page load times",
-                  "40% increase in conversion rates",
-                  "99.9% uptime reliability",
-                  "60% improvement in SEO rankings"
+                  "Improved from 1.2s to 0.5s",
+                  "Improved from 1.9% to 3.2%",
+                  "Improved from 65% to 45%",
+
+                  "From  rank 22 to rank 7",
+                  "From 25 to 10",
+                  "From $4,500 to $2,800",
                 ],
-                button: "View Detailed Performance Report"
-              },
-              aboutme: {
-                link: "/about",
-                button: "Learn about Yimajiuni's Technical History"
+                button: "View the Detail"
               },
               performanceReport: {
                 title: "Next.js EC Site Performance Report",
@@ -477,36 +490,83 @@ i18n
                     }
                   },
                   section3: {
-                    title: "Are You Facing These Challenges?",
-                    problems: [
-                      "Worried that customers are leaving because the site is slow...",
-                      "Feeling limited by existing platform designs and unable to fully express your brand image",
-                      "Site modifications take too much time and cost",
-                      "The site feels difficult to use for smartphone users"
-                    ],
-                    explanation1: "Traditional e-commerce sites have the challenge of being difficult to modify because design (frontend) and systems (backend) are integrated, meaning even small design changes affect the entire system.",
-                    explanation2: "As examples, global companies like sports brand 'Nike' and cosmetics brand 'Lancôme' have also migrated to headless commerce seeking flexibility and high performance. This approach allows them to quickly respond to market changes and provide unique online experiences tailored to their customers."
-                  },
-                  section4: {
-                    title: "Dynamic Experience and Performance Directly Drive Sales",
-                    description: "Website performance has a direct impact on sales.",
+                    title: "Next.js's Unique Technology Brings Revolutionary Performance",
+                    description: "Next.js's unique ISR (Incremental Static Regeneration) combines the speed of static generation with the flexibility of dynamic updates. By selecting the optimal rendering method for each page of your e-commerce site, we can reduce the burden of building all pages at once. The improved dynamic experience and performance of your website directly contribute to increased sales.",
                     benefits: {
+                      isr: {
+                        title: "ISR (Incremental Static Regeneration)",
+                        description: "Next.js's unique ISR (Incremental Static Regeneration) combines the speed of static generation with the flexibility of dynamic updates. By selecting the optimal rendering method for each page of your e-commerce site, we can reduce the burden of building all pages at once. The improved dynamic experience and performance of your website directly contribute to increased sales."
+                      },
                       conversion: {
                         title: "Improved Conversion Rates",
-                        description: "Studies show that over 50% of users abandon a site if pages take more than 3 seconds to load. Conversely, improving display speed alone can lead to improved conversion rates."
+                        description: "Improved display speed prevents user abandonment and directly leads to improved conversion rates."
                       },
                       performance: {
                         title: "Highest Level Performance Scores",
-                        description: "We aim to achieve high scores on Google's website evaluation tool 'Lighthouse'. This is an objective indicator that the site is comfortable for users and advantageous for SEO."
+                        description: "Achieve high scores on Google's evaluation tools. This is comfortable for users and advantageous for SEO."
+                      },
+                      ssg: {
+                        title: "Enourmous Display Speed Creates Truly Joyful Customer Purchase Experiences",
+                        description: "The core strength of sites built with this service is 'overwhelming display speed'. This speed is achieved through Next.js's unique technology that pre-creates website pages, enabling extremely fast responses. This provides comfortable shopping experiences and prevents site abandonment."
                       }
                     }
                   },
+                  section4: {
+                    title: "Are You Facing These Challenges?",
+                    problems: [
+                      "Page loading speed is slow, especially with high bounce rates on mobile",
+                      "With many products, SSR for all pages causes soaring server costs",
+                      "Low SEO performance and struggling organic traffic growth",
+                      "Delayed inventory display causes frequent 'out of stock' cases after orders",
+                      "Feeling limited by existing platform designs and unable to fully express your brand image"
+                    ]
+                  },
                   section5: {
-                    title: "Overwhelming Display Speed Creates Truly Joyful Customer Purchase Experiences",
-                    description: "The core strength of sites built with this service is 'overwhelming display speed'. This speed is achieved through Next.js's 'Static Site Generation (SSG)' technology.",
-                    ssg: {
-                      title: "What is Static Site Generation (SSG)?",
-                      description: "This is a technology that pre-creates website pages. Unlike traditional methods that generate pages each time users access them, completed pages can be displayed instantly, enabling extremely fast responses. This speed reduces user stress and provides a comfortable shopping experience, preventing site abandonment and leading to purchases."
+                    title: "Real Example: Medium-sized E-commerce Site Achieves 30% Sales Increase with Next.js Implementation",
+                    case1: "SEO improvements from page speed enhancements led to higher search rankings for many keywords, resulting in 140% increase in organic traffic.",
+                    case2: "Global companies like sports brand 'Nike' and cosmetics brand 'Lancôme' have also migrated to headless commerce seeking flexibility and high performance.",
+                    return: "A return of approximately 15 times the investment amount is achievable within one year. Initial investment can be recovered in less than 3 months. Once implemented, you can continuously benefit from the effects. The dual effect of reduced server costs and increased sales leads to long-term profit improvement.",
+                    comparison: "Traditional e-commerce sites have the challenge of being difficult to modify because design (frontend) and systems (backend) are integrated, meaning even small design changes affect the entire system, making modifications difficult and costly.",
+                    table: {
+                      title: "パフォーマンス比較表",
+                      headers: {
+                        metric: "指標",
+                        traditional: "従来型",
+                        nextjs: "Next.js + Shopify",
+                        improvement: "改善率"
+                      },
+                      metrics: {
+                        loadingSpeed: {
+                          label: "読み込み速度",
+                          traditional: "3-5秒",
+                          nextjs: "0.5-1秒",
+                          improvement: "+80%"
+                        },
+                        conversionRate: {
+                          label: "コンバージョン率",
+                          traditional: "1.9%",
+                          nextjs: "3.2%",
+                          improvement: "+68%"
+                        },
+                        mobileBounce: {
+                          label: "モバイル離脱率",
+                          traditional: "65%",
+                          nextjs: "45%",
+                          improvement: "-31%"
+                        },
+                        seoRanking: {
+                          label: "SEO順位",
+                          traditional: "22位",
+                          nextjs: "7位",
+                          improvement: "+15位"
+                        },
+                        serverCost: {
+                          label: "サーバーコスト",
+                          traditional: "月額$4,500",
+                          nextjs: "月額$2,800",
+                          improvement: "-38%"
+                        }
+                      }
                     }
                   },
                   section6: {
@@ -518,7 +578,13 @@ i18n
                       "You've had to give up on desired expressions due to design template constraints",
                       "You struggle with site update work for every sale or campaign",
                       "SEO rankings don't improve easily, and you feel challenged with customer acquisition",
-                      "You're considering future product sales through apps or new devices"
+                      "You're considering future product sales through apps or new devices",
+                      "How frequently do you update product information and campaigns?",
+                      "Is traffic from search engines important?",
+                      "Does content differ for each user?",
+                      "Is real-time performance required?",
+                      "How much interaction is there?",
+                      "Do you need to handle high traffic?"
                     ]
                   },
                   section7: {
@@ -584,11 +650,10 @@ i18n
             },
             section4: {
               title: "Get Ready with Your Custom Quote",
-              description: "Answer a few questions to get a personalized quote for your project. Our interactive form helps us understand your needs and provide the most accurate estimate.",
+              description: "Answer a few questions to get a personalized quote for your project. Selecting your requirements, project scale, and preferences helps us understand your needs and provide the most accurate quote to your project.",
               calculator: {
-                title: "Interactive Quote Requester",
-                description: "Select your requirements, project scale, and preferences to receive a detailed quote.",
-                button: "Start Quote Requester"
+                title: "Quote Sheet Creator",
+                button: "Start Creating"
               }
             },
             navigation: {
@@ -890,6 +955,11 @@ i18n
             現在ECサイト開発からデザイン、イラスト等中心にお仕事を受け付けております。お気軽にお問い合わせください。日本語/英語コミュニケーションに対応しております。
             `,
           },
+          skillTooltip: {
+            flow: "工程",
+            experience: "使用歴",
+            years: "年"
+          },
           experiences: [
             {
               title: "Graphic Designer/Illustrator",
@@ -1176,16 +1246,16 @@ i18n
           // Service page translations (Japanese)
           service: {
             section1: {
-              title: "ECサイトのBespokeブランド",
-              titleHighlight: "Next.js & Shopify",
-              description: "パワフルなアーキテクト上で重ねる、磨く。ブランディングと高速読み込みで売り上げ30%+増を実現。The functional things that are made of dazzling and twinkle things。「買う」という行為を最大限に楽しく。",
+              title: "ECサイトのBespokeブランドを",
+              titleHighlight: "Next.js & Shopifyで",
+              description: "パワフルなアーキテクチャ上で重ねる、磨く。ブランディングと高速読み込みで売り上げ30%+増を実現。The functional things that are made of dazzling and twinkle things。「買う」という行為を最大限に楽しく。",
               /*
               description: "私たちは、結果を生み出す高性能なeコマースソリューションの作成を専門としています。カスタムWebアプリケーションからシームレスなショッピング体験まで、あなたのビジョンを実現します。",*/
               cta: "ビデオ相談を予約する"
             },
             section2: {
               title: "魅力的な商品には、洗練された体験と便利さ。",
-              titleHighlight: "すなわち、高スピードとダイナミックなECサイトが最適です。",
+              titleHighlight: "すなわち、高スピードでダイナミックなECサイトが最適です。",
               description: "Next.js x Shopifyソリューションでモダンなeコマースの力を体験してください。パフォーマンス、スケーラビリティ、ユーザーエクスペリエンスのために構築されたこのプラットフォームは、あらゆる規模のビジネスに卓越した結果をもたらします。",
               features: {
                 title: "主要機能",
@@ -1204,47 +1274,59 @@ i18n
               }
             },
             section3: {
-              title: "いまじゆうにの技術",
-              description: `Next.js x Shopify x ブランディングにより、高速読み込みで売り上げ30%+増を実現。
+              title: "ヘッドレスコマースを導入し売上30%増を達成",
+              description: `Next.js × Shopify の「ヘッドレスコマース」という手法でECサイトを構築、そこにブランディングを実施することにより、高速化と品質体験の向上を実現。
               貴社の魅力的な商品のECビジネスチャンスを最大化します。`,
               technologies: {
                 nextjs: {
                   title: "Next.jsテクノロジー",
-                  description: "サーバーサイドレンダリング、静的生成、最適化されたパフォーマンスにより、高速なユーザーエクスペリエンスを実現。"
+                  description: "サーバーサイドレンダリング、静的生成、最適化されたパフォーマンスにより、超高速なユーザーエクスペリエンスを実現。"
                 },
                 shopify: {
                   title: "Shopify統合",
-                  description: "強力な在庫管理と決済処理を備えたシームレスなeコマース機能。"
+                  description: `強力な在庫管理と決済処理を備えたシームレスなeコマース機能。
+                  世界最高水準のパフォーマンスとセキュリティを実現。`
+
                 },
                 branding: {
-                  title: "プロジェクト固有の目的とキモチを形にする、ブランディング力",
-                  description: "最大化された効率と常に磨かれる技術でオーディエンスと共鳴するブランディングを提供。"
+                  title: "ブランディング力",
+                  description: "プロジェクト固有の目的とキモチを形に。事業の意図を汲み、最適な提案を通して、オーディエンスと共鳴するブランディングを提供。"
                 }
               },
               performance: {
-                title: "Next.js ECサイトのパフォーマンス指標",
-                subtitle: "プロジェクトからの実際の数値",
+                title: "本製品のパフォーマンス指標",
+                subtitle: "(中規模サイト)",
+                labels: {
+                  imageSpeed: "画像読み込み速度",
+                  conversionRate: "コンバージョン率",
+                  mobileBounce: "モバイル離脱率",
+
+                  organicTraffic: "検索流入数",
+                  operationHours: "運用・SEO対策工数",
+                  serverCost: "サーバーコスト(月額)",
+                },
                 metrics: [
-                  "ページ読み込み時間95%向上",
-                  "コンバージョン率40%向上",
-                  "99.9%の稼働率",
-                  "SEOランキング60%向上"
+                  "1.2秒から0.5秒に改善",
+                  "1.9%から3.2%に向上",
+                  "65%から45%へ改善",
+
+                  "22位から7位へ向上",
+                  "25時間から10時間へ削減",
+                  "43万円から23万円へ削減",
                 ],
-                button: "詳細なパフォーマンスレポートを見る"
-              },
-              aboutme: {
-                link: "/about",
-                button: "いまじゆうにの技術歴史を知る"
+                button: "詳しく見る"
               },
               performanceReport: {
-                title: "Next.js ECサイトのパフォーマンス指標",
+                title: "NEXT.js × Shopify × ブランディング戦略とは？",
                 content: {
                   section1: {
-                    title: "未来のECサイトを、今あなたの手に",
-                    description: "本サービスは、最先端のウェブ開発フレームワーク「Next.js」と、信頼性の高いECプラットフォーム「Shopify」を連携させた「ヘッドレスコマース」という手法でECサイトを構築します。これにより、従来のECサイトが抱える表示速度やデザインの制約といった課題を根本から解決。ユーザー（サイト訪問者）に最高の購入体験を提供し、売上向上に直結するデジタル店舗を実現します。"
+                    title: "独自のレンダリング方式により高速化によりユーザー体験が大幅に向上。",
+                    description: "最先端のウェブ開発フレームワーク「Next.js」と、信頼性の高いECプラットフォーム「Shopify」を連携させ、ユーザーに最高の購入体験を提供し、売上向上に直結するデジタル店舗を実現します。"
+                    /*
+                                        description: "最先端のウェブ開発フレームワーク「Next.js」と、信頼性の高いECプラットフォーム「Shopify」を連携させた「ヘッドレスコマース」という手法でECサイトを構築、そこにブランディングを実施することにより、従来のECサイトが抱える表示速度やデザインの制約といった課題を根本から解決。ユーザー（サイト訪問者）に最高の購入体験を提供し、売上向上に直結するデジタル店舗を実現します。"*/
                   },
                   section2: {
-                    title: "速い、美しい、売れる",
+                    title: "速い、美しい、未来につながる - 導入メリット3点",
                     description: "このサービスが提供するECサイトの最大の利点は、次の3つに集約されます。",
                     benefits: {
                       speed: {
@@ -1262,36 +1344,90 @@ i18n
                     }
                   },
                   section3: {
-                    title: "こんなお悩みに直面していませんか",
-                    problems: [
-                      "「サイトが重くて、お客様が離脱していないか心配…」",
-                      "「既存のプラットフォームのデザインに限界を感じ、ブランドイメージを十分に表現できない」",
-                      "「サイトの改修に時間とコストがかかりすぎる」",
-                      "「スマートフォンユーザーにとって、サイトが使いにくいと感じる」"
-                    ],
-                    explanation1: "従来のECサイトは、デザイン（フロントエンド）とシステム（バックエンド）が一体化しているため、少しデザインを変えるだけでもシステム全体に影響が及び、改修が難しいという課題がありました。",
-                    explanation2: "事例として、スポーツブランドの「ナイキ」や化粧品ブランドの「ランコム」といった世界的企業も、柔軟性と高いパフォーマンスを求めてヘッドレスコマースへ移行しています。このアプローチにより、彼らは市場の変化に迅速に対応し、顧客に合わせたユニークなオンライン体験を提供しています。"
-                  },
-                  section4: {
-                    title: "ダイナミックな体験とパフォーマンスが売上に直結",
-                    description: "ウェブサイトのパフォーマンスは、売上に直接的な影響を与えます。",
+                    title: "Next.jsでECサイトを構築するメリットとは？",
                     benefits: {
+                      isr: {
+                        title: "パフォーマンスが売上に直結",
+                        description: `Next.js独自の生成技術での高速性と動的更新の柔軟性を両立します。ページ表示の負担を大幅に軽減することが可能。向上したウェブサイトのダイナミックな体験とパフォーマンスが売上に直結します。`
+                        /*
+                        description: `Next.js独自のISR（Incremental Static Regeneration）は、静的生成の高速性と動的更新の柔軟性を両立します。
+                        ECサイトの各ページに対して最適なレンダリング方式を選択する事により、全ページを一度にビルドする等の負担を軽減することが可能です。
+                        向上したウェブサイトのダイナミックな体験とパフォーマンスが売上に直結します。`
+                        */
+                      },
                       conversion: {
                         title: "コンバージョン率の向上",
-                        description: "ある調査では、ページの読み込みに3秒以上かかると50%以上のユーザーが離脱するという結果が出ています。逆に言えば、表示速度を改善するだけでコンバージョン率の向上が期待できます。"
+                        description: "表示速度の改善はユーザーの離脱を防ぎ、コンバージョン率の向上に直結します。"
                       },
                       performance: {
                         title: "最高レベルのパフォーマンススコア",
-                        description: "Googleが提供するウェブサイト評価ツール「Lighthouse」において、高スコアの達成を目指します。これは、サイトがユーザーにとって快適であり、SEOにも有利であることを示す客観的な指標です。"
+                        description: "Googleが提供する評価ツールにおいて、高スコアを達成。ユーザーに快適でSEOにも有利です。"
+                      },
+                      ssg: {
+                        title: "「圧倒的な表示速度」がもたらす真に喜びにつながる顧客購入体験",
+                        description: `サービスの核となる強みは「圧倒的な表示速度」です。Next.js独自の技術によってウェブサイトのページを事前に作成しておく事により、極めて高速なレスポンスが可能。快適なショッピング体験を叶えサイト離脱を防止します。`
+                        /*
+                        description: `本サービスで構築するサイトの核となる強みは「圧倒的な表示速度」です。この速さは、Next.jsの「静的サイト生成（SSG）」という技術によってウェブサイトのページを事前に作成しておく事により、ユーザーがアクセスするたびにページを生成する従来の方法とは異なり、完成済みのページを瞬時に表示できるため、極めて高速なレスポンスが可能。快適なショッピング体験を叶えサイト離脱を防止します。`
+                        */
                       }
                     }
                   },
+                  section4: {
+                    title: "こんなお悩みに直面していませんか",
+                    problems: [
+                      "「ページ読み込み速度が遅く、特にモバイルでの離脱率が高い」",
+                      "「商品数が多く、全ページのSSRによりサーバーコストが高騰」",
+                      "「SEOパフォーマンスが低く、オーガニック流入が伸び悩み」",
+                      "「在庫表示の遅延により、注文後に「在庫切れ」となるケースが多発」",
+                      "「既存のプラットフォームのデザインに限界を感じ、ブランドイメージを十分に表現できない」",
+                    ],
+                  },
                   section5: {
-                    title: "圧倒的な表示速度がもたらす真に喜びにつながる顧客購入体験",
-                    description: "本サービスで構築するサイトの核となる強みは「圧倒的な表示速度」です。この速さは、Next.jsの「静的サイト生成（SSG）」という技術によって実現されます。",
-                    ssg: {
-                      title: "静的サイト生成（SSG）とは？",
-                      description: "ウェブサイトのページを事前に作成しておく技術です。ユーザーがアクセスするたびにページを生成する従来の方法とは異なり、完成済みのページを瞬時に表示できるため、極めて高速なレスポンスが可能となります。この速度は、ユーザーのストレスを軽減し、快適なショッピング体験を提供することで、サイトからの離脱を防ぎ、購入へと繋げます。"
+                    title: "実際にNext.jsを導入して売上30%増を達成した中規模ECサイトの例",
+                    case1: "ページ速度改善によるSEO効果により多くのキーワードでの検索順位が向上し、オーガニックトラフィックが140%増加。",
+                    case2: "スポーツブランドの「ナイキ」や化粧品ブランドの「ランコム」といった世界的企業も、柔軟性と高いパフォーマンスを求めてヘッドレスコマースへ移行しています。",
+                    return: "1年間で投資額の約15倍のリターンが実現可能。初期投資は3ヶ月弱で回収できる計算です。一度実装すれば継続的に効果が得られる点です。サーバーコスト削減と売上増加という二重の効果により、長期的な収益向上が見込めます。",
+                    comparison: "従来のECサイトは、デザイン（フロントエンド）とシステム（バックエンド）が一体化しているため、少しデザインを変えるだけでもシステム全体に影響が及び、改修が難しくコストが高いという課題がありました。",
+                    table: {
+                      title: "パフォーマンス比較表",
+                      headers: {
+                        metric: "指標",
+                        traditional: "従来型",
+                        nextjs: "Next.js + Shopify",
+                        improvement: "改善率"
+                      },
+                      metrics: {
+                        loadingSpeed: {
+                          label: "読み込み速度",
+                          traditional: "3-5秒",
+                          nextjs: "0.5-1秒",
+                          improvement: "+80%"
+                        },
+                        conversionRate: {
+                          label: "コンバージョン率",
+                          traditional: "1.9%",
+                          nextjs: "3.2%",
+                          improvement: "+68%"
+                        },
+                        mobileBounce: {
+                          label: "モバイル離脱率",
+                          traditional: "65%",
+                          nextjs: "45%",
+                          improvement: "-31%"
+                        },
+                        seoRanking: {
+                          label: "SEO順位",
+                          traditional: "22位",
+                          nextjs: "7位",
+                          improvement: "+15位"
+                        },
+                        serverCost: {
+                          label: "サーバーコスト",
+                          traditional: "月額$4,500",
+                          nextjs: "月額$2,800",
+                          improvement: "-38%"
+                        }
+                      }
                     }
                   },
                   section6: {
@@ -1303,13 +1439,19 @@ i18n
                       "デザインのテンプレートに縛られ、実現したい表現を諦めたことがある",
                       "セールやキャンペーンのたびに、サイトの更新作業に手間取っている",
                       "SEOの順位がなかなか上がらず、集客に課題を感じている",
-                      "将来的にアプリや新しいデバイスでの商品販売も考えている"
+                      "将来的にアプリや新しいデバイスでの商品販売も考えている",
+                      "商品情報やキャンペーンの更新頻度は？",
+                      "検索エンジンからの流入が重要か？",
+                      "ユーザーごとにコンテンツが異なるか？",
+                      "リアルタイム性が求められるか？",
+                      "インタラクションの量はどれくらいか？",
+                      "高トラフィックに耐える必要があるか？",
                     ]
                   },
                   section7: {
-                    title: "ヘッドレスコマースが実現する「自由」",
-                    description1: "本サービスは「ヘッドレスコマース」というアーキテクチャを採用しています。これは、お客様が触れる「フロントエンド（＝ヘッド、頭）」と、お店の裏側である「バックエンド（商品管理・決済システム）」を分離する考え方です。",
-                    description2: "分離すると、何が良いのでしょうか？",
+                    title: "The 'Freedom' Realized by Headless Commerce",
+                    description1: "This service adopts an architecture called 'headless commerce'. This is a concept that separates the 'frontend (= head)' that customers interact with from the 'backend (product management and payment systems)' that runs behind the scenes.",
+                    description2: "What are the benefits of this separation?",
                     benefits: {
                       design: {
                         title: "デザインの完全な自由",
@@ -1317,7 +1459,7 @@ i18n
                       },
                       marketing: {
                         title: "迅速なマーケティング施策",
-                        description: "急なキャンペーンや新しいコンテンツの追加など、フロントエンドの改修を迅速かつ柔軟に行えます。バックエンドの制約を気にする必要がないため、市場のトレンドに素早く対応できます。"
+                        description: "You can quickly and flexibly perform frontend modifications such as urgent campaigns or adding new content. Since you don't need to worry about backend constraints, you can respond quickly to market trends."
                       }
                     }
                   },
@@ -1331,7 +1473,7 @@ i18n
                       },
                       scalability: {
                         title: "拡張性とスケーラビリティ",
-                        description: "フロントエンドとバックエンドが独立しているため、将来的にビジネスが拡大し、アクセスが急増しても、それぞれを独立してスケールさせることが可能です。例えば、スマートウォッチやVRなど、未来の新しいデバイスへの展開も容易になります。"
+                        description: "Because frontend and backend are independent, even if your business expands in the future and access increases rapidly, you can scale each independently. For example, expansion to future new devices like smartwatches or VR becomes easier."
                       },
                       efficiency: {
                         title: "開発効率の向上",
@@ -1368,11 +1510,10 @@ i18n
               }
             },
             section4: {
-              title: "あなたに合った御見積を準備",
-              description: "プロジェクトのパーソナライズされた見積もりを取得するために、いくつかの質問にお答えください。私たちのインタラクティブフォームは、あなたのニーズを理解し、最も正確な見積もりを提供するのに役立ちます。",
+              title: "あなたに合った御見積もりを準備",
+              description: "プロジェクトのパーソナライズされた見積もりを取得するために、いくつかの質問にお答えください。要件、プロジェクト規模、好み等のあなたのニーズを理解し、最も正確な見積もりを提供するのに役立ちます。",
               calculator: {
-                title: "見積依頼フォーム",
-                description: "要件、プロジェクト規模、好みを選択して詳細な見積もりを受け取ります。",
+                title: "見積もり依頼シート作成",
                 button: "作成を開始"
               }
             },
@@ -2125,7 +2266,7 @@ export const socialLinks = [
   {
     name: "LinkedIn",
     iconUrl: linkedin,
-    link: "https://www.linkedin.com/",
+    link: "https://www.linkedin.com/in/yimajiuni/",
   },
   {
     name: "Fiverr",

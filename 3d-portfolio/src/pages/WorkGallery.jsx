@@ -92,9 +92,9 @@ function WorkGallery() {
           className="overflow-x-auto hidden-scrollbar"
           sx={{ minWidth: "max-content" }}
         >
-          <TabCustom label="全て" />
+          <TabCustom label="All" />
           <TabCustom label="Websites" />
-          <TabCustom label="E-Commerce" />
+          <TabCustom label="SALES" />
           <TabCustom label="Apps" />
           <TabCustom label="DTP" />
         </Tabs>

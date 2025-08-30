@@ -78,7 +78,7 @@ const NavbarJump = () => {
       <div className="flex items-center gap-7">
         {/* 今 button - always visible, links to service on desktop/tablet, hamburger on mobile */}
         <NavLink
-          to="/service"
+          to=""
           className="hidden sm:flex w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md shadow-pink-400/30 hover:shadow-lg hover:shadow-pink-400/30 transition-shadow"
         >
           <p className="blue-gradient_text">今</p>
@@ -96,30 +96,20 @@ const NavbarJump = () => {
         <nav className="hidden sm:flex text-lg gap-7 font-medium text-white items-center">
           {location !== "contact" ? (
             <>
-              <ScrollLink
+              <NavLink
                 onClick={() => goToPageAndScroll("about")}
                 className="cursor-pointer hover:text-blue-400 transition-colors"
-                activeClass="active"
                 to="about"
-                spy={true}
-                smooth={true}
-                offset={10}
-                duration={500}
               >
                 About
-              </ScrollLink>
-              <ScrollLink
+              </NavLink>
+              <NavLink
                 onClick={() => goToPageAndScroll("works")}
                 className="cursor-pointer hover:text-blue-400 transition-colors"
-                activeClass="active"
                 to="works"
-                spy={true}
-                smooth={true}
-                offset={10}
-                duration={500}
               >
                 Works
-              </ScrollLink>
+              </NavLink>
 
               <NavLink
                 to="/contact"
@@ -171,43 +161,33 @@ const NavbarJump = () => {
             {location !== "contact" && location !== "service" ? (
               <>
                 <NavLink
-                  to="/service"
+                  to=""
                   onClick={closeMenu}
                   className="cursor-pointer hover:text-blue-400 transition-colors py-2"
                 >
                   Services
                 </NavLink>
 
-                <ScrollLink
+                <NavLink
                   onClick={() => {
                     goToPageAndScroll("about");
                     closeMenu();
                   }}
                   className="cursor-pointer hover:text-blue-400 transition-colors py-2"
-                  activeClass="active"
                   to="about"
-                  spy={true}
-                  smooth={true}
-                  offset={10}
-                  duration={500}
                 >
                   About
-                </ScrollLink>
-                <ScrollLink
+                </NavLink>
+                <NavLink
                   onClick={() => {
                     goToPageAndScroll("works");
                     closeMenu();
                   }}
                   className="cursor-pointer hover:text-blue-400 transition-colors py-2"
-                  activeClass="active"
                   to="works"
-                  spy={true}
-                  smooth={true}
-                  offset={10}
-                  duration={500}
                 >
                   Works
-                </ScrollLink>
+                </NavLink>
                 <NavLink
                   to="/contact"
                   onClick={() => {
@@ -223,7 +203,7 @@ const NavbarJump = () => {
             ) : (
               <>
                 <NavLink
-                  to="/service"
+                  to=""
                   onClick={closeMenu}
                   className="cursor-pointer hover:text-blue-400 transition-colors py-2"
                 >

@@ -35,7 +35,7 @@ body:has(.card[data-color="green"]:hover) {
 
 @layer utilities {
   .max-container {
-    @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh)];
+    @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-4 sm:px-8 min-h-[calc(100vh)];
   }
 
   .section-container {
@@ -52,6 +52,10 @@ body:has(.card[data-color="green"]:hover) {
 
   .blue-gradient_text {
     @apply bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent;
+  }
+
+  .opal-gradient_text {
+    @apply bg-gradient-to-r from-[#e72bb5] to-[#c5e4fc] bg-clip-text text-transparent;
   }
 
   .input {
