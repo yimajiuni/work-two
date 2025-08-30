@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 
-const useCountAnimation = (startValue, endValue, duration = 4000, delay = 0) => {
+const useCountAnimation = (startValue, endValue, duration = 1500, delay = 0) => {
     const [currentValue, setCurrentValue] = useState(parseFloat(startValue) || 0);
     const [isAnimating, setIsAnimating] = useState(false);
     const animationRef = useRef(null);
@@ -10,9 +10,10 @@ const useCountAnimation = (startValue, endValue, duration = 4000, delay = 0) => 
     const startNum = useMemo(() => parseFloat(startValue) || 0, [startValue]);
     const endNum = useMemo(() => parseFloat(endValue) || 0, [endValue]);
 
-    // Memoize the easing function calculation
+    // Optimized easing function for faster, more responsive animation
     const calculateEasing = useCallback((progress) => {
-        return 1 - Math.pow(1 - progress, 3); // Slower easing function for more gradual animation
+        // Use a faster easing curve for more immediate visual feedback
+        return 1 - Math.pow(1 - progress, 2); // Quadratic easing - faster than cubic
     }, []);
 
     useEffect(() => {
@@ -25,8 +26,8 @@ const useCountAnimation = (startValue, endValue, duration = 4000, delay = 0) => 
                 const elapsed = now - startTimeRef.current;
                 const progress = Math.min(elapsed / duration, 1);
 
-                const easeOutQuart = calculateEasing(progress);
-                const current = startNum + (endNum - startNum) * easeOutQuart;
+                const easeOutQuad = calculateEasing(progress);
+                const current = startNum + (endNum - startNum) * easeOutQuad;
                 setCurrentValue(current);
 
                 if (progress < 1) {
@@ -50,7 +51,7 @@ const useCountAnimation = (startValue, endValue, duration = 4000, delay = 0) => 
         };
     }, [startNum, endNum, duration, delay, calculateEasing]);
 
-    // Memoize the formatNumber function to prevent unnecessary re-computations
+    // Optimized formatNumber function with better performance
     const formatNumber = useCallback((value) => {
         try {
             const numValue = parseFloat(value) || 0;

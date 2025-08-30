@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import useCountAnimation from '../hooks/useCountAnimation';
+import CountUp from 'react-countup';
 
 // Consolidated Tailwind classes for better performance
 const classes = {
@@ -33,7 +33,7 @@ const AnimatedMetric = ({
     labelKey,
     startValue,
     endValue,
-    duration = 2000,
+    duration = 1.5,
     delay = 0,
     className = "",
     shouldStart = false
@@ -41,13 +41,6 @@ const AnimatedMetric = ({
     const [isVisible, setIsVisible] = useState(false);
     const [showEndValue, setShowEndValue] = useState(false);
     const metricRef = useRef(null);
-
-    const { currentValue, isAnimating } = useCountAnimation(
-        startValue,
-        endValue,
-        duration,
-        shouldStart ? delay + 1000 : 999999 // Add 1 second extra delay after shouldStart is true
-    );
 
     // Memoize the parseValue function to prevent unnecessary re-computations
     const parseValue = useCallback((value, labelKey = '') => {
@@ -71,7 +64,7 @@ const AnimatedMetric = ({
             }
             if (value.includes('rank')) {
                 // Organic Traffic: unit on left, prefix, then number
-                return { number: value.replace('rank ', ''), unit: 'rank', prefix: '-', position: 'left' };
+                return { number: value.replace('rank ', ''), unit: 'rank', prefix: '+', position: 'left' };
             }
             if (value.includes('hours')) {
                 // Operation Hours: prefix, number, unit on right
@@ -91,7 +84,6 @@ const AnimatedMetric = ({
     }, []);
 
     // Memoize parsed values to prevent unnecessary re-renders
-    const currentParsed = useMemo(() => parseValue(currentValue, labelKey), [currentValue, labelKey, parseValue]);
     const endParsed = useMemo(() => parseValue(endValue, labelKey), [endValue, labelKey, parseValue]);
 
     useEffect(() => {
@@ -116,10 +108,22 @@ const AnimatedMetric = ({
     }, []);
 
     useEffect(() => {
-        if (!isAnimating && isVisible) {
+        if (isVisible) {
             setTimeout(() => setShowEndValue(true), 500);
         }
-    }, [isAnimating, isVisible]);
+    }, [isVisible]);
+
+    // Extract numeric value for CountUp
+    const getNumericValue = (value) => {
+        if (typeof value === 'string') {
+            const cleanValue = value.replace(/[^0-9.-]/g, '');
+            return parseFloat(cleanValue) || 0;
+        }
+        return parseFloat(value) || 0;
+    };
+
+    const startNum = getNumericValue(startValue);
+    const endNum = getNumericValue(endValue);
 
     return (
         <div ref={metricRef} className={`${classes.container} ${className}`}>
@@ -128,21 +132,35 @@ const AnimatedMetric = ({
             </h4>
             <div className={classes.metricContainer}>
                 {!showEndValue ? (
-                    <div className={isAnimating ? classes.animatedContainerPulse : classes.animatedContainer}>
-                        {currentParsed.position === 'left' && currentParsed.unit && (
-                            <span className={`${classes.text3xl} ${classes.marginRight}`}>{currentParsed.unit}</span>
+                    <div className={classes.animatedContainer}>
+                        {endParsed.position === 'left' && endParsed.unit && (
+                            <span className={`${classes.text3xl} ${classes.marginRight}`}>{endParsed.unit}</span>
                         )}
-                        {currentParsed.prefix && (
-                            <span className={`${classes.text3xl} ${classes.marginRight}`}>{currentParsed.prefix}</span>
+                        {endParsed.prefix && (
+                            <span className={`${classes.text3xl} ${classes.marginRight}`}>{endParsed.prefix}</span>
                         )}
-                        {currentParsed.position === 'prefix-first' && currentParsed.unit && (
-                            <span className={`${classes.text3xl} ${classes.marginRight}`}>{currentParsed.unit}</span>
+                        {endParsed.position === 'prefix-first' && endParsed.unit && (
+                            <span className={`${classes.text3xl} ${classes.marginRight}`}>{endParsed.unit}</span>
                         )}
 
-                        <span className={classes.text7xl}>{currentParsed.number}</span>
+                        <span className={classes.text7xl}>
+                            {shouldStart && isVisible ? (
+                                <CountUp
+                                    start={startNum}
+                                    end={endNum}
+                                    duration={duration}
+                                    delay={delay}
+                                    useEasing={true}
+                                    separator=","
+                                    decimals={endParsed.unit === '%' ? 1 : 0}
+                                />
+                            ) : (
+                                startNum
+                            )}
+                        </span>
 
-                        {currentParsed.position === 'right' && currentParsed.unit && (
-                            <span className={`${classes.text3xl} ${classes.marginLeft}`}>{currentParsed.unit}</span>
+                        {endParsed.position === 'right' && endParsed.unit && (
+                            <span className={`${classes.text3xl} ${classes.marginLeft}`}>{endParsed.unit}</span>
                         )}
                     </div>
                 ) : (

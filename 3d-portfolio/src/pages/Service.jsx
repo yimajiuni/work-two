@@ -729,7 +729,7 @@ const Service = () => {
                                     label={t('service.section3.performance.labels.organicTraffic')}
                                     labelKey="organicTraffic"
                                     startValue="rank 22"
-                                    endValue="rank 12"
+                                    endValue="rank 15"
                                     duration={4000}
                                     delay={900}
                                     shouldStart={isPerformanceSectionVisible}
@@ -747,7 +747,7 @@ const Service = () => {
                                     label={t('service.section3.performance.labels.serverCost')}
                                     labelKey="serverCost"
                                     startValue={i18n.language === 'jp' ? "43万円" : "$4500"}
-                                    endValue={i18n.language === 'jp' ? "20万円" : "$1800"}
+                                    endValue={i18n.language === 'jp' ? "20万円" : "$2200"}
                                     duration={4000}
                                     delay={1500}
                                     shouldStart={isPerformanceSectionVisible}

@@ -425,7 +425,7 @@ i18n
               }
             },
             section3: {
-              title: "Next.js and Branding",
+              title: "Headless Commerce x Branding",
               description: "Next.js x Shopify x Branding achieves 30%+ sales increase through high-speed loading. Maximize your attractive products' EC business opportunities.",
               technologies: {
                 nextjs: {
@@ -438,7 +438,7 @@ i18n
                 },
                 branding: {
                   title: "Branding power",
-                  description: "By our dedicated listening shapes project-specific purposes and feelings Provide branding that resonates with your audience through maximized efficiency and constantly refined technology."
+                  description: "Our dedicated listening Provides you the branding that shapes project-specific purposes and sentiments that resonates with the audience."
                 }
               },
               performance: {
@@ -468,7 +468,7 @@ i18n
                 title: "Next.js EC Site Performance Report",
                 content: {
                   section1: {
-                    title: "The Future of E-commerce, Now in Your Hands",
+                    title: "The Future standards of E-commerce, Now in Your Hands",
                     description: "This service builds e-commerce sites using a 'headless commerce' approach that integrates Next.js, the cutting-edge web development framework, with Shopify, a reliable e-commerce platform. This fundamentally solves the challenges of display speed and design constraints that traditional e-commerce sites face, providing users (site visitors) with the best purchasing experience and creating digital stores that directly contribute to increased sales."
                   },
                   section2: {
@@ -506,7 +506,7 @@ i18n
                         description: "Achieve high scores on Google's evaluation tools. This is comfortable for users and advantageous for SEO."
                       },
                       ssg: {
-                        title: "Enourmous Display Speed Creates Truly Joyful Customer Purchase Experiences",
+                        title: "Enourmous Display Speed Creates Truly Joyful Purchase Experiences for the Customers",
                         description: "The core strength of sites built with this service is 'overwhelming display speed'. This speed is achieved through Next.js's unique technology that pre-creates website pages, enabling extremely fast responses. This provides comfortable shopping experiences and prevents site abandonment."
                       }
                     }
@@ -528,43 +528,43 @@ i18n
                     return: "A return of approximately 15 times the investment amount is achievable within one year. Initial investment can be recovered in less than 3 months. Once implemented, you can continuously benefit from the effects. The dual effect of reduced server costs and increased sales leads to long-term profit improvement.",
                     comparison: "Traditional e-commerce sites have the challenge of being difficult to modify because design (frontend) and systems (backend) are integrated, meaning even small design changes affect the entire system, making modifications difficult and costly.",
                     table: {
-                      title: "パフォーマンス比較表",
+                      title: "Performance Comparison Table",
                       headers: {
-                        metric: "指標",
-                        traditional: "従来型",
+                        metric: "Metric",
+                        traditional: "Traditional",
                         nextjs: "Next.js + Shopify",
-                        improvement: "改善率"
+                        improvement: "Improvement"
                       },
                       metrics: {
                         loadingSpeed: {
-                          label: "読み込み速度",
-                          traditional: "3-5秒",
-                          nextjs: "0.5-1秒",
+                          label: "Loading Speed",
+                          traditional: "3-5sec",
+                          nextjs: "0.5-1sec",
                           improvement: "+80%"
                         },
                         conversionRate: {
-                          label: "コンバージョン率",
+                          label: "Conversion Rate",
                           traditional: "1.9%",
                           nextjs: "3.2%",
                           improvement: "+68%"
                         },
                         mobileBounce: {
-                          label: "モバイル離脱率",
+                          label: "Mobile Bounce Rate",
                           traditional: "65%",
                           nextjs: "45%",
                           improvement: "-31%"
                         },
                         seoRanking: {
-                          label: "SEO順位",
-                          traditional: "22位",
-                          nextjs: "7位",
-                          improvement: "+15位"
+                          label: "SEO Ranking",
+                          traditional: "22rd",
+                          nextjs: "7rd",
+                          improvement: "+15rd"
                         },
                         serverCost: {
-                          label: "サーバーコスト",
-                          traditional: "月額$4,500",
-                          nextjs: "月額$2,800",
-                          improvement: "-38%"
+                          label: "Server Cost",
+                          traditional: "$4,500/month",
+                          nextjs: "$2,200/month",
+                          improvement: "50%"
                         }
                       }
                     }
@@ -1274,7 +1274,7 @@ i18n
               }
             },
             section3: {
-              title: "ヘッドレスコマースを導入し売上30%増を達成",
+              title: "ヘッドレスコマース×ブランディングで売上30%UP",
               description: `Next.js × Shopify の「ヘッドレスコマース」という手法でECサイトを構築、そこにブランディングを実施することにより、高速化と品質体験の向上を実現。
               貴社の魅力的な商品のECビジネスチャンスを最大化します。`,
               technologies: {
@@ -1386,7 +1386,7 @@ i18n
                     title: "実際にNext.jsを導入して売上30%増を達成した中規模ECサイトの例",
                     case1: "ページ速度改善によるSEO効果により多くのキーワードでの検索順位が向上し、オーガニックトラフィックが140%増加。",
                     case2: "スポーツブランドの「ナイキ」や化粧品ブランドの「ランコム」といった世界的企業も、柔軟性と高いパフォーマンスを求めてヘッドレスコマースへ移行しています。",
-                    return: "1年間で投資額の約15倍のリターンが実現可能。初期投資は3ヶ月弱で回収できる計算です。一度実装すれば継続的に効果が得られる点です。サーバーコスト削減と売上増加という二重の効果により、長期的な収益向上が見込めます。",
+                    return: "1年間で投資額の約15倍のリターンが実現可能。初期投資は3ヶ月弱で回収できる計算です。一度実装すれば継続的に効果が得られる点は◎。サーバーコスト削減と売上増加という二重の効果により、長期的な収益向上が見込めます。",
                     comparison: "従来のECサイトは、デザイン（フロントエンド）とシステム（バックエンド）が一体化しているため、少しデザインを変えるだけでもシステム全体に影響が及び、改修が難しくコストが高いという課題がありました。",
                     table: {
                       title: "パフォーマンス比較表",
@@ -1423,9 +1423,9 @@ i18n
                         },
                         serverCost: {
                           label: "サーバーコスト",
-                          traditional: "月額$4,500",
-                          nextjs: "月額$2,800",
-                          improvement: "-38%"
+                          traditional: "月額43万円",
+                          nextjs: "月額23万円",
+                          improvement: "-50%"
                         }
                       }
                     }
@@ -1436,22 +1436,21 @@ i18n
                     items: [
                       "サイトのトップページ表示に3秒以上かかっている",
                       "スマートフォンで見たとき、表示が崩れたり、操作しにくい部分がある",
+                      "検索エンジンからの流入やSEOの順位を上げたい",
+                      "商品情報やキャンペーンの更新頻度が高い",
+                      "パーソナライズコンテンツを積極導入している",
+                      "リアルタイムでの更新が必要",
+                      "インタラクションの量が増えてきた",
+                      "高トラフィックのページ読み込みが遅い",
                       "デザインのテンプレートに縛られ、実現したい表現を諦めたことがある",
                       "セールやキャンペーンのたびに、サイトの更新作業に手間取っている",
-                      "SEOの順位がなかなか上がらず、集客に課題を感じている",
                       "将来的にアプリや新しいデバイスでの商品販売も考えている",
-                      "商品情報やキャンペーンの更新頻度は？",
-                      "検索エンジンからの流入が重要か？",
-                      "ユーザーごとにコンテンツが異なるか？",
-                      "リアルタイム性が求められるか？",
-                      "インタラクションの量はどれくらいか？",
-                      "高トラフィックに耐える必要があるか？",
                     ]
                   },
                   section7: {
-                    title: "The 'Freedom' Realized by Headless Commerce",
-                    description1: "This service adopts an architecture called 'headless commerce'. This is a concept that separates the 'frontend (= head)' that customers interact with from the 'backend (product management and payment systems)' that runs behind the scenes.",
-                    description2: "What are the benefits of this separation?",
+                    title: "ヘッドレスコマースが実現する「自由」",
+                    description1: "本サービスは「ヘッドレスコマース」というアーキテクチャを採用しています。これは、お客様が触れる店頭=フロントヘッド）」と、お店の裏側である「バックエンド（商品管理・決済システム）」を分離する考え方です。",
+                    description2: "分離すると、何が良いのでしょうか？",
                     benefits: {
                       design: {
                         title: "デザインの完全な自由",
@@ -1459,7 +1458,7 @@ i18n
                       },
                       marketing: {
                         title: "迅速なマーケティング施策",
-                        description: "You can quickly and flexibly perform frontend modifications such as urgent campaigns or adding new content. Since you don't need to worry about backend constraints, you can respond quickly to market trends."
+                        description: "急なキャンペーンや新しいコンテンツの追加など、フロントエンドの改修を迅速かつ柔軟に行えます。バックエンドの制約を気にする必要がないため、市場のトレンドに素早く対応できます。"
                       }
                     }
                   },
@@ -1473,7 +1472,7 @@ i18n
                       },
                       scalability: {
                         title: "拡張性とスケーラビリティ",
-                        description: "Because frontend and backend are independent, even if your business expands in the future and access increases rapidly, you can scale each independently. For example, expansion to future new devices like smartwatches or VR becomes easier."
+                        description: "フロントエンドとバックエンドが独立しているため、将来的にビジネスが拡大し、アクセスが急増しても、それぞれを独立してスケールさせることが可能です。例えば、スマートウォッチやVRなど、未来の新しいデバイスへの展開も容易になります。",
                       },
                       efficiency: {
                         title: "開発効率の向上",
