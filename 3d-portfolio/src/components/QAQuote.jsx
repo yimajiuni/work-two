@@ -365,7 +365,7 @@ const QAQuote = ({ isOpen, onClose }) => {
                 { value: 'anime', label: t('service.qaForm.questions.visualStyle.options.anime') },
 
                 // Column 5
-                { value: 'cool', label: t('service.qaForm.questions.visualStyle.options.cool') },
+                { value: 'goodlooking', label: t('service.qaForm.questions.visualStyle.options.goodlooking') },
                 { value: 'elegant', label: t('service.qaForm.questions.visualStyle.options.elegant') },
                 { value: 'homey', label: t('service.qaForm.questions.visualStyle.options.homey') },
                 { value: 'craft', label: t('service.qaForm.questions.visualStyle.options.craft') },
@@ -390,8 +390,9 @@ const QAQuote = ({ isOpen, onClose }) => {
                 { value: 'dark', label: t('service.qaForm.questions.visualStyle.options.dark') },
                 { value: 'casual', label: t('service.qaForm.questions.visualStyle.options.casual') },
                 { value: 'retro', label: t('service.qaForm.questions.visualStyle.options.retro') },
-                { value: 'cool2', label: t('service.qaForm.questions.visualStyle.options.cool2') },
-                { value: 'colorful', label: t('service.qaForm.questions.visualStyle.options.colorful') }
+                { value: 'cool', label: t('service.qaForm.questions.visualStyle.options.cool') },
+                { value: 'colorful', label: t('service.qaForm.questions.visualStyle.options.colorful') },
+                { value: 'androgynous', label: t('service.qaForm.questions.visualStyle.options.androgynous') }
             ],
             condition: { field: 'brandingDepth', value: 'detailed' }
         },
@@ -759,6 +760,8 @@ const QAQuote = ({ isOpen, onClose }) => {
                 }
             };
 
+            // Debug: Log the email data to see what's being sent
+            console.log('EmailJS Data being sent:', JSON.stringify(emailData, null, 2));
 
 
             // Send email using EmailJS (same as Contact component)

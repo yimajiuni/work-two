@@ -57,6 +57,7 @@ const classes = {
     problemText: "text-gray-700",
 
     // Table styles with gradient
+    TablecardWithMargin: "bg-gradient-to-r from-white/20 to-white/50 border border-white/20 pt-4 sm:pt-0 p-0 sm:p-4 rounded-lg mb-4",
     tableContainer: "overflow-x-auto",
     table: "min-w-full bg-gradient-to-r from-white/50 to-white/70 rounded-lg",
     tableHeader: "bg-blue-50",
@@ -259,8 +260,8 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                         </div>
 
                         {/* Simple Table */}
-                        <div className={classes.cardWithMargin}>
-                            <h4 className="font-semibold text-gray-800 mb-3">
+                        <div className={classes.TablecardWithMargin}>
+                            <h4 className="px-4 font-semibold text-gray-800 mb-3">
                                 {safeTranslate('service.section3.performanceReport.content.section5.table.title', 'Performance Comparison Table')}
                             </h4>
                             <div className={classes.tableContainer}>
@@ -516,20 +517,46 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                         <p className={classes.textGrayMargin}>
                             {safeTranslate('service.section3.performanceReport.content.section10.description3', 'Section 10 description 3 placeholder')}
                         </p>
-                        <p className={classes.textGray}>
-                            {safeTranslate('service.section3.performanceReport.content.section10.description4', 'Section 10 description 4 placeholder')}
-                        </p>
                     </section>
                 </div>
 
                 {/* Footer */}
-                <div className={classes.footer}>
-                    <button
-                        onClick={onClose}
-                        className={classes.footerButton}
-                    >
-                        {safeTranslate('common.close', 'Close')}
-                    </button>
+                <div className="bg-blue-500 p-6 rounded-b-lg">
+                    <div className="flex justify-between items-center">
+                        <div className="max-w-screen-lg mx-auto flex justify-left gap-4 items-center">
+
+                            {/* Ask Quote Button */}
+                            <a
+                                // The link will navigate to the service page quote section
+                                href="/#quote"
+                                onClick={() => {
+                                    // Close the PerformanceReport modal
+                                    onClose();
+                                }}
+                                className="bg-white text-blue-500 px-2 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+                            >
+                                {safeTranslate('service.section3.performanceReport.content.footer.askQuote', 'Ask Quote')}
+                            </a>
+                            {/* Contact Us Button */}
+                            <a
+                                href="/contact"
+                                className="bg-blue-500 bg-white text-blue-500 px-2 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+                            >
+                                {safeTranslate('service.section3.performanceReport.content.footer.contactUs')}
+                            </a>
+
+
+                            {/* Close Button */}
+                            <button
+                                onClick={onClose}
+                                className="bg-white text-blue-500 px-2 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+                            >
+                                {safeTranslate('service.section3.performanceReport.content.footer.close')}
+                            </button>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
         </div>

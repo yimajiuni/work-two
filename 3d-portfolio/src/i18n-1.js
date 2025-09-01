@@ -19,11 +19,14 @@ import {
   app1,
   app2,
   app3,
+  app4,
+  app5,
   web1,
   web2,
   web3,
   web4,
   web5,
+  web6,
   webjt1,
   webjt2,
   dtp1,
@@ -31,6 +34,7 @@ import {
   webmock2,
   webmock3,
   webmock4,
+  webmock5,
 } from "./assets/images";
 
 import {
@@ -80,9 +84,6 @@ i18n
     resources: {
       en: {
         translation: {
-          common: {
-            close: "Close"
-          },
           greeting: "Welcome back",
           CTA: {
             line1: `Have a project in mind?
@@ -190,6 +191,20 @@ i18n
               id: 1,
               preview: web1,
               theme: "btn-back-red",
+              name: "NEXT.JS E-COMMERCE APPAREL WEBSITE",
+              description:
+                "A website that achieves high-speed processing with Shopify payment system, backend, and Next.js hybrid rendering.",
+              persona:
+                "Target audience: A wide range of ages who are socially conscious and have high purchasing desire for valuable items.",
+              duration: "1.5 months",
+              responsibility:
+                "Areas of work: Functional design, UX/UI design, coding, debugging, deployment",
+              link: "https://next-ecom-shopify.yimajiuni.com/",
+            },
+            {
+              id: 2,
+              preview: web2,
+              theme: "btn-back-red",
               name: "E-Commerce Website",
               description:
                 "Developed a e-commerce website with purchasing system.",
@@ -198,11 +213,11 @@ i18n
               duration: "Production Period: 2 weeks(45h)",
               responsibility:
                 "Areas of work: Functional design, UX/UI design, coding, debugging, deployment",
-              link: "https://e-commerce.yimajiuni.com/",
+              link: "https://se-commerce.yimajiuni.com/",
             },
             {
-              id: 2,
-              preview: web2,
+              id: 3,
+              preview: web3,
               theme: "btn-back-green",
               name: "Dashboard App",
               description: "Created a mobile first Dashboard model.",
@@ -214,8 +229,8 @@ i18n
               link: "https://dashboard-model.yimajiuni.com/",
             },
             {
-              id: 3,
-              preview: web3,
+              id: 4,
+              preview: web4,
               theme: "btn-back-blue",
               name: "Travel App",
               description: `Designed and built a mobile app for finding traveling packages.
@@ -225,8 +240,8 @@ i18n
               link: "https://travel-web.yimajiuni.com/",
             },
             {
-              id: 4,
-              preview: web4,
+              id: 5,
+              preview: web5,
               theme: "btn-back-pink",
               name: "Restaurant Website",
               description: `Built a fully responsive restaurant Website.
@@ -235,10 +250,9 @@ i18n
                 Personas: Local residents and tourists of all ages, looking for good food and a comfortable dining experience.`,
               link: "https://restau-web.yimajiuni.com/",
             },
-            //修正
             {
-              id: 5,
-              preview: web5,
+              id: 6,
+              preview: web6,
               theme: "btn-back-pink",
               name: "LP for general constructing company",
               description: `Built a fully responsive restaurant Website.
@@ -247,9 +261,8 @@ i18n
                 Personas: Local residents and tourists of all ages, looking for good food and a comfortable dining experience.`,
               link: "https://genecon-lp.yimajiuni.com/",
             },
-            //修正
             {
-              id: 6,
+              id: 7,
               preview: webjt1,
               theme: "btn-back-pink",
               name: "Sales LP for horseriding products1",
@@ -259,9 +272,8 @@ i18n
                 Personas: Local residents and tourists of all ages, looking for good food and a comfortable dining experience.`,
               link: "https://yimajiuni.com/jt-lp-coupon/",
             },
-            //修正
             {
-              id: 7,
+              id: 8,
               preview: webjt2,
               theme: "btn-back-pink",
               name: "Campaign LP for horseriding products2",
@@ -281,7 +293,7 @@ i18n
           //banner
           promoDesigns: [
             {
-              id: 8,
+              id: 9,
               preview: eqbo,
               name: "Ad for rain boots",
               description:
@@ -289,7 +301,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-bo.jpg",
             },
             {
-              id: 9,
+              id: 10,
               preview: eqch,
               name: "Ad for horse riding chaps",
               description:
@@ -297,7 +309,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-ch.jpg",
             },
             {
-              id: 10,
+              id: 11,
               preview: eqcu,
               name: "Ad for riding culottes",
               description:
@@ -305,7 +317,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-cu.jpg",
             },
             {
-              id: 11,
+              id: 12,
               preview: eqgr1,
               name: "Ad for riding gloves 1",
               description:
@@ -313,7 +325,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-gr1.jpg",
             },
             {
-              id: 12,
+              id: 13,
               preview: eqgr2,
               name: "Ad for horse riding leather gloves",
               description:
@@ -321,7 +333,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-gr2.jpg",
             },
             {
-              id: 13,
+              id: 14,
               preview: eqgr3,
               name: "Ad for horseriding accessories",
               description:
@@ -329,7 +341,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-gr3.jpg",
             },
             {
-              id: 14,
+              id: 15,
               preview: eqgr4,
               name: "Ad for horse riding gloves 3",
               description:
@@ -337,7 +349,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-gr4.jpg",
             },
             {
-              id: 15,
+              id: 16,
               preview: eqhe,
               name: "Ad of horse riding helmets",
               description:
@@ -345,7 +357,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-he.jpg",
             },
             {
-              id: 16,
+              id: 17,
               preview: eqwh,
               name: "Ad for a horse riding whip",
               description:
@@ -357,7 +369,7 @@ i18n
           //app
           appDesigns: [
             {
-              id: 17,
+              id: 18,
               preview: app1,
               theme: "btn-back-pink",
               name: "EC App UX Design",
@@ -366,7 +378,7 @@ i18n
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=233-88&t=TGbd5tplvGsffkfO-1&starting-point-node-id=236%3A233",
             },
             {
-              id: 18,
+              id: 19,
               preview: app2,
               theme: "btn-back-blue",
               name: "Fitness App UX Design",
@@ -375,7 +387,7 @@ i18n
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=328-136&t=AMryIaIjpqI2Y7cZ-1&starting-point-node-id=327%3A190",
             },
             {
-              id: 19,
+              id: 20,
               preview: app3,
               theme: "btn-back-red",
               name: "Banking App UX Design",
@@ -383,11 +395,29 @@ i18n
                 "Mobile Banking App designed with monthly expense comparison graph of deposits, an investment section and purchase history feature.",
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=298-558&t=8uCbvN2drsBtXyv6-1&starting-point-node-id=299%3A681",
             },
+            {
+              id: 21,
+              preview: app4,
+              theme: "btn-back-red",
+              name: "CSS Scaler App Development",
+              description:
+                "CSS Scaling and Unit Conversion App",
+              link: "https://css-scaler.yimajiuni.com/",
+            },
+            {
+              id: 21,
+              preview: app5,
+              theme: "btn-back-red",
+              name: "Blog App Development",
+              description:
+                "Blog App designed with a blog post list and a blog post detail page.",
+              link: "https://blog-app.yimajiuni.com/",
+            },
           ],
           //dtp
           dtpDesigns: [
             {
-              id: 20,
+              id: 23,
               preview: dtp1,
               theme: "btn-back-pink",
               name: "DTP and Packages 2017",
@@ -401,6 +431,7 @@ i18n
             section1: {
               title: "Bespoke Ecommerce websites",
               titleHighlight: "with Next.js & Shopify",
+              yimajiuni: "Introducing Yimajiuni",
               description: "Builds and polishes on Powerful architecture that achieves 30%+ sales increase through branding and high-speed loading. The functional things that are made of dazzling and twinkle things. To make the actions of 'buying' as enjoyable as possible.",
               cta: "Book a video consultation"
             },
@@ -420,8 +451,8 @@ i18n
               },
               demo: {
                 title: "Live Demo",
-                description: "See our Next.js x Shopify solution in action",
-                button: "Visit a Demo"
+                description: "Next.js x Shopify solution in One stop action",
+                button: "Visit Live Demo"
               }
             },
             section3: {
@@ -640,289 +671,292 @@ i18n
                   },
                   section10: {
                     title: "Don't Miss Purchase Opportunities for Attractive Products. E-commerce Sites That Lead to Long-term Sales",
-                    description1: "Many customers actually give up right before buying because the site is slow. The sites we create are extremely 'fast', so you don't have to worry about that.",
-                    description2: "Plus, instead of typical template designs, we can create cool and user-friendly designs that bring out 100% of your brand's appeal.",
-                    description3: "The complex backend product management and payments are handled by Shopify, which has trust and proven results, so you can feel secure.",
-                    description4: "In other words, it's the best of both worlds: 'the best appearance and speed' combined with 'world-standard secure systems'. This becomes a powerful weapon for your business."
-                  }
-                }
-              }
-            },
-            section4: {
-              title: "Get Ready with Your Custom Quote",
-              description: "Answer a few questions to get a personalized quote for your project. Selecting your requirements, project scale, and preferences helps us understand your needs and provide the most accurate quote to your project.",
-              calculator: {
-                title: "Quote Sheet Creator",
-                button: "Start Creating"
-              }
-            },
-            navigation: {
-              main: "Main",
-              product: "Product",
-              services: "Services",
-              quote: "Ask Quote"
-            },
-            qaForm: {
-              title: "Project Quote Request",
-              close: "×",
-              progress: "Step {{current}} of {{total}}",
-              progressPercent: "{{percent}}%",
-              required: "*",
-              previous: "Previous",
-              next: "Next",
-              submit: "Submit Request",
-              submitting: "Submitting...",
-              validation: {
-                answerRequired: "Please answer: {{question}}",
-                allQuestionsRequired: "Please answer all questions before submitting. Missing: {{question}}"
-              },
-              questions: {
-                projectType: {
-                  question: "What type of project do you need?",
-                  options: {
-                    ecommerce: "E-commerce Website",
-                    corporate: "Corporate Website",
-                    portfolio: "Portfolio/Blog",
-                    landingpage: "Landing Page",
-                    webapp: "Web Application",
-                    other: "Other"
-                  }
-                },
-                projectScale: {
-                  question: "What is the scale of your project?",
-                  options: {
-                    small: "Small (1-5 pages)",
-                    medium: "Medium (5-30 pages)",
-                    large: "Large (30-50 pages)",
-                    enterprise: "Enterprise Level"
-                  }
-                },
-                budget: {
-                  question: "What is your budget range?",
-                  options: {
-                    under1k: "Under $1,000",
-                    "1k-5k": "$1,000 - $5,000",
-                    "5k-10k": "$5,000 - $10,000",
-                    "10k+": "$10,000+"
-                  }
-                },
-                timeline: {
-                  question: "What is your timeline?",
-                  options: {
-                    asap: "ASAP (1-2 weeks)",
-                    "1months-3months": "1 month - 3 months",
-                    "3months-6months": "3 months - 6 months",
-                    flexible: "Flexible"
-                  }
-                },
-                features: {
-                  question: "What features do you need? (Select all that apply)",
-                  options: {
-                    responsive: "Responsive Design",
-                    transformation: "Next.js Migration & Integration",
-                    payment: "Ecom Payment Integration with Shopify, Wix, etc.",
-                    cms: "Content Management System (CMS)",
-                    seo: "SEO Optimization",
-                    analytics: "Analytics & Tracking",
-                    multilingual: "Multi-language Support"
-                  }
-                },
-                brandingDepth: {
-                  question: "Does your project require detailed branding or prefer simple and basic?",
-                  options: {
-                    detailed: "Detailed Branding",
-                    simple: "Simple & Basic"
-                  }
-                },
-                brandVision: {
-                  question: "What vision does your brand want to achieve?",
-                  placeholder: "Describe the future world your brand envisions..."
-                },
-                brandMission: {
-                  question: "What role should your brand play in achieving this vision?",
-                  placeholder: "Describe the mission and purpose of your brand..."
-                },
-                targetAudience: {
-                  question: "Who is your primary target audience?",
-                  placeholder: "Describe your ideal customers, their demographics, lifestyle, and needs..."
-                },
-                brandPersonality: {
-                  question: "How should your brand be perceived by customers?",
-                  options: {
-                    professional: "Professional & Corporate",
-                    friendly: "Friendly & Approachable",
-                    luxury: "Luxury & Premium",
-                    innovative: "Innovative & Cutting-edge",
-                    trustworthy: "Trustworthy & Reliable"
-                  }
-                },
-                designStyle: {
-                  question: "What design style do you prefer?",
-                  options: {
-                    modern: "Modern & Contemporary",
-                    minimalist: "Minimalist & Clean",
-                    casual: "Casual & Relaxed",
-                    elegant: "Elegant & Sophisticated",
-                    professional: "Professional & Business-like"
-                  }
-                },
-                colorScheme: {
-                  question: "What color scheme do you prefer?",
-                  options: {
-                    blue: "Blue & Cool Tones",
-                    green: "Green & Natural",
-                    purple: "Purple & Creative",
-                    neutral: "Neutral & Subtle",
-                    warm: "Warm & Inviting"
-                  }
-                },
-                targetDemographics: {
-                  question: "Describe your target demographics",
-                  placeholder: "Age groups, gender, lifestyle, occupation, etc..."
-                },
-                visualStyle: {
-                  question: "What visual style or tone and manner do you want to depict for your project?",
-                  instruction: "Please select the keywords from below that best represent your desired visual style:",
-                  priorityOrder: "Priority Order (click to reorder)",
-                  maxLimitReached: "Maximum of 5 visual styles can be selected. Please deselect one to add another.",
-                  options: {
-                    // Column 1
-                    masculine: "Masculine",
-                    fun: "Fun",
-                    premium: "Premium",
-                    linear: "Linear",
-                    formal: "Formal",
-                    intellectual: "Intellectual",
-                    delicate: "Delicate",
-                    monotone: "Monotone",
-
-                    // Column 2
-                    feminine: "Feminine",
-                    interesting: "Interesting",
-                    warm: "Warm",
-                    curved: "Curved",
-                    mystical: "Mystical",
-                    premium2: "Premium",
-                    chic: "Chic",
-                    pop: "Pop",
-
-                    // Column 3
-                    childlike: "Childlike",
-                    powerful: "Powerful",
-                    decadence: "Decadence",
-                    rhythmic: "Rhythmic",
-                    trustworthy: "Trustworthy",
-                    lively: "Lively",
-                    stylish: "Stylish",
-                    pastel: "Pastel",
-
-                    // Column 4
-                    cute: "Cute",
-                    serious: "Serious",
-                    business: "Business",
-                    natural: "Natural",
-                    traditional: "Traditional",
-                    refreshing: "Refreshing",
-                    metallic: "Metallic",
-                    anime: "Anime",
-
-                    // Column 5
-                    cool: "Cool",
-                    elegant: "Elegant",
-                    homey: "Homey",
-                    craft: "Craft",
-                    modern: "Modern",
-                    flashy: "Flashy",
-                    complex: "Complex",
-                    japanese: "Japanese",
-
-                    // Column 6
-                    friendly: "Friendly",
-                    luxury: "Luxury",
-                    bright: "Bright",
-                    unique: "Unique",
-                    futuristic: "Futuristic",
-                    subdued: "Subdued",
-                    simple: "Simple",
-                    western: "Western",
-
-                    // Column 7
-                    gentle: "Gentle",
-                    elegant2: "Elegant",
-                    dark: "Dark",
-                    casual: "Casual",
-                    retro: "Retro",
-                    cool2: "Cool",
-                    colorful: "Colorful"
-                  }
-                },
-
-                communicationPreference: {
-                  question: "What is your preferred communication method?",
-                  options: {
-                    video: "Video consultation meeting",
-                    email: "Email communication",
-                    chat: "Chat application"
-                  }
-                },
-                chatDetails: {
-                  question: "Which chat application do you prefer?",
-                  options: {
-                    chatwork: "Chatwork",
-                    slack: "Slack",
-                    discord: "Discord",
-                    other: "Other platform"
-                  }
-                },
-                otherChatPlatform: {
-                  question: "Please specify the other chat platform:",
-                  placeholder: "Please specify the platform name..."
-                },
-                companyInfo: {
-                  question: "Tell us about your hope and sentiment for your company/project",
-                  placeholder: "Describe your business, goals, and any specific requirements..."
-                },
-                contactInfo: {
-                  question: "Your contact information",
-                  fields: {
-                    name: "Full Name",
-                    email: "Email",
-                    phone: "Phone (optional)",
-                    company: "Company (optional)"
-                  }
+                    description1: "Even though the design of website is exellent, many customers actually give up right before buying if the site is slow. ",
+                    description2: "The sites we create are extremely 'fast', so you don't have to worry about that. Plus,The backend product management and payments are handled by Shopify, which has trust and proven its security.",
+                    description3: "It achieves'the best appearance and speed' combined with 'world-standard secure systems'. This becomes a powerful weapon for your business."
+                  },
+                  footer: {
+                    contactUs: "Contact Us @ info@yimajiuni.com",
+                    askQuote: "Ask Quote",
+                    close: "Close",
+                  },
                 }
               },
-              success: {
-                title: "Thank You!",
-                message: "Your project quote request has been submitted. We'll get back to you within 24 working hours!",
-                otherChatMessage: "💬 We will contact you via the specified chat platform within 24 working hours.",
-                refreshMessage: "💡To start quote again, please refresh the browser.",
-                downloadPDF: "Download PDF",
-                close: "Close"
+              section4: {
+                title: "Get Ready with Your Custom Quote",
+                description: "Answer a few questions to get a personalized quote for your project. Selecting your requirements, project scale, and preferences helps us understand your needs and provide the most accurate quote to your project.",
+                calculator: {
+                  title: "Quote Sheet Creator",
+                  button: "Start Creating"
+                }
               },
-              pdf: {
+              navigation: {
+                main: "Main",
+                product: "Product",
+                services: "Services",
+                quote: "Ask Quote"
+              },
+              qaForm: {
                 title: "Project Quote Request",
-                generatedOn: "Generated on",
-                filename: "project-quote-request"
-              },
-              labels: {
-                contactInfo: "Contact Information",
-                projectType: "Project Type",
-                projectScale: "Project Scale",
-                budget: "Budget",
-                timeline: "Timeline",
-                features: "Features",
-                companyInfo: "Company Information"
+                close: "×",
+                progress: "Step {{current}} of {{total}}",
+                progressPercent: "{{percent}}%",
+                required: "*",
+                previous: "Previous",
+                next: "Next",
+                submit: "Submit Request",
+                submitting: "Submitting...",
+                validation: {
+                  answerRequired: "Please answer: {{question}}",
+                  allQuestionsRequired: "Please answer all questions before submitting. Missing: {{question}}"
+                },
+                questions: {
+                  projectType: {
+                    question: "What type of project do you need?",
+                    options: {
+                      ecommerce: "E-commerce Website",
+                      corporate: "Corporate Website",
+                      portfolio: "Portfolio/Blog",
+                      landingpage: "Landing Page",
+                      webapp: "Web Application",
+                      other: "Other"
+                    }
+                  },
+                  projectScale: {
+                    question: "What is the scale of your project?",
+                    options: {
+                      small: "Small (1-5 pages)",
+                      medium: "Medium (5-30 pages)",
+                      large: "Large (30-50 pages)",
+                      enterprise: "Enterprise Level"
+                    }
+                  },
+                  budget: {
+                    question: "What is your budget range?",
+                    options: {
+                      under1k: "Under $1,000",
+                      "1k-5k": "$1,000 - $5,000",
+                      "5k-10k": "$5,000 - $10,000",
+                      "10k+": "$10,000+"
+                    }
+                  },
+                  timeline: {
+                    question: "What is your timeline?",
+                    options: {
+                      asap: "ASAP (1-2 weeks)",
+                      "1months-3months": "1 month - 3 months",
+                      "3months-6months": "3 months - 6 months",
+                      flexible: "Flexible"
+                    }
+                  },
+                  features: {
+                    question: "What features do you need? (Select all that apply)",
+                    options: {
+                      responsive: "Responsive Design",
+                      transformation: "Next.js Migration & Integration",
+                      payment: "Ecom Payment Integration with Shopify, Wix, etc.",
+                      cms: "Content Management System (CMS)",
+                      seo: "SEO Optimization",
+                      analytics: "Analytics & Tracking",
+                      multilingual: "Multi-language Support"
+                    }
+                  },
+                  brandingDepth: {
+                    question: "Does your project require detailed branding or prefer simple and basic?",
+                    options: {
+                      detailed: "Detailed Branding",
+                      simple: "Simple & Basic"
+                    }
+                  },
+                  brandVision: {
+                    question: "What vision does your brand want to achieve?",
+                    placeholder: "Describe the future world your brand envisions..."
+                  },
+                  brandMission: {
+                    question: "What role should your brand play in achieving this vision?",
+                    placeholder: "Describe the mission and purpose of your brand..."
+                  },
+                  targetAudience: {
+                    question: "Who is your primary target audience?",
+                    placeholder: "Describe your ideal customers, their demographics, lifestyle, and needs..."
+                  },
+                  brandPersonality: {
+                    question: "How should your brand be perceived by customers?",
+                    options: {
+                      professional: "Professional & Corporate",
+                      friendly: "Friendly & Approachable",
+                      luxury: "Luxury & Premium",
+                      innovative: "Innovative & Cutting-edge",
+                      trustworthy: "Trustworthy & Reliable"
+                    }
+                  },
+                  designStyle: {
+                    question: "What design style do you prefer?",
+                    options: {
+                      modern: "Modern & Contemporary",
+                      minimalist: "Minimalist & Clean",
+                      casual: "Casual & Relaxed",
+                      elegant: "Elegant & Sophisticated",
+                      professional: "Professional & Business-like"
+                    }
+                  },
+                  colorScheme: {
+                    question: "What color scheme do you prefer?",
+                    options: {
+                      blue: "Blue & Cool Tones",
+                      green: "Green & Natural",
+                      purple: "Purple & Creative",
+                      neutral: "Neutral & Subtle",
+                      warm: "Warm & Inviting"
+                    }
+                  },
+                  targetDemographics: {
+                    question: "Describe your target demographics",
+                    placeholder: "Age groups, gender, lifestyle, occupation, etc..."
+                  },
+                  visualStyle: {
+                    question: "What visual style or tone and manner do you want to depict for your project?",
+                    instruction: "Please select the keywords from below that best represent your desired visual style:",
+                    priorityOrder: "Priority Order (click to reorder)",
+                    maxLimitReached: "Maximum of 5 visual styles can be selected. Please deselect one to add another.",
+                    options: {
+                      // Column 1
+                      masculine: "Masculine",
+                      fun: "Fun",
+                      premium: "Premium",
+                      linear: "Linear",
+                      formal: "Formal",
+                      intellectual: "Intellectual",
+                      delicate: "Delicate",
+                      monotone: "Monotone",
+
+                      // Column 2
+                      feminine: "Feminine",
+                      interesting: "Interesting",
+                      warm: "Warm",
+                      curved: "Curved",
+                      mystical: "Mystical",
+                      premium2: "Premium",
+                      chic: "Chic",
+                      pop: "Pop",
+
+                      // Column 3
+                      childlike: "Childlike",
+                      powerful: "Powerful",
+                      decadence: "Decadence",
+                      rhythmic: "Rhythmic",
+                      trustworthy: "Trustworthy",
+                      lively: "Lively",
+                      stylish: "Stylish",
+                      pastel: "Pastel",
+
+                      // Column 4
+                      cute: "Cute",
+                      serious: "Serious",
+                      business: "Business",
+                      natural: "Natural",
+                      traditional: "Traditional",
+                      refreshing: "Refreshing",
+                      metallic: "Metallic",
+                      anime: "Anime",
+
+                      // Column 5
+                      goodlooking: "Goodlooking",
+                      elegant: "Elegant",
+                      homey: "Homey",
+                      craft: "Craft",
+                      modern: "Modern",
+                      flashy: "Flashy",
+                      complex: "Complex",
+                      japanese: "Japanese",
+
+                      // Column 6
+                      friendly: "Friendly",
+                      luxury: "Luxury",
+                      bright: "Bright",
+                      unique: "Unique",
+                      futuristic: "Futuristic",
+                      subdued: "Subdued",
+                      simple: "Simple",
+                      western: "Western",
+
+                      // Column 7
+                      gentle: "Gentle",
+                      elegant2: "Elegant",
+                      dark: "Dark",
+                      casual: "Casual",
+                      retro: "Retro",
+                      cool: "Cool",
+                      colorful: "Colorful",
+                      androgynous: "Androgynous"
+                    }
+                  },
+
+                  communicationPreference: {
+                    question: "What is your preferred communication method?",
+                    options: {
+                      video: "Video consultation meeting",
+                      email: "Email communication",
+                      chat: "Chat application"
+                    }
+                  },
+                  chatDetails: {
+                    question: "Which chat application do you prefer?",
+                    options: {
+                      chatwork: "Chatwork",
+                      slack: "Slack",
+                      discord: "Discord",
+                      other: "Other platform"
+                    }
+                  },
+                  otherChatPlatform: {
+                    question: "Please specify the other chat platform:",
+                    placeholder: "Please specify the platform name..."
+                  },
+                  companyInfo: {
+                    question: "Tell us about your hope and sentiment for your company/project",
+                    placeholder: "Describe your business, goals, and any specific requirements..."
+                  },
+                  contactInfo: {
+                    question: "Your contact information",
+                    fields: {
+                      name: "Full Name",
+                      email: "Email",
+                      phone: "Phone (optional)",
+                      company: "Company (optional)"
+                    }
+                  }
+                },
+                success: {
+                  title: "Thank You!",
+                  message: "Your project quote request has been submitted. We'll get back to you within 24 working hours!",
+                  otherChatMessage: "💬 We will contact you via the specified chat platform within 24 working hours.",
+                  refreshMessage: "💡To start quote again, please refresh the browser.",
+                  downloadPDF: "Download PDF",
+                  close: "Close"
+                },
+                pdf: {
+                  title: "Project Quote Request",
+                  generatedOn: "Generated on",
+                  filename: "project-quote-request"
+                },
+                labels: {
+                  contactInfo: "Contact Information",
+                  projectType: "Project Type",
+                  projectScale: "Project Scale",
+                  budget: "Budget",
+                  timeline: "Timeline",
+                  features: "Features",
+                  companyInfo: "Company Information"
+                }
               }
-            }
-          },
-        },
+            },
+          }
+        }
       },
       jp: {
         translation: {
-          common: {
-            close: "閉じる"
-          },
+
           greeting: "おかえりなさい。",
           CTA: {
             line1: "プロジェクトを考え中ですか？一緒に何か作りましょう！",
@@ -1026,6 +1060,20 @@ i18n
               id: 1,
               preview: web1,
               theme: "btn-back-red",
+              name: "NEXT.JS ECアパレルウェブサイト",
+              description:
+                "Shopifyによる決済システム、バックエンドとNext.jsのハイブリッドレンダリングの高速処理が叶うサイト。",
+              persona:
+                "社会に関心の高い、価値のあるものに゙対し購買意欲が高い幅広い年代が対象。",
+              duration: "1ヶ月半",
+              responsibility:
+                "機能設計、UX/UIデザイン、コーディング、デバグ、実装",
+              link: "https://next-ecom-shopify.yimajiuni.com/",
+            },
+            {
+              id: 2,
+              preview: web2,
+              theme: "btn-back-red",
               name: "ECアパレルウェブサイト",
               description:
                 "購入と買い物カート追加システムによるECサイトをReactのContextAPIを用いて制作しました。",
@@ -1037,8 +1085,8 @@ i18n
               link: "https://e-commerce.yimajiuni.com/",
             },
             {
-              id: 2,
-              preview: web2,
+              id: 3,
+              preview: web3,
               theme: "btn-back-green",
               name: "ダッシュボードアプリ",
               description:
@@ -1051,8 +1099,8 @@ i18n
               link: "https://dashboard-model.yimajiuni.com/",
             },
             {
-              id: 3,
-              preview: web3,
+              id: 4,
+              preview: web4,
               theme: "btn-back-blue",
               name: "トラベルブッキングWEB",
               description:
@@ -1065,8 +1113,8 @@ i18n
               link: "https://travel-web.yimajiuni.com/",
             },
             {
-              id: 4,
-              preview: web4,
+              id: 5,
+              preview: web5,
               theme: "btn-back-pink",
               name: "レストランウェブサイト",
               description:
@@ -1080,36 +1128,36 @@ i18n
             },
             //修正
             {
-              id: 5,
-              preview: web5,
+              id: 6,
+              preview: web6,
               theme: "btn-back-pink",
               name: "建築会社概要LP",
-              description: `Built a fully responsive restaurant Website.
-                Production Period: 5 days (20h)
-                Areas of work: Functional design, UX/UI design, coding, debugging, deployment
-                Personas: Local residents and tourists of all ages, looking for good food and a comfortable dining experience.`,
+              description: `完全レスポンシブな建築会社のランディングページを制作。
+                制作期間: 5日間 (20時間)
+                作業範囲: 機能設計、UX/UIデザイン、コーディング、デバグ、実装
+                ターゲット: 建築サービスを求める幅広い年齢層の顧客`,
               link: "https://genecon-lp.yimajiuni.com/",
             },
             {
-              id: 6,
+              id: 7,
               preview: webjt1,
               theme: "btn-back-pink",
               name: "乗馬用品専門店のモール用セールLP",
-              description: `Built a fully responsive restaurant Website.
-                Production Period: 5 days (20h)
-                Areas of work: Functional design, UX/UI design, coding, debugging, deployment
-                Personas: Local residents and tourists of all ages, looking for good food and a comfortable dining experience.`,
+              description: `乗馬用品専門店のセール用ランディングページを制作。
+                制作期間: 5日間 (20時間)
+                作業範囲: 機能設計、UX/UIデザイン、コーディング、デバグ、実装
+                ターゲット: 乗馬愛好家や乗馬用品を求める顧客`,
               link: "https://yimajiuni.com/jt-lp-coupon/",
             },
             {
-              id: 7,
+              id: 8,
               preview: webjt2,
               theme: "btn-back-pink",
               name: "乗馬用品専門店のモール用キャンペーンLP",
-              description: `Built a fully responsive restaurant Website.
-                Production Period: 5 days (20h)
-                Areas of work: Functional design, UX/UI design, coding, debugging, deployment
-                Personas: Local residents and tourists of all ages, looking for good food and a comfortable dining experience.`,
+              description: `乗馬用品専門店のキャンペーン用ランディングページを制作。
+                制作期間: 5日間 (20時間)
+                作業範囲: 機能設計、UX/UIデザイン、コーディング、デバグ、実装
+                ターゲット: 乗馬愛好家や乗馬用品を求める顧客`,
               link: "https://yimajiuni.com/jt-lp-slider/",
             },
           ],
@@ -1123,7 +1171,7 @@ i18n
           //banner
           promoDesigns: [
             {
-              id: 8,
+              id: 9,
               preview: eqbo,
               name: "レインブーツの販売促進",
               description:
@@ -1131,7 +1179,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-bo.jpg",
             },
             {
-              id: 9,
+              id: 10,
               preview: eqch,
               name: "乗馬用チャップスの販売促進",
               description:
@@ -1139,7 +1187,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-ch.jpg",
             },
             {
-              id: 10,
+              id: 11,
               preview: eqcu,
               name: "乗馬用キュロットの販売促進",
               description:
@@ -1147,7 +1195,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-cu.jpg",
             },
             {
-              id: 11,
+              id: 12,
               preview: eqgr1,
               name: "乗馬用グローブの販売促進1",
               description:
@@ -1155,7 +1203,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-gr1.jpg",
             },
             {
-              id: 12,
+              id: 13,
               preview: eqgr2,
               name: "乗馬用合皮グローブの販売促進2",
               description:
@@ -1163,7 +1211,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-gr2.jpg",
             },
             {
-              id: 13,
+              id: 14,
               preview: eqgr3,
               name: "乗馬用グローブアクセサリーの販売促進",
               description:
@@ -1171,7 +1219,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-gr3.jpg",
             },
             {
-              id: 14,
+              id: 15,
               preview: eqgr4,
               name: "乗馬用グローブの販売促進3",
               description:
@@ -1179,7 +1227,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-gr4.jpg",
             },
             {
-              id: 15,
+              id: 16,
               preview: eqhe,
               name: "乗馬用ヘルメットの販売促進",
               description:
@@ -1187,7 +1235,7 @@ i18n
               link: "https://yimajiuni.com/promotions/eq-he.jpg",
             },
             {
-              id: 16,
+              id: 17,
               preview: eqwh,
               name: "乗馬用ムチの販売促進",
               description:
@@ -1198,7 +1246,7 @@ i18n
           //app
           appDesigns: [
             {
-              id: 17,
+              id: 18,
               preview: app1,
               theme: "btn-back-pink",
               name: "ECショッピングアプリ",
@@ -1207,7 +1255,7 @@ i18n
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=233-88&t=TGbd5tplvGsffkfO-1&starting-point-node-id=236%3A233",
             },
             {
-              id: 18,
+              id: 19,
               preview: app2,
               theme: "btn-back-blue",
               name: "フィットネスショップアプリ",
@@ -1216,7 +1264,7 @@ i18n
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=328-136&t=AMryIaIjpqI2Y7cZ-1&starting-point-node-id=327%3A190",
             },
             {
-              id: 19,
+              id: 20,
               preview: app3,
               theme: "btn-back-red",
               name: "銀行ネットバンキングアプリ",
@@ -1224,11 +1272,30 @@ i18n
                 "預金額の月間比較グラフや投資セクション購入履歴機能を設計したモバイル銀行アプリ。",
               link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=298-558&t=8uCbvN2drsBtXyv6-1&starting-point-node-id=299%3A681",
             },
+            {
+              id: 21,
+              preview: app4,
+              theme: "btn-back-red",
+              name: "CSS拡大縮小アプリ",
+              description:
+                "CSSサイズプロパティの拡大縮小、単位変換アプリ",
+              link: "https://css-scaler.yimajiuni.com/",
+            },
+            {
+              id: 22,
+              preview: app5,
+              theme: "btn-back-red",
+              name: "ブログ・記事投稿アプリ",
+              description:
+                "ブログアプリ",
+              link: "https://blog-app.yimajiuni.com/",
+            },
+
           ],
           //dtp
           dtpDesigns: [
             {
-              id: 20,
+              id: 23,
               preview: dtp1,
               theme: "btn-back-pink",
               name: "DTPとパッケージ 2017",
@@ -1248,6 +1315,7 @@ i18n
             section1: {
               title: "ECサイトのBespokeブランドを",
               titleHighlight: "Next.js & Shopifyで",
+              yimajiuni: "はじめまして、いまじゆうに。",
               description: "パワフルなアーキテクチャ上で重ねる、磨く。ブランディングと高速読み込みで売り上げ30%+増を実現。The functional things that are made of dazzling and twinkle things。「買う」という行為を最大限に楽しく。",
               /*
               description: "私たちは、結果を生み出す高性能なeコマースソリューションの作成を専門としています。カスタムWebアプリケーションからシームレスなショッピング体験まで、あなたのビジョンを実現します。",*/
@@ -1269,12 +1337,12 @@ i18n
               },
               demo: {
                 title: "ライブデモ",
-                description: "Next.js x Shopifyソリューションの実際の動作をご覧ください。",
-                button: "デモサイトを訪問"
+                description: "Next.js × Shopify × ブランディングをワンストップで。",
+                button: "実際の動作を体験"
               }
             },
             section3: {
-              title: "ヘッドレスコマース×ブランディングで売上30%UP",
+              title: "ヘッドレス・コマース×ブランディングで売上30%UP",
               description: `Next.js × Shopify の「ヘッドレスコマース」という手法でECサイトを構築、そこにブランディングを実施することにより、高速化と品質体験の向上を実現。
               貴社の魅力的な商品のECビジネスチャンスを最大化します。`,
               technologies: {
@@ -1500,16 +1568,20 @@ i18n
                   },
                   section10: {
                     title: "魅力的な商品の購買チャンスを逃さない。長期的な売上につながるECサイト",
-                    description1: "サイトが重いせいで、買う直前でやめてしまうお客様、結構多いんです。私たちの作るサイトはとにかく「速い」ので、その心配がありません。",
-                    description2: "それに、よくあるテンプレート通りのデザインじゃなくて、あなたのブランドの魅力を100%引き出す、かっこよくて使いやすいデザインにできます。",
-                    description3: "裏側の難しい商品管理や決済は、信頼と実績のあるShopifyにお任せするので安心です。",
-                    description4: "つまり、「最高の見た目と速さ」と「世界標準の安心なシステム」の、いいとこ取り。これが、あなたのビジネスの強力な武器になります。"
-                  }
+                    description1: "ブランドの世界観に合ったデザインでも、サイトが重いせいで、買う直前でやめてしまうお客様は結構多いです。",
+                    description2: "私たちの作るサイトはとにかく「速い」ので、その心配がありません。そして商品管理や決済は、信頼と実績のあるShopifyにお任せで安心。",
+                    description3: "速さも、ブランド世界観も、世界標準の安心なシステムの簡単さも一度に叶え、これがあなたのビジネスの強力な武器になります。"
+                  },
+                  footer: {
+                    contactUs: "お問い合わせ @ info@yimajiuni.com",
+                    askQuote: "見積もり依頼",
+                    close: "閉じる"
+                  },
                 }
               }
             },
             section4: {
-              title: "あなたに合った御見積もりを準備",
+              title: "あなたのプロジェクトに合った御見積を準備",
               description: "プロジェクトのパーソナライズされた見積もりを取得するために、いくつかの質問にお答えください。要件、プロジェクト規模、好み等のあなたのニーズを理解し、最も正確な見積もりを提供するのに役立ちます。",
               calculator: {
                 title: "見積もり依頼シート作成",
@@ -1687,7 +1759,7 @@ i18n
                     anime: "アニメ",
 
                     // Column 5
-                    cool: "かっこいい",
+                    goodlooking: "かっこいい",
                     elegant: "上品",
                     homey: "アットホーム",
                     craft: "クラフト",
@@ -1712,8 +1784,9 @@ i18n
                     dark: "暗い",
                     casual: "カジュアル",
                     retro: "レトロ",
-                    cool2: "クール",
-                    colorful: "カラフル"
+                    cool: "クール",
+                    colorful: "カラフル",
+                    androgynous: "中性的",
                   }
                 },
 
@@ -1986,23 +2059,6 @@ export const projects = [
     description: "Built a fully responsive restaurant Website.",
     link: "https://restau-web.yimajiuni.com/",
   },
-  /*
-  {
-    iconUrl: estate,
-    theme: "btn-back-black",
-    name: "Real-Estate Application",
-    description:
-      "Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.",
-    link: "https://github.com/adrianhajdin/projects_realestate",
-  },
-  {
-    iconUrl: summiz,
-    theme: "btn-back-yellow",
-    name: "AI Summarizer Application",
-    description:
-      "App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.",
-    link: "https://github.com/adrianhajdin/project_ai_summarizer",
-  },*/
 ];
 
 export const promoDesigns = [
@@ -2027,9 +2083,37 @@ export const appDesigns = [
 export const workDatas = [
   {
     id: 1,
-    titleBk: "ECアパレル",
+    titleBk: "NEXT.js ECアパレル",
     titleBl: "ウェブサイト",
     image: webmock1,
+    medium: "website",
+    period: "約1ヶ月半",
+    range: "デザイン・コーディング・実装",
+    skills: "Next.JS, Typescript, Tailwind",
+    summary:
+      "Shopifyによる決済システム、バックエンドとNext.jsのハイブリッドレンダリングの高速処理が叶うサイト。",
+    concept_target: `社会に関心の高い、価値のあるものに゙対し購買意欲が高い幅広い年代が対象`,
+    concept_needs:
+      "日本の和の伝統美と国際化の雰囲気を規則的に取り入れ一貫性と美しさを保ちながら、普遍的で見やすいデザインを保つため整列されたレイアウト統一。",
+    concept_function:
+      "ユーザーが快適に商品を閲覧し購入できるよう、重要な情報やボタンは視認性を高めるために強調。APIからのデータ取得を最適化。処理速度の高速化とUXによる購入体験の向上を意識",
+    concept_eva:
+      "国際的な視点での個のスタイル、姿の在り方、世界の広域を対応地域、 時事問題に強い興味を示す、アパレルとマインドが直結した世代の購買キーワードを元にカスタマイズされたデザイン。",
+    persona:
+      "健康でファストファッションに対し購買意欲が高い幅広い世代の幅広い人種や年代が対象",
+    persona_basic: "性別:女性 年代:２０代〜",
+    persona_preference: "#無駄なく#シンプルで使いやすい#色々楽しめるのが好き ",
+    persona_orientation: "速い生活ペースを好む、節約をし価値のあるものに゙集中投資する傾向。日頃からアクティブ",
+    wireframe: `全体のレイアウトと直感的な使用感、構造の論理的な流れを確保するため、既存のモデルとなるECサイトをリサーチし最適化し、ユーザーインタラクション、コンテンツ階層、応答性などの重要な要素に対し、一貫性があり分かりやすい仕様を目指した。
+    スライダーやその他の動的パーツを追加し、レスポンシブデザインを実装し、ユーザビリティの向上を目指しました。`,
+    link: "https://next-shopify.yimajiuni.com/",
+    icon: tesla,
+  },
+  {
+    id: 2,
+    titleBk: "ECアパレル",
+    titleBl: "ウェブサイト",
+    image: webmock2,
     medium: "website",
     period: "約2週間",
     range: "デザイン・コーディング・実装",
@@ -2054,10 +2138,10 @@ export const workDatas = [
     icon: tesla,
   },
   {
-    id: 2,
+    id: 3,
     titleBk: "ダッシュボード",
     titleBl: "アプリ",
-    image: webmock2,
+    image: webmock3,
     medium: "website",
     period: "４日間",
     range: "デザイン・コーディング・実装",
@@ -2081,10 +2165,10 @@ export const workDatas = [
     icon: tesla,
   },
   {
-    id: 3,
+    id: 4,
     titleBk: "旅行予約",
     titleBl: "ウェブサイト",
-    image: webmock3,
+    image: webmock4,
     medium: "website",
     period: "4日間",
     range: "デザイン・コーディング・実装",
@@ -2106,10 +2190,10 @@ export const workDatas = [
     icon: tesla,
   },
   {
-    id: 4,
+    id: 5,
     titleBk: "レストラン",
     titleBl: "ウェブサイト",
-    image: webmock4,
+    image: webmock5,
     medium: "website",
     period: "5日間",
     range: "デザイン・コーディング・実装",
@@ -2136,10 +2220,10 @@ export const workDatas = [
   },
   //要修正
   {
-    id: 5,
+    id: 6,
     titleBk: "建築会社",
     titleBl: "ランディングページ",
-    image: web5,
+    image: web6,
     medium: "website",
     period: "5日間",
     range: "デザイン・コーディング・実装",
@@ -2166,9 +2250,9 @@ export const workDatas = [
   },
   //要修正
   {
-    id: 6,
-    titleBk: "レストラン",
-    titleBl: "ウェブサイト",
+    id: 7,
+    titleBk: "乗馬用品ECサイト",
+    titleBl: "セールページ1",
     image: webjt1,
     medium: "website",
     period: "5日間",
@@ -2196,9 +2280,9 @@ export const workDatas = [
   },
   //要修正
   {
-    id: 7,
-    titleBk: "レストラン",
-    titleBl: "ウェブサイト",
+    id: 8,
+    titleBk: "乗馬用品ECサイト",
+    titleBl: "セールページ2",
     image: webjt2,
     medium: "website",
     period: "5日間",
@@ -2225,29 +2309,37 @@ export const workDatas = [
     icon: tesla,
   },
 
-  { id: 8, link: "https://yimajiuni.com/promotions/eq-bo.jpg" },
-  { id: 9, link: "https://yimajiuni.com/promotions/eq-ch.jpg" },
-  { id: 10, link: "https://yimajiuni.com/promotions/eq-cu.jpg" },
-  { id: 11, link: "https://yimajiuni.com/promotions/eq-gr1.jpg" },
-  { id: 12, link: "https://yimajiuni.com/promotions/eq-gr2.jpg" },
-  { id: 13, link: "https://yimajiuni.com/promotions/eq-gr3.jpg" },
-  { id: 14, link: "https://yimajiuni.com/promotions/eq-gr4.jpg" },
-  { id: 15, link: "https://yimajiuni.com/promotions/eq-wh.jpg" },
+  { id: 9, link: "https://yimajiuni.com/promotions/eq-bo.jpg" },
+  { id: 10, link: "https://yimajiuni.com/promotions/eq-ch.jpg" },
+  { id: 11, link: "https://yimajiuni.com/promotions/eq-cu.jpg" },
+  { id: 12, link: "https://yimajiuni.com/promotions/eq-gr1.jpg" },
+  { id: 13, link: "https://yimajiuni.com/promotions/eq-gr2.jpg" },
+  { id: 14, link: "https://yimajiuni.com/promotions/eq-gr3.jpg" },
+  { id: 15, link: "https://yimajiuni.com/promotions/eq-gr4.jpg" },
   { id: 16, link: "https://yimajiuni.com/promotions/eq-wh.jpg" },
+  { id: 17, link: "https://yimajiuni.com/promotions/eq-wh.jpg" },
   {
-    id: 17,
+    id: 18,
     link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=233-88&t=TGbd5tplvGsffkfO-1&starting-point-node-id=236%3A233",
   },
   {
-    id: 18,
+    id: 19,
     link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=328-136&t=AMryIaIjpqI2Y7cZ-1&starting-point-node-id=327%3A190",
   },
   {
-    id: 19,
+    id: 20,
     link: "https://www.figma.com/proto/ev72NdVx6r1E9fJJiiu9wX/Untitled?node-id=298-558&t=8uCbvN2drsBtXyv6-1&starting-point-node-id=299%3A681",
   },
   {
-    id: 20,
+    id: 21,
+    link: "https://css-scaler.yimajiuni.com/",
+  },
+  {
+    id: 22,
+    link: "https://blog-app.yimajiuni.com/",
+  },
+  {
+    id: 23,
     link: "https://yimajiuni.com/dtp/portfolio-yuko.pdf",
   },
 ];

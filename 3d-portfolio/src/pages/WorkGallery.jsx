@@ -56,15 +56,15 @@ function WorkGallery() {
     const workData = workDatas.find((data) => data.id === work.id);
     const workId = workData ? workData.id : null;
     if (activeTab === 0) {
-      return workId >= 1 && workId <= 20;
+      return workId >= 1 && workId <= 23;
     } else if (activeTab === 1) {
-      return workId >= 1 && workId <= 5;
+      return workId >= 1 && workId <= 6;
     } else if (activeTab === 2) {
-      return workId >= 6 && workId <= 16;
+      return workId >= 7 && workId <= 17;
     } else if (activeTab === 3) {
-      return workId >= 17 && workId <= 19;
+      return workId >= 18 && workId <= 22;
     } else if (activeTab === 4) {
-      return workId >= 20;
+      return workId >= 23;
     }
     return false;
   });
@@ -111,15 +111,15 @@ function WorkGallery() {
                 <div className="rounded-xl flex justify-center items-center">
                   <Link
                     to={
-                      workId >= 1 && workId <= 4
+                      workId >= 1 && workId <= 5
                         ? `/details/${workId}`
-                        : workId >= 5 && workId <= 20
+                        : workId >= 6 && workId <= 23
                           ? work.link
                           : "#"
                     }
                     rel="noopener noreferrer"
                     className="block-container relative inline-block group font-semibold text-blue-600"
-                    target={workId >= 5 && workId <= 20 ? "_blank" : undefined}
+                    target={workId >= 6 && workId <= 23 ? "_blank" : undefined}
                   >
                     <img
                       src={work.preview}
@@ -135,15 +135,15 @@ function WorkGallery() {
                 </h4>
                 <Link
                   to={
-                    workId >= 1 && workId <= 4
+                    workId >= 1 && workId <= 5
                       ? `/details/${workId}`
-                      : workId >= 5 && workId <= 20
+                      : workId >= 6 && workId <= 23
                         ? work.link
                         : "#"
                   }
                   rel="noopener noreferrer"
                   className="items-center inline-flex font-semibold text-blue-600"
-                  target={workId >= 5 && workId <= 20 ? "_blank" : undefined}
+                  target={workId >= 6 && workId <= 23 ? "_blank" : undefined}
                 >
                   <img
                     src={arrow}

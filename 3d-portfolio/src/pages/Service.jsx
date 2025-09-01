@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 import QAQuote from "../components/QAQuote";
 import PerformanceReport from "../components/PerformanceReport";
 import yimajiuniPark from '../assets/images/yimajiuni-park.png';
-import nextEcomShopify from '../assets/images/next-ecom-shopify.png';
+import nextEcomShopify from '../assets/images/webmock1.png';
 import waPtnDia from '../assets/images/wa-ptn-dia.svg';
 import waPtnWave from '../assets/images/wa-ptn-wave.svg';
 import Footer from "../components/Footer";
@@ -39,7 +39,7 @@ const classes = {
     subtitle: "text-[28px] sm:text-4xl font-bold text-white mb-6",
     subtitleHighlight: "text-[26px] font-bold sm:text-4xl blue-gradient_text drop-shadow block mb-3",
     sectionTitle: "text-4xl font-bold text-white mb-6",
-    description: "text-lg text-white/80 max-w-3xl mx-auto",
+    description: "text-lg text-white/80 max-w-3xl mx-auto mb-4",
     descriptionLarge: "text-xl text-white/80 mb-4 sm:mb-6 max-w-2xl mx-auto",
 
     // Images
@@ -567,6 +567,8 @@ const Service = () => {
                                 className={classes.image}
                             />
                         </div>
+                        <p className="text-xl font-bold text-white mb-4">
+                            {t('service.section1.yimajiuni')}</p>
 
 
                         <p className={classes.descriptionLarge}>
@@ -786,7 +788,7 @@ const Service = () => {
                         </div>
 
                         <div
-
+                            id="quote"
                             className={classes.quoteContainer}
                         >
                             <div className={classes.quoteButtonContainer}>

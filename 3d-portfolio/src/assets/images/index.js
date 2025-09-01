@@ -16,11 +16,14 @@ import eqwh from "./eqwh.jpg";
 import app1 from "./app1.jpg";
 import app2 from "./app2.jpg";
 import app3 from "./app3.jpg";
+import app4 from "./app4.jpg";
+import app5 from "./app5.jpg";
 import web1 from "./web1.jpg";
 import web2 from "./web2.jpg";
 import web3 from "./web3.jpg";
 import web4 from "./web4.jpg";
 import web5 from "./web5.jpg";
+import web6 from "./web6.jpg";
 import webjt1 from "./webjt1.jpg";
 import webjt2 from "./webjt2.jpg";
 import dtp1 from "./dtp1.jpg";
@@ -29,6 +32,7 @@ import webmock1 from "./webmock1.png";
 import webmock2 from "./webmock2.png";
 import webmock3 from "./webmock3.png";
 import webmock4 from "./webmock4.png";
+import webmock5 from "./webmock5.png";
 
 export {
   hero,
@@ -50,11 +54,14 @@ export {
   app1,
   app2,
   app3,
+  app4,
+  app5,
   web1,
   web2,
   web3,
   web4,
   web5,
+  web6,
   webjt1,
   webjt2,
   dtp1,
@@ -62,4 +69,5 @@ export {
   webmock2,
   webmock3,
   webmock4,
+  webmock5,
 };
