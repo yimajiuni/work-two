@@ -24,6 +24,7 @@ import {
   mui,
   threads,
   typescript,
+  n8n,
 } from "../assets/icons";
 
 export const skills = [
@@ -76,6 +77,11 @@ export const skills = [
     imageUrl: tailwindcss,
     name: "Tailwind CSS",
     type: "Frontend",
+  },
+  {
+    imageUrl: n8n,
+    name: "N8N",
+    type: "Automation",
   },
 ];
 

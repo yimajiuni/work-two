@@ -36,6 +36,7 @@ import vue from "./vue.svg";
 import fiverr from "./fiverr.svg";
 import instagram from "./instagram.svg";
 import soundcloud from "./soundcloud.svg";
+import n8n from "./n8n.svg";
 export {
   css,
   express,
@@ -75,4 +76,5 @@ export {
   fiverr,
   instagram,
   soundcloud,
+  n8n,
 };

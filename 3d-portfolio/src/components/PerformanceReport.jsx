@@ -53,7 +53,7 @@ const classes = {
     // Problem list
     problemList: "space-y-3",
     problemItem: "flex items-start space-x-3",
-    problemBullet: "text-red-500 text-xl",
+    problemBullet: "text-pink-600 text-xl",
     problemText: "text-gray-700",
 
     // Table styles with gradient

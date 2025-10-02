@@ -11,8 +11,8 @@ import i18n from "i18next";
 gsap.registerPlugin(ScrollTrigger);
 import QAQuote from "../components/QAQuote";
 import PerformanceReport from "../components/PerformanceReport";
-import yimajiuniPark from '../assets/images/yimajiuni-park.png';
-import nextEcomShopify from '../assets/images/webmock1.png';
+import yimajiuniPark from '../assets/images/yimajiuni-park.webp';
+import nextEcomShopify from '../assets/images/webmock1.webp';
 import waPtnDia from '../assets/images/wa-ptn-dia.svg';
 import waPtnWave from '../assets/images/wa-ptn-wave.svg';
 import Footer from "../components/Footer";
@@ -748,8 +748,8 @@ const Service = () => {
                                 <AnimatedMetric
                                     label={t('service.section3.performance.labels.serverCost')}
                                     labelKey="serverCost"
-                                    startValue={i18n.language === 'jp' ? "43万円" : "$4500"}
-                                    endValue={i18n.language === 'jp' ? "20万円" : "$2200"}
+                                    startValue={i18n.language === 'jp' ? "43万円" : "$4000"}
+                                    endValue={i18n.language === 'jp' ? "20万円" : "$2000"}
                                     duration={4000}
                                     delay={1500}
                                     shouldStart={isPerformanceSectionVisible}

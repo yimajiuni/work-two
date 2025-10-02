@@ -72,6 +72,7 @@ import {
   fiverr,
   instagram,
   soundcloud,
+  n8n,
 } from "./assets/icons";
 
 i18n
@@ -164,16 +165,16 @@ i18n
               ],
             },
             {
-              title: "Web & Graphic Designer and Coder",
-              company_name: "Nextel",
+              title: "ECommerce developer & Designer",
+              company_name: "Nextel to Self-employed",
               icon: meta,
               iconBg: "#a2d2ff",
               date: "June 2020 - Present",
               points: [
-                "As a graphic designer for website , i was in charge of updating the Rakuten Ichiba online store and designing sales promotions during sales.",
-                "and sales promotion design for the company's official e-commerce site. HTML and CSS coding for the company's official e-commerce site.",
-                "and updating of the company's official e-commerce site using HTML and CSS, as well as the production and distribution of e-mail magazines. I used HTML and CSS as markup languages.",
-                "In addition to HTML and CSS, I used Javascript as a programming language without any framework. For graphic design work, I mainly used adobe photoshop and Illustrator for design and editing, then Figma for wire.",
+                `As an ecommerce developer and web designer, I was responsible for updating online stores using CMS such as Rakuten Ichiba, Shopify and Wix, designing promotional pages for sales and campaigns, 
+                creating and distributing email newsletters, and creating the company's official e-commerce website using HTML/CSS/Javascript. Then in 2022, I later expanded my programming knowledge and mastered languages ​​such as Vue, React, and Next.js.
+                In 2024, I went independent and started "Imajiyuni", in which is the service specialized in e-commerce development and renovations and graphic design for apparel companies.
+                The business is now focused on robust, cutting-edge programming languages ​to provide website development, branding services, and product proposal services.`,
               ],
             },
           ],
@@ -298,7 +299,7 @@ i18n
               name: "Ad for rain boots",
               description:
                 "The sales promotion,which is with a polaroid-like style design and inspired by the background of SNS culture that is to be used by young people and a wide range of other generations.",
-              link: "https://yimajiuni.com/promotions/eq-bo.jpg",
+              link: "https://yimajiuni.com/promotions/eq-bo.webp",
             },
             {
               id: 10,
@@ -306,7 +307,7 @@ i18n
               name: "Ad for horse riding chaps",
               description:
                 "Sophisticated, easy-to-read promotion inspired by fashion magazines. Add cuts of model images as needed.",
-              link: "https://yimajiuni.com/promotions/eq-ch.jpg",
+              link: "https://yimajiuni.com/promotions/eq-ch.webp",
             },
             {
               id: 11,
@@ -314,7 +315,7 @@ i18n
               name: "Ad for riding culottes",
               description:
                 "Showcase price, catch copy, product images and effectively organize description and functionality display to express overall brand color and promote sales targeting a wide range of ages for the domestic market.",
-              link: "https://yimajiuni.com/promotions/eq-cu.jpg",
+              link: "https://yimajiuni.com/promotions/eq-cu.webp",
             },
             {
               id: 12,
@@ -322,7 +323,7 @@ i18n
               name: "Ad for riding gloves 1",
               description:
                 "Promotion of riding gloves with special fabric for winter moisture retention and warmth.",
-              link: "https://yimajiuni.com/promotions/eq-gr1.jpg",
+              link: "https://yimajiuni.com/promotions/eq-gr1.webp",
             },
             {
               id: 13,
@@ -330,7 +331,7 @@ i18n
               name: "Ad for horse riding leather gloves",
               description:
                 "Promotion of well-fitting synthetic leather gloves for riding. Design to match the product emphasizing sportiness and functional aspects.",
-              link: "https://yimajiuni.com/promotions/eq-gr2.jpg",
+              link: "https://yimajiuni.com/promotions/eq-gr2.webp",
             },
             {
               id: 14,
@@ -338,7 +339,7 @@ i18n
               name: "Ad for horseriding accessories",
               description:
                 "Promotion that expresses friendliness and elegance, targeting all generations.",
-              link: "https://yimajiuni.com/promotions/eq-gr3.jpg",
+              link: "https://yimajiuni.com/promotions/eq-gr3.webp",
             },
             {
               id: 15,
@@ -346,7 +347,7 @@ i18n
               name: "Ad for horse riding gloves 3",
               description:
                 "Promotion of silicone grip glove with cost-effective with sophisticated visual.",
-              link: "https://yimajiuni.com/promotions/eq-gr4.jpg",
+              link: "https://yimajiuni.com/promotions/eq-gr4.webp",
             },
             {
               id: 16,
@@ -354,7 +355,7 @@ i18n
               name: "Ad of horse riding helmets",
               description:
                 "Easy to read and sophisticated promotion inspired by magazines",
-              link: "https://yimajiuni.com/promotions/eq-he.jpg",
+              link: "https://yimajiuni.com/promotions/eq-he.webp",
             },
             {
               id: 17,
@@ -362,7 +363,7 @@ i18n
               name: "Ad for a horse riding whip",
               description:
                 "Sales promotion with expressions that accentuate 'harmony' and 'monogram' to match the distinctive product Functional display is easy to read and aethethically appealing.",
-              link: "https://yimajiuni.com/promotions/eq-wh.jpg",
+              link: "https://yimajiuni.com/promotions/eq-wh.webp",
             },
           ],
 
@@ -594,7 +595,7 @@ i18n
                         serverCost: {
                           label: "Server Cost",
                           traditional: "$4,500/month",
-                          nextjs: "$2,200/month",
+                          nextjs: "$2,000/month",
                           improvement: "50%"
                         }
                       }
@@ -678,280 +679,280 @@ i18n
                   footer: {
                     contactUs: "Contact Us @ info@yimajiuni.com",
                     askQuote: "Ask Quote",
-                    close: "Close",
+                    close: "Close"
                   },
-                }
-              },
-              section4: {
-                title: "Get Ready with Your Custom Quote",
-                description: "Answer a few questions to get a personalized quote for your project. Selecting your requirements, project scale, and preferences helps us understand your needs and provide the most accurate quote to your project.",
-                calculator: {
-                  title: "Quote Sheet Creator",
-                  button: "Start Creating"
-                }
-              },
-              navigation: {
-                main: "Main",
-                product: "Product",
-                services: "Services",
-                quote: "Ask Quote"
-              },
-              qaForm: {
-                title: "Project Quote Request",
-                close: "×",
-                progress: "Step {{current}} of {{total}}",
-                progressPercent: "{{percent}}%",
-                required: "*",
-                previous: "Previous",
-                next: "Next",
-                submit: "Submit Request",
-                submitting: "Submitting...",
-                validation: {
-                  answerRequired: "Please answer: {{question}}",
-                  allQuestionsRequired: "Please answer all questions before submitting. Missing: {{question}}"
-                },
-                questions: {
-                  projectType: {
-                    question: "What type of project do you need?",
-                    options: {
-                      ecommerce: "E-commerce Website",
-                      corporate: "Corporate Website",
-                      portfolio: "Portfolio/Blog",
-                      landingpage: "Landing Page",
-                      webapp: "Web Application",
-                      other: "Other"
-                    }
-                  },
-                  projectScale: {
-                    question: "What is the scale of your project?",
-                    options: {
-                      small: "Small (1-5 pages)",
-                      medium: "Medium (5-30 pages)",
-                      large: "Large (30-50 pages)",
-                      enterprise: "Enterprise Level"
-                    }
-                  },
-                  budget: {
-                    question: "What is your budget range?",
-                    options: {
-                      under1k: "Under $1,000",
-                      "1k-5k": "$1,000 - $5,000",
-                      "5k-10k": "$5,000 - $10,000",
-                      "10k+": "$10,000+"
-                    }
-                  },
-                  timeline: {
-                    question: "What is your timeline?",
-                    options: {
-                      asap: "ASAP (1-2 weeks)",
-                      "1months-3months": "1 month - 3 months",
-                      "3months-6months": "3 months - 6 months",
-                      flexible: "Flexible"
-                    }
-                  },
-                  features: {
-                    question: "What features do you need? (Select all that apply)",
-                    options: {
-                      responsive: "Responsive Design",
-                      transformation: "Next.js Migration & Integration",
-                      payment: "Ecom Payment Integration with Shopify, Wix, etc.",
-                      cms: "Content Management System (CMS)",
-                      seo: "SEO Optimization",
-                      analytics: "Analytics & Tracking",
-                      multilingual: "Multi-language Support"
-                    }
-                  },
-                  brandingDepth: {
-                    question: "Does your project require detailed branding or prefer simple and basic?",
-                    options: {
-                      detailed: "Detailed Branding",
-                      simple: "Simple & Basic"
-                    }
-                  },
-                  brandVision: {
-                    question: "What vision does your brand want to achieve?",
-                    placeholder: "Describe the future world your brand envisions..."
-                  },
-                  brandMission: {
-                    question: "What role should your brand play in achieving this vision?",
-                    placeholder: "Describe the mission and purpose of your brand..."
-                  },
-                  targetAudience: {
-                    question: "Who is your primary target audience?",
-                    placeholder: "Describe your ideal customers, their demographics, lifestyle, and needs..."
-                  },
-                  brandPersonality: {
-                    question: "How should your brand be perceived by customers?",
-                    options: {
-                      professional: "Professional & Corporate",
-                      friendly: "Friendly & Approachable",
-                      luxury: "Luxury & Premium",
-                      innovative: "Innovative & Cutting-edge",
-                      trustworthy: "Trustworthy & Reliable"
-                    }
-                  },
-                  designStyle: {
-                    question: "What design style do you prefer?",
-                    options: {
-                      modern: "Modern & Contemporary",
-                      minimalist: "Minimalist & Clean",
-                      casual: "Casual & Relaxed",
-                      elegant: "Elegant & Sophisticated",
-                      professional: "Professional & Business-like"
-                    }
-                  },
-                  colorScheme: {
-                    question: "What color scheme do you prefer?",
-                    options: {
-                      blue: "Blue & Cool Tones",
-                      green: "Green & Natural",
-                      purple: "Purple & Creative",
-                      neutral: "Neutral & Subtle",
-                      warm: "Warm & Inviting"
-                    }
-                  },
-                  targetDemographics: {
-                    question: "Describe your target demographics",
-                    placeholder: "Age groups, gender, lifestyle, occupation, etc..."
-                  },
-                  visualStyle: {
-                    question: "What visual style or tone and manner do you want to depict for your project?",
-                    instruction: "Please select the keywords from below that best represent your desired visual style:",
-                    priorityOrder: "Priority Order (click to reorder)",
-                    maxLimitReached: "Maximum of 5 visual styles can be selected. Please deselect one to add another.",
-                    options: {
-                      // Column 1
-                      masculine: "Masculine",
-                      fun: "Fun",
-                      premium: "Premium",
-                      linear: "Linear",
-                      formal: "Formal",
-                      intellectual: "Intellectual",
-                      delicate: "Delicate",
-                      monotone: "Monotone",
-
-                      // Column 2
-                      feminine: "Feminine",
-                      interesting: "Interesting",
-                      warm: "Warm",
-                      curved: "Curved",
-                      mystical: "Mystical",
-                      premium2: "Premium",
-                      chic: "Chic",
-                      pop: "Pop",
-
-                      // Column 3
-                      childlike: "Childlike",
-                      powerful: "Powerful",
-                      decadence: "Decadence",
-                      rhythmic: "Rhythmic",
-                      trustworthy: "Trustworthy",
-                      lively: "Lively",
-                      stylish: "Stylish",
-                      pastel: "Pastel",
-
-                      // Column 4
-                      cute: "Cute",
-                      serious: "Serious",
-                      business: "Business",
-                      natural: "Natural",
-                      traditional: "Traditional",
-                      refreshing: "Refreshing",
-                      metallic: "Metallic",
-                      anime: "Anime",
-
-                      // Column 5
-                      goodlooking: "Goodlooking",
-                      elegant: "Elegant",
-                      homey: "Homey",
-                      craft: "Craft",
-                      modern: "Modern",
-                      flashy: "Flashy",
-                      complex: "Complex",
-                      japanese: "Japanese",
-
-                      // Column 6
-                      friendly: "Friendly",
-                      luxury: "Luxury",
-                      bright: "Bright",
-                      unique: "Unique",
-                      futuristic: "Futuristic",
-                      subdued: "Subdued",
-                      simple: "Simple",
-                      western: "Western",
-
-                      // Column 7
-                      gentle: "Gentle",
-                      elegant2: "Elegant",
-                      dark: "Dark",
-                      casual: "Casual",
-                      retro: "Retro",
-                      cool: "Cool",
-                      colorful: "Colorful",
-                      androgynous: "Androgynous"
-                    }
-                  },
-
-                  communicationPreference: {
-                    question: "What is your preferred communication method?",
-                    options: {
-                      video: "Video consultation meeting",
-                      email: "Email communication",
-                      chat: "Chat application"
-                    }
-                  },
-                  chatDetails: {
-                    question: "Which chat application do you prefer?",
-                    options: {
-                      chatwork: "Chatwork",
-                      slack: "Slack",
-                      discord: "Discord",
-                      other: "Other platform"
-                    }
-                  },
-                  otherChatPlatform: {
-                    question: "Please specify the other chat platform:",
-                    placeholder: "Please specify the platform name..."
-                  },
-                  companyInfo: {
-                    question: "Tell us about your hope and sentiment for your company/project",
-                    placeholder: "Describe your business, goals, and any specific requirements..."
-                  },
-                  contactInfo: {
-                    question: "Your contact information",
-                    fields: {
-                      name: "Full Name",
-                      email: "Email",
-                      phone: "Phone (optional)",
-                      company: "Company (optional)"
-                    }
-                  }
-                },
-                success: {
-                  title: "Thank You!",
-                  message: "Your project quote request has been submitted. We'll get back to you within 24 working hours!",
-                  otherChatMessage: "💬 We will contact you via the specified chat platform within 24 working hours.",
-                  refreshMessage: "💡To start quote again, please refresh the browser.",
-                  downloadPDF: "Download PDF",
-                  close: "Close"
-                },
-                pdf: {
-                  title: "Project Quote Request",
-                  generatedOn: "Generated on",
-                  filename: "project-quote-request"
-                },
-                labels: {
-                  contactInfo: "Contact Information",
-                  projectType: "Project Type",
-                  projectScale: "Project Scale",
-                  budget: "Budget",
-                  timeline: "Timeline",
-                  features: "Features",
-                  companyInfo: "Company Information"
                 }
               }
             },
-          }
+            section4: {
+              title: "Get Ready with Your Custom Quote",
+              description: "Answer a few questions to get a personalized quote for your project. Selecting your requirements, project scale, and preferences helps us understand your needs and provide the most accurate quote to your project.",
+              calculator: {
+                title: "Quote Sheet Creator",
+                button: "Start Creating"
+              }
+            },
+            navigation: {
+              main: "Main",
+              product: "Product",
+              services: "Services",
+              quote: "Ask Quote"
+            },
+            qaForm: {
+              title: "Project Quote Request",
+              close: "×",
+              progress: "Step {{current}} of {{total}}",
+              progressPercent: "{{percent}}%",
+              required: "*",
+              previous: "Previous",
+              next: "Next",
+              submit: "Submit Request",
+              submitting: "Submitting...",
+              validation: {
+                answerRequired: "Please answer: {{question}}",
+                allQuestionsRequired: "Please answer all questions before submitting. Missing: {{question}}"
+              },
+              questions: {
+                projectType: {
+                  question: "What type of project do you need?",
+                  options: {
+                    ecommerce: "E-commerce Website",
+                    corporate: "Corporate Website",
+                    portfolio: "Portfolio/Blog",
+                    landingpage: "Landing Page",
+                    webapp: "Web Application",
+                    other: "Other"
+                  }
+                },
+                projectScale: {
+                  question: "What is the scale of your project?",
+                  options: {
+                    small: "Small (1-5 pages)",
+                    medium: "Medium (5-30 pages)",
+                    large: "Large (30-50 pages)",
+                    enterprise: "Enterprise Level"
+                  }
+                },
+                budget: {
+                  question: "What is your budget range?",
+                  options: {
+                    under1k: "Under $1,000",
+                    "1k-5k": "$1,000 - $5,000",
+                    "5k-10k": "$5,000 - $10,000",
+                    "10k+": "$10,000+"
+                  }
+                },
+                timeline: {
+                  question: "What is your timeline?",
+                  options: {
+                    asap: "ASAP (1-2 weeks)",
+                    "1months-3months": "1 month - 3 months",
+                    "3months-6months": "3 months - 6 months",
+                    flexible: "Flexible"
+                  }
+                },
+                features: {
+                  question: "What features do you need? (Select all that apply)",
+                  options: {
+                    responsive: "Responsive Design",
+                    transformation: "Next.js Migration & Integration",
+                    payment: "Ecom Payment Integration with Shopify, Wix, etc.",
+                    cms: "Content Management System (CMS)",
+                    seo: "SEO Optimization",
+                    analytics: "Analytics & Tracking",
+                    multilingual: "Multi-language Support"
+                  }
+                },
+                brandingDepth: {
+                  question: "Does your project require detailed branding or prefer simple and basic?",
+                  options: {
+                    detailed: "Detailed Branding",
+                    simple: "Simple & Basic"
+                  }
+                },
+                brandVision: {
+                  question: "What vision does your brand want to achieve?",
+                  placeholder: "Describe the future world your brand envisions..."
+                },
+                brandMission: {
+                  question: "What role should your brand play in achieving this vision?",
+                  placeholder: "Describe the mission and purpose of your brand..."
+                },
+                targetAudience: {
+                  question: "Who is your primary target audience?",
+                  placeholder: "Describe your ideal customers, their demographics, lifestyle, and needs..."
+                },
+                brandPersonality: {
+                  question: "How should your brand be perceived by customers?",
+                  options: {
+                    professional: "Professional & Corporate",
+                    friendly: "Friendly & Approachable",
+                    luxury: "Luxury & Premium",
+                    innovative: "Innovative & Cutting-edge",
+                    trustworthy: "Trustworthy & Reliable"
+                  }
+                },
+                designStyle: {
+                  question: "What design style do you prefer?",
+                  options: {
+                    modern: "Modern & Contemporary",
+                    minimalist: "Minimalist & Clean",
+                    casual: "Casual & Relaxed",
+                    elegant: "Elegant & Sophisticated",
+                    professional: "Professional & Business-like"
+                  }
+                },
+                colorScheme: {
+                  question: "What color scheme do you prefer?",
+                  options: {
+                    blue: "Blue & Cool Tones",
+                    green: "Green & Natural",
+                    purple: "Purple & Creative",
+                    neutral: "Neutral & Subtle",
+                    warm: "Warm & Inviting"
+                  }
+                },
+                targetDemographics: {
+                  question: "Describe your target demographics",
+                  placeholder: "Age groups, gender, lifestyle, occupation, etc..."
+                },
+                visualStyle: {
+                  question: "What visual style or tone and manner do you want to depict for your project?",
+                  instruction: "Please select the keywords from below that best represent your desired visual style:",
+                  priorityOrder: "Priority Order (click to reorder)",
+                  maxLimitReached: "Maximum of 5 visual styles can be selected. Please deselect one to add another.",
+                  options: {
+                    // Column 1
+                    masculine: "Masculine",
+                    fun: "Fun",
+                    premium: "Premium",
+                    linear: "Linear",
+                    formal: "Formal",
+                    intellectual: "Intellectual",
+                    delicate: "Delicate",
+                    monotone: "Monotone",
+
+                    // Column 2
+                    feminine: "Feminine",
+                    interesting: "Interesting",
+                    warm: "Warm",
+                    curved: "Curved",
+                    mystical: "Mystical",
+                    premium2: "Premium",
+                    chic: "Chic",
+                    pop: "Pop",
+
+                    // Column 3
+                    childlike: "Childlike",
+                    powerful: "Powerful",
+                    decadence: "Decadence",
+                    rhythmic: "Rhythmic",
+                    trustworthy: "Trustworthy",
+                    lively: "Lively",
+                    stylish: "Stylish",
+                    pastel: "Pastel",
+
+                    // Column 4
+                    cute: "Cute",
+                    serious: "Serious",
+                    business: "Business",
+                    natural: "Natural",
+                    traditional: "Traditional",
+                    refreshing: "Refreshing",
+                    metallic: "Metallic",
+                    anime: "Anime",
+
+                    // Column 5
+                    goodlooking: "Goodlooking",
+                    elegant: "Elegant",
+                    homey: "Homey",
+                    craft: "Craft",
+                    modern: "Modern",
+                    flashy: "Flashy",
+                    complex: "Complex",
+                    japanese: "Japanese",
+
+                    // Column 6
+                    friendly: "Friendly",
+                    luxury: "Luxury",
+                    bright: "Bright",
+                    unique: "Unique",
+                    futuristic: "Futuristic",
+                    subdued: "Subdued",
+                    simple: "Simple",
+                    western: "Western",
+
+                    // Column 7
+                    gentle: "Gentle",
+                    elegant2: "Elegant",
+                    dark: "Dark",
+                    casual: "Casual",
+                    retro: "Retro",
+                    cool: "Cool",
+                    colorful: "Colorful",
+                    androgynous: "Androgynous"
+                  }
+                },
+
+                communicationPreference: {
+                  question: "What is your preferred communication method?",
+                  options: {
+                    video: "Video consultation meeting",
+                    email: "Email communication",
+                    chat: "Chat application"
+                  }
+                },
+                chatDetails: {
+                  question: "Which chat application do you prefer?",
+                  options: {
+                    chatwork: "Chatwork",
+                    slack: "Slack",
+                    discord: "Discord",
+                    other: "Other platform"
+                  }
+                },
+                otherChatPlatform: {
+                  question: "Please specify the other chat platform:",
+                  placeholder: "Please specify the platform name..."
+                },
+                companyInfo: {
+                  question: "Tell us about your hope and sentiment for your company/project",
+                  placeholder: "Describe your business, goals, and any specific requirements..."
+                },
+                contactInfo: {
+                  question: "Your contact information",
+                  fields: {
+                    name: "Full Name",
+                    email: "Email",
+                    phone: "Phone (optional)",
+                    company: "Company (optional)"
+                  }
+                }
+              },
+              success: {
+                title: "Thank You!",
+                message: "Your project quote request has been submitted. We'll get back to you within 24 working hours!",
+                otherChatMessage: "💬 We will contact you via the specified chat platform within 24 working hours.",
+                refreshMessage: "💡To start quote again, please refresh the browser.",
+                downloadPDF: "Download PDF",
+                close: "Close"
+              },
+              pdf: {
+                title: "Project Quote Request",
+                generatedOn: "Generated on",
+                filename: "project-quote-request"
+              },
+              labels: {
+                contactInfo: "Contact Information",
+                projectType: "Project Type",
+                projectScale: "Project Scale",
+                budget: "Budget",
+                timeline: "Timeline",
+                features: "Features",
+                companyInfo: "Company Information"
+              }
+            }
+          },
         }
       },
       jp: {
@@ -1035,16 +1036,16 @@ i18n
               ],
             },
             {
-              title: "Web & Graphic Designer",
-              company_name: "Nextel",
+              title: "E-Commerce developer & Designer",
+              company_name: "Nextel to Self-employed",
               icon: meta,
               iconBg: "#a2d2ff",
               date: "June 2020 - Present",
               points: [
-                `
-                Webグラフィックデザイナーとして直属の楽天市場のオンラインストア更新業務、セール、キャンペーン時の販促ページデザインを担当。
-                自社公式ECサイトの制作にはHTMLとCSSを使ったコーディング、更新作業とメールマガジン制作配信を行いました。使用言語はマークアップとしてHTMLとCSSに加えプログラミング言語はフレームワークなしのJavascriptを使用しました。
-                グラフィックデザインの仕事には主にadobe photoshop とillustratorを細部のデザイン制作に、figmaをワイヤーフレームと全体像のデザインに使用。`,
+                `Eコマース開発とWebグラフィックデザイナーとして楽天市場やShopify, WixなどのCMSを使用したオンラインストア更新業務からセール、キャンペーン時の販促ページデザイン、メールマガジン制作配信、
+                HTML/CSS/Javascriptによる自社公式ECサイトの制作にを担当。後に2022年にプログラミングの知見を拡大し、Vue,React,Next.js等の言語を習得。
+                2024年には独立し、いまじゆうにを開始。アパレル企業を専門としてEC開発・改修とグラフィックデザイン業務に携わり、現在は強固な最新の言語を用いた
+                Webサイトの開発とブランディングのサービス、商品提案事業に携わっております。`,
               ],
             },
           ],
@@ -1176,7 +1177,7 @@ i18n
               name: "レインブーツの販売促進",
               description:
                 "ポラロイド風のデザインやSNS文化を彷彿させるデザインを取り入れたヤング世代から他の幅広い世代迄をターゲットとして作成。",
-              link: "https://yimajiuni.com/promotions/eq-bo.jpg",
+              link: "https://yimajiuni.com/promotions/eq-bo.webp",
             },
             {
               id: 10,
@@ -1184,7 +1185,7 @@ i18n
               name: "乗馬用チャップスの販売促進",
               description:
                 "ファッション誌からインスパイアされた読みやすく洗練されたプロモーション。必要に応じてモデル画像のカットを追加。",
-              link: "https://yimajiuni.com/promotions/eq-ch.jpg",
+              link: "https://yimajiuni.com/promotions/eq-ch.webp",
             },
             {
               id: 11,
@@ -1192,7 +1193,7 @@ i18n
               name: "乗馬用キュロットの販売促進",
               description:
                 "値段、キャッチコピー、商品画像のショーケースと説明文と機能表示を効果的に整理しブランド色を全体に表現し、国内向けの幅広い年代をターゲットとした販売促進画像。",
-              link: "https://yimajiuni.com/promotions/eq-cu.jpg",
+              link: "https://yimajiuni.com/promotions/eq-cu.webp",
             },
             {
               id: 12,
@@ -1200,7 +1201,7 @@ i18n
               name: "乗馬用グローブの販売促進1",
               description:
                 "冬用保湿保温特殊生地採用の乗馬用グローブのプロモーション。",
-              link: "https://yimajiuni.com/promotions/eq-gr1.jpg",
+              link: "https://yimajiuni.com/promotions/eq-gr1.webp",
             },
             {
               id: 13,
@@ -1208,7 +1209,7 @@ i18n
               name: "乗馬用合皮グローブの販売促進2",
               description:
                 "フィット感の高い乗馬用合皮グローブのプロモーション。スポーティさと機能面を強調した製品に合わせたデザイン。",
-              link: "https://yimajiuni.com/promotions/eq-gr2.jpg",
+              link: "https://yimajiuni.com/promotions/eq-gr2.webp",
             },
             {
               id: 14,
@@ -1216,7 +1217,7 @@ i18n
               name: "乗馬用グローブアクセサリーの販売促進",
               description:
                 "すべての世代をターゲットにした親しみやすさと上品さが表現されたプロモーション",
-              link: "https://yimajiuni.com/promotions/eq-gr3.jpg",
+              link: "https://yimajiuni.com/promotions/eq-gr3.webp",
             },
             {
               id: 15,
@@ -1224,7 +1225,7 @@ i18n
               name: "乗馬用グローブの販売促進3",
               description:
                 "コストパフォーマンスに優れかつ洗練されたイメージのシリコングリップグローブのプロモーション。",
-              link: "https://yimajiuni.com/promotions/eq-gr4.jpg",
+              link: "https://yimajiuni.com/promotions/eq-gr4.webp",
             },
             {
               id: 16,
@@ -1232,7 +1233,7 @@ i18n
               name: "乗馬用ヘルメットの販売促進",
               description:
                 "ファッション誌からインスパイアされた読みやすく洗練されたプロモーション。",
-              link: "https://yimajiuni.com/promotions/eq-he.jpg",
+              link: "https://yimajiuni.com/promotions/eq-he.webp",
             },
             {
               id: 17,
@@ -1240,7 +1241,7 @@ i18n
               name: "乗馬用ムチの販売促進",
               description:
                 "特徴ある製品に合わせ「和」「モノグラム」を引き立たせる表現の販売促進機能表示は見やすくかつファッション性を加味。",
-              link: "https://yimajiuni.com/promotions/eq-wh.jpg",
+              link: "https://yimajiuni.com/promotions/eq-wh.webp",
             },
           ],
           //app
@@ -1452,7 +1453,7 @@ i18n
                   },
                   section5: {
                     title: "実際にNext.jsを導入して売上30%増を達成した中規模ECサイトの例",
-                    case1: "ページ速度改善によるSEO効果により多くのキーワードでの検索順位が向上し、オーガニックトラフィックが140%増加。",
+                    case1: "ページ速度改善によるSEO効果により多くのキーワードでの検索順位が向上し、オーガニックトラフィックが140%に増加。",
                     case2: "スポーツブランドの「ナイキ」や化粧品ブランドの「ランコム」といった世界的企業も、柔軟性と高いパフォーマンスを求めてヘッドレスコマースへ移行しています。",
                     return: "1年間で投資額の約15倍のリターンが実現可能。初期投資は3ヶ月弱で回収できる計算です。一度実装すれば継続的に効果が得られる点は◎。サーバーコスト削減と売上増加という二重の効果により、長期的な収益向上が見込めます。",
                     comparison: "従来のECサイトは、デザイン（フロントエンド）とシステム（バックエンド）が一体化しているため、少しデザインを変えるだけでもシステム全体に影響が及び、改修が難しくコストが高いという課題がありました。",
@@ -1849,7 +1850,7 @@ i18n
             }
           }
         }
-      }
+      },
     }
   });
 
@@ -1970,6 +1971,12 @@ export const skills = [
     type: "Design",
     years: "2",
   },
+  {
+    imageUrl: n8n,
+    name: "N8N",
+    type: "Automation",
+    years: "1",
+  },
 ];
 
 export const experiences = [
@@ -2015,7 +2022,7 @@ export const experiences = [
     ],
   },
   {
-    title: "Web & Graphic Designer",
+    title: "ECommerce developer & Designer",
     company_name: "Nextel",
     icon: meta,
     iconBg: "#a2d2ff",

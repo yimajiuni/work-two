@@ -756,7 +756,8 @@ const QAQuote = ({ isOpen, onClose }) => {
                     company_info: i18n?.language === 'jp' ? '会社情報' : 'Company Information',
                     branding_depth: i18n?.language === 'jp' ? 'ブランディング深度' : 'Branding Depth',
                     visual_style: i18n?.language === 'jp' ? 'ビジュアルスタイル' : 'Visual Style',
-                    communication: i18n?.language === 'jp' ? 'コミュニケーション方法' : 'Communication Method'
+                    communication: i18n?.language === 'jp' ? 'コミュニケーション方法' : 'Communication Method',
+                    cc_email: 'cazal867@gmail.com' // Add CC address to labels
                 }
             };
 
@@ -764,11 +765,14 @@ const QAQuote = ({ isOpen, onClose }) => {
             console.log('EmailJS Data being sent:', JSON.stringify(emailData, null, 2));
 
 
-            // Send email using EmailJS (same as Contact component)
+            // Send email using EmailJS with CC address
             await emailjs.send(
                 import.meta.env.VITE_APP_EMAILJS_QA_SERVICE_ID,
                 import.meta.env.VITE_APP_EMAILJS_QA_TEMPLATE_ID,
-                emailData,
+                {
+                    ...emailData,
+                    cc_email: 'cazal867@gmail.com' // Add CC address
+                },
                 import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
             );
 
