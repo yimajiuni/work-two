@@ -13,27 +13,57 @@ export default defineConfig({
     // Enable code splitting
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Split vendor libraries into separate chunks
-          vendor: ['react', 'react-dom'],
-          three: ['@react-three/fiber', '@react-three/drei', '@react-spring/three'],
-          ui: ['@mui/material', '@mui/icons-material', '@mui/joy'],
-          charts: ['recharts', 'highcharts-react-official', 'd3'],
-          animation: ['gsap'],
-          utils: ['react-router-dom', 'react-i18next', 'i18next']
+        manualChunks: (id) => {
+          // More granular code splitting for better tree shaking
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'react-vendor';
+            }
+            if (id.includes('three') || id.includes('@react-three')) {
+              return 'three';
+            }
+            if (id.includes('gsap')) {
+              return 'animation';
+            }
+            if (id.includes('i18next') || id.includes('react-i18next')) {
+              return 'i18n';
+            }
+            if (id.includes('react-router')) {
+              return 'router';
+            }
+            // All other vendor libraries
+            return 'vendor';
+          }
         }
-      }
+      },
+      // Enhanced tree shaking
+      treeshake: {
+        moduleSideEffects: false,
+        propertyReadSideEffects: false,
+        tryCatchDeoptimization: false,
+      },
     },
     // Optimize chunk size
-    chunkSizeWarningLimit: 1000,
-    // Enable minification
+    chunkSizeWarningLimit: 500,
+    // Enable minification with aggressive settings
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
         drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug'],
+        passes: 2,
+        dead_code: true,
+        drop_unused: true,
+      },
+      mangle: {
+        safari10: true,
       },
     },
+    // Enable CSS code splitting
+    cssCodeSplit: true,
+    // Optimize assets
+    assetsInlineLimit: 4096,
   },
   // Enable source maps in development
   css: {

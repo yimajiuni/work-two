@@ -974,7 +974,7 @@ i18n
               persona_preference: "#No waste #Simple and easy to use #Enjoy variety",
               persona_orientation: "Prefers fast-paced lifestyle, tends to save and focus investment on valuable items. Generally active.",
               wireframe: "Researching and optimizing existing e-commerce sites as models to ensure overall layout and intuitive usability, logical structural flow. Aiming for consistent and understandable specifications for important elements like user interaction, content hierarchy, and responsiveness. Added sliders and other dynamic parts, implemented responsive design to improve usability.",
-              link: "https://e-commerce.yimajiuni.com/",
+              link: "https://next-shopify.yimajiuni.com/",
               icon: tesla,
             },
             {
@@ -2044,7 +2044,7 @@ i18n
               persona_preference: "#無駄なく#シンプルで使いやすい#色々楽しめるのが好き",
               persona_orientation: "速い生活ペースを好む、節約をし価値のあるものに集中投資する傾向。日頃からアクティブ",
               wireframe: "全体のレイアウトと直感的な使用感、構造の論理的な流れを確保するため、既存のモデルとなるECサイトをリサーチし最適化し、ユーザーインタラクション、コンテンツ階層、応答性などの重要な要素に対し、一貫性があり分かりやすい仕様を目指した。スライダーやその他の動的パーツを追加し、レスポンシブデザインを実装し、ユーザビリティの向上を目指しました。",
-              link: "https://e-commerce.yimajiuni.com/",
+              link: "https://next-shopify.yimajiuni.com/",
               icon: tesla,
             },
             {

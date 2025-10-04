@@ -11,6 +11,7 @@ import i18n from "i18next";
 gsap.registerPlugin(ScrollTrigger);
 import QAQuote from "../components/QAQuote";
 import PerformanceReport from "../components/PerformanceReport";
+import ResponsiveImage from "../components/ResponsiveImage";
 import yimajiuniPark from '../assets/images/yimajiuni-park.webp';
 import nextEcomShopify from '../assets/images/webmock1.webp';
 import waPtnDia from '../assets/images/wa-ptn-dia.svg';
@@ -606,13 +607,13 @@ const Service = () => {
                                     {t('service.section2.titleHighlight')}
                                 </span>
                                 <div className="w-full rounded-lg mb-6 ">
-                                    <img
+                                    <ResponsiveImage
                                         src={nextEcomShopify}
                                         alt="Next.js E-commerce Shopify Demo Site"
                                         className={classes.imageHover}
+                                        width={800}
+                                        height={400}
                                         loading="lazy"
-                                        width="800"
-                                        height="400"
                                     />
                                 </div>
 
