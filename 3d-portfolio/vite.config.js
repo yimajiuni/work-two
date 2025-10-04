@@ -54,7 +54,6 @@ export default defineConfig({
         pure_funcs: ['console.log', 'console.info', 'console.debug'],
         passes: 2,
         dead_code: true,
-        drop_unused: true,
       },
       mangle: {
         safari10: true,
