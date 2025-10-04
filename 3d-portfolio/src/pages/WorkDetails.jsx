@@ -111,8 +111,8 @@ function WorkDetails() {
   };
 
   const { id } = useParams();
-  // Extracting a specific work object by id
-  const selectedWork = workDatas.find((data) => data.id === parseInt(id));
+  // Extracting a specific work object by id from translations
+  const selectedWork = detailedDatas.find((data) => data.id === parseInt(id));
 
   return (
     <div className="max-container">
@@ -133,7 +133,12 @@ function WorkDetails() {
             >
               <Grid item xs={8}>
                 <Image>
-                  <Img src={selectedWork.image} />
+                  <Img
+                    src={selectedWork.image}
+                    loading="lazy"
+                    width="600"
+                    height="210"
+                  />
                 </Image>
               </Grid>
               <Grid item xs={4}>

@@ -125,6 +125,9 @@ function WorkGallery() {
                       src={work.preview}
                       alt={work.name}
                       className="w-2/3 h-2/3 object-contain gallery-img"
+                      loading="lazy"
+                      width="350"
+                      height="250"
                     />
                   </Link>
                 </div>
@@ -149,6 +152,9 @@ function WorkGallery() {
                     src={arrow}
                     alt="arrow"
                     className="mr-2 w-4 h-4 object-contain"
+                    loading="lazy"
+                    width="16"
+                    height="16"
                   />
                   Go to Details
                 </Link>

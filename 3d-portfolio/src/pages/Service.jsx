@@ -607,10 +607,12 @@ const Service = () => {
                                 </span>
                                 <div className="w-full rounded-lg mb-6 ">
                                     <img
-
                                         src={nextEcomShopify}
                                         alt="Next.js E-commerce Shopify Demo Site"
                                         className={classes.imageHover}
+                                        loading="lazy"
+                                        width="800"
+                                        height="400"
                                     />
                                 </div>
 

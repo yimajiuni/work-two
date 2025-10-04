@@ -535,7 +535,7 @@ const QAQuote = ({ isOpen, onClose }) => {
                     )}
 
                     {Object.entries(formData).map(([key, value]) => {
-                        const question = qaFlow.find(q => q.id === key);
+            const question = qaFlow.find(q => q.id === key);
                         if (!question || !value) return null;
 
                         return (
@@ -691,8 +691,8 @@ const QAQuote = ({ isOpen, onClose }) => {
                 return requiredFields.some(field => !data[field.name]);
             } else {
                 // For other questions, check formData state
-                const answer = formData[question.id];
-                return !answer || (Array.isArray(answer) && answer.length === 0);
+            const answer = formData[question.id];
+            return !answer || (Array.isArray(answer) && answer.length === 0);
             }
         });
 
