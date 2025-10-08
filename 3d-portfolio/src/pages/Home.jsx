@@ -2,11 +2,12 @@ import React from "react";
 import { useState, Suspense, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import Loader from "../components/Loader";
+import SEO from "../components/SEO";
 /*import Island from "../models/Island";*/
 import Hand from "../models/Hand";
 import Sky from "../models/Sky";
-import Bird from "../models/Bird";
-import Plane from "../models/Plane";
+/*import Bird from "../models/Bird";*/
+/*import Plane from "../models/Plane";*/
 import HomeInfo from "../components/HomeInfo";
 
 import sakura from "../assets/sakura.mp3";
@@ -61,34 +62,40 @@ function Home() {
     adjustIslandForScreenSize();
   const [planeScale, planePosition] = adjustPlaneForScreenSize();
   return (
-    <section className="w-full h-screen relative">
-      <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
-        {currentStage && <HomeInfo currentStage={currentStage} />}
-      </div>
-      <Canvas
-        className={`opacity-80 w-full h-screen bg-transparent ${isRotating ? "cursor-grabbing" : "cursor-grab"
-          }`}
-        camera={{ near: 0.1, far: 1000 }}
-      >
-        <Suspense fallback={<Loader />}>
-          <directionalLight position={[1, 1, 1]} intensity={5} />
-          <ambientLight intensity={1.4} />
-          <hemisphereLight
-            skyColor="#ffffff"
-            groundColor="#fa07a1"
-            intensity={1}
-          />
-          {/*<Bird />*/}
-          {<Sky isRotating={isRotating} />}
-          <Hand
-            position={islandPosition}
-            scale={islandScale}
-            rotation={islandRotation}
-            isRotating={isRotating}
-            setIsRotating={setIsRotating}
-            setCurrentStage={setCurrentStage}
-          />
-          {/*<Island
+    <>
+      <SEO
+        title="Home"
+        description="Next.js developer and branding specialist based in Japan. Expert in building headless commerce solutions, e-commerce platforms, and brand identity design."
+        url="https://yimajiuni.com/"
+      />
+      <section className="w-full h-screen relative">
+        <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
+          {currentStage && <HomeInfo currentStage={currentStage} />}
+        </div>
+        <Canvas
+          className={`opacity-80 w-full h-screen bg-transparent ${isRotating ? "cursor-grabbing" : "cursor-grab"
+            }`}
+          camera={{ near: 0.1, far: 1000 }}
+        >
+          <Suspense fallback={<Loader />}>
+            <directionalLight position={[1, 1, 1]} intensity={5} />
+            <ambientLight intensity={1.4} />
+            <hemisphereLight
+              skyColor="#ffffff"
+              groundColor="#fa07a1"
+              intensity={1}
+            />
+            {/*<Bird />*/}
+            {<Sky isRotating={isRotating} />}
+            <Hand
+              position={islandPosition}
+              scale={islandScale}
+              rotation={islandRotation}
+              isRotating={isRotating}
+              setIsRotating={setIsRotating}
+              setCurrentStage={setCurrentStage}
+            />
+            {/*<Island
             position={islandPosition}
             scale={islandScale}
             rotation={islandRotation}
@@ -96,23 +103,24 @@ function Home() {
             setIsRotating={setIsRotating}
             setCurrentStage={setCurrentStage}
           />*/}
-          {/*<Plane
+            {/*<Plane
             isRotating={isRotating}
             scale={planeScale}
             position={planePosition}
             rotation={[0, 20, 0]}
           />*/}
-        </Suspense>
-      </Canvas>
-      <div className="absolute bottom-2 left-2">
-        {/*<img
+          </Suspense>
+        </Canvas>
+        <div className="absolute bottom-2 left-2">
+          {/*<img
           src={!isPlayingMusic ? soundoff : soundon}
           alt="sound"
           className="w-10 h-10 cursor pointer object-contain"
           onClick={() => setIsPlayingMusic(!isPlayingMusic)}
         />*/}
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   );
 }
 

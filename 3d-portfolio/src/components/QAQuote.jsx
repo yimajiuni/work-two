@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { Document, Page, Text, View, StyleSheet, pdf, Font } from '@react-pdf/renderer';
@@ -180,24 +180,37 @@ const QAQuote = ({ isOpen, onClose }) => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [validationError, setValidationError] = useState(''); // Add validation error state
 
-    // Register fonts for PDF generation - use only Helvetica for reliability
-    useEffect(() => {
-        fetch('/fonts/NotoSansJP-Regular.ttf')
-            .catch(err => console.error('Font fetch failed', err));
+    // State to track if fonts are loaded
+    const [fontsLoaded, setFontsLoaded] = useState(false);
+
+    // Lazy load fonts only when PDF generation is needed
+    const loadFontsForPDF = useCallback(async () => {
+        if (fontsLoaded) return; // Already loaded
 
         try {
-            // ✅ No need to register Helvetica — built-in
-            // Register Japanese font
+            // @react-pdf/renderer requires TTF/OTF format, not WOFF2
+            // Lazy load fonts only when PDF generation is triggered
             Font.register({
                 family: 'NotoSansJP',
                 fonts: [
-                    { src: '/fonts/NotoSansJP-Bold.ttf', fontWeight: 'bold' },
+                    {
+                        src: '/fonts/NotoSansJP-Regular.ttf',
+                        fontWeight: 400
+                    },
+                    {
+                        src: '/fonts/NotoSansJP-Bold.ttf',
+                        fontWeight: 700
+                    },
                 ],
             });
+
+            setFontsLoaded(true);
+            console.log('✅ Fonts loaded successfully for PDF generation');
         } catch (error) {
             console.error('❌ Font registration failed:', error);
+            throw error; // Re-throw to handle in generatePDF
         }
-    }, []);
+    }, [fontsLoaded]);
 
 
     const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
@@ -535,7 +548,7 @@ const QAQuote = ({ isOpen, onClose }) => {
                     )}
 
                     {Object.entries(formData).map(([key, value]) => {
-            const question = qaFlow.find(q => q.id === key);
+                        const question = qaFlow.find(q => q.id === key);
                         if (!question || !value) return null;
 
                         return (
@@ -609,6 +622,9 @@ const QAQuote = ({ isOpen, onClose }) => {
 
     const generatePDF = async () => {
         try {
+            // Load fonts only when PDF generation is requested (lazy loading)
+            await loadFontsForPDF();
+
             const currentLang = i18n?.language || 'en';
 
             // Test if formData is empty
@@ -691,8 +707,8 @@ const QAQuote = ({ isOpen, onClose }) => {
                 return requiredFields.some(field => !data[field.name]);
             } else {
                 // For other questions, check formData state
-            const answer = formData[question.id];
-            return !answer || (Array.isArray(answer) && answer.length === 0);
+                const answer = formData[question.id];
+                return !answer || (Array.isArray(answer) && answer.length === 0);
             }
         });
 

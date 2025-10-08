@@ -22,6 +22,11 @@ export default defineConfig({
           animation: ['gsap'],
           utils: ['react-router-dom', 'react-i18next', 'i18next']
         }
+      },
+      // Enable aggressive tree-shaking
+      treeshake: {
+        moduleSideEffects: false,
+        propertyReadSideEffects: false,
       }
     },
     // Optimize chunk size
@@ -32,6 +37,11 @@ export default defineConfig({
       compress: {
         drop_console: true,
         drop_debugger: true,
+        unused: true,
+        dead_code: true,
+      },
+      mangle: {
+        safari10: true,
       },
     },
   },

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, Suspense, lazy } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
@@ -9,8 +9,10 @@ import i18n from "i18next";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
-import QAQuote from "../components/QAQuote";
-import PerformanceReport from "../components/PerformanceReport";
+
+// Lazy load heavy components to reduce initial bundle size
+const QAQuote = lazy(() => import("../components/QAQuote"));
+const PerformanceReport = lazy(() => import("../components/PerformanceReport"));
 import yimajiuniPark from '../assets/images/yimajiuni-park.webp';
 import nextEcomShopify from '../assets/images/webmock1.webp';
 import waPtnDia from '../assets/images/wa-ptn-dia.svg';
@@ -111,6 +113,31 @@ const Service = () => {
     const performanceSectionRef = useRef(null); // Reference to performance section for animation trigger
     const [isPerformanceSectionVisible, setIsPerformanceSectionVisible] = useState(false); // Track performance section visibility
 
+    // 🚀 Performance optimization: Use Intersection Observer
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        // Only animate when section is visible
+                        entry.target.style.willChange = 'transform';
+                    } else {
+                        // Clean up when not visible
+                        entry.target.style.willChange = 'auto';
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        // Observe all sections
+        [section1Ref, section2Ref, section3Ref, section4Ref].forEach(ref => {
+            if (ref.current) observer.observe(ref.current);
+        });
+
+        return () => observer.disconnect();
+    }, []);
+
 
 
 
@@ -144,8 +171,13 @@ const Service = () => {
 
         if (!allSections[0]) return;
 
-        // 🎬 Create GSAP timeline
-        const tl = gsap.timeline();
+        // 🎬 Create GSAP timeline with performance optimizations
+        const tl = gsap.timeline({
+            defaults: {
+                ease: "power2.out",
+                duration: 0.6
+            }
+        });
 
         // ✨ STEP 1: Add glow effect to selected section
         const targetSection = document.getElementById(`section-${sectionNumber}`);
@@ -192,8 +224,14 @@ const Service = () => {
 
             // Wait for reset to complete, then shuffle
             setTimeout(() => {
-                // Create new timeline for the shuffle animation
-                const shuffleTl = gsap.timeline();
+                // Create new timeline for the shuffle animation with RAF optimization
+                const shuffleTl = gsap.timeline({
+                    defaults: {
+                        ease: "power2.out",
+                        duration: 0.6,
+                        force3D: true // Enable hardware acceleration
+                    }
+                });
 
                 // Section 3 moves to top position (2nd position)
                 shuffleTl.to(section3Ref.current, { y: -section2Height + 40, duration: 0.8, ease: "power2.out" });
@@ -208,8 +246,14 @@ const Service = () => {
 
             // Wait for reset to complete, then shuffle
             setTimeout(() => {
-                // Create new timeline for the shuffle animation
-                const shuffleTl = gsap.timeline();
+                // Create new timeline for the shuffle animation with RAF optimization
+                const shuffleTl = gsap.timeline({
+                    defaults: {
+                        ease: "power2.out",
+                        duration: 0.6,
+                        force3D: true // Enable hardware acceleration
+                    }
+                });
 
                 // Section 4 moves to top position (2nd position)
                 shuffleTl.to(section4Ref.current, { y: -(section2Height + section3Height) + 80, duration: 0.8, ease: "power2.out" });
@@ -547,7 +591,7 @@ const Service = () => {
                 title="Services & Portfolio"
                 description="Explore my professional services including web development, graphic design, and creative solutions. View my portfolio of projects and get in touch for collaboration."
                 keywords="web development services, graphic design, portfolio, react development, japan designer"
-                url="https://your-domain.com/service"
+                url="https://yimajiuni.com/service"
             />
             <div className={classes.mainContainer}>
                 {/* Section 1: Main Visual + Copy and CTA */}
@@ -565,6 +609,9 @@ const Service = () => {
                                 src={yimajiuniPark}
                                 alt="Yimajiuni Park - Creative Workspace"
                                 className={classes.image}
+                                fetchPriority="high"
+                                width="1200"
+                                height="949"
                             />
                         </div>
                         <p className="text-xl font-bold text-white mb-4">
@@ -843,16 +890,20 @@ const Service = () => {
                 </section>
 
                 {/* Q&A Form Popup */}
-                <QAQuote
-                    isOpen={isQAQuoteOpen}
-                    onClose={() => setIsQAQuoteOpen(false)}
-                />
+                <Suspense fallback={<div className="fixed inset-0 bg-white/10 backdrop-blur-sm z-50 flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div></div>}>
+                    <QAQuote
+                        isOpen={isQAQuoteOpen}
+                        onClose={() => setIsQAQuoteOpen(false)}
+                    />
+                </Suspense>
 
                 {/* Performance Report Popup */}
-                <PerformanceReport
-                    isOpen={isPerformanceReportOpen}
-                    onClose={() => setIsPerformanceReportOpen(false)}
-                />
+                <Suspense fallback={<div className="fixed inset-0 bg-white/10 backdrop-blur-sm z-50 flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div></div>}>
+                    <PerformanceReport
+                        isOpen={isPerformanceReportOpen}
+                        onClose={() => setIsPerformanceReportOpen(false)}
+                    />
+                </Suspense>
 
                 {/* Fixed Decorative Buttons */}
                 <div

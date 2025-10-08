@@ -1,9 +1,61 @@
+# Enable Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Browser Caching - Set long cache times for static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # HTML files - 1 hour (since they reference hashed assets)
+  ExpiresByType text/html "access plus 1 hour"
+  
+  # CSS and JavaScript - 1 year (since Vite uses content hashing)
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  
+  # Images - 1 year
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  
+  # Fonts - 1 year
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  
+  # 3D Models - 1 year
+  ExpiresByType model/gltf-binary "access plus 1 year"
+  
+  # Default - 1 month
+  ExpiresDefault "access plus 1 month"
+</IfModule>
+
+# Cache-Control headers for better control
+<IfModule mod_headers.c>
+  # Assets folder - immutable (Vite hashed filenames)
+  <FilesMatch "\.(js|css|woff2?|ttf|otf|eot|svg|png|jpg|jpeg|gif|webp|glb)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  
+  # HTML files - must revalidate
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# SPA Routing - Redirect all requests to index.html
 <IfModule mod_rewrite.c>
-      RewriteEngine On
-      RewriteBase /
-      RewriteRule ^index\.html$ - [L]
-      RewriteCond %{REQUEST_FILENAME} !-f
-      RewriteCond %{REQUEST_FILENAME} !-d
-      RewriteCond %{REQUEST_FILENAME} !-l
-      RewriteRule . /index.html [L]
-    </IfModule>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule . /index.html [L]
+</IfModule>
