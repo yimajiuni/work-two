@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, Suspense, lazy } from "react";
 import { Link as ScrollLink } from "react-scroll";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -15,8 +16,8 @@ const QAQuote = lazy(() => import("../components/QAQuote"));
 const PerformanceReport = lazy(() => import("../components/PerformanceReport"));
 import yimajiuniPark from '../assets/images/yimajiuni-park.webp';
 import nextEcomShopify from '../assets/images/webmock1.webp';
-import waPtnDia from '../assets/images/wa-ptn-dia.svg';
-import waPtnWave from '../assets/images/wa-ptn-wave.svg';
+import waPtnDia from '../assets/images/wa-ptn-dia.webp';
+import waPtnWave from '../assets/images/wa-ptn-wave.webp';
 import Footer from "../components/Footer";
 
 // Consolidated Tailwind classes for better performance
@@ -36,7 +37,8 @@ const classes = {
     sectionTextLeft: "text-left",
 
     // Typography
-    title: "text-4xl sm:text-6xl font-bold text-white mb-4 sm:mb-6",
+    title: "text-4xl sm:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight",
+    title2: "text-4xl sm:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight",
     titleHighlight: "blue-gradient_text text-[36px] sm:text-6xl drop-shadow block",
     subtitle: "text-[28px] sm:text-4xl font-bold text-white mb-6",
     subtitleHighlight: "text-[26px] font-bold sm:text-4xl blue-gradient_text drop-shadow block mb-3",
@@ -86,8 +88,11 @@ const classes = {
     navigationReset: "px-6 py-3 rounded-lg font-semibold transition-all duration-300 bg-white/20 border border-white/20 text-blue-500 hover:bg-white/30",
 
     // Decorative elements
-    decorativeLeft: "fixed left-0 sm:left-6 top-[60%] sm:top-[55%] transform -translate-y-1/2 w-16 sm:w-40 lg:w-60 h-16 rounded-lg backdrop-blur-sm border border-white/20 p-6 z-40",
-    decorativeRight: "fixed right-0 sm:right-6 top-[60%] sm:top-[55%] transform -translate-y-1/2 w-16 sm:w-40 lg:w-60 h-16 rounded-lg backdrop-blur-sm border border-white/20 p-6 z-40",
+    decorativeContainer: "fixed inset-0 w-full min-w-[24rem] top-[45%] sm:top-[58%] lg:top-[50%] max-w-[82rem] left-1/2 transform -translate-x-1/2 z-40 pointer-events-none",
+    decorativeLeft: "absolute left-0 sm:left-6 transform -translate-y-1/2 w-24 sm:w-44 lg:w-[250px] h-16 sm:h-20 lg:h-24",
+    decorativeRight: "absolute right-0 sm:right-6 transform -translate-y-1/2 w-28 sm:w-48 lg:w-[270px] h-20 sm:h-24 lg:h-32",
+    decorativeLink: "absolute text-[12px] sm:text-sm lg:text-lg right-[18%] sm:right-[25%] lg:right-[28%] bottom-[60%] sm:bottom-[60%] lg:bottom-[60%] bg-gradient-to-r from-[#00c6ff] via-purple-500 to-pink-300 bg-clip-text text-transparent font-semibold cursor-pointer hover:scale-110 transition-transform duration-300 font-handwriting pointer-events-auto z-50 transform -rotate-3",
+    decorativeContactLink: "absolute text-[12px] sm:text-sm lg:text-lg left-[10%] sm:left-[20%] lg:left-[20%] bottom-[60%] sm:bottom-[65%] lg:bottom-[60%] bg-gradient-to-r from-[#00c6ff] via-yellow-500 to-red-500 bg-clip-text text-transparent font-semibold cursor-pointer hover:scale-110 transition-transform duration-300 font-handwriting pointer-events-auto z-50 transform rotate-3",
 
     // Spacing
     mb12: "mb-12",
@@ -600,6 +605,8 @@ const Service = () => {
 
                         <h1 className={classes.title}>
                             {t('service.section1.title')}
+                            <span className="responsive-br"></span>
+                            <span className={classes.title2}>{t('service.section1.title2')}</span>
                             <span className={classes.titleHighlight}>{t('service.section1.titleHighlight')}</span>
                         </h1>
 
@@ -906,25 +913,40 @@ const Service = () => {
                 </Suspense>
 
                 {/* Fixed Decorative Buttons */}
-                <div
-                    className={classes.decorativeLeft}
-                    style={{
-                        backgroundImage: `url(${waPtnDia})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundRepeat: 'no-repeat'
-                    }}
-                />
-
-                <div
-                    className={classes.decorativeRight}
-                    style={{
-                        backgroundImage: `url(${waPtnWave})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundRepeat: 'no-repeat'
-                    }}
-                />
+                <div className={classes.decorativeContainer}>
+                    <div
+                        className={classes.decorativeLeft}
+                        style={{
+                            backgroundImage: `url(${waPtnWave})`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat'
+                        }}
+                    >
+                        <Link
+                            to="/contact"
+                            className={classes.decorativeContactLink}
+                        >
+                            {t('service.decorative.contactLink')}
+                        </Link>
+                    </div>
+                    <div
+                        className={classes.decorativeRight}
+                        style={{
+                            backgroundImage: `url(${waPtnDia})`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat'
+                        }}
+                    >
+                        <div
+                            className={classes.decorativeLink}
+                            onClick={() => setIsQAQuoteOpen(true)}
+                        >
+                            {t('service.decorative.link')}
+                        </div>
+                    </div>
+                </div>
             </div >
         </>
     );

@@ -430,7 +430,8 @@ i18n
           // Service page translations
           service: {
             section1: {
-              title: "Bespoke Ecommerce websites",
+              title: "Bespoke",
+              title2: "Ecommerce websites",
               titleHighlight: "with Next.js & Shopify",
               yimajiuni: "Introducing Yimajiuni",
               description: "Builds and polishes on Powerful architecture that achieves 30%+ sales increase through branding and high-speed loading. The functional things that are made of dazzling and twinkle things. To make the actions of 'buying' as enjoyable as possible.",
@@ -698,6 +699,10 @@ i18n
               services: "Services",
               quote: "Ask Quote"
             },
+            decorative: {
+              link: "Request Quote",
+              contactLink: "Contact Us!"
+            },
             qaForm: {
               title: "Project Quote Request",
               close: "×",
@@ -760,7 +765,10 @@ i18n
                     cms: "Content Management System (CMS)",
                     seo: "SEO Optimization",
                     analytics: "Analytics & Tracking",
-                    multilingual: "Multi-language Support"
+                    multilingual: "Multi-language Support",
+                    googlemaps: "Google Maps Integration for E-commerce",
+                    linechat: "LINE Account × AI Hybrid Shop Chat",
+                    maintenance: "Image Registration, Page Updates, System Maintenance"
                   }
                 },
                 brandingDepth: {
@@ -781,6 +789,16 @@ i18n
                 targetAudience: {
                   question: "Who is your primary target audience?",
                   placeholder: "Describe your ideal customers, their demographics, lifestyle, and needs..."
+                },
+                websiteReferences: {
+                  question: "Website References",
+                  atmosphareQuestion: "If you have any websites you'd like to use as a reference for atmosphere/style, please share:",
+                  functionQuestion: "If you have any websites you'd like to use as a reference for functionality, please share:",
+                  placeholder: "Please enter the website URL(s)"
+                },
+                brandStory: {
+                  question: "Brand Story & Audience Episodes",
+                  placeholder: "Please share any episodes, stories, or experiences you want your essential audience to know (happy customer interactions, exclusive stories, failure stories that led to success, etc.)"
                 },
                 brandPersonality: {
                   question: "How should your brand be perceived by customers?",
@@ -1488,7 +1506,8 @@ i18n
           // Service page translations (Japanese)
           service: {
             section1: {
-              title: "ECサイトのBespokeブランドを",
+              title: "ブランドEC",
+              title2: "bespokeサイトを",
               titleHighlight: "Next.js & Shopifyで",
               yimajiuni: "はじめまして、いまじゆうに。",
               description: "パワフルなアーキテクチャ上で重ねる、磨く。ブランディングと高速読み込みで売り上げ30%+増を実現。The functional things that are made of dazzling and twinkle things。「買う」という行為を最大限に楽しく。",
@@ -1769,6 +1788,10 @@ i18n
               services: "サービス",
               quote: "見積依頼"
             },
+            decorative: {
+              link: "今すぐ見積依頼",
+              contactLink: "質問する!"
+            },
             qaForm: {
               title: "プロジェクト見積もり依頼",
               close: "×",
@@ -1832,6 +1855,9 @@ i18n
                     seo: "SEO最適化",
                     analytics: "分析・追跡",
                     multilingual: "多言語対応",
+                    googlemaps: "ECサイトのGoogleMap連携",
+                    linechat: "ラインアカウント×AIハイブリッド店舗チャット設置",
+                    maintenance: "EC画像登録やページの更新、システム保守運用"
                   }
                 },
                 brandingDepth: {
@@ -1852,6 +1878,16 @@ i18n
                 targetAudience: {
                   question: "主要なターゲットオーディエンスは誰ですか？",
                   placeholder: "理想的な顧客、その人口統計、ライフスタイル、ニーズについて説明してください..."
+                },
+                websiteReferences: {
+                  question: "サイト参考",
+                  atmosphareQuestion: "雰囲気をお手本にしたいサイトがありましたら教えて下さい。",
+                  functionQuestion: "機能をお手本にしたいサイトが有りましたら教えて下さい。",
+                  placeholder: "サイトのURLを入力してください"
+                },
+                brandStory: {
+                  question: "ブランド/御社をする上で欠かせないオーディエンスに知ってほしいエピソード",
+                  placeholder: "お客様との嬉しい話、ここだけの話、成功の元となった失敗談etc.)などもしございましたら教えて下さい。"
                 },
                 brandPersonality: {
                   question: "顧客にブランドをどのように認識してほしいですか？",

@@ -285,8 +285,19 @@ const QAQuote = ({ isOpen, onClose }) => {
                 { value: 'cms', label: t('service.qaForm.questions.features.options.cms') },
                 { value: 'payment', label: t('service.qaForm.questions.features.options.payment') },
                 { value: 'analytics', label: t('service.qaForm.questions.features.options.analytics') },
-                { value: 'multilingual', label: t('service.qaForm.questions.features.options.multilingual') }
+                { value: 'multilingual', label: t('service.qaForm.questions.features.options.multilingual') },
+                { value: 'googlemaps', label: t('service.qaForm.questions.features.options.googlemaps') },
+                { value: 'linechat', label: t('service.qaForm.questions.features.options.linechat') },
+                { value: 'maintenance', label: t('service.qaForm.questions.features.options.maintenance') }
             ]
+        },
+        {
+            id: 'websiteReferences',
+            question: t('service.qaForm.questions.websiteReferences.question'),
+            type: 'dual-textarea',
+            atmosphareQuestion: t('service.qaForm.questions.websiteReferences.atmosphareQuestion'),
+            functionQuestion: t('service.qaForm.questions.websiteReferences.functionQuestion'),
+            placeholder: t('service.qaForm.questions.websiteReferences.placeholder')
         },
         {
             id: 'brandingDepth',
@@ -317,6 +328,13 @@ const QAQuote = ({ isOpen, onClose }) => {
             question: t('service.qaForm.questions.targetAudience.question'),
             type: 'textarea',
             placeholder: t('service.qaForm.questions.targetAudience.placeholder'),
+            condition: { field: 'brandingDepth', value: 'detailed' }
+        },
+        {
+            id: 'brandStory',
+            question: t('service.qaForm.questions.brandStory.question'),
+            type: 'textarea',
+            placeholder: t('service.qaForm.questions.brandStory.placeholder'),
             condition: { field: 'brandingDepth', value: 'detailed' }
         },
         {
@@ -591,6 +609,15 @@ const QAQuote = ({ isOpen, onClose }) => {
                                     // Handle single values (like projectType, projectScale, budget, timeline)
                                     <Text style={styles.answer}>
                                         {(() => {
+                                            // Special handling for dual-textarea (websiteReferences)
+                                            if (question.type === 'dual-textarea') {
+                                                const websiteData = value;
+                                                return [
+                                                    `${t('service.qaForm.questions.websiteReferences.atmosphareQuestion')}: ${websiteData.atmosphere || 'N/A'}`,
+                                                    `${t('service.qaForm.questions.websiteReferences.functionQuestion')}: ${websiteData.function || 'N/A'}`
+                                                ].join('\n');
+                                            }
+
                                             // For select and radio fields, always show the descriptive label
                                             if (question.type === 'select' || question.type === 'radio') {
                                                 const translatedValue = t(`service.qaForm.questions.${key}.options.${value}`);
@@ -741,10 +768,16 @@ const QAQuote = ({ isOpen, onClose }) => {
                 brandVision: formData.brandVision || '',
                 brandMission: formData.brandMission || '',
                 targetAudience: formData.targetAudience || '',
+                brandStory: formData.brandStory || '',
                 brandPersonality: formData.brandPersonality || '',
                 visualStyle: formData.visualStyle ? formData.visualStyle.map((style, index) =>
                     `${index + 1}. ${t(`service.qaForm.questions.visualStyle.options.${style}`)}`
                 ).join('\n') : '',
+
+                // Website references
+                websiteReferences: formData.websiteReferences ?
+                    `${t('service.qaForm.questions.websiteReferences.atmosphareQuestion')}: ${formData.websiteReferences.atmosphere || 'N/A'}\n${t('service.qaForm.questions.websiteReferences.functionQuestion')}: ${formData.websiteReferences.function || 'N/A'}`
+                    : '',
 
                 // Simple/Starter branding details
                 designStyle: formData.designStyle || '',
@@ -977,6 +1010,46 @@ const QAQuote = ({ isOpen, onClose }) => {
                         className="w-full p-3 rounded-lg bg-white/10 border border-white/20 text-gray-500 placeholder-gray-500 focus:outline-none focus:border-gray-500"
                         rows="4"
                     />
+                );
+
+            case 'dual-textarea':
+                return (
+                    <div className="space-y-4">
+                        <div>
+                            <label className="block text-gray-500 mb-2 text-sm">{question.atmosphareQuestion}</label>
+                            <textarea
+                                {...register(`${question.id}_atmosphere`)}
+                                placeholder={question.placeholder}
+                                onChange={(e) => {
+                                    const atmosphere = e.target.value;
+                                    const functionValue = formData[`${question.id}_function`] || '';
+                                    handleAnswer(question.id, {
+                                        atmosphere: atmosphere,
+                                        function: functionValue
+                                    });
+                                }}
+                                className="w-full p-3 rounded-lg bg-white/10 border border-white/20 text-gray-500 placeholder-gray-500 focus:outline-none focus:border-gray-500"
+                                rows="3"
+                            />
+                        </div>
+                        <div>
+                            <label className="block text-gray-500 mb-2 text-sm">{question.functionQuestion}</label>
+                            <textarea
+                                {...register(`${question.id}_function`)}
+                                placeholder={question.placeholder}
+                                onChange={(e) => {
+                                    const functionValue = e.target.value;
+                                    const atmosphere = formData[`${question.id}_atmosphere`] || '';
+                                    handleAnswer(question.id, {
+                                        atmosphere: atmosphere,
+                                        function: functionValue
+                                    });
+                                }}
+                                className="w-full p-3 rounded-lg bg-white/10 border border-white/20 text-gray-500 placeholder-gray-500 focus:outline-none focus:border-gray-500"
+                                rows="3"
+                            />
+                        </div>
+                    </div>
                 );
 
             case 'contact':

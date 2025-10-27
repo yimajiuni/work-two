@@ -36,18 +36,18 @@ const NavbarJump = () => {
         }, 100);
       } else {
         // Navigate to home page first, then scroll
-        await navigate("/");
+    await navigate("/");
         // Wait for navigation and rendering
         setTimeout(async () => {
           try {
             const targetElement = document.getElementById(selector);
             if (targetElement) {
-              await scroller.scrollTo(selector, {
-                duration: 500,
-                smooth: true,
-                offset: 10,
-                spy: true,
-              });
+    await scroller.scrollTo(selector, {
+      duration: 500,
+      smooth: true,
+      offset: 10,
+      spy: true,
+    });
             } else {
               console.warn(`Target element with id "${selector}" not found`);
             }
@@ -77,12 +77,12 @@ const NavbarJump = () => {
     <header className="header gap-7" id="navigation">
       <div className="flex items-center gap-7">
         {/* 今 button - always visible, links to service on desktop/tablet, hamburger on mobile */}
-        <NavLink
+      <NavLink
           to=""
           className="hidden sm:flex w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md shadow-pink-400/30 hover:shadow-lg hover:shadow-pink-400/30 transition-shadow"
-        >
-          <p className="blue-gradient_text">今</p>
-        </NavLink>
+      >
+        <p className="blue-gradient_text">今</p>
+      </NavLink>
 
         {/* Mobile: 今 button as hamburger */}
         <button
@@ -94,12 +94,12 @@ const NavbarJump = () => {
 
         {/* Desktop/Tablet navigation - hidden on mobile */}
         <nav className="hidden sm:flex text-lg gap-7 font-medium text-white items-center">
-          {location !== "contact" ? (
+        {location !== "contact" ? (
             <>
               <NavLink
-                onClick={() => goToPageAndScroll("about")}
+              onClick={() => goToPageAndScroll("about")}
                 className="cursor-pointer hover:text-blue-400 transition-colors"
-                to="about"
+              to="about"
               >
                 About
               </NavLink>
@@ -111,15 +111,15 @@ const NavbarJump = () => {
                 Works
               </NavLink>
 
-              <NavLink
-                to="/contact"
-                onClick={() => goToPageAndScroll("contact")}
+            <NavLink
+              to="/contact"
+              onClick={() => goToPageAndScroll("contact")}
                 className="cursor-pointer hover:text-blue-400 transition-colors"
-              >
-                Contact
-              </NavLink>
-            </>
-          ) : (
+            >
+              Contact
+            </NavLink>
+          </>
+        ) : (
             <>
               <NavLink
                 onClick={() => goToPageAndScroll("about")}
@@ -128,8 +128,8 @@ const NavbarJump = () => {
               >
                 About
               </NavLink>
-              <NavLink
-                onClick={() => goToPageAndScroll("works")}
+            <NavLink
+              onClick={() => goToPageAndScroll("works")}
                 className="cursor-pointer hover:text-blue-400 transition-colors"
                 to="works"
               >
@@ -184,11 +184,11 @@ const NavbarJump = () => {
                     closeMenu();
                   }}
                   className="cursor-pointer hover:text-blue-400 transition-colors py-2"
-                  to="works"
-                >
-                  Works
-                </NavLink>
-                <NavLink
+              to="works"
+            >
+              Works
+            </NavLink>
+            <NavLink
                   to="/contact"
                   onClick={() => {
                     goToPageAndScroll("contact");
@@ -215,11 +215,11 @@ const NavbarJump = () => {
                     closeMenu();
                   }}
                   className="cursor-pointer hover:text-blue-400 transition-colors py-2"
-                  to="about"
-                >
-                  About
-                </NavLink>
-                <NavLink
+              to="about"
+            >
+              About
+            </NavLink>
+            <NavLink
                   onClick={() => {
                     goToPageAndScroll("works");
                     closeMenu();
@@ -228,18 +228,18 @@ const NavbarJump = () => {
                   to="works"
                 >
                   Works
-                </NavLink>
-                <NavLink
-                  to="/contact"
-                  className={({ isActive }) =>
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
                     isActive ? "text-blue-500 py-2" : "text-white hover:text-blue-400 transition-colors py-2"
-                  }
+              }
                   onClick={closeMenu}
-                >
-                  Contact
-                </NavLink>
-              </>
-            )}
+            >
+              Contact
+            </NavLink>
+          </>
+        )}
           </nav>
         </div>
       )}
