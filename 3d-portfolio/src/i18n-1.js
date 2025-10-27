@@ -700,7 +700,7 @@ i18n
               quote: "Ask Quote"
             },
             decorative: {
-              link: "Request Quote",
+              quoteLink: "Request Quote",
               contactLink: "Contact Us!"
             },
             qaForm: {
@@ -1789,7 +1789,7 @@ i18n
               quote: "見積依頼"
             },
             decorative: {
-              link: "今すぐ見積依頼",
+              quoteLink: "今すぐ見積依頼",
               contactLink: "質問する!"
             },
             qaForm: {

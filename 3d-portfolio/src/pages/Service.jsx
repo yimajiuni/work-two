@@ -91,7 +91,7 @@ const classes = {
     decorativeContainer: "fixed inset-0 w-full min-w-[24rem] top-[50%] sm:top-[58%] lg:top-[50%] max-w-[82rem] left-1/2 transform -translate-x-1/2 z-40 pointer-events-none",
     decorativeLeft: "absolute left-0 sm:left-6 transform -translate-y-1/2 w-24 sm:w-44 lg:w-[250px] h-16 sm:h-20 lg:h-24",
     decorativeRight: "absolute right-0 sm:right-6 transform -translate-y-1/2 w-28 sm:w-48 lg:w-[270px] h-20 sm:h-24 lg:h-32",
-    decorativeLink: "absolute text-[12px] sm:text-sm lg:text-lg right-[18%] sm:right-[25%] lg:right-[28%] bottom-[60%] sm:bottom-[60%] lg:bottom-[60%] bg-gradient-to-r from-[#00c6ff] via-purple-500 to-pink-300 bg-clip-text text-transparent font-semibold cursor-pointer hover:scale-110 transition-transform duration-300 font-handwriting pointer-events-auto z-50 transform -rotate-3",
+    decorativeQuoteLink: "absolute text-[12px] sm:text-sm lg:text-lg right-[15%] sm:right-[25%] lg:right-[28%] bottom-[60%] sm:bottom-[60%] lg:bottom-[60%] bg-gradient-to-r from-[#00c6ff] via-purple-500 to-pink-300 bg-clip-text text-transparent font-semibold cursor-pointer hover:scale-110 transition-transform duration-300 font-handwriting pointer-events-auto z-50 transform -rotate-3",
     decorativeContactLink: "absolute text-[12px] sm:text-sm lg:text-lg left-[10%] sm:left-[20%] lg:left-[20%] bottom-[60%] sm:bottom-[65%] lg:bottom-[60%] bg-gradient-to-r from-[#00c6ff] via-yellow-500 to-red-500 bg-clip-text text-transparent font-semibold cursor-pointer hover:scale-110 transition-transform duration-300 font-handwriting pointer-events-auto z-50 transform rotate-3",
 
     // Spacing
@@ -940,10 +940,10 @@ const Service = () => {
                         }}
                     >
                         <div
-                            className={classes.decorativeLink}
+                            className={classes.decorativeQuoteLink}
                             onClick={() => setIsQAQuoteOpen(true)}
                         >
-                            {t('service.decorative.link')}
+                            {t('service.decorative.quoteLink')}
                         </div>
                     </div>
                 </div>
