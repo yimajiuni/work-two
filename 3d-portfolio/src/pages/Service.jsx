@@ -37,8 +37,8 @@ const classes = {
     sectionTextLeft: "text-left",
 
     // Typography
-    title: "text-4xl sm:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight",
-    title2: "text-4xl sm:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight",
+    title: "tracking-tight text-4xl sm:text-6xl font-bold text-white mb-4 sm:mb-6",
+    title2: "tracking-tight text-4xl sm:text-6xl font-bold text-white mb-4 sm:mb-6",
     titleHighlight: "blue-gradient_text text-[36px] sm:text-6xl drop-shadow block",
     subtitle: "text-[28px] sm:text-4xl font-bold text-white mb-6",
     subtitleHighlight: "text-[26px] font-bold sm:text-4xl blue-gradient_text drop-shadow block mb-3",
@@ -88,7 +88,7 @@ const classes = {
     navigationReset: "px-6 py-3 rounded-lg font-semibold transition-all duration-300 bg-white/20 border border-white/20 text-blue-500 hover:bg-white/30",
 
     // Decorative elements
-    decorativeContainer: "fixed inset-0 w-full min-w-[24rem] top-[45%] sm:top-[58%] lg:top-[50%] max-w-[82rem] left-1/2 transform -translate-x-1/2 z-40 pointer-events-none",
+    decorativeContainer: "fixed inset-0 w-full min-w-[24rem] top-[50%] sm:top-[58%] lg:top-[50%] max-w-[82rem] left-1/2 transform -translate-x-1/2 z-40 pointer-events-none",
     decorativeLeft: "absolute left-0 sm:left-6 transform -translate-y-1/2 w-24 sm:w-44 lg:w-[250px] h-16 sm:h-20 lg:h-24",
     decorativeRight: "absolute right-0 sm:right-6 transform -translate-y-1/2 w-28 sm:w-48 lg:w-[270px] h-20 sm:h-24 lg:h-32",
     decorativeLink: "absolute text-[12px] sm:text-sm lg:text-lg right-[18%] sm:right-[25%] lg:right-[28%] bottom-[60%] sm:bottom-[60%] lg:bottom-[60%] bg-gradient-to-r from-[#00c6ff] via-purple-500 to-pink-300 bg-clip-text text-transparent font-semibold cursor-pointer hover:scale-110 transition-transform duration-300 font-handwriting pointer-events-auto z-50 transform -rotate-3",

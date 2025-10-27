@@ -1506,7 +1506,7 @@ i18n
           // Service page translations (Japanese)
           service: {
             section1: {
-              title: "ブランドEC",
+              title: "ECブランド",
               title2: "bespokeサイトを",
               titleHighlight: "Next.js & Shopifyで",
               yimajiuni: "はじめまして、いまじゆうに。",
