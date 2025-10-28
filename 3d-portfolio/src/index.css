@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Crimson+Pro:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&family=Pacifico&family=Mochiy+Pop+P+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800;900&family=Crimson+Pro:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&family=Pacifico&family=Potta+One&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -56,6 +56,10 @@ body:has(.card[data-color="green"]:hover) {
 
   .head-text {
     @apply sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins;
+  }
+
+  .head-text-bold {
+    @apply sm:text-5xl text-4xl font-semibold sm:leading-snug font-poppins font-bold;
   }
 
   .subhead-text {
@@ -151,6 +155,23 @@ body:has(.card[data-color="green"]:hover) {
   * {
     scrollbar-width: thin;
     scrollbar-color: rgba(244, 114, 182, 0.4) rgba(244, 114, 182, 0.1);
+  }
+
+  /* Hover gradient effects for decorative links */
+  .hover-gradient-quote:hover {
+    background: linear-gradient(to right, #00c6ff, #9333ea, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .hover-gradient-contact:hover {
+    background: linear-gradient(to right, #00c6ff, #eab308, #ef4444);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
 }
 

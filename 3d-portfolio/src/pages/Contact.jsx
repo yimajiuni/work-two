@@ -82,7 +82,7 @@ const Contact = () => {
         {alert.show && <Alert {...alert} />}
 
         <div className="flex-1 min-w-[50%] flex flex-col">
-          <h1 className="head-text">{t("Contact.line1")}</h1>
+          <h1 className="head-text-bold ">{t("Contact.line1")}</h1>
 
           <form
             ref={formRef}
