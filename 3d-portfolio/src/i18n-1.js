@@ -687,7 +687,7 @@ i18n
             },
             section4: {
               title: "Get Ready with Your Custom Quote",
-              description: "Answer a few questions to get a personalized quote for your project. Selecting your requirements, project scale, and preferences helps us understand your needs and provide the most accurate quote to your project.",
+              description: "To ensure a smooth video consultation, please answer a few questions, which will help us understand your needs such asrequirements, project size, preferences and provide you with a personalized and more accurate quote.",
               calculator: {
                 title: "Quote Sheet Creator",
                 button: "Start Creating"
@@ -1776,7 +1776,7 @@ i18n
             },
             section4: {
               title: "あなたのプロジェクトに合った御見積を準備",
-              description: "プロジェクトのパーソナライズされた見積もりを取得するために、いくつかの質問にお答えください。要件、プロジェクト規模、好み等のあなたのニーズを理解し、最も正確な見積もりを提供するのに役立ちます。",
+              description: "スムーズなビデオカウンセリングを叶えるため、いくつかの質問にお答えください。要件、プロジェクト規模、好み等のあなたのニーズを理解し、パーソナライズされたより正確な見積もりを提供することに役立ちます。",
               calculator: {
                 title: "見積もり依頼シート作成",
                 button: "作成を開始"

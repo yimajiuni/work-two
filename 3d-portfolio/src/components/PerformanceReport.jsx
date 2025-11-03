@@ -73,13 +73,13 @@ const classes = {
     modalOverlay: "fixed inset-0 bg-white/10 backdrop-blur-sm z-50 flex items-center justify-center p-4",
 
     // Main container
-    mainContainer: "border border-gray-500 bg-[#f9d1eb] backdrop-blur-sm max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-lg",
+    mainContainer: "border border-gray-500 bg-[#f9c6e1] backdrop-blur-sm max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-lg",
 
     // Header
-    header: "overflow-hidden sticky top-0 bg-white/20 backdrop-blur-sm border-b border-gray-500 text-[#0814bf] p-6 rounded-t-lg z-10",
+    header: "overflow-hidden sticky top-0 bg-white/20 backdrop-blur-sm border-b border-gray-500 text-blue-600 p-6 rounded-t-lg z-10",
     headerContent: "flex justify-between items-center",
     headerTitle: "text-2xl font-bold mb-4",
-    closeButton: "text-[#0814bf] hover:text-white text-2xl transition-colors",
+    closeButton: "text-blue-600 hover:text-white text-2xl transition-colors",
 
     // Content wrapper
     content: "p-6 space-y-8 relative z-0",
@@ -108,7 +108,7 @@ const classes = {
 
     // Benefit cards with gradient
     benefitCard: "p-6 border-b border-r bg-white/30 border-gray-500 flex flex-col items-center justify-center text-center",
-    benefitTitle: "font-semibold text-[#0814bf] mb-3",
+    benefitTitle: "font-semibold text-blue-600 mb-3",
     benefitText: "text-gray-700 text-sm",
 
     // Section 3 specific cards with gradient
@@ -137,7 +137,7 @@ const classes = {
     checklistContainer: "border-b border-gray-500 p-4",
     checklistList: "space-y-3",
     checklistItem: "flex items-start space-x-3",
-    checklistCheckbox: "mt-1 text-[#0814bf]",
+    checklistCheckbox: "mt-1 text-blue-600",
     checklistText: "text-gray-700",
 
     // Section 10 special styling
@@ -147,9 +147,9 @@ const classes = {
     footer: "bg-white/20 backdrop-blur-sm border-t border-gray-500 p-6 rounded-b-lg",
     footerContainer: "flex justify-between items-center",
     footerButtonContainer: "max-w-screen-lg mx-auto flex justify-left gap-4 items-center",
-    footerButton: "bg-white text-[#0814bf] px-2 sm:px-6 py-3 font-semibold transition-all duration-300 hover:scale-105 rounded-lg",
-    footerButtonContact: "bg-blue-500 bg-white text-[#0814bf] px-2 sm:px-6 py-3 font-semibold transition-all duration-300 hover:scale-105 rounded-lg",
-    footerButtonClose: "bg-white text-[#0814bf] px-2 sm:px-6 py-3 min-w-10 min-h-10 text-center font-semibold transition-all duration-300 hover:scale-105 rounded-lg",
+    footerButton: "bg-white text-blue-600 px-2 sm:px-6 py-3 font-semibold transition-all duration-300 hover:scale-105 rounded-lg",
+    footerButtonContact: "bg-blue-500 bg-white text-blue-600 px-2 sm:px-6 py-3 font-semibold transition-all duration-300 hover:scale-105 rounded-lg",
+    footerButtonClose: "bg-white text-blue-600 px-2 sm:px-6 py-3 min-w-10 font-semibold transition-all duration-300 hover:scale-105 rounded-lg",
 
 
     // Colors for section 3 cards
