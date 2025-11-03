@@ -523,7 +523,7 @@ i18n
                     }
                   },
                   section3: {
-                    title: "Next.js's Unique Technology Brings Revolutionary Performance",
+                    title: "Revolutionary Performance of High-speed Framework",
                     description: "Next.js's unique ISR (Incremental Static Regeneration) combines the speed of static generation with the flexibility of dynamic updates. By selecting the optimal rendering method for each page of your e-commerce site, we can reduce the burden of building all pages at once. The improved dynamic experience and performance of your website directly contribute to increased sales.",
                     benefits: {
                       isr: {
@@ -555,7 +555,7 @@ i18n
                     ]
                   },
                   section5: {
-                    title: "Real Example: Medium-sized E-commerce Site Achieves 30% Sales Increase with Next.js Implementation",
+                    title: "Real Example: Achieving 30% Sales Increase with the Technology",
                     case1: "SEO improvements from page speed enhancements led to higher search rankings for many keywords, resulting in 140% increase in organic traffic.",
                     case2: "Global companies like sports brand 'Nike' and cosmetics brand 'Lancôme' have also migrated to headless commerce seeking flexibility and high performance.",
                     return: "A return of approximately 15 times the investment amount is achievable within one year. Initial investment can be recovered in less than 3 months. Once implemented, you can continuously benefit from the effects. The dual effect of reduced server costs and increased sales leads to long-term profit improvement.",
@@ -1582,7 +1582,7 @@ i18n
                 title: "NEXT.js × Shopify × ブランディング戦略とは？",
                 content: {
                   section1: {
-                    title: "独自のレンダリング方式により高速化によりユーザー体験が大幅に向上。",
+                    title: "独自のデータ処理による高速化でユーザー体験が大幅に向上。",
                     description: "最先端のウェブ開発フレームワーク「Next.js」と、信頼性の高いECプラットフォーム「Shopify」を連携させ、ユーザーに最高の購入体験を提供し、売上向上に直結するデジタル店舗を実現します。"
                     /*
                                         description: "最先端のウェブ開発フレームワーク「Next.js」と、信頼性の高いECプラットフォーム「Shopify」を連携させた「ヘッドレスコマース」という手法でECサイトを構築、そこにブランディングを実施することにより、従来のECサイトが抱える表示速度やデザインの制約といった課題を根本から解決。ユーザー（サイト訪問者）に最高の購入体験を提供し、売上向上に直結するデジタル店舗を実現します。"*/
@@ -1606,7 +1606,7 @@ i18n
                     }
                   },
                   section3: {
-                    title: "Next.jsでECサイトを構築するメリットとは？",
+                    title: "高速フレームワークでECサイトを構築するさらなるメリット",
                     benefits: {
                       isr: {
                         title: "パフォーマンスが売上に直結",
@@ -1635,7 +1635,7 @@ i18n
                     }
                   },
                   section4: {
-                    title: "こんなお悩みに直面していませんか",
+                    title: "こんなお悩みに直面していませんか?",
                     problems: [
                       "「ページ読み込み速度が遅く、特にモバイルでの離脱率が高い」",
                       "「商品数が多く、全ページのSSRによりサーバーコストが高騰」",
@@ -1645,7 +1645,7 @@ i18n
                     ],
                   },
                   section5: {
-                    title: "実際にNext.jsを導入して売上30%増を達成した中規模ECサイトの例",
+                    title: "実際に導入して売上30%増を達成した中規模ECサイトの例",
                     case1: "ページ速度改善によるSEO効果により多くのキーワードでの検索順位が向上し、オーガニックトラフィックが140%に増加。",
                     case2: "スポーツブランドの「ナイキ」や化粧品ブランドの「ランコム」といった世界的企業も、柔軟性と高いパフォーマンスを求めてヘッドレスコマースへ移行しています。",
                     return: "1年間で投資額の約15倍のリターンが実現可能。初期投資は3ヶ月弱で回収できる計算です。一度実装すれば継続的に効果が得られる点は◎。サーバーコスト削減と売上増加という二重の効果により、長期的な収益向上が見込めます。",
@@ -1769,7 +1769,7 @@ i18n
                   footer: {
                     contactUs: "お問い合わせ @ info@yimajiuni.com",
                     askQuote: "見積もり依頼",
-                    close: "閉じる"
+                    close: "✘"
                   },
                 }
               }

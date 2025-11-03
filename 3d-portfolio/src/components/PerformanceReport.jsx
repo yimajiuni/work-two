@@ -1,35 +1,101 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
+// Component to render text with horizontal mirror reflection on hover
+const TitleWithReflection = ({ children }) => (
+    <span className="reflection-wrapper relative inline-block">
+        {children}
+        <span
+            className="reflection-text absolute left-0 opacity-0 transition-opacity duration-400 pointer-events-none"
+            style={{
+                transform: 'scaleY(-1)',
+                transformOrigin: 'top center'
+            }}
+        >
+            {children}
+        </span>
+    </span>
+);
+// Component to render text with horizontal mirror reflection on hover
+const TitleWithReflectionMedium = ({ children }) => (
+    <span className="reflection-wrapper relative inline-block">
+        {children}
+        <span
+            className="reflection-text-medium absolute left-0 opacity-0 transition-opacity duration-400 pointer-events-none"
+            style={{
+                transform: 'scaleY(-1)',
+                transformOrigin: 'top center'
+            }}
+        >
+            {children}
+        </span>
+    </span>
+);
+// Component to render text with horizontal mirror reflection on hover
+const TitleWithReflectionBig = ({ children }) => (
+    <span className="reflection-wrapper relative inline-block">
+        {children}
+        <span
+            className="reflection-text-big absolute left-0 opacity-0 transition-opacity duration-400 pointer-events-none"
+            style={{
+                transform: 'scaleY(-1)',
+                transformOrigin: 'top center'
+            }}
+        >
+            {children}
+        </span>
+    </span>
+);
+
+// Component to render text with horizontal mirror reflection on hover
+const TitleWithReflectionSmall = ({ children }) => (
+    <span className="reflection-wrapper relative inline-block">
+        {children}
+        <span
+            className="reflection-text-small absolute left-0 opacity-0 transition-opacity duration-400 pointer-events-none"
+            style={{
+                transform: 'scaleY(-1)',
+                transformOrigin: 'top center'
+            }}
+        >
+            {children}
+        </span>
+    </span>
+);
 // Consolidated Tailwind classes for better performance
 const classes = {
     // Modal overlay
-    modalOverlay: "fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4",
+    modalOverlay: "fixed inset-0 bg-white/10 backdrop-blur-sm z-50 flex items-center justify-center p-4",
 
     // Main container
-    mainContainer: "bg-[#f9c6e1] rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto",
+    mainContainer: "border border-gray-500 bg-[#f9d1eb] backdrop-blur-sm max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-lg",
 
     // Header
-    header: "sticky top-0 bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-t-lg z-10",
+    header: "overflow-hidden sticky top-0 bg-white/20 backdrop-blur-sm border-b border-gray-500 text-[#0814bf] p-6 rounded-t-lg z-10",
     headerContent: "flex justify-between items-center",
-    headerTitle: "text-2xl font-bold",
-    closeButton: "text-white/80 hover:text-white text-2xl transition-colors",
+    headerTitle: "text-2xl font-bold mb-4",
+    closeButton: "text-[#0814bf] hover:text-white text-2xl transition-colors",
 
     // Content wrapper
     content: "p-6 space-y-8 relative z-0",
 
     // Section styles
     section: "space-y-4",
-    sectionTitle: "text-xl font-bold text-gray-800 mb-4",
+    sectionTitle: "text-3xl font-bold text-gray-800 mb-4 sm:mb-12",
     sectionSubtitle: "text-xl text-gray-800 mb-4",
 
     // Card styles with gradient
-    card: "bg-gradient-to-r from-white/20 to-white/50 border border-white/20 p-4 rounded-lg",
-    cardWithMargin: "bg-gradient-to-r from-white/20 to-white/50 border border-white/20 p-4 rounded-lg mb-4",
+    card: " border-b border-gray-500 p-4",
+    cardWithMargin: " border-b border-gray-500 p-4 mb-4",
 
     // Text styles
     textGray: "text-gray-700",
-    textGrayLeading: "text-gray-700 leading-relaxed",
+    textGrayLeading: "text-gray-700 leading-relaxed pb-4 border-b border-gray-500",
     textGrayMargin: "text-gray-700 mb-4",
 
     // Grid layouts
@@ -37,61 +103,120 @@ const classes = {
     grid2Col: "grid md:grid-cols-2 gap-6",
 
     // Rounded cards with gradient
-    roundedCard: "bg-gradient-to-r from-white/20 to-white/50 backdrop-blur-sm rounded-lg p-6 border border-white/20 flex flex-col items-center justify-center text-center",
-    roundedCardSmall: "bg-gradient-to-r from-white/20 to-white/50 backdrop-blur-sm rounded-lg p-6 border border-white/20 flex flex-col items-center justify-center text-center",
+    roundedCard: "p-6 border-b border-r bg-white/30 border-gray-500 flex flex-col items-center justify-center text-center",
+    roundedCardSmall: "p-6 border-b border-r bg-white/30 border-gray-500 flex flex-col items-center justify-center text-center",
 
     // Benefit cards with gradient
-    benefitCard: "bg-gradient-to-r from-white/20 to-white/50 backdrop-blur-sm rounded-lg p-6 border border-white/20 flex flex-col items-center justify-center text-center",
-    benefitTitle: "font-semibold text-blue-500 mb-3",
+    benefitCard: "p-6 border-b border-r bg-white/30 border-gray-500 flex flex-col items-center justify-center text-center",
+    benefitTitle: "font-semibold text-[#0814bf] mb-3",
     benefitText: "text-gray-700 text-sm",
 
     // Section 3 specific cards with gradient
-    section3Card: "bg-gradient-to-r from-white/50 to-white/80 p-4 rounded-lg",
+    section3Card: "border-b border-gray-500 p-4",
     section3Title: "font-semibold mb-2",
     section3Text: "text-gray-700",
 
     // Problem list
     problemList: "space-y-3",
     problemItem: "flex items-start space-x-3",
-    problemBullet: "text-pink-600 text-xl",
+    problemBullet: "text-black text-xl",
     problemText: "text-gray-700",
 
     // Table styles with gradient
-    TablecardWithMargin: "bg-gradient-to-r from-white/20 to-white/50 border border-white/20 pt-4 sm:pt-0 p-0 sm:p-4 rounded-lg mb-4",
-    tableContainer: "overflow-x-auto",
-    table: "min-w-full bg-gradient-to-r from-white/50 to-white/70 rounded-lg",
-    tableHeader: "bg-blue-50",
+    TablecardWithMargin: " border-b border-gray-500 pt-4 sm:pt-0 p-0 sm:p-4 mb-4",
+    tableContainer: "overflow-x-auto bg-white/30",
+    table: "min-w-full",
+    tableHeader: "bg-white/50",
     tableHeaderCell: "px-4 py-2 text-left text-gray-700 font-semibold",
-    tableRow: "border-b border-gray-200",
+    tableRow: "border-b border-gray-500",
     tableCell: "px-4 py-2 text-gray-700",
     tableCellGray: "px-4 py-2 text-gray-600",
     tableCellPink: "px-4 py-2 text-pink-600 font-semibold",
 
     // Checklist with gradient
-    checklistContainer: "bg-gradient-to-r from-white/20 to-white/50 border border-white/20 p-4 rounded-lg",
+    checklistContainer: "border-b border-gray-500 p-4",
     checklistList: "space-y-3",
     checklistItem: "flex items-start space-x-3",
-    checklistCheckbox: "mt-1 text-blue-600",
+    checklistCheckbox: "mt-1 text-[#0814bf]",
     checklistText: "text-gray-700",
 
-    // Footer
-    footer: "gradient-to-r from-white to bg-pink-100 p-6 rounded-b-lg text-center",
-    footerButton: "bg-white to-blue-600 text-blue-500 px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105",
-
     // Section 10 special styling
-    section10Container: "bg-gradient-to-r from-white to-blue-100 p-6 rounded-lg",
+    section10Container: "border border-gray-500 bg-white/30 p-6",
+
+    // Footer
+    footer: "bg-white/20 backdrop-blur-sm border-t border-gray-500 p-6 rounded-b-lg",
+    footerContainer: "flex justify-between items-center",
+    footerButtonContainer: "max-w-screen-lg mx-auto flex justify-left gap-4 items-center",
+    footerButton: "bg-white text-[#0814bf] px-2 sm:px-6 py-3 font-semibold transition-all duration-300 hover:scale-105 rounded-lg",
+    footerButtonContact: "bg-blue-500 bg-white text-[#0814bf] px-2 sm:px-6 py-3 font-semibold transition-all duration-300 hover:scale-105 rounded-lg",
+    footerButtonClose: "bg-white text-[#0814bf] px-2 sm:px-6 py-3 min-w-10 min-h-10 text-center font-semibold transition-all duration-300 hover:scale-105 rounded-lg",
+
 
     // Colors for section 3 cards
     colors: {
         pink: "text-pink-800",
         yellow: "text-yellow-800",
         purple: "text-purple-800",
-        blue: "text-blue-500"
+        blue: "text-blue-600"
     }
 };
 
 const PerformanceReport = ({ isOpen, onClose }) => {
     const { t, i18n } = useTranslation();
+
+    // Refs for each section to apply parallax effect
+    const mainContainerRef = useRef(null);
+    const section1Ref = useRef(null);
+    const section2Ref = useRef(null);
+    const section3Ref = useRef(null);
+    const section4Ref = useRef(null);
+    const section5Ref = useRef(null);
+    const section6Ref = useRef(null);
+    const section7Ref = useRef(null);
+    const section8Ref = useRef(null);
+    const section9Ref = useRef(null);
+    const section10Ref = useRef(null);
+
+    // Apply parallax effect to all sections
+    useEffect(() => {
+        if (!isOpen) return;
+
+        const sections = [
+            section1Ref.current,
+            section2Ref.current,
+            section3Ref.current,
+            section4Ref.current,
+            section5Ref.current,
+            section6Ref.current,
+            section7Ref.current,
+            section8Ref.current,
+            section9Ref.current,
+            section10Ref.current
+        ];
+
+        sections.forEach((section) => {
+            if (!section || !mainContainerRef.current) return;
+
+            gsap.fromTo(section,
+                { scale: 0.75 },
+                {
+                    scale: 1,
+                    scrollTrigger: {
+                        trigger: section,
+                        scroller: mainContainerRef.current,
+                        start: "top 80%",
+                        end: "top 10%",
+                        scrub: 1,
+                    }
+                }
+            );
+        });
+
+        // Cleanup
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
+    }, [isOpen]);
 
     if (!isOpen) return null;
 
@@ -108,12 +233,14 @@ const PerformanceReport = ({ isOpen, onClose }) => {
 
     return (
         <div className={classes.modalOverlay}>
-            <div className={classes.mainContainer}>
+            <div ref={mainContainerRef} className={classes.mainContainer}>
                 {/* Header */}
                 <div className={classes.header}>
                     <div className={classes.headerContent}>
                         <h2 className={classes.headerTitle}>
-                            {safeTranslate('service.section3.performanceReport.title', 'Performance Report')}
+                            <TitleWithReflection>
+                                {safeTranslate('service.section3.performanceReport.title', 'Performance Report')}
+                            </TitleWithReflection>
                         </h2>
                         <button
                             onClick={onClose}
@@ -127,9 +254,11 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                 {/* Content */}
                 <div className={classes.content}>
                     {/* Section 1 */}
-                    <section>
+                    <section ref={section1Ref}>
                         <h3 className={classes.sectionTitle}>
-                            {safeTranslate('service.section3.performanceReport.content.section1.title', 'Section 1 Title')}
+                            <TitleWithReflection>
+                                {safeTranslate('service.section3.performanceReport.content.section1.title', 'Section 1 Title')}
+                            </TitleWithReflection>
                         </h3>
                         <p className={classes.textGrayLeading}>
                             {safeTranslate('service.section3.performanceReport.content.section1.description', 'Section 1 description placeholder')}
@@ -137,10 +266,12 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                     </section>
 
                     {/* Section 2 */}
-                    <section>
-                        <h3 className={classes.sectionTitle}>
-                            {safeTranslate('service.section3.performanceReport.content.section2.title', 'Section 2 Title')}
-                        </h3>
+                    <section ref={section2Ref}>
+                        <TitleWithReflectionMedium>
+                            <h3 className={classes.sectionTitle}>
+                                {safeTranslate('service.section3.performanceReport.content.section2.title', 'Section 2 Title')}
+                            </h3>
+                        </TitleWithReflectionMedium>
                         <p className={classes.textGrayMargin}>
                             {safeTranslate('service.section3.performanceReport.content.section2.description', 'Section 2 description placeholder')}
                         </p>
@@ -173,10 +304,12 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                     </section>
 
                     {/* Section 3 */}
-                    <section>
-                        <h3 className={classes.sectionTitle}>
-                            {safeTranslate('service.section3.performanceReport.content.section3.title', 'Section 3 Title')}
-                        </h3>
+                    <section ref={section3Ref}>
+                        <TitleWithReflectionSmall>
+                            <h3 className={classes.sectionTitle}>
+                                {safeTranslate('service.section3.performanceReport.content.section3.title', 'Section 3 Title')}
+                            </h3>
+                        </TitleWithReflectionSmall>
                         <div className={classes.section}>
                             <div className={classes.section3Card}>
                                 <h4 className={`${classes.section3Title} ${classes.colors.blue}`}>
@@ -215,11 +348,12 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                     </section>
 
                     {/* Section 4 */}
-                    <section>
-                        <h3 className={classes.sectionTitle}>
-                            {safeTranslate('service.section3.performanceReport.content.section4.title', 'Section 4 Title')}
-                        </h3>
-
+                    <section ref={section4Ref}>
+                        <TitleWithReflectionMedium>
+                            <h3 className={classes.sectionTitle}>
+                                {safeTranslate('service.section3.performanceReport.content.section4.title', 'Section 4 Title')}
+                            </h3>
+                        </TitleWithReflectionMedium>
                         <div className={classes.problemList}>
                             {(() => {
                                 try {
@@ -244,10 +378,12 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                     </section>
 
                     {/* Section 5 */}
-                    <section className='font-bold space-y-4'>
-                        <h3 className={classes.sectionSubtitle}>
-                            {safeTranslate('service.section3.performanceReport.content.section5.title', 'Section 6 Title')}
-                        </h3>
+                    <section ref={section5Ref} className='font-bold space-y-4'>
+                        <TitleWithReflectionSmall>
+                            <h3 className={classes.sectionTitle}>
+                                {safeTranslate('service.section3.performanceReport.content.section5.title', 'Section 6 Title')}
+                            </h3>
+                        </TitleWithReflectionSmall>
                         <div className={classes.card}>
                             <p className={classes.textGrayMargin}>
                                 {safeTranslate('service.section3.performanceReport.content.section5.case1', 'Section 6 case 1')}
@@ -371,9 +507,11 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                     </section>
 
                     {/* Section 6 */}
-                    <section>
+                    <section ref={section6Ref}>
                         <h3 className={classes.sectionTitle}>
-                            {safeTranslate('service.section3.performanceReport.content.section6.title', 'Section 6 Title')}
+                            <TitleWithReflection>
+                                {safeTranslate('service.section3.performanceReport.content.section6.title', 'Section 6 Title')}
+                            </TitleWithReflection>
                         </h3>
                         <div className={classes.checklistContainer}>
                             <div className={classes.checklistList}>
@@ -401,9 +539,11 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                     </section>
 
                     {/* Section 7 */}
-                    <section>
+                    <section ref={section7Ref}>
                         <h3 className={classes.sectionTitle}>
-                            {safeTranslate('service.section3.performanceReport.content.section7.title', 'Section 7 Title')}
+                            <TitleWithReflection>
+                                {safeTranslate('service.section3.performanceReport.content.section7.title', 'Section 7 Title')}
+                            </TitleWithReflection>
                         </h3>
                         <p className={classes.textGrayMargin}>
                             {safeTranslate('service.section3.performanceReport.content.section7.description1', 'Section 7 description 1 placeholder')}
@@ -432,9 +572,11 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                     </section>
 
                     {/* Section 8 */}
-                    <section>
+                    <section ref={section8Ref}>
                         <h3 className={classes.sectionTitle}>
-                            {safeTranslate('service.section3.performanceReport.content.section8.title', 'Section 8 Title')}
+                            <TitleWithReflection>
+                                {safeTranslate('service.section3.performanceReport.content.section8.title', 'Section 8 Title')}
+                            </TitleWithReflection>
                         </h3>
                         <p className={classes.textGrayMargin}>
                             {safeTranslate('service.section3.performanceReport.content.section8.description', 'Section 8 description placeholder')}
@@ -468,9 +610,11 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                     </section>
 
                     {/* Section 9 */}
-                    <section>
+                    <section ref={section9Ref}>
                         <h3 className={classes.sectionTitle}>
-                            {safeTranslate('service.section3.performanceReport.content.section9.title', 'Section 9 Title')}
+                            <TitleWithReflection>
+                                {safeTranslate('service.section3.performanceReport.content.section9.title', 'Section 9 Title')}
+                            </TitleWithReflection>
                         </h3>
                         <p className={classes.textGrayMargin}>
                             {safeTranslate('service.section3.performanceReport.content.section9.description', 'Section 9 description placeholder')}
@@ -504,7 +648,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                     </section>
 
                     {/* Section 10 */}
-                    <section className={classes.section10Container}>
+                    <section ref={section10Ref} className={classes.section10Container}>
                         <h3 className={classes.sectionTitle}>
                             {safeTranslate('service.section3.performanceReport.content.section10.title', 'Section 10 Title')}
                         </h3>
@@ -521,9 +665,9 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                 </div>
 
                 {/* Footer */}
-                <div className="bg-blue-500 p-6 rounded-b-lg">
-                    <div className="flex justify-between items-center">
-                        <div className="max-w-screen-lg mx-auto flex justify-left gap-4 items-center">
+                <div className={classes.footer}>
+                    <div className={classes.footerContainer}>
+                        <div className={classes.footerButtonContainer}>
 
                             {/* Ask Quote Button */}
                             <a
@@ -533,14 +677,14 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                                     // Close the PerformanceReport modal
                                     onClose();
                                 }}
-                                className="bg-white text-blue-500 px-2 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+                                className={classes.footerButton}
                             >
                                 {safeTranslate('service.section3.performanceReport.content.footer.askQuote', 'Ask Quote')}
                             </a>
                             {/* Contact Us Button */}
                             <a
                                 href="/contact"
-                                className="bg-blue-500 bg-white text-blue-500 px-2 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+                                className={classes.footerButtonContact}
                             >
                                 {safeTranslate('service.section3.performanceReport.content.footer.contactUs')}
                             </a>
@@ -549,7 +693,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                             {/* Close Button */}
                             <button
                                 onClick={onClose}
-                                className="bg-white text-blue-500 px-2 sm:px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+                                className={classes.footerButtonClose}
                             >
                                 {safeTranslate('service.section3.performanceReport.content.footer.close')}
                             </button>

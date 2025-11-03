@@ -301,13 +301,13 @@ function WorkDetails() {
       <Footer />
       <img
         src={circlarrow}
-        className="absolute w-96 right-10 opacity-50 rotate-180 -z-10 lg:block md:block sm:hidden"
-        style={{ top: "500px", left: "650px" }}
+        className="absolute w-48 sm:w-64 md:w-80 lg:w-96 opacity-50 rotate-180 -z-10 lg:block md:block sm:hidden"
+        style={{ top: "500px", left: "40%" }}
       />
       <img
         src={circlarrow}
-        className="absolute w-96 right-10 opacity-50  scale-x-[-1] bgimg -z-10 lg:block md:block sm:hidden"
-        style={{ top: "1120px", left: "500px" }}
+        className="absolute w-48 sm:w-64 md:w-80 lg:w-96 opacity-50 scale-x-[-1] bgimg -z-10 lg:block md:block sm:hidden"
+        style={{ top: "1120px", left: "30%" }}
       />
     </div>
   );

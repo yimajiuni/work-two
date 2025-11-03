@@ -33,6 +33,14 @@ body:has(.card[data-color="green"]:hover) {
   color: #2b77e7;
 }
 
+.test {
+  color: #0814bf;
+}
+
+.test-2 {
+  color: #f9d1eb;
+}
+
 @layer utilities {
 
   /* Responsive break - only shows on small screens */
@@ -172,6 +180,67 @@ body:has(.card[data-color="green"]:hover) {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
+  }
+
+  /* Horizontal mirror reflection */
+  .reflection-wrapper .reflection-text,
+  .reflection-wrapper .reflection-text-big,
+  .reflection-wrapper .reflection-text-medium,
+  .reflection-wrapper .reflection-text-small {
+    opacity: 0.25;
+  }
+
+  /* Reflection text with gradient fade - hide on mobile */
+  .reflection-text,
+  .reflection-text-medium,
+  .reflection-text-small {
+    display: none;
+  }
+
+  /* Reflection text with gradient fade */
+  .reflection-text {
+    top: calc(100% + 3.5rem);
+    mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  .reflection-text-medium {
+    top: calc(100% + 3rem);
+    mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  .reflection-text-small {
+    top: calc(100% - 1rem);
+    mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  /* Mobile-specific reflection styles */
+  @media (min-width: 430px) {
+
+    .reflection-text,
+    .reflection-text-medium,
+    .reflection-text-small {
+      display: block;
+    }
+
+    .reflection-text {
+      top: calc(100% + 1.5rem);
+    }
+
+    .reflection-text-medium {
+      top: calc(100% - 1rem);
+      mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
+      -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    .reflection-text-small {
+      top: calc(100% - 1rem);
+      mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
+      -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
+    }
+
   }
 }
 

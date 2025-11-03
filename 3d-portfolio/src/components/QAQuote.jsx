@@ -1121,7 +1121,7 @@ const QAQuote = ({ isOpen, onClose }) => {
                     <h2 className="text-2xl font-bold text-gray-500">{t('service.qaForm.title')}</h2>
                     <button
                         onClick={onClose}
-                        className="text-white hover:text-gray-500 text-2xl pt-5"
+                        className="hover:text-white text-gray-500 text-2xl pt-5"
                     >
                         ×
                     </button>
