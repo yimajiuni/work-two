@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import {
@@ -20,12 +20,26 @@ import Content from "./components/Content";
 import NavbarJump from "./components/NavbarJump";
 
 function App() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <HelmetProvider>
-      <div className="pink-gradient_bg h-full mt-14 sm:mt-0">
+      <div
+        className={`pink-gradient_bg h-full mt-14 sm:mt-0 transition-all `}
+      >
         <Router>
           {/*<Navbar />*/}
-          <NavbarJump />
+          <NavbarJump onMenuStateChange={setIsMobileMenuOpen} />
+          {isMobileMenuOpen && (
+            <div
+              aria-hidden="true"
+              className="sm:hidden fixed inset-x-0 top-16 bottom-0 bg-pink-200/40 backdrop-blur-md transition-opacity duration-300"
+            />
+          )}
+          <div
+            aria-hidden="true"
+            className={`sm:hidden transition-[height] duration-300 ${isMobileMenuOpen ? "h-12" : "h-0"}`}
+          />
           <Routes>
             {/*<Route path="/home" element={<Home />} />*/}
             {/*
