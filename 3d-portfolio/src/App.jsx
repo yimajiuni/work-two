@@ -22,7 +22,7 @@ import NavbarJump from "./components/NavbarJump";
 function App() {
   return (
     <HelmetProvider>
-      <div className="bg-pink-300/40 h-full mt-14 sm:mt-0">
+      <div className="pink-gradient_bg h-full mt-14 sm:mt-0">
         <Router>
           {/*<Navbar />*/}
           <NavbarJump />

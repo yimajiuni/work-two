@@ -26,9 +26,10 @@ const classes = {
     mainContainer: "max-container pt-8 -mt-32 sm:-mt-24",
 
     // Section base styles
-    section: "rounded-[20px] bg-pink-300/80 pt-10 mt-10 mb-20 flex items-center py-20",
-    section1: "rounded-[20px] bg-pink-300/80 pt-10 mt-0 sm:mt-10 mb-20 flex items-center justify-center pb-20 px-4",
-    section4: "rounded-[20px] bg-pink-300/80 pt-10 mt-10 mb-10 flex items-center py-20",
+    section1: "rounded-[20px] bg-gradient-to-t from-pink-400 to-pink-300/70 pt-10 mt-0 sm:mt-10 mb-20 flex items-center justify-center pb-20 px-4",
+    section2: "rounded-[20px] bg-gradient-to-b from-pink-400 to-pink-300/70 pt-10 mt-10 mb-20 flex items-center py-20",
+    section3: "rounded-[20px] bg-gradient-to-b from-pink-400 to-pink-300/70 pt-10 mt-10 mb-20 flex items-center py-20",
+    section4: "rounded-[20px] bg-gradient-to-t from-pink-400 to-pink-300/70 pt-10 mt-10 mb-10 flex items-center py-20",
 
     // Section content
     sectionContent: "mx-8 max-w-6xl",
@@ -41,7 +42,7 @@ const classes = {
     title2: "tracking-tight text-4xl sm:text-6xl font-bold text-white mb-4 sm:mb-6",
     titleHighlight: "blue-gradient_text text-[36px] sm:text-6xl drop-shadow block",
     subtitle: "text-[28px] sm:text-4xl font-bold text-white mb-6",
-    subtitleHighlight: "text-[26px] font-bold sm:text-4xl blue-gradient_text drop-shadow block mb-3",
+    subtitleHighlight: "text-[26px] font-bold sm:text-4xl text-white  block mb-3",
     sectionTitle: "text-4xl font-bold text-white mb-6",
     description: "text-lg text-white/80 max-w-3xl mx-auto mb-4",
     descriptionLarge: "text-xl text-white/80 mb-4 sm:mb-6 max-w-2xl mx-auto",
@@ -643,7 +644,7 @@ const Service = () => {
                 </section>
 
                 {/* Section 2: Product Introduction */}
-                <section id="section-2" ref={section2Ref} className={classes.section}>
+                <section id="section-2" ref={section2Ref} className={classes.section2}>
                     <div className={classes.sectionContent}>
                         <div className={classes.sectionTextCenter}>
                             <div>
@@ -703,7 +704,7 @@ const Service = () => {
                 </section>
 
                 {/* Section 3: Service Details */}
-                <section id="section-3" ref={section3Ref} className={classes.section}>
+                <section id="section-3" ref={section3Ref} className={classes.section3}>
                     <div className={classes.sectionContent}>
                         <div className={classes.sectionTextCenter}>
                             <h2

@@ -5,7 +5,7 @@ import { socialLinks } from "../i18n-1.js";
 const Footer = () => {
   return (
     <footer className="footer footer-space pt-10">
-      <hr className="border-pink-300/55" />
+      <hr className="border-white" />
 
       <div className="footer-container text-blue-500">
         <p>

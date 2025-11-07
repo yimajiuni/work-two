@@ -19,7 +19,6 @@
 .offers hr {
     width: 180px;
     height: 6px;
-    border-radius: 10px;
     background: #252525;
     margin-bottom: 20px;
 }
@@ -68,9 +67,9 @@
     background-color: #fd4229;
     color: white;
     border: none;
-    border-radius: 50px;
     cursor: pointer;
     font-weight: bold;
+    letter-spacing: 3px;
 }
 
 .offers-item h1 {

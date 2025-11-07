@@ -54,7 +54,6 @@
 
 .shopcategory-sort {
     padding: 10px 20px;
-    border-radius: 40px;
     border: 1px solid #888;
 }
 
@@ -76,7 +75,6 @@
     margin: 150px auto;
     width: 223px;
     height: 69px;
-    border-radius: 75px;
     background: #ededed;
     color: #787878;
     font-size: 18px;

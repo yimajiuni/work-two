@@ -1,0 +1,338 @@
+/* Blog Page Styles */
+
+.blog-page {
+    padding: 80px 0 60px;
+    min-height: 100vh;
+}
+
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Blog Header */
+.blog-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.blog-header-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.blog-title-en {
+    font-family: 'JetBrains Mono-Bold', Helvetica;
+    font-size: 41.22px;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.blog-title-ja {
+    font-family: "YuGothic", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-size: 41.22px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 10px;
+    position: relative;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blog-subtitle {
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Main Blog Area */
+.blog-main {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Blog Posts Grid: 2 columns x 3 rows */
+.blog-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Blog Post Card */
+.blog-post-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.blog-post-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.blog-post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-post-category {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: linear-gradient(192deg, rgba(230, 0, 18, 1) 0%, rgba(255, 7, 72, 0.9) 85%);
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.blog-post-content {
+    padding: 20px;
+}
+
+.blog-post-meta {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    color: #999;
+}
+
+.blog-post-date,
+.blog-post-author {
+    font-size: 12px;
+    color: #999;
+}
+
+.blog-post-title {
+    font-family: "YuGothic", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.blog-post-title a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.blog-post-title a:hover {
+    color: #d32f2f;
+}
+
+.blog-post-excerpt {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.blog-post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background: linear-gradient(192deg, rgba(230, 0, 18, 1) 0%, rgba(255, 7, 72, 0.9) 85%);
+    font-size: 12px;
+    color: #fff;
+}
+
+/* Sidebar */
+.blog-sidebar {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.sidebar-section {
+    background: #fff;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-title {
+    font-family: "JetBrains Mono-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #eee;
+}
+
+/* What's New List */
+.whats-new-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.whats-new-item {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.whats-new-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.whats-new-header {
+    margin-bottom: 10px;
+}
+
+.whats-new-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.whats-new-title a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.whats-new-title a:hover {
+    color: #d32f2f;
+}
+
+.whats-new-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 12px;
+    color: #999;
+}
+
+.whats-new-author,
+.whats-new-date {
+    font-size: 12px;
+    color: #999;
+}
+
+.whats-new-category {
+    background: linear-gradient(192deg, rgba(230, 0, 18, 1) 0%, rgba(255, 7, 72, 0.9) 85%);
+    padding: 2px 8px;
+    font-weight: 600;
+    color: #fff;
+    font-size: 12px;
+}
+
+/* Category Tags */
+.category-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.category-tag {
+    display: inline-block;
+    padding: 8px 14px;
+    background: #f5f5f5;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #666;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.category-tag:hover {
+    background: linear-gradient(192deg, rgba(230, 0, 18, 1) 0%, rgba(255, 7, 72, 0.9) 85%);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .blog-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .blog-sidebar {
+        width: 100%;
+    }
+
+    .blog-posts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-title-en,
+    .blog-title-ja {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 640px) {
+    .blog-page {
+        padding: 60px 0 40px;
+    }
+
+    .blog-container {
+        padding: 0 15px;
+    }
+
+    .blog-title-en,
+    .blog-title-ja {
+        font-size: 28px;
+    }
+
+    .blog-subtitle {
+        font-size: 16px;
+    }
+
+    .blog-post-card {
+        margin-bottom: 20px;
+    }
+
+    .blog-post-image {
+        height: 180px;
+    }
+
+    .blog-post-title {
+        font-size: 18px;
+    }
+
+    .sidebar-section {
+        padding: 20px;
+    }
+
+    .sidebar-title {
+        font-size: 20px;
+    }
+}

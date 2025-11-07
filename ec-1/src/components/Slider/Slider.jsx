@@ -57,6 +57,50 @@ const Slider = () => {
 
   // useEffect hook to add event listeners for the Next and Previous buttons when the component mounts.
   useEffect(() => {
+    // Check if refs are available
+    if (!sliderRef.current || !thumbnailBorderRef.current || !carouselRef.current || !nextRef.current || !prevRef.current) {
+      return;
+    }
+
+    // Wait for images to load before showing content
+    const images = sliderRef.current.querySelectorAll("img");
+    const thumbnailImages = thumbnailBorderRef.current.querySelectorAll("img");
+    const allImages = [...images, ...thumbnailImages];
+
+    let loadedCount = 0;
+    const totalImages = allImages.length;
+
+    const checkLoaded = () => {
+      loadedCount++;
+      if (loadedCount === totalImages && carouselRef.current) {
+        // All images loaded, add loaded class and show content
+        setTimeout(() => {
+          if (carouselRef.current) {
+            carouselRef.current.classList.add("loaded");
+          }
+        }, 100);
+      }
+    };
+
+    // If images are already cached, they might load instantly
+    allImages.forEach((img) => {
+      if (img.complete) {
+        checkLoaded();
+      } else {
+        img.addEventListener("load", checkLoaded);
+        img.addEventListener("error", checkLoaded); // Also count errors to prevent hanging
+      }
+    });
+
+    // Fallback: if no images or all are cached, show immediately
+    if (totalImages === 0 || loadedCount === totalImages) {
+      setTimeout(() => {
+        if (carouselRef.current) {
+          carouselRef.current.classList.add("loaded");
+        }
+      }, 100);
+    }
+
     // Add event listeners to the Next and Previous buttons to call the showSlider function with the appropriate type.
 
     nextRef.current.addEventListener("click", () => showSlider("next"));
@@ -74,9 +118,13 @@ const Slider = () => {
     // Clean up function to remove event listeners when the component unmounts.
     return () => {
       clearTimeout(runTimeOut);
+      allImages.forEach((img) => {
+        img.removeEventListener("load", checkLoaded);
+        img.removeEventListener("error", checkLoaded);
+      });
       /*clearTimeout(runNextAuto);*/
     };
-  }, [showSlider]);
+  }, []);
 
   return (
     <div className="container">

@@ -6,7 +6,7 @@ import logo from "../Assets/logo.png";
 import cart_icon from "../Assets/cart_icon.png";
 import { ShopContext } from "../../contexts/ShopContext";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { BiSearchAlt } from "react-icons/bi";
+import { BiSearchAlt, BiUser } from "react-icons/bi";
 
 const Navbar = () => {
   const [menu, setMenu] = useState("shop");
@@ -86,7 +86,10 @@ const Navbar = () => {
       </ul>
       <div className="nav-login-cart">
         <Link to="/login">
-          <button>Login</button>
+          <button>
+            <BiUser className="login-icon" />
+            Login
+          </button>
         </Link>
         <Link to="/cart">
           <img src={cart_icon} alt="" />

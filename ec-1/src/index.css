@@ -15,13 +15,13 @@ body {
 
 /*全体に適用するスタイル*/
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@100;300;400;700;900&display=swap');
 
 * {
     padding: 0%;
     box-sizing: border-box;
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Chivo', sans-serif;
     transition: .3s ease;
 }
 
@@ -56,11 +56,12 @@ li {
     gap: 1.5rem;
 }
 
+/*
 body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+}*/
 
 .container {
     margin: auto;

@@ -4,6 +4,7 @@ import Popular from "../components/Popular/Popular";
 import Offers from "../components/Offers/Offers";
 import NewCollections from "../components/NewCollections/NewCollections";
 import Newsletter from "../components/Newsletter/Newsletter";
+import Slider from "../components/Slider/Slider";
 
 const Shop = () => {
   return (
