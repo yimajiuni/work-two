@@ -15,82 +15,101 @@
 	--h1fontsize: 1.5rem;
 	--h2fontsize: 1.25rem;
 	--h3fontsize: 1rem;
-	--normalfontsize: .938;
+	--normalfontsize: .938rem;
 	--smallfontsize: .313rem;
 	--smallestfontsize: 0.75rem;
 }
+
 .listingSection {
 	flex-basis: 70%;
+
 	.heading {
 		width: 100%;
 		justify-content: space-between;
+
 		h1 {
 			font-size: var(--h2FontSize);
 			font-weight: 700;
-      color: var(--blackColor);
+			color: var(--blackColor);
 		}
+
 		.btn {
 			border: 1px solid transparent;
+
 			&:hover {
 				border: 1px solid var(--PrimaryColor);
 			}
 		}
 	}
+
 	.secContainer {
 		width: 100%;
 		margin: 1rem 0;
 		gap: 1rem;
 		flex-wrap: wrap;
 		justify-content: space-between;
+
 		.singleItem {
-			position: relative;
-			width: 150px;
-			height: 170px;
 			align-items: center;
-			flex-direction: column;
-			padding: 1rem;
-			border-radius: 10px;
 			background: var(--itemCardColor);
+			border-radius: 10px;
+			flex-direction: column;
+			/* min-height: 170px; */
+			padding: 1rem;
+			position: relative;
+			max-width: 150px;
+			width: 100%;
+
 			&:hover {
 				background: var(--itemCardHover);
 				box-shadow: 0 2px 2px var(--inputColor);
 			}
+
 			img {
-				max-width: 100px;
+				max-width: 120px;
+				padding: 0.2rem 0.75rem 0.2rem 0.2rem;
 			}
+
 			.icon {
 				position: absolute;
 				top: 10px;
 				right: 10px;
 				color: var(--primarycolor)
 			}
+
 			h3 {
 				font-size: var(--h3FontSize);
 				color: var(--blackcolor);
 			}
 		}
 	}
+
 	.sellers {
 		width: 100%;
 		justify-content: space-between;
 		gap: 1rem;
 		align-items: flex-start;
+
 		.topSellers {
 			.heading {
 				padding: 1rem 0;
+
 				.btn {
 					padding: 0.5rem 1rem;
 				}
 			}
+
 			.card {
 				padding: 1rem 1.5rem;
 				border-radius: 1rem;
 				background: var(--whiteColor);
 				gap: 1rem;
 				box-shadow: 0 2px 4px var(--inputColor);
+
 				.users {
 					padding-left: 1rem;
 					border-right: 2px solid var(--grayText);
+
 					img {
 						width: 30px;
 						height: 30px;
@@ -98,18 +117,22 @@
 						object-fit: cover;
 						border: 2px solid var(--inputColor);
 						transition: 0.5s ease;
+
 						&:hover {
 							transform: translateY(-10px);
 						}
 					}
 				}
+
 				.cardText {
 					span {
 						color: var(--blackcolor);
 						font-weight: 500;
+
 						small {
 							font-weight: 400;
-							.date {
+
+							.data {
 								margin-left: 1rem;
 							}
 						}
@@ -117,22 +140,27 @@
 				}
 			}
 		}
+
 		.featuredSellers {
 			.heading {
 				padding: 1rem 0;
+
 				.btn {
 					padding: 0.5rem 1rem;
 				}
 			}
+
 			.card {
 				padding: 1rem 1.5rem;
 				border-radius: 1rem;
 				background: var(--whiteColor);
 				gap: 1rem;
 				box-shadow: 0 2px 4px var(--inputColor);
+
 				.users {
 					padding-left: 1rem;
 					border-right: 2px solid var(--grayText);
+
 					img {
 						width: 30px;
 						height: 30px;
@@ -140,17 +168,21 @@
 						object-fit: cover;
 						border: 2px solid var(--inputColor);
 						transition: 0.5s ease;
+
 						&:hover {
 							transform: translateY(-10px);
 						}
 					}
 				}
+
 				.cardText {
 					span {
 						color: var(--blackcolor);
 						font-weight: 500;
+
 						small {
 							font-weight: 400;
+
 							.data {
 								margin-left: 1rem;
 							}
@@ -161,9 +193,10 @@
 		}
 	}
 }
+
 /*hide the scroll bar on sidebar*/
-::-webkit-scrollbar{
-    display: none;
+::-webkit-scrollbar {
+	display: none;
 }
 
 @media screen and (max-width: 990px) {
@@ -175,17 +208,25 @@
 		}
 	}
 }
+
 @media screen and (max-width: 918px) {
 	.listingSection {
 		.singleItem {
-			width: 220px !important;
+			width: 100% !important;
+			max-width: 170px;
 		}
 	}
 }
+
 @media screen and (max-width: 490px) {
 	.listingSection {
+		.singleItem {
+			max-width: 200px;
+		}
+
 		.sellers {
 			flex-direction: column;
+
 			.card {
 				flex-direction: row;
 			}
