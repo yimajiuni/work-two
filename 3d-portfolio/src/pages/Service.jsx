@@ -52,10 +52,16 @@ const classes = {
     imageHover: "w-full h-96 h-[100%] sm:h-max object-cover sm:object-fit rounded-lg hover:scale-105 hover:shadow-pink-400/30 transition-transform duration-300",
 
     // Buttons
-    ctaButton: "inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105",
-    demoButton: "inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105",
-    performanceButton: "inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105",
-    quoteButton: "bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105",
+    // NOTE: You can now use octagon buttons! See OCTAGON_BUTTONS_GUIDE.md
+    // ctaButton: "inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105",
+    // Alternative octagon version ctaButton: "octagon-gradient octagon-blue-gradient octagon-lg font-semibold text-lg hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105",
+    ctaButton: "inline-block octagon-gradient octagon-blue-gradient octagon-lg font-semibold text-lg hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105",
+    // demoButton: "inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105",
+    demoButton: "inline-block octagon-gradient octagon-blue-gradient octagon-md font-semibold text-lg hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105",
+    // performanceButton: "inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105",
+    performanceButton: "inline-block octagon-gradient octagon-blue-gradient octagon-md font-semibold text-lg hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105",
+    // quoteButton: "bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105",
+    quoteButton: "inline-block octagon-gradient octagon-blue-gradient octagon-lg font-semibold text-lg hover:shadow-lg hover:shadow-pink-400/30 transition-all duration-300 hover:scale-105",
 
     // Cards and containers
     card: "bg-white/10 backdrop-blur-sm rounded-lg p-8 border border-white/20",

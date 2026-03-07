@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-scroll";
 import { BiChevronDown, BiRestaurant } from "react-icons/bi";
-import Button from "../layouts/Button";
 import { AiOutlineClose } from "react-icons/ai";
 import { CiMenuBurger } from "react-icons/ci";
 
@@ -23,7 +22,7 @@ const Navbar = () => {
             <span>
               <BiRestaurant size={32} />
             </span>
-            <h1 className=" pr-10 text-3xl font-semibold">FoodieWeb</h1>
+            <h1 className="font-logo pr-10 text-3xl font-semibold">FoodieWeb</h1>
           </div>
           <nav className=" hidden md:pr-1 md:flex flex-row items-center text-2xl font-medium gap-8">
             <Link
@@ -128,7 +127,6 @@ const Navbar = () => {
             >
               Reviews
             </Link>
-            <Button title="Login" />
           </nav>
           <div className="md:hidden flex items-center">
             {menu ? (
@@ -191,7 +189,7 @@ const Navbar = () => {
           >
             Reviews
           </Link>
-          <Button title="Login" />
+
         </div>
       </div>
     </div>

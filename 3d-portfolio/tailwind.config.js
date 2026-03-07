@@ -25,6 +25,7 @@ export default {
         worksans: ["Work Sans", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
         handwriting: ["Pacifico", "Potta One", "cursive", "YuGothic", "游ゴシック", "sans-serif"],
+        title: ["IrvinHeading", "Utsukushi", "YuGothic", "游ゴシック", "sans-serif"],
       },
       boxShadow: {
         card: "0px 1px 2px 0px rgba(0, 0, 0, 0.05)",

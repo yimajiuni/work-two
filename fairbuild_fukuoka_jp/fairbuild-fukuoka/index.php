@@ -1,7 +1,6 @@
 <?php
 /**
- * The front page template file
- * This template is used for the front page of the site
+ * The main template file
  *
  * @package Fairbuild_Fukuoka
  */
@@ -76,7 +75,7 @@ get_header();
             <div class="wechat-btn-top-content openPopup">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/line-icon-clip.png" alt="line">
                 <div class="wechat-btn-top-text">
-                    <p>LINE無料見積もり</p>
+                    <p>LINE無料見積もり好評受付中</p>
                 </div>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/maneki-neko-wh.png" alt="mascot">
             </div>
@@ -206,7 +205,15 @@ get_header();
             </div>
 
         <div class="more-btn-area">
-            <a href="<?php echo esc_url(get_service_page_url()); ?>">
+            <?php
+            $service_page = get_page_by_path('service');
+            if ($service_page) {
+                $service_url = get_permalink($service_page);
+            } else {
+                $service_url = '#service';
+            }
+            ?>
+            <a href="<?php echo esc_url($service_url); ?>">
                 <div class="overlap-group-5">
                     <img class="wa-ptn" src="<?php echo get_template_directory_uri(); ?>/assets/img/wa-ptn.png" />
                     <div class="readmore-button">
@@ -732,3 +739,4 @@ get_header();
     </div>
 
 <?php get_footer(); ?>
+

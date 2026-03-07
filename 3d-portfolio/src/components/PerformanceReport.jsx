@@ -86,7 +86,7 @@ const classes = {
 
     // Section styles
     section: "space-y-4",
-    sectionTitle: "text-3xl font-bold text-gray-800 mb-4 sm:mb-12",
+    sectionTitle: "text-3xl font-bold text-gray-800 mb-4 sm:mb-12 font-title",
     sectionSubtitle: "text-xl text-gray-800 mb-4",
 
     // Card styles with gradient
@@ -164,6 +164,12 @@ const classes = {
 const PerformanceReport = ({ isOpen, onClose }) => {
     const { t, i18n } = useTranslation();
 
+    // Inline style for font-family to ensure proper language-specific font loading
+    // Utsukushi for Japanese, IrvinHeading for English (same pattern as Crimson Pro/YuGothic)
+    const titleFontStyle = i18n.language === 'jp'
+        ? { fontFamily: '"Utsukushi", "YuGothic", "游ゴシック", sans-serif' }
+        : { fontFamily: '"IrvinHeading", "Crimson Pro", sans-serif' };
+
     // Refs for each section to apply parallax effect
     const mainContainerRef = useRef(null);
     const section1Ref = useRef(null);
@@ -237,7 +243,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                 {/* Header */}
                 <div className={classes.header}>
                     <div className={classes.headerContent}>
-                        <h2 className={classes.headerTitle}>
+                        <h2 className={classes.headerTitle} style={titleFontStyle}>
                             <TitleWithReflection>
                                 {safeTranslate('service.section3.performanceReport.title', 'Performance Report')}
                             </TitleWithReflection>
@@ -255,7 +261,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                 <div className={classes.content}>
                     {/* Section 1 */}
                     <section ref={section1Ref}>
-                        <h3 className={classes.sectionTitle}>
+                        <h3 className={classes.sectionTitle} style={titleFontStyle}>
                             <TitleWithReflection>
                                 {safeTranslate('service.section3.performanceReport.content.section1.title', 'Section 1 Title')}
                             </TitleWithReflection>
@@ -268,7 +274,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                     {/* Section 2 */}
                     <section ref={section2Ref}>
                         <TitleWithReflectionMedium>
-                            <h3 className={classes.sectionTitle}>
+                            <h3 className={classes.sectionTitle} style={titleFontStyle}>
                                 {safeTranslate('service.section3.performanceReport.content.section2.title', 'Section 2 Title')}
                             </h3>
                         </TitleWithReflectionMedium>
@@ -277,7 +283,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                         </p>
                         <div className={classes.grid3Col}>
                             <div className={classes.roundedCard}>
-                                <h4 className={classes.benefitTitle}>
+                                <h4 className={classes.benefitTitle} style={titleFontStyle}>
                                     {safeTranslate('service.section3.performanceReport.content.section2.benefits.speed.title', 'Speed Benefit Title')}
                                 </h4>
                                 <p className={classes.benefitText}>
@@ -285,7 +291,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                                 </p>
                             </div>
                             <div className={classes.roundedCard}>
-                                <h4 className={classes.benefitTitle}>
+                                <h4 className={classes.benefitTitle} style={titleFontStyle}>
                                     {safeTranslate('service.section3.performanceReport.content.section2.benefits.design.title', 'Design Benefit Title')}
                                 </h4>
                                 <p className={classes.benefitText}>
@@ -293,7 +299,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                                 </p>
                             </div>
                             <div className={classes.roundedCard}>
-                                <h4 className={classes.benefitTitle}>
+                                <h4 className={classes.benefitTitle} style={titleFontStyle}>
                                     {safeTranslate('service.section3.performanceReport.content.section2.benefits.stability.title', 'Stability Benefit Title')}
                                 </h4>
                                 <p className={classes.benefitText}>
@@ -306,13 +312,13 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                     {/* Section 3 */}
                     <section ref={section3Ref}>
                         <TitleWithReflectionSmall>
-                            <h3 className={classes.sectionTitle}>
+                            <h3 className={classes.sectionTitle} style={titleFontStyle}>
                                 {safeTranslate('service.section3.performanceReport.content.section3.title', 'Section 3 Title')}
                             </h3>
                         </TitleWithReflectionSmall>
                         <div className={classes.section}>
                             <div className={classes.section3Card}>
-                                <h4 className={`${classes.section3Title} ${classes.colors.blue}`}>
+                                <h4 className={`${classes.section3Title} ${classes.colors.blue}`} style={titleFontStyle}>
                                     {safeTranslate('service.section3.performanceReport.content.section3.benefits.isr.title', 'ISR Benefit Title')}
                                 </h4>
                                 <p className={classes.section3Text}>
@@ -320,7 +326,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                                 </p>
                             </div>
                             <div className={classes.section3Card}>
-                                <h4 className={`${classes.section3Title} ${classes.colors.blue}`}>
+                                <h4 className={`${classes.section3Title} ${classes.colors.blue}`} style={titleFontStyle}>
                                     {safeTranslate('service.section3.performanceReport.content.section3.benefits.conversion.title', 'Conversion Benefit Title')}
                                 </h4>
                                 <p className={classes.section3Text}>
@@ -328,7 +334,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                                 </p>
                             </div>
                             <div className={classes.section3Card}>
-                                <h4 className={`${classes.section3Title} ${classes.colors.blue}`}>
+                                <h4 className={`${classes.section3Title} ${classes.colors.blue}`} style={titleFontStyle}>
                                     {safeTranslate('service.section3.performanceReport.content.section3.benefits.performance.title', 'Performance Benefit Title')}
                                 </h4>
                                 <p className={classes.section3Text}>
@@ -337,7 +343,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                             </div>
 
                             <div className={classes.section3Card}>
-                                <h4 className={`${classes.section3Title} ${classes.colors.blue}`}>
+                                <h4 className={`${classes.section3Title} ${classes.colors.blue}`} style={titleFontStyle}>
                                     {safeTranslate('service.section3.performanceReport.content.section3.benefits.ssg.title', 'SSG Title')}
                                 </h4>
                                 <p className={classes.section3Text}>
@@ -350,7 +356,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                     {/* Section 4 */}
                     <section ref={section4Ref}>
                         <TitleWithReflectionMedium>
-                            <h3 className={classes.sectionTitle}>
+                            <h3 className={classes.sectionTitle} style={titleFontStyle}>
                                 {safeTranslate('service.section3.performanceReport.content.section4.title', 'Section 4 Title')}
                             </h3>
                         </TitleWithReflectionMedium>
@@ -380,7 +386,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                     {/* Section 5 */}
                     <section ref={section5Ref} className='font-bold space-y-4'>
                         <TitleWithReflectionSmall>
-                            <h3 className={classes.sectionTitle}>
+                            <h3 className={classes.sectionTitle} style={titleFontStyle}>
                                 {safeTranslate('service.section3.performanceReport.content.section5.title', 'Section 6 Title')}
                             </h3>
                         </TitleWithReflectionSmall>
@@ -397,7 +403,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
 
                         {/* Simple Table */}
                         <div className={classes.TablecardWithMargin}>
-                            <h4 className="px-4 font-semibold text-gray-800 mb-3">
+                            <h4 className="px-4 font-semibold text-blue-600 mb-3" style={titleFontStyle}>
                                 {safeTranslate('service.section3.performanceReport.content.section5.table.title', 'Performance Comparison Table')}
                             </h4>
                             <div className={classes.tableContainer}>
@@ -508,7 +514,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
 
                     {/* Section 6 */}
                     <section ref={section6Ref}>
-                        <h3 className={classes.sectionTitle}>
+                        <h3 className={classes.sectionTitle} style={titleFontStyle}>
                             <TitleWithReflection>
                                 {safeTranslate('service.section3.performanceReport.content.section6.title', 'Section 6 Title')}
                             </TitleWithReflection>
@@ -540,7 +546,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
 
                     {/* Section 7 */}
                     <section ref={section7Ref}>
-                        <h3 className={classes.sectionTitle}>
+                        <h3 className={classes.sectionTitle} style={titleFontStyle}>
                             <TitleWithReflection>
                                 {safeTranslate('service.section3.performanceReport.content.section7.title', 'Section 7 Title')}
                             </TitleWithReflection>
@@ -553,7 +559,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                         </p>
                         <div className={classes.grid2Col}>
                             <div className={classes.benefitCard}>
-                                <h4 className={classes.benefitTitle}>
+                                <h4 className={classes.benefitTitle} style={titleFontStyle}>
                                     {safeTranslate('service.section3.performanceReport.content.section7.benefits.design.title', 'Design Benefit Title')}
                                 </h4>
                                 <p className={classes.benefitText}>
@@ -561,7 +567,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                                 </p>
                             </div>
                             <div className={classes.benefitCard}>
-                                <h4 className={classes.benefitTitle}>
+                                <h4 className={classes.benefitTitle} style={titleFontStyle}>
                                     {safeTranslate('service.section3.performanceReport.content.section7.benefits.marketing.title', 'Marketing Benefit Title')}
                                 </h4>
                                 <p className={classes.benefitText}>
@@ -573,7 +579,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
 
                     {/* Section 8 */}
                     <section ref={section8Ref}>
-                        <h3 className={classes.sectionTitle}>
+                        <h3 className={classes.sectionTitle} style={titleFontStyle}>
                             <TitleWithReflection>
                                 {safeTranslate('service.section3.performanceReport.content.section8.title', 'Section 8 Title')}
                             </TitleWithReflection>
@@ -583,7 +589,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                         </p>
                         <div className={classes.grid3Col}>
                             <div className={classes.roundedCardSmall}>
-                                <h4 className={classes.benefitTitle}>
+                                <h4 className={classes.benefitTitle} style={titleFontStyle}>
                                     {safeTranslate('service.section3.performanceReport.content.section8.benefits.seo.title', 'SEO Benefit Title')}
                                 </h4>
                                 <p className={classes.benefitText}>
@@ -591,7 +597,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                                 </p>
                             </div>
                             <div className={classes.roundedCardSmall}>
-                                <h4 className={classes.benefitTitle}>
+                                <h4 className={classes.benefitTitle} style={titleFontStyle}>
                                     {safeTranslate('service.section3.performanceReport.content.section8.benefits.scalability.title', 'Scalability Benefit Title')}
                                 </h4>
                                 <p className={classes.benefitText}>
@@ -599,7 +605,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                                 </p>
                             </div>
                             <div className={classes.roundedCardSmall}>
-                                <h4 className={classes.benefitTitle}>
+                                <h4 className={classes.benefitTitle} style={titleFontStyle}>
                                     {safeTranslate('service.section3.performanceReport.content.section8.benefits.efficiency.title', 'Efficiency Benefit Title')}
                                 </h4>
                                 <p className={classes.benefitText}>
@@ -611,7 +617,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
 
                     {/* Section 9 */}
                     <section ref={section9Ref}>
-                        <h3 className={classes.sectionTitle}>
+                        <h3 className={classes.sectionTitle} style={titleFontStyle}>
                             <TitleWithReflection>
                                 {safeTranslate('service.section3.performanceReport.content.section9.title', 'Section 9 Title')}
                             </TitleWithReflection>
@@ -621,7 +627,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                         </p>
                         <div className={classes.grid3Col}>
                             <div className={classes.roundedCardSmall}>
-                                <h4 className={classes.benefitTitle}>
+                                <h4 className={classes.benefitTitle} style={titleFontStyle}>
                                     {safeTranslate('service.section3.performanceReport.content.section9.benefits.stressfree.title', 'Stress-Free Benefit Title')}
                                 </h4>
                                 <p className={classes.benefitText}>
@@ -629,7 +635,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                                 </p>
                             </div>
                             <div className={classes.roundedCardSmall}>
-                                <h4 className={classes.benefitTitle}>
+                                <h4 className={classes.benefitTitle} style={titleFontStyle}>
                                     {safeTranslate('service.section3.performanceReport.content.section9.benefits.immersion.title', 'Immersion Benefit Title')}
                                 </h4>
                                 <p className={classes.benefitText}>
@@ -637,7 +643,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                                 </p>
                             </div>
                             <div className={classes.roundedCardSmall}>
-                                <h4 className={classes.benefitTitle}>
+                                <h4 className={classes.benefitTitle} style={titleFontStyle}>
                                     {safeTranslate('service.section3.performanceReport.content.section9.benefits.trust.title', 'Trust Benefit Title')}
                                 </h4>
                                 <p className={classes.benefitText}>
@@ -649,7 +655,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
 
                     {/* Section 10 */}
                     <section ref={section10Ref} className={classes.section10Container}>
-                        <h3 className={classes.sectionTitle}>
+                        <h3 className={classes.sectionTitle} style={titleFontStyle}>
                             {safeTranslate('service.section3.performanceReport.content.section10.title', 'Section 10 Title')}
                         </h3>
                         <p className={classes.textGrayMargin}>
@@ -678,6 +684,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                                     onClose();
                                 }}
                                 className={classes.footerButton}
+                                style={titleFontStyle}
                             >
                                 {safeTranslate('service.section3.performanceReport.content.footer.askQuote', 'Ask Quote')}
                             </a>
@@ -685,6 +692,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                             <a
                                 href="/contact"
                                 className={classes.footerButtonContact}
+                                style={titleFontStyle}
                             >
                                 {safeTranslate('service.section3.performanceReport.content.footer.contactUs')}
                             </a>
@@ -694,6 +702,7 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                             <button
                                 onClick={onClose}
                                 className={classes.footerButtonClose}
+                                style={titleFontStyle}
                             >
                                 {safeTranslate('service.section3.performanceReport.content.footer.close')}
                             </button>

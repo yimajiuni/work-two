@@ -434,7 +434,7 @@ i18n
               title2: "Ecommerce websites",
               titleHighlight: "with Next.js & Shopify",
               yimajiuni: "Introducing Yimajiuni",
-              description: "Builds and polishes on Powerful architecture that achieves 30%+ sales increase through branding and high-speed loading. The functional things that are made of dazzling and twinkle things. To make the actions of 'buying' as enjoyable as possible.",
+              description: "Builds and polishes on Powerful architecture that achieves 30%+ sales increase through branding and high-speed processing. The functional things that are made of dazzling and twinkle things. To make the actions of 'buying' as enjoyable as possible.",
               cta: "Book a video consultation"
             },
             section2: {
@@ -1235,7 +1235,7 @@ i18n
               date: "June 2020 - Present",
               points: [
                 `Eコマース開発とWebグラフィックデザイナーとして楽天市場やShopify, WixなどのCMSを使用したオンラインストア更新業務からセール、キャンペーン時の販促ページデザイン、メールマガジン制作配信、
-                HTML/CSS/Javascriptによる自社公式ECサイトの制作にを担当。後に2022年にプログラミングの知見を拡大し、Vue,React,Next.js等の言語を習得。
+                HTML/CSS/Javascriptによる自社公式ECサイトの制作にを担当。後に2023年にプログラミングの知見を拡大し、Vue,React,Next.js等の言語を習得。
                 2024年には独立し、いまじゆうにを開始。アパレル企業を専門としてEC開発・改修とグラフィックデザイン業務に携わり、現在は強固な最新の言語を用いた
                 Webサイトの開発とブランディングのサービス、商品提案事業に携わっております。`,
               ],
@@ -2245,13 +2245,13 @@ export const skills = [
     imageUrl: git,
     name: "Git",
     type: "Version Control",
-    years: "1",
+    years: "3",
   },
   {
     imageUrl: github,
     name: "GitHub",
     type: "Version Control",
-    years: "1",
+    years: "3",
   },
   {
     imageUrl: html,
@@ -2311,25 +2311,25 @@ export const skills = [
     imageUrl: sass,
     name: "Sass",
     type: "Frontend",
-    years: "1",
+    years: "2",
   },
   {
     imageUrl: tailwindcss,
     name: "Tailwind CSS",
     type: "Frontend",
-    years: "1",
+    years: "2",
   },
   {
     imageUrl: bootstrap,
     name: "Bootstrap",
     type: "Frontend",
-    years: "2",
+    years: "3",
   },
   {
     imageUrl: jquery,
     name: "JQuery",
     type: "Frontend",
-    years: "2",
+    years: "4",
   },
   {
     imageUrl: illustrator,
@@ -2353,7 +2353,7 @@ export const skills = [
     imageUrl: figma,
     name: "Figma",
     type: "Design",
-    years: "2",
+    years: "3",
   },
   {
     imageUrl: n8n,

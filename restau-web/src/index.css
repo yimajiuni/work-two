@@ -1,17 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Sawarabi+Mincho&family=Cedarville+Cursive:wght@200;300;400;500;600;700&display=swap');
 
+@font-face {
+  font-family: "Termina Demi";
+  src: url("./assets/fonts/Termina-Demi.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body{
+  font-family: "Termina Demi", sans-serif;
 /*background-image: url('./assets/img/hero-l.jpg');*/
 }
 .font-body{
-    font-family: 'Poppins', sans-serif;
+    font-family: "Termina Demi", sans-serif;
     font-size: medium;
 }
 .font-hedding{
+    font-family: "Termina Demi", sans-serif;
+    font-weight: 600;
+}
+.font-logo{
     font-family: "Cedarville Cursive", cursive;
     font-weight: 400;
 }

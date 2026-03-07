@@ -1,5 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800;900&family=Crimson+Pro:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&family=Pacifico&family=Potta+One&display=swap");
 
+@font-face {
+  font-family: 'Utsukushi';
+  src: url('/fonts/UtsukushiFONT.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IrvinHeading';
+  src: url('/fonts/Irvin-Heading.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,6 +23,12 @@
 :root {
   --blue-rgb: 237 245 255;
   --green-rgb: 125 161 35;
+}
+
+/* Prevent horizontal scrollbar on mobile (overflow from fixed/min-width elements) */
+html,
+body {
+  overflow-x: hidden;
 }
 
 body {
@@ -104,6 +126,199 @@ body:has(.card[data-color="green"]:hover) {
 
   .btn {
     @apply text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center;
+  }
+
+  /* ============================================
+     OCTAGON BUTTON SYSTEM
+     Flexible, reusable octagon-shaped buttons
+     Based on pseudo-element method - works best with solid colors
+     For gradients, use octagon-gradient variant (uses clip-path)
+     ============================================ */
+
+  /* Base octagon button - fully customizable via CSS variables */
+  .octagon {
+    @apply relative border-none cursor-pointer;
+
+    /* CSS Custom Properties - can be overridden per button */
+    --octagon-color: #3b82f6;
+    /* Solid color for main background */
+    --octagon-text: #ffffff;
+    --octagon-corner-size: 10px;
+    --octagon-offset: -10px;
+
+    /* Default styling */
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    color: var(--octagon-text);
+    background-color: var(--octagon-color);
+    font-family: inherit;
+    min-width: fit-content;
+  }
+
+  /* Top corner - creates the top octagon edge */
+  .octagon::before {
+    content: "";
+    width: 100%;
+    height: 0;
+    position: absolute;
+    top: var(--octagon-offset);
+    left: 0;
+    border-bottom: var(--octagon-corner-size) solid var(--octagon-color);
+    border-left: var(--octagon-corner-size) solid transparent;
+    border-right: var(--octagon-corner-size) solid transparent;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+
+  /* Bottom corner - creates the bottom octagon edge */
+  .octagon::after {
+    content: "";
+    width: 100%;
+    height: 0;
+    position: absolute;
+    bottom: var(--octagon-offset);
+    left: 0;
+    border-top: var(--octagon-corner-size) solid var(--octagon-color);
+    border-left: var(--octagon-corner-size) solid transparent;
+    border-right: var(--octagon-corner-size) solid transparent;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+
+  /* ============================================
+     GRADIENT VARIANT - Uses clip-path for better gradient support
+     Use this for gradient buttons instead of the base .octagon
+     ============================================ */
+  .octagon-gradient {
+    @apply relative border-none cursor-pointer;
+
+    --octagon-text: #ffffff;
+    --octagon-corner-size: 10px;
+
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    color: var(--octagon-text);
+    font-family: inherit;
+    min-width: fit-content;
+
+    /* Use clip-path for gradients */
+    clip-path: polygon(var(--octagon-corner-size) 0%,
+        calc(100% - var(--octagon-corner-size)) 0%,
+        100% var(--octagon-corner-size),
+        100% calc(100% - var(--octagon-corner-size)),
+        calc(100% - var(--octagon-corner-size)) 100%,
+        var(--octagon-corner-size) 100%,
+        0% calc(100% - var(--octagon-corner-size)),
+        0% var(--octagon-corner-size));
+  }
+
+  /* ============================================
+     COLOR VARIANTS - Apply these classes for different colors
+     ============================================ */
+
+  /* Blue solid - matches your project blue */
+  .octagon-blue {
+    --octagon-color: #3b82f6;
+    --octagon-text: #ffffff;
+  }
+
+  /* Blue gradient variant - matches current project buttons (.btn style) */
+  .octagon-blue-gradient {
+    --octagon-text: #ffffff;
+    --octagon-corner-size: 10px;
+    background: linear-gradient(to right, #2b77e7, #1E88E5);
+    /*background: linear-gradient(to right, #00c6ff, #0072ff);*/
+  }
+
+  /* White/transparent variant for navigation buttons */
+  .octagon-white {
+    --octagon-color: rgba(255, 255, 255, 0.2);
+    --octagon-text: #3b82f6;
+    backdrop-filter: blur(4px);
+  }
+
+  /* Active state for navigation */
+  .octagon-white-active {
+    --octagon-color: #3b82f6;
+    --octagon-text: #ffffff;
+  }
+
+  /* Pink variant */
+  .octagon-pink {
+    --octagon-color: #ec4899;
+    --octagon-text: #ffffff;
+  }
+
+  /* ============================================
+     SIZE VARIANTS - Apply these for different sizes
+     ============================================ */
+
+  .octagon-sm {
+    --octagon-corner-size: 8px;
+    --octagon-offset: -8px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .octagon-md {
+    --octagon-corner-size: 10px;
+    --octagon-offset: -10px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .octagon-lg {
+    --octagon-corner-size: 12px;
+    --octagon-offset: -12px;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+
+  /* ============================================
+     HOVER & INTERACTION STATES
+     ============================================ */
+
+  .octagon:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+  }
+
+  .octagon-blue-gradient:hover {
+    box-shadow: 0 10px 25px rgba(0, 198, 255, 0.3), 0 0 30px rgba(0, 114, 255, 0.3);
+  }
+
+  .octagon-white:hover {
+    --octagon-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+  }
+
+  .octagon:active {
+    transform: scale(0.98);
+  }
+
+  .octagon:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .octagon:focus {
+    outline: 2px solid rgba(59, 130, 246, 0.5);
+    outline-offset: 2px;
+  }
+
+  /* Ensure box-sizing for all elements */
+  .octagon *,
+  .octagon::before,
+  .octagon::after {
+    box-sizing: border-box;
   }
 
   .header {

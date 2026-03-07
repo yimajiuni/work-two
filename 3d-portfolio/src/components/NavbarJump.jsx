@@ -1,60 +1,61 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import LanguageSelector from "../components/LanguageSelector";
 import { Link as ScrollLink } from "react-scroll";
 import * as Scroll from "react-scroll";
 import { FaGlobe } from "react-icons/fa";
 
-const NavbarJump = () => {
+const NavbarJump = ({ onMenuStateChange }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const path = useLocation().pathname;
   const location = path.split("/")[1];
   const navigate = useNavigate();
   const scroller = Scroll.scroller;
 
+  // Route map: maps section selectors to their correct routes
+  // This ensures we navigate to the right page before scrolling
+  const routeMap = {
+    about: "/about",
+    works: "/works",
+    contact: "/contact",
+  };
+
+  // Fixed header offset to account for the fixed navigation bar
+  const HEADER_OFFSET = -5; // Adjust based on your header height
+
   const goToPageAndScroll = async (selector) => {
     try {
-      // If we're already on the home page, just scroll to the section
-      if (path === "/" || path === "") {
-        // Wait a bit for elements to be rendered
-        setTimeout(async () => {
-          try {
-            const targetElement = document.getElementById(selector);
-            if (targetElement) {
-              await scroller.scrollTo(selector, {
-                duration: 500,
-                smooth: true,
-                offset: 10,
-                spy: true,
-              });
-            } else {
-              console.warn(`Target element with id "${selector}" not found`);
-            }
-          } catch (scrollError) {
-            console.warn(`Scroll error for selector "${selector}":`, scrollError);
-          }
-        }, 100);
+      // Get the target route for this selector
+      const targetRoute = routeMap[selector] || "/";
+
+      // Check if we need to navigate to a different page
+      const needsNavigation = path !== targetRoute;
+
+      if (needsNavigation) {
+        // Navigate to the correct page first
+        await navigate(targetRoute);
+        // Wait for navigation and DOM to be ready
+        await new Promise((resolve) => setTimeout(resolve, 400));
       } else {
-        // Navigate to home page first, then scroll
-        await navigate("/");
-        // Wait for navigation and rendering
-        setTimeout(async () => {
-          try {
-            const targetElement = document.getElementById(selector);
-            if (targetElement) {
-              await scroller.scrollTo(selector, {
-                duration: 500,
-                smooth: true,
-                offset: 10,
-                spy: true,
-              });
-            } else {
-              console.warn(`Target element with id "${selector}" not found`);
-            }
-          } catch (scrollError) {
-            console.warn(`Scroll error for selector "${selector}":`, scrollError);
-          }
-        }, 300);
+        // Already on the correct page, just wait a bit for elements to be ready
+        await new Promise((resolve) => setTimeout(resolve, 100));
+      }
+
+      // Now scroll to the target element
+      try {
+        const targetElement = document.getElementById(selector);
+        if (targetElement) {
+          await scroller.scrollTo(selector, {
+            duration: 500,
+            smooth: true,
+            offset: HEADER_OFFSET, // Account for fixed header
+            spy: true,
+          });
+        } else {
+          console.warn(`Target element with id "${selector}" not found on ${targetRoute}`);
+        }
+      } catch (scrollError) {
+        console.warn(`Scroll error for selector "${selector}":`, scrollError);
       }
     } catch (navError) {
       console.warn(`Navigation error:`, navError);
@@ -66,12 +67,16 @@ const NavbarJump = () => {
   };
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prev) => !prev);
   };
 
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
+  useEffect(() => {
+    onMenuStateChange?.(isMenuOpen);
+  }, [isMenuOpen, onMenuStateChange]);
 
   return (
     <header className="header gap-7" id="navigation">
@@ -97,14 +102,20 @@ const NavbarJump = () => {
           {location !== "contact" ? (
             <>
               <NavLink
-                onClick={() => goToPageAndScroll("about")}
+                onClick={(e) => {
+                  e.preventDefault();
+                  goToPageAndScroll("about");
+                }}
                 className="cursor-pointer hover:text-blue-400 transition-colors"
                 to="about"
               >
                 About
               </NavLink>
               <NavLink
-                onClick={() => goToPageAndScroll("works")}
+                onClick={(e) => {
+                  e.preventDefault();
+                  goToPageAndScroll("works");
+                }}
                 className="cursor-pointer hover:text-blue-400 transition-colors"
                 to="works"
               >
@@ -113,7 +124,10 @@ const NavbarJump = () => {
 
               <NavLink
                 to="/contact"
-                onClick={() => goToPageAndScroll("contact")}
+                onClick={(e) => {
+                  e.preventDefault();
+                  goToPageAndScroll("contact");
+                }}
                 className="cursor-pointer hover:text-blue-400 transition-colors"
               >
                 Contact
@@ -122,14 +136,20 @@ const NavbarJump = () => {
           ) : (
             <>
               <NavLink
-                onClick={() => goToPageAndScroll("about")}
+                onClick={(e) => {
+                  e.preventDefault();
+                  goToPageAndScroll("about");
+                }}
                 className="cursor-pointer hover:text-blue-400 transition-colors"
                 to="about"
               >
                 About
               </NavLink>
               <NavLink
-                onClick={() => goToPageAndScroll("works")}
+                onClick={(e) => {
+                  e.preventDefault();
+                  goToPageAndScroll("works");
+                }}
                 className="cursor-pointer hover:text-blue-400 transition-colors"
                 to="works"
               >
@@ -169,7 +189,8 @@ const NavbarJump = () => {
                 </NavLink>
 
                 <NavLink
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
                     goToPageAndScroll("about");
                     closeMenu();
                   }}
@@ -179,7 +200,8 @@ const NavbarJump = () => {
                   About
                 </NavLink>
                 <NavLink
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
                     goToPageAndScroll("works");
                     closeMenu();
                   }}
@@ -190,11 +212,17 @@ const NavbarJump = () => {
                 </NavLink>
                 <NavLink
                   to="/contact"
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
                     goToPageAndScroll("contact");
                     closeMenu();
                   }}
-                  className="cursor-pointer hover:text-blue-400 transition-colors py-2"
+                  className={({ isActive }) =>
+                    `cursor-pointer transition-colors py-2 ${isActive
+                      ? "text-blue-500 active"
+                      : "text-white hover:text-blue-400"
+                    }`
+                  }
                 >
                   Contact
                 </NavLink>
@@ -210,7 +238,8 @@ const NavbarJump = () => {
                   Services
                 </NavLink>
                 <NavLink
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
                     goToPageAndScroll("about");
                     closeMenu();
                   }}
@@ -220,7 +249,8 @@ const NavbarJump = () => {
                   About
                 </NavLink>
                 <NavLink
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
                     goToPageAndScroll("works");
                     closeMenu();
                   }}
@@ -232,7 +262,8 @@ const NavbarJump = () => {
                 <NavLink
                   to="/contact"
                   className={({ isActive }) =>
-                    isActive ? "text-blue-500 py-2" : "text-white hover:text-blue-400 transition-colors py-2"
+                    `cursor-pointer transition-colors py-2 ${isActive ? "text-blue-500 active" : "text-white hover:text-blue-400"
+                    }`
                   }
                   onClick={closeMenu}
                 >

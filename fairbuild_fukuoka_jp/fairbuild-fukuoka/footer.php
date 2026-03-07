@@ -37,7 +37,7 @@
         <div class="banner-content openPopup">
             <div class="banner-main">
                 <img class="banner-qr pc_none" src="<?php echo get_template_directory_uri(); ?>/assets/img/line-icon.png" />
-                <p>LINE無料見積もり</p>
+                <p>LINE無料見積もり好評受付中</p>
                 <img class="banner-qr sp_none" src="<?php echo get_template_directory_uri(); ?>/assets/img/line-icon.png" />
             </div>
         </div>
