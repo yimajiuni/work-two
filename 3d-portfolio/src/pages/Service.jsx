@@ -16,6 +16,7 @@ const QAQuote = lazy(() => import("../components/QAQuote"));
 const PerformanceReport = lazy(() => import("../components/PerformanceReport"));
 import yimajiuniPark from '../assets/images/yimajiuni-park.webp';
 import nextEcomShopify from '../assets/images/webmock1.webp';
+import uzuflower from '../assets/images/uzuflower.webp';
 import waPtnDia from '../assets/images/wa-ptn-dia.webp';
 import waPtnWave from '../assets/images/wa-ptn-wave.webp';
 import Footer from "../components/Footer";
@@ -29,7 +30,7 @@ const classes = {
     section1: "rounded-[20px] bg-gradient-to-t from-pink-400 to-pink-300/70 pt-10 mt-0 sm:mt-10 mb-20 flex items-center justify-center pb-20 px-4",
     section2: "rounded-[20px] bg-gradient-to-b from-pink-400 to-pink-300/70 pt-10 mt-10 mb-20 flex items-center py-20",
     section3: "rounded-[20px] bg-gradient-to-b from-pink-400 to-pink-300/70 pt-10 mt-10 mb-20 flex items-center py-20",
-    section4: "rounded-[20px] bg-gradient-to-t from-pink-400 to-pink-300/70 pt-10 mt-10 mb-10 flex items-center py-20",
+    section4: "rounded-[20px] bg-gradient-to-t from-pink-400 to-pink-300/70 pt-10 mt-10 mb-10 flex items-center py-20 overflow-hidden",
 
     // Section content
     sectionContent: "mx-8 max-w-6xl",
@@ -710,131 +711,156 @@ const Service = () => {
                 </section>
 
                 {/* Section 3: Service Details */}
-                <section id="section-3" ref={section3Ref} className={classes.section3}>
-                    <div className={classes.sectionContent}>
-                        <div className={classes.sectionTextCenter}>
-                            <h2
+                <section
+                    id="section-3"
+                    ref={section3Ref}
+                    className={`${classes.section3} relative overflow-hidden`}
+                >
+                    {/* Centered decorative background flower over the pink gradient 
+                    <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-40">
+                        <img
+                            src={uzuflower}
+                            alt="Fashion themed illustration"
+                            className="max-w-[70%] max-h-[70%] object-cover"
+                            loading="lazy"
+                        />
+                    </div>
+*/}
+                    <div className="relative z-10">
+                        <div className={classes.sectionContent}>
+                            <div className={classes.sectionTextCenter}>
+                                <h2
 
-                                className={classes.sectionTitle}
-                            >
-                                {t('service.section3.title')}
-                            </h2>
-                            <p
-
-                                className={classes.description}
-                            >
-                                {t('service.section3.description')}
-                            </p>
-                        </div>
-
-                        <div className="grid md:grid-cols-3 gap-8 mb-12">
-                            <div
-                                className={classes.techCard}
-                            >
-                                <h3 className={classes.techTitle}>{t('service.section3.technologies.nextjs.title')}</h3>
-                                <p className={classes.techDescription}>
-                                    {t('service.section3.technologies.nextjs.description')}
-                                </p>
-                            </div>
-                            <div
-                                className={classes.techCard}
-                            >
-                                <h3 className={classes.techTitle}>{t('service.section3.technologies.shopify.title')}</h3>
-                                <p className={classes.techDescription}>
-                                    {t('service.section3.technologies.shopify.description')}
-                                </p>
-                            </div>
-                            <div
-                                className={classes.techCard}
-                            >
-                                <h3 className={classes.techTitle}>{t('service.section3.technologies.branding.title')}</h3>
-                                <p className={classes.techDescription}>
-                                    {t('service.section3.technologies.branding.description')}
-                                </p>
-                            </div>
-                        </div>
-
-                        <div
-                            ref={performanceSectionRef}
-                            className={classes.performanceContainer}
-                        >
-                            <h3 className={classes.performanceTitle}>{t('service.section3.performance.title')}</h3>
-                            <h4 className={classes.performanceSubtitle}>{t('service.section3.performance.subtitle')}</h4>
-                            <div className={classes.performanceGrid}>
-                                <AnimatedMetric
-                                    label={t('service.section3.performance.labels.imageSpeed')}
-                                    labelKey="imageSpeed"
-                                    startValue="1.2sec"
-                                    endValue="0.5sec"
-                                    duration={4000}
-                                    delay={0}
-                                    shouldStart={isPerformanceSectionVisible}
-                                />
-                                <AnimatedMetric
-                                    label={t('service.section3.performance.labels.conversionRate')}
-                                    labelKey="conversionRate"
-                                    startValue="1.9%"
-                                    endValue="1.3%"
-                                    duration={4000}
-                                    delay={300}
-                                    shouldStart={isPerformanceSectionVisible}
-                                />
-                                <AnimatedMetric
-                                    label={t('service.section3.performance.labels.mobileBounce')}
-                                    labelKey="mobileBounce"
-                                    startValue="65%"
-                                    endValue="20%"
-                                    duration={4000}
-                                    delay={600}
-                                    shouldStart={isPerformanceSectionVisible}
-                                />
-                            </div>
-                            <div className={classes.performanceGrid}>
-                                <AnimatedMetric
-                                    label={t('service.section3.performance.labels.organicTraffic')}
-                                    labelKey="organicTraffic"
-                                    startValue="rank 22"
-                                    endValue="rank 15"
-                                    duration={4000}
-                                    delay={900}
-                                    shouldStart={isPerformanceSectionVisible}
-                                />
-                                <AnimatedMetric
-                                    label={t('service.section3.performance.labels.operationHours')}
-                                    labelKey="operationHours"
-                                    startValue="25 hours"
-                                    endValue="15 hours"
-                                    duration={4000}
-                                    delay={1200}
-                                    shouldStart={isPerformanceSectionVisible}
-                                />
-                                <AnimatedMetric
-                                    label={t('service.section3.performance.labels.serverCost')}
-                                    labelKey="serverCost"
-                                    startValue={i18n.language === 'jp' ? "43万円" : "$4000"}
-                                    endValue={i18n.language === 'jp' ? "20万円" : "$2000"}
-                                    duration={4000}
-                                    delay={1500}
-                                    shouldStart={isPerformanceSectionVisible}
-                                />
-                            </div>
-
-                            <div className={classes.performanceButtonContainer}>
-                                <button
-                                    onClick={() => setIsPerformanceReportOpen(true)}
-                                    className={classes.performanceButton}
+                                    className={classes.sectionTitle}
                                 >
-                                    {t('service.section3.performance.button')}
-                                </button>
-                            </div>
-                        </div>
+                                    {t('service.section3.title')}
+                                </h2>
+                                <p
 
+                                    className={classes.description}
+                                >
+                                    {t('service.section3.description')}
+                                </p>
+                            </div>
+
+                            <div className="grid md:grid-cols-3 gap-8 mb-12">
+                                <div
+                                    className={classes.techCard}
+                                >
+                                    <h3 className={classes.techTitle}>{t('service.section3.technologies.nextjs.title')}</h3>
+                                    <p className={classes.techDescription}>
+                                        {t('service.section3.technologies.nextjs.description')}
+                                    </p>
+                                </div>
+                                <div
+                                    className={classes.techCard}
+                                >
+                                    <h3 className={classes.techTitle}>{t('service.section3.technologies.shopify.title')}</h3>
+                                    <p className={classes.techDescription}>
+                                        {t('service.section3.technologies.shopify.description')}
+                                    </p>
+                                </div>
+                                <div
+                                    className={classes.techCard}
+                                >
+                                    <h3 className={classes.techTitle}>{t('service.section3.technologies.branding.title')}</h3>
+                                    <p className={classes.techDescription}>
+                                        {t('service.section3.technologies.branding.description')}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div
+                                ref={performanceSectionRef}
+                                className={classes.performanceContainer}
+                            >
+                                <h3 className={classes.performanceTitle}>{t('service.section3.performance.title')}</h3>
+                                <h4 className={classes.performanceSubtitle}>{t('service.section3.performance.subtitle')}</h4>
+                                <div className={classes.performanceGrid}>
+                                    <AnimatedMetric
+                                        label={t('service.section3.performance.labels.imageSpeed')}
+                                        labelKey="imageSpeed"
+                                        startValue="1.2sec"
+                                        endValue="0.5sec"
+                                        duration={4000}
+                                        delay={0}
+                                        shouldStart={isPerformanceSectionVisible}
+                                    />
+                                    <AnimatedMetric
+                                        label={t('service.section3.performance.labels.conversionRate')}
+                                        labelKey="conversionRate"
+                                        startValue="1.9%"
+                                        endValue="1.3%"
+                                        duration={4000}
+                                        delay={300}
+                                        shouldStart={isPerformanceSectionVisible}
+                                    />
+                                    <AnimatedMetric
+                                        label={t('service.section3.performance.labels.mobileBounce')}
+                                        labelKey="mobileBounce"
+                                        startValue="65%"
+                                        endValue="20%"
+                                        duration={4000}
+                                        delay={600}
+                                        shouldStart={isPerformanceSectionVisible}
+                                    />
+                                </div>
+                                <div className={classes.performanceGrid}>
+                                    <AnimatedMetric
+                                        label={t('service.section3.performance.labels.organicTraffic')}
+                                        labelKey="organicTraffic"
+                                        startValue="rank 22"
+                                        endValue="rank 15"
+                                        duration={4000}
+                                        delay={900}
+                                        shouldStart={isPerformanceSectionVisible}
+                                    />
+                                    <AnimatedMetric
+                                        label={t('service.section3.performance.labels.operationHours')}
+                                        labelKey="operationHours"
+                                        startValue="25 hours"
+                                        endValue="15 hours"
+                                        duration={4000}
+                                        delay={1200}
+                                        shouldStart={isPerformanceSectionVisible}
+                                    />
+                                    <AnimatedMetric
+                                        label={t('service.section3.performance.labels.serverCost')}
+                                        labelKey="serverCost"
+                                        startValue={i18n.language === 'jp' ? "43万円" : "$4000"}
+                                        endValue={i18n.language === 'jp' ? "20万円" : "$2000"}
+                                        duration={4000}
+                                        delay={1500}
+                                        shouldStart={isPerformanceSectionVisible}
+                                    />
+                                </div>
+
+                                <div className={classes.performanceButtonContainer}>
+                                    <button
+                                        onClick={() => setIsPerformanceReportOpen(true)}
+                                        className={classes.performanceButton}
+                                    >
+                                        {t('service.section3.performance.button')}
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </section >
 
                 {/* Section 4: Quotation App */}
                 < section id="section-4" ref={section4Ref} className={classes.section4} >
                     <div className={classes.sectionContent4}>
+                        {/* Decorative background flower over the pink gradient */}
+                        <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-40">
+                            <img
+                                src={uzuflower}
+                                alt="Fashion themed illustration"
+                                className="max-w-[120%] max-h-[120%] translate-y-[10%] translate-x-[-25%] md:max-w-80%] md:max-h-[80%] md:translate-y-[10%] md:translate-x-[-113%] object-cover"
+                                loading="lazy"
+                            />
+                        </div>
                         <div className={classes.sectionTextCenter}>
                             <h2
 
