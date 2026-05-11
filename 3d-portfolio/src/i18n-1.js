@@ -455,6 +455,58 @@ i18n
                 title: "Live Demo",
                 description: "Next.js x Shopify solution in One stop action",
                 button: "Visit Live Demo"
+              },
+              lcp: {
+                imageAlt: "Illustration highlighting LCP (Largest Contentful Paint) optimization for the storefront hero",
+                description:
+                  "Optimize the main content to reduce user abandonment and improve CVR.",
+                description2: "LCP core improvement pack From $500 / 10h scope",
+                button: "Book Consultation",
+                modal: {
+                  title: "LCP improvement package",
+                  close: "Close",
+                  closeAria: "Close dialog",
+                  labels: {
+                    price: "Price",
+                    scope: "Scope",
+                    content: "What is included"
+                  },
+                  price: "From $500 / 10 hours",
+                  scope:
+                    "Hero and above-the-fold: largest image or video LCP candidate, font loading, critical CSS, and third-party script impact review for a Next.js + Shopify storefront.",
+                  content:
+                    "Measurement setup guidance, prioritized fix list, before/after notes on Core Web Vitals (LCP focus), and handoff for your team or follow-on implementation blocks.",
+                  thumbs: {
+                    left: {
+                      label: "BEFORE",
+                      alt: "Next.js and Shopify headless demo site thumbnail",
+                      url: "https://lcp-improv-before.vercel.app/products/boho-mandala-art-v2"
+                    },
+                    right: {
+                      label: "AFTER",
+                      alt: "Secondary portfolio thumbnail",
+                      url: "https://lcp-improv-after.vercel.app/products/boho-mandala-art-v2"
+                    }
+                  },
+                  orderVia: "Order via",
+                  marketplaces: {
+                    upwork: {
+                      label: "Upwork",
+                      url: "https://www.upwork.com/freelancers/~YOUR_UPWORK_ID",
+                      ariaLabel: "Upwork — open freelancer profile"
+                    },
+                    contra: {
+                      label: "Contra",
+                      url: "https://contra.com/YOUR_CONTRA_HANDLE",
+                      ariaLabel: "Contra — open profile"
+                    },
+                    malt: {
+                      label: "malt",
+                      url: "https://www.malt.com/profile/YOUR_MALT_PROFILE",
+                      ariaLabel: "malt — open profile"
+                    }
+                  }
+                }
               }
             },
             section3: {
@@ -1533,6 +1585,58 @@ i18n
                 title: "ライブデモ",
                 description: "Next.js × Shopify × ブランディングをワンストップで。",
                 button: "実際の動作を体験"
+              },
+              lcp: {
+                imageAlt: "ファーストビューとLCP（最大コンテンツ表示）を改善するイメージ",
+                description:
+                  "主要コンテンツの最適化で、ユーザー離脱を減らしCVR改善へ。",
+                description2: "LCP最適化パッケージ $500／10hより",
+                button: "改善を相談",
+                modal: {
+                  title: "LCP改善パッケージの概要",
+                  close: "閉じる",
+                  closeAria: "ダイアログを閉じる",
+                  labels: {
+                    price: "価格",
+                    scope: "範囲",
+                    content: "内容"
+                  },
+                  price: "$500／10時間より",
+                  scope:
+                    "ファーストビュー／ヒーロー周辺：LCP候補となる最大画像・動画、フォント読み込み、クリティカルCSS、サードパーティ計測の影響を、Next.js × Shopify の店舗前提で整理します。",
+                  content:
+                    "計測の立て方、優先度付きの改善リスト、Core Web Vitals（LCP中心）の前後メモ、社内実装または追加依頼への引き継ぎまでを想定した内容です。",
+                  thumbs: {
+                    left: {
+                      label: "BEFORE",
+                      alt: "Next.js × Shopify デモサイトのサムネイル",
+                      url: "https://lcp-improv-before.vercel.app/products/boho-mandala-art-v2"
+                    },
+                    right: {
+                      label: "AFTER",
+                      alt: "参考用のサムネイル画像",
+                      url: "https://lcp-improv-after.vercel.app/products/boho-mandala-art-v2"
+                    }
+                  },
+                  orderVia: "ご依頼はこちらから",
+                  marketplaces: {
+                    upwork: {
+                      label: "Upwork",
+                      url: "https://www.upwork.com/freelancers/~YOUR_UPWORK_ID",
+                      ariaLabel: "Upworkのプロフィールを開く"
+                    },
+                    contra: {
+                      label: "Contra",
+                      url: "https://contra.com/YOUR_CONTRA_HANDLE",
+                      ariaLabel: "Contraのプロフィールを開く"
+                    },
+                    malt: {
+                      label: "malt",
+                      url: "https://www.malt.com/profile/YOUR_MALT_PROFILE",
+                      ariaLabel: "maltのプロフィールを開く"
+                    }
+                  }
+                }
               }
             },
             section3: {

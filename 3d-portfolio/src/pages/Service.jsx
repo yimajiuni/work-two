@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef, Suspense, lazy } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SEO from "../components/SEO";
 import AnimatedMetric from "../components/AnimatedMetric";
 import i18n from "i18next";
+import lcpPO from '../assets/images/lcp.webp';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -14,6 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
 // Lazy load heavy components to reduce initial bundle size
 const QAQuote = lazy(() => import("../components/QAQuote"));
 const PerformanceReport = lazy(() => import("../components/PerformanceReport"));
+const LcpImprovement = lazy(() => import("../components/LcpImprovement"));
 import yimajiuniPark from '../assets/images/yimajiuni-park.webp';
 import nextEcomShopify from '../assets/images/webmock1.webp';
 import uzuflower from '../assets/images/uzuflower.webp';
@@ -115,6 +117,29 @@ const Service = () => {
     const [sectionOrder, setSectionOrder] = useState([1, 2, 3, 4]); // Track current visual order of sections
     const [isQAQuoteOpen, setIsQAQuoteOpen] = useState(false); // Q&A form popup state
     const [isPerformanceReportOpen, setIsPerformanceReportOpen] = useState(false); // Performance report popup state
+    /** LCP modal: URL query `?lcp=improvement` (shareable / back button closes) */
+    const [searchParams, setSearchParams] = useSearchParams();
+    const isLcpImprovementOpen = searchParams.get("lcp") === "improvement";
+    const openLcpImprovementModal = () => {
+        setSearchParams(
+            (prev) => {
+                const next = new URLSearchParams(prev);
+                next.set("lcp", "improvement");
+                return next;
+            },
+            { replace: false }
+        );
+    };
+    const closeLcpImprovementModal = () => {
+        setSearchParams(
+            (prev) => {
+                const next = new URLSearchParams(prev);
+                next.delete("lcp");
+                return next;
+            },
+            { replace: true }
+        );
+    };
     const { t } = useTranslation();
 
     // 📍 REFS: Create references to DOM elements for GSAP animations
@@ -654,28 +679,74 @@ const Service = () => {
                 <section id="section-2" ref={section2Ref} className={classes.section2}>
                     <div className={classes.sectionContent}>
                         <div className={classes.sectionTextCenter}>
-                            <div>
-                                <h2
+                            <div className="flex flex-col gap-10">
+                                {/* Existing content: main image + copy + CTA */}
+                                <div>
+                                    <h2 className={classes.subtitle}>
+                                        {t('service.section2.title')}
+                                    </h2>
+                                    <span className={classes.subtitleHighlight}>
+                                        {t('service.section2.titleHighlight')}
+                                    </span>
 
-                                    className={classes.subtitle}
-                                >
-                                    {t('service.section2.title')}
-                                </h2>
-                                <span
+                                    <div className="w-full rounded-lg mb-6">
+                                        <img
+                                            src={nextEcomShopify}
+                                            alt="Next.js E-commerce Shopify Demo Site"
+                                            className={classes.imageHover}
+                                            loading="lazy"
+                                            width="800"
+                                            height="400"
+                                        />
+                                    </div>
 
-                                    className={classes.subtitleHighlight}
-                                >
-                                    {t('service.section2.titleHighlight')}
-                                </span>
-                                <div className="w-full rounded-lg mb-6 ">
-                                    <img
-                                        src={nextEcomShopify}
-                                        alt="Next.js E-commerce Shopify Demo Site"
-                                        className={classes.imageHover}
-                                        loading="lazy"
-                                        width="800"
-                                        height="400"
-                                    />
+                                    <div className={classes.cardFlex}>
+                                        <h3 className="text-2xl font-bold text-white mb-4">
+                                            {t('service.section2.demo.description')}
+                                        </h3>
+
+                                        <a
+                                            href="https://next-shopify.yimajiuni.com"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={classes.demoButton}
+                                        >
+                                            {t('service.section2.demo.button')}
+                                        </a>
+                                    </div>
+                                </div>
+
+                                {/* bottom content: 2-column layout (stacks on mobile) */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                                    {/* Left: Image (column-sized) */}
+                                    <div className="w-full rounded-lg">
+                                        <img
+                                            src={lcpPO}
+                                            alt={t('service.section2.lcp.imageAlt')}
+                                            className="w-full h-auto max-h-[420px] object-cover rounded-lg hover:scale-[1.02] hover:shadow-pink-400/30 transition-transform duration-300"
+                                            loading="lazy"
+                                            width="800"
+                                            height="400"
+                                        />
+                                    </div>
+
+                                    {/* Right: Description + CTA */}
+                                    <div className={classes.cardFlex}>
+                                        <h3 className="text-2xl font-bold text-white mb-4">
+                                            {t('service.section2.lcp.description')}
+                                        </h3>
+                                        <p className="text-lg text-white mb-4">
+                                            {t('service.section2.lcp.description2')}
+                                        </p>
+
+                                        <button
+                                            type="button"
+                                            onClick={openLcpImprovementModal}
+                                            className={classes.demoButton}
+                                        >
+                                            {t('service.section2.lcp.button')}
+                                        </button>
+                                    </div>
                                 </div>
 
                                 {/*}
@@ -690,24 +761,10 @@ const Service = () => {
                                     ))}
                                 </ul>
                             </div>*/}
-                                <div
-
-                                    className={classes.cardFlex}
-                                >
-                                    <h3 className="text-2xl font-bold text-white mb-4">{t('service.section2.demo.description')}</h3>
-
-                                    <a
-                                        href="https://next-shopify.yimajiuni.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={classes.demoButton}
-                                    >
-                                        {t('service.section2.demo.button')}
-                                    </a>
-                                </div>
                             </div>
                         </div>
                     </div>
+                    {/*todo: add 2 column of images and text+cta button using the resources that used in the main part of section 2*/}
                 </section>
 
                 {/* Section 3: Service Details */}
@@ -852,7 +909,7 @@ const Service = () => {
                 {/* Section 4: Quotation App */}
                 < section id="section-4" ref={section4Ref} className={classes.section4} >
                     <div className={classes.sectionContent4}>
-                        {/* Decorative background flower over the pink gradient */}
+                        {/* Decorative background flower over the pink gradient 
                         <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-40">
                             <img
                                 src={uzuflower}
@@ -860,7 +917,8 @@ const Service = () => {
                                 className="max-w-[120%] max-h-[120%] translate-y-[10%] translate-x-[-25%] md:max-w-80%] md:max-h-[80%] md:translate-y-[10%] md:translate-x-[-113%] object-cover"
                                 loading="lazy"
                             />
-                        </div>
+                        </div>*
+                        */}
                         <div className={classes.sectionTextCenter}>
                             <h2
 
@@ -942,6 +1000,13 @@ const Service = () => {
                     <PerformanceReport
                         isOpen={isPerformanceReportOpen}
                         onClose={() => setIsPerformanceReportOpen(false)}
+                    />
+                </Suspense>
+
+                <Suspense fallback={<div className="fixed inset-0 bg-white/10 backdrop-blur-sm z-50 flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div></div>}>
+                    <LcpImprovement
+                        isOpen={isLcpImprovementOpen}
+                        onClose={closeLcpImprovementModal}
                     />
                 </Suspense>
 
