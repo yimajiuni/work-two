@@ -459,8 +459,8 @@ i18n
               lcp: {
                 imageAlt: "Illustration highlighting LCP (Largest Contentful Paint) optimization for the storefront hero",
                 description:
-                  "Optimize the main content to reduce user abandonment and improve CVR.",
-                description2: "LCP core improvement pack From $500 / 10h scope",
+                  "Is your website too slow? LCP core improvement pack From $500 / 10h scope.",
+                description2: "Optimize the main content to reduce user abandonment and improve CVR.",
                 button: "Book Consultation",
                 modal: {
                   title: "LCP improvement package",
@@ -469,7 +469,7 @@ i18n
                   labels: {
                     price: "Price",
                     scope: "Scope",
-                    content: "What is included"
+                    content: "What's included"
                   },
                   price: "From $500 / 10 hours",
                   scope:
@@ -1589,8 +1589,8 @@ i18n
               lcp: {
                 imageAlt: "ファーストビューとLCP（最大コンテンツ表示）を改善するイメージ",
                 description:
-                  "主要コンテンツの最適化で、ユーザー離脱を減らしCVR改善へ。",
-                description2: "LCP最適化パッケージ $500／10hより",
+                  "表示が遅い？LCP最適化パッケージ $500／10hより",
+                description2: "最大コンテンツ表示（LCP）の最適化で、ユーザー離脱を減らしCVR改善へ。",
                 button: "改善を相談",
                 modal: {
                   title: "LCP改善パッケージの概要",
@@ -1631,9 +1631,9 @@ i18n
                       ariaLabel: "Contraのプロフィールを開く"
                     },
                     malt: {
-                      label: "malt",
+                      label: "Malt",
                       url: "https://www.malt.com/profile/YOUR_MALT_PROFILE",
-                      ariaLabel: "maltのプロフィールを開く"
+                      ariaLabel: "Maltのプロフィールを開く"
                     }
                   }
                 }
