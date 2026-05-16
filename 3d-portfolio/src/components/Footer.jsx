@@ -7,9 +7,9 @@ const Footer = () => {
     <footer className="footer footer-space pt-10">
       <hr className="border-white" />
 
-      <div className="footer-container text-blue-500">
+      <div className="footer-container text-white">
         <p>
-          © 2025 <strong>yimajiuni</strong>
+          © 2026 <strong>yimajiuni</strong>
         </p>
 
         <div className="flex gap-3 text-center justify-center items-center">

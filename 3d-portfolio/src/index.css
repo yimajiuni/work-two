@@ -81,8 +81,8 @@ body:has(.card[data-color="green"]:hover) {
   background-color: #fdd2f7;
   background-image:
     radial-gradient(ellipse 60% 85% at 20% -30%, rgb(210, 249, 248) 0%, transparent 68%),
-    radial-gradient(ellipse 60% 40% at 80% 7%, rgba(251, 9, 187, 0.7) 0%, transparent 40%),
-    radial-gradient(ellipse 100% 40% at 60% 55%, rgb(253, 112, 56) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 60% at 80% 7%, rgb(250, 206, 194) 0%, transparent 45%),
+    radial-gradient(ellipse 100% 40% at 60% 55%, rgb(160, 247, 249) 0%, transparent 50%),
     radial-gradient(ellipse 90% 50% at 15% 85%, rgba(251, 9, 187, 0.7) 0%, transparent 52%),
     radial-gradient(ellipse 150% 100% at 50% 45%, rgb(247, 123, 191) 0%, transparent 62%),
     linear-gradient(168deg,
@@ -485,6 +485,15 @@ body:has(.card[data-color="green"]:hover) {
     }
 
   }
+
+  /* font-handwriting2: stack follows UI language (html lang = i18n en | jp) */
+  .font-handwriting2 {
+    font-family: "Crimson Pro", "Georgia", serif;
+  }
+
+  html[lang="jp"] .font-handwriting2 {
+    font-family: "YuGothic", "游ゴシック", "Hiragino Sans", sans-serif;
+  }
 }
 
 .glassmorphism {
@@ -616,6 +625,7 @@ body:has(.card[data-color="green"]:hover) {
 .language-selector {
   background: #2b77e7;
   color: #fff;
+  border-radius: 0 !important;
 }
 
 .tooltip {

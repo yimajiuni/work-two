@@ -8,8 +8,9 @@ import upworkIcon from "../assets/icons/upwork.svg";
 import contraIcon from "../assets/icons/contra.svg";
 import maltIcon from "../assets/icons/malt.svg";
 
-/** Same horizontal + vertical padding as the Close button */
+/** Footer control padding; marketplace links use tighter horizontal pad on mobile (icon + label) */
 const FOOTER_CONTROL_PAD = "px-4 sm:px-6 py-2 sm:py-3";
+const FOOTER_MARKETPLACE_PAD = "px-1.5 lg:px-6 py-2 sm:py-3";
 
 const classes = {
     modalOverlay:
@@ -17,7 +18,7 @@ const classes = {
     mainContainer:
         "border border-gray-500 bg-[#f9c6e1] backdrop-blur-sm max-w-4xl w-full max-h-[90dvh] min-h-[40dvh] flex flex-col overflow-hidden rounded-lg",
     header:
-        "bg-white/20 backdrop-blur-sm border-b border-gray-500 text-blue-600 p-4 sm:p-6 rounded-t-lg z-10 shrink-0",
+        "sticky top-0 z-10 shrink-0 bg-white/20 backdrop-blur-sm border-b border-gray-500 text-blue-600 p-4 sm:p-6 rounded-t-lg",
     headerContent: "flex justify-between items-start gap-4",
     headerTitle: "text-xl sm:text-2xl font-bold text-blue-600 pr-2",
     closeButton: "text-blue-600 hover:text-white text-2xl leading-none shrink-0 transition-colors",
@@ -26,7 +27,7 @@ const classes = {
     heroImg:
         "w-full h-44 sm:h-56 object-cover border-b border-gray-500 block blur-sm scale-[1.02] [transform:translateZ(0)]",
     heroCopyOverlay:
-        " bg-[#d93025] pointer-events-none absolute inset-0 z-[1] flex items-end justify-center px-3 pb-4 sm:items-center sm:pb-6 sm:px-6",
+        "opacity-80 bg-[#f01653] pointer-events-none absolute inset-0 z-[1] flex items-end justify-center px-3 pb-4 sm:items-center sm:pb-6 sm:px-6",
     heroCopyText:
         "text-white drop-shadow-sm max-w-xl translate-y-[-10px] sm:translate-y-[20px] text-center text-2xl font-semibold leading-snug sm:max-w-3xl sm:text-4xl",
     bottomBlock: "flex flex-col gap-6 p-4 sm:p-6",
@@ -49,27 +50,27 @@ const classes = {
     demoLinksRow:
         "flex flex-wrap items-center justify-center gap-6 sm:gap-12 border-t border-gray-500 bg-white/40 px-3 py-2 text-sm font-semibold text-blue-700",
     footer:
-        "mt-auto bg-white/20 backdrop-blur-sm border-t border-gray-500 p-4 sm:p-6 rounded-b-lg shrink-0",
-    footerRow:
-        "flex w-full flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-0",
+        "bg-white/20 backdrop-blur-sm border-t border-gray-500 p-4 sm:p-6 rounded-b-lg",
     footerOrderAndIcons:
-        "flex min-w-0 flex-wrap items-center gap-3 self-start sm:gap-4 sm:self-center",
-    orderViaLabel: `inline-flex items-center text-lg font-semibold text-blue-600 whitespace-nowrap ${FOOTER_CONTROL_PAD}`,
+        "flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between",
+    orderViaLabel: `inline-flex shrink-0 justify-center items-center text-lg font-semibold text-blue-600 whitespace-nowrap ${FOOTER_CONTROL_PAD}`,
     marketplaceList:
-        "flex w-full min-w-0 flex-row flex-wrap items-center justify-start gap-2 sm:w-auto sm:justify-start sm:gap-2",
-    marketplaceLink: `text-lg inline-flex items-center gap-2 rounded-lg bg-white/90 ${FOOTER_CONTROL_PAD} font-semibold text-gray-800 shadow-sm hover:bg-white hover:shadow-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500`,
+        "items-center justify-center flex-col sm:flex-row",
+    marketplaceLinksGroup:
+        "flex min-w-0 flex-1 flex-row flex-wrap items-center gap-2",
+    marketplaceLink: `text-sm sm:text-lg inline-flex shrink-0 items-center gap-2 rounded-lg bg-white/90 ${FOOTER_MARKETPLACE_PAD} font-semibold text-gray-800 shadow-sm hover:bg-white hover:shadow-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500`,
     marketplaceIcon: "h-5 w-5 shrink-0 object-contain",
-    footerCloseWrapMobile: "ml-auto shrink-0 sm:hidden",
-    footerCloseWrapDesktop: "hidden shrink-0 sm:block sm:self-center",
-    footerButton: `text-blue-600 ${FOOTER_CONTROL_PAD} font-semibold transition-all duration-300 hover:scale-105 hover:bg-white/90 rounded-lg`,
+    footerCloseWrapMobile: "flex shrink-0 items-center justify-center sm:hidden pt-2 sm:pt-2",
+    footerCloseWrapDesktop: "hidden shrink-0 sm:flex sm:items-center",
+    footerButton: `text-lg text-blue-600 ${FOOTER_CONTROL_PAD} font-semibold transition-all duration-300 hover:scale-105 hover:bg-white/90 rounded-lg`,
 };
 
 const isExternal = (href) => /^https?:\/\//i.test(href);
 
 const MARKETPLACES = [
-    { key: "upwork", icon: upworkIcon },
     { key: "contra", icon: contraIcon },
     { key: "malt", icon: maltIcon },
+    { key: "upwork", icon: upworkIcon },
 ];
 
 const LcpImprovement = ({ isOpen, onClose }) => {
@@ -179,7 +180,7 @@ const LcpImprovement = ({ isOpen, onClose }) => {
                         {/* Before / After: single stage (crossfade). Replace with one <img> if you add lcp-before-after.gif */}
                         <div className={classes.comparisonBlock}>
                             <div
-                                className={`${classes.comparisonStageBase} ${showAfter ? "bg-blue-600" : "bg-[#d93025]"}`}
+                                className={`${classes.comparisonStageBase} ${showAfter ? "bg-blue-600" : "bg-[#f01653]"}`}
                             >
                                 <div className={classes.comparisonTooltip}>
                                     <p className={classes.comparisonTooltipHead}>
@@ -257,38 +258,39 @@ const LcpImprovement = ({ isOpen, onClose }) => {
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div className={classes.footer}>
-                    <div className={classes.footerRow}>
+                    <div className={classes.footer}>
                         <div className={classes.footerOrderAndIcons}>
                             <span className={classes.orderViaLabel} style={titleFontStyle}>
                                 {t("service.section2.lcp.modal.orderVia")}
                             </span>
                             <div className={classes.marketplaceList}>
-                                {MARKETPLACES.map(({ key, icon }) => {
-                                    const base = `service.section2.lcp.modal.marketplaces.${key}`;
-                                    return (
-                                        <a
-                                            key={key}
-                                            href={t(`${base}.url`)}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className={classes.marketplaceLink}
-                                            style={titleFontStyle}
-                                            aria-label={t(`${base}.ariaLabel`)}
-                                        >
-                                            <img
-                                                src={icon}
-                                                alt=""
-                                                className={classes.marketplaceIcon}
-                                                width={20}
-                                                height={20}
-                                            />
-                                            {t(`${base}.label`)}
-                                        </a>
-                                    );
-                                })}
+                                <div className={classes.marketplaceLinksGroup}>
+                                    {MARKETPLACES.map(({ key, icon }) => {
+                                        const base = `service.section2.lcp.modal.marketplaces.${key}`;
+                                        return (
+                                            <a
+                                                key={key}
+                                                href={t(`${base}.url`)}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className={classes.marketplaceLink}
+                                                style={titleFontStyle}
+                                                aria-label={t(`${base}.ariaLabel`)}
+                                            >
+                                                <img
+                                                    src={icon}
+                                                    alt=""
+                                                    className={classes.marketplaceIcon}
+                                                    width={20}
+                                                    height={20}
+                                                />
+                                                {t(`${base}.label`)}
+                                            </a>
+                                        );
+                                    })}
+
+                                </div>
                                 <div className={classes.footerCloseWrapMobile}>
                                     <button
                                         type="button"
@@ -301,19 +303,18 @@ const LcpImprovement = ({ isOpen, onClose }) => {
                                 </div>
 
                             </div>
-                        </div>
+                            <div className={classes.footerCloseWrapDesktop}>
+                                <button
+                                    type="button"
+                                    onClick={onClose}
+                                    className={classes.footerButton}
+                                    style={titleFontStyle}
+                                >
+                                    {t("service.section2.lcp.modal.close")}
+                                </button>
+                            </div>
 
-                        <div className={classes.footerCloseWrapDesktop}>
-                            <button
-                                type="button"
-                                onClick={onClose}
-                                className={classes.footerButton}
-                                style={titleFontStyle}
-                            >
-                                {t("service.section2.lcp.modal.close")}
-                            </button>
                         </div>
-
                     </div>
                 </div>
             </div>

@@ -102,8 +102,8 @@ const classes = {
     decorativeContainer: "fixed inset-0 w-full min-w-[24rem] top-[48%] sm:top-[58%] lg:top-[43%] max-w-[82rem] left-1/2 transform -translate-x-1/2 z-40 pointer-events-none",
     decorativeLeft: "absolute left-0 sm:left-6 transform -translate-y-1/2 w-28 sm:w-44 lg:w-[250px] h-20 sm:h-20 lg:h-24",
     decorativeRight: "absolute right-0 sm:right-6 transform -translate-y-1/2 w-32 sm:w-48 lg:w-[270px] h-24 sm:h-24 lg:h-32",
-    decorativeQuoteLink: "absolute text-[15px] sm:text-lg lg:text-lg right-[12%] sm:right-[25%] lg:right-[28%] bottom-[62%] sm:bottom-[60%] lg:bottom-[60%] text-blue-600/90 font-bold cursor-pointer hover:scale-110 transition-all duration-300 font-handwriting2 pointer-events-auto z-50 transform -rotate-3",
-    decorativeContactLink: "absolute text-[15px] sm:text-lg lg:text-lg left-[15%] sm:left-[20%] lg:left-[20%] bottom-[62%] sm:bottom-[60%] lg:bottom-[60%] text-blue-600/90 font-bold cursor-pointer hover:scale-110 transition-all duration-300 font-handwriting2 pointer-events-auto z-50 transform rotate-3",
+    decorativeQuoteLink: "absolute text-[15px] sm:text-lg lg:text-lg right-[12%] sm:right-[18%] lg:right-[28%] bottom-[62%] sm:bottom-[60%] lg:bottom-[60%] text-blue-500/90 font-bold cursor-pointer hover:scale-110 transition-all duration-300 font-handwriting2 pointer-events-auto z-50 transform -rotate-3",
+    decorativeContactLink: "absolute text-[15px] sm:text-lg lg:text-lg left-[15%] sm:left-[20%] lg:left-[20%] bottom-[62%] sm:bottom-[60%] lg:bottom-[60%] text-blue-500/90 font-bold cursor-pointer hover:scale-110 transition-all duration-300 font-handwriting2 pointer-events-auto z-50 transform rotate-3",
     decorativeQuoteLinkRainbow: "absolute text-[15px] sm:text-sm lg:text-lg right-[12%] sm:right-[25%] lg:right-[28%] bottom-[62%] sm:bottom-[60%] lg:bottom-[60%] text-blue-500 font-bold cursor-pointer hover:scale-110 transition-all duration-300 font-handwriting pointer-events-auto z-50 transform -rotate-3 bg-gradient-to-r from-[#00c6ff] via-purple-500 to-pink-500 bg-clip-text text-transparent",
     decorativeContactLinkRainbow: "absolute text-[15px] sm:text-sm lg:text-lg left-[10%] sm:left-[20%] lg:left-[20%] bottom-[62%] sm:bottom-[65%] lg:bottom-[60%] text-blue-500 font-bold cursor-pointer hover:scale-110 transition-all duration-300 font-handwriting pointer-events-auto z-50 transform rotate-3 bg-gradient-to-r from-[#00c6ff] via-yellow-500 to-red-500 bg-clip-text text-transparent",
 
@@ -913,15 +913,16 @@ const Service = () => {
                 < section id="section-4" ref={section4Ref} className={classes.section4} >
                     <div className={classes.sectionContent4}>
                         {/* Decorative background flower over the pink gradient 
-                        */}
+                        
                         <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-80">
                             <img
                                 src={uzuflower}
                                 alt="Fashion themed illustration"
-                                className="max-w-[125%] max-h-[50%] translate-y-[-45%] translate-x-[-25%] md:max-w-50%] md:max-h-[50%] md:translate-y-[-46%] md:translate-x-[-148%] object-cover"
+                                className="max-w-[125%] max-h-[50%] translate-y-[-45%] translate-x-[-25%] md:max-w-50%] md:max-h-[50%] md:translate-y-[-42%] md:translate-x-[-150%] object-cover"
                                 loading="lazy"
                             />
                         </div>
+                        */}
                         <div className={classes.sectionTextCenter}>
                             <h2
 
@@ -931,7 +932,7 @@ const Service = () => {
                             </h2>
                             <p
 
-                                className={classes.descriptionUzu}
+                                className={classes.description}
                             >
                                 {t('service.section4.description')}
                             </p>
