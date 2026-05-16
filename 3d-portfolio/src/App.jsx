@@ -25,7 +25,7 @@ function App() {
   return (
     <HelmetProvider>
       <div
-        className={`pink-gradient_bg h-full mt-14 sm:mt-0 transition-all `}
+        className={`pink-gradient_bg min-h-[100dvh] h-full mt-14 sm:mt-0 transition-all`}
       >
         <Router>
           {/*<Navbar />*/}

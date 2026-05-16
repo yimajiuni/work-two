@@ -36,7 +36,7 @@ const classes = {
 
     // Section content
     sectionContent: "mx-8 max-w-6xl",
-    sectionContent4: "mx-8 max-w-4xl w-full",
+    sectionContent4: "mx-8 max-w-4xl w-full mt-2",
     sectionTextCenter: "text-center",
     sectionTextLeft: "text-left",
 
@@ -48,6 +48,7 @@ const classes = {
     subtitleHighlight: "text-[26px] font-bold sm:text-4xl text-white  block mb-3",
     sectionTitle: "text-4xl font-bold text-white mb-6",
     description: "text-lg text-white/80 max-w-3xl mx-auto mb-4",
+    descriptionUzu: "text-lg text-white/80 max-w-2xl sm:max-w-xl mx-auto mt-36 mb-4 sm:mt-10 sm:mb-24",
     descriptionLarge: "text-xl text-white/80 mb-4 sm:mb-6 max-w-2xl mx-auto",
 
     // Images
@@ -101,8 +102,10 @@ const classes = {
     decorativeContainer: "fixed inset-0 w-full min-w-[24rem] top-[48%] sm:top-[58%] lg:top-[43%] max-w-[82rem] left-1/2 transform -translate-x-1/2 z-40 pointer-events-none",
     decorativeLeft: "absolute left-0 sm:left-6 transform -translate-y-1/2 w-28 sm:w-44 lg:w-[250px] h-20 sm:h-20 lg:h-24",
     decorativeRight: "absolute right-0 sm:right-6 transform -translate-y-1/2 w-32 sm:w-48 lg:w-[270px] h-24 sm:h-24 lg:h-32",
-    decorativeQuoteLink: "absolute text-[15px] sm:text-sm lg:text-lg right-[12%] sm:right-[25%] lg:right-[28%] bottom-[62%] sm:bottom-[60%] lg:bottom-[60%] text-slate-800 font-bold cursor-pointer hover:scale-110 transition-all duration-300 font-handwriting pointer-events-auto z-50 transform -rotate-3 bg-gradient-to-r from-[#00c6ff] via-purple-500 to-pink-500 bg-clip-text text-transparent",
-    decorativeContactLink: "absolute text-[15px] sm:text-sm lg:text-lg left-[10%] sm:left-[20%] lg:left-[20%] bottom-[62%] sm:bottom-[65%] lg:bottom-[60%] text-slate-800 font-bold cursor-pointer hover:scale-110 transition-all duration-300 font-handwriting pointer-events-auto z-50 transform rotate-3 bg-gradient-to-r from-[#00c6ff] via-yellow-500 to-red-500 bg-clip-text text-transparent",
+    decorativeQuoteLink: "absolute text-[15px] sm:text-lg lg:text-lg right-[12%] sm:right-[25%] lg:right-[28%] bottom-[62%] sm:bottom-[60%] lg:bottom-[60%] text-blue-600/90 font-bold cursor-pointer hover:scale-110 transition-all duration-300 font-handwriting2 pointer-events-auto z-50 transform -rotate-3",
+    decorativeContactLink: "absolute text-[15px] sm:text-lg lg:text-lg left-[15%] sm:left-[20%] lg:left-[20%] bottom-[62%] sm:bottom-[60%] lg:bottom-[60%] text-blue-600/90 font-bold cursor-pointer hover:scale-110 transition-all duration-300 font-handwriting2 pointer-events-auto z-50 transform rotate-3",
+    decorativeQuoteLinkRainbow: "absolute text-[15px] sm:text-sm lg:text-lg right-[12%] sm:right-[25%] lg:right-[28%] bottom-[62%] sm:bottom-[60%] lg:bottom-[60%] text-blue-500 font-bold cursor-pointer hover:scale-110 transition-all duration-300 font-handwriting pointer-events-auto z-50 transform -rotate-3 bg-gradient-to-r from-[#00c6ff] via-purple-500 to-pink-500 bg-clip-text text-transparent",
+    decorativeContactLinkRainbow: "absolute text-[15px] sm:text-sm lg:text-lg left-[10%] sm:left-[20%] lg:left-[20%] bottom-[62%] sm:bottom-[65%] lg:bottom-[60%] text-blue-500 font-bold cursor-pointer hover:scale-110 transition-all duration-300 font-handwriting pointer-events-auto z-50 transform rotate-3 bg-gradient-to-r from-[#00c6ff] via-yellow-500 to-red-500 bg-clip-text text-transparent",
 
     // Spacing
     mb12: "mb-12",
@@ -910,15 +913,15 @@ const Service = () => {
                 < section id="section-4" ref={section4Ref} className={classes.section4} >
                     <div className={classes.sectionContent4}>
                         {/* Decorative background flower over the pink gradient 
-                        <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-40">
+                        */}
+                        <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-80">
                             <img
                                 src={uzuflower}
                                 alt="Fashion themed illustration"
-                                className="max-w-[120%] max-h-[120%] translate-y-[10%] translate-x-[-25%] md:max-w-80%] md:max-h-[80%] md:translate-y-[10%] md:translate-x-[-113%] object-cover"
+                                className="max-w-[125%] max-h-[50%] translate-y-[-45%] translate-x-[-25%] md:max-w-50%] md:max-h-[50%] md:translate-y-[-46%] md:translate-x-[-148%] object-cover"
                                 loading="lazy"
                             />
-                        </div>*
-                        */}
+                        </div>
                         <div className={classes.sectionTextCenter}>
                             <h2
 
@@ -928,7 +931,7 @@ const Service = () => {
                             </h2>
                             <p
 
-                                className={classes.description}
+                                className={classes.descriptionUzu}
                             >
                                 {t('service.section4.description')}
                             </p>

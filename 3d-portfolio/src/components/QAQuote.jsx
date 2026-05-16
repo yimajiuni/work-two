@@ -92,7 +92,7 @@ const classes = {
     navContainer: "flex justify-between",
     button: "px-6 py-3 rounded-lg font-semibold transition-colors",
     buttonDisabled: "bg-pink-300/40 text-white/60 cursor-not-allowed",
-    buttonPrevious: "bg-pink-300/80 text-white",
+    buttonPrevious: "border border-white/20 rounded-lg hover:bg-white/20 hover:border-white/40 bg-pink-300/80 text-white",
     buttonNext: "bg-blue-500 text-white hover:bg-blue-600",
     buttonSubmit: "bg-blue-500 text-white hover:bg-blue-600",
     buttonSubmitting: "bg-pink-300/40 text-white cursor-not-allowed",
@@ -566,7 +566,7 @@ const QAQuote = ({ isOpen, onClose }) => {
                     )}
 
                     {Object.entries(formData).map(([key, value]) => {
-            const question = qaFlow.find(q => q.id === key);
+                        const question = qaFlow.find(q => q.id === key);
                         if (!question || !value) return null;
 
                         return (
@@ -734,8 +734,8 @@ const QAQuote = ({ isOpen, onClose }) => {
                 return requiredFields.some(field => !data[field.name]);
             } else {
                 // For other questions, check formData state
-            const answer = formData[question.id];
-            return !answer || (Array.isArray(answer) && answer.length === 0);
+                const answer = formData[question.id];
+                return !answer || (Array.isArray(answer) && answer.length === 0);
             }
         });
 

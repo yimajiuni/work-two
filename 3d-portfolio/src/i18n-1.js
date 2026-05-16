@@ -461,48 +461,72 @@ i18n
                 description:
                   "Is your website too slow? LCP core improvement pack From $500 / 10h scope.",
                 description2: "Optimize the main content to reduce user abandonment and improve CVR.",
-                button: "Book Consultation",
+                button: "Order Service",
                 modal: {
-                  title: "LCP improvement package",
+                  title: "Shopify LCP improvement package — $500 (limited scope)",
+                  copy: "Is your Shopify store losing customers to 32 seconds of loading 'silence'?",
                   close: "Close",
                   closeAria: "Close dialog",
                   labels: {
                     price: "Price",
                     scope: "Scope",
-                    content: "What's included"
+                    milestones: "Milestones",
+                    content: "Details"
                   },
-                  price: "From $500 / 10 hours",
-                  scope:
-                    "Hero and above-the-fold: largest image or video LCP candidate, font loading, critical CSS, and third-party script impact review for a Next.js + Shopify storefront.",
-                  content:
-                    "Measurement setup guidance, prioritized fix list, before/after notes on Core Web Vitals (LCP focus), and handoff for your team or follow-on implementation blocks.",
+                  price: "Shopify LCP speed optimization package $500 / 10 hours fixed · no add-on fees",
+                  scope: "LCP / FCP / TBT metric improvements (typically ~20–50% reduction).",
+                  milestones: `1. Precision audit (1.5h) — pinpoint bottlenecks and assess risk.
+2. Core fixes (4.0h) — optimize the LCP image and highest-priority loading path.
+3. JS detox (3.0h) — defer non-critical app JavaScript where it helps.
+4. Font optimization (1.0h).
+5. Results pack (0.5h) — before/after metrics plus a practical ops guide.`,
+                  content: `We dramatically improve LCP on one specific product detail page (PDP).
+◇ Not ideal if you need someone to own every task across the entire storefront.
+◇ If the structure makes improvement impossible, we’ll say so during diagnostics — we won’t bill you for wasted work.
+◇ Your business health comes first.
+◇ If PageSpeed Insights is deep in the red, think investment — not a quick repair bill.
+◇ The fastest path to real gains is a short, expert-led sprint.
+◇ For a store doing ~$30,000/mo, a CVR lift from speed alone can mean on the order of +$4,000 the next month.
+◇ Positioned as an investment to grow revenue — not just a cost line item.`,
                   thumbs: {
                     left: {
                       label: "BEFORE",
+                      linkLabel: "GO TO BEFORE →",
                       alt: "Next.js and Shopify headless demo site thumbnail",
                       url: "https://lcp-improv-before.vercel.app/products/boho-mandala-art-v2"
                     },
                     right: {
                       label: "AFTER",
+                      linkLabel: "GO TO AFTER →",
                       alt: "Secondary portfolio thumbnail",
                       url: "https://lcp-improv-after.vercel.app/products/boho-mandala-art-v2"
                     }
+                  },
+                  comparison: {
+                    altBefore: "Storefront before LCP optimization",
+                    altAfter: "Same page after LCP optimization",
+                    tooltipBeforeHeadline: "Before — Score: 8 / LCP: 32.2s",
+                    tooltipBeforeBody:
+                      "On 4G or older phones, many users leave before the screen finishes loading.",
+                    tooltipAfterHeadline: "After — Score: 99 / LCP: 2.0s",
+                    tooltipAfterBody:
+                      "UX that doesn't keep people waiting. Stronger SEO signals, less wasted ad spend (CPC), and higher CVR."
                   },
                   orderVia: "Order via",
                   marketplaces: {
                     upwork: {
                       label: "Upwork",
-                      url: "https://www.upwork.com/freelancers/~YOUR_UPWORK_ID",
+                      url: "https://www.upwork.com/freelancers/~01d8f678ad12f64aa5?viewMode=1",
                       ariaLabel: "Upwork — open freelancer profile"
                     },
                     contra: {
                       label: "Contra",
-                      url: "https://contra.com/YOUR_CONTRA_HANDLE",
+                      url: "https://contra.com/yuko_imai_ojbjl5ud/services?r=yuko_imai_ojbjl5ud",
                       ariaLabel: "Contra — open profile"
                     },
                     malt: {
                       label: "malt",
-                      url: "https://www.malt.com/profile/YOUR_MALT_PROFILE",
+                      url: "https://www.malt.com/profile/yukoimai1?overview",
                       ariaLabel: "malt — open profile"
                     }
                   }
@@ -1591,48 +1615,72 @@ i18n
                 description:
                   "表示が遅い？LCP最適化パッケージ $500／10hより",
                 description2: "最大コンテンツ表示（LCP）の最適化で、ユーザー離脱を減らしCVR改善へ。",
-                button: "改善を相談",
+                button: "サービス申込",
                 modal: {
-                  title: "LCP改善パッケージの概要",
+                  title: "Shopify LCP改善パッケージ $500（限定スコープ）",
+                  copy: "あなたのShopifyサイト、32秒の「沈黙」で顧客を失っていませんか？",
                   close: "閉じる",
                   closeAria: "ダイアログを閉じる",
                   labels: {
                     price: "価格",
                     scope: "範囲",
+                    milestones: "マイルストーン",
                     content: "内容"
                   },
-                  price: "$500／10時間より",
-                  scope:
-                    "ファーストビュー／ヒーロー周辺：LCP候補となる最大画像・動画、フォント読み込み、クリティカルCSS、サードパーティ計測の影響を、Next.js × Shopify の店舗前提で整理します。",
-                  content:
-                    "計測の立て方、優先度付きの改善リスト、Core Web Vitals（LCP中心）の前後メモ、社内実装または追加依頼への引き継ぎまでを想定した内容です。",
+                  price: "Shopify LCP 高速化パッケージ $500 / 10時間固定・追加費用なし",
+                  scope: `LCP / FCP / TBT の数値改善（20〜50%減）`,
+                  milestones: `1. 精密診断 (1.5h) - ボトルネックの特定とリスクアセスメント。
+2. コア改善 (4.0h) - LCP画像の最適化と最優先読み込みの実装。
+3. JSデトックス (3.0h) - 不要なアプリJSの遅延読み込み設定。
+4. フォント最適化(1.0h)
+5. 成果レポート (0.5h) - Before/After数値と今後の運用ガイド納品。`,
+                  content: `特定の商品詳細ページ（PDP）1件のLCPを劇的に改善します。
+◆全ての作業を引き受けるサービスをお探しの方には向いていないかもしれません。
+◆構造上、改善が不可能な場合は、診断フェーズでお伝えし、無駄な費用はいただきません。
+◆あなたのビジネスの健全性を最優先したサービスです。
+◆PageSpeed Insightsのスコアが「赤」なら、それは修理費用ではなく「投資」が必要です。
+◆改善を効果的に得るには専門的な知見とノウハウでの短期集中がベスト。
+◆月商$30,000のストアなら、速度改善によるCVR向上だけで、翌月から+$4,000の増収が見込めます。
+◆コストでなく、売上を増やすための投資としてのサービスです。`,
                   thumbs: {
                     left: {
                       label: "BEFORE",
+                      linkLabel: "GO TO BEFORE →",
                       alt: "Next.js × Shopify デモサイトのサムネイル",
                       url: "https://lcp-improv-before.vercel.app/products/boho-mandala-art-v2"
                     },
                     right: {
                       label: "AFTER",
+                      linkLabel: "GO TO AFTER →",
                       alt: "参考用のサムネイル画像",
                       url: "https://lcp-improv-after.vercel.app/products/boho-mandala-art-v2"
                     }
+                  },
+                  comparison: {
+                    altBefore: "LCP改善前のストア画面",
+                    altAfter: "LCP改善後の同じページ",
+                    tooltipBeforeHeadline: "Beforeスコア：8 / LCP：32.2s",
+                    tooltipBeforeBody:
+                      "4G回線や旧型スマホのユーザーは、画面が出る前に離脱しています。",
+                    tooltipAfterHeadline: "Afterスコア：99 / LCP：2.0s",
+                    tooltipAfterBody:
+                      "「待たせない」UXへ。 GoogleのSEO評価も「合格」に。広告のクリック単価（CPC）を無駄にせず、CVR（成約率）を最大化します。"
                   },
                   orderVia: "ご依頼はこちらから",
                   marketplaces: {
                     upwork: {
                       label: "Upwork",
-                      url: "https://www.upwork.com/freelancers/~YOUR_UPWORK_ID",
+                      url: "https://www.upwork.com/freelancers/~01d8f678ad12f64aa5?viewMode=1",
                       ariaLabel: "Upworkのプロフィールを開く"
                     },
                     contra: {
                       label: "Contra",
-                      url: "https://contra.com/YOUR_CONTRA_HANDLE",
+                      url: "https://contra.com/yuko_imai_ojbjl5ud/services?r=yuko_imai_ojbjl5ud",
                       ariaLabel: "Contraのプロフィールを開く"
                     },
                     malt: {
                       label: "Malt",
-                      url: "https://www.malt.com/profile/YOUR_MALT_PROFILE",
+                      url: "https://www.malt.com/profile/yukoimai1?overview",
                       ariaLabel: "Maltのプロフィールを開く"
                     }
                   }

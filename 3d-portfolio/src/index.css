@@ -29,6 +29,9 @@
 html,
 body {
   overflow-x: hidden;
+  min-height: 100%;
+  /* Matches .pink-gradient_bg mesh base so overscroll / gutters blend */
+  background-color: #eef6ff;
 }
 
 body {
@@ -71,8 +74,21 @@ body:has(.card[data-color="green"]:hover) {
   color: transparent;
 }
 
+/* Site shell: Ubie-inspired multi-blob soft mesh (stacked radial + linear wash) */
 .pink-gradient_bg {
-  background: linear-gradient(to top left, #f9f0f4 0%, rgb(249 168 212 / 0.4) 30%);
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #fdd2f7;
+  background-image:
+    radial-gradient(ellipse 60% 85% at 20% -30%, rgb(210, 249, 248) 0%, transparent 68%),
+    radial-gradient(ellipse 60% 40% at 80% 7%, rgba(251, 9, 187, 0.7) 0%, transparent 40%),
+    radial-gradient(ellipse 100% 40% at 60% 55%, rgb(253, 112, 56) 0%, transparent 50%),
+    radial-gradient(ellipse 90% 50% at 15% 85%, rgba(251, 9, 187, 0.7) 0%, transparent 52%),
+    radial-gradient(ellipse 150% 100% at 50% 45%, rgb(247, 123, 191) 0%, transparent 62%),
+    linear-gradient(168deg,
+      rgb(248 250 252 / 0.55) 0%,
+      transparent 38%,
+      rgb(239 246 255 / 0.65) 100%);
 }
 
 @layer utilities {
