@@ -114,7 +114,7 @@ i18n
              as a graphic designer for packaging, sales promotion advertisements, and Web designer for ECommerse in the apparel sector and hands-on learning and building apps.
             I've worked with all sorts of companies, leveling up my skills and teaming up with all sort of people.
             `,
-            line2: `Currently, I am accepting from E-commerce website development to illustrations and designs. Please feel free to contact me. 
+            line2: `Currently, I am accepting from E-commerce website development to illustrations and brand designs. Please feel free to contact me. 
             I am available for both Japanese and English communication. here' the rundown. `,
           },
           skillTooltip: {
@@ -1251,7 +1251,7 @@ i18n
             あらゆる種類の会社と仕事をし、自分のスキルを高め、あらゆる種類の人々とチームを組んできました。
             `,
             line2: `
-            現在ECサイト開発からデザイン、イラスト等中心にお仕事を受け付けております。お気軽にお問い合わせください。日本語/英語コミュニケーションに対応しております。
+            現在ECサイト開発からブランドデザイン、イラスト等中心にお仕事を受け付けております。お気軽にお問い合わせください。日本語/英語コミュニケーションに対応しております。
             `,
           },
           skillTooltip: {

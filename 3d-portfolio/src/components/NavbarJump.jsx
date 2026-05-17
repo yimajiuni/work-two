@@ -169,7 +169,7 @@ const NavbarJump = ({ onMenuStateChange }) => {
       </div>
 
       {/* Language selector - always visible on top right */}
-      <div className="text-blue-500 cursor-pointer flex items-center gap-2 hover:text-blue-400 transition-colors">
+      <div className="text-blue-500 cursor-pointer flex items-center gap-2">
         <FaGlobe className="text-lg" />
         <LanguageSelector />
       </div>

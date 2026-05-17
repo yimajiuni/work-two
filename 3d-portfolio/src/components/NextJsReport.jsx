@@ -161,7 +161,7 @@ const classes = {
     }
 };
 
-const PerformanceReport = ({ isOpen, onClose }) => {
+const NextJsReport = ({ isOpen, onClose }) => {
     const { t, i18n } = useTranslation();
 
     // Inline style for font-family to ensure proper language-specific font loading
@@ -678,9 +678,9 @@ const PerformanceReport = ({ isOpen, onClose }) => {
                             {/* Ask Quote Button */}
                             <a
                                 // The link will navigate to the service page quote section
-                                href="/#quote"
+                                href="/?quote=project"
                                 onClick={() => {
-                                    // Close the PerformanceReport modal
+                                    // Close the NextJsReport modal
                                     onClose();
                                 }}
                                 className={classes.footerButton}
@@ -716,4 +716,4 @@ const PerformanceReport = ({ isOpen, onClose }) => {
     );
 };
 
-export default PerformanceReport; 
+export default NextJsReport; 

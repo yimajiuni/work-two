@@ -16,7 +16,7 @@ const classes = {
     // Header
     header: "flex justify-between items-center mb-6",
     headerTitle: "text-2xl font-bold text-gray-500",
-    closeButton: "text-white hover:text-gray-500 text-2xl pt-5",
+    closeButton: "hover:text-white text-gray-500 text-2xl pt-5",
 
     // Progress bar
     progressContainer: "mb-6",
@@ -28,7 +28,7 @@ const classes = {
     dotsContainer: "flex gap-2 mt-3",
     dot: "w-3 h-3 rounded-full transition-all duration-300",
     dotCurrent: "bg-blue-400 scale-125",
-    dotAnswered: "bg-pink-300",
+    dotAnswered: "bg-pink-400",
     dotUnanswered: "bg-white/60",
 
     // Form elements
@@ -78,6 +78,17 @@ const classes = {
     priorityOrderText: "text-gray-500 text-sm mb-2",
     priorityOrderList: "flex flex-wrap gap-2",
     priorityBadge: "px-3 py-1 rounded-full text-xs font-medium text-white",
+    priorityListBadge: {
+        red: "bg-red-500",
+        pink: "bg-pink-500",
+        fuchsia: "bg-fuchsia-500",
+        violet: "bg-violet-500",
+        purple: "bg-purple-500"
+    },
+
+    // Dual textarea
+    dualTextareaContainer: "space-y-4",
+    dualTextareaLabel: "block text-gray-500 mb-2 text-sm",
 
     // Contact form
     contactContainer: "space-y-4",
@@ -91,8 +102,8 @@ const classes = {
     // Navigation buttons
     navContainer: "flex justify-between",
     button: "px-6 py-3 rounded-lg font-semibold transition-colors",
-    buttonDisabled: "bg-pink-300/40 text-white/60 cursor-not-allowed",
-    buttonPrevious: "border border-white/20 rounded-lg hover:bg-white/20 hover:border-white/40 bg-pink-300/80 text-white",
+    buttonDisabled: "bg-pink-200/40 text-white/70 cursor-not-allowed",
+    buttonPrevious: "bg-white text-pink-400",
     buttonNext: "bg-blue-500 text-white hover:bg-blue-600",
     buttonSubmit: "bg-blue-500 text-white hover:bg-blue-600",
     buttonSubmitting: "bg-pink-300/40 text-white cursor-not-allowed",
@@ -107,6 +118,11 @@ const classes = {
     successButtonPrimary: "px-6 py-3 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600 transition-colors",
     successButtonSecondary: "px-6 py-3 bg-pink-300/40 text-white rounded-lg font-semibold hover:bg-white/30 transition-colors"
 };
+
+const PRIORITY_RANKS = ['red', 'pink', 'fuchsia', 'violet', 'purple'];
+const priorityGridClass = (priority) => classes.priorityColors[PRIORITY_RANKS[priority - 1]];
+const priorityRankBadgeClass = (priority) => classes.priorityBadgeColors[PRIORITY_RANKS[priority - 1]];
+const priorityListClass = (priority) => classes.priorityListBadge[PRIORITY_RANKS[priority - 1]];
 
 // PDF Styles
 const pdfStyles = StyleSheet.create({
@@ -172,7 +188,7 @@ const japanesePdfStyles = StyleSheet.create({
     },
 });
 
-const QAQuote = ({ isOpen, onClose }) => {
+const ProjectQuote = ({ isOpen, onClose }) => {
     const { t, i18n } = useTranslation();
     const [currentStep, setCurrentStep] = useState(0);
     const [formData, setFormData] = useState({});
@@ -839,17 +855,17 @@ const QAQuote = ({ isOpen, onClose }) => {
         switch (question.type) {
             case 'select':
                 return (
-                    <div className="space-y-3">
+                    <div className={classes.radioContainer}>
                         {question.options.map((option) => (
-                            <label key={option.value} className="flex items-center space-x-3 cursor-pointer">
+                            <label key={option.value} className={classes.radioItem}>
                                 <input
                                     type="radio"
                                     value={option.value}
                                     {...register(question.id)}
                                     onChange={(e) => handleAnswer(question.id, e.target.value)}
-                                    className="w-4 h-4 text-blue-600"
+                                    className={classes.radioInput}
                                 />
-                                <span className="text-gray-500">{option.label}</span>
+                                <span className={classes.radioLabel}>{option.label}</span>
                             </label>
                         ))}
                     </div>
@@ -857,18 +873,18 @@ const QAQuote = ({ isOpen, onClose }) => {
 
             case 'radio':
                 return (
-                    <div className="space-y-3">
+                    <div className={classes.radioContainer}>
                         {question.options.map((option) => (
                             <div key={option.value} className="flex items-center space-x-3">
-                                <label className="flex items-center space-x-3 cursor-pointer flex-1">
+                                <label className={`${classes.radioItem} flex-1`}>
                                     <input
                                         type="radio"
                                         value={option.value}
                                         {...register(question.id)}
                                         onChange={(e) => handleAnswer(question.id, e.target.value)}
-                                        className="w-4 h-4 text-blue-600"
+                                        className={classes.radioInput}
                                     />
-                                    <span className="text-gray-500">{option.label}</span>
+                                    <span className={classes.radioLabel}>{option.label}</span>
                                 </label>
 
                                 {/* Inline input for "other" option */}
@@ -887,11 +903,11 @@ const QAQuote = ({ isOpen, onClose }) => {
 
             case 'grid':
                 return (
-                    <div className="space-y-4">
-                        <p className="text-gray-500 text-sm mb-4">
+                    <div className={classes.gridContainer}>
+                        <p className={classes.gridInstruction}>
                             {t('service.qaForm.questions.visualStyle.instruction')}
                         </p>
-                        <div className="grid grid-cols-4 sm:grid-cols-7 gap-3">
+                        <div className={classes.grid}>
                             {question.options.map((option) => {
                                 const currentValues = formData[question.id] || [];
                                 const isSelected = currentValues.includes(option.value);
@@ -916,33 +932,13 @@ const QAQuote = ({ isOpen, onClose }) => {
                                                 }
                                             }
                                         }}
-                                        className={`p-2 sm:p-3 rounded-lg border-2 transition-all duration-200 cursor-pointer hover:scale-105 relative min-h-[60px] sm:min-h-[80px] flex items-center justify-center ${isSelected
-                                            ? priority === 1
-                                                ? 'bg-red-500/80 border-red-400 text-white shadow-lg' // 1st priority - Red
-                                                : priority === 2
-                                                    ? 'bg-pink-500/80 border-pink-400 text-white shadow-lg' // 2nd priority - Pink
-                                                    : priority === 3
-                                                        ? 'bg-fuchsia-500/80 border-fuchsia-400 text-white shadow-lg' // 3rd priority - Fuchsia
-                                                        : priority === 4
-                                                            ? 'bg-violet-500/80 border-violet-400 text-white shadow-lg' // 4th priority - Violet
-                                                            : 'bg-purple-500/80 border-purple-400 text-white shadow-lg' // 5th priority - Purple
-                                            : 'bg-pink-300/50 border-white/50 text-gray-500 hover:bg-white/20 hover:border-white/40'
-                                            }`}
+                                        className={`${classes.gridButton} ${isSelected ? priorityGridClass(priority) : classes.gridButtonUnselected}`}
                                     >
-                                        <span className="text-xs text-center leading-tight font-medium break-words hyphens-auto max-w-full">
+                                        <span className={classes.gridButtonText}>
                                             {option.label}
                                         </span>
                                         {isSelected && (
-                                            <span className={`absolute -top-2 -right-2 w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center text-xs font-bold ${priority === 1
-                                                ? 'bg-red-600 text-white'
-                                                : priority === 2
-                                                    ? 'bg-pink-600 text-white'
-                                                    : priority === 3
-                                                        ? 'bg-fuchsia-600 text-white'
-                                                        : priority === 4
-                                                            ? 'bg-violet-600 text-white'
-                                                            : 'bg-purple-600 text-white'
-                                                }`}>
+                                            <span className={`${classes.gridPriority} ${priorityRankBadgeClass(priority)}`}>
                                                 {priority}
                                             </span>
                                         )}
@@ -951,21 +947,17 @@ const QAQuote = ({ isOpen, onClose }) => {
                             })}
                         </div>
                         {formData[question.id] && formData[question.id].length > 0 && (
-                            <div className="mt-4 p-3 bg-white/10 rounded-lg border border-white/20">
-                                <p className="text-gray-500 text-sm mb-2">
+                            <div className={classes.priorityOrder}>
+                                <p className={classes.priorityOrderText}>
                                     {t('service.qaForm.questions.visualStyle.priorityOrder')}:
                                 </p>
-                                <div className="flex flex-wrap gap-2">
+                                <div className={classes.priorityOrderList}>
                                     {formData[question.id].map((value, index) => {
                                         const option = question.options.find(opt => opt.value === value);
                                         const priority = index + 1;
-                                        const priorityColor = priority === 1 ? 'bg-red-500' :
-                                            priority === 2 ? 'bg-pink-500' :
-                                                priority === 3 ? 'bg-fuchsia-500' :
-                                                    priority === 4 ? 'bg-violet-500' : 'bg-purple-500';
 
                                         return (
-                                            <span key={value} className={`px-3 py-1 rounded-full text-xs font-medium text-white ${priorityColor}`}>
+                                            <span key={value} className={`${classes.priorityBadge} ${priorityListClass(priority)}`}>
                                                 {priority}. {option?.label}
                                             </span>
                                         );
@@ -978,9 +970,9 @@ const QAQuote = ({ isOpen, onClose }) => {
 
             case 'checkbox':
                 return (
-                    <div className="space-y-3">
+                    <div className={classes.radioContainer}>
                         {question.options.map((option) => (
-                            <label key={option.value} className="flex items-center space-x-3 cursor-pointer">
+                            <label key={option.value} className={classes.radioItem}>
                                 <input
                                     type="checkbox"
                                     value={option.value}
@@ -993,9 +985,9 @@ const QAQuote = ({ isOpen, onClose }) => {
                                             handleAnswer(question.id, currentValues.filter(v => v !== option.value));
                                         }
                                     }}
-                                    className="w-4 h-4 text-blue-600"
+                                    className={classes.radioInput}
                                 />
-                                <span className="text-gray-500">{option.label}</span>
+                                <span className={classes.radioLabel}>{option.label}</span>
                             </label>
                         ))}
                     </div>
@@ -1007,16 +999,16 @@ const QAQuote = ({ isOpen, onClose }) => {
                         {...register(question.id)}
                         placeholder={question.placeholder}
                         onChange={(e) => handleAnswer(question.id, e.target.value)}
-                        className="w-full p-3 rounded-lg bg-white/10 border border-white/20 text-gray-500 placeholder-gray-500 focus:outline-none focus:border-gray-500"
+                        className={classes.textarea}
                         rows="4"
                     />
                 );
 
             case 'dual-textarea':
                 return (
-                    <div className="space-y-4">
+                    <div className={classes.dualTextareaContainer}>
                         <div>
-                            <label className="block text-gray-500 mb-2 text-sm">{question.atmosphareQuestion}</label>
+                            <label className={classes.dualTextareaLabel}>{question.atmosphareQuestion}</label>
                             <textarea
                                 {...register(`${question.id}_atmosphere`)}
                                 placeholder={question.placeholder}
@@ -1028,12 +1020,12 @@ const QAQuote = ({ isOpen, onClose }) => {
                                         function: functionValue
                                     });
                                 }}
-                                className="w-full p-3 rounded-lg bg-white/10 border border-white/20 text-gray-500 placeholder-gray-500 focus:outline-none focus:border-gray-500"
+                                className={classes.textarea}
                                 rows="3"
                             />
                         </div>
                         <div>
-                            <label className="block text-gray-500 mb-2 text-sm">{question.functionQuestion}</label>
+                            <label className={classes.dualTextareaLabel}>{question.functionQuestion}</label>
                             <textarea
                                 {...register(`${question.id}_function`)}
                                 placeholder={question.placeholder}
@@ -1045,7 +1037,7 @@ const QAQuote = ({ isOpen, onClose }) => {
                                         function: functionValue
                                     });
                                 }}
-                                className="w-full p-3 rounded-lg bg-white/10 border border-white/20 text-gray-500 placeholder-gray-500 focus:outline-none focus:border-gray-500"
+                                className={classes.textarea}
                                 rows="3"
                             />
                         </div>
@@ -1054,18 +1046,18 @@ const QAQuote = ({ isOpen, onClose }) => {
 
             case 'contact':
                 return (
-                    <div className="space-y-4">
+                    <div className={classes.contactContainer}>
                         {question.fields.map((field) => (
                             <div key={field.name}>
-                                <label className="block text-white mb-2">{field.label}</label>
+                                <label className={classes.contactField}>{field.label}</label>
                                 <input
                                     type={field.type}
                                     {...register(field.name, { required: field.required })}
-                                    className="w-full p-3 rounded-lg bg-white/10 border border-white/20 text-gray-500 placeholder-gray-500 focus:outline-none focus:border-blue-400"
+                                    className={classes.inputContact}
                                     placeholder={field.label}
                                 />
                                 {errors[field.name] && (
-                                    <span className="text-red-400 text-sm">{field.label} is required</span>
+                                    <span className={classes.contactError}>{field.label} is required</span>
                                 )}
                             </div>
                         ))}
@@ -1081,29 +1073,28 @@ const QAQuote = ({ isOpen, onClose }) => {
 
     if (isSubmitted) {
         return (
-            <div className="fixed inset-0 bg-white/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-                <div className="border border-gray-500 bg-pink-300/50 backdrop-blur-sm rounded-lg p-8 border border-white/20 max-w-md w-full text-center">
-
-                    <h3 className="text-2xl font-bold text-gray-500 mb-4">{t('service.qaForm.success.title')}</h3>
-                    <p className="text-gray-500 mb-6">
+            <div className={classes.successOverlay}>
+                <div className={classes.successContainer}>
+                    <h3 className={classes.successTitle}>{t('service.qaForm.success.title')}</h3>
+                    <p className={classes.successMessage}>
                         {t('service.qaForm.success.message')}
                     </p>
 
 
 
-                    <p className="text-gray-500 text-sm mb-6">
+                    <p className={classes.successSubMessage}>
                         {t('service.qaForm.success.refreshMessage')}
                     </p>
-                    <div className="flex gap-3 justify-center">
+                    <div className={classes.successButtons}>
                         <button
                             onClick={generatePDF}
-                            className="px-6 py-3 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600 transition-colors"
+                            className={classes.successButtonPrimary}
                         >
                             {t('service.qaForm.success.downloadPDF')}
                         </button>
                         <button
                             onClick={onClose}
-                            className="px-6 py-3 bg-pink-300/40 text-white rounded-lg font-semibold hover:bg-white/30 transition-colors"
+                            className={classes.successButtonSecondary}
                         >
                             {t('service.qaForm.success.close')}
                         </button>
@@ -1114,34 +1105,34 @@ const QAQuote = ({ isOpen, onClose }) => {
     }
 
     return (
-        <div className="fixed inset-0 bg-white/10 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-8 border border-gray-500 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div className={classes.modalOverlay}>
+            <div className={classes.mainContainer}>
                 {/* Header */}
-                <div className="flex justify-between items-center mb-6">
-                    <h2 className="text-2xl font-bold text-gray-500">{t('service.qaForm.title')}</h2>
+                <div className={classes.header}>
+                    <h2 className={classes.headerTitle}>{t('service.qaForm.title')}</h2>
                     <button
                         onClick={onClose}
-                        className="hover:text-white text-gray-500 text-2xl pt-5"
+                        className={classes.closeButton}
                     >
                         ×
                     </button>
                 </div>
 
                 {/* Progress Bar */}
-                <div className="mb-6">
-                    <div className="flex justify-between text-sm text-gray-500 mb-2">
+                <div className={classes.progressContainer}>
+                    <div className={classes.progressText}>
                         <span>{t('service.qaForm.progress', { current: currentStep + 1, total: getFilteredQuestions().length })}</span>
                         <span>{t('service.qaForm.progressPercent', { percent: Math.round(((currentStep + 1) / getFilteredQuestions().length) * 100) })}</span>
                     </div>
-                    <div className="w-full bg-white/20 rounded-full h-2">
+                    <div className={classes.progressBar}>
                         <div
-                            className="bg-blue-500 h-2 rounded-full transition-all duration-300"
+                            className={classes.progressFill}
                             style={{ width: `${((currentStep + 1) / getFilteredQuestions().length) * 100}%` }}
                         />
                     </div>
 
                     {/* Question Completion Status */}
-                    <div className="flex gap-2 mt-3">
+                    <div className={classes.dotsContainer}>
                         {getFilteredQuestions().map((question, index) => {
                             let isAnswered = false;
 
@@ -1163,11 +1154,11 @@ const QAQuote = ({ isOpen, onClose }) => {
                             return (
                                 <div
                                     key={question.id}
-                                    className={`w-3 h-3 rounded-full transition-all duration-300 ${isCurrent
-                                        ? 'bg-blue-400 scale-125'
+                                    className={`${classes.dot} ${isCurrent
+                                        ? classes.dotCurrent
                                         : isAnswered
-                                            ? 'bg-pink-300'
-                                            : 'bg-white/60'
+                                            ? classes.dotAnswered
+                                            : classes.dotUnanswered
                                         }`}
                                     title={`${question.question}: ${isAnswered ? 'Answered' : 'Not answered'}`}
                                 />
@@ -1178,31 +1169,28 @@ const QAQuote = ({ isOpen, onClose }) => {
 
                 {/* Question */}
                 <form onSubmit={handleSubmit(submitForm)}>
-                    <div className="mb-8">
-                        <h3 className="text-xl font-semibold text-gray-500 mb-4">
+                    <div className={classes.form}>
+                        <h3 className={classes.questionTitle}>
                             {getFilteredQuestions()[currentStep]?.question || ''}
-                            <span className="text-red-400 ml-2">{t('service.qaForm.required')}</span>
+                            <span className={classes.required}>{t('service.qaForm.required')}</span>
                         </h3>
                         {getFilteredQuestions()[currentStep] && renderQuestion(getFilteredQuestions()[currentStep])}
 
                         {/* Validation Error Display */}
                         {validationError && (
-                            <div className="mt-4 p-3 bg-red-500/20 border border-red-400/30 rounded-lg">
-                                <p className="text-red-400 text-sm">{validationError}</p>
+                            <div className={classes.validationError}>
+                                <p className={classes.validationErrorText}>{validationError}</p>
                             </div>
                         )}
                     </div>
 
                     {/* Navigation */}
-                    <div className="flex justify-between">
+                    <div className={classes.navContainer}>
                         <button
                             type="button"
                             onClick={handlePrevious}
                             disabled={currentStep === 0}
-                            className={`px-6 py-3 rounded-lg font-semibold transition-colors ${currentStep === 0
-                                ? 'bg-pink-300/40 text-white/60 cursor-not-allowed'
-                                : 'bg-pink-300/80 text-white'
-                                }`}
+                            className={`${classes.button} ${currentStep === 0 ? classes.buttonDisabled : classes.buttonPrevious}`}
                         >
                             {t('service.qaForm.previous')}
                         </button>
@@ -1211,7 +1199,7 @@ const QAQuote = ({ isOpen, onClose }) => {
                             <button
                                 type="button"
                                 onClick={handleNext}
-                                className="px-6 py-3 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600 transition-colors"
+                                className={`${classes.button} ${classes.buttonNext}`}
                             >
                                 {t('service.qaForm.next')}
                             </button>
@@ -1219,10 +1207,7 @@ const QAQuote = ({ isOpen, onClose }) => {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className={`px-6 py-3 rounded-lg font-semibold transition-colors ${isSubmitting
-                                    ? 'bg-pink-300/40 text-white cursor-not-allowed'
-                                    : 'bg-blue-500 text-white hover:bg-blue-600'
-                                    }`}
+                                className={`${classes.button} ${isSubmitting ? classes.buttonSubmitting : classes.buttonSubmit}`}
                             >
                                 {isSubmitting ? t('service.qaForm.submitting') : t('service.qaForm.submit')}
                             </button>
@@ -1234,4 +1219,4 @@ const QAQuote = ({ isOpen, onClose }) => {
     );
 };
 
-export default QAQuote; 
+export default ProjectQuote; 

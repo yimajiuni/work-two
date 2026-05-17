@@ -13,8 +13,8 @@ import lcpPO from '../assets/images/lcp.webp';
 gsap.registerPlugin(ScrollTrigger);
 
 // Lazy load heavy components to reduce initial bundle size
-const QAQuote = lazy(() => import("../components/QAQuote"));
-const PerformanceReport = lazy(() => import("../components/PerformanceReport"));
+const ProjectQuote = lazy(() => import("../components/ProjectQuote"));
+const NextJsReport = lazy(() => import("../components/NextJsReport"));
 const LcpImprovement = lazy(() => import("../components/LcpImprovement"));
 import yimajiuniPark from '../assets/images/yimajiuni-park.webp';
 import nextEcomShopify from '../assets/images/webmock1.webp';
@@ -102,8 +102,8 @@ const classes = {
     decorativeContainer: "fixed inset-0 w-full min-w-[24rem] top-[48%] sm:top-[58%] lg:top-[43%] max-w-[82rem] left-1/2 transform -translate-x-1/2 z-40 pointer-events-none",
     decorativeLeft: "absolute left-0 sm:left-6 transform -translate-y-1/2 w-28 sm:w-44 lg:w-[250px] h-20 sm:h-20 lg:h-24",
     decorativeRight: "absolute right-0 sm:right-6 transform -translate-y-1/2 w-32 sm:w-48 lg:w-[270px] h-24 sm:h-24 lg:h-32",
-    decorativeQuoteLink: "absolute text-[15px] sm:text-lg lg:text-lg right-[12%] sm:right-[18%] lg:right-[28%] bottom-[62%] sm:bottom-[60%] lg:bottom-[60%] text-blue-500/90 font-bold cursor-pointer hover:scale-110 transition-all duration-300 font-handwriting2 pointer-events-auto z-50 transform -rotate-3",
-    decorativeContactLink: "absolute text-[15px] sm:text-lg lg:text-lg left-[15%] sm:left-[20%] lg:left-[20%] bottom-[62%] sm:bottom-[60%] lg:bottom-[60%] text-blue-500/90 font-bold cursor-pointer hover:scale-110 transition-all duration-300 font-handwriting2 pointer-events-auto z-50 transform rotate-3",
+    decorativeQuoteLink: "text-drop-shadow-white absolute text-[15px] sm:text-lg lg:text-lg right-[12%] sm:right-[18%] lg:right-[28%] bottom-[62%] sm:bottom-[60%] lg:bottom-[60%] text-blue-500 font-bold cursor-pointer hover:scale-110 transition-all duration-300 font-handwriting2 pointer-events-auto z-50 transform -rotate-3",
+    decorativeContactLink: "text-drop-shadow-white absolute text-[15px] sm:text-lg lg:text-lg left-[15%] sm:left-[20%] lg:left-[20%] bottom-[62%] sm:bottom-[60%] lg:bottom-[60%] text-blue-500 font-bold cursor-pointer hover:scale-110 transition-all duration-300 font-handwriting2 pointer-events-auto z-50 transform rotate-3",
     decorativeQuoteLinkRainbow: "absolute text-[15px] sm:text-sm lg:text-lg right-[12%] sm:right-[25%] lg:right-[28%] bottom-[62%] sm:bottom-[60%] lg:bottom-[60%] text-blue-500 font-bold cursor-pointer hover:scale-110 transition-all duration-300 font-handwriting pointer-events-auto z-50 transform -rotate-3 bg-gradient-to-r from-[#00c6ff] via-purple-500 to-pink-500 bg-clip-text text-transparent",
     decorativeContactLinkRainbow: "absolute text-[15px] sm:text-sm lg:text-lg left-[10%] sm:left-[20%] lg:left-[20%] bottom-[62%] sm:bottom-[65%] lg:bottom-[60%] text-blue-500 font-bold cursor-pointer hover:scale-110 transition-all duration-300 font-handwriting pointer-events-auto z-50 transform rotate-3 bg-gradient-to-r from-[#00c6ff] via-yellow-500 to-red-500 bg-clip-text text-transparent",
 
@@ -118,31 +118,39 @@ const classes = {
 const Service = () => {
     const [activeSection, setActiveSection] = useState(1);
     const [sectionOrder, setSectionOrder] = useState([1, 2, 3, 4]); // Track current visual order of sections
-    const [isQAQuoteOpen, setIsQAQuoteOpen] = useState(false); // Q&A form popup state
-    const [isPerformanceReportOpen, setIsPerformanceReportOpen] = useState(false); // Performance report popup state
-    /** LCP modal: URL query `?lcp=improvement` (shareable / back button closes) */
+    /** Modals: URL query (shareable / back button closes) */
     const [searchParams, setSearchParams] = useSearchParams();
+    const isProjectQuoteOpen = searchParams.get("quote") === "project";
+    const isNextJsReportOpen = searchParams.get("report") === "nextjs";
     const isLcpImprovementOpen = searchParams.get("lcp") === "improvement";
-    const openLcpImprovementModal = () => {
+
+    const setModalParam = (key, value, { replace = false } = {}) => {
         setSearchParams(
             (prev) => {
                 const next = new URLSearchParams(prev);
-                next.set("lcp", "improvement");
+                next.set(key, value);
                 return next;
             },
-            { replace: false }
+            { replace }
         );
     };
-    const closeLcpImprovementModal = () => {
+    const clearModalParam = (key) => {
         setSearchParams(
             (prev) => {
                 const next = new URLSearchParams(prev);
-                next.delete("lcp");
+                next.delete(key);
                 return next;
             },
             { replace: true }
         );
     };
+
+    const openProjectQuoteModal = () => setModalParam("quote", "project");
+    const closeProjectQuoteModal = () => clearModalParam("quote");
+    const openNextJsReportModal = () => setModalParam("report", "nextjs");
+    const closeNextJsReportModal = () => clearModalParam("report");
+    const openLcpImprovementModal = () => setModalParam("lcp", "improvement");
+    const closeLcpImprovementModal = () => clearModalParam("lcp");
     const { t } = useTranslation();
 
     // 📍 REFS: Create references to DOM elements for GSAP animations
@@ -897,7 +905,7 @@ const Service = () => {
 
                                 <div className={classes.performanceButtonContainer}>
                                     <button
-                                        onClick={() => setIsPerformanceReportOpen(true)}
+                                        onClick={openNextJsReportModal}
                                         className={classes.performanceButton}
                                     >
                                         {t('service.section3.performance.button')}
@@ -946,7 +954,7 @@ const Service = () => {
                                 <h3 className={classes.quoteTitle}>{t('service.section4.calculator.title')}</h3>
 
                                 <button
-                                    onClick={() => setIsQAQuoteOpen(true)}
+                                    onClick={openProjectQuoteModal}
                                     className={classes.quoteButton}
                                 >
                                     {t('service.section4.calculator.button')}
@@ -991,19 +999,19 @@ const Service = () => {
                     </div>
                 </section>
 
-                {/* Q&A Form Popup */}
+                {/* Project quote popup — `/?quote=project` */}
                 <Suspense fallback={<div className="fixed inset-0 bg-white/10 backdrop-blur-sm z-50 flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div></div>}>
-                    <QAQuote
-                        isOpen={isQAQuoteOpen}
-                        onClose={() => setIsQAQuoteOpen(false)}
+                    <ProjectQuote
+                        isOpen={isProjectQuoteOpen}
+                        onClose={closeProjectQuoteModal}
                     />
                 </Suspense>
 
-                {/* Performance Report Popup */}
+                {/* Next.js report popup — `/?report=nextjs` */}
                 <Suspense fallback={<div className="fixed inset-0 bg-white/10 backdrop-blur-sm z-50 flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div></div>}>
-                    <PerformanceReport
-                        isOpen={isPerformanceReportOpen}
-                        onClose={() => setIsPerformanceReportOpen(false)}
+                    <NextJsReport
+                        isOpen={isNextJsReportOpen}
+                        onClose={closeNextJsReportModal}
                     />
                 </Suspense>
 
@@ -1043,7 +1051,7 @@ const Service = () => {
                     >
                         <div
                             className={classes.decorativeQuoteLink}
-                            onClick={() => setIsQAQuoteOpen(true)}
+                            onClick={openProjectQuoteModal}
                         >
                             {t('service.decorative.quoteLink')}
                         </div>

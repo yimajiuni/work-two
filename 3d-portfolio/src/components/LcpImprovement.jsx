@@ -25,9 +25,9 @@ const classes = {
     content: "flex flex-col flex-1 min-h-0 overflow-y-auto overscroll-contain",
     heroWrap: "relative w-full shrink-0 overflow-hidden",
     heroImg:
-        "w-full h-44 sm:h-56 object-cover border-b border-gray-500 block blur-sm scale-[1.02] [transform:translateZ(0)]",
+        "w-full h-44 sm:h-56 object-cover border-b border-gray-500",
     heroCopyOverlay:
-        "opacity-80 bg-[#f01653] pointer-events-none absolute inset-0 z-[1] flex items-end justify-center px-3 pb-4 sm:items-center sm:pb-6 sm:px-6",
+        "bg-gradient-to-t from-pink-400 to-pink-300/70 pointer-events-none absolute inset-0 z-[1] flex items-end justify-center px-3 pb-4 sm:items-center sm:pb-6 sm:px-6",
     heroCopyText:
         "text-white drop-shadow-sm max-w-xl translate-y-[-10px] sm:translate-y-[20px] text-center text-2xl font-semibold leading-snug sm:max-w-3xl sm:text-4xl",
     bottomBlock: "flex flex-col gap-6 p-4 sm:p-6",
@@ -55,9 +55,9 @@ const classes = {
         "flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between",
     orderViaLabel: `inline-flex shrink-0 justify-center items-center text-lg font-semibold text-blue-600 whitespace-nowrap ${FOOTER_CONTROL_PAD}`,
     marketplaceList:
-        "items-center justify-center flex-col sm:flex-row",
+        "flex w-full flex-col items-center justify-center gap-2 sm:w-auto sm:flex-row sm:items-center sm:justify-start",
     marketplaceLinksGroup:
-        "flex min-w-0 flex-1 flex-row flex-wrap items-center gap-2",
+        "flex min-w-0 w-full flex-row flex-wrap items-center justify-center gap-2 sm:w-auto sm:flex-1 sm:justify-start",
     marketplaceLink: `text-sm sm:text-lg inline-flex shrink-0 items-center gap-2 rounded-lg bg-white/90 ${FOOTER_MARKETPLACE_PAD} font-semibold text-gray-800 shadow-sm hover:bg-white hover:shadow-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500`,
     marketplaceIcon: "h-5 w-5 shrink-0 object-contain",
     footerCloseWrapMobile: "flex shrink-0 items-center justify-center sm:hidden pt-2 sm:pt-2",
