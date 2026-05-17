@@ -147,8 +147,8 @@ const classes = {
     footer: "bg-white/20 backdrop-blur-sm border-t border-gray-500 p-6 rounded-b-lg",
     footerContainer: "flex justify-between items-center",
     footerButtonContainer: "max-w-screen-lg mx-auto flex justify-left gap-4 items-center",
-    footerButton: "bg-white text-blue-600 px-2 sm:px-6 py-3 font-semibold transition-all duration-300 hover:scale-105 rounded-lg",
-    footerButtonContact: "bg-blue-500 bg-white text-blue-600 px-2 sm:px-6 py-3 font-semibold transition-all duration-300 hover:scale-105 rounded-lg",
+    footerButton: "text-center bg-white text-blue-600 px-2 sm:px-6 py-3 font-semibold transition-all duration-300 hover:scale-105 rounded-lg",
+    footerButtonContact: "text-center bg-blue-500 bg-white text-blue-600 px-2 sm:px-6 py-3 font-semibold transition-all duration-300 hover:scale-105 rounded-lg",
     footerButtonClose: "bg-white text-blue-600 px-2 sm:px-6 py-3 min-w-10 font-semibold transition-all duration-300 hover:scale-105 rounded-lg",
 
 

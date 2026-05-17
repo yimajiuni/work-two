@@ -25,7 +25,7 @@ const classes = {
     content: "flex flex-col flex-1 min-h-0 overflow-y-auto overscroll-contain",
     heroWrap: "relative w-full shrink-0 overflow-hidden",
     heroImg:
-        "w-full h-44 sm:h-56 object-cover border-b border-gray-500",
+        "w-full h-40 sm:h-56 object-cover border-b border-gray-500",
     heroCopyOverlay:
         "bg-gradient-to-t from-pink-400 to-pink-300/70 pointer-events-none absolute inset-0 z-[1] flex items-end justify-center px-3 pb-4 sm:items-center sm:pb-6 sm:px-6",
     heroCopyText:

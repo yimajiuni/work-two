@@ -570,7 +570,7 @@ i18n
                 button: "View the Detail"
               },
               performanceReport: {
-                title: "Next.js EC Site Performance Report",
+                title: "What's the Headless Commerce Branding Strategy?",
                 content: {
                   section1: {
                     title: "The Future standards of E-commerce, Now in Your Hands",
@@ -1723,7 +1723,7 @@ i18n
                 button: "詳しく見る"
               },
               performanceReport: {
-                title: "NEXT.js × Shopify × ブランディング戦略とは？",
+                title: "NEXT.js Shopify ブランディング戦略とは？",
                 content: {
                   section1: {
                     title: "独自のデータ処理による高速化でユーザー体験が大幅に向上。",
