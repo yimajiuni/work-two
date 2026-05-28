@@ -480,10 +480,10 @@ i18n
                               3. JS detox (3.0h) — defer non-critical app JavaScript where it helps.
                               4. Font optimization (1.0h) — remove fonts and other invisible sources of delay.
                               5. Results pack (0.5h) — before/after metrics plus a practical ops guide.`,
-                  content: `▣ If your PageSpeed Insights score is deep in the red, you need investment—not a repair bill.
-                            ▣ We dramatically improve LCP on one specific product detail page (PDP) and optimize your business health.
-                            ▣ This may not be the right fit if you need someone to take on every task across the storefront.
-                            ▣ Effective improvement through a short, focused sprint with specialized expertise and know-how.`,
+                  content: ` If your PageSpeed Insights score is deep in the red, you need investment—not a repair bill.
+                             We dramatically improve LCP on one specific product detail page (PDP) and optimize your business health.
+                             This may not be the right fit if you need someone to take on every task across the storefront.
+                             Effective improvement through a short, focused sprint with specialized expertise and know-how.`,
                   thumbs: {
                     left: {
                       label: "BEFORE",
@@ -1632,10 +1632,10 @@ i18n
                                3. JSデトックス (3.0h) - 不要なアプリJSの遅延読み込み設定。
                                4. フォント最適化(1.0h) - フォント等、不可視な遅延要因の排除。
                                5. 成果レポート (0.5h) - Before/After数値と今後の運用ガイド納品。`,
-                  content: `▣ PageSpeed Insightsのスコアが「赤」なら、それは修理費用ではなく「投資」が必要です。
-                            ▣ 特定の商品詳細ページ（PDP）1件のLCPを劇的に改善しあなたのビジネスの健全性を最適化します。                  
-                            ▣ 全ての作業を引き受けるサービスをお探しの方には向いていないかもしれません。
-                            ▣ 短期集中の専門的な知見とノウハウで効果的な改善を実現。`,
+                  content: ` PageSpeed Insightsのスコアが「赤」なら、それは修理費用ではなく「投資」が必要です。
+                             特定の商品詳細ページ（PDP）1件のLCPを劇的に改善しあなたのビジネスの健全性を最適化します。                  
+                             全ての作業を引き受けるサービスをお探しの方には向いていないかもしれません。
+                             短期集中の専門的な知見とノウハウで効果的な改善を実現。`,
                   thumbs: {
                     left: {
                       label: "BEFORE",

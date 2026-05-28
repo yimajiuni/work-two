@@ -38,6 +38,9 @@ import lcpBefore400w from "./lcp-before-400w.webp";
 import lcpBefore600w from "./lcp-before-600w.webp";
 import lcpAfter400w from "./lcp-after-400w.webp";
 import lcpAfter600w from "./lcp-after-600w.webp";
+import upworkIcon from "../icons/upwork.svg";
+import contraIcon from "../icons/contra.svg";
+import maltIcon from "../icons/malt.svg";
 
 export {
   hero,
@@ -75,6 +78,9 @@ export {
   webmock3,
   webmock4,
   webmock5,
+  upworkIcon,
+  contraIcon,
+  maltIcon,
   lcpReport480w,
   lcpBefore400w,
   lcpBefore600w,

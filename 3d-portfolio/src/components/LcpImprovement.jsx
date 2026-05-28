@@ -7,20 +7,15 @@ import {
     lcpBefore400w,
     lcpBefore600w,
     lcpReport480w,
+    upworkIcon,
+    contraIcon,
+    maltIcon,
 } from "../assets/images";
 import { preloadImage, prefetchImageUrl, runWhenIdle } from "../utils/resourceHints";
-import upworkIcon from "../assets/icons/upwork.svg";
-import contraIcon from "../assets/icons/contra.svg";
-import maltIcon from "../assets/icons/malt.svg";
 
 /** Comparison stage: ~291px displayed; cap at 600w source */
 const LCP_MODAL_THUMB_SIZES = "(max-width: 640px) 92vw, 36rem";
 
-const LCP_MODAL_REPORT_INLINE = {
-    src: lcpReport480w,
-    width: 480,
-    height: 640,
-};
 
 const LCP_MODAL_THUMB_BEFORE = {
     src: lcpBefore400w,
@@ -36,6 +31,12 @@ const LCP_MODAL_THUMB_AFTER = {
     sizes: LCP_MODAL_THUMB_SIZES,
     width: 400,
     height: 242,
+};
+
+const LCP_MODAL_REPORT_INLINE = {
+    src: lcpReport480w,
+    width: 480,
+    height: 640,
 };
 
 let warmupStarted = false;
@@ -90,7 +91,7 @@ const classes = {
     detailCol: "flex flex-col gap-3 border-r border-b border-gray-500 bg-white/30 p-4 text-gray-800",
     detailScoreHead: "text-sm sm:text-base font-bold text-blue-700 leading-snug",
     detailScoreBody: "text-sm sm:text-base leading-relaxed text-gray-800",
-    detailBullet: "text-sm sm:text-base leading-relaxed whitespace-pre-line",
+    detailBullet: "text-sm sm:text-base font-bold text-blue-700 whitespace-pre-line",
     sectionArrow: "flex justify-center pt-1 text-blue-600 text-xl leading-none select-none",
     metaLabel: "text-xs font-semibold uppercase tracking-wide text-blue-700",
     metaValue: "text-base sm:text-lg text-gray-800 leading-snug",
@@ -103,9 +104,8 @@ const classes = {
     comparisonImg:
         "relative z-10 mx-auto block h-full max-h-[10rem] sm:max-h-[14rem] w-full max-w-full object-contain pointer-events-none",
     comparisonTooltip:
-        "pointer-events-none absolute left-1/2 top-16 z-20 w-[min(92%,20rem)] -translate-x-1/2  border border-white/40 bg-black px-3 py-2 text-left text-xs text-white opacity-0 shadow-lg backdrop-blur-sm transition-opacity duration-200 group-hover:opacity-100 sm:w-[min(90%,22rem)] sm:text-sm",
-    comparisonTooltipHead: "font-bold leading-snug text-white",
-    comparisonTooltipBody: "mt-1.5 leading-snug text-gray-100",
+        "pointer-events-none absolute left-1/2 top-0 z-20 w-[min(92%,20rem)] -translate-x-1/2 border border-white/40 bg-black px-3 py-2 text-left text-xs text-white opacity-0 shadow-lg backdrop-blur-sm transition-opacity duration-200 group-hover:opacity-100 sm:w-[min(90%,22rem)] sm:text-sm",
+    comparisonTooltipHead: "text-center font-bold leading-snug text-white",
     comparisonBadge:
         "pointer-events-none absolute inset-0 z-0 flex w-full max-w-full items-center justify-center px-1 font-['IrvinHeading','Crimson_Pro',sans-serif] font-black uppercase text-white drop-shadow-md leading-none [font-size:clamp(2.5rem,min(38cqw,28cqh),11rem)] max-[430px]:[font-size:clamp(2.25rem,min(32cqw,24cqh),9rem)] whitespace-nowrap overflow-hidden tracking-[0.08em]",
     demoLinksRow:
@@ -143,12 +143,11 @@ const SectionArrow = () => (
     </div>
 );
 
-const ComparisonPanel = ({
+const ComparisonImage = ({
     variant,
     thumb,
     badgeLabel,
     tooltipHeadline,
-    tooltipBody,
     alt,
     demoUrl,
     linkLabel,
@@ -163,7 +162,6 @@ const ComparisonPanel = ({
             <div className={stageClass}>
                 <div className={classes.comparisonTooltip}>
                     <p className={classes.comparisonTooltipHead}>{tooltipHeadline}</p>
-                    <p className={classes.comparisonTooltipBody}>{tooltipBody}</p>
                 </div>
                 <span className={classes.comparisonBadge}>{badgeLabel}</span>
                 <img
@@ -202,11 +200,11 @@ const ComparisonPanel = ({
     );
 };
 
-const DetailColumn = ({ tooltipHeadline, tooltipBody, bullets }) => (
+const DetailColumn = ({ detailHeadline, detailBody, bullets }) => (
     <div className={classes.detailCol}>
         <div>
-            <p className={classes.detailScoreHead}>{tooltipHeadline}</p>
-            <p className={classes.detailScoreBody}>{tooltipBody}</p>
+            <p className={classes.detailScoreHead}>{detailHeadline}</p>
+            <p className={classes.detailScoreBody}>{detailBody}</p>
         </div>
         {bullets.map((line) => (
             <p key={line} className={classes.detailBullet}>
@@ -288,15 +286,12 @@ const LcpImprovement = ({ isOpen, onClose }) => {
                                 {t("service.section2.lcp.modal.thumbs.left.label")}
                             </h3>
                             <div className={classes.twoColGrid}>
-                                <ComparisonPanel
+                                <ComparisonImage
                                     variant="before"
                                     thumb={LCP_MODAL_THUMB_BEFORE}
                                     badgeLabel={t("service.section2.lcp.modal.thumbs.left.label")}
                                     tooltipHeadline={t(
                                         "service.section2.lcp.modal.comparison.tooltipBeforeHeadline"
-                                    )}
-                                    tooltipBody={t(
-                                        "service.section2.lcp.modal.comparison.tooltipBeforeBody"
                                     )}
                                     alt={t("service.section2.lcp.modal.comparison.altBefore")}
                                     demoUrl={leftUrl}
@@ -305,10 +300,10 @@ const LcpImprovement = ({ isOpen, onClose }) => {
                                     titleFontStyle={titleFontStyle}
                                 />
                                 <DetailColumn
-                                    tooltipHeadline={t(
+                                    detailHeadline={t(
                                         "service.section2.lcp.modal.comparison.tooltipBeforeHeadline"
                                     )}
-                                    tooltipBody={t(
+                                    detailBody={t(
                                         "service.section2.lcp.modal.comparison.tooltipBeforeBody"
                                     )}
                                     bullets={beforeBullets}
@@ -388,15 +383,12 @@ const LcpImprovement = ({ isOpen, onClose }) => {
                                 {t("service.section2.lcp.modal.thumbs.right.label")}
                             </h3>
                             <div className={classes.twoColGrid}>
-                                <ComparisonPanel
+                                <ComparisonImage
                                     variant="after"
                                     thumb={LCP_MODAL_THUMB_AFTER}
                                     badgeLabel={t("service.section2.lcp.modal.thumbs.right.label")}
                                     tooltipHeadline={t(
                                         "service.section2.lcp.modal.comparison.tooltipAfterHeadline"
-                                    )}
-                                    tooltipBody={t(
-                                        "service.section2.lcp.modal.comparison.tooltipAfterBody"
                                     )}
                                     alt={t("service.section2.lcp.modal.comparison.altAfter")}
                                     demoUrl={rightUrl}
@@ -405,10 +397,10 @@ const LcpImprovement = ({ isOpen, onClose }) => {
                                     titleFontStyle={titleFontStyle}
                                 />
                                 <DetailColumn
-                                    tooltipHeadline={t(
+                                    detailHeadline={t(
                                         "service.section2.lcp.modal.comparison.tooltipAfterHeadline"
                                     )}
-                                    tooltipBody={t(
+                                    detailBody={t(
                                         "service.section2.lcp.modal.comparison.tooltipAfterBody"
                                     )}
                                     bullets={afterBullets}
