@@ -33,6 +33,11 @@ import webmock2 from "./webmock2.webp";
 import webmock3 from "./webmock3.webp";
 import webmock4 from "./webmock4.webp";
 import webmock5 from "./webmock5.webp";
+import lcpReport480w from "./lcp-report-480w.webp";
+import lcpBefore400w from "./lcp-before-400w.webp";
+import lcpBefore600w from "./lcp-before-600w.webp";
+import lcpAfter400w from "./lcp-after-400w.webp";
+import lcpAfter600w from "./lcp-after-600w.webp";
 
 export {
   hero,
@@ -70,4 +75,9 @@ export {
   webmock3,
   webmock4,
   webmock5,
+  lcpReport480w,
+  lcpBefore400w,
+  lcpBefore600w,
+  lcpAfter400w,
+  lcpAfter600w,
 };

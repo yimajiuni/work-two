@@ -23,6 +23,10 @@ import waPtnDia from '../assets/images/wa-ptn-dia.webp';
 import waPtnWave from '../assets/images/wa-ptn-wave.webp';
 import Footer from "../components/Footer";
 
+const runLcpImprovementWarmup = () => {
+    import("../components/LcpImprovement").then((m) => m.warmupLcpImprovementModal());
+};
+
 // Consolidated Tailwind classes for better performance
 const classes = {
     // Main container
@@ -152,6 +156,11 @@ const Service = () => {
     const openLcpImprovementModal = () => setModalParam("lcp", "improvement");
     const closeLcpImprovementModal = () => clearModalParam("lcp");
     const { t } = useTranslation();
+
+    /** Preload modal images + chunk when deep-linked (?lcp=improvement) */
+    useEffect(() => {
+        if (isLcpImprovementOpen) runLcpImprovementWarmup();
+    }, [isLcpImprovementOpen]);
 
     // 📍 REFS: Create references to DOM elements for GSAP animations
     // 💡 These refs allow us to control the animations of specific sections
@@ -753,6 +762,8 @@ const Service = () => {
                                         <button
                                             type="button"
                                             onClick={openLcpImprovementModal}
+                                            onMouseEnter={runLcpImprovementWarmup}
+                                            onFocus={runLcpImprovementWarmup}
                                             className={classes.demoButton}
                                         >
                                             {t('service.section2.lcp.button')}

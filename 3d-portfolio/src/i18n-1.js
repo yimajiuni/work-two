@@ -463,8 +463,8 @@ i18n
                 description2: "Optimize the main content to reduce user abandonment and improve CVR.",
                 button: "Order Service",
                 modal: {
-                  title: "Shopify LCP improvement package — $500 (limited scope)",
-                  copy: "Is your Shopify store losing customers to 32 seconds of loading 'silence'?",
+                  title: "Is your Shopify store losing customers to loading 'silence'?",
+                  packageSectionTitle: "Shopify LCP improvement package",
                   close: "Close",
                   closeAria: "Close dialog",
                   labels: {
@@ -473,8 +473,8 @@ i18n
                     milestones: "Milestone examples",
                     content: "Details"
                   },
-                  price: "Shopify LCP speed optimization package $500 / 10 hours fixed · no add-on fees",
-                  scope: "LCP / FCP / TBT metric improvements (typically ~20–50% reduction).",
+                  price: "$500 / 10 hours fixed · no add-on fees",
+                  scope: "LCP / FCP / TBT metric improvements over 1 effective page (typically ~20–50% reduction).",
                   milestones: `1. Precision audit (1.5h) — pinpoint bottlenecks and assess risk.
                               2. Core fixes (4.0h) — optimize the LCP image and highest-priority loading path.
                               3. JS detox (3.0h) — defer non-critical app JavaScript where it helps.
@@ -487,13 +487,13 @@ i18n
                   thumbs: {
                     left: {
                       label: "BEFORE",
-                      linkLabel: "GO TO BEFORE →",
+                      linkLabel: "GO TO BEFORE CASE→",
                       alt: "Next.js and Shopify headless demo site thumbnail",
                       url: "https://lcp-improv-before.vercel.app/products/boho-mandala-art-v2"
                     },
                     right: {
                       label: "AFTER",
-                      linkLabel: "GO TO AFTER →",
+                      linkLabel: "GO TO AFTER CASE→",
                       alt: "Secondary portfolio thumbnail",
                       url: "https://lcp-improv-after.vercel.app/products/boho-mandala-art-v2"
                     }
@@ -509,6 +509,8 @@ i18n
                       "UX that doesn't keep people waiting. Stronger SEO signals, less wasted ad spend (CPC), and higher CVR."
                   },
                   orderVia: "Order via",
+                  contactLink: "Email",
+                  contactAria: "Go to contact page",
                   marketplaces: {
                     upwork: {
                       label: "Upwork",
@@ -1613,8 +1615,8 @@ i18n
                 description2: "最大コンテンツ表示（LCP）の最適化で、ユーザーの離脱を減らしCVRを改善します。",
                 button: "サービス申込",
                 modal: {
-                  title: "Shopify LCP改善パッケージ $500（限定スコープ）",
-                  copy: "あなたのShopifyサイト、32秒の「沈黙」で顧客を失っていませんか？",
+                  title: "あなたのShopifyサイト、ロード時の「沈黙」で顧客を失っていませんか？",
+                  packageSectionTitle: "Shopify LCP改善パッケージ",
                   close: "閉じる",
                   closeAria: "ダイアログを閉じる",
                   labels: {
@@ -1623,8 +1625,8 @@ i18n
                     milestones: "マイルストーン例",
                     content: "内容"
                   },
-                  price: "Shopify LCP 高速化パッケージ $500 / 10時間固定・追加費用なし",
-                  scope: `LCP / FCP / TBT の数値改善（20〜50%減）`,
+                  price: "$500 / 10時間固定・追加費用なし",
+                  scope: `効果の高い１ページにおける LCP / FCP / TBT の数値改善（20〜50%減）`,
                   milestones: `1. 精密診断 (1.5h) - ボトルネックの特定とリスクアセスメント。
                                2. コア改善 (4.0h) - LCP画像の最適化と最優先読み込みの実装。
                                3. JSデトックス (3.0h) - 不要なアプリJSの遅延読み込み設定。
@@ -1637,13 +1639,13 @@ i18n
                   thumbs: {
                     left: {
                       label: "BEFORE",
-                      linkLabel: "GO TO BEFORE →",
+                      linkLabel: "GO TO BEFORE CASE →",
                       alt: "Next.js × Shopify デモサイトのサムネイル",
                       url: "https://lcp-improv-before.vercel.app/products/boho-mandala-art-v2"
                     },
                     right: {
                       label: "AFTER",
-                      linkLabel: "GO TO AFTER →",
+                      linkLabel: "GO TO AFTER CASE →",
                       alt: "参考用のサムネイル画像",
                       url: "https://lcp-improv-after.vercel.app/products/boho-mandala-art-v2"
                     }
@@ -1659,6 +1661,8 @@ i18n
                       "「待たせない」UXへ。 GoogleのSEO評価も「合格」に。広告のクリック単価（CPC）を無駄にせず、CVR（成約率）を最大化します。"
                   },
                   orderVia: "ご依頼はこちらから",
+                  contactLink: "Email",
+                  contactAria: "お問い合わせページへ",
                   marketplaces: {
                     upwork: {
                       label: "Upwork",

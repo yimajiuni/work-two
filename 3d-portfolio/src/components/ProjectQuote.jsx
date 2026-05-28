@@ -1,9 +1,8 @@
-import React, { useState, useMemo, useEffect, useCallback } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import { Document, Page, Text, View, StyleSheet, pdf, Font } from '@react-pdf/renderer';
-import { I18nextProvider } from 'react-i18next';
 import emailjs from '@emailjs/browser';
+import { downloadProjectQuotePdf } from '../utils/projectQuotePdf';
 
 // Consolidated Tailwind classes for better performance
 const classes = {
@@ -124,70 +123,6 @@ const priorityGridClass = (priority) => classes.priorityColors[PRIORITY_RANKS[pr
 const priorityRankBadgeClass = (priority) => classes.priorityBadgeColors[PRIORITY_RANKS[priority - 1]];
 const priorityListClass = (priority) => classes.priorityListBadge[PRIORITY_RANKS[priority - 1]];
 
-// PDF Styles
-const pdfStyles = StyleSheet.create({
-    page: {
-        padding: 30,
-        fontSize: 12,
-        fontFamily: 'Helvetica',
-    },
-    title: {
-        fontSize: 24,
-        marginBottom: 20,
-        textAlign: 'center',
-        fontWeight: 'bold',
-    },
-    question: {
-        fontSize: 14,
-        marginTop: 15,
-        marginBottom: 5,
-        fontWeight: 'bold',
-    },
-    answer: {
-        fontSize: 12,
-        marginLeft: 20,
-        marginBottom: 10,
-    },
-    footer: {
-        fontSize: 10,
-        marginTop: 30,
-        textAlign: 'center',
-        color: '#666',
-    },
-});
-
-// Japanese font styles (using Helvetica for reliability)
-const japanesePdfStyles = StyleSheet.create({
-    page: {
-        padding: 30,
-        fontSize: 12,
-        fontFamily: 'NotoSansJP',
-    },
-    title: {
-        fontSize: 24,
-        marginBottom: 20,
-        textAlign: 'center',
-        fontWeight: 'bold',
-    },
-    question: {
-        fontSize: 14,
-        marginTop: 15,
-        marginBottom: 5,
-        fontWeight: 'bold',
-    },
-    answer: {
-        fontSize: 12,
-        marginLeft: 20,
-        marginBottom: 10,
-    },
-    footer: {
-        fontSize: 10,
-        marginTop: 30,
-        textAlign: 'center',
-        color: '#666',
-    },
-});
-
 const ProjectQuote = ({ isOpen, onClose }) => {
     const { t, i18n } = useTranslation();
     const [currentStep, setCurrentStep] = useState(0);
@@ -195,39 +130,6 @@ const ProjectQuote = ({ isOpen, onClose }) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [validationError, setValidationError] = useState(''); // Add validation error state
-
-    // State to track if fonts are loaded
-    const [fontsLoaded, setFontsLoaded] = useState(false);
-
-    // Lazy load fonts only when PDF generation is needed
-    const loadFontsForPDF = useCallback(async () => {
-        if (fontsLoaded) return; // Already loaded
-
-        try {
-            // @react-pdf/renderer requires TTF/OTF format, not WOFF2
-            // Lazy load fonts only when PDF generation is triggered
-            Font.register({
-                family: 'NotoSansJP',
-                fonts: [
-                    {
-                        src: '/fonts/NotoSansJP-Regular.ttf',
-                        fontWeight: 400
-                    },
-                    {
-                        src: '/fonts/NotoSansJP-Bold.ttf',
-                        fontWeight: 700
-                    },
-                ],
-            });
-
-            setFontsLoaded(true);
-            console.log('✅ Fonts loaded successfully for PDF generation');
-        } catch (error) {
-            console.error('❌ Font registration failed:', error);
-            throw error; // Re-throw to handle in generatePDF
-        }
-    }, [fontsLoaded]);
-
 
     const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
 
@@ -563,173 +465,16 @@ const ProjectQuote = ({ isOpen, onClose }) => {
         }
     };
 
-    // PDF Document Component
-    const PDFDocument = ({ language = 'en' }) => {
-        const styles = language === 'jp' ? japanesePdfStyles : pdfStyles;
-        const isJapanese = language === 'jp';
-
-        return (
-            <Document>
-                <Page size="A4" style={styles.page}>
-                    <Text style={styles.title}>
-                        {t('service.qaForm.pdf.title')}
-                    </Text>
-
-                    {isJapanese && (
-                        <Text style={[styles.title, { fontSize: 16, marginTop: -10, marginBottom: 20, color: '#666' }]}>
-                            {t('service.qaForm.pdf.title')}
-                        </Text>
-                    )}
-
-                    {Object.entries(formData).map(([key, value]) => {
-                        const question = qaFlow.find(q => q.id === key);
-                        if (!question || !value) return null;
-
-                        return (
-                            <View key={key}>
-                                <Text style={styles.question}>
-                                    {t(`service.qaForm.questions.${key}.question`)}
-                                </Text>
-
-                                {Array.isArray(value) ? (
-                                    // Handle array values (like features checkbox, visual style grid)
-                                    value.map((item, index) => {
-                                        let displayText = item;
-                                        if (question.type === 'select' || question.type === 'checkbox') {
-                                            // Always show the translated text in the current language
-                                            displayText = t(`service.qaForm.questions.${key}.options.${item}`);
-                                        }
-
-                                        // Special handling for visual style grid to show priority numbers
-                                        if (question.type === 'grid') {
-                                            const priority = index + 1;
-                                            const priorityColor = priority === 1 ? '★' :
-                                                priority === 2 ? '♥' :
-                                                    priority === 3 ? '♣' :
-                                                        priority === 4 ? '♦' : '♠';
-
-                                            return (
-                                                <Text key={index} style={styles.answer}>
-                                                    {priorityColor} {priority}. {displayText}
-                                                </Text>
-                                            );
-                                        }
-
-                                        return (
-                                            <Text key={index} style={styles.answer}>
-                                                • {displayText}
-                                            </Text>
-                                        );
-                                    })
-                                ) : (
-                                    // Handle single values (like projectType, projectScale, budget, timeline)
-                                    <Text style={styles.answer}>
-                                        {(() => {
-                                            // Special handling for dual-textarea (websiteReferences)
-                                            if (question.type === 'dual-textarea') {
-                                                const websiteData = value;
-                                                return [
-                                                    `${t('service.qaForm.questions.websiteReferences.atmosphareQuestion')}: ${websiteData.atmosphere || 'N/A'}`,
-                                                    `${t('service.qaForm.questions.websiteReferences.functionQuestion')}: ${websiteData.function || 'N/A'}`
-                                                ].join('\n');
-                                            }
-
-                                            // For select and radio fields, always show the descriptive label
-                                            if (question.type === 'select' || question.type === 'radio') {
-                                                const translatedValue = t(`service.qaForm.questions.${key}.options.${value}`);
-                                                return translatedValue;
-                                            }
-                                            // For other fields (textarea, contact), show as is
-                                            return value.toString();
-                                        })()}
-                                    </Text>
-                                )}
-
-                                {/* Show other platform details if "other" is selected */}
-                                {key === 'chatDetails' && value === 'other' && formData.otherChatPlatform && (
-                                    <Text style={styles.answer}>
-                                        Platform Details: {formData.otherChatPlatform}
-                                    </Text>
-                                )}
-                            </View>
-                        );
-                    })}
-
-                    <Text style={styles.footer}>
-                        {t('service.qaForm.pdf.generatedOn')}: {new Date().toLocaleDateString()}
-                    </Text>
-                </Page>
-            </Document>
-        );
-    };
-
     const generatePDF = async () => {
         try {
-            // Load fonts only when PDF generation is requested (lazy loading)
-            await loadFontsForPDF();
-
-            const currentLang = i18n?.language || 'en';
-
-            // Test if formData is empty
             if (!formData || Object.keys(formData).length === 0) {
-                console.error('Form data is empty!');
                 alert('No form data to generate PDF. Please complete the form first.');
                 return;
             }
 
-            // Generate PDF using react-pdf with I18nextProvider
-
-            // Ensure the language is set before generating PDF
-            if (i18n && currentLang !== i18n.language) {
-                i18n.changeLanguage(currentLang);
-            }
-
-            const pdfBlob = await pdf(
-                <I18nextProvider i18n={i18n}>
-                    <PDFDocument language={currentLang} />
-                </I18nextProvider>
-            ).toBlob();
-
-            // Create download link
-            const url = URL.createObjectURL(pdfBlob);
-            const link = document.createElement('a');
-            link.href = url;
-
-            // Set filename based on language and branding depth
-            const brandingType = formData.brandingDepth || 'standard';
-            if (currentLang === 'jp') {
-                if (brandingType === 'detailed') {
-                    link.download = 'ブランディングプロジェクト見積もり依頼.pdf';
-                } else if (brandingType === 'simple') {
-                    link.download = 'スタータープロジェクト見積もり依頼.pdf';
-                } else {
-                    link.download = 'プロジェクト見積もり依頼.pdf';
-                }
-            } else {
-                if (brandingType === 'detailed') {
-                    link.download = 'branding-quote-request.pdf';
-                } else if (brandingType === 'simple') {
-                    link.download = 'starter-quote-request.pdf';
-                } else {
-                    link.download = 'project-quote-request.pdf';
-                }
-            }
-
-            // Trigger download
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-
-            // Cleanup
-            URL.revokeObjectURL(url);
-
+            await downloadProjectQuotePdf({ formData, qaFlow, t, i18n });
         } catch (error) {
             console.error('PDF generation failed:', error);
-            console.error('Error details:', {
-                message: error.message,
-                stack: error.stack,
-                name: error.name
-            });
             alert(`PDF generation failed: ${error.message}. Please try again.`);
         }
     };

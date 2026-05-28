@@ -1,48 +1,109 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import lcpReport from "../assets/images/lcp-report.webp";
-import thumbBefore from "../assets/images/lcp-before.webp";
-import thumbAfter from "../assets/images/lcp-after.webp";
+import {
+    lcpAfter400w,
+    lcpAfter600w,
+    lcpBefore400w,
+    lcpBefore600w,
+    lcpReport480w,
+} from "../assets/images";
+import { preloadImage, prefetchImageUrl, runWhenIdle } from "../utils/resourceHints";
 import upworkIcon from "../assets/icons/upwork.svg";
 import contraIcon from "../assets/icons/contra.svg";
 import maltIcon from "../assets/icons/malt.svg";
 
-/** Footer control padding; marketplace links use tighter horizontal pad on mobile (icon + label) */
-const FOOTER_CONTROL_PAD = "px-4 sm:px-6 py-2 sm:py-3";
-const FOOTER_MARKETPLACE_PAD = "px-1.5 lg:px-6 py-2 sm:py-3";
+/** Comparison stage: ~291px displayed; cap at 600w source */
+const LCP_MODAL_THUMB_SIZES = "(max-width: 640px) 92vw, 36rem";
+
+const LCP_MODAL_REPORT_INLINE = {
+    src: lcpReport480w,
+    width: 480,
+    height: 640,
+};
+
+const LCP_MODAL_THUMB_BEFORE = {
+    src: lcpBefore400w,
+    srcSet: `${lcpBefore400w} 400w, ${lcpBefore600w} 600w`,
+    sizes: LCP_MODAL_THUMB_SIZES,
+    width: 400,
+    height: 242,
+};
+
+const LCP_MODAL_THUMB_AFTER = {
+    src: lcpAfter400w,
+    srcSet: `${lcpAfter400w} 400w, ${lcpAfter600w} 600w`,
+    sizes: LCP_MODAL_THUMB_SIZES,
+    width: 400,
+    height: 242,
+};
+
+let warmupStarted = false;
+
+/** Preload inline report + idle-prefetch comparison thumbs (call before / while opening modal). */
+export function warmupLcpImprovementModal() {
+    if (typeof window === "undefined" || warmupStarted) return;
+    warmupStarted = true;
+
+    preloadImage({
+        href: LCP_MODAL_REPORT_INLINE.src,
+        fetchPriority: "high",
+    });
+
+    runWhenIdle(() => {
+        prefetchImageUrl(LCP_MODAL_THUMB_BEFORE.src);
+        prefetchImageUrl(LCP_MODAL_THUMB_AFTER.src);
+    });
+}
+
+const FOOTER_CONTROL_PAD = "px-2 sm:px-4 py-2 sm:py-3";
+const FOOTER_MARKETPLACE_PAD = "px-2 lg:px-4 py-2 sm:py-3";
 
 const classes = {
     modalOverlay:
         "fixed inset-0 bg-white/10 backdrop-blur-sm z-50 flex items-center justify-center p-4",
     mainContainer:
-        "border border-gray-500 bg-[#f9c6e1] backdrop-blur-sm max-w-4xl w-full max-h-[90dvh] min-h-[40dvh] flex flex-col overflow-hidden rounded-lg",
+        "border border-gray-500 bg-[#f9c6e1] max-w-4xl w-full max-h-[90dvh] min-h-[40dvh] flex flex-col overflow-hidden rounded-lg",
     header:
-        "sticky top-0 z-10 shrink-0 bg-white/20 backdrop-blur-sm border-b border-gray-500 text-blue-600 p-4 sm:p-6 rounded-t-lg",
+        "sticky top-0 z-20 shrink-0 border-b border-gray-500 bg-white/20 text-blue-600 p-4 sm:p-6 backdrop-blur-sm supports-[backdrop-filter]:bg-white/20",
     headerContent: "flex justify-between items-start gap-4",
     headerTitle: "text-xl sm:text-2xl font-bold text-blue-600 pr-2",
     closeButton: "text-blue-600 hover:text-white text-2xl leading-none shrink-0 transition-colors",
     content: "flex flex-col flex-1 min-h-0 overflow-y-auto overscroll-contain",
-    heroWrap: "relative w-full shrink-0 overflow-hidden",
-    heroImg:
-        "w-full h-40 sm:h-56 object-cover border-b border-gray-500",
-    heroCopyOverlay:
-        "bg-gradient-to-t from-pink-400 to-pink-300/70 pointer-events-none absolute inset-0 z-[1] flex items-end justify-center px-3 pb-4 sm:items-center sm:pb-6 sm:px-6",
-    heroCopyText:
-        "text-white drop-shadow-sm max-w-xl translate-y-[-10px] sm:translate-y-[20px] text-center text-2xl font-semibold leading-snug sm:max-w-3xl sm:text-4xl",
-    bottomBlock: "flex flex-col gap-6 p-4 sm:p-6",
-    metaRow:
-        "space-y-3 border-b border-gray-500 pb-6 text-gray-800",
+    bottomBlock: "flex flex-col gap-8 p-4 sm:p-6",
+    sectionBlock: "flex flex-col gap-4",
+    sectionLabel:
+        "text-center font-['IrvinHeading','Crimson_Pro',sans-serif] text-2xl sm:text-3xl font-black uppercase tracking-[0.12em]",
+    sectionLabelPackage:
+        "text-center text-2xl sm:text-3xl font-semibold leading-snug text-black",
+    sectionLabelBefore: "text-[#f01653]",
+    sectionLabelAfter: "text-blue-700",
+    metaRow: " border-b border-gray-500 p-4 text-gray-800",
+    metaRowInner: "flex items-center justify-center sm:justify-end min-w-0 self-stretch grid grid-cols-1 sm:grid-cols-[minmax(0,3.8fr)_minmax(0,1.2fr)] gap-4 sm:gap-4 items-start",
+    metaFieldsCol: "space-y-4 min-w-0",
+    metaReportCol: "flex items-center justify-center sm:justify-end min-w-0 self-stretch",
+    metaReportWrap: "relative w-full max-w-[12rem] sm:max-w-[12rem]",
+    metaReportImg: "w-full h-auto object-contain",
+    metaReportOverlay:
+        "pointer-events-none absolute inset-0 flex items-center justify-center text-8xl font-semibold text-black/30 [writing-mode:vertical-rl]",
+    twoColGrid: "grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch",
+    detailCol: "flex flex-col gap-3 border-r border-b border-gray-500 bg-white/30 p-4 text-gray-800",
+    detailScoreHead: "text-sm sm:text-base font-bold text-blue-700 leading-snug",
+    detailScoreBody: "text-sm sm:text-base leading-relaxed text-gray-800",
+    detailBullet: "text-sm sm:text-base leading-relaxed whitespace-pre-line",
+    sectionArrow: "flex justify-center pt-1 text-blue-600 text-xl leading-none select-none",
     metaLabel: "text-xs font-semibold uppercase tracking-wide text-blue-700",
     metaValue: "text-base sm:text-lg text-gray-800 leading-snug",
     comparisonBlock:
-        "rounded-lg overflow-hidden border border-gray-500 bg-white/30 shadow-sm",
-    comparisonStageBase:
-        "group relative w-full min-h-[11rem] sm:min-h-[13rem] py-2 [container-type:inline-size] transition-[background-color] duration-700 ease-in-out",
+        "overflow-hidden border-l border-t border-gray-500 bg-white/30 shadow-sm h-full flex flex-col",
+    comparisonStageBefore:
+        "group relative w-full min-h-[11rem] sm:min-h-[13rem] py-2 [container-type:inline-size] bg-[#f01653]",
+    comparisonStageAfter:
+        "group relative w-full min-h-[11rem] sm:min-h-[13rem] py-2 [container-type:inline-size] bg-blue-600",
     comparisonImg:
-        "absolute inset-0 z-10 m-auto h-full max-h-full w-full max-w-full object-contain duration-700 ease-in-out pointer-events-none",
+        "relative z-10 mx-auto block h-full max-h-[10rem] sm:max-h-[14rem] w-full max-w-full object-contain pointer-events-none",
     comparisonTooltip:
-        "pointer-events-none absolute left-1/2 top-16 z-20 w-[min(92%,20rem)] -translate-x-1/2 rounded-lg border border-white/40 bg-black px-3 py-2 text-left text-xs text-white opacity-0 shadow-lg backdrop-blur-sm transition-opacity duration-200 group-hover:opacity-100 sm:w-[min(90%,22rem)] sm:text-sm",
+        "pointer-events-none absolute left-1/2 top-16 z-20 w-[min(92%,20rem)] -translate-x-1/2  border border-white/40 bg-black px-3 py-2 text-left text-xs text-white opacity-0 shadow-lg backdrop-blur-sm transition-opacity duration-200 group-hover:opacity-100 sm:w-[min(90%,22rem)] sm:text-sm",
     comparisonTooltipHead: "font-bold leading-snug text-white",
     comparisonTooltipBody: "mt-1.5 leading-snug text-gray-100",
     comparisonBadge:
@@ -55,10 +116,13 @@ const classes = {
         "flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between",
     orderViaLabel: `inline-flex shrink-0 justify-center items-center text-lg font-semibold text-blue-600 whitespace-nowrap ${FOOTER_CONTROL_PAD}`,
     marketplaceList:
-        "flex w-full flex-col items-center justify-center gap-2 sm:w-auto sm:flex-row sm:items-center sm:justify-start",
+        "flex w-full flex-col items-center justify-center gap-2 sm:w-auto sm:flex-1 sm:items-center sm:justify-start",
     marketplaceLinksGroup:
-        "flex min-w-0 w-full flex-row flex-wrap items-center justify-center gap-2 sm:w-auto sm:flex-1 sm:justify-start",
-    marketplaceLink: `text-sm sm:text-lg inline-flex shrink-0 items-center gap-2 rounded-lg bg-white/90 ${FOOTER_MARKETPLACE_PAD} font-semibold text-gray-800 shadow-sm hover:bg-white hover:shadow-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500`,
+        "flex w-full min-w-0 flex-col items-center gap-2 sm:flex-row sm:flex-nowrap sm:items-center sm:justify-center sm:gap-2",
+    marketplaceLinksRow:
+        "flex w-full flex-row flex-wrap items-center justify-center gap-2 sm:contents",
+    marketplaceLink: `text-sm sm:text-lg inline-flex shrink-0 items-center gap-2 rounded-lg bg-white/90 no-underline ${FOOTER_MARKETPLACE_PAD} font-semibold text-gray-800 shadow-sm hover:bg-white hover:shadow-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500`,
+    footerContactLink: `px-[8.25rem] sm:px-4 text-sm sm:text-lg inline-flex shrink-0 items-center justify-center rounded-lg bg-white/90 no-underline ${FOOTER_MARKETPLACE_PAD} font-semibold text-blue-700 shadow-sm hover:bg-white hover:text-blue-900 hover:shadow-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500`,
     marketplaceIcon: "h-5 w-5 shrink-0 object-contain",
     footerCloseWrapMobile: "flex shrink-0 items-center justify-center sm:hidden pt-2 sm:pt-2",
     footerCloseWrapDesktop: "hidden shrink-0 sm:flex sm:items-center",
@@ -73,30 +137,121 @@ const MARKETPLACES = [
     { key: "upwork", icon: upworkIcon },
 ];
 
+const SectionArrow = () => (
+    <div className={classes.sectionArrow} aria-hidden="true">
+        ▼
+    </div>
+);
+
+const ComparisonPanel = ({
+    variant,
+    thumb,
+    badgeLabel,
+    tooltipHeadline,
+    tooltipBody,
+    alt,
+    demoUrl,
+    linkLabel,
+    onClose,
+    titleFontStyle,
+}) => {
+    const stageClass =
+        variant === "before" ? classes.comparisonStageBefore : classes.comparisonStageAfter;
+
+    return (
+        <div className={classes.comparisonBlock}>
+            <div className={stageClass}>
+                <div className={classes.comparisonTooltip}>
+                    <p className={classes.comparisonTooltipHead}>{tooltipHeadline}</p>
+                    <p className={classes.comparisonTooltipBody}>{tooltipBody}</p>
+                </div>
+                <span className={classes.comparisonBadge}>{badgeLabel}</span>
+                <img
+                    src={thumb.src}
+                    srcSet={thumb.srcSet}
+                    sizes={thumb.sizes}
+                    alt={alt}
+                    className={classes.comparisonImg}
+                    width={thumb.width}
+                    height={thumb.height}
+                    loading="lazy"
+                    decoding="async"
+                />
+            </div>
+            <div className={classes.demoLinksRow} style={titleFontStyle}>
+                {isExternal(demoUrl) ? (
+                    <a
+                        href={demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline decoration-blue-600/70 underline-offset-2 hover:text-blue-900"
+                    >
+                        {linkLabel}
+                    </a>
+                ) : (
+                    <Link
+                        to={demoUrl}
+                        className="underline decoration-blue-600/70 underline-offset-2 hover:text-blue-900"
+                        onClick={onClose}
+                    >
+                        {linkLabel}
+                    </Link>
+                )}
+            </div>
+        </div>
+    );
+};
+
+const DetailColumn = ({ tooltipHeadline, tooltipBody, bullets }) => (
+    <div className={classes.detailCol}>
+        <div>
+            <p className={classes.detailScoreHead}>{tooltipHeadline}</p>
+            <p className={classes.detailScoreBody}>{tooltipBody}</p>
+        </div>
+        {bullets.map((line) => (
+            <p key={line} className={classes.detailBullet}>
+                {line}
+            </p>
+        ))}
+    </div>
+);
+
 const LcpImprovement = ({ isOpen, onClose }) => {
     const { t, i18n } = useTranslation();
-    const [showAfter, setShowAfter] = useState(false);
+
+    useEffect(() => {
+        if (!isOpen) return;
+
+        const removePreload = preloadImage({
+            href: LCP_MODAL_REPORT_INLINE.src,
+            fetchPriority: "high",
+        });
+
+        const cancelIdle = runWhenIdle(() => {
+            prefetchImageUrl(LCP_MODAL_THUMB_BEFORE.src);
+            prefetchImageUrl(LCP_MODAL_THUMB_AFTER.src);
+        });
+
+        return () => {
+            removePreload();
+            cancelIdle();
+        };
+    }, [isOpen]);
 
     const titleFontStyle =
         i18n.language === "jp"
             ? { fontFamily: '"Utsukushi", "YuGothic", "游ゴシック", sans-serif' }
             : { fontFamily: '"IrvinHeading", "Crimson Pro", sans-serif' };
 
-    const heroCopyFontStyle =
-        i18n.language === "jp"
-            ? { fontFamily: '"YuGothic", "游ゴシック", "Hiragino Sans", sans-serif' }
-            : { fontFamily: '"Crimson Pro", "Georgia", serif' };
+    const contentBullets = useMemo(() => {
+        return t("service.section2.lcp.modal.content")
+            .split("\n")
+            .map((line) => line.trim())
+            .filter(Boolean);
+    }, [t, i18n.language]);
 
-    useEffect(() => {
-        if (!isOpen) return;
-        setShowAfter(false);
-        const reduceMotion =
-            typeof window !== "undefined" &&
-            window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (reduceMotion) return;
-        const id = window.setInterval(() => setShowAfter((v) => !v), 2800);
-        return () => window.clearInterval(id);
-    }, [isOpen]);
+    const beforeBullets = contentBullets.slice(0, 2);
+    const afterBullets = contentBullets.slice(2, 4);
 
     if (!isOpen) return null;
 
@@ -106,157 +261,160 @@ const LcpImprovement = ({ isOpen, onClose }) => {
     return (
         <div className={classes.modalOverlay} role="dialog" aria-modal="true">
             <div className={classes.mainContainer}>
-                <div className={classes.header}>
-                    <div className={classes.headerContent}>
-                        <h2 className={classes.headerTitle} style={titleFontStyle}>
-                            {t("service.section2.lcp.modal.title")}
-                        </h2>
-                        <button
-                            type="button"
-                            onClick={onClose}
-                            className={classes.closeButton}
-                            aria-label={t("service.section2.lcp.modal.closeAria")}
-                        >
-                            ×
-                        </button>
-                    </div>
-                </div>
-
                 <div className={classes.content}>
-                    {/* 上段: ヒーロー画像（全幅） */}
-                    <div className={classes.heroWrap}>
-                        <img
-                            src={lcpReport}
-                            alt={t("service.section2.lcp.imageAlt")}
-                            className={classes.heroImg}
-                            width={1200}
-                            height={600}
-                        />
-                        <div className={classes.heroCopyOverlay}>
-                            <p className={classes.heroCopyText} style={heroCopyFontStyle}>
-                                {t("service.section2.lcp.modal.copy")}
-                            </p>
+                    <div className={classes.header}>
+                        <div className={classes.headerContent}>
+                            <h2 className={classes.headerTitle} style={titleFontStyle}>
+                                {t("service.section2.lcp.modal.title")}
+                            </h2>
+                            <button
+                                type="button"
+                                onClick={onClose}
+                                className={classes.closeButton}
+                                aria-label={t("service.section2.lcp.modal.closeAria")}
+                            >
+                                ×
+                            </button>
                         </div>
                     </div>
 
-                    {/* 下段 */}
                     <div className={classes.bottomBlock}>
-                        {/* 下段の上の行: 値段・範囲・内容 */}
-                        <div className={classes.metaRow}>
-                            <div>
-                                <p className={classes.metaLabel}>
-                                    {t("service.section2.lcp.modal.labels.price")}
-                                </p>
-                                <p className={classes.metaValue}>
-                                    {t("service.section2.lcp.modal.price")}
-                                </p>
-                            </div>
-                            <div>
-                                <p className={classes.metaLabel}>
-                                    {t("service.section2.lcp.modal.labels.scope")}
-                                </p>
-                                <p className={`${classes.metaValue} leading-relaxed whitespace-pre-line`}>
-                                    {t("service.section2.lcp.modal.scope")}
-                                </p>
-                            </div>
-                            <div>
-                                <p className={classes.metaLabel}>
-                                    {t("service.section2.lcp.modal.labels.milestones")}
-                                </p>
-                                <p className={`${classes.metaValue} leading-relaxed whitespace-pre-line`}>
-                                    {t("service.section2.lcp.modal.milestones")}
-                                </p>
-                            </div>
-                            <div>
-                                <p className={classes.metaLabel}>
-                                    {t("service.section2.lcp.modal.labels.content")}
-                                </p>
-                                <p className={`${classes.metaValue} leading-relaxed whitespace-pre-line`}>
-                                    {t("service.section2.lcp.modal.content")}
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Before / After: single stage (crossfade). Replace with one <img> if you add lcp-before-after.gif */}
-                        <div className={classes.comparisonBlock}>
-                            <div
-                                className={`${classes.comparisonStageBase} ${showAfter ? "bg-blue-600" : "bg-[#f01653]"}`}
+                        <section className={classes.sectionBlock} aria-labelledby="lcp-before-heading">
+                            <h3
+                                id="lcp-before-heading"
+                                className={`${classes.sectionLabel} ${classes.sectionLabelBefore}`}
+                                style={titleFontStyle}
                             >
-                                <div className={classes.comparisonTooltip}>
-                                    <p className={classes.comparisonTooltipHead}>
-                                        {showAfter
-                                            ? t("service.section2.lcp.modal.comparison.tooltipAfterHeadline")
-                                            : t("service.section2.lcp.modal.comparison.tooltipBeforeHeadline")}
-                                    </p>
-                                    <p className={classes.comparisonTooltipBody}>
-                                        {showAfter
-                                            ? t("service.section2.lcp.modal.comparison.tooltipAfterBody")
-                                            : t("service.section2.lcp.modal.comparison.tooltipBeforeBody")}
-                                    </p>
-                                </div>
-                                <span className={classes.comparisonBadge} aria-live="polite">
-                                    {showAfter
-                                        ? t("service.section2.lcp.modal.thumbs.right.label")
-                                        : t("service.section2.lcp.modal.thumbs.left.label")}
-                                </span>
-                                <img
-                                    src={thumbBefore}
+                                {t("service.section2.lcp.modal.thumbs.left.label")}
+                            </h3>
+                            <div className={classes.twoColGrid}>
+                                <ComparisonPanel
+                                    variant="before"
+                                    thumb={LCP_MODAL_THUMB_BEFORE}
+                                    badgeLabel={t("service.section2.lcp.modal.thumbs.left.label")}
+                                    tooltipHeadline={t(
+                                        "service.section2.lcp.modal.comparison.tooltipBeforeHeadline"
+                                    )}
+                                    tooltipBody={t(
+                                        "service.section2.lcp.modal.comparison.tooltipBeforeBody"
+                                    )}
                                     alt={t("service.section2.lcp.modal.comparison.altBefore")}
-                                    className={classes.comparisonImg}
-                                    style={{ opacity: showAfter ? 0 : 1 }}
-                                    width={800}
-                                    height={450}
-                                    decoding="async"
+                                    demoUrl={leftUrl}
+                                    linkLabel={t("service.section2.lcp.modal.thumbs.left.linkLabel")}
+                                    onClose={onClose}
+                                    titleFontStyle={titleFontStyle}
                                 />
-                                <img
-                                    src={thumbAfter}
+                                <DetailColumn
+                                    tooltipHeadline={t(
+                                        "service.section2.lcp.modal.comparison.tooltipBeforeHeadline"
+                                    )}
+                                    tooltipBody={t(
+                                        "service.section2.lcp.modal.comparison.tooltipBeforeBody"
+                                    )}
+                                    bullets={beforeBullets}
+                                />
+                            </div>
+                        </section>
+                        <SectionArrow />
+                        <section className={classes.sectionBlock} aria-labelledby="lcp-improvement-heading">
+                            <h3
+                                id="lcp-improvement-heading"
+                                className={classes.sectionLabelPackage}
+                                style={titleFontStyle}
+                            >
+                                {t("service.section2.lcp.modal.packageSectionTitle")}
+                            </h3>
+                            <div className={classes.metaRow}>
+                                <div className={classes.metaRowInner}>
+                                    <div className={classes.metaFieldsCol}>
+                                        <div>
+                                            <p className={classes.metaLabel}>
+                                                {t("service.section2.lcp.modal.labels.price")}
+                                            </p>
+                                            <p className={classes.metaValue}>
+                                                {t("service.section2.lcp.modal.price")}
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p className={classes.metaLabel}>
+                                                {t("service.section2.lcp.modal.labels.scope")}
+                                            </p>
+                                            <p
+                                                className={`${classes.metaValue} leading-relaxed whitespace-pre-line`}
+                                            >
+                                                {t("service.section2.lcp.modal.scope")}
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p className={classes.metaLabel}>
+                                                {t("service.section2.lcp.modal.labels.milestones")}
+                                            </p>
+                                            <p
+                                                className={`${classes.metaValue} leading-relaxed whitespace-pre-line`}
+                                            >
+                                                {t("service.section2.lcp.modal.milestones")}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className={classes.metaReportCol}>
+                                        <div className={classes.metaReportWrap}>
+                                            <img
+                                                src={LCP_MODAL_REPORT_INLINE.src}
+                                                alt={t("service.section2.lcp.imageAlt")}
+                                                className={classes.metaReportImg}
+                                                width={LCP_MODAL_REPORT_INLINE.width}
+                                                height={LCP_MODAL_REPORT_INLINE.height}
+                                                loading="lazy"
+                                                decoding="async"
+                                            />
+                                            <span
+                                                className={classes.metaReportOverlay}
+                                                aria-hidden="true"
+                                            >
+                                                見本
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <SectionArrow />
+                        <section className={classes.sectionBlock} aria-labelledby="lcp-after-heading">
+                            <h3
+                                id="lcp-after-heading"
+                                className={`${classes.sectionLabel} ${classes.sectionLabelAfter}`}
+                                style={titleFontStyle}
+                            >
+                                {t("service.section2.lcp.modal.thumbs.right.label")}
+                            </h3>
+                            <div className={classes.twoColGrid}>
+                                <ComparisonPanel
+                                    variant="after"
+                                    thumb={LCP_MODAL_THUMB_AFTER}
+                                    badgeLabel={t("service.section2.lcp.modal.thumbs.right.label")}
+                                    tooltipHeadline={t(
+                                        "service.section2.lcp.modal.comparison.tooltipAfterHeadline"
+                                    )}
+                                    tooltipBody={t(
+                                        "service.section2.lcp.modal.comparison.tooltipAfterBody"
+                                    )}
                                     alt={t("service.section2.lcp.modal.comparison.altAfter")}
-                                    className={classes.comparisonImg}
-                                    style={{ opacity: showAfter ? 1 : 0 }}
-                                    width={800}
-                                    height={450}
-                                    decoding="async"
+                                    demoUrl={rightUrl}
+                                    linkLabel={t("service.section2.lcp.modal.thumbs.right.linkLabel")}
+                                    onClose={onClose}
+                                    titleFontStyle={titleFontStyle}
+                                />
+                                <DetailColumn
+                                    tooltipHeadline={t(
+                                        "service.section2.lcp.modal.comparison.tooltipAfterHeadline"
+                                    )}
+                                    tooltipBody={t(
+                                        "service.section2.lcp.modal.comparison.tooltipAfterBody"
+                                    )}
+                                    bullets={afterBullets}
                                 />
                             </div>
-                            <div className={classes.demoLinksRow} style={titleFontStyle}>
-                                {isExternal(leftUrl) ? (
-                                    <a
-                                        href={leftUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="underline decoration-blue-600/70 underline-offset-2 hover:text-blue-900"
-                                    >
-                                        {t("service.section2.lcp.modal.thumbs.left.linkLabel")}
-                                    </a>
-                                ) : (
-                                    <Link
-                                        to={leftUrl}
-                                        className="underline decoration-blue-600/70 underline-offset-2 hover:text-blue-900"
-                                        onClick={onClose}
-                                    >
-                                        {t("service.section2.lcp.modal.thumbs.left.linkLabel")}
-                                    </Link>
-                                )}
-                                {isExternal(rightUrl) ? (
-                                    <a
-                                        href={rightUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="underline decoration-blue-600/70 underline-offset-2 hover:text-blue-900"
-                                    >
-                                        {t("service.section2.lcp.modal.thumbs.right.linkLabel")}
-                                    </a>
-                                ) : (
-                                    <Link
-                                        to={rightUrl}
-                                        className="underline decoration-blue-600/70 underline-offset-2 hover:text-blue-900"
-                                        onClick={onClose}
-                                    >
-                                        {t("service.section2.lcp.modal.thumbs.right.linkLabel")}
-                                    </Link>
-                                )}
-                            </div>
-                        </div>
+                        </section>
                     </div>
 
                     <div className={classes.footer}>
@@ -266,30 +424,42 @@ const LcpImprovement = ({ isOpen, onClose }) => {
                             </span>
                             <div className={classes.marketplaceList}>
                                 <div className={classes.marketplaceLinksGroup}>
-                                    {MARKETPLACES.map(({ key, icon }) => {
-                                        const base = `service.section2.lcp.modal.marketplaces.${key}`;
-                                        return (
-                                            <a
-                                                key={key}
-                                                href={t(`${base}.url`)}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className={classes.marketplaceLink}
-                                                style={titleFontStyle}
-                                                aria-label={t(`${base}.ariaLabel`)}
-                                            >
-                                                <img
-                                                    src={icon}
-                                                    alt=""
-                                                    className={classes.marketplaceIcon}
-                                                    width={20}
-                                                    height={20}
-                                                />
-                                                {t(`${base}.label`)}
-                                            </a>
-                                        );
-                                    })}
-
+                                    <Link
+                                        to="/contact"
+                                        className={classes.footerContactLink}
+                                        style={titleFontStyle}
+                                        aria-label={t("service.section2.lcp.modal.contactAria")}
+                                        onClick={onClose}
+                                    >
+                                        {t("service.section2.lcp.modal.contactLink")}
+                                    </Link>
+                                    <div className={classes.marketplaceLinksRow}>
+                                        {MARKETPLACES.map(({ key, icon }) => {
+                                            const base = `service.section2.lcp.modal.marketplaces.${key}`;
+                                            return (
+                                                <a
+                                                    key={key}
+                                                    href={t(`${base}.url`)}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className={classes.marketplaceLink}
+                                                    style={titleFontStyle}
+                                                    aria-label={t(`${base}.ariaLabel`)}
+                                                >
+                                                    <img
+                                                        src={icon}
+                                                        alt=""
+                                                        className={classes.marketplaceIcon}
+                                                        width={20}
+                                                        height={20}
+                                                        loading="lazy"
+                                                        decoding="async"
+                                                    />
+                                                    {t(`${base}.label`)}
+                                                </a>
+                                            );
+                                        })}
+                                    </div>
                                 </div>
                                 <div className={classes.footerCloseWrapMobile}>
                                     <button
@@ -301,7 +471,6 @@ const LcpImprovement = ({ isOpen, onClose }) => {
                                         {t("service.section2.lcp.modal.close")}
                                     </button>
                                 </div>
-
                             </div>
                             <div className={classes.footerCloseWrapDesktop}>
                                 <button
@@ -313,7 +482,6 @@ const LcpImprovement = ({ isOpen, onClose }) => {
                                     {t("service.section2.lcp.modal.close")}
                                 </button>
                             </div>
-
                         </div>
                     </div>
                 </div>

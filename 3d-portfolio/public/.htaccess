@@ -1,3 +1,7 @@
+# ES modules + Vite assets (some Hostinger stacks serve .js as octet-stream)
+AddType application/javascript .js
+AddType application/javascript .mjs
+
 # Enable Compression
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
@@ -58,4 +62,11 @@
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-l
   RewriteRule . /index.html [L]
+</IfModule>
+
+# Do not run LiteSpeed/CSS optimizers on Vite hashed assets (breaks preload/onload links)
+<IfModule mod_headers.c>
+  <FilesMatch "^assets/.*\.(js|css)$">
+    Header set X-LiteSpeed-Cache-Control "no-transform"
+  </FilesMatch>
 </IfModule>

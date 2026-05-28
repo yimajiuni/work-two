@@ -1,0 +1,23 @@
+<!--
+  Reference snippets for LCP improvement modal (URLs are replaced at runtime by
+  src/utils/resourceHints.js + LcpImprovement.jsx warmup after Vite build).
+
+  Inline report image (modal open / ?lcp=improvement):
+-->
+<link
+  rel="preload"
+  as="image"
+  type="image/webp"
+  fetchpriority="high"
+  href="/assets/lcp-report-480w-[hash].webp"
+/>
+
+<!--
+  Lazy modal chunk (loaded when warming up from Service page):
+-->
+<link rel="modulepreload" href="/assets/LcpImprovement-[hash].js" crossorigin />
+
+<!--
+  Main app entry (Vite — already non-blocking):
+-->
+<script type="module" src="/assets/index-[hash].js" defer></script>

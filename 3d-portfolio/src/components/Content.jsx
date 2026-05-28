@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { loadExtendedWebFonts } from "../utils/loadWebFonts";
 //import Home from "../pages/Home";
 //import Contact from "../pages/Contact";
 //import TranslatedProjects from "../pages/TranslatedProjects";
@@ -10,6 +11,10 @@ import WorkGallery from "../pages/WorkGallery";
 
 
 function Content() {
+  useEffect(() => {
+    loadExtendedWebFonts();
+  }, []);
+
   return (
     <div>
       <TranslatedAbout id="about" />
