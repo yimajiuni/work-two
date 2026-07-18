@@ -73,7 +73,7 @@ const classes = {
     modalOverlay: "fixed inset-0 bg-white/10 backdrop-blur-sm z-50 flex items-center justify-center p-4",
 
     // Main container
-    mainContainer: "border border-gray-500 bg-[#f9c6e1] backdrop-blur-sm max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-lg",
+    mainContainer: "border border-gray-500 pink-gradient_bg backdrop-blur-sm max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-lg",
 
     // Header
     header: "overflow-hidden sticky top-0 bg-white/20 backdrop-blur-sm border-b border-gray-500 text-blue-600 p-6 rounded-t-lg z-10",

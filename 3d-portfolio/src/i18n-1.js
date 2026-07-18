@@ -1045,6 +1045,79 @@ i18n
               }
             }
           },
+          croShowcase: {
+            afterSiteLink: "Go to model site (external link)",
+            afterSiteLinkTop: "go to",
+            afterSiteLinkBottom: "model site",
+            close: "Close",
+            detailLink: "→ see details",
+            playVideo: "Play video",
+            nav: {
+              logoMark: "今",
+              logoSuffix: "/ 4 pillars",
+              value: "Value",
+              experience: "Experience",
+              operation: "Operation",
+              performance: "Performance",
+            },
+            sectionAria: "Section {{id}}: {{headline}} (click text area for full-screen view)",
+            dotAria: "{{category}} improvement: {{label}}",
+            cursor: {
+              view: "View",
+              jump: "Jump",
+              watch: "watch video",
+            },
+            categories: {
+              1: "Value and Trust",
+              2: "Experience",
+              3: "Operation & Scalability",
+              4: "Speed Optimization",
+            },
+            sections: {
+              1: {
+                headline: "Value and Trust: Quality & Credibility",
+                sub: "By thoroughly eliminating noise in the details, we cultivate the refined brand poise that discerning customers expect—maximizing trust and purchase intent.",
+                improvements: {
+                  a: "Top page: Replaced a single SNS review image with authentic customer reviews in text and a custom slider—real opinions, not stock photos.",
+                  b: "PDP: Optimized the vertically stretched Judge.me review layout (default mobile) for desktop; refined the recommended-products section below for smoother flow.",
+                  c: "Collection list & product cards: Fixed scale-hover overflow bleeding outside the frame; refined details for a unified design system.",
+                },
+              },
+              2: {
+                headline: "Experience: A Purchase Path That Never Loses You",
+                sub: "Optimized in-site navigation for clarity, usability, and readability—a dynamic, seamless purchase experience from browse to checkout.",
+                improvements: {
+                  a: "Top Sales section: Fixed alternating-layout image size mismatches so images align to their placement edge and all heights match regardless of settings—eliminating visual jitter and lowering the psychological barrier to purchase.",
+                  b: "Collection list: Split filters (left cluster) from sort controls (right)—aligned with user mental models for more intuitive UI.",
+                  c: "Top CTA: Consolidated scattered duplicate purchase buttons into a sticky header bar linked to new-product notifications—smoother visual path to purchase.",
+                  d: "Cart & login: Added Google Sign-In and Amazon Pay—reducing form friction, preventing cart abandonment, and dramatically lowering drop-off with a seamless, no-wait experience.",
+                },
+              },
+              3: {
+                headline: "Operation & Scalability: Sustainable Operations Design",
+                sub: "Built for non-coders to operate with minimal rules, information, and actions—maintaining beauty and brand intent through scalable structure without breaking the design.",
+                improvements: {
+                  a: "Top nav smart logo management: Auto-switching reverse (inverted) logo logic between hero video and navbar keeps logo visible for non-coders; fixes logos disappearing on scroll.",
+                  b: "High-flexibility section: Custom About Liquid breaking standard theme limits—auto aspect ratio so imagery doesn't dictate layout; eliminated the huge About whitespace of default sections.",
+                },
+              },
+              4: {
+                headline: "Speed Optimization: Prevent the Loss of 0.1 Seconds",
+                sub: "Lightweight page loads stop customer loss—a site that doesn't waste ad spend or drive visitors away.",
+                lcpBeforeAlt: "Lighthouse performance report before optimization",
+                lcpAfterAlt: "Lighthouse performance report after optimization",
+                story: {
+                  p1: "This store was losing nearly 90% of its traffic due to a 32-second LCP. It was effectively a 'closed door' for mobile customers.",
+                  p2: "After my performance surgery—deferring heavy app scripts and optimizing the LCP loading path—we hit a blistering 1.8 seconds. The Lighthouse score jumped from 7 to 90+.",
+                  p3: "Speed is the foundation of conversion. By eliminating this wait time, we've stopped the ad spend leakage and ensured a high-performance baseline for all future marketing.",
+                },
+                improvements: {
+                  a: "LCP surgery: Dramatic acceleration from 32s to 1.8s—image delivery optimization and controlled execution of app JS on the most critical metric.",
+                  b: "Beyond raw speed: Lightweight fonts and CDN delivery so mobile users on poor connections browse without stress.",
+                },
+              },
+            },
+          },
           // Work details translations
           workDatas: [
             {
@@ -2206,6 +2279,79 @@ i18n
                 companyInfo: "会社情報"
               }
             }
+          },
+          croShowcase: {
+            afterSiteLink: "モデルサイトへ移動（外部リンク）",
+            afterSiteLinkTop: "go to",
+            afterSiteLinkBottom: "model site",
+            close: "閉じる",
+            detailLink: "→ see details",
+            playVideo: "動画を再生",
+            nav: {
+              logoMark: "今",
+              logoSuffix: "/ 4 pillars",
+              value: "Value",
+              experience: "Experience",
+              operation: "Operation",
+              performance: "Performance",
+            },
+            sectionAria: "セクション {{id}}: {{headline}}（文字エリアクリックで全画面表示へ切替）",
+            dotAria: "{{category}} 改善ポイント: {{label}}",
+            cursor: {
+              view: "見る",
+              jump: "飛ぶ",
+              watch: "動画で知る",
+            },
+            categories: {
+              1: "価値と信頼",
+              2: "迷わせない購入導線",
+              3: "持続可能な運用設計",
+              4: "0.1秒の損失を防ぐ",
+            },
+            sections: {
+              1: {
+                headline: "Value and Trust：価値と信頼",
+                sub: "細部の不備（ノイズ）を徹底排除することで、「玄人が好む洗練されたブランドの品格」を演出し、顧客の信頼と購入意欲を最大化します。",
+                improvements: {
+                  a: "Topページ：SNS掲載用の一枚画像だった顧客レビューをテキストとカスタムスライダーで配置し直す。ストックフォトではない本物の意見をトップページに実装。",
+                  b: "PDPページ：デフォルトのモバイル用レイアウトで縦に伸びきっていたレビュー（Judge.me）のレイアウトをデスクトップ用に最適化。下部のセクション：おすすめ商品のスムーズな導線へ修正。",
+                  c: "コレクションリスト・商品カード：拡大エフェクトによる「枠からのはみ出し」を修正。細部迄より洗練され、統一されたデザインシステムに沿って実装。",
+                },
+              },
+              2: {
+                headline: "Experience：迷わせない購入導線",
+                sub: "サイト内導線の最適化で、わかりやすい、使いやすい、見やすい、購入迄のダイナミックで現実とシームレスな購入体験を実現",
+                improvements: {
+                  a: "TopページSalesセクション：テーマのデフォルト設定のままだった交互配置レイアウトの画像サイズ不整合を、画像が配置される辺の端に揃うようにコードを修正し、設定や比率に関係なくすべての画像の高さを揃えることで、レイアウトを統一。視覚的なガタつきを排除することにより視覚的混乱の解消により購入への心理的ハードルを削減。",
+                  b: "コレクションリスト：左に固まっていた全てのフィルターを条件と並び替えハンドルを左右に分離。ユーザーのメンタルモデル（慣習）に最適化し配置で使い勝手を向上し直感的なUIに修正。",
+                  c: "TOPページCTA（購入ボタン）：１画面に２つ同機能が存在し、散らばっていた購入ボタンを、新商品通知とリンクさせた追続型ヘッダーバーに統合。購入までの視覚の導線をスムーズにした。",
+                  d: "カート＆ログインページ：決済・ログインのマルチオプション化として、GoogleログインおよびAmazon Payを導入。「入力の手間」を解消し、カゴ落ちを防止。「迷わせない、待たせない」シームレスな体験により、カート放棄率を劇的に低減させます。",
+                },
+              },
+              3: {
+                headline: "Operation & Scalability：持続可能な運用設計",
+                sub: "ノンコーダーの運用側が最低限のルール、情報、操作で使え、長期的な拡張性を踏まえた仕組み化・設計でブランドのデザイン意図を壊すことなく、美しさを維持できる。",
+                improvements: {
+                  a: "TOP上部ナビバー：スマートなロゴ管理：ヒーロー動画とナビバーで、リバースロゴ（色反転）を自動で切り替えるロジックを実装。ノンコーダーでもロゴの視認性を維持。スクロール時にロゴが見えなくなる問題を、リバースロゴ（色反転）の自動切り替えロジックで解決。",
+                  b: "自由度の高いセクション：標準機能の制約を突破するAbout専用カスタムLiquidを制作。アスペクト比を自動調整し、画像素材に左右されない美しい表示を維持。また、標準セクションでは発生してしまう「About」部分の巨大な余白を、専用のカスタムLiquidセクションを開発することで解消しました。",
+                },
+              },
+              4: {
+                headline: "Speed Optimization：0.1秒の損失を防ぐ",
+                sub: "ページ読み込み時の軽量化により、顧客ロスを解消。広告費を捨てない、逃げないサイトを実現し",
+                lcpBeforeAlt: "最適化前のLighthouseパフォーマンスレポート",
+                lcpAfterAlt: "最適化後のLighthouseパフォーマンスレポート",
+                story: {
+                  p1: "このストアは32秒のLCPにより、モバイル顧客にとって実質的に「扉が閉じた」状態で、トラフィックの約90%を失っていました。",
+                  p2: "アプリの重いスクリプトを遅延読み込みし、LCPの読み込みパスを最適化するパフォーマンス手術の後、1.8秒という驚異的な速度を達成。Lighthouseスコアは7から90以上に跳ね上がりました。",
+                  p3: "スピードはコンバージョンの基盤です。この待ち時間を排除することで、広告費のロスを止め、今後のすべてのマーケティングのための高性能なベースラインを確保しました。",
+                },
+                improvements: {
+                  a: "LCPの外科手術：32秒から1.8秒への劇的な高速化。最も重要な検査項目として、画像配信の最適化、アプリJSの実行制御を行う。",
+                  b: "ただ速くするだけでなく、フォントの軽量化やCDNの活用により、通信環境の悪いモバイルユーザーでもストレスなく閲覧できる環境を構築。",
+                },
+              },
+            },
           },
           // Work details translations
           workDatas: [

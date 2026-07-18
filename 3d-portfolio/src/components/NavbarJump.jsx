@@ -1,54 +1,47 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import LanguageSelector from "../components/LanguageSelector";
-import { Link as ScrollLink } from "react-scroll";
 import * as Scroll from "react-scroll";
 import { FaGlobe } from "react-icons/fa";
+import { CRO_SECTION_ANCHORS } from "../constants/croNav";
 
-const NavbarJump = ({ onMenuStateChange }) => {
+const NavbarJump = ({ onMenuStateChange, transparent = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const path = useLocation().pathname;
   const location = path.split("/")[1];
   const navigate = useNavigate();
   const scroller = Scroll.scroller;
+  const { t } = useTranslation();
+  const isCroPage = path === "/cro";
 
-  // Route map: maps section selectors to their correct routes
-  // This ensures we navigate to the right page before scrolling
   const routeMap = {
     about: "/about",
     works: "/works",
     contact: "/contact",
   };
 
-  // Fixed header offset to account for the fixed navigation bar
-  const HEADER_OFFSET = -5; // Adjust based on your header height
+  const HEADER_OFFSET = -5;
 
   const goToPageAndScroll = async (selector) => {
     try {
-      // Get the target route for this selector
       const targetRoute = routeMap[selector] || "/";
-
-      // Check if we need to navigate to a different page
       const needsNavigation = path !== targetRoute;
 
       if (needsNavigation) {
-        // Navigate to the correct page first
         await navigate(targetRoute);
-        // Wait for navigation and DOM to be ready
         await new Promise((resolve) => setTimeout(resolve, 400));
       } else {
-        // Already on the correct page, just wait a bit for elements to be ready
         await new Promise((resolve) => setTimeout(resolve, 100));
       }
 
-      // Now scroll to the target element
       try {
         const targetElement = document.getElementById(selector);
         if (targetElement) {
           await scroller.scrollTo(selector, {
             duration: 500,
             smooth: true,
-            offset: HEADER_OFFSET, // Account for fixed header
+            offset: HEADER_OFFSET,
             spy: true,
           });
         } else {
@@ -62,7 +55,25 @@ const NavbarJump = ({ onMenuStateChange }) => {
     }
   };
 
-  const scrollToTop = () => {
+  const scrollToCroSection = async (anchorId) => {
+    try {
+      if (!isCroPage) {
+        await navigate(`/cro#${anchorId}`);
+        await new Promise((resolve) => setTimeout(resolve, 500));
+      }
+
+      const targetElement = document.getElementById(anchorId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } catch (error) {
+      console.warn(`CRO scroll error for "${anchorId}":`, error);
+    }
+  };
+
+  const handleCroLogoClick = (event) => {
+    if (!isCroPage) return;
+    event.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -78,198 +89,298 @@ const NavbarJump = ({ onMenuStateChange }) => {
     onMenuStateChange?.(isMenuOpen);
   }, [isMenuOpen, onMenuStateChange]);
 
-  return (
-    <header className="header gap-7" id="navigation">
-      <div className="flex items-center gap-7">
-        {/* 今 button - always visible, links to service on desktop/tablet, hamburger on mobile */}
+  const croLogoLabel = (
+    <p className="blue-gradient_text whitespace-nowrap">
+      <span>{t("croShowcase.nav.logoMark")}</span>
+      <span className="text-sm">{t("croShowcase.nav.logoSuffix")}</span>
+    </p>
+  );
+
+  const croNavLinks = CRO_SECTION_ANCHORS.map((item) => (
+    <button
+      key={item.anchorId}
+      type="button"
+      onClick={(event) => {
+        event.preventDefault();
+        scrollToCroSection(item.anchorId);
+        closeMenu();
+      }}
+      className="cursor-pointer hover:text-blue-400 transition-colors text-left"
+    >
+      {t(item.labelKey)}
+    </button>
+  ));
+
+  const croMenuDivider = (
+    <span
+      className="text-xl font-extralight text-white/70 select-none pointer-events-none leading-none"
+      aria-hidden="true"
+    >
+      /
+    </span>
+  );
+
+  const standardNavLinks = (
+    <>
+      {location !== "contact" ? (
+        <>
+          <NavLink
+            onClick={(e) => {
+              e.preventDefault();
+              goToPageAndScroll("about");
+            }}
+            className="cursor-pointer hover:text-blue-400 transition-colors"
+            to="/about"
+          >
+            About
+          </NavLink>
+          <NavLink
+            onClick={(e) => {
+              e.preventDefault();
+              goToPageAndScroll("works");
+            }}
+            className="cursor-pointer hover:text-blue-400 transition-colors"
+            to="/works"
+          >
+            Works
+          </NavLink>
+          <NavLink
+            to="/contact"
+            onClick={(e) => {
+              e.preventDefault();
+              goToPageAndScroll("contact");
+            }}
+            className="cursor-pointer hover:text-blue-400 transition-colors"
+          >
+            Contact
+          </NavLink>
+        </>
+      ) : (
+        <>
+          <NavLink
+            onClick={(e) => {
+              e.preventDefault();
+              goToPageAndScroll("about");
+            }}
+            className="cursor-pointer hover:text-blue-400 transition-colors"
+            to="/about"
+          >
+            About
+          </NavLink>
+          <NavLink
+            onClick={(e) => {
+              e.preventDefault();
+              goToPageAndScroll("works");
+            }}
+            className="cursor-pointer hover:text-blue-400 transition-colors"
+            to="/works"
+          >
+            Works
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive ? "text-blue-500" : "text-white hover:text-blue-400 transition-colors"
+            }
+          >
+            Contact
+          </NavLink>
+        </>
+      )}
+    </>
+  );
+
+  const mobileStandardNavLinks =
+    location !== "contact" && location !== "service" ? (
+      <>
         <NavLink
-          to=""
-          className="hidden sm:flex w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md shadow-pink-400/30 hover:shadow-lg hover:shadow-pink-400/30 transition-shadow"
+          to="/"
+          onClick={closeMenu}
+          className="cursor-pointer hover:text-blue-400 transition-colors py-2"
         >
-          <p className="blue-gradient_text">今</p>
+          Services
         </NavLink>
-
-        {/* Mobile: 今 button as hamburger */}
-        <button
-          onClick={toggleMenu}
-          className="sm:hidden w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md shadow-pink-400/30 hover:shadow-lg hover:shadow-pink-400/30 transition-shadow"
+        <NavLink
+          onClick={(e) => {
+            e.preventDefault();
+            goToPageAndScroll("about");
+            closeMenu();
+          }}
+          className="cursor-pointer hover:text-blue-400 transition-colors py-2"
+          to="/about"
         >
-          <p className="blue-gradient_text">今</p>
-        </button>
+          About
+        </NavLink>
+        <NavLink
+          onClick={(e) => {
+            e.preventDefault();
+            goToPageAndScroll("works");
+            closeMenu();
+          }}
+          className="cursor-pointer hover:text-blue-400 transition-colors py-2"
+          to="/works"
+        >
+          Works
+        </NavLink>
+        <NavLink
+          to="/contact"
+          onClick={(e) => {
+            e.preventDefault();
+            goToPageAndScroll("contact");
+            closeMenu();
+          }}
+          className={({ isActive }) =>
+            `cursor-pointer transition-colors py-2 ${isActive
+              ? "text-blue-500 active"
+              : "text-white hover:text-blue-400"
+            }`
+          }
+        >
+          Contact
+        </NavLink>
+      </>
+    ) : (
+      <>
+        <NavLink
+          to="/"
+          onClick={closeMenu}
+          className="cursor-pointer hover:text-blue-400 transition-colors py-2"
+        >
+          Services
+        </NavLink>
+        <NavLink
+          onClick={(e) => {
+            e.preventDefault();
+            goToPageAndScroll("about");
+            closeMenu();
+          }}
+          className="cursor-pointer hover:text-blue-400 transition-colors py-2"
+          to="/about"
+        >
+          About
+        </NavLink>
+        <NavLink
+          onClick={(e) => {
+            e.preventDefault();
+            goToPageAndScroll("works");
+            closeMenu();
+          }}
+          className="cursor-pointer hover:text-blue-400 transition-colors py-2"
+          to="/works"
+        >
+          Works
+        </NavLink>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            `cursor-pointer transition-colors py-2 ${isActive ? "text-blue-500 active" : "text-white hover:text-blue-400"
+            }`
+          }
+          onClick={closeMenu}
+        >
+          Contact
+        </NavLink>
+      </>
+    );
 
-        {/* Desktop/Tablet navigation - hidden on mobile */}
+  return (
+    <header
+      className={[
+        "header gap-7",
+        !transparent && "mist-header-colors",
+        transparent && "!z-50",
+      ]
+        .filter(Boolean)
+        .join(" ")}
+      id="navigation"
+    >
+      <div className="flex items-center gap-7">
+        {isCroPage ? (
+          <>
+            <NavLink
+              to="/cro"
+              onClick={handleCroLogoClick}
+              className="hidden sm:flex h-10 px-3 rounded-lg bg-white items-center justify-center font-bold shadow-md shadow-pink-400/30 hover:shadow-lg hover:shadow-pink-400/30 transition-shadow"
+            >
+              {croLogoLabel}
+            </NavLink>
+            <button
+              type="button"
+              onClick={toggleMenu}
+              className="sm:hidden h-10 px-2 rounded-lg bg-white items-center justify-center flex font-bold shadow-md shadow-pink-400/30 hover:shadow-lg hover:shadow-pink-400/30 transition-shadow"
+            >
+              {croLogoLabel}
+            </button>
+          </>
+        ) : (
+          <>
+            <NavLink
+              to="/"
+              className="hidden sm:flex w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md shadow-pink-400/30 hover:shadow-lg hover:shadow-pink-400/30 transition-shadow"
+            >
+              <p className="blue-gradient_text">今</p>
+            </NavLink>
+            <button
+              type="button"
+              onClick={toggleMenu}
+              className="sm:hidden w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md shadow-pink-400/30 hover:shadow-lg hover:shadow-pink-400/30 transition-shadow"
+            >
+              <p className="blue-gradient_text">今</p>
+            </button>
+          </>
+        )}
+
         <nav className="hidden sm:flex text-lg gap-7 font-medium text-white items-center">
-          {location !== "contact" ? (
+          {isCroPage ? (
             <>
-              <NavLink
-                onClick={(e) => {
-                  e.preventDefault();
-                  goToPageAndScroll("about");
-                }}
-                className="cursor-pointer hover:text-blue-400 transition-colors"
-                to="about"
-              >
-                About
-              </NavLink>
-              <NavLink
-                onClick={(e) => {
-                  e.preventDefault();
-                  goToPageAndScroll("works");
-                }}
-                className="cursor-pointer hover:text-blue-400 transition-colors"
-                to="works"
-              >
-                Works
-              </NavLink>
-
-              <NavLink
-                to="/contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  goToPageAndScroll("contact");
-                }}
-                className="cursor-pointer hover:text-blue-400 transition-colors"
-              >
-                Contact
-              </NavLink>
+              {croNavLinks}
+              {croMenuDivider}
+              {standardNavLinks}
             </>
           ) : (
-            <>
-              <NavLink
-                onClick={(e) => {
-                  e.preventDefault();
-                  goToPageAndScroll("about");
-                }}
-                className="cursor-pointer hover:text-blue-400 transition-colors"
-                to="about"
-              >
-                About
-              </NavLink>
-              <NavLink
-                onClick={(e) => {
-                  e.preventDefault();
-                  goToPageAndScroll("works");
-                }}
-                className="cursor-pointer hover:text-blue-400 transition-colors"
-                to="works"
-              >
-                Works
-              </NavLink>
-              <NavLink
-                to="/contact"
-                className={({ isActive }) =>
-                  isActive ? "text-blue-500" : "text-white hover:text-blue-400 transition-colors"
-                }
-              >
-                Contact
-              </NavLink>
-            </>
+            standardNavLinks
           )}
         </nav>
       </div>
 
-      {/* Language selector - always visible on top right */}
       <div className="text-blue-500 cursor-pointer flex items-center gap-2">
         <FaGlobe className="text-lg" />
         <LanguageSelector />
       </div>
 
-      {/* Mobile dropdown menu - only on mobile */}
       {isMenuOpen && (
         <div className="w-max mx-auto sm:hidden absolute top-full left-0 right-0 bg-[#f9c6e1]/60 backdrop-blur-sm border border-white/20 rounded-lg mt-2 p-4 z-50 shadow-lg shadow-pink-400/30">
           <nav className="flex justify-between gap-4 text-lg font-medium text-white">
-            {location !== "contact" && location !== "service" ? (
-              <>
-                <NavLink
-                  to=""
-                  onClick={closeMenu}
-                  className="cursor-pointer hover:text-blue-400 transition-colors py-2"
+            {isCroPage ? (
+              <div className="flex flex-col gap-2 w-full">
+                <div className="flex flex-wrap justify-between gap-x-4 gap-y-2 w-full">
+                  {mobileStandardNavLinks}
+                </div>
+                <span
+                  className="text-xl font-extralight text-white/70 py-1 leading-none"
+                  aria-hidden="true"
                 >
-                  Services
-                </NavLink>
-
-                <NavLink
-                  onClick={(e) => {
-                    e.preventDefault();
-                    goToPageAndScroll("about");
-                    closeMenu();
-                  }}
-                  className="cursor-pointer hover:text-blue-400 transition-colors py-2"
-                  to="about"
-                >
-                  About
-                </NavLink>
-                <NavLink
-                  onClick={(e) => {
-                    e.preventDefault();
-                    goToPageAndScroll("works");
-                    closeMenu();
-                  }}
-                  className="cursor-pointer hover:text-blue-400 transition-colors py-2"
-                  to="works"
-                >
-                  Works
-                </NavLink>
-                <NavLink
-                  to="/contact"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    goToPageAndScroll("contact");
-                    closeMenu();
-                  }}
-                  className={({ isActive }) =>
-                    `cursor-pointer transition-colors py-2 ${isActive
-                      ? "text-blue-500 active"
-                      : "text-white hover:text-blue-400"
-                    }`
-                  }
-                >
-                  Contact
-                </NavLink>
-
-              </>
+                  /
+                </span>
+                <div className="flex flex-wrap justify-between gap-x-4 gap-y-2 w-full">
+                  {CRO_SECTION_ANCHORS.map((item) => (
+                    <button
+                      key={item.anchorId}
+                      type="button"
+                      onClick={(event) => {
+                        event.preventDefault();
+                        scrollToCroSection(item.anchorId);
+                        closeMenu();
+                      }}
+                      className="cursor-pointer hover:text-blue-400 transition-colors py-2 text-left"
+                    >
+                      {t(item.labelKey)}
+                    </button>
+                  ))}
+                </div>
+              </div>
             ) : (
-              <>
-                <NavLink
-                  to=""
-                  onClick={closeMenu}
-                  className="cursor-pointer hover:text-blue-400 transition-colors py-2"
-                >
-                  Services
-                </NavLink>
-                <NavLink
-                  onClick={(e) => {
-                    e.preventDefault();
-                    goToPageAndScroll("about");
-                    closeMenu();
-                  }}
-                  className="cursor-pointer hover:text-blue-400 transition-colors py-2"
-                  to="about"
-                >
-                  About
-                </NavLink>
-                <NavLink
-                  onClick={(e) => {
-                    e.preventDefault();
-                    goToPageAndScroll("works");
-                    closeMenu();
-                  }}
-                  className="cursor-pointer hover:text-blue-400 transition-colors py-2"
-                  to="works"
-                >
-                  Works
-                </NavLink>
-                <NavLink
-                  to="/contact"
-                  className={({ isActive }) =>
-                    `cursor-pointer transition-colors py-2 ${isActive ? "text-blue-500 active" : "text-white hover:text-blue-400"
-                    }`
-                  }
-                  onClick={closeMenu}
-                >
-                  Contact
-                </NavLink>
-              </>
+              mobileStandardNavLinks
             )}
           </nav>
         </div>

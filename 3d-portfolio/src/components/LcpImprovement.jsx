@@ -64,9 +64,9 @@ const classes = {
     modalOverlay:
         "fixed inset-0 bg-white/10 backdrop-blur-sm z-50 flex items-center justify-center p-4",
     mainContainer:
-        "border border-gray-500 bg-[#f9c6e1] max-w-4xl w-full max-h-[90dvh] min-h-[40dvh] flex flex-col overflow-hidden rounded-lg",
+        "border border-gray-500 pink-gradient_bg max-w-4xl w-full max-h-[90dvh] min-h-[40dvh] flex flex-col overflow-hidden rounded-lg",
     header:
-        "sticky top-0 z-20 shrink-0 border-b border-gray-500 bg-white/20 text-blue-600 p-4 sm:p-6 backdrop-blur-sm supports-[backdrop-filter]:bg-white/20",
+        "sticky top-0 z-40 shrink-0 border-b border-gray-500 bg-white/20 text-blue-600 p-4 sm:p-6 backdrop-blur-sm supports-[backdrop-filter]:bg-white/20",
     headerContent: "flex justify-between items-start gap-4",
     headerTitle: "text-xl sm:text-2xl font-bold text-blue-600 pr-2",
     closeButton: "text-blue-600 hover:text-white text-2xl leading-none shrink-0 transition-colors",

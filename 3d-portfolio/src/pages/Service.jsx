@@ -32,11 +32,11 @@ const classes = {
     // Main container
     mainContainer: "max-container pt-8 -mt-32 sm:-mt-24",
 
-    // Section base styles
-    section1: "rounded-[20px] bg-gradient-to-t from-pink-400 to-pink-300/70 pt-10 mt-0 sm:mt-10 mb-20 flex items-center justify-center pb-20 px-4",
-    section2: "rounded-[20px] bg-gradient-to-b from-pink-400 to-pink-300/70 pt-10 mt-10 mb-20 flex items-center py-20",
-    section3: "rounded-[20px] bg-gradient-to-b from-pink-400 to-pink-300/70 pt-10 mt-10 mb-20 flex items-center py-20",
-    section4: "rounded-[20px] bg-gradient-to-t from-pink-400 to-pink-300/70 pt-10 mt-10 mb-10 flex items-center py-20 overflow-hidden",
+    // Section base styles (gradient: service-section-pink-to-t / -to-b in index.css)
+    section1: "rounded-[20px] service-section-pink-to-t backdrop-blur-sm border border-white/20 pt-10 mt-0 sm:mt-10 mb-20 flex items-center justify-center pb-20 px-4",
+    section2: "rounded-[20px] service-section-pink-to-b backdrop-blur-sm border border-white/20 pt-10 mt-10 mb-20 flex items-center py-20 justify-center",
+    section3: "rounded-[20px] service-section-pink-to-b backdrop-blur-sm border border-white/20 pt-10 mt-10 mb-20 flex items-center py-20 justify-center",
+    section4: "rounded-[20px] service-section-pink-to-t backdrop-blur-sm border border-white/20 pt-10 mt-10 mb-10 flex items-center py-20 overflow-hidden justify-center",
 
     // Section content
     sectionContent: "mx-8 max-w-6xl",
