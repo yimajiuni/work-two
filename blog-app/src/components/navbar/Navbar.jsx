@@ -26,7 +26,10 @@ const Navbar = () => {
           />
         ))}
       </div>
-      <div className={styles.logo}>Cribl!</div>
+      <Link href="/" className={styles.logo}>
+        <span className={styles.logoTitle}>Crebl!</span>
+        <span className={styles.logoTag}>creative blogging.</span>
+      </Link>
       <div className={styles.links}>
         <ThemeToggle />
         <Link href="/" className={styles.link}>

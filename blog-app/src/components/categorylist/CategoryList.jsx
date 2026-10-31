@@ -47,13 +47,13 @@ const CategoryList = async () => {
             {item.img && (
               <Image
                 src={item.img}
-                alt=''
+                alt=""
                 width={32}
                 height={32}
                 className={styles.image}
               />
             )}
-            {item.title}
+            <span>{item.title}</span>
           </Link>
         ))}
       </div>

@@ -107,14 +107,20 @@ const Home = () => {
     <div className="home" id="home">
       <div className="overlay-notinuse"></div>
       <video
+        className="heroVideo"
         src={video}
         muted
         autoPlay
         loop
-        type="video2/mp4"
+        playsInline
+        disablePictureInPicture
+        disableRemotePlayback
         controls={false}
-        controlsList="nodownload"
-      ></video>
+        controlsList="nodownload nofullscreen noremoteplayback"
+        tabIndex={-1}
+        aria-hidden="true"
+        onContextMenu={(e) => e.preventDefault()}
+      />
       <div className="homeContent container">
         <div className="textDiv">
           <span data-aos="fade-up" className="smallText">

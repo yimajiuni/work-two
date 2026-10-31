@@ -42,13 +42,13 @@ const LanguageSwitcher = () => {
         <ul
           role="listbox"
           aria-label={t.nav.language}
-          className="absolute left-0 top-full z-50 mt-1 w-full min-w-full overflow-hidden rounded-lg border border-gray-200 bg-white py-1 shadow-[0_3px_10px_rgb(0,0,0,0.15)]"
+          className="absolute left-0 top-full z-50 mt-1 w-max min-w-full overflow-hidden rounded-lg border border-gray-200 bg-white py-1 shadow-[0_3px_10px_rgb(0,0,0,0.15)]"
         >
           {Object.values(locales).map((item) => (
             <li key={item.code} role="option" aria-selected={locale === item.code}>
               <button
                 type="button"
-                className={`block w-full whitespace-nowrap px-3 py-2 text-left font-hedding text-sm transition-colors hover:bg-backgroundColor/50 hover:text-brightColor ${
+                className={`block w-full whitespace-nowrap px-4 py-2 text-left font-hedding text-sm transition-colors hover:bg-backgroundColor/50 hover:text-brightColor ${
                   locale === item.code ? "text-brightColor" : "text-lightText"
                 }`}
                 onClick={() => {

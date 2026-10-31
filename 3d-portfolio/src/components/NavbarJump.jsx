@@ -35,6 +35,7 @@ const NavbarJump = ({
   const HEADER_OFFSET = -5;
 
   const goToPageAndScroll = async (selector) => {
+    setIsMenuOpen(false);
     try {
       const targetRoute = routeMap[selector] || "/";
 
@@ -73,6 +74,7 @@ const NavbarJump = ({
   };
 
   const scrollToCroSection = async (anchorId) => {
+    setIsMenuOpen(false);
     try {
       if (!isCroPage) {
         await navigate(`/cro#${anchorId}`);
@@ -101,6 +103,11 @@ const NavbarJump = ({
   useEffect(() => {
     onMenuStateChange?.(isMenuOpen);
   }, [isMenuOpen, onMenuStateChange]);
+
+  // Close mobile menu on any route change (link / back / programmatic nav).
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [path]);
 
   const croLogoLabel = (
     <p className="blue-gradient_text whitespace-nowrap">

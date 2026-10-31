@@ -1,32 +1,30 @@
-import React from 'react'
-import Link from "next/link"
-import Image from "next/image"
-import styles from './menu-categories.module.css'
+import React from "react";
+import Link from "next/link";
+import styles from "./menu-categories.module.css";
 
+const categories = [
+  { slug: "trend", label: "Trend" },
+  { slug: "tech", label: "Tech" },
+  { slug: "food", label: "Food" },
+  { slug: "create", label: "Create" },
+  { slug: "travel", label: "Travel" },
+  { slug: "culture", label: "Culture" },
+];
 
 const MenuCategories = () => {
   return (
     <div className={styles.categoryList}>
-      <Link href="/blog?cat=trend" className={`${styles.categoryItem} ${styles.trend}`}>
-        Trend
-      </Link>
-      <Link href="/blog?cat=tech" className={`${styles.categoryItem} ${styles.tech}`}>
-        Tech
-      </Link>
-      <Link href="blog?cat=food" className={`${styles.categoryItem} ${styles.food}`}>
-        Food
-      </Link>
-      <Link href="/blog?cat=create" className={`${styles.categoryItem} ${styles.create}`}>
-        Create
-      </Link>
-      <Link href="/blog?cat=travel" className={`${styles.categoryItem} ${styles.travel}`}>
-        Travel
-      </Link>
-      <Link href="/blog?cat=culture" className={`${styles.categoryItem} ${styles.culture}`}>
-        Culture
-      </Link>
+      {categories.map((item) => (
+        <Link
+          key={item.slug}
+          href={`/blog?cat=${item.slug}`}
+          className={`${styles.categoryItem} ${styles[item.slug]}`}
+        >
+          <span>{item.label}</span>
+        </Link>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default MenuCategories
+export default MenuCategories;

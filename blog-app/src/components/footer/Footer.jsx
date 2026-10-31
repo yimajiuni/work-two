@@ -15,8 +15,8 @@ const Footer = () => {
     <div className={styles.container}>
       <div className={styles.info}>
         <div className={styles.logo}>
-          <Image src="/logo.png" alt="Cribl!" width={50} height={50} />
-          <h1 className={styles.logoText}>Cribl!</h1>
+          <Image src="/logo-crebl.png" alt="Crebl!" width={50} height={50} />
+          {/* <h1 className={styles.logoText}>Crebl!</h1> */}
         </div>
         <p className={styles.desc}>
           Discover my stories, creative ideas! and Share your life.

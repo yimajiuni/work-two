@@ -1,5 +1,5 @@
 .pool {
-  margin-top: var(--space-9);
+  margin-top: var(--space-5);
   padding-top: var(--space-8);
   border-top: 1px solid var(--softBg);
 }
@@ -8,12 +8,12 @@
   color: var(--softTextColor);
   font-size: var(--text-sm);
   font-weight: 400;
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-5);
 }
 
 .title {
-  font-size: var(--text-2xl);
-  margin-bottom: var(--space-5);
+  font-size: 2rem;
+  margin-bottom: var(--space-2);
 }
 
 .grid {
@@ -63,6 +63,18 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
+}
+
+.detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  align-items: center;
+}
+
+.date {
+  color: gray;
 }
 
 .category {

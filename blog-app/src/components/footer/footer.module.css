@@ -11,12 +11,12 @@
 .info{
     margin-right: 50px;
     flex: 1;
-    font-display: flex;
+    display: flex;
     flex-direction: column;
     gap: 14px;
 }
 .logo{
-    gap: 10;
+    gap: 10px;
     display: flex;
     align-items: center;
 }
@@ -25,7 +25,7 @@
 }
 .desc{
     font-weight: 300;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     gap: 10px;
 }
 .icons{
@@ -34,7 +34,7 @@
     align-items: center;
     gap: 10px;
 }
-.link{
+.links{
     flex: 1;
     display: flex;
     justify-content: flex-end;
@@ -49,22 +49,33 @@
     font-weight: bold;
 }
 @media screen and (max-width:1024px){
-    .link{
+    .links{
         gap:50px
     }
 }
 @media screen and (max-width:768px){
     .container{
-        flex-direction: column;
-        gap:50px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: start;
+        gap: 24px 12px;
     }
-    .link{
+    .info{
+        grid-column: 1 / -1;
+        margin-right: 0;
         width: 100%;
-        justify-content: space-between;
+    }
+    .links{
+        width: auto;
+        justify-content: flex-start;
+    }
+    .list{
+        gap: 8px;
+        font-size: 14px;
     }
 }
 @media screen and (max-width:640px){
-    .link{
+    .links{
         font-size: 14px;
     }
 }

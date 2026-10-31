@@ -8,6 +8,7 @@
   color: gray;
   font-size: var(--text-sm);
   font-weight: 400;
+  margin-bottom: var(--space-1);
 }
 
 .title {

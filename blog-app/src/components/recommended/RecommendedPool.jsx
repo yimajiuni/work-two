@@ -64,7 +64,14 @@ const RecommendedPool = async ({ excludeSlug }) => {
                 )}
               </div>
               <div className={styles.meta}>
-                <span className={styles.category}>{item.catSlug}</span>
+                <div className={styles.detail}>
+                  <span className={styles.date}>
+                    {item.createdAt
+                      ? new Date(item.createdAt).toLocaleDateString()
+                      : ""}
+                  </span>
+                  <span className={styles.category}>{item.catSlug}</span>
+                </div>
                 <h3 className={styles.cardTitle}>{item.title}</h3>
               </div>
             </Link>
