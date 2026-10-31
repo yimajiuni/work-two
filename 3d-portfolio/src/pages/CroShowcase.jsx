@@ -88,14 +88,14 @@ async function enterMobilePlaybackFullscreen() {
 }
 
 const afterSiteLinkClassName = [
-    "cro-after-site-link group relative z-30 pointer-events-auto cursor-pointer",
+    "cro-after-site-link group relative z-30 pointer-events-auto",
     "flex h-full w-full",
     "flex-col items-center justify-center gap-3",
     "text-white",
     "focus:outline-none",
 ].join(" ");
 
-function OverlayAfterSiteLink({ ariaLabel, labelTop, labelBottom }) {
+function OverlayAfterSiteLink({ ariaLabel, labelTop, labelBottom, tooltip }) {
     const content = (
         <>
             <span className="cro-after-link-label cro-blend-difference text-xs sm:text-sm leading-snug font-semibold">
@@ -112,8 +112,15 @@ function OverlayAfterSiteLink({ ariaLabel, labelTop, labelBottom }) {
 
     if (!AFTER_SITE_LINK_ENABLED) {
         return (
-            <div className={afterSiteLinkClassName} aria-hidden="true">
+            <div
+                className={`${afterSiteLinkClassName} cursor-help`}
+                tabIndex={0}
+                aria-label={tooltip}
+            >
                 {content}
+                <span className="cro-after-site-tooltip" role="tooltip">
+                    {tooltip}
+                </span>
             </div>
         );
     }
@@ -123,7 +130,7 @@ function OverlayAfterSiteLink({ ariaLabel, labelTop, labelBottom }) {
             href={AFTER_SITE_URL}
             target="_blank"
             rel="noreferrer"
-            className={afterSiteLinkClassName}
+            className={`${afterSiteLinkClassName} cursor-pointer`}
             aria-label={ariaLabel}
         >
             {content}
@@ -1356,6 +1363,7 @@ export default function CroShowcase() {
                                 ariaLabel={t("croShowcase.afterSiteLink")}
                                 labelTop={t("croShowcase.afterSiteLinkTop")}
                                 labelBottom={t("croShowcase.afterSiteLinkBottom")}
+                                tooltip={t("croShowcase.afterSiteTooltip")}
                             />
                         </aside>
                     </div>

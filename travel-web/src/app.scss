@@ -1,18 +1,18 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Sail&family=Sawarabi+Gothic&family=Sawarabi+Mincho&display=swap');
 
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: var(--bodyFont);
 }
 /*colors and styles*/
 :root{
     --PrimaryColor: hsl(199, 100%, 33%);
     --SecondaryColor: hsl(187, 85%, 43%);
-    --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%),hsl(199, 100%, 33%));
+    --gradientColor: linear-gradient(to right, hsl(191.97deg 82.5% 41.09%), hsl(209.43deg 57.02% 40.99%));
     --whiteColor: hsl(0, 0%, 100%);
     --blackColor: hsl(0, 0%, 18%);
     --textColor: hsl(240, 4%, 36%);
@@ -22,6 +22,18 @@
     --bodyColor: rgb(231, 222, 207);
     --cardBG: rgb(225,225,225);
     --headlineColor: rgb(244, 3, 160);
+    --bodyFont: "Poppins", sans-serif;
+    --displayFont: "Sail", cursive;
+}
+
+html[lang="ja"] {
+    --bodyFont: "Sawarabi Gothic", sans-serif;
+    --displayFont: "Sawarabi Mincho", serif;
+}
+
+.fontSail {
+    font-family: var(--displayFont);
+    font-weight: 400;
 }
 
 a{   

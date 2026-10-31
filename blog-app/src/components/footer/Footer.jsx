@@ -1,62 +1,65 @@
-import React from 'react'
-import styles from './footer.module.css'
-import Image from 'next/image'
-import Link from 'next/link'
+import React from "react";
+import styles from "./footer.module.css";
+import Image from "next/image";
+import Link from "next/link";
+
+const socials = [
+  { src: "/facebook-black.svg", alt: "Facebook", href: "/" },
+  { src: "/instagram-black.svg", alt: "Instagram", href: "/" },
+  { src: "/linkedin-black.svg", alt: "LinkedIn", href: "https://www.linkedin.com" },
+  { src: "/youtube-black.svg", alt: "YouTube", href: "/" },
+];
 
 const Footer = () => {
   return (
     <div className={styles.container}>
       <div className={styles.info}>
         <div className={styles.logo}>
-          <Image src="/logo.png" alt="yuko blog" width={50} height={50}/>
-          <h1 className={styles.logoText}>YukoBlog</h1>
+          <Image src="/logo.png" alt="Cribl!" width={50} height={50} />
+          <h1 className={styles.logoText}>Cribl!</h1>
         </div>
         <p className={styles.desc}>
-        Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, 
-        sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
-        magna aliquam erat volutpat.
-         Ut wisi enim ad minim veniam,
-        quis nostrud exerci tation ullamcorper suscipit lobortis 
-        nisl ut aliquip ex ea commodo consequat.
+          Discover my stories, creative ideas! and Share your life.
         </p>
         <div className={styles.icons}>
-        <Image src="/facebook.png" alt="facebook" width={18} height={18} />
-        <Image src="/instagram.png" alt="instagram" width={18} height={18} />
-        <Image src="/tiktok.png" alt="tiktok" width={18} height={18} />
-        <Image src="/youtube.png" alt="youtube" width={18} height={18} />
+          {socials.map((item) => (
+            <Link key={item.alt} href={item.href} aria-label={item.alt}>
+              <Image src={item.src} alt={item.alt} width={22} height={22} />
+            </Link>
+          ))}
         </div>
       </div>
       <div className={styles.links}>
-          <div className={styles.list}>
-            <span className={styles.listTitle}>Links</span>
-            <Link href="/">Home</Link>
-            <Link href="/">Blog</Link>
-            <Link href="/">About</Link>
-            <Link href="/">Contact</Link>
-          </div>
+        <div className={styles.list}>
+          <span className={styles.listTitle}>Links</span>
+          <Link href="/">Home</Link>
+          <Link href="/">Blog</Link>
+          <Link href="/">About</Link>
+          <Link href="/">Contact</Link>
+        </div>
       </div>
 
       <div className={styles.links}>
-          <div className={styles.list}>
-            <span className={styles.listTitle}>Tages</span>
-            <Link href="/">Create</Link>
-            <Link href="/">Culture</Link>
-            <Link href="/">Trend</Link>
-            <Link href="/">Travel</Link>
-          </div>
+        <div className={styles.list}>
+          <span className={styles.listTitle}>Tags</span>
+          <Link href="/">Create</Link>
+          <Link href="/">Culture</Link>
+          <Link href="/">Trend</Link>
+          <Link href="/">Travel</Link>
+        </div>
       </div>
 
       <div className={styles.links}>
-          <div className={styles.list}>
-            <span className={styles.listTitle}>Social</span>
-            <Link href="/">Facebook</Link>
-            <Link href="/">Instagram</Link>
-            <Link href="/">TikTok</Link>
-            <Link href="/">Youtube</Link>
-          </div>
+        <div className={styles.list}>
+          <span className={styles.listTitle}>Social</span>
+          <Link href="/">Facebook</Link>
+          <Link href="/">Instagram</Link>
+          <Link href="https://www.linkedin.com">LinkedIn</Link>
+          <Link href="/">Youtube</Link>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Footer
+export default Footer;

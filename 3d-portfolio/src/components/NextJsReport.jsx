@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTheme } from '../themes/useTheme';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -67,19 +68,20 @@ const TitleWithReflectionSmall = ({ children }) => (
         </span>
     </span>
 );
-// Consolidated Tailwind classes for better performance
-const classes = {
+// Consolidated Tailwind classes — accents via --theme-accent; pink table cells via theme.uiChrome
+const ACCENT_TEXT = "text-[color:var(--theme-accent,#382797)]";
+const baseClasses = {
     // Modal overlay
-    modalOverlay: "fixed inset-0 bg-white/10 backdrop-blur-sm z-50 flex items-center justify-center p-4",
+    modalOverlay: "fixed inset-0 bg-white/10 backdrop-blur-sm z-50 flex items-center justify-center p-[2rem]",
 
     // Main container
-    mainContainer: "border border-gray-500 pink-gradient_bg backdrop-blur-sm max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-lg",
+    mainContainer: "border border-gray-500 pink-gradient_bg backdrop-blur-sm !min-h-0 max-w-4xl w-full max-h-[calc(100dvh-4rem)] overflow-y-auto rounded-lg",
 
     // Header
-    header: "overflow-hidden sticky top-0 bg-white/20 backdrop-blur-sm border-b border-gray-500 text-blue-600 p-6 rounded-t-lg z-10",
-    headerContent: "flex justify-between items-center",
-    headerTitle: "text-2xl font-bold mb-4",
-    closeButton: "text-blue-600 hover:text-white text-2xl transition-colors",
+    header: `overflow-hidden sticky top-0 bg-white/20 backdrop-blur-sm border-b border-gray-500 ${ACCENT_TEXT} p-6 rounded-t-lg z-10`,
+    headerContent: "flex justify-between items-start gap-3",
+    headerTitle: `text-xl sm:text-2xl font-bold ${ACCENT_TEXT} pr-2`,
+    closeButton: `${ACCENT_TEXT} hover:text-white text-2xl transition-colors shrink-0`,
 
     // Content wrapper
     content: "p-6 space-y-8 relative z-0",
@@ -108,7 +110,7 @@ const classes = {
 
     // Benefit cards with gradient
     benefitCard: "p-6 border-b border-r bg-white/30 border-gray-500 flex flex-col items-center justify-center text-center",
-    benefitTitle: "font-semibold text-blue-600 mb-3",
+    benefitTitle: `font-semibold ${ACCENT_TEXT} mb-3`,
     benefitText: "text-gray-700 text-sm",
 
     // Section 3 specific cards with gradient
@@ -131,37 +133,44 @@ const classes = {
     tableRow: "border-b border-gray-500",
     tableCell: "px-4 py-2 text-gray-700",
     tableCellGray: "px-4 py-2 text-gray-600",
-    tableCellPink: "px-4 py-2 text-pink-600 font-semibold",
 
     // Checklist with gradient
     checklistContainer: "border-b border-gray-500 p-4",
     checklistList: "space-y-3",
     checklistItem: "flex items-start space-x-3",
-    checklistCheckbox: "mt-1 text-blue-600",
+    checklistCheckbox: `mt-1 ${ACCENT_TEXT}`,
     checklistText: "text-gray-700",
 
     // Section 10 special styling
     section10Container: "border border-gray-500 bg-white/30 p-6",
 
     // Footer
-    footer: "bg-white/20 backdrop-blur-sm border-t border-gray-500 p-6 rounded-b-lg",
+    footer: "bg-white/20 backdrop-blur-sm border-t border-gray-500 p-2 rounded-b-lg",
     footerContainer: "flex justify-between items-center",
-    footerButtonContainer: "max-w-screen-lg mx-auto flex justify-left gap-4 items-center",
-    footerButton: "text-center bg-white text-blue-600 px-2 sm:px-6 py-3 font-semibold transition-all duration-300 hover:scale-105 rounded-lg",
-    footerButtonContact: "text-center bg-blue-500 bg-white text-blue-600 px-2 sm:px-6 py-3 font-semibold transition-all duration-300 hover:scale-105 rounded-lg",
-    footerButtonClose: "bg-white text-blue-600 px-2 sm:px-6 py-3 min-w-10 font-semibold transition-all duration-300 hover:scale-105 rounded-lg",
-
+    footerButtonContainer: "max-w-screen-lg mx-auto flex justify-left gap-2 items-center",
+    footerButton: `text-center bg-white ${ACCENT_TEXT} px-2 sm:px-6 py-3 min-w-[3.5rem] font-semibold transition-all duration-300 hover:scale-105 rounded-lg`,
+    footerButtonContact: `text-center bg-white ${ACCENT_TEXT} px-2 sm:px-6 py-3 font-semibold transition-all duration-300 hover:scale-105 rounded-lg`,
+    footerButtonClose: `bg-white ${ACCENT_TEXT} px-2 sm:px-6 py-3 min-w-10 font-semibold transition-all duration-300 hover:scale-105 rounded-lg`,
 
     // Colors for section 3 cards
     colors: {
-        pink: "text-pink-800",
         yellow: "text-yellow-800",
         purple: "text-purple-800",
-        blue: "text-blue-600"
-    }
+        blue: ACCENT_TEXT,
+    },
 };
 
 const NextJsReport = ({ isOpen, onClose }) => {
+    const { theme } = useTheme();
+    const classes = useMemo(
+        () => ({
+            ...baseClasses,
+            tableCellPink:
+                theme.uiChrome?.nextJsReport?.tableCellAccent ??
+                `px-4 py-2 ${ACCENT_TEXT} font-semibold`,
+        }),
+        [theme],
+    );
     const { t, i18n } = useTranslation();
 
     // Inline style for font-family to ensure proper language-specific font loading
@@ -403,7 +412,7 @@ const NextJsReport = ({ isOpen, onClose }) => {
 
                         {/* Simple Table */}
                         <div className={classes.TablecardWithMargin}>
-                            <h4 className="px-4 font-semibold text-blue-600 mb-3" style={titleFontStyle}>
+                            <h4 className={`px-4 font-semibold ${ACCENT_TEXT} mb-3`} style={titleFontStyle}>
                                 {safeTranslate('service.section3.performanceReport.content.section5.table.title', 'Performance Comparison Table')}
                             </h4>
                             <div className={classes.tableContainer}>

@@ -9,8 +9,8 @@ import AuthProvider from "@/providers/AuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Yuko Blog App",
-  description: "The best blog app!",
+  title: "Cribl!",
+  description: "Discover stories and creative ideas on Cribl!",
 };
 
 export default function RootLayout({ children }) {

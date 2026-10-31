@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { FaGlobe } from "react-icons/fa";
+import { useTheme } from "../themes/useTheme";
 
 const languages = [
   { code: "en", lang: "English" },
@@ -8,6 +10,8 @@ const languages = [
 
 const LanguageSelector = () => {
   const { i18n } = useTranslation();
+  const { theme } = useTheme();
+  const chrome = theme.uiChrome?.languageSelector;
   const [isOpen, setIsOpen] = useState(false);
   const rootRef = useRef(null);
 
@@ -43,24 +47,27 @@ const LanguageSelector = () => {
     };
   }, [isOpen]);
 
+  if (!chrome) return null;
+
   return (
     <div ref={rootRef} className="relative">
       <button
         type="button"
-        className="language-selector appearance-none border-none outline-none text-white text-sm font-medium cursor-pointer transition-opacity hover:opacity-90 shadow-sm shadow-pink-400/30 hover:shadow-md hover:shadow-pink-400/30 transition-shadow"
+        className={` flex items-center justify-center w-8 h-8 text-xl`}
         aria-haspopup="listbox"
         aria-expanded={isOpen}
         aria-label="Select language"
         onClick={() => setIsOpen((open) => !open)}
       >
-        {current.lang}
+        <FaGlobe className="text-lg" />
+        {/* {current.lang} */}
       </button>
 
       {isOpen && (
         <ul
           role="listbox"
           aria-label="Languages"
-          className="language-selector-menu absolute right-0 top-[calc(100%+0.25rem)] z-[60] min-w-full overflow-hidden rounded-md border border-white/30 bg-pink-200/40 shadow-lg shadow-pink-400/20 backdrop-blur-sm"
+          className={`${chrome.menu} backdrop-blur-sm`}
         >
           {languages.map((lng) => {
             const isSelected = lng.code === i18n.language;
@@ -68,8 +75,7 @@ const LanguageSelector = () => {
               <li key={lng.code} role="option" aria-selected={isSelected}>
                 <button
                   type="button"
-                  className={`language-selector-option w-full px-3 py-2 text-left text-sm font-medium bg-pink-200/40 text-blue-500 transition-colors hover:text-white hover:bg-blue-500 ${isSelected ? "bg-pink-300/40 text-blue-500 hover:text-white hover:bg-blue-500" : ""
-                    }`}
+                  className={`${chrome.option} ${isSelected ? chrome.optionSelected : ""}`}
                   onClick={() => changeLanguage(lng.code)}
                 >
                   {lng.lang}

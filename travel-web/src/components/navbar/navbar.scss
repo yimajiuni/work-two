@@ -1,7 +1,7 @@
 :root{
     --PrimaryColor: hsl(199, 100%, 33%);
     --SecondaryColor: hsl(187, 85%, 43%);
-    --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%),hsl(199, 100%, 33%));
+    --gradientColor: linear-gradient(to right, hsl(191.97deg 82.5% 41.09%), hsl(209.43deg 57.02% 40.99%));
     --whiteColor: hsl(0, 0%, 100%);
     --blackColor: hsl(0, 0%, 18%);
     --textColor: hsl(240, 4%, 36%);
@@ -17,19 +17,26 @@
     position: fixed;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    background:  rgb(231, 222, 207);
+    justify-content: space-between;
+    background: rgb(231, 222, 207);
     width: 100%;
     padding: 1rem;
     z-index: 1000;
-    box-shadow:0 2px 4px rgba(2, 15, 19, 0.240);
+    box-shadow: 0 2px 4px rgba(2, 15, 19, 0.24);
 
     .logo{
         color: var(--blackColor);
-        font-weight: 600;
+        font-family: var(--displayFont);
+        font-weight: 400;
         cursor: pointer;
         align-items: center;
         justify-content: space-between;
+
+        h1 {
+            font-family: inherit;
+            font-weight: 400;
+            font-size: 1.65rem;
+        }
 
         .icon{
             font-size: 25px;
@@ -43,11 +50,12 @@
             position: absolute;
             background-color: var(--whiteColorDeam);
             height: max-content;
-            width: 80%;
+            width: min(88%, 20rem);
+            min-width: 16rem;
             border-radius: 1rem;
             top:-500rem;
             left: 50%;
-            padding: 1rem;
+            padding: 1.25rem 1.5rem;
             transform: translate(-50%);
             z-index: 2000;
             box-shadow:0 2px 4px rgba(2, 15, 29, 0.904);
@@ -56,17 +64,22 @@
             .navLists{
                 flex-direction: column;
                 justify-content: center;
-                width: 10%;
+                align-items: stretch;
+                width: 100%;
+                min-width: 12rem;
                 margin: auto;
                 padding: .5rem 0;
 
                 .navItem{
                     padding: .5rem 0rem;
+                    width: 100%;
 
                     .navLink{
+                        display: block;
                         color: var(--textColor);
                         font-size: .9rem;
                         font-weight: 600;
+                        white-space: nowrap;
                         &:hover{
                             color: var(--PrimaryColor);
                         }
@@ -74,10 +87,34 @@
                 }
                 .btn{
                     margin-top: 1rem;
+                    margin-bottom: 0.5rem;
+                    width: 100%;
+                    white-space: nowrap;
 
                     a{
                         font-weight: 600;
                         color: var(--whiteColor);
+                        white-space: nowrap;
+                    }
+                }
+
+                .loginLink{
+                    margin-top: 0.75rem;
+                    gap: 0.3em;
+                    color: var(--textColor);
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    white-space: nowrap;
+                    padding-left: 2px;
+
+                    .icon{
+                        font-size: 1.15rem;
+                        color: var(--PrimaryColor);
+                        transform: none;
+                    }
+
+                    &:hover{
+                        color: var(--PrimaryColor);
                     }
                 }
                 
@@ -121,7 +158,8 @@
     .header{
         padding: 1.5rem 2rem;
         gap: 2rem;
-        
+        justify-content: space-between;
+
         .navBar{
             .navLists{
                 display: flex;
@@ -148,6 +186,26 @@
                     a{
                         color: var(--whiteColor);
                         font-weight: 600;
+                    }
+                }
+
+                .loginLink{
+                    margin-left: 0.85rem;
+                    margin-top: 0;
+                    gap: 0.3rem;
+                    color: var(--textColor);
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    white-space: nowrap;
+
+                    .icon{
+                        font-size: 1.2rem;
+                        color: var(--PrimaryColor);
+                        transform: none;
+                    }
+
+                    &:hover{
+                        color: var(--PrimaryColor);
                     }
                 }
             }

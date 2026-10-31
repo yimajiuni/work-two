@@ -1,31 +1,29 @@
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import CountUp from 'react-countup';
 
-// Consolidated Tailwind classes for better performance
-const classes = {
-    // Container
+// Shared chrome — colors, layout, motion
+const sharedClasses = {
     container: "text-center",
-
-    // Label
-    label: "text-lg font-semibold text-blue-500",
-
-    // Metric container
-    metricContainer: "text-blue-500",
-
-    // Animated value container
+    metricContainer: "text-blue-500 whitespace-nowrap",
     animatedContainer: "font-bold text-blue-500 transition-all duration-500",
     animatedContainerPulse: "font-bold text-blue-500 transition-all duration-500 animate-pulse",
-
-    // Final value container
     finalContainer: "font-semibold text-blue-600 transition-all duration-500",
-
-    // Text sizes
-    text3xl: "text-3xl",
-    text7xl: "text-7xl",
-
-    // Spacing
     marginRight: "mr-1",
-    marginLeft: "ml-1"
+    marginLeft: "ml-1",
+};
+
+// Size maps — Layout passes `size` (e.g. beige); pink keeps default
+const sizeMaps = {
+    default: {
+        label: "text-lg font-semibold text-blue-500 whitespace-nowrap ",
+        textUnit: "text-3xl",
+        textValue: "text-7xl",
+    },
+    beige: {
+        label: "mb-1 text-[10px] leading-tight sm:text-sm md:text-lg font-semibold text-blue-500 whitespace-nowrap",
+        textUnit: "text-[12px] sm:text-lg md:text-3xl",
+        textValue: "text-3xl sm:text-4xl md:text-6xl lg:text-7xl whitespace-nowrap",
+    },
 };
 
 const AnimatedMetric = ({
@@ -36,8 +34,13 @@ const AnimatedMetric = ({
     duration = 1.5,
     delay = 0,
     className = "",
-    shouldStart = false
+    shouldStart = false,
+    size = "default",
 }) => {
+    const classes = {
+        ...sharedClasses,
+        ...(sizeMaps[size] ?? sizeMaps.default),
+    };
     const [isVisible, setIsVisible] = useState(false);
     const [showEndValue, setShowEndValue] = useState(false);
     const metricRef = useRef(null);
@@ -134,16 +137,16 @@ const AnimatedMetric = ({
                 {!showEndValue ? (
                     <div className={classes.animatedContainer}>
                         {endParsed.position === 'left' && endParsed.unit && (
-                            <span className={`${classes.text3xl} ${classes.marginRight}`}>{endParsed.unit}</span>
+                            <span className={`${classes.textUnit} ${classes.marginRight}`}>{endParsed.unit}</span>
                         )}
                         {endParsed.prefix && (
-                            <span className={`${classes.text3xl} ${classes.marginRight}`}>{endParsed.prefix}</span>
+                            <span className={`${classes.textUnit} ${classes.marginRight}`}>{endParsed.prefix}</span>
                         )}
                         {endParsed.position === 'prefix-first' && endParsed.unit && (
-                            <span className={`${classes.text3xl} ${classes.marginRight}`}>{endParsed.unit}</span>
+                            <span className={`${classes.textUnit} ${classes.marginRight}`}>{endParsed.unit}</span>
                         )}
 
-                        <span className={classes.text7xl}>
+                        <span className={classes.textValue}>
                             {shouldStart && isVisible ? (
                                 <CountUp
                                     start={startNum}
@@ -160,24 +163,24 @@ const AnimatedMetric = ({
                         </span>
 
                         {endParsed.position === 'right' && endParsed.unit && (
-                            <span className={`${classes.text3xl} ${classes.marginLeft}`}>{endParsed.unit}</span>
+                            <span className={`${classes.textUnit} ${classes.marginLeft}`}>{endParsed.unit}</span>
                         )}
                     </div>
                 ) : (
                     <div className={classes.finalContainer}>
                         {endParsed.position === 'left' && endParsed.unit && (
-                            <span className={`${classes.text3xl} ${classes.marginRight}`}>{endParsed.unit}</span>
+                            <span className={`${classes.textUnit} ${classes.marginRight}`}>{endParsed.unit}</span>
                         )}
                         {endParsed.prefix && (
-                            <span className={`${classes.text3xl} ${classes.marginRight}`}>{endParsed.prefix}</span>
+                            <span className={`${classes.textUnit} ${classes.marginRight}`}>{endParsed.prefix}</span>
                         )}
                         {endParsed.position === 'prefix-first' && endParsed.unit && (
-                            <span className={`${classes.text3xl} ${classes.marginRight}`}>{endParsed.unit}</span>
+                            <span className={`${classes.textUnit} ${classes.marginRight}`}>{endParsed.unit}</span>
                         )}
-                        <span className={classes.text7xl}>{endParsed.number}</span>
+                        <span className={classes.textValue}>{endParsed.number}</span>
 
                         {endParsed.position === 'right' && endParsed.unit && (
-                            <span className={`${classes.text3xl} ${classes.marginLeft}`}>{endParsed.unit}</span>
+                            <span className={`${classes.textUnit} ${classes.marginLeft}`}>{endParsed.unit}</span>
                         )}
                     </div>
                 )}
@@ -187,4 +190,4 @@ const AnimatedMetric = ({
 };
 
 // Wrap with React.memo to prevent unnecessary re-renders
-export default React.memo(AnimatedMetric); 
+export default React.memo(AnimatedMetric);

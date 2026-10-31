@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Sawarabi+Mincho&family=Cedarville+Cursive:wght@200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Poppins:wght@400;500;600;700&family=Sawarabi+Mincho&display=swap");
 
 @font-face {
   font-family: "Termina Demi";
@@ -12,21 +12,78 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  font-family: "Termina Demi", sans-serif;
-/*background-image: url('./assets/img/hero-l.jpg');*/
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: clip;
 }
-.font-body{
-    font-family: "Termina Demi", sans-serif;
-    font-size: medium;
+
+/* Full-bleed liquid hero — fills viewport at any ratio, no side gutters */
+.hero-liquid {
+  width: 100%;
+  min-height: 100svh;
+  min-height: 100dvh;
 }
-.font-hedding{
-    font-family: "Termina Demi", sans-serif;
-    font-weight: 600;
+
+.hero-liquid__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
-.font-logo{
-    font-family: "Cedarville Cursive", cursive;
-    font-weight: 400;
+
+.hero-liquid__media img,
+.hero-liquid__media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-liquid__shade {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 0.25);
+  pointer-events: none;
+}
+
+/*
+  Typography roles
+  - Body / UI: Poppins (readable, universal for EN; JP can add Noto Sans JP later)
+  - Headings / display: Termina Demi
+  - Logo script: Cedarville Cursive
+*/
+:root {
+  --font-sans: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Termina Demi", "Poppins", system-ui, sans-serif;
+  --font-logo: "Cedarville Cursive", cursive;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+
+.font-hedding {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.font-logo {
+  font-family: var(--font-logo);
+  font-weight: 400;
 }
 .letter-vertical{
     font-family: "Sawarabi Mincho";
@@ -74,3 +131,80 @@ body{
         @apply sm:text-5xl text-3xl font-semibold sm:leading-snug;
     }
  }
+
+/* 16:9 media frames — sections and cards share one ratio */
+.media-frame {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  overflow: hidden;
+}
+
+.media-frame--video {
+  max-height: min(70vh, 40rem);
+}
+
+.media-zoom {
+  overflow: hidden;
+}
+
+.media-zoom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.55s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .media-zoom:hover img,
+  .group:hover .media-zoom img {
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media-zoom img,
+  .press-marquee__track {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Press review thin marquee */
+.press-marquee__track {
+  animation: press-marquee 42s linear infinite;
+}
+
+.press-marquee:hover .press-marquee__track {
+  animation-play-state: paused;
+}
+
+@keyframes press-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Handwritten logo placeholder until artwork arrives */
+.site-logo-mark {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.site-logo-mark__script {
+  font-family: "Cedarville Cursive", cursive;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.site-logo-mark__note {
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}

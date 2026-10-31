@@ -1,105 +1,109 @@
 import { Link } from "react-scroll";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
-    <div className="bg-black text-white rounded-t-3x1 mt-2 p-10 md:p-10 sm:p-5 ">
-      <div className="flex flex-col md:flex-row justify-between p-b md:px-32 px-5">
-        <div className="w-full md:w-1/4">
-          <h1 className="font-semibold text-xl pb-4">FoodieWeb</h1>
-          <p className="text-sm">
-            Indulge in a sympony of flavors, where each plate is a canvas for
-            culnary excellence.
-          </p>
+    <footer className="mt-2 rounded-t-3xl bg-black p-8 text-white sm:p-5 md:p-10">
+      <div className="flex flex-col justify-between gap-8 px-0 md:flex-row md:px-32">
+        <div className="w-full md:w-1/3">
+          <div className="site-logo-mark pb-3">
+            <span className="site-logo-mark__script text-3xl text-brightColor">
+              Marea
+            </span>
+            <span className="site-logo-mark__note text-white/70">
+              {t.footer.logoNote}
+            </span>
+          </div>
+          <p className="text-sm leading-relaxed text-white/80">{t.footer.blurb}</p>
         </div>
         <div>
-          <h1 className="font-medium text-xl pb-4 pt-5 md:pt-0">Links</h1>
+          <h2 className="font-hedding pb-4 pt-2 text-xl font-medium md:pt-0">
+            {t.footer.links}
+          </h2>
           <nav className="flex flex-col gap-2">
             <Link
               to="about"
               spy={true}
               smooth={true}
               duration={500}
-              className=" hover:text-brightColor transition-all cursor-pointer"
+              className="cursor-pointer transition-all hover:text-brightColor"
             >
-              About
+              {t.footer.ourStory}
             </Link>
             <Link
               to="menu"
               spy={true}
               smooth={true}
               duration={500}
-              className=" hover:text-brightColor transition-all cursor-pointer"
+              className="cursor-pointer transition-all hover:text-brightColor"
             >
-              Menu
+              {t.footer.omakase}
             </Link>
             <Link
               to="review"
               spy={true}
               smooth={true}
               duration={500}
-              className=" hover:text-brightColor transition-all cursor-pointer"
+              className="cursor-pointer transition-all hover:text-brightColor"
             >
-              Reviews
+              {t.footer.reviews}
             </Link>
           </nav>
         </div>
         <div>
-          <h1 className="font-medium text-xl pb-3 pt-5 md:pt-0">Menu</h1>
+          <h2 className="font-hedding pb-3 pt-2 text-xl font-medium md:pt-0">
+            {t.footer.menu}
+          </h2>
           <nav className="flex flex-col gap-2">
             <Link
               to="dishes"
               spy={true}
               smooth={true}
               duration={500}
-              className=" hover:text-brightColor transition-all cursor-pointer"
+              className="cursor-pointer transition-all hover:text-brightColor"
             >
-              Our Dishes
+              {t.footer.ourDishes}
             </Link>
             <Link
               to="menu"
               spy={true}
               smooth={true}
               duration={500}
-              className=" hover:text-brightColor transition-all cursor-pointer"
+              className="cursor-pointer transition-all hover:text-brightColor"
             >
-              Premium Menu
+              {t.footer.creativeOmakase}
             </Link>
           </nav>
         </div>
         <div>
-          <h1 className="font-medium text-xl pb-4 pt-5 md:pt-2">Contact Us</h1>
-          <nav className="flex flex-col gap-2">
+          <h2 className="font-hedding pb-4 pt-2 text-xl font-medium md:pt-0">
+            {t.footer.contact}
+          </h2>
+          <nav className="flex flex-col gap-2 text-sm md:text-base">
             <a
-              className="hover:text-brightColor transition-all cursor-pointer"
-              href="/"
+              className="cursor-pointer transition-all hover:text-brightColor"
+              href="mailto:hello@marea.example"
             >
-              Fooedieweb@net.com
+              hello@marea.example
             </a>
             <a
-              className="hover:text-brightColor transition-all cursor-pointer"
-              href="/"
+              className="cursor-pointer transition-all hover:text-brightColor"
+              href="tel:+810000000000"
             >
-              +00 095 035 996
+              +81 (0)00 0000 0000
             </a>
-            <a
-              className="hover:text-brightColor transition-all cursor-pointer"
-              href="/"
-            >
-              social media
-            </a>
+            <span className="text-white/60">{t.footer.social}</span>
           </nav>
         </div>
       </div>
-      <div>
-        <p>
-          <p className=" text-center py-4">
-            @copyright developed by
-            <span className="text-brightColor"> FoodieWeb </span>
-            all rights reserved.
-          </p>
-        </p>
-      </div>
-    </div>
+      <p className="py-6 text-center text-sm text-white/70">
+        © {new Date().getFullYear()}
+        <span className="text-brightColor"> Marea </span>
+        {t.footer.copyright}
+      </p>
+    </footer>
   );
 };
 

@@ -1,4 +1,18 @@
-.content{
-    display: flex;
-    gap: 50px;
+.container {
+  padding-block: var(--space-6);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+}
+
+@media screen and (min-width: 64rem) {
+  .content {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-9);
   }
+}

@@ -1,10 +1,10 @@
 import React from "react";
-import styles from './card-list.module.css'
+import styles from "./card-list.module.css";
 import Pagination from "../pagenation/Pagenation";
 import Card from "../card/Card";
+import RecommendedPool from "../recommended/RecommendedPool";
 import { getBaseUrl } from "@/utils/getBaseUrl";
 
-/*fetch actual data*/
 const getData = async (page, cat) => {
   const baseUrl = getBaseUrl();
   const res = await fetch(
@@ -34,10 +34,11 @@ const CardList = async ({ page, cat }) => {
       <h1 className={styles.title}>Recent Posts</h1>
       <div className={styles.posts}>
         {posts?.map((item) => (
-          <Card item={item} key={item._id} />
+          <Card item={item} key={item._id || item.id || item.slug} />
         ))}
       </div>
       <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} />
+      <RecommendedPool />
     </div>
   );
 };

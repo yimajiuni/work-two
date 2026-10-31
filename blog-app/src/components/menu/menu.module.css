@@ -1,18 +1,22 @@
-.container{
-    flex:2;
-    padding-top: 60px;
+.container {
+  flex: 2;
+  min-width: 0;
+  padding-top: var(--space-2);
 }
-.subtitle{
-    color: gray;
-    font-size: 16px;
-    font-weight: 400;
-}
-.title{
-    font-size: 28px;
 
+.subtitle {
+  color: gray;
+  font-size: var(--text-sm);
+  font-weight: 400;
 }
-@media screen and(max-width:1024px ){
-    .container{
-        display: none;
-    }
+
+.title {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-4);
+}
+
+@media screen and (max-width: 64rem) {
+  .container {
+    padding-top: var(--space-6);
+  }
 }

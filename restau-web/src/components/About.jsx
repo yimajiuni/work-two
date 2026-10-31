@@ -1,41 +1,51 @@
+import { Link } from "react-scroll";
 import OrderButton from "../layouts/OrderButton";
+import aboutImg from "../assets/img/about.jpg";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const About = () => {
+  const { t } = useLanguage();
+
   return (
-    <div className="z-10 min-h-screen flex flex-col lg:flex-row justify-center text-center items-center">
-      <div className=" lg:pt-14">
-        <div className="text-center justify-center items-center my-60 mb-20 px-7">
-          <h1 className="text-5xl font-hedding font-semibold">
-            Why Choose Us?
-          </h1>
+    <section className="z-10 w-full">
+      <div className="px-5 pb-10 pt-24 text-center lg:px-32">
+        <p className="mb-3 text-sm uppercase tracking-[0.18em] text-brightColor">
+          {t.about.eyebrow}
+        </p>
+        <h1 className="font-hedding text-4xl font-semibold md:text-5xl">
+          {t.about.title}
+        </h1>
+        <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-lightText md:text-lg">
+          {t.about.intro}
+        </p>
+      </div>
+
+      <div className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden lg:min-h-0 lg:aspect-[16/9] lg:max-h-[90vh]">
+        <div className="media-zoom absolute inset-0">
+          <img
+            src={aboutImg}
+            alt={t.about.alt}
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/35" aria-hidden="true" />
         </div>
-        <div className="min-h-screen flex flex-col justify-center lg:px-32 px-5 bg-[url('./assets/img/about.jpg')] bg-cover bg-no-repeat">
-          <div className="my-20 bg-backgroundColor py-20 px-20 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] opacity-85">
-            <div className="flex flex-row-reverse"></div>
-            <h1 className="font-hedding font-bold text-xl opacity-100 pb-10">
-              THIS IS US.
-            </h1>
-            <p className="opacity-100  pb-5">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-              nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-              erat volutpat.Ut wisi enim ad minim veniam, quis nostrud exerci
-              tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-              consequat.{" "}
-            </p>
-            <p className="opacity-100">
-              Duis autem vel eum iriure dolor in hendrerit in vulputate velit
-              esse molestie consequat, vel illum dolore eu feugiat nulla
-              facilisis at vero eros et accumsan et iusto odio dignissim qui
-              blandit praesent luptatum zzril delenit augue duis dolore te
-              feugait nulla facilisi.
-            </p>
-            <div className="flex justify-center pt-10">
-              <OrderButton title="Learn More" />
+
+        <div className="relative z-10 my-16 w-full max-w-3xl px-5 lg:px-8">
+          <div className="rounded-xl bg-backgroundColor/90 px-6 py-10 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] md:px-12 md:py-14">
+            <h2 className="font-hedding pb-6 text-center text-xl font-bold md:text-2xl">
+              {t.about.thisIsUs}
+            </h2>
+            <p className="pb-4 leading-relaxed">{t.about.p1}</p>
+            <p className="leading-relaxed">{t.about.p2}</p>
+            <div className="flex w-full justify-center pt-10">
+              <Link to="menu" spy={true} smooth={true} duration={500}>
+                <OrderButton title={t.about.cta} />
+              </Link>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

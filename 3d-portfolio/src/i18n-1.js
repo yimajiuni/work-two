@@ -91,7 +91,8 @@ i18n
             Let's build something together!`,
           },
           Contact: {
-            line1: "Get in Touch.",
+            line1: "Get in",
+            line1Highlight: "Touch.",
             line2: "Your Name",
             line3: "Your E-mail",
             line4: "Your Message",
@@ -185,6 +186,26 @@ i18n
             highly valued
             `,
             line2: "!",
+          },
+          breadcrumb: {
+            home: "Home",
+            works: "Works",
+          },
+          workDetails: {
+            medium: "Format",
+            period: "Duration",
+            range: "Role",
+            skills: "Tech stack",
+            concept: "Concept",
+            conceptFunctionPrefix: "Functionally, ",
+            conceptNeedsPrefix: " Aligned with user needs, ",
+            persona: "Persona",
+            personaBasic: "Basics",
+            personaPreference: "Preferences",
+            personaOrientation: "Behavior",
+            design: "Design",
+            directLink: "Direct Link",
+            notFound: "Not found",
           },
           //web
           projects: [
@@ -1049,6 +1070,7 @@ i18n
             afterSiteLink: "Go to model site (external link)",
             afterSiteLinkTop: "go to",
             afterSiteLinkBottom: "model site",
+            afterSiteTooltip: "Type liberota.com to view the improved site.",
             close: "Close",
             detailLink: "→ see details",
             playVideo: "Play video",
@@ -1302,7 +1324,8 @@ i18n
             line1: "プロジェクトを考え中ですか？一緒に何か作りましょう！",
           },
           Contact: {
-            line1: "連絡する",
+            line1: "連絡",
+            line1Highlight: "する",
             line2: "お名前",
             line3: "メールアドレス",
             line4: "メッセージ内容",
@@ -1393,6 +1416,26 @@ i18n
             `,
             line2:
               "Githubのレポジトリ内では個人プロジェクトが現在も進行中です。よろしければご覧になっていってください。チームによる協力したプロジェクトは随時募集中です。",
+          },
+          breadcrumb: {
+            home: "ホーム",
+            works: "仕事一覧",
+          },
+          workDetails: {
+            medium: "形式",
+            period: "制作期間",
+            range: "担当",
+            skills: "使用技術",
+            concept: "コンセプト",
+            conceptFunctionPrefix: "機能面では、",
+            conceptNeedsPrefix: "ユーザーニーズに合わせ、",
+            persona: "ペルソナ",
+            personaBasic: "基本情報",
+            personaPreference: "内面志向",
+            personaOrientation: "行動傾向",
+            design: "設計",
+            directLink: "ダイレクトリンク",
+            notFound: "見つかりませんでした",
           },
           //web
           projects: [
@@ -1656,7 +1699,7 @@ i18n
               title: "ECブランド",
               title2: "bespokeサイトを",
               titleHighlight: "Next.js & Shopifyで",
-              yimajiuni: "はじめまして、いまじゆうに。",
+              yimajiuni: "はじめまして<punct>、</punct><after>いまじゆうに</after><punct>。</punct>",
               description: "パワフルなアーキテクチャ上で重ねる、磨く。ブランディングと高速読み込みで売り上げ30%+増を実現。The functional things that are made of dazzling and twinkle things。「買う」という行為を最大限に楽しく。",
               /*
               description: "私たちは、結果を生み出す高性能なeコマースソリューションの作成を専門としています。カスタムWebアプリケーションからシームレスなショッピング体験まで、あなたのビジョンを実現します。",*/
@@ -2284,6 +2327,7 @@ i18n
             afterSiteLink: "モデルサイトへ移動（外部リンク）",
             afterSiteLinkTop: "go to",
             afterSiteLinkBottom: "model site",
+            afterSiteTooltip: "改善後のサイトを見るには liberota.com と入力してください。",
             close: "閉じる",
             detailLink: "→ see details",
             playVideo: "動画を再生",

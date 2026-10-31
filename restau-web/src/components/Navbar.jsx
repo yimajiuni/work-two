@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-scroll";
-import { BiChevronDown, BiRestaurant } from "react-icons/bi";
+import { BiChevronDown } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 import { CiMenuBurger } from "react-icons/ci";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
+  const { t } = useLanguage();
 
   const handleChange = () => {
     setMenu(!menu);
@@ -14,121 +17,117 @@ const Navbar = () => {
     setMenu(false);
   };
 
+  const mobileLinks = [
+    ["home", t.nav.home],
+    ["dishes", t.nav.dishes],
+    ["about", t.nav.story],
+    ["menu", t.nav.omakase],
+    ["review", t.nav.reviews],
+  ];
+
   return (
-    <div className="header z-40 font-hedding z-100 fixed w-full">
-      <div>
-        <div className="flex flex-row justify-between p-5 lg:px-32 md:px-25 px-5 bg-white shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
-          <div className=" py-5 flex flex-row items-center cursor-pointer">
-            <span>
-              <BiRestaurant size={32} />
-            </span>
-            <h1 className="font-logo pr-10 text-3xl font-semibold">FoodieWeb</h1>
-          </div>
-          <nav className=" hidden md:pr-1 md:flex flex-row items-center text-2xl font-medium gap-8">
-            <Link
-              to="home"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className=" hover:text-brightColor transition-all cursor-pointer"
-            >
-              Home
-            </Link>
-            <div className="z-1 relative group">
-              <div className=" flex items-center gap-1">
-                <Link
-                  to="dishes"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  className=" hover:text-brightColor transition-all cursor-pointer"
-                >
-                  Dishes
-                </Link>
-                <BiChevronDown className=" cursor-pointer" size={25} />
-              </div>
-              <ul className="absolute hidden space-y-2 group-hover:block bg-white border border-gray-300 rounded-lg p-5">
-                <li>
+    <header className="header fixed z-40 w-full font-hedding">
+      <div className="flex flex-row items-center justify-between gap-3 bg-white p-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)] md:px-8 lg:px-32">
+        <Link
+          to="home"
+          spy={true}
+          smooth={true}
+          duration={500}
+          className="site-logo-mark cursor-pointer"
+        >
+          <span className="site-logo-mark__script text-3xl text-brightColor md:text-4xl">
+            Marea
+          </span>
+          <span className="site-logo-mark__note">{t.nav.logoNote}</span>
+        </Link>
+
+        <nav className="hidden flex-1 flex-row items-center justify-center gap-8 text-xl font-medium md:flex lg:text-2xl">
+          <Link
+            to="home"
+            spy={true}
+            smooth={true}
+            duration={500}
+            className="cursor-pointer transition-all hover:text-brightColor"
+          >
+            {t.nav.home}
+          </Link>
+          <div className="group relative z-30">
+            <div className="flex items-center gap-1">
+              <Link
+                to="dishes"
+                spy={true}
+                smooth={true}
+                duration={500}
+                className="cursor-pointer transition-all hover:text-brightColor"
+              >
+                {t.nav.dishes}
+              </Link>
+              <BiChevronDown className="cursor-pointer" size={25} />
+            </div>
+            {/* pt-2 = hover bridge (avoids closing across the old mt-2 gap) */}
+            <div className="absolute left-0 top-full z-40 hidden pt-2 group-hover:block">
+              <ul className="min-w-max whitespace-nowrap rounded-lg border border-gray-300 bg-white p-4 text-left shadow-[0_3px_10px_rgb(0,0,0,0.12)] [writing-mode:horizontal-tb]">
+                <li className="py-1">
                   <Link
                     to="seasonal"
                     spy={true}
                     smooth={true}
                     duration={500}
-                    offset={-300}
-                    className=" hover:text-brightColor transition-all cursor-pointer"
+                    offset={-120}
+                    className="block cursor-pointer transition-all hover:text-brightColor"
                   >
-                    Seasonal
+                    {t.nav.seasonal}
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    to="seasonal"
-                    spy={true}
-                    smooth={true}
-                    duration={500}
-                    offset={-250}
-                    className=" hover:text-brightColor transition-all cursor-pointer"
-                  >
-                    Crispy
-                  </Link>
-                </li>
-                <li>
+                <li className="py-1">
                   <Link
                     to="juicy"
                     spy={true}
                     smooth={true}
                     duration={500}
-                    offset={-200}
-                    className=" hover:text-brightColor transition-all cursor-pointer"
+                    offset={-120}
+                    className="block cursor-pointer transition-all hover:text-brightColor"
                   >
-                    Juicy
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="juicy"
-                    spy={true}
-                    smooth={true}
-                    duration={500}
-                    offset={-150}
-                    className=" hover:text-brightColor transition-all cursor-pointer"
-                  >
-                    Spicy
+                    {t.nav.sharePlates}
                   </Link>
                 </li>
               </ul>
             </div>
-            <Link
-              to="about"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className=" hover:text-brightColor transition-all cursor-pointer"
-            >
-              About
-            </Link>
-            <Link
-              to="menu"
-              spy={true}
-              smooth={true}
-              duration={500}
-              offset={-100}
-              className=" hover:text-brightColor transition-all cursor-pointer"
-            >
-              Menu
-            </Link>
-            <Link
-              to="review"
-              spy={true}
-              smooth={true}
-              duration={500}
-              offset={-100}
-              className=" hover:text-brightColor transition-all cursor-pointer"
-            >
-              Reviews
-            </Link>
-          </nav>
-          <div className="md:hidden flex items-center">
+          </div>
+          <Link
+            to="about"
+            spy={true}
+            smooth={true}
+            duration={500}
+            className="cursor-pointer transition-all hover:text-brightColor"
+          >
+            {t.nav.story}
+          </Link>
+          <Link
+            to="menu"
+            spy={true}
+            smooth={true}
+            duration={500}
+            offset={-80}
+            className="cursor-pointer transition-all hover:text-brightColor"
+          >
+            {t.nav.omakase}
+          </Link>
+          <Link
+            to="review"
+            spy={true}
+            smooth={true}
+            duration={500}
+            offset={-80}
+            className="cursor-pointer transition-all hover:text-brightColor"
+          >
+            {t.nav.reviews}
+          </Link>
+        </nav>
+
+        <div className="flex shrink-0 items-center gap-3">
+          <LanguageSwitcher />
+          <div className="flex items-center md:hidden">
             {menu ? (
               <AiOutlineClose size={25} onClick={handleChange} />
             ) : (
@@ -136,63 +135,28 @@ const Navbar = () => {
             )}
           </div>
         </div>
-        <div
-          className={`${menu ? "translate-x-0" : "-translate-x-full"} lg:hidden md:hidden font-body flex flex-col absolute bg-black text-white left-0 top-19 font-semibold text-2xl text-center pt-8 pb-4 gap-8 w-full h-fit transition-transform duration-300`}
-        >
-          <Link
-            to="home"
-            spy={true}
-            smooth={true}
-            duration={500}
-            className=" hover:text-brightColor transition-all cursor-pointer"
-            onClick={closeMenu}
-          >
-            Home
-          </Link>
-          <Link
-            to="dishes"
-            spy={true}
-            smooth={true}
-            duration={500}
-            className=" hover:text-brightColor transition-all cursor-pointer"
-            onClick={closeMenu}
-          >
-            Dishes
-          </Link>
-          <Link
-            to="about"
-            spy={true}
-            smooth={true}
-            duration={500}
-            className=" hover:text-brightColor transition-all cursor-pointer"
-            onClick={closeMenu}
-          >
-            About
-          </Link>
-          <Link
-            to="menu"
-            spy={true}
-            smooth={true}
-            duration={500}
-            className=" hover:text-brightColor transition-all cursor-pointer"
-            onClick={closeMenu}
-          >
-            Menu
-          </Link>
-          <Link
-            to="review"
-            spy={true}
-            smooth={true}
-            duration={500}
-            className=" hover:text-brightColor transition-all cursor-pointer"
-            onClick={closeMenu}
-          >
-            Reviews
-          </Link>
-
-        </div>
       </div>
-    </div>
+
+      <div
+        className={`${
+          menu ? "translate-x-0" : "-translate-x-full"
+        } absolute left-0 top-full flex h-fit w-full flex-col gap-6 bg-black pb-6 pt-8 text-center text-2xl font-semibold text-white transition-transform duration-300 md:hidden`}
+      >
+        {mobileLinks.map(([to, label]) => (
+          <Link
+            key={to}
+            to={to}
+            spy={true}
+            smooth={true}
+            duration={500}
+            className="cursor-pointer transition-all hover:text-brightColor"
+            onClick={closeMenu}
+          >
+            {label}
+          </Link>
+        ))}
+      </div>
+    </header>
   );
 };
 

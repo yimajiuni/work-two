@@ -1,18 +1,21 @@
-.container{
-    display: flex;
-    width: 40px;
-    height: 20px;
-    border-radius: 50px;
-    cursor: pointer;
-    background-color: black;
-    justify-content: space-between;
-    position: relative;
+.container {
+  display: flex;
+  padding: 2px;
+  width: 40px;
+  height: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: black;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
-.switch{
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    position: absolute;
-    background-color: white;
-    left: 1px;
+
+.ball {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: white;
+  left: 1px;
 }

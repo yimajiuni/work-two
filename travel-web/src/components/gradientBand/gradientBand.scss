@@ -1,0 +1,25 @@
+.gradientBand {
+  display: block;
+  width: 100%;
+  height: clamp(160px, 28vw, 280px);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /* Single gradient — transparent at top → solid Secondary at bottom */
+  background: linear-gradient(
+    to bottom,
+    hsla(192, 82.5%, 41%, 0) 0%,
+    hsla(192, 82.5%, 41%, 0.35) 40%,
+    hsl(187, 85%, 43%) 70%,
+    hsl(187, 85%, 43%) 100%
+  );
+}
+
+/* When layered on footer video: fill the media band */
+.footerBg .gradientBand {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  height: auto;
+  pointer-events: none;
+}

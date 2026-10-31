@@ -1,26 +1,26 @@
-:root{
+:root {
     --PrimaryColor: hsl(199, 100%, 33%);
     --SecondaryColor: hsl(187, 85%, 43%);
-    --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%),hsl(199, 100%, 33%));
+    --gradientColor: linear-gradient(to right, hsl(191.97deg 82.5% 41.09%), hsl(209.43deg 57.02% 40.99%));
     --whiteColor: hsl(0, 0%, 100%);
     --blackColor: hsl(0, 0%, 18%);
     --textColor: hsl(240, 4%, 36%);
     --whiteColorDeam: hsl(0, 0%, 93%);
     --grayText: rgb(240, 240, 246);
-    --inputColor:rgb(239, 239, 239);
+    --inputColor: rgb(239, 239, 239);
     --bodyColor: rgb(231, 222, 207);
-    --cardBG: rgb(225,225,225);
+    --cardBG: rgb(225, 225, 225);
     --headlineColor: rgb(244, 3, 160);
 }
 
-.home{
+.home {
     width: 100%;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 
-/*.overlay{
+    /*.overlay{
         position: absolute;
         height: 100%;
         width: 100%;
@@ -29,8 +29,8 @@
         z-index: 1;
         mix-blend-mode: hard-light;
     }*/
-    
-    video{
+
+    video {
         clip-path: ellipse(90% 65% at 48% 35%);
         position: absolute;
         height: 100%;
@@ -40,82 +40,260 @@
         object-fit: cover;
     }
 
-    .homeContent{
+    .homeContent {
         width: 100%;
         height: max-content;
         padding: 8rem 1.5rem 3rem;
         display: flex;
-        row-gap: 3rem;
+        row-gap: 1.5rem;
         flex-direction: column;
         z-index: 100;
         color: var(--whiteColor);
 
-        .textDiv{
-            padding: 2rem;
+        .textDiv {
+            /*padding: 2rem;*/
 
-            .smallText{
+            .smallText {
                 font-size: 13px;
                 text-transform: uppercase;
+                color: var(--headlineColor);
             }
-            .homeTitle{
+
+            .homeTitle {
                 position: relative;
-                font-size: 1.8rem;
+                font-size: 2.25rem;
+                font-family: var(--displayFont);
+                padding-top: 0.25rem;
+                font-weight: 400;
             }
 
         }
-        .cardDiv{
+
+        .cardDiv {
             position: relative;
             padding: 2rem 1rem;
+            padding-bottom: 2.75rem;
             width: 100%;
             background: var(--whiteColor);
             border-radius: 10px;
             gap: 1rem;
 
-            label{
+            .fieldBlock {
+                position: relative;
+            }
+
+            .dropdownPanel {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: calc(100% + 0.35rem);
+                z-index: 30;
+                background: var(--whiteColor);
+                border-radius: 12px;
+                box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+                border: 1px solid rgba(0, 0, 0, 0.06);
+                overflow: hidden;
+            }
+
+            .destinationList {
+                max-height: 220px;
+                overflow-y: auto;
+                list-style: none;
+                margin: 0;
+                padding: 0.35rem 0;
+
+                li button {
+                    width: 100%;
+                    border: none;
+                    background: transparent;
+                    text-align: left;
+                    padding: 0.65rem 1rem;
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.15rem;
+
+                    strong {
+                        color: var(--blackColor);
+                        font-size: 0.9rem;
+                    }
+
+                    span {
+                        color: var(--textColor);
+                        font-size: 0.75rem;
+                    }
+
+                    &:hover {
+                        background: var(--inputColor);
+                    }
+                }
+
+                .empty {
+                    padding: 0.85rem 1rem;
+                    color: var(--textColor);
+                    font-size: 0.85rem;
+                }
+            }
+
+            .calendarPanel {
+                padding: 0.85rem;
+
+                .calendarHeader {
+                    justify-content: space-between;
+                    margin-bottom: 0.65rem;
+                    color: var(--blackColor);
+
+                    button {
+                        border: none;
+                        background: var(--inputColor);
+                        width: 2rem;
+                        height: 2rem;
+                        border-radius: 999px;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        color: var(--PrimaryColor);
+                    }
+                }
+
+                .calendarWeekdays,
+                .calendarGrid {
+                    display: grid;
+                    grid-template-columns: repeat(7, 1fr);
+                    gap: 0.25rem;
+                    text-align: center;
+                }
+
+                .calendarWeekdays span {
+                    font-size: 0.7rem;
+                    color: var(--textColor);
+                    font-weight: 600;
+                }
+
+                .calendarGrid {
+                    .emptyDay {
+                        min-height: 2rem;
+                    }
+
+                    .day {
+                        min-height: 2rem;
+                        border: none;
+                        background: transparent;
+                        border-radius: 8px;
+                        cursor: pointer;
+                        color: var(--blackColor);
+                        font-size: 0.8rem;
+
+                        &:hover {
+                            background: var(--inputColor);
+                        }
+
+                        &.selected {
+                            background: var(--PrimaryColor);
+                            color: var(--whiteColor);
+                        }
+                    }
+                }
+            }
+
+            .moreFiltersAccordion {
+                grid-column: 1 / -1;
+                margin-top: 0.35rem;
+                padding: 1rem;
+                border-radius: 12px;
+                background: var(--inputColor);
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+
+                .filterRow {
+                    justify-content: space-between;
+                    color: var(--textColor);
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                }
+
+                .stepper {
+                    gap: 0.75rem;
+
+                    button {
+                        width: 2rem;
+                        height: 2rem;
+                        border-radius: 999px;
+                        border: none;
+                        background: var(--whiteColor);
+                        color: var(--PrimaryColor);
+                        font-size: 1.1rem;
+                        cursor: pointer;
+                        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+                    }
+
+                    strong {
+                        min-width: 1.25rem;
+                        text-align: center;
+                        color: var(--blackColor);
+                    }
+                }
+
+                .applyFiltersBtn {
+                    align-self: center;
+                    color: var(--whiteColor);
+                    font-weight: 600;
+                    margin-top: 0.25rem;
+                }
+            }
+
+            label {
                 display: block;
                 color: var(--textColor);
                 padding-bottom: 10px;
                 font-size: 13px;
                 font-weight: 500;
             }
-            .label_total{
+
+            .label_total {
                 justify-content: space-between;
                 align-items: center;
 
-                .total{
+                .total {
                     color: var(--textColor);
                     font-size: 12px;
                     padding-bottom: 10px;
                 }
             }
-            .input{
+
+            .input {
                 height: 40px;
                 padding: 0 1rem;
                 background: var(--bodyColor);
                 border-radius: 3rem;
 
-                input{
+                input {
                     background: none;
                     border: none;
                     outline: none;
                     width: 100%;
                     font-size: 11px;
                     font-weight: 500;
-                    &::placeholder{
+
+                    &::placeholder {
                         font-size: 13px;
                     }
                 }
-                
-                .icon{
+
+                .icon {
                     font-size: 18px;
                     color: var(--PrimaryColor) !important;
                     margin-left: 10px;
                 }
-                .input[type=range]{
+
+                .input[type=range] {
                     background: blue;
                 }
             }
-            .searchOptions{
+
+            .searchOptions {
                 position: absolute;
                 background: var(--gradientColor);
                 width: max-content;
@@ -126,112 +304,122 @@
                 left: 50%;
                 transform: translate(-50%);
                 justify-content: center;
+                border: none;
+                color: var(--whiteColor);
+                cursor: pointer;
+                z-index: 5;
 
-                &:hover{
+                &:hover,
+                &.isOpen {
                     background: var(--PrimaryColor);
                 }
-                .icon{
+
+                .icon {
                     font-size: 15px;
                 }
-                span{
+
+                span {
                     font-size: 13px;
+                    font-weight: 600;
+                    letter-spacing: 0.02em;
                 }
             }
 
         }
-        .homeFooterIcons{
+
+        .homeFooterIcons {
             width: 100%;
             justify-content: space-between;
 
-            .icon{
+            .icon {
                 font-size: 20px;
                 margin: 0 5px;
                 color: var(--whiteColor);
                 font-weight: 400;
-                &:hover{
+
+                &:hover {
                     color: var(--PrimaryColor);
                 }
             }
         }
-        
+
     }
 
 }
 
 //media queries for responsive
-@media screen and (min-width: 500px){
-    .home{
-        video{
-        }
-        .homeContent{
+@media screen and (min-width: 500px) {
+    .home {
+        video {}
 
-            .textDiv{
-                .smallText{
+        .homeContent {
+
+            .textDiv {
+                .smallText {
                     font-size: 16px;
                 }
-                .homeTitle{
+
+                .homeTitle {
                     position: relative;
                     font-size: 2.3rem;
                     width: max-content;
-
-                    &::after{
-                        position: absolute;
-                        content:'';
-                        background: var(--headlineColor);
-                        height: 5px;
-                        width: 145px;
-                        right: 0px;
-                        bottom: 5px;
-                        z-index: -1;
-                    }
                 }
-                .cardDiv{
-                    grid-template-columns: repeat(2,1fr);
+
+                .cardDiv {
+                    grid-template-columns: repeat(2, 1fr);
                 }
             }
         }
     }
 }
-@media screen and (min-width: 660px){
-    .home{
-        .homeContent{
-            .cardDiv{
+
+@media screen and (min-width: 660px) {
+    .home {
+        .homeContent {
+            .cardDiv {
                 padding: 2rem 1rem;
-                grid-template-columns: repeat(3,1fr);
+                grid-template-columns: repeat(3, 1fr);
 
             }
         }
     }
 
 }
-@media screen and (min-width: 940px){
-    .home{
+
+@media screen and (min-width: 940px) {
+    .home {
         height: 70vh;
     }
 
 }
-@media screen and (min-width: 1240px){
-    .home{
+
+@media screen and (min-width: 1240px) {
+    .home {
         height: 80vh;
-        .homeContent{
+
+        .homeContent {
+
             //padding-left: 0;
             //padding-right: 0;
-            .cardDiv{
+            .cardDiv {
                 padding: 2rem 1rem;
                 grid-template-columns: repeat(3.1fr);
-                .input{
+
+                .input {
                     margin-bottom: 1rem;
                 }
-                .searchOptions{
+
+                .searchOptions {
                     bottom: -1rem;
                     padding: 8px 1rem;
-                    span{
+
+                    span {
                         font-size: 17px;
                     }
 
                 }
             }
-        
+
         }
     }
 

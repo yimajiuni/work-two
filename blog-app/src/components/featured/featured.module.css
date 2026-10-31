@@ -1,64 +1,101 @@
-.container{
-    margin-top: 30px;
+.container {
+  margin-top: var(--space-6);
 }
-.title{
-    font-size: 96px;
-    font-weight: 300;
+
+.title {
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: 300;
+  line-height: 1.15;
 }
-.post{
-    margin-top: 60px;
-    display: flex;
+
+.post {
+  margin-top: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-6);
+}
+
+.imgContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--softBg);
+}
+
+.image {
+  object-fit: cover;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.textContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.postInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+}
+
+.category {
+  color: crimson;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.date {
+  color: var(--softTextColor);
+}
+
+.postTitle {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.25;
+}
+
+.postDesc {
+  font-size: var(--text-lg);
+  font-weight: 300;
+  color: var(--softTextColor);
+  line-height: 1.6;
+}
+
+.button {
+  padding: var(--space-3) var(--space-5);
+  border: none;
+  border-radius: 5px;
+  width: max-content;
+  cursor: pointer;
+  background: var(--softBg);
+  color: var(--textColor);
+}
+
+@media screen and (min-width: 64rem) {
+  .post {
+    flex-direction: row;
     align-items: center;
-    gap: 50px;
-}
-.imgContainer{
-    flex:1;
-    height: 500px;
-    position: relative;
-}
-.image{
-    object-fit: cover;
-}
-.textContainer{
-    flex:1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.postTitle{
-    font-size: 40px;
-}
-.postDesc{
-    font-size: 20px;
-    font-weight: 300;
-    color: var(--softTextColor);
-}
-.button{
-    padding: 16px 20px;
-    border: none;
-    border-radius: 5px;
-    width: max-content;
-}
-@media screen and(max-width:1200px){
-    .title{
-        font-size: 72px;
-    }
-}
-@media screen and(max-width:1024px){
-    .title{
-        font-size: 64px;
-    }
-    .imgContainer{
-        display: none;
-    }
-}
-@media screen and(max-width:768px){
-    .title{
-        font-size: 48px;
-    }
-}
-@media screen and(max-width:640px){
-    .title{
-        font-size: 36px;
-    }
+    gap: var(--space-8);
+  }
+
+  .imgContainer {
+    flex: 1;
+    height: auto;
+    min-height: 22rem;
+  }
+
+  .textContainer {
+    flex: 1;
+  }
 }

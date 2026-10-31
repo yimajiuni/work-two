@@ -1,8 +1,12 @@
-const DishButton = (props) => {
+const DishButton = ({ title, compact = false }) => {
   return (
-    <div className="flex">
-      <button className="px-6 py-1 border-2 border-brightColor hover:bg-brightColor font-body text-brightColor hover:text-white transition-all ">
-        <span className="inline-block">{props.title}</span>
+    <div className="flex shrink-0">
+      <button
+        className={`rounded border-2 border-brightColor bg-brightColor font-hedding text-white transition-all hover:border-white hover:bg-white hover:text-brightColor ${
+          compact ? "px-4 py-1.5 text-sm" : "px-6 py-2"
+        }`}
+      >
+        <span className="inline-block">{title}</span>
       </button>
     </div>
   );

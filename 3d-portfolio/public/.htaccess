@@ -57,6 +57,11 @@ AddType application/javascript .mjs
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # Canonical CRO entry point (main domain only; does not affect the subdomain)
+  RewriteCond %{HTTP_HOST} ^(www\.)?yimajiuni\.com$ [NC]
+  RewriteRule ^cro/?$ https://cro.yimajiuni.com/ [R=301,L]
+
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

@@ -1,8 +1,10 @@
-import React, { Suspense, lazy, useState } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import { Route, BrowserRouter as Router, Routes, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import NavbarJump from "./components/NavbarJump";
 import Service from "./pages/Service";
+import ThemeProvider from "./themes/ThemeProvider";
+import { useTheme } from "./themes/useTheme";
 
 const CroShowcase = lazy(() => import("./pages/CroShowcase"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -17,23 +19,45 @@ const RouteFallback = () => (
     />
 );
 
+/** Reset window scroll on route change (e.g. /works → /details/:id).
+ *  If the URL has a hash (#works), leave scroll to Content / native hash handling.
+ */
+function ScrollToTop() {
+    const { pathname, hash } = useLocation();
+    useEffect(() => {
+        if (hash) return;
+        window.scrollTo({ top: 0, behavior: "auto" });
+    }, [pathname, hash]);
+    return null;
+}
+
 function AppRoutes() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const { pathname } = useLocation();
+    const { theme } = useTheme();
     const isCroPage = pathname === "/cro";
 
     return (
         <>
+            <ScrollToTop />
             <NavbarJump onMenuStateChange={setIsMobileMenuOpen} transparent={isCroPage} />
             {isMobileMenuOpen && (
                 <div
                     aria-hidden="true"
-                    className="sm:hidden fixed inset-x-0 top-16 bottom-0 bg-pink-200/40 transition-opacity duration-300"
+                    className={[
+                        "fixed inset-x-0 top-16 bottom-0 transition-opacity duration-300",
+                        theme.chrome.menuOverlayClass,
+                        isCroPage ? "lg:hidden" : "sm:hidden",
+                    ].join(" ")}
                 />
             )}
             <div
                 aria-hidden="true"
-                className={`sm:hidden transition-[height] duration-300 ${isMobileMenuOpen ? "h-16" : "h-0"}`}
+                className={[
+                    "transition-[height] duration-300",
+                    isCroPage ? "lg:hidden" : "sm:hidden",
+                    isMobileMenuOpen ? "h-16" : "h-0",
+                ].join(" ")}
             />
             <Suspense fallback={<RouteFallback />}>
                 <Routes>
@@ -53,7 +77,9 @@ function App() {
     return (
         <HelmetProvider>
             <Router>
-                <AppShell />
+                <ThemeProvider>
+                    <AppShell />
+                </ThemeProvider>
             </Router>
         </HelmetProvider>
     );
@@ -61,6 +87,7 @@ function App() {
 
 function AppShell() {
     const { pathname } = useLocation();
+    const { theme } = useTheme();
     const isCroPage = pathname === "/cro";
 
     return (
@@ -68,7 +95,13 @@ function AppShell() {
             className={
                 isCroPage
                     ? "min-h-[100dvh] h-full"
-                    : "pink-gradient_bg min-h-[100dvh] h-full mt-14 sm:mt-0 transition-all"
+                    : [
+                        theme.shell.rootClass,
+                        "min-h-[100dvh] h-full",
+                        theme.shell.rootExtraClass,
+                    ]
+                        .filter(Boolean)
+                        .join(" ")
             }
         >
             <AppRoutes />

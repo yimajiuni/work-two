@@ -2,6 +2,7 @@
     margin-top: 50px;
     padding: 0px 20px;
     padding-bottom: 5rem;
+    gap: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -30,6 +31,8 @@
 .icons{
     margin-top: 20px;
     display: flex;
+    align-items: center;
+    gap: 10px;
 }
 .link{
     flex: 1;

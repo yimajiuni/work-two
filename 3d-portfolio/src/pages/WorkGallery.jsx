@@ -6,8 +6,9 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 import CTA from "../components/CTA.jsx";
-import { arrow } from "../assets/icons/index.js";
+import Breadcrumbs from "../components/Breadcrumbs.jsx";
 import { workDatas } from "../i18n-1.js";
+import { useTheme } from "../themes/useTheme";
 
 const modalStyle = {
   position: "absolute",
@@ -25,14 +26,26 @@ const modalStyle = {
 
 const TabCustom = styled(Tab)({
   fontWeight: "bold",
-  color: "#6474b",
+  color: "#64748b",
   opacity: 0.8,
-  fontFamily: "Poppins, YuGothic, '游ゴシック', sans-serif",
+  fontFamily: "Poppins, var(--theme-font-jp), sans-serif",
+  "&.Mui-selected": {
+    color: "var(--theme-link-accent, #2563eb)",
+  },
+});
+
+const TabsCustom = styled(Tabs)({
+  "& .MuiTabs-indicator": {
+    backgroundColor: "var(--theme-link-accent, #2563eb)",
+  },
 });
 
 function WorkGallery() {
   const { t } = useTranslation();
+  const { themeId } = useTheme();
   const [activeTab, setActiveTab] = useState(0);
+  const linkAccentClass =
+    themeId === "beige" ? "text-[#382797]" : "text-blue-600";
 
   // Get translated objects
   const translatedProjects = t("projects", { returnObjects: true });
@@ -71,6 +84,12 @@ function WorkGallery() {
 
   return (
     <section className="max-container" id="works">
+      <Breadcrumbs
+        items={[
+          { label: t("breadcrumb.home"), to: "/" },
+          { label: t("breadcrumb.works") },
+        ]}
+      />
       <h1 className="head-text">
         My{" "}
         <span className="blue-gradient_text drop-shadow font-semibold">
@@ -86,7 +105,7 @@ function WorkGallery() {
         sx={{ width: "100%", fontWeight: "bold" }}
         className="overflow-x-auto hidden-scrollbar"
       >
-        <Tabs
+        <TabsCustom
           value={activeTab}
           onChange={handleTabChange}
           className="overflow-x-auto hidden-scrollbar"
@@ -97,7 +116,7 @@ function WorkGallery() {
           <TabCustom label="SALES" />
           <TabCustom label="Apps" />
           <TabCustom label="DTP" />
-        </Tabs>
+        </TabsCustom>
       </Box>
 
       <div className="grid lg:grid-cols-3 gap-5 my-20">
@@ -118,7 +137,7 @@ function WorkGallery() {
                           : "#"
                     }
                     rel="noopener noreferrer"
-                    className="block-container relative inline-block group font-semibold text-blue-600"
+                    className={`block-container relative inline-block group font-semibold ${linkAccentClass}`}
                     target={workId >= 6 && workId <= 23 ? "_blank" : undefined}
                   >
                     <img
@@ -145,17 +164,26 @@ function WorkGallery() {
                         : "#"
                   }
                   rel="noopener noreferrer"
-                  className="items-center inline-flex font-semibold text-blue-600"
+                  className={`items-center inline-flex font-semibold ${linkAccentClass}`}
                   target={workId >= 6 && workId <= 23 ? "_blank" : undefined}
                 >
-                  <img
-                    src={arrow}
-                    alt="arrow"
-                    className="mr-2 w-4 h-4 object-contain"
-                    loading="lazy"
-                    width="16"
-                    height="16"
-                  />
+                  <svg
+                    className="mr-2 w-4 h-4 shrink-0"
+                    width="14"
+                    height="15"
+                    viewBox="0 0 14 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden
+                  >
+                    <path
+                      d="M1.16602 7.49984H12.8327M12.8327 7.49984L6.99935 1.6665M12.8327 7.49984L6.99935 13.3332"
+                      stroke="currentColor"
+                      strokeWidth="1.66667"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                   Go to Details
                 </Link>
               </div>

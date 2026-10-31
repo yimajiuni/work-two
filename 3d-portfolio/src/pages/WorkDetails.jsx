@@ -15,6 +15,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { useTranslation } from "react-i18next";
 import CTA from "../components/CTA";
 import Footer from "../components/Footer";
+import Breadcrumbs from "../components/Breadcrumbs";
 import { Link } from "react-router-dom";
 import { circlarrow } from "../assets/images";
 
@@ -42,6 +43,7 @@ const Image = styled(Paper)(({ theme }) => ({
       ? "rgba(26, 32, 39, 0.0)"
       : "rgba(255, 255, 255, 0.0)", //background transparency 0.0
   ...theme.typography.body2,
+  textColor: "black",
   textAlign: "center",
   color: theme.palette.text.secondary,
   boxShadow: "0px 4px 6px rgb(248 1 153 / 0.0)", //boxshadow transparency 0.0
@@ -82,14 +84,15 @@ const Summary = styled(Paper)(({ theme }) => ({
 }));
 
 const GoTo = styled(Paper)(({ theme }) => ({
-  background: "linear-gradient(to right, #00c6ff 0%, " + "#0072ff 70%)",
+  background:
+    "linear-gradient(to right, var(--theme-btn-from, #00c6ff) 0%, var(--theme-btn-to, #0072ff) 70%)",
   ...theme.typography.body2,
   padding: theme.spacing(1),
   textAlign: "center",
   color: "#fff",
   fontSize: "1rem",
   fontWeight: "bold",
-  fontFamily: "Crimson Pro, YuGothic, '游ゴシック', sans-serif",
+  fontFamily: "Crimson Pro, var(--theme-font-jp), sans-serif",
   borderRadius: "10px",
   boxShadow: "none", // Delete the default shadow
 }));
@@ -115,9 +118,18 @@ function WorkDetails() {
   const selectedWork = detailedDatas.find((data) => data.id === parseInt(id));
 
   return (
-    <div className="max-container">
+    <div className="max-container-workdetail">
       {selectedWork ? (
         <>
+          <Breadcrumbs
+            items={[
+              { label: t("breadcrumb.home"), to: "/" },
+              { label: t("breadcrumb.works"), to: "/works#works" },
+              {
+                label: `${selectedWork.titleBk ?? ""} ${selectedWork.titleBl ?? ""}`.trim(),
+              },
+            ]}
+          />
           <h1 className="head-text">
             {selectedWork.titleBk}{" "}
             <span className="blue-gradient_text drop-shadow font-semibold">
@@ -144,23 +156,23 @@ function WorkDetails() {
               <Grid item xs={4}>
                 <Grid container justifyContent="center" spacing={spacing}>
                   <Grid item container direction="column">
-                    <Item style={{ textAlign: "left" }}>
-                      形式 : {selectedWork.medium}
+                    <Item style={{ textAlign: "left", color: "black" }}>
+                      {t("workDetails.medium")} : {selectedWork.medium}
                     </Item>
                   </Grid>
                   <Grid item container direction="column">
-                    <Item style={{ textAlign: "left" }}>
-                      制作期間 : {selectedWork.period}
+                    <Item style={{ textAlign: "left", color: "black" }}>
+                      {t("workDetails.period")} : {selectedWork.period}
                     </Item>
                   </Grid>
                   <Grid item container direction="column">
-                    <Item style={{ textAlign: "left" }}>
-                      担当 : {selectedWork.range}
+                    <Item style={{ textAlign: "left", color: "black" }}>
+                      {t("workDetails.range")} : {selectedWork.range}
                     </Item>
                   </Grid>
                   <Grid item container direction="column">
-                    <Item style={{ textAlign: "left" }}>
-                      使用技術 : {selectedWork.skills}
+                    <Item style={{ textAlign: "left", color: "black" }}>
+                      {t("workDetails.skills")} : {selectedWork.skills}
                     </Item>
                   </Grid>
                 </Grid>
@@ -196,15 +208,17 @@ function WorkDetails() {
                 >
                   <div>
                     <h3 className="text-black text-xl font-semibold">
-                      コンセプト
+                      {t("workDetails.concept")}
                     </h3>
                   </div>
                   <ul className="my-5 list-discc ml-5 space-y-2">
                     <li className="text-black-500 font-normal pl-1 text-sm">
                       <p>{selectedWork.concept_eva}</p>
                       <p>{""}</p>
-                      機能面では、{selectedWork.concept_function}
-                      ユーザーニーズに合わせ、{selectedWork.concept_needs}
+                      {t("workDetails.conceptFunctionPrefix")}
+                      {selectedWork.concept_function}
+                      {t("workDetails.conceptNeedsPrefix")}
+                      {selectedWork.concept_needs}
                     </li>
                   </ul>
                 </VerticalTimelineElement>
@@ -229,7 +243,7 @@ function WorkDetails() {
                 >
                   <div>
                     <h3 className="text-black text-xl font-semibold">
-                      ペルソナ
+                      {t("workDetails.persona")}
                     </h3>
                     <ul className="my-5 list-discc ml-5 space-y-2">
                       <li className="text-black-500 font-semibold pl-1 text-sm">
@@ -239,13 +253,22 @@ function WorkDetails() {
                   </div>
                   <ul className="my-5 list-discc ml-5 space-y-2">
                     <li className="text-black-500 font-normal pl-1 text-sm">
-                      <p> 基本情報 : {selectedWork.persona_basic}</p>
+                      <p>
+                        {t("workDetails.personaBasic")} :{" "}
+                        {selectedWork.persona_basic}
+                      </p>
                     </li>
                     <li className="text-black-500 font-normal pl-1 text-sm">
-                      <p>内面志向 : {selectedWork.persona_preference}</p>
+                      <p>
+                        {t("workDetails.personaPreference")} :{" "}
+                        {selectedWork.persona_preference}
+                      </p>
                     </li>
                     <li className="text-black-500 font-normal pl-1 text-sm">
-                      <p>行動傾向 : {selectedWork.persona_orientation}</p>
+                      <p>
+                        {t("workDetails.personaOrientation")} :{" "}
+                        {selectedWork.persona_orientation}
+                      </p>
                     </li>
                   </ul>
                 </VerticalTimelineElement>
@@ -269,7 +292,9 @@ function WorkDetails() {
                   iconStyle={{ background: "#fff" }}
                 >
                   <div>
-                    <h3 className="text-black text-xl font-semibold">設計</h3>
+                    <h3 className="text-black text-xl font-semibold">
+                      {t("workDetails.design")}
+                    </h3>
                     <p
                       className="text-black-500 font-medium font-base"
                       style={{ margin: 0 }}
@@ -288,14 +313,14 @@ function WorkDetails() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <GoTo>Direct Link</GoTo>
+                  <GoTo>{t("workDetails.directLink")}</GoTo>
                 </Link>
               </Grid>
             </Grid>
           </Box>
         </>
       ) : (
-        <p>wipping!</p>
+        <p>{t("workDetails.notFound")}</p>
       )}
       <CTA />
       <Footer />

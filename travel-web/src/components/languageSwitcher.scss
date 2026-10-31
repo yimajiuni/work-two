@@ -1,0 +1,94 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 33%);
+  --SecondaryColor: hsl(187, 85%, 43%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --textColor: hsl(240, 4%, 36%);
+}
+
+.langSwitcher {
+  position: relative;
+  display: inline-flex;
+  z-index: 50;
+
+  .langTrigger {
+    gap: 0.35rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--textColor);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.2rem 0.15rem;
+    white-space: nowrap;
+
+    .icon {
+      font-size: 1.25rem;
+      color: var(--PrimaryColor);
+      transform: none;
+    }
+
+    &:hover {
+      color: var(--PrimaryColor);
+    }
+  }
+
+  .langMenu {
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    left: 0;
+    min-width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0.25rem 0;
+    background: var(--whiteColor);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 0.65rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    z-index: 60;
+  }
+
+  .langOption {
+    display: block;
+    width: 100%;
+    border: none;
+    background: transparent;
+    text-align: left;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--textColor);
+    cursor: pointer;
+    white-space: nowrap;
+
+    &:hover {
+      background: rgba(15, 108, 189, 0.08);
+      color: var(--PrimaryColor);
+    }
+
+    &.isActive {
+      color: var(--PrimaryColor);
+      font-weight: 600;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .langSwitcher {
+    margin-top: 0.75rem;
+
+    .langMenu {
+      left: 0;
+      right: auto;
+      transform: none;
+      min-width: 7.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .langSwitcher {
+    margin-left: 0.75rem;
+  }
+}

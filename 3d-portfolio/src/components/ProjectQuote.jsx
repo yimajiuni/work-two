@@ -3,9 +3,14 @@ import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
 import { downloadProjectQuotePdf } from '../utils/projectQuotePdf';
+import { useTheme } from '../themes/useTheme';
 
-// Consolidated Tailwind classes for better performance
-const classes = {
+const ACCENT_TEXT = "text-[color:var(--theme-accent,#382797)]";
+const ACCENT_BG = "bg-[color:var(--theme-accent,#382797)]";
+const ACCENT_BG_HOVER = "hover:bg-[color:var(--theme-accent,#382797)]";
+
+// Structural + beige-aligned accents. Pink brand fills come from theme.uiChrome.projectQuote.
+const baseClasses = {
     // Modal overlay
     modalOverlay: "fixed inset-0 bg-white/10 backdrop-blur-sm z-50 flex items-center justify-center p-4",
 
@@ -21,13 +26,12 @@ const classes = {
     progressContainer: "mb-6",
     progressText: "flex justify-between text-sm text-gray-500 mb-2",
     progressBar: "w-full bg-white/20 rounded-full h-2",
-    progressFill: "bg-blue-500 h-2 rounded-full transition-all duration-300",
+    progressFill: `${ACCENT_BG} h-2 rounded-full transition-all duration-300`,
 
     // Question completion dots
     dotsContainer: "flex gap-2 mt-3",
     dot: "w-3 h-3 rounded-full transition-all duration-300",
-    dotCurrent: "bg-blue-400 scale-125",
-    dotAnswered: "bg-pink-400",
+    dotCurrent: `${ACCENT_BG} scale-125 opacity-70`,
     dotUnanswered: "bg-white/60",
 
     // Form elements
@@ -37,13 +41,13 @@ const classes = {
 
     // Input styles
     input: "w-full p-3 rounded-lg bg-white/10 border border-white/20 text-gray-500 placeholder-gray-500 focus:outline-none focus:border-gray-500",
-    inputContact: "w-full p-3 rounded-lg bg-white/10 border border-white/20 text-gray-500 placeholder-gray-500 focus:outline-none focus:border-blue-400",
+    inputContact: "w-full p-3 rounded-lg bg-white/10 border border-white/20 text-gray-500 placeholder-gray-500 focus:outline-none focus:border-[color:var(--theme-accent,#382797)]",
     textarea: "w-full p-3 rounded-lg bg-white/10 border border-white/20 text-gray-500 placeholder-gray-500 focus:outline-none focus:border-gray-500",
 
     // Radio and checkbox styles
     radioContainer: "space-y-3",
     radioItem: "flex items-center space-x-3 cursor-pointer",
-    radioInput: "w-4 h-4 text-blue-600",
+    radioInput: `w-4 h-4 ${ACCENT_TEXT}`,
     radioLabel: "text-gray-500",
 
     // Grid styles
@@ -51,12 +55,10 @@ const classes = {
     gridInstruction: "text-gray-500 text-sm mb-4",
     grid: "grid grid-cols-4 sm:grid-cols-7 gap-3",
     gridButton: "p-2 sm:p-3 rounded-lg border-2 transition-all duration-200 cursor-pointer hover:scale-105 relative min-h-[60px] sm:min-h-[80px] flex items-center justify-center",
-    gridButtonSelected: "bg-pink-300/50 border-white/50 text-gray-500 hover:bg-white/20 hover:border-white/40",
-    gridButtonUnselected: "bg-pink-300/50 border-white/50 text-gray-500 hover:bg-white/20 hover:border-white/40",
     gridButtonText: "text-xs text-center leading-tight font-medium break-words hyphens-auto max-w-full",
     gridPriority: "absolute -top-2 -right-2 w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center text-xs font-bold",
 
-    // Priority colors
+    // Priority colors (rank palette — not site theme)
     priorityColors: {
         red: "bg-red-500/80 border-red-400 text-white shadow-lg",
         pink: "bg-pink-500/80 border-pink-400 text-white shadow-lg",
@@ -101,29 +103,30 @@ const classes = {
     // Navigation buttons
     navContainer: "flex justify-between",
     button: "px-6 py-3 rounded-lg font-semibold transition-colors",
-    buttonDisabled: "bg-pink-200/40 text-white/70 cursor-not-allowed",
-    buttonPrevious: "bg-white text-pink-400",
-    buttonNext: "bg-blue-500 text-white hover:bg-blue-600",
-    buttonSubmit: "bg-blue-500 text-white hover:bg-blue-600",
-    buttonSubmitting: "bg-pink-300/40 text-white cursor-not-allowed",
+    buttonNext: `${ACCENT_BG} text-white ${ACCENT_BG_HOVER}`,
+    buttonSubmit: `${ACCENT_BG} text-white ${ACCENT_BG_HOVER}`,
 
     // Success modal
     successOverlay: "fixed inset-0 bg-white/50 backdrop-blur-sm z-50 flex items-center justify-center p-4",
-    successContainer: "border border-gray-500 bg-pink-300/50 backdrop-blur-sm rounded-lg p-8 border border-white/20 max-w-md w-full text-center",
     successTitle: "text-2xl font-bold text-gray-500 mb-4",
     successMessage: "text-gray-500 mb-6",
     successSubMessage: "text-gray-500 text-sm mb-6",
     successButtons: "flex gap-3 justify-center",
-    successButtonPrimary: "px-6 py-3 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600 transition-colors",
-    successButtonSecondary: "px-6 py-3 bg-pink-300/40 text-white rounded-lg font-semibold hover:bg-white/30 transition-colors"
+    successButtonPrimary: `px-6 py-3 ${ACCENT_BG} text-white rounded-lg font-semibold ${ACCENT_BG_HOVER} transition-colors`,
 };
 
 const PRIORITY_RANKS = ['red', 'pink', 'fuchsia', 'violet', 'purple'];
-const priorityGridClass = (priority) => classes.priorityColors[PRIORITY_RANKS[priority - 1]];
-const priorityRankBadgeClass = (priority) => classes.priorityBadgeColors[PRIORITY_RANKS[priority - 1]];
-const priorityListClass = (priority) => classes.priorityListBadge[PRIORITY_RANKS[priority - 1]];
 
 const ProjectQuote = ({ isOpen, onClose }) => {
+    const { theme } = useTheme();
+    const classes = useMemo(
+        () => ({ ...baseClasses, ...(theme.uiChrome?.projectQuote ?? {}) }),
+        [theme],
+    );
+    const priorityGridClass = (priority) => classes.priorityColors[PRIORITY_RANKS[priority - 1]];
+    const priorityRankBadgeClass = (priority) => classes.priorityBadgeColors[PRIORITY_RANKS[priority - 1]];
+    const priorityListClass = (priority) => classes.priorityListBadge[PRIORITY_RANKS[priority - 1]];
+
     const { t, i18n } = useTranslation();
     const [currentStep, setCurrentStep] = useState(0);
     const [formData, setFormData] = useState({});

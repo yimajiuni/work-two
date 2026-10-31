@@ -1,48 +1,40 @@
-:root{
+:root {
     --PrimaryColor: hsl(199, 100%, 33%);
     --SecondaryColor: hsl(187, 85%, 43%);
-    --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%),hsl(199, 100%, 33%));
+    --gradientColor: linear-gradient(to right, hsl(191.97deg 82.5% 41.09%), hsl(209.43deg 57.02% 40.99%));
     --whiteColor: hsl(0, 0%, 100%);
     --blackColor: hsl(0, 0%, 18%);
     --textColor: hsl(240, 4%, 36%);
     --whiteColorDeam: hsl(0, 0%, 93%);
     --grayText: rgb(240, 240, 246);
-    --inputColor:rgb(239, 239, 239);
+    --inputColor: rgb(239, 239, 239);
     --bodyColor: rgb(231, 222, 207);
-    --cardBG: rgb(225,225,225);
+    --cardBG: rgb(225, 225, 225);
     --headlineColor: rgb(244, 3, 160);
 }
-.main{
+
+.main {
     width: 100%;
     padding: 1.5rem 1.5rem 3rem;
 
-    .secTitle{
-        .title{
+    .secTitle {
+        .title {
+            font-size: 2rem;
             position: relative;
             width: max-content;
-            color: var(--textColor);
+            color: var(--blackColor);
             margin: 1rem 0;
             z-index: 2;
-
-            &::after{
-                position: absolute;
-                content: '';
-                background: var(--headlineColor);
-                height: 5px;
-                right: 0;
-                width: 120px;
-                bottom: 5px;
-                transform: translateY(8px);
-                z-index: -1;
-                transform: trans;
-            }
+            font-family: var(--displayFont);
+            font-weight: 400;
         }
     }
-    .secContent{
+
+    .secContent {
         justify-content: center;
         gap: 1.5rem;
 
-        .singleDestination{
+        .singleDestination {
             height: 100%;
             display: grid;
             row-gap: 10px;
@@ -53,46 +45,159 @@
             overflow: hidden;
             padding: -1rem;
 
-            &:hover{
+            &:hover {
                 background: var(--whiteColor);
                 box-shadow: 1 4px 4px rgba(140, 140, 141, 0.549);
                 transition: .3 ease;
             }
-            .imageDiv{
-                height: 100%;
+
+            .imageDiv {
+                height: 200px;
                 width: 100%;
                 overflow: hidden;
+                position: relative;
             }
-            img{
+
+            img {
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
                 transition: 2s ease;
             }
-            &:hover{
-                img{
+
+            &:hover {
+                img {
                     transform: scale(1.1);
                 }
             }
-            .cardInfo{
-                padding: 1rem;
-                .destTitle{
-                    color: var(--blackColor);
-                    font-size: 1.25rem;
+
+            .rankBadge {
+                position: absolute;
+                top: 0.75rem;
+                left: 0.75rem;
+                z-index: 2;
+                min-width: 2.1rem;
+                height: 2.1rem;
+                border-radius: 999px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.75rem;
+                font-weight: 700;
+                color: #1a1a1a;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+                &.rankGold {
+                    background: linear-gradient(145deg, #ffe566, #d4af37);
                 }
-                .continent{
+
+                &.rankSilver {
+                    background: linear-gradient(145deg, #f5f5f5, #a8a8a8);
+                }
+
+                &.rankBronze {
+                    background: linear-gradient(145deg, #f0c27a, #b87333);
+                    color: #fff;
+                }
+            }
+
+            .favoriteBtn {
+                position: absolute;
+                top: 0.75rem;
+                right: 0.75rem;
+                z-index: 2;
+                width: 2.25rem;
+                height: 2.25rem;
+                border-radius: 999px;
+                border: none;
+                background: rgba(255, 255, 255, 0.92);
+                color: var(--headlineColor);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                font-size: 1.15rem;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+                transition: transform 0.2s ease;
+
+                &:hover {
+                    transform: scale(1.08);
+                }
+
+                &.isActive {
+                    color: var(--headlineColor);
+                }
+            }
+
+            .cardInfo {
+                padding: 1rem;
+
+                .titleRow {
+                    gap: 1rem;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    margin-bottom: 0.15rem;
+                }
+
+                .destTitle {
+                    color: var(--blackColor);
+                    font-size: 2rem;
+                    margin: 0;
+                    font-family: var(--displayFont);
+                    font-weight: 400;
+                }
+
+                .countryTag {
+                    background: rgba(15, 108, 189, 0.12);
+                    color: var(--PrimaryColor);
+                    font-size: 0.72rem;
+                    font-weight: 600;
+                    letter-spacing: 0.02em;
+                    padding: 0.28rem 0.65rem;
+                    border-radius: 999px;
+                    white-space: nowrap;
+                }
+
+                .continent {
                     gap: .5rem;
-                    .icon{
+
+                    .icon {
                         font-size: 18px;
                         color: var(--textColor);
                     }
-                    .name{
+
+                    .name {
                         color: var(--textColor);
                         font-weight: 400;
                         font-size: 14px;
                     }
                 }
-                .fees{
+
+                .reviewRow {
+                    gap: 0.45rem;
+                    margin-top: 0.45rem;
+
+                    .stars {
+                        gap: 0.2rem;
+                        color: #f5b301;
+
+                        .starIcon {
+                            font-size: 1rem;
+                        }
+
+                        strong {
+                            font-size: 0.9rem;
+                            color: #c99200;
+                        }
+                    }
+
+                    .reviewCount {
+                        font-size: 0.78rem;
+                        color: var(--textColor);
+                    }
+                }
+
+                .fees {
                     width: 100%;
                     justify-content: space-between;
                     padding: 1rem;
@@ -100,43 +205,48 @@
                     border-top: 1.5px solid var(--grayText);
                     border-bottom: 1.5px solid var(--grayText);
                 }
-                .grade{
+
+                .grade {
                     color: var(--textColor);
                     max-width: 100px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
 
-                    small{
+                    small {
                         text-align: center;
                         background: var(--gradientColor);
                         border-radius: 1rem;
                         color: var(--whiteColor);
                         padding: 1px 10px;
+                        margin-left: 5px;
                         font-size: 10px;
                     }
                 }
-               .price{
-                font-size: 2rem;
-                color: var(--blackColor);
-               }
+
+                .price {
+                    font-size: 2rem;
+                    color: var(--blackColor);
+                }
             }
 
-            .desc{
+            .desc {
                 font-size: 13.5px;
                 color: var(--textColor);
                 font-weight: 500;
             }
-            .btn{
+
+            .btn {
                 margin-top: 1rem;
-                color: var(--whiteColor);
+                color: var(--headlineColor);
                 font-weight: 600;
                 justify-content: space-between;
                 gap: .5rem;
 
-                .icon{
+                .icon {
                     align-self: center;
-                    font-style: 18px;
+                    font-size: 18px;
+                    color: var(--headlineColor);
                 }
             }
         }
@@ -144,37 +254,39 @@
 }
 
 
-@media screen and (min-width: 500px){
-    .main{
-        .title{
-            font-size: 1.5rem;
-            &::after{
-                width: 155px !important;
-            }
+@media screen and (min-width: 500px) {
+    .main {
+        .title {
+            font-size: 2rem;
         }
-        .secTitle{
-            .title{
 
-                &::after{
-                    bottom: 11px;
-                }
-            }
-        }
-        .secContent{
-            grid-template-columns: repeat(2,1fr); /*2grid in a screen*/
-            .singleDestination{
+        .secContent {
+            grid-template-columns: repeat(2, 1fr);
+
+            /*2grid in a screen*/
+            .singleDestination {
                 height: auto;
+
+                .imageDiv {
+                    height: 220px;
+                }
             }
         }
 
     }
 }
 
-@media screen and (min-width: 840px){
-    .secContent{
-        grid-template-columns: repeat(3,1fr); /*3grid in a screen*/
-        .singleDestination{
+@media screen and (min-width: 840px) {
+    .secContent {
+        grid-template-columns: repeat(3, 1fr);
+
+        /*3grid in a screen*/
+        .singleDestination {
             height: auto;
+
+            .imageDiv {
+                height: 240px;
+            }
         }
     }
 }

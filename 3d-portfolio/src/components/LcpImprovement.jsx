@@ -59,17 +59,22 @@ export function warmupLcpImprovementModal() {
 
 const FOOTER_CONTROL_PAD = "px-2 sm:px-4 py-2 sm:py-3";
 const FOOTER_MARKETPLACE_PAD = "px-2 lg:px-4 py-2 sm:py-3";
+const ACCENT_TEXT = "text-[color:var(--theme-accent,#382797)]";
+const ACCENT_BG = "bg-[color:var(--theme-accent,#382797)]";
+const ACCENT_RING = "focus-visible:ring-[color:var(--theme-accent,#382797)]";
+const ACCENT_LINK =
+    "underline decoration-[color:var(--theme-accent,#382797)]/70 underline-offset-2 hover:opacity-80";
 
 const classes = {
     modalOverlay:
-        "fixed inset-0 bg-white/10 backdrop-blur-sm z-50 flex items-center justify-center p-4",
+        "fixed inset-0 bg-white/10 backdrop-blur-sm z-50 flex items-center justify-center p-[2rem]",
     mainContainer:
-        "border border-gray-500 pink-gradient_bg max-w-4xl w-full max-h-[90dvh] min-h-[40dvh] flex flex-col overflow-hidden rounded-lg",
+        "border border-gray-500 pink-gradient_bg !min-h-[40dvh] max-w-4xl w-full max-h-[calc(100dvh-4rem)] flex flex-col overflow-hidden rounded-lg",
     header:
-        "sticky top-0 z-40 shrink-0 border-b border-gray-500 bg-white/20 text-blue-600 p-4 sm:p-6 backdrop-blur-sm supports-[backdrop-filter]:bg-white/20",
+        `sticky top-0 z-40 shrink-0 border-b border-gray-500 bg-white/20 ${ACCENT_TEXT} p-4 sm:p-6 backdrop-blur-sm supports-[backdrop-filter]:bg-white/20`,
     headerContent: "flex justify-between items-start gap-4",
-    headerTitle: "text-xl sm:text-2xl font-bold text-blue-600 pr-2",
-    closeButton: "text-blue-600 hover:text-white text-2xl leading-none shrink-0 transition-colors",
+    headerTitle: `text-xl sm:text-2xl font-bold ${ACCENT_TEXT} pr-2`,
+    closeButton: `${ACCENT_TEXT} hover:text-white text-2xl leading-none shrink-0 transition-colors`,
     content: "flex flex-col flex-1 min-h-0 overflow-y-auto overscroll-contain",
     bottomBlock: "flex flex-col gap-8 p-4 sm:p-6",
     sectionBlock: "flex flex-col gap-4",
@@ -78,7 +83,7 @@ const classes = {
     sectionLabelPackage:
         "text-center text-2xl sm:text-3xl font-semibold leading-snug text-black",
     sectionLabelBefore: "text-[#f01653]",
-    sectionLabelAfter: "text-blue-700",
+    sectionLabelAfter: ACCENT_TEXT,
     metaRow: " border-b border-gray-500 p-4 text-gray-800",
     metaRowInner: "flex items-center justify-center sm:justify-end min-w-0 self-stretch grid grid-cols-1 sm:grid-cols-[minmax(0,3.8fr)_minmax(0,1.2fr)] gap-4 sm:gap-4 items-start",
     metaFieldsCol: "space-y-4 min-w-0",
@@ -89,18 +94,18 @@ const classes = {
         "pointer-events-none absolute inset-0 flex items-center justify-center text-8xl font-semibold text-black/30 [writing-mode:vertical-rl]",
     twoColGrid: "grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch",
     detailCol: "flex flex-col gap-3 border-r border-b border-gray-500 bg-white/30 p-4 text-gray-800",
-    detailScoreHead: "text-sm sm:text-base font-bold text-blue-700 leading-snug",
+    detailScoreHead: `text-sm sm:text-base font-bold ${ACCENT_TEXT} leading-snug`,
     detailScoreBody: "text-sm sm:text-base leading-relaxed text-gray-800",
-    detailBullet: "text-sm sm:text-base font-bold text-blue-700 whitespace-pre-line",
-    sectionArrow: "flex justify-center pt-1 text-blue-600 text-xl leading-none select-none",
-    metaLabel: "text-xs font-semibold uppercase tracking-wide text-blue-700",
+    detailBullet: `text-sm sm:text-base font-bold ${ACCENT_TEXT} whitespace-pre-line`,
+    sectionArrow: `flex justify-center pt-1 ${ACCENT_TEXT} text-xl leading-none select-none`,
+    metaLabel: `text-xs font-semibold uppercase tracking-wide ${ACCENT_TEXT}`,
     metaValue: "text-base sm:text-lg text-gray-800 leading-snug",
     comparisonBlock:
         "overflow-hidden border-l border-t border-gray-500 bg-white/30 shadow-sm h-full flex flex-col",
     comparisonStageBefore:
         "group relative w-full min-h-[11rem] sm:min-h-[13rem] py-2 [container-type:inline-size] bg-[#f01653]",
     comparisonStageAfter:
-        "group relative w-full min-h-[11rem] sm:min-h-[13rem] py-2 [container-type:inline-size] bg-blue-600",
+        `group relative w-full min-h-[11rem] sm:min-h-[13rem] py-2 [container-type:inline-size] ${ACCENT_BG}`,
     comparisonImg:
         "relative z-10 mx-auto block h-full max-h-[10rem] sm:max-h-[14rem] w-full max-w-full object-contain pointer-events-none",
     comparisonTooltip:
@@ -109,24 +114,25 @@ const classes = {
     comparisonBadge:
         "pointer-events-none absolute inset-0 z-0 flex w-full max-w-full items-center justify-center px-1 font-['IrvinHeading','Crimson_Pro',sans-serif] font-black uppercase text-white drop-shadow-md leading-none [font-size:clamp(2.5rem,min(38cqw,28cqh),11rem)] max-[430px]:[font-size:clamp(2.25rem,min(32cqw,24cqh),9rem)] whitespace-nowrap overflow-hidden tracking-[0.08em]",
     demoLinksRow:
-        "flex flex-wrap items-center justify-center gap-6 sm:gap-12 border-t border-gray-500 bg-white/40 px-3 py-2 text-sm font-semibold text-blue-700",
+        `flex flex-wrap items-center justify-center gap-6 sm:gap-12 border-t border-gray-500 bg-white/40 px-3 py-2 text-sm font-semibold ${ACCENT_TEXT}`,
     footer:
         "bg-white/20 backdrop-blur-sm border-t border-gray-500 p-4 sm:p-6 rounded-b-lg",
     footerOrderAndIcons:
         "flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between",
-    orderViaLabel: `inline-flex shrink-0 justify-center items-center text-lg font-semibold text-blue-600 whitespace-nowrap ${FOOTER_CONTROL_PAD}`,
+    orderViaLabel: `inline-flex shrink-0 justify-center items-center text-lg font-semibold ${ACCENT_TEXT} whitespace-nowrap ${FOOTER_CONTROL_PAD}`,
     marketplaceList:
         "flex w-full flex-col items-center justify-center gap-2 sm:w-auto sm:flex-1 sm:items-center sm:justify-start",
     marketplaceLinksGroup:
         "flex w-full min-w-0 flex-col items-center gap-2 sm:flex-row sm:flex-nowrap sm:items-center sm:justify-center sm:gap-2",
     marketplaceLinksRow:
         "flex w-full flex-row flex-wrap items-center justify-center gap-2 sm:contents",
-    marketplaceLink: `text-sm sm:text-lg inline-flex shrink-0 items-center gap-2 rounded-lg bg-white/90 no-underline ${FOOTER_MARKETPLACE_PAD} font-semibold text-gray-800 shadow-sm hover:bg-white hover:shadow-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500`,
-    footerContactLink: `px-[8.25rem] sm:px-4 text-sm sm:text-lg inline-flex shrink-0 items-center justify-center rounded-lg bg-white/90 no-underline ${FOOTER_MARKETPLACE_PAD} font-semibold text-blue-700 shadow-sm hover:bg-white hover:text-blue-900 hover:shadow-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500`,
+    marketplaceLink: `text-sm sm:text-lg inline-flex shrink-0 items-center gap-2 rounded-lg bg-white/90 no-underline ${FOOTER_MARKETPLACE_PAD} font-semibold text-gray-800 shadow-sm hover:bg-white hover:shadow-md transition-all duration-200 focus:outline-none focus-visible:ring-2 ${ACCENT_RING}`,
+    footerContactLink: `px-[7.35rem] sm:px-4 text-sm sm:text-lg inline-flex shrink-0 items-center justify-center rounded-lg bg-white/90 no-underline ${FOOTER_MARKETPLACE_PAD} font-semibold shadow-sm hover:bg-white hover:opacity-80 hover:shadow-md transition-all duration-200 focus:outline-none focus-visible:ring-2 ${ACCENT_RING}`,
     marketplaceIcon: "h-5 w-5 shrink-0 object-contain",
     footerCloseWrapMobile: "flex shrink-0 items-center justify-center sm:hidden pt-2 sm:pt-2",
     footerCloseWrapDesktop: "hidden shrink-0 sm:flex sm:items-center",
-    footerButton: `text-lg text-blue-600 ${FOOTER_CONTROL_PAD} font-semibold transition-all duration-300 hover:scale-105 hover:bg-white/90 rounded-lg`,
+    footerButton: `text-lg ${ACCENT_TEXT} ${FOOTER_CONTROL_PAD} font-semibold transition-all duration-300 hover:scale-105 hover:bg-white/90 rounded-lg`,
+    demoLink: ACCENT_LINK,
 };
 
 const isExternal = (href) => /^https?:\/\//i.test(href);
@@ -182,14 +188,14 @@ const ComparisonImage = ({
                         href={demoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="underline decoration-blue-600/70 underline-offset-2 hover:text-blue-900"
+                        className={classes.demoLink}
                     >
                         {linkLabel}
                     </a>
                 ) : (
                     <Link
                         to={demoUrl}
-                        className="underline decoration-blue-600/70 underline-offset-2 hover:text-blue-900"
+                        className={classes.demoLink}
                         onClick={onClose}
                     >
                         {linkLabel}

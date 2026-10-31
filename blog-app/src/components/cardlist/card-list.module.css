@@ -1,6 +1,15 @@
-.container{
-    flex:5;
+.container {
+  flex: 5;
+  min-width: 0;
 }
-.title{
-    margin: 50px;
+
+.title {
+  margin: 0 0 var(--space-6);
+  font-size: var(--text-2xl);
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }

@@ -1,4 +1,4 @@
-import React, { Suspense, useRef, useState } from "react";
+import React, { Suspense, useMemo, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
 import { useTranslation } from "react-i18next";
@@ -8,6 +8,9 @@ import Fox from "../models/Fox";
 import Alert from "../components/Alert";
 import useAlert from "../hooks/useAlert";
 import Footer from "../components/Footer";
+import WebGLErrorBoundary, {
+  isWebGLAvailable,
+} from "../components/WebGLErrorBoundary";
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -17,6 +20,7 @@ const Contact = () => {
   const { alert, showAlert, hideAlert } = useAlert();
   const [loading, setLoading] = useState(false);
   const [currentAnimation, setCurrentAnimation] = useState("idle");
+  const webglOk = useMemo(() => isWebGLAvailable(), []);
 
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
@@ -82,7 +86,12 @@ const Contact = () => {
         {alert.show && <Alert {...alert} />}
 
         <div className="flex-1 min-w-[50%] flex flex-col">
-          <h1 className="head-text-bold ">{t("Contact.line1")}</h1>
+          <h1 className="head-text-bold">
+            {t("Contact.line1")}
+            <span className="pl-[0.4rem] blue-gradient_text drop-shadow font-bold">
+              {t("Contact.line1Highlight")}
+            </span>
+          </h1>
 
           <form
             ref={formRef}
@@ -144,33 +153,40 @@ const Contact = () => {
         </div>
 
         <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]">
-          <Canvas
-            camera={{
-              position: [0, 0, 5],
-              fov: 75,
-              near: 0.1,
-              far: 1000,
-            }}
-          >
-            <directionalLight position={[0, 0, 1]} intensity={2.5} />
-            <ambientLight intensity={1} />
-            <pointLight position={[5, 10, 0]} intensity={2} />
-            <spotLight
-              position={[10, 10, 10]}
-              angle={0.15}
-              penumbra={1}
-              intensity={2}
-            />
+          {webglOk ? (
+            <WebGLErrorBoundary fallback={null}>
+              <Canvas
+                camera={{
+                  position: [0, 0, 5],
+                  fov: 75,
+                  near: 0.1,
+                  far: 1000,
+                }}
+                onCreated={({ gl }) => {
+                  gl.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                }}
+              >
+                <directionalLight position={[0, 0, 1]} intensity={2.5} />
+                <ambientLight intensity={1} />
+                <pointLight position={[5, 10, 0]} intensity={2} />
+                <spotLight
+                  position={[10, 10, 10]}
+                  angle={0.15}
+                  penumbra={1}
+                  intensity={2}
+                />
 
-            <Suspense fallback={<Loader />}>
-              <Fox
-                currentAnimation={currentAnimation}
-                position={[0.5, 0.35, 0]}
-                rotation={[12.629, -0.6, 0]}
-                scale={[0.5, 0.5, 0.5]}
-              />
-            </Suspense>
-          </Canvas>
+                <Suspense fallback={<Loader />}>
+                  <Fox
+                    currentAnimation={currentAnimation}
+                    position={[0.5, 0.35, 0]}
+                    rotation={[12.629, -0.6, 0]}
+                    scale={[0.5, 0.5, 0.5]}
+                  />
+                </Suspense>
+              </Canvas>
+            </WebGLErrorBoundary>
+          ) : null}
         </div>
       </div>
       <Footer />

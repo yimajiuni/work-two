@@ -1,13 +1,12 @@
-import React from 'react'
-import styles from './featured.module.css'
-import Image from 'next/image'
-import Link from 'next/link'
+import React from "react";
+import styles from "./featured.module.css";
+import Image from "next/image";
+import Link from "next/link";
 import { getBaseUrl } from "@/utils/getBaseUrl";
+import { isVideoSrc } from "@/utils/media";
 
-// Modify getData to accept category parameter
 const getData = async (category) => {
   const baseUrl = getBaseUrl();
-  // If we're on the home page (no category), fetch latest post overall
   const url = category
     ? `${baseUrl}/api/posts?page=1&limit=1&cat=${category}`
     : `${baseUrl}/api/posts?page=1&limit=1&sort=desc`;
@@ -24,8 +23,10 @@ const getData = async (category) => {
 };
 
 const Featured = async ({ category = undefined }) => {
-  const { posts } = await getData(category); // Destructure to get posts array
-  const featuredPost = posts?.[0]; // Get the first post as featured
+  const { posts } = await getData(category);
+  const featuredPost = posts?.[0];
+  const mediaSrc = featuredPost?.img || "/pottery.jpg";
+  const showVideo = isVideoSrc(mediaSrc);
 
   return (
     <div className={styles.container}>
@@ -42,12 +43,24 @@ const Featured = async ({ category = undefined }) => {
       {featuredPost ? (
         <div className={styles.post}>
           <div className={styles.imgContainer}>
-            <Image
-              src={featuredPost.img || '/p1.jpeg'}
-              alt={featuredPost.title}
-              fill
-              className={styles.image}
-            />
+            {showVideo ? (
+              <video
+                className={styles.video}
+                src={mediaSrc}
+                autoPlay
+                muted
+                loop
+                playsInline
+                poster="/island.jpg"
+              />
+            ) : (
+              <Image
+                src={mediaSrc}
+                alt={featuredPost.title}
+                fill
+                className={styles.image}
+              />
+            )}
           </div>
           <div className={styles.textContainer}>
             <div className={styles.postInfo}>
@@ -57,13 +70,15 @@ const Featured = async ({ category = undefined }) => {
               </span>
             </div>
             <h1 className={styles.postTitle}>{featuredPost.title}</h1>
-            <p className={styles.postDesc}>
+            <div className={styles.postDesc}>
               {featuredPost.desc && (
-                <div dangerouslySetInnerHTML={{
-                  __html: featuredPost.desc.substring(0, 300) + "..."
-                }} />
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: featuredPost.desc.substring(0, 300) + "...",
+                  }}
+                />
               )}
-            </p>
+            </div>
             <Link href={`/posts/${featuredPost.slug}`}>
               <button className={styles.button}>Read More</button>
             </Link>
@@ -75,7 +90,7 @@ const Featured = async ({ category = undefined }) => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Featured
+export default Featured;

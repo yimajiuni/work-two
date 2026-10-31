@@ -1,10 +1,11 @@
 /**
  * Non–render-blocking Google Fonts (replaces @import in index.css).
- * Critical stack: Crimson Pro + Pacifico (Service landing / decorative links).
+ * Critical: Crimson Pro (pink) + Space Grotesk (beige) + Pacifico
+ * + Zen Kaku Gothic New (JP fallback when Yu Gothic is absent, e.g. iOS).
  */
 
 const CRITICAL_FONTS =
-    "https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Pacifico&display=swap";
+    "https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Pacifico&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap";
 
 const EXTENDED_FONTS =
     "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap";

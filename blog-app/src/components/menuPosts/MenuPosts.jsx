@@ -1,64 +1,80 @@
-import React from 'react'
-import styles from './menu-posts.module.css'
-import Link from "next/link"
-import Image from "next/image"
+import React from "react";
+import styles from "./menu-posts.module.css";
+import Link from "next/link";
+import Image from "next/image";
+import { getBaseUrl } from "@/utils/getBaseUrl";
+import { isVideoSrc } from "@/utils/media";
 
-const menuPosts = (withImage) => {
+const getData = async () => {
+  const baseUrl = getBaseUrl();
+  const res = await fetch(`${baseUrl}/api/posts?page=1&cat=`, {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed");
+  }
+
+  return res.json();
+};
+
+const MenuPosts = async ({ withImage = false }) => {
+  const { posts } = await getData();
+  const items = (posts || []).slice(0, 4);
+
+  if (items.length === 0) {
+    return <p className={styles.empty}>No posts yet.</p>;
+  }
+
   return (
     <div className={styles.items}>
-      <Link href="/" className={styles.item}>
-        {withImage && (
-          <div className={styles.imageContainer}>
-            <Image src="/p1.jpeg" alt="" fill className={styles.image} />
-          </div>
-        )}
-        <div className={styles.textContainer}>
-          <span className={`${styles.category} ${styles.travel}`}>
-            Travel
-          </span>
-          <h3 className={styles.postTitle}>Lorem ipsum dolor sit amet,</h3>
-          <div className={styles.detail}>
-            <span className={styles.username}>Jean Doe</span>
-            <span className={styles.date}> - 02.02.2024</span>
-          </div>
-        </div>
-      </Link>
-      <Link href="/" className={styles.item}>
-        {withImage && (
-          <div className={styles.imageContainer}>
-            <Image src="/p1.jpeg" alt="" fill className={styles.image} />
-          </div>
-        )}
-        <div className={styles.textContainer}>
-          <span className={`${styles.category} ${styles.culture}`}>
-            Culture
-          </span>
-          <h3 className={styles.postTitle}>Lorem ipsum dolor sit amet,</h3>
-          <div className={styles.detail}>
-            <span className={styles.username}>Jean Doe</span>
-            <span className={styles.date}> - 02.02.2024</span>
-          </div>
-        </div>
-      </Link>
-      <Link href="/" className={styles.item}>
-        {withImage && (
-          <div className={styles.imageContainer}>
-            <Image src="/p1.jpeg" alt="" fill className={styles.image} />
-          </div>
-        )}
-        <div className={styles.textContainer}>
-          <span className={`${styles.category} ${styles.food}`}>
-            Food
-          </span>
-          <h3 className={styles.postTitle}>Lorem ipsum dolor sit amet,</h3>
-          <div className={styles.detail}>
-            <span className={styles.username}>Jean Doe</span>
-            <span className={styles.date}> - 02.02.2024</span>
-          </div>
-        </div>
-      </Link>
-    </div>
-  )
-}
+      {items.map((item) => {
+        const showVideo = isVideoSrc(item.img);
+        const dateLabel = item.createdAt
+          ? new Date(item.createdAt).toLocaleDateString()
+          : "";
+        const catClass = styles[item.catSlug] || "";
 
-export default menuPosts
+        return (
+          <Link
+            href={`/posts/${item.slug}`}
+            className={styles.item}
+            key={item.id || item.slug}
+          >
+            {withImage && item.img ? (
+              <div className={styles.imageContainer}>
+                {showVideo ? (
+                  <video
+                    className={styles.video}
+                    src={item.img}
+                    muted
+                    playsInline
+                    poster="/island.jpg"
+                  />
+                ) : (
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    fill
+                    className={styles.image}
+                  />
+                )}
+              </div>
+            ) : null}
+            <div className={styles.textContainer}>
+              <span className={`${styles.category} ${catClass}`}>
+                {item.catSlug}
+              </span>
+              <h3 className={styles.postTitle}>{item.title}</h3>
+              <div className={styles.detail}>
+                <span className={styles.date}>{dateLabel}</span>
+              </div>
+            </div>
+          </Link>
+        );
+      })}
+    </div>
+  );
+};
+
+export default MenuPosts;

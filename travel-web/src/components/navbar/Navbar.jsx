@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import "./navbar.scss";
 import { Link } from "react-scroll";
 
-import { MdOutlineTravelExplore } from "react-icons/md";
+import { MdOutlineTravelExplore, MdOutlinePersonOutline } from "react-icons/md";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { TbGridDots } from "react-icons/tb";
+import LanguageSwitcher from "../LanguageSwitcher";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 const Navbar = () => {
+  const { t } = useLanguage();
   const [active, setActive] = useState("navBar");
-  //toggle navbar
   const showNav = () => {
     setActive("navBar activeNavbar");
   };
@@ -34,38 +36,42 @@ const Navbar = () => {
             <li className="navItem">
               <Link
                 className="navLink"
+                to="coupons"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
+                onClick={removeNav}
+              >
+                {t.nav.coupons}
+              </Link>
+            </li>
+            <li className="navItem">
+              <Link
+                className="navLink"
                 to="main"
                 spy={true}
                 smooth={true}
                 offset={-100}
                 duration={500}
+                onClick={removeNav}
               >
-                Packages
+                {t.nav.packages}
               </Link>
             </li>
             <li className="navItem">
               <Link
                 className="navLink"
-                to="home"
+                to="hashtags"
                 spy={true}
                 smooth={true}
+                offset={-100}
                 duration={500}
+                onClick={removeNav}
               >
-                About
+                {t.nav.recommended}
               </Link>
             </li>
-            <li className="navItem">
-              <Link
-                className="navLink"
-                to="home"
-                spy={true}
-                smooth={true}
-                duration={500}
-              >
-                Shop
-              </Link>
-            </li>
-
             <li className="navItem">
               <Link
                 className="navLink"
@@ -73,13 +79,19 @@ const Navbar = () => {
                 spy={true}
                 smooth={true}
                 duration={500}
+                onClick={removeNav}
               >
-                Contact
+                {t.nav.contact}
               </Link>
             </li>
             <button className="btn">
-              <a href="/">BOOK NOW</a>
+              <a href="/">{t.nav.bookNow}</a>
             </button>
+            <a href="/" className="loginLink flex">
+              <MdOutlinePersonOutline className="icon" aria-hidden="true" />
+              {t.nav.logIn}
+            </a>
+            <LanguageSwitcher />
           </ul>
           <div onClick={removeNav} className="closeNavbar">
             <AiFillCloseCircle className="icon" />

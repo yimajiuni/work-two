@@ -1,0 +1,191 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 33%);
+  --SecondaryColor: hsl(187, 85%, 43%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --textColor: hsl(240, 4%, 36%);
+  --headlineColor: rgb(244, 3, 160);
+}
+
+/* Match footer .secContent.container > .footerCard width/centering */
+.couponSection {
+  width: 100%;
+  margin: auto;
+
+  .secContent {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    padding: 1.5rem 1.5rem 2.5rem;
+    box-sizing: border-box;
+  }
+
+  .sectionCard {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .couponHeader {
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    .couponHeading {
+      text-align: left;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--PrimaryColor);
+      font-weight: 600;
+    }
+
+    h3 {
+      color: var(--blackColor);
+      font-size: 2rem;
+      text-align: left;
+      font-family: var(--displayFont);
+      font-weight: 400;
+      padding-top: 0.25rem;
+    }
+  }
+
+  .couponNav {
+    gap: 0.4rem;
+    flex-shrink: 0;
+
+    button {
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 999px;
+      border: none;
+      background: #ebe7df;
+      color: var(--PrimaryColor);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.25rem;
+
+      &:hover {
+        background: var(--PrimaryColor);
+        color: var(--whiteColor);
+      }
+    }
+  }
+
+  .couponTrack {
+    width: 100%;
+    display: flex;
+    gap: 0.85rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 0.35rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+
+    .couponCard {
+      flex: 0 0 min(78vw, 260px);
+      scroll-snap-align: start;
+      border-radius: 14px;
+      padding: 1rem 1.1rem;
+      color: var(--whiteColor);
+      min-height: 7.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: left;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+
+      h4 {
+        font-size: 0.98rem;
+        line-height: 1.3;
+        margin-bottom: 0.35rem;
+        text-align: left;
+      }
+
+      p {
+        font-size: 0.78rem;
+        opacity: 0.92;
+        line-height: 1.4;
+        flex: 1;
+        text-align: left;
+      }
+
+      .claimBtn {
+        align-self: flex-start;
+        margin-top: 0.75rem;
+        border: none;
+        border-radius: 999px;
+        padding: 0.35rem 0.9rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.92);
+        color: var(--blackColor);
+      }
+
+      /* Alternate all cards */
+      &:nth-child(odd) {
+        background: linear-gradient(135deg, #aa978f, #c7cbcd);
+      }
+
+      &:nth-child(even) {
+        background: linear-gradient(135deg, #746e6a, #ead1c7);
+      }
+
+      /* Previous accent colors (kept for reference)
+      &.signup {
+        background: linear-gradient(135deg, #ff4db8, #ead1c7);
+      }
+
+      &.mongolia {
+        background: linear-gradient(135deg, #0f1413, #a4d0bd);
+      }
+
+      &.hotel {
+        background: linear-gradient(135deg, #05121d, #93b0c0);
+      }
+
+      &.weekend {
+        background: linear-gradient(135deg, #280e6f, #a49baa);
+      }
+
+      &.family {
+        background: linear-gradient(135deg, #4c3b30, #b0a281);
+      }
+
+      &.flights {
+        background: linear-gradient(135deg, #107c04, #b3dfd8);
+      }
+
+      &.culture {
+        background: linear-gradient(135deg, #7e3046, #ef1805);
+      }
+      */
+    }
+  }
+}
+
+@media screen and (min-width: 840px) {
+  .couponSection {
+    .couponHeader h3 {
+      font-size: 2rem;
+    }
+
+    .couponTrack .couponCard {
+      flex-basis: 240px;
+    }
+  }
+}
