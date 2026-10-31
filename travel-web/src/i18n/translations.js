@@ -41,7 +41,7 @@ export const translations = {
       next: "Next coupons",
       items: [
         {
-          title: "Sign up for 10% OFF",
+          title: "Sign up for 10% off",
           detail: "New members unlock limited coupons instantly.",
         },
         {
@@ -49,7 +49,7 @@ export const translations = {
           detail: "Steppe skies and ger stays—book while the deal lasts.",
         },
         {
-          title: "Hotel perk up to $100 OFF",
+          title: "Hotel perk up to $100 off",
           detail: "Stay longer, save more on selected partners.",
         },
         {
@@ -222,7 +222,7 @@ export const translations = {
       next: "次のクーポン",
       items: [
         {
-          title: "新規登録で10% OFF",
+          title: "新規登録で10% off",
           detail: "会員登録ですぐに限定クーポンを受け取れます。",
         },
         {
@@ -230,7 +230,7 @@ export const translations = {
           detail: "草原の空とゲルステイ。お得なうちにご予約を。",
         },
         {
-          title: "ホテル特典 最大$100 OFF",
+          title: "ホテル特典 最大$100 off",
           detail: "対象パートナーで長く泊まるほどお得に。",
         },
         {

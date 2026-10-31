@@ -56,7 +56,7 @@ function AppRoutes() {
                 className={[
                     "transition-[height] duration-300",
                     isCroPage ? "lg:hidden" : "sm:hidden",
-                    isMobileMenuOpen ? "h-16" : "h-0",
+                    isMobileMenuOpen ? "h-20" : "h-0",
                 ].join(" ")}
             />
             <Suspense fallback={<RouteFallback />}>

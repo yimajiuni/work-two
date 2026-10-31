@@ -119,7 +119,7 @@ function WorkGallery() {
         </TabsCustom>
       </Box>
 
-      <div className="grid lg:grid-cols-3 gap-5 my-20">
+      <div className="grid lg:grid-cols-3 gap-5 mt-12 mb-20">
         {filteredWorks.map((work, index) => {
           const workData = workDatas.find((data) => data.id === work.id);
           const workId = workData ? workData.id : null;
@@ -152,7 +152,7 @@ function WorkGallery() {
                 </div>
               </div>
               <div className="mt-5 flex flex-col">
-                <h4 className="text-xl lg:w-60  font-semibold break-words">
+                <h4 className="text-xl lg:w-60 font-semibold break-words mb-2">
                   {work.name}
                 </h4>
                 <Link
