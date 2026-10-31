@@ -1,4 +1,11 @@
-import React, { Suspense, lazy, useEffect, useState } from "react";
+import React, {
+    Suspense,
+    lazy,
+    useCallback,
+    useEffect,
+    useLayoutEffect,
+    useState,
+} from "react";
 import { Route, BrowserRouter as Router, Routes, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import NavbarJump from "./components/NavbarJump";
@@ -21,34 +28,73 @@ const RouteFallback = () => (
 
 /** Reset window scroll on route change (e.g. /works → /details/:id).
  *  If the URL has a hash (#works), leave scroll to Content / native hash handling.
+ *
+ *  Gallery→detail used to land near the bottom: history.scrollRestoration kept the
+ *  deep Works scroll offset, and ScrollToTop ran before lazy WorkDetails painted.
  */
 function ScrollToTop() {
     const { pathname, hash } = useLocation();
+
+    useEffect(() => {
+        if ("scrollRestoration" in window.history) {
+            window.history.scrollRestoration = "manual";
+        }
+    }, []);
+
+    useLayoutEffect(() => {
+        if (hash) return;
+        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }, [pathname, hash]);
+
+    // Lazy routes: scroll again after Suspense swaps in the real page.
     useEffect(() => {
         if (hash) return;
-        window.scrollTo({ top: 0, behavior: "auto" });
+        const id = requestAnimationFrame(() => {
+            window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+        });
+        return () => cancelAnimationFrame(id);
     }, [pathname, hash]);
+
     return null;
 }
 
 function AppRoutes() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [menuSpacerPx, setMenuSpacerPx] = useState(0);
+    const [overlayTopPx, setOverlayTopPx] = useState(64);
     const { pathname } = useLocation();
-    const { theme } = useTheme();
+    const { theme, themeId } = useTheme();
     const isCroPage = pathname === "/cro";
+    // /works lands mid-page (below About) — skip spacer so open/close matches non-jump pages.
+    const useMenuSpacer = pathname !== "/works";
+    const showMenuOverlay = isMobileMenuOpen && themeId !== "pink";
+
+    const handleMenuLayoutChange = useCallback(({ spacerPx, overlayTopPx: top }) => {
+        setMenuSpacerPx(spacerPx);
+        setOverlayTopPx(top);
+    }, []);
+
+    useEffect(() => {
+        if (!isMobileMenuOpen) setMenuSpacerPx(0);
+    }, [isMobileMenuOpen]);
 
     return (
         <>
             <ScrollToTop />
-            <NavbarJump onMenuStateChange={setIsMobileMenuOpen} transparent={isCroPage} />
-            {isMobileMenuOpen && (
+            <NavbarJump
+                onMenuStateChange={setIsMobileMenuOpen}
+                onMenuLayoutChange={handleMenuLayoutChange}
+                transparent={isCroPage}
+            />
+            {showMenuOverlay && (
                 <div
                     aria-hidden="true"
                     className={[
-                        "fixed inset-x-0 top-16 bottom-0 transition-opacity duration-300",
+                        "fixed inset-x-0 bottom-0 z-[5] pointer-events-none transition-opacity duration-300",
                         theme.chrome.menuOverlayClass,
                         isCroPage ? "lg:hidden" : "sm:hidden",
                     ].join(" ")}
+                    style={{ top: overlayTopPx }}
                 />
             )}
             <div
@@ -56,8 +102,8 @@ function AppRoutes() {
                 className={[
                     "transition-[height] duration-300",
                     isCroPage ? "lg:hidden" : "sm:hidden",
-                    isMobileMenuOpen ? "h-20" : "h-0",
                 ].join(" ")}
+                style={{ height: useMenuSpacer && isMobileMenuOpen ? menuSpacerPx : 0 }}
             />
             <Suspense fallback={<RouteFallback />}>
                 <Routes>

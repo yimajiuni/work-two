@@ -68,7 +68,7 @@ export const pinkTheme = {
 
 /** Service shell chrome (main / nav / decorative) — used by Service.jsx */
 export const pinkServiceChrome = {
-  mainContainer: 'max-container pt-8 -mt-32 sm:-mt-24',
+  mainContainer: 'max-container-long pt-8 -mt-32 sm:-mt-24',
   navigation: 'fixed bottom-0 left-0 right-0 flex justify-center items-center h-[90px] sm:h-24 bg-white/10 backdrop-blur-sm border-t border-white/20 z-50',
   navigationContent: 'h-full flex items-center justify-center',
   navigationNav: 'flex gap-4 sm:gap-8 text-xs sm:text-base',

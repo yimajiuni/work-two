@@ -4,9 +4,7 @@ import "./index.css";
 import "./i18n-1.js";
 import { scheduleCriticalWebFonts } from "./utils/loadWebFonts";
 
-if (typeof document !== "undefined") {
-  document.documentElement.dataset.theme = "beige";
-}
+// data-theme is applied by ThemeProvider (localStorage / ?theme= / default beige)
 
 scheduleCriticalWebFonts();
 

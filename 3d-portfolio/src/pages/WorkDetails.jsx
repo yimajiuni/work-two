@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
@@ -117,8 +117,13 @@ function WorkDetails() {
   // Extracting a specific work object by id from translations
   const selectedWork = detailedDatas.find((data) => data.id === parseInt(id));
 
+  // Gallery is often scrolled deep; reset after this lazy page mounts.
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [id]);
+
   return (
-    <div className="max-container-workdetail">
+    <div className="max-container">
       {selectedWork ? (
         <>
           <Breadcrumbs

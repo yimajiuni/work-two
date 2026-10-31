@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "../components/LanguageSelector";
@@ -8,13 +8,19 @@ import { CRO_SECTION_ANCHORS } from "../constants/croNav";
 import { useTheme } from "../themes/useTheme";
 import { VISITOR_THEME_TOGGLE } from "../themes";
 
+/** Matches `mt-2` on the absolute mobile panel (gap under fixed header). */
+const MOBILE_MENU_GAP_PX = 8;
+
 const NavbarJump = ({
   onMenuStateChange,
+  /** ({ spacerPx, overlayTopPx }) — measured panel + header for App/CroApp spacers */
+  onMenuLayoutChange,
   transparent = false,
   forceCroPage = false,
   mainSiteUrl = "",
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuPanelRef = useRef(null);
   const path = useLocation().pathname;
   const location = path.split("/")[1];
   const navigate = useNavigate();
@@ -34,8 +40,27 @@ const NavbarJump = ({
 
   const HEADER_OFFSET = -5;
 
-  const goToPageAndScroll = async (selector) => {
+  const publishClosedLayout = () => {
+    const headerH = document.getElementById("navigation")?.offsetHeight ?? 64;
+    onMenuLayoutChange?.({ spacerPx: 0, overlayTopPx: headerH });
+  };
+
+  const closeMenu = () => {
     setIsMenuOpen(false);
+    onMenuStateChange?.(false);
+    publishClosedLayout();
+  };
+
+  const toggleMenu = () => {
+    if (isMenuOpen) closeMenu();
+    else {
+      setIsMenuOpen(true);
+      onMenuStateChange?.(true);
+    }
+  };
+
+  const goToPageAndScroll = async (selector) => {
+    closeMenu();
     try {
       const targetRoute = routeMap[selector] || "/";
 
@@ -74,7 +99,7 @@ const NavbarJump = ({
   };
 
   const scrollToCroSection = async (anchorId) => {
-    setIsMenuOpen(false);
+    closeMenu();
     try {
       if (!isCroPage) {
         await navigate(`/cro#${anchorId}`);
@@ -92,14 +117,6 @@ const NavbarJump = ({
 
   const serviceHomeHref = getSiteHref("/");
 
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
   useEffect(() => {
     onMenuStateChange?.(isMenuOpen);
   }, [isMenuOpen, onMenuStateChange]);
@@ -107,7 +124,46 @@ const NavbarJump = ({
   // Close mobile menu on any route change (link / back / programmatic nav).
   useEffect(() => {
     setIsMenuOpen(false);
+    publishClosedLayout();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- only on path change
   }, [path]);
+
+  // Report panel/header sizes for App/CroApp spacer + overlay.
+  useEffect(() => {
+    if (!onMenuLayoutChange) return;
+
+    const headerEl = document.getElementById("navigation");
+
+    const publish = () => {
+      const overlayTopPx = headerEl?.offsetHeight ?? 64;
+      const panelEl = menuPanelRef.current;
+      if (!isMenuOpen || !panelEl) {
+        onMenuLayoutChange({ spacerPx: 0, overlayTopPx });
+        return;
+      }
+      onMenuLayoutChange({
+        spacerPx: panelEl.offsetHeight + MOBILE_MENU_GAP_PX,
+        overlayTopPx,
+      });
+    };
+
+    publish();
+    if (!isMenuOpen) return undefined;
+
+    const panelEl = menuPanelRef.current;
+    const ro = new ResizeObserver(publish);
+    if (panelEl) ro.observe(panelEl);
+    if (headerEl) ro.observe(headerEl);
+    window.addEventListener("resize", publish);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", publish);
+      onMenuLayoutChange({
+        spacerPx: 0,
+        overlayTopPx: headerEl?.offsetHeight ?? 64,
+      });
+    };
+  }, [isMenuOpen, onMenuLayoutChange, isCroPage, themeId]);
 
   const croLogoLabel = (
     <p className="blue-gradient_text whitespace-nowrap">
@@ -123,7 +179,6 @@ const NavbarJump = ({
       onClick={(event) => {
         event.preventDefault();
         scrollToCroSection(item.anchorId);
-        closeMenu();
       }}
       className="cursor-pointer hover:text-blue-400 transition-colors text-left"
     >
@@ -230,7 +285,6 @@ const NavbarJump = ({
           onClick={(e) => {
             e.preventDefault();
             goToPageAndScroll("about");
-            closeMenu();
           }}
           className="cursor-pointer hover:text-blue-400 transition-colors py-2"
           to={getSiteHref("/about")}
@@ -241,7 +295,6 @@ const NavbarJump = ({
           onClick={(e) => {
             e.preventDefault();
             goToPageAndScroll("works");
-            closeMenu();
           }}
           className="cursor-pointer hover:text-blue-400 transition-colors py-2"
           to={getSiteHref("/works")}
@@ -253,7 +306,6 @@ const NavbarJump = ({
           onClick={(e) => {
             e.preventDefault();
             goToPageAndScroll("contact");
-            closeMenu();
           }}
           className={({ isActive }) =>
             `cursor-pointer transition-colors py-2 ${isActive
@@ -278,7 +330,6 @@ const NavbarJump = ({
           onClick={(e) => {
             e.preventDefault();
             goToPageAndScroll("about");
-            closeMenu();
           }}
           className="cursor-pointer hover:text-blue-400 transition-colors py-2"
           to={getSiteHref("/about")}
@@ -289,7 +340,6 @@ const NavbarJump = ({
           onClick={(e) => {
             e.preventDefault();
             goToPageAndScroll("works");
-            closeMenu();
           }}
           className="cursor-pointer hover:text-blue-400 transition-colors py-2"
           to={getSiteHref("/works")}
@@ -312,9 +362,9 @@ const NavbarJump = ({
   return (
     <header
       className={[
-        "header gap-7",
-        !transparent && theme.chrome.headerClass,
-        transparent && "!z-50",
+        "header gap-7 !z-50",
+        // CRO: themed gradient wash; other pages use theme chrome unless transparent
+        isCroPage ? "theme-header-follow" : !transparent && theme.chrome.headerClass,
       ]
         .filter(Boolean)
         .join(" ")}
@@ -386,15 +436,15 @@ const NavbarJump = ({
 
       <div className="text-blue-500 cursor-pointer flex items-center gap-2">
         <LanguageSelector />
-        {VISITOR_THEME_TOGGLE && !isCroPage && (
-          <ThemeSelector />
-        )}
+        {VISITOR_THEME_TOGGLE && <ThemeSelector />}
       </div>
 
       {isMenuOpen && (
         <div
+          ref={menuPanelRef}
+          data-mobile-menu
           className={[
-            "mx-auto absolute top-full left-0 right-0 backdrop-blur-sm border border-white/20 rounded-lg mt-2 p-4 z-50 shadow-lg shadow-pink-400/30",
+            "mx-auto absolute top-full left-0 right-0 backdrop-blur-sm border border-white/20 rounded-lg mt-2 p-4 z-[60] shadow-lg shadow-pink-400/30",
             themeId === "beige" ? "bg-[#F9EEEE]/60" : "bg-[#f9c6e1]/60",
             isCroPage
               ? "lg:hidden w-[calc(100%_-_2rem)] max-w-3xl"
@@ -421,7 +471,6 @@ const NavbarJump = ({
                       onClick={(event) => {
                         event.preventDefault();
                         scrollToCroSection(item.anchorId);
-                        closeMenu();
                       }}
                       className="cursor-pointer hover:text-blue-400 transition-colors py-2 text-left"
                     >

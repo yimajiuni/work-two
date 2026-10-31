@@ -1059,6 +1059,8 @@ export default function CroShowcase() {
             const isSelected = sectionId === selectedSectionId;
 
             if (isSelected && isViewDetails) return "view";
+            // Title/desc count as watch hit area (esp. mobile — video body is hard to tap).
+            if (isSelected && canWatchVideo && isTitle) return "watch";
             if (isSelected && isTitle) return "view";
             if (isSelected && canWatchVideo) return "watch";
             if (isSelected) return "dot";
@@ -1113,6 +1115,11 @@ export default function CroShowcase() {
         if (isOverlayOpen || isPlaybackOpen) return;
 
         if (sectionId === selectedSectionId) {
+            const section = sections.find((s) => s.id === sectionId);
+            if (section?.loomShareId) {
+                openPlaybackFor(sectionId);
+                return;
+            }
             openOverlayFor(sectionId);
             return;
         }

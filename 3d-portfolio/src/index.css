@@ -764,23 +764,54 @@ body:has(.card[data-color="green"]:hover) {
     background-image: linear-gradient(to top, #F9EEEE 0%, transparent 100%);
   }
 
-  /* CRO navbar — default white (readable on CRO); on/hover = beige accent.
-     Do not style Language/Theme selectors (outside <nav>). */
+  /* CRO navbar — always theme accent (mobile + desktop). Selectors sit outside <nav>. */
   #navigation[data-nav-surface="cro"] nav,
   #navigation[data-nav-surface="cro"] nav a,
   #navigation[data-nav-surface="cro"] nav button {
-    color: #fff;
+    color: var(--theme-accent, #382797);
   }
 
   #navigation[data-nav-surface="cro"] nav a:hover,
   #navigation[data-nav-surface="cro"] nav a.active,
   #navigation[data-nav-surface="cro"] nav button:hover,
   #navigation[data-nav-surface="cro"] nav button:focus-visible {
-    color: #382797;
+    color: var(--theme-accent, #382797);
+    opacity: 0.8;
   }
 
   #navigation[data-nav-surface="cro"] nav span[aria-hidden="true"] {
-    color: rgb(255 255 255 / 0.7);
+    color: color-mix(in srgb, var(--theme-accent, #382797) 55%, transparent);
+  }
+
+  /* Themed header wash — ::before stays behind nav/icons/drawer */
+  .theme-header-follow {
+    isolation: isolate;
+    background-color: transparent;
+    border-bottom: 1px solid color-mix(in srgb, var(--theme-header-border, #382797) 25%, transparent);
+    box-shadow: 0 4px 6px -1px var(--theme-header-shadow, transparent);
+  }
+
+  .theme-header-follow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: linear-gradient(
+      180deg,
+      var(--theme-header-bg, #F9EEEE) 0%,
+      color-mix(in srgb, var(--theme-header-bg, #F9EEEE) 75%, transparent) 55%,
+      transparent 100%
+    );
+  }
+
+  .theme-header-follow > *:not([data-mobile-menu]) {
+    position: relative;
+    z-index: 1;
+  }
+
+  .theme-header-follow > [data-mobile-menu] {
+    z-index: 60;
   }
 
   .cro-cursor {
@@ -1497,13 +1528,27 @@ body:has(.card[data-color="green"]:hover) {
     }
   }
 
-  .max-container {
-    @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[66px] sm:!pt-[126px] px-4 sm:px-8 min-h-[calc(100vh)];
+  /*
+   * Do not put `sm:!pt-[…]` inside @apply — Prettier inserts a space after `sm:`
+   * on save (`sm: !pt-…`) and Tailwind/PostCSS then 500s.
+   *
+   * max-container:      mobile 86px / desktop 126px (About, Works, Details, Contact…)
+   * max-container-long: always 126px (pink Service only)
+   */
+  .max-container-long {
+    @apply max-w-5xl mx-auto sm:p-16 pb-12 px-4 sm:px-8 min-h-[calc(100vh)];
+    padding-top: 126px !important;
   }
 
-  /* Work Details only: tighter top pad on mobile (header clearance) */
-  .max-container-workdetail {
-    @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[66px] sm:!pt-[126px] px-4 sm:px-8 min-h-[calc(100vh)];
+  .max-container {
+    @apply max-w-5xl mx-auto sm:p-16 pb-12 px-4 sm:px-8 min-h-[calc(100vh)];
+    padding-top: 86px !important;
+  }
+
+  @media (min-width: 640px) {
+    .max-container {
+      padding-top: 126px !important;
+    }
   }
 
   .section-container {
@@ -1511,7 +1556,7 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .head-text {
-    @apply sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins;
+    @apply text-3xl sm:text-5xl font-semibold leading-9 sm:leading-snug font-poppins mb-2;
   }
 
   .head-text-bold {
