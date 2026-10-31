@@ -24,7 +24,7 @@ const KitchenPulse = () => {
           <p className="mb-3 text-center text-sm uppercase tracking-[0.18em] text-brightColor">
             {t.about.kitchenEyebrow}
           </p>
-          <h2 className="font-hedding pb-4 text-center text-2xl font-semibold md:text-3xl">
+          <h2 className="font-hedding heading-balanced pb-4 text-center text-2xl font-semibold md:text-3xl">
             {t.about.kitchenTitle}
           </h2>
           <p className="leading-relaxed text-white/90">{t.about.kitchenBody}</p>

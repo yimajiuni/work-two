@@ -81,6 +81,31 @@ body {
   line-height: 1.2;
 }
 
+/*
+  Japanese display headings (mobile-first wrap)
+  - text-wrap: balance → evening out 2+ lines
+  - line-break: strict → stricter CJK kinsoku
+  - whitespace-pre-line → honor intentional \n in copy
+  Short titles (〜4 chars) stay single-line; longer JA copy may include \n.
+*/
+html[lang="ja"] h1,
+html[lang="ja"] h2.font-hedding,
+html[lang="ja"] .head-text,
+html[lang="ja"] .heading-balanced {
+  text-wrap: balance;
+  line-break: strict;
+  word-break: normal;
+  overflow-wrap: normal;
+  white-space: pre-line;
+}
+
+@media (max-width: 47.99rem) {
+  html[lang="ja"] h1.font-hedding,
+  html[lang="ja"] .head-text {
+    letter-spacing: 0.01em;
+  }
+}
+
 .font-logo {
   font-family: var(--font-logo);
   font-weight: 400;

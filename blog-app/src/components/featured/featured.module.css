@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: var(--space-6);
+  gap: var(--space-5);
 }
 
 .imgContainer {
@@ -68,10 +68,10 @@
 }
 
 .postDesc {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   font-weight: 300;
   color: var(--softTextColor);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .button {

@@ -13,6 +13,33 @@ const accents = [
   "culture",
 ];
 
+/** Wrap numeric + unit tokens (10%, $100, −15%) in body font */
+const renderTitleWithMetrics = (title) => {
+  const re = /(\$?\d+(?:\.\d+)?\s*%|\$\d+(?:\.\d+)?|[−\-]\s*\d+(?:\.\d+)?\s*%)/g;
+  const nodes = [];
+  let lastIndex = 0;
+  let match;
+  let key = 0;
+
+  while ((match = re.exec(title)) !== null) {
+    if (match.index > lastIndex) {
+      nodes.push(title.slice(lastIndex, match.index));
+    }
+    nodes.push(
+      <span key={`m-${key++}`} className="couponMetric">
+        {match[0]}
+      </span>
+    );
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < title.length) {
+    nodes.push(title.slice(lastIndex));
+  }
+
+  return nodes.length ? nodes : title;
+};
+
 const CouponCarousel = () => {
   const { t } = useLanguage();
   const trackRef = useRef(null);
@@ -57,7 +84,7 @@ const CouponCarousel = () => {
                 key={`${coupon.title}-${index}`}
                 className={`couponCard ${accents[index] || "signup"}`}
               >
-                <h4>{coupon.title}</h4>
+                <h4>{renderTitleWithMetrics(coupon.title)}</h4>
                 <p>{coupon.detail}</p>
                 <button type="button" className="claimBtn">
                   {t.coupons.claim}

@@ -15,7 +15,7 @@ const Menu = () => {
         <p className="mb-3 text-sm uppercase tracking-[0.18em] text-brightColor">
           {t.menu.eyebrow}
         </p>
-        <h1 className="font-hedding text-4xl font-semibold md:text-5xl">
+        <h1 className="font-hedding heading-balanced text-4xl font-semibold md:text-5xl">
           {t.menu.title}
         </h1>
         <p className="mt-4 text-base leading-relaxed text-lightText md:text-lg">

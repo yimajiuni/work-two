@@ -18,7 +18,7 @@ const Review = () => {
         <p className="mb-3 text-sm uppercase tracking-[0.18em] text-brightColor">
           {t.review.eyebrow}
         </p>
-        <h1 className="font-hedding text-4xl font-semibold md:text-5xl">
+        <h1 className="font-hedding heading-balanced text-4xl font-semibold md:text-5xl">
           {t.review.title}
         </h1>
         <p className="mt-4 text-base text-lightText md:text-lg">

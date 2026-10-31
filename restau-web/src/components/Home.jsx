@@ -39,7 +39,7 @@ const Home = () => {
             <p className="mb-3 text-sm uppercase tracking-[0.2em] text-backgroundColor">
               {t.home.eyebrow}
             </p>
-            <h1 className="head-text font-semibold text-backgroundColor sm:!text-5xl md:!text-6xl">
+            <h1 className="head-text heading-balanced font-semibold text-backgroundColor sm:!text-5xl md:!text-6xl">
               {t.home.title}
             </h1>
             <p className="font-body py-4 text-lg leading-relaxed text-backgroundColor md:text-xl lg:text-2xl">

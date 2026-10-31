@@ -200,7 +200,7 @@ export const translations = {
     },
     home: {
       eyebrow: "地中海シーフード · アジアの気配",
-      title: "海の幸に、アジアの気配",
+      title: "海の幸に、\nアジアの気配",
       body: "地中海のシーフードを軸に、タイ・ベトナム・日本・韓国のエッセンスを重ねるアットホームな一軒。おまかせ創作メニューと、親切をモットーにしたおもてなしが待っています。",
       cta: "おまかせを見る",
       alt: "地中海シーフードとハーブが並ぶテーブル",
@@ -271,7 +271,7 @@ export const translations = {
     },
     about: {
       eyebrow: "私たちの物語",
-      title: "なぜ、ここに来るのか",
+      title: "なぜ、\nここに来るのか",
       intro:
         "大きな舞台装置より、隣の席の笑顔と、今日の鮮度。親切をモットーに、地中海の海とアジアの台所をつなぐ場所をつくりました。",
       thisIsUs: "THIS IS US.",
@@ -280,14 +280,14 @@ export const translations = {
       cta: "創作メニューへ",
       alt: "店内のあたたかい雰囲気",
       kitchenEyebrow: "キッチンの向こう",
-      kitchenTitle: "キッチンの息づかい",
+      kitchenTitle: "キッチンの\n息づかい",
       kitchenBody:
         "鍋の音、海からの仕入れ、開店前の静けさ。地中海の魚とアジアの気配が出会う。",
       videoCaption: "動画準備中",
     },
     menu: {
       eyebrow: "シェフのおまかせ",
-      title: "おまかせ創作メニュー",
+      title: "おまかせ\n創作メニュー",
       intro:
         "その日の海と野菜から組む、短い物語のようなコースと一皿。地中海の骨格に、アジアの余韻を忍ばせます。",
       items: [
