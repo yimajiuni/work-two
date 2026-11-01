@@ -653,7 +653,7 @@ export default function ServiceBeigeLayout({
                         .join(" ")}
                     >
                       {ch === " " ? "\u00A0" : ch}
-                    </div>
+                </div>
                   );
                 })}
               </h1>
@@ -675,13 +675,13 @@ export default function ServiceBeigeLayout({
               id: "visual",
               variant: "visual",
               node: (
-                <img
-                  src={yimajiuniPark}
-                  alt="Yimajiuni Park - Creative Workspace"
-                  className={classes.mvImage}
-                  width="1200"
-                  height="949"
-                />
+            <img
+              src={yimajiuniPark}
+              alt="Yimajiuni Park - Creative Workspace"
+              className={classes.mvImage}
+              width="1200"
+              height="949"
+            />
               ),
             },
             {
@@ -690,14 +690,14 @@ export default function ServiceBeigeLayout({
                 <h1 className={`${classes.subtitle} w-full text-center`}>
                   <span className="block">
                     {t("service.section1.title")}{" "}
-                    {t("service.section1.title2")}
-                    {t("service.section1.titleHighlight")}
-                  </span>
+              {t("service.section1.title2")}
+                {t("service.section1.titleHighlight")}
+              </span>
                   {/* Beige: line1 = title + title2, line2 = highlight (pink keeps separate br) */}
 
 
 
-                </h1>
+            </h1>
               ),
             },
             {
@@ -705,30 +705,30 @@ export default function ServiceBeigeLayout({
               node: (
                 <h2 className="md:px-0 md:hidden text-xl sm:text-xl font-bold text-[color:var(--theme-accent,#382797)] w-full text-center">
                   {yimajiuniTitle}
-                </h2>
+            </h2>
               ),
             },
             {
               id: "body",
               node: (
-                <p className={classes.descriptionLarge}>
-                  {t("service.section1.description")}
-                </p>
+            <p className={classes.descriptionLarge}>
+              {t("service.section1.description")}
+            </p>
               ),
             },
             {
               id: "cta",
               node: (
-                <ScrollLink
+            <ScrollLink
                   to="section-4"
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={500}
-                  className={classes.ctaButton}
-                >
-                  {t("service.section1.cta")}
-                </ScrollLink>
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              className={classes.ctaButton}
+            >
+              {t("service.section1.cta")}
+            </ScrollLink>
               ),
             },
           ]}
@@ -750,42 +750,42 @@ export default function ServiceBeigeLayout({
                 id: "title",
                 node: (
                   <h2 className={classes.subtitle}>{t("service.section2.title")}
-                    <span className={classes.subtitleHighlight}>
-                      {t("service.section2.titleHighlight")}
-                    </span>
+            <span className={classes.subtitleHighlight}>
+              {t("service.section2.titleHighlight")}
+            </span>
                   </h2>
                 ),
               },
               {
                 id: "card",
                 node: (
-                  <div className={classes.cardFlex}>
+            <div className={classes.cardFlex}>
                     <h3 className="text-xl sm:text-2xl font-bold text-[color:var(--theme-accent,#382797)] w-full text-center">
-                      {t("service.section2.demo.description")}
-                    </h3>
-                    <a
-                      href="https://next-shopify.yimajiuni.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={classes.demoButton}
-                    >
-                      {t("service.section2.demo.button")}
-                    </a>
-                  </div>
+                {t("service.section2.demo.description")}
+              </h3>
+              <a
+                href="https://next-shopify.yimajiuni.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={classes.demoButton}
+              >
+                {t("service.section2.demo.button")}
+              </a>
+            </div>
                 ),
               },
               {
                 id: "visual",
                 variant: "visual",
                 node: (
-                  <img
-                    src={nextEcomShopify}
-                    alt="Next.js E-commerce Shopify Demo Site"
-                    className={classes.productImage}
-                    loading="lazy"
-                    width="800"
-                    height="400"
-                  />
+            <img
+              src={nextEcomShopify}
+              alt="Next.js E-commerce Shopify Demo Site"
+              className={classes.productImage}
+              loading="lazy"
+              width="800"
+              height="400"
+            />
                 ),
               },
             ]}
@@ -804,41 +804,41 @@ export default function ServiceBeigeLayout({
                 id: "visual",
                 variant: "visual",
                 node: (
-                  <img
-                    src={lcpPO}
-                    alt={t("service.section2.lcp.imageAlt")}
-                    className={classes.productImage}
-                    loading="lazy"
-                    width="800"
-                    height="400"
-                  />
+            <img
+              src={lcpPO}
+              alt={t("service.section2.lcp.imageAlt")}
+              className={classes.productImage}
+              loading="lazy"
+              width="800"
+              height="400"
+            />
                 ),
               },
               {
                 id: "heading",
                 node: (
-                  <h3 className="text-xl sm:text-2xl font-bold text-[color:var(--theme-accent,#382797)]">
-                    {t("service.section2.lcp.description")}
-                  </h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-[color:var(--theme-accent,#382797)]">
+                {t("service.section2.lcp.description")}
+              </h3>
                 ),
               },
               {
                 id: "card",
                 node: (
                   <div className={classes.cardFlex}>
-                    <p className="text-sm sm:text-lg text-[color:var(--theme-accent,#382797)]">
-                      {t("service.section2.lcp.description2")}
-                    </p>
-                    <button
-                      type="button"
-                      onClick={openLcpImprovementModal}
-                      onMouseEnter={runLcpImprovementWarmup}
-                      onFocus={runLcpImprovementWarmup}
-                      className={classes.demoButton}
-                    >
-                      {t("service.section2.lcp.button")}
-                    </button>
-                  </div>
+              <p className="text-sm sm:text-lg text-[color:var(--theme-accent,#382797)]">
+                {t("service.section2.lcp.description2")}
+              </p>
+              <button
+                type="button"
+                onClick={openLcpImprovementModal}
+                onMouseEnter={runLcpImprovementWarmup}
+                onFocus={runLcpImprovementWarmup}
+                className={classes.demoButton}
+              >
+                {t("service.section2.lcp.button")}
+              </button>
+            </div>
                 ),
               },
             ]}
@@ -921,7 +921,7 @@ export default function ServiceBeigeLayout({
                     >
                       <h3 className={techTitleClass}>{item.title}</h3>
                       <p className={techDescClass}>{item.description}</p>
-                    </div>
+                  </div>
                   ))}
                 </div>
               ),
@@ -930,12 +930,12 @@ export default function ServiceBeigeLayout({
               id: "perfTitle",
               node: (
                 <div>
-                  <h3 className={classes.performanceTitle}>
-                    {t("service.section3.performance.title")}
-                  </h3>
-                  <h4 className={classes.performanceSubtitle}>
-                    {t("service.section3.performance.subtitle")}
-                  </h4>
+                <h3 className={classes.performanceTitle}>
+                  {t("service.section3.performance.title")}
+                </h3>
+                <h4 className={classes.performanceSubtitle}>
+                  {t("service.section3.performance.subtitle")}
+                </h4>
                 </div>
               ),
             },
@@ -945,85 +945,85 @@ export default function ServiceBeigeLayout({
               cellClass: "w-full",
               node: (
                 <div className={classes.performanceRows}>
-                  <div className={classes.performanceGrid}>
-                    <AnimatedMetric
+                <div className={classes.performanceGrid}>
+                  <AnimatedMetric
                       size="beige"
                       label={t(
                         "service.section3.performance.labels.imageSpeed",
                       )}
-                      labelKey="imageSpeed"
-                      startValue="1.2sec"
-                      endValue="0.5sec"
-                      duration={4000}
-                      delay={0}
+                    labelKey="imageSpeed"
+                    startValue="1.2sec"
+                    endValue="0.5sec"
+                    duration={4000}
+                    delay={0}
                       shouldStart={!isClone && isPerformanceSectionVisible}
-                    />
-                    <AnimatedMetric
+                  />
+                  <AnimatedMetric
                       size="beige"
                       label={t(
                         "service.section3.performance.labels.conversionRate",
                       )}
-                      labelKey="conversionRate"
-                      startValue="1.9%"
-                      endValue="1.3%"
-                      duration={4000}
-                      delay={300}
+                    labelKey="conversionRate"
+                    startValue="1.9%"
+                    endValue="1.3%"
+                    duration={4000}
+                    delay={300}
                       shouldStart={!isClone && isPerformanceSectionVisible}
-                    />
-                    <AnimatedMetric
+                  />
+                  <AnimatedMetric
                       size="beige"
                       label={t(
                         "service.section3.performance.labels.mobileBounce",
                       )}
-                      labelKey="mobileBounce"
-                      startValue="65%"
-                      endValue="20%"
-                      duration={4000}
-                      delay={600}
+                    labelKey="mobileBounce"
+                    startValue="65%"
+                    endValue="20%"
+                    duration={4000}
+                    delay={600}
                       shouldStart={!isClone && isPerformanceSectionVisible}
-                    />
-                  </div>
-                  <div className={classes.performanceGrid}>
-                    <AnimatedMetric
+                  />
+                </div>
+                <div className={classes.performanceGrid}>
+                  <AnimatedMetric
                       size="beige"
                       label={t(
                         "service.section3.performance.labels.organicTraffic",
                       )}
-                      labelKey="organicTraffic"
-                      startValue="rank 22"
-                      endValue="rank 15"
-                      duration={4000}
-                      delay={900}
+                    labelKey="organicTraffic"
+                    startValue="rank 22"
+                    endValue="rank 15"
+                    duration={4000}
+                    delay={900}
                       shouldStart={!isClone && isPerformanceSectionVisible}
-                    />
-                    <AnimatedMetric
+                  />
+                  <AnimatedMetric
                       size="beige"
                       label={t(
                         "service.section3.performance.labels.operationHours",
                       )}
-                      labelKey="operationHours"
-                      startValue="25 hours"
-                      endValue="15 hours"
-                      duration={4000}
-                      delay={1200}
+                    labelKey="operationHours"
+                    startValue="25 hours"
+                    endValue="15 hours"
+                    duration={4000}
+                    delay={1200}
                       shouldStart={!isClone && isPerformanceSectionVisible}
-                    />
-                    <AnimatedMetric
+                  />
+                  <AnimatedMetric
                       size="beige"
                       label={t(
                         "service.section3.performance.labels.serverCost",
                       )}
-                      labelKey="serverCost"
+                    labelKey="serverCost"
                       startValue={
                         i18n.language === "jp" ? "43万円" : "$4000"
                       }
                       endValue={
                         i18n.language === "jp" ? "20万円" : "$2000"
                       }
-                      duration={4000}
-                      delay={1500}
+                    duration={4000}
+                    delay={1500}
                       shouldStart={!isClone && isPerformanceSectionVisible}
-                    />
+                  />
                   </div>
                 </div>
               ),
@@ -1056,7 +1056,7 @@ export default function ServiceBeigeLayout({
                       className="w-full min-w-0 max-w-full overflow-hidden"
                     >
                       {slot.node}
-                    </div>
+              </div>
                   ),
                 }
                 : slot,
@@ -1112,7 +1112,7 @@ export default function ServiceBeigeLayout({
                   tabletOrientation,
                 }),
               )}
-            </div>
+                  </div>
           );
 
           return (

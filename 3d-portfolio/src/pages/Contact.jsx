@@ -81,7 +81,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="relative max-container mt-14 sm:mt-0" id="contact">
+    <section className="relative max-container sm:mt-0" id="contact">
       <div className="flex lg:flex-row flex-col">
         {alert.show && <Alert {...alert} />}
 
@@ -96,7 +96,7 @@ const Contact = () => {
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="w-full flex flex-col gap-7 mt-14"
+            className="w-full flex flex-col gap-7 "
           >
             <label className="text-black-500 font-semibold">
               {t("Contact.line2")}

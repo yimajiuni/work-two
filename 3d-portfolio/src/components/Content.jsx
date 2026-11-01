@@ -10,8 +10,9 @@ import TranslatedAbout from "../pages/TranslatedAbout";
 import WorkGallery from "../pages/WorkGallery";
 
 /**
- * Shared About + Works page. Route `/about` | `/works` passes `id` so we land
- * on that section (ScrollToTop alone would always leave you at About).
+ * Shared About + Works page.
+ * `/about` — ScrollToTop + max-container padding (same as Service/Contact).
+ * `/works` — must jump to #works after ScrollToTop (otherwise you'd stay on About).
  */
 function Content({ id = "about" }) {
   useEffect(() => {
@@ -19,13 +20,9 @@ function Content({ id = "about" }) {
   }, []);
 
   useEffect(() => {
-    const targetId = id === "works" ? "works" : "about";
-    // After App ScrollToTop (sibling effect) — defer one frame so we don't lose the jump.
+    if (id !== "works") return undefined;
     const frame = requestAnimationFrame(() => {
-      const el = document.getElementById(targetId);
-      if (el) {
-        el.scrollIntoView({ behavior: "auto", block: "start" });
-      }
+      document.getElementById("works")?.scrollIntoView({ behavior: "auto", block: "start" });
     });
     return () => cancelAnimationFrame(frame);
   }, [id]);

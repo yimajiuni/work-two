@@ -810,6 +810,11 @@ body:has(.card[data-color="green"]:hover) {
     z-index: 1;
   }
 
+  /* Lang / theme dropdowns above mobile drawer */
+  .theme-header-follow > [data-nav-chrome] {
+    z-index: 70;
+  }
+
   .theme-header-follow > [data-mobile-menu] {
     z-index: 60;
   }

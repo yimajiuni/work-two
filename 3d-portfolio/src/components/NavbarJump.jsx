@@ -3,13 +3,14 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "../components/LanguageSelector";
 import ThemeSelector from "../components/ThemeSelector";
-import * as Scroll from "react-scroll";
 import { CRO_SECTION_ANCHORS } from "../constants/croNav";
 import { useTheme } from "../themes/useTheme";
 import { VISITOR_THEME_TOGGLE } from "../themes";
 
 /** Matches `mt-2` on the absolute mobile panel (gap under fixed header). */
 const MOBILE_MENU_GAP_PX = 8;
+/** App spacer uses transition-[height] duration-300 — wait before measuring scroll targets. */
+const MENU_CLOSE_LAYOUT_MS = 320;
 
 const NavbarJump = ({
   onMenuStateChange,
@@ -24,7 +25,6 @@ const NavbarJump = ({
   const path = useLocation().pathname;
   const location = path.split("/")[1];
   const navigate = useNavigate();
-  const scroller = Scroll.scroller;
   const { t } = useTranslation();
   const { theme, themeId } = useTheme();
   const isCroPage = forceCroPage || path === "/cro";
@@ -38,10 +38,8 @@ const NavbarJump = ({
     contact: "/contact",
   };
 
-  const HEADER_OFFSET = -5;
-
   const publishClosedLayout = () => {
-    const headerH = document.getElementById("navigation")?.offsetHeight ?? 64;
+    const headerH = document.getElementById("navigation")?.offsetHeight ?? 0;
     onMenuLayoutChange?.({ spacerPx: 0, overlayTopPx: headerH });
   };
 
@@ -59,6 +57,10 @@ const NavbarJump = ({
     }
   };
 
+  /**
+   * About / Contact: navigate (or stay) + scrollY=0; header clearance = max-container padding.
+   * Works: mid-page jump only after menu/spacer close finishes (Content also scrolls on /works).
+   */
   const goToPageAndScroll = async (selector) => {
     closeMenu();
     try {
@@ -69,29 +71,33 @@ const NavbarJump = ({
         return;
       }
 
-      const needsNavigation = path !== targetRoute;
+      // Let spacer height transition settle before any scroll measurement.
+      await new Promise((resolve) => setTimeout(resolve, MENU_CLOSE_LAYOUT_MS));
 
-      if (needsNavigation) {
-        await navigate(targetRoute);
-        await new Promise((resolve) => setTimeout(resolve, 400));
-      } else {
-        await new Promise((resolve) => setTimeout(resolve, 100));
+      const needsNavigation = path !== targetRoute;
+      const landsAtDocumentTop = selector === "about" || selector === "contact";
+
+      if (landsAtDocumentTop) {
+        if (needsNavigation) {
+          await navigate(targetRoute);
+          // App ScrollToTop sets scrollY=0; padding handles fixed header.
+        } else {
+          window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+        }
+        return;
       }
 
-      try {
-        const targetElement = document.getElementById(selector);
-        if (targetElement) {
-          await scroller.scrollTo(selector, {
-            duration: 500,
-            smooth: true,
-            offset: HEADER_OFFSET,
-            spy: true,
-          });
-        } else {
-          console.warn(`Target element with id "${selector}" not found on ${targetRoute}`);
-        }
-      } catch (scrollError) {
-        console.warn(`Scroll error for selector "${selector}":`, scrollError);
+      // works (mid-page)
+      if (needsNavigation) {
+        await navigate(targetRoute);
+        await new Promise((resolve) => setTimeout(resolve, 50));
+      }
+
+      const targetElement = document.getElementById(selector);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        console.warn(`Target element with id "${selector}" not found on ${targetRoute}`);
       }
     } catch (navError) {
       console.warn(`Navigation error:`, navError);
@@ -135,7 +141,8 @@ const NavbarJump = ({
     const headerEl = document.getElementById("navigation");
 
     const publish = () => {
-      const overlayTopPx = headerEl?.offsetHeight ?? 64;
+      // Prefer measured header height; 0 if unmounted (no magic fallback).
+      const overlayTopPx = headerEl?.offsetHeight ?? 0;
       const panelEl = menuPanelRef.current;
       if (!isMenuOpen || !panelEl) {
         onMenuLayoutChange({ spacerPx: 0, overlayTopPx });
@@ -160,7 +167,7 @@ const NavbarJump = ({
       window.removeEventListener("resize", publish);
       onMenuLayoutChange({
         spacerPx: 0,
-        overlayTopPx: headerEl?.offsetHeight ?? 64,
+        overlayTopPx: headerEl?.offsetHeight ?? 0,
       });
     };
   }, [isMenuOpen, onMenuLayoutChange, isCroPage, themeId]);
@@ -434,7 +441,11 @@ const NavbarJump = ({
         </nav>
       </div>
 
-      <div className="text-blue-500 cursor-pointer flex items-center gap-2">
+      {/* data-nav-chrome / z-[70]: above mobile drawer (z-60) */}
+      <div
+        data-nav-chrome
+        className="relative z-[70] text-blue-500 cursor-pointer flex items-center gap-2"
+      >
         <LanguageSelector />
         {VISITOR_THEME_TOGGLE && <ThemeSelector />}
       </div>

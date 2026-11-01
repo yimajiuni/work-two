@@ -46,7 +46,7 @@ const ThemeSelector = () => {
   if (!chrome) return null;
 
   return (
-    <div ref={rootRef} className="relative">
+    <div ref={rootRef} className={["relative", isOpen ? "z-[70]" : ""].filter(Boolean).join(" ")}>
       <button
         type="button"
         className={`flex items-center justify-center w-8 h-8 text-xl`}
@@ -63,7 +63,7 @@ const ThemeSelector = () => {
         <ul
           role="listbox"
           aria-label="Themes"
-          className={chrome.menu}
+          className={`${chrome.menu} !z-[70]`}
         >
           {THEME_IDS.map((id) => {
             const pack = THEME_REGISTRY[id];

@@ -12,11 +12,16 @@ import NavbarJump from "./components/NavbarJump";
 import Service from "./pages/Service";
 import ThemeProvider from "./themes/ThemeProvider";
 import { useTheme } from "./themes/useTheme";
+// import MenuSpacerDebugHud from "./demos/MenuSpacerDebugHud";
 
 const CroShowcase = lazy(() => import("./pages/CroShowcase"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Content = lazy(() => import("./components/Content"));
 const WorkDetails = lazy(() => import("./pages/WorkDetails"));
+const MenuSpacerDemo = lazy(() => import("./demos/MenuSpacerDemo"));
+
+/** Floating spacer metrics HUD (dev). */
+// const SHOW_MENU_SPACER_HUD = true;
 
 const RouteFallback = () => (
     <div
@@ -58,15 +63,23 @@ function ScrollToTop() {
     return null;
 }
 
+/** Spacer only helps when its band can sit under the header in-view (near document top). */
+const SPACER_TOP_SLACK_PX = 8;
+
 function AppRoutes() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [menuSpacerPx, setMenuSpacerPx] = useState(0);
-    const [overlayTopPx, setOverlayTopPx] = useState(64);
+    const [overlayTopPx, setOverlayTopPx] = useState(0);
+    /** scrollY frozen at menu-open — mid-page open skips flow spacer (overlay only). */
+    const [scrollYAtMenuOpen, setScrollYAtMenuOpen] = useState(0);
     const { pathname } = useLocation();
     const { theme, themeId } = useTheme();
     const isCroPage = pathname === "/cro";
-    // /works lands mid-page (below About) — skip spacer so open/close matches non-jump pages.
-    const useMenuSpacer = pathname !== "/works";
+    const isMenuSpacerDemo = pathname === "/demo/menu-spacer";
+    const nearTopAtOpen =
+        scrollYAtMenuOpen <= Math.max(overlayTopPx, 48) + SPACER_TOP_SLACK_PX;
+    // /works is always mid-page; other routes skip spacer when opened mid-scroll.
+    const useMenuSpacer = pathname !== "/works" && nearTopAtOpen;
     const showMenuOverlay = isMobileMenuOpen && themeId !== "pink";
 
     const handleMenuLayoutChange = useCallback(({ spacerPx, overlayTopPx: top }) => {
@@ -74,15 +87,34 @@ function AppRoutes() {
         setOverlayTopPx(top);
     }, []);
 
+    const handleMenuStateChange = useCallback((open) => {
+        if (open) setScrollYAtMenuOpen(window.scrollY);
+        setIsMobileMenuOpen(open);
+    }, []);
+
     useEffect(() => {
         if (!isMobileMenuOpen) setMenuSpacerPx(0);
     }, [isMobileMenuOpen]);
+
+    // Isolated demo page — own header/spacer; skip site NavbarJump chrome.
+    if (isMenuSpacerDemo) {
+        return (
+            <>
+                <ScrollToTop />
+                <Suspense fallback={<RouteFallback />}>
+                    <Routes>
+                        <Route path="/demo/menu-spacer" element={<MenuSpacerDemo />} />
+                    </Routes>
+                </Suspense>
+            </>
+        );
+    }
 
     return (
         <>
             <ScrollToTop />
             <NavbarJump
-                onMenuStateChange={setIsMobileMenuOpen}
+                onMenuStateChange={handleMenuStateChange}
                 onMenuLayoutChange={handleMenuLayoutChange}
                 transparent={isCroPage}
             />
@@ -105,6 +137,21 @@ function AppRoutes() {
                 ].join(" ")}
                 style={{ height: useMenuSpacer && isMobileMenuOpen ? menuSpacerPx : 0 }}
             />
+            {/* {SHOW_MENU_SPACER_HUD ? (
+                <MenuSpacerDebugHud
+                    isOpen={isMobileMenuOpen}
+                    spacerHeight={useMenuSpacer && isMobileMenuOpen ? menuSpacerPx : 0}
+                    menuSpacerPx={menuSpacerPx}
+                    overlayTopPx={overlayTopPx}
+                    note={
+                        pathname === "/works"
+                            ? `${pathname} (spacer off: works)`
+                            : useMenuSpacer
+                              ? pathname
+                              : `${pathname} (spacer off: mid-scroll)`
+                    }
+                />
+            ) : null} */}
             <Suspense fallback={<RouteFallback />}>
                 <Routes>
                     <Route path="/cro" element={<CroShowcase />} />
@@ -135,11 +182,12 @@ function AppShell() {
     const { pathname } = useLocation();
     const { theme } = useTheme();
     const isCroPage = pathname === "/cro";
+    const isMenuSpacerDemo = pathname === "/demo/menu-spacer";
 
     return (
         <div
             className={
-                isCroPage
+                isCroPage || isMenuSpacerDemo
                     ? "min-h-[100dvh] h-full"
                     : [
                         theme.shell.rootClass,
